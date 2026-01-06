@@ -331,6 +331,25 @@ textarea.input {
 }
 
 @media (max-width: 768px) {
+    .nav {
+        padding: 0.75rem 0;
+    }
+
+    .nav__container {
+        flex-wrap: wrap;
+        gap: 0.75rem;
+        justify-content: center;
+    }
+
+    .nav__logo {
+        font-size: 1.1rem;
+    }
+
+    .nav .brutalist-btn {
+        padding: 0.6rem 1rem;
+        font-size: 0.7rem;
+    }
+
     .nav__links {
         display: none;
     }
@@ -418,6 +437,31 @@ textarea.input {
     flex-wrap: wrap;
 }
 
+@media (max-width: 768px) {
+    .hero {
+        min-height: auto;
+        padding: calc(5rem + 20px) 1.25rem 3.5rem;
+    }
+
+    .hero__title {
+        font-size: clamp(2.4rem, 10vw, 3.8rem);
+    }
+
+    .hero__subtitle {
+        font-size: 1rem;
+        max-width: 100%;
+    }
+
+    .hero__actions {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .hero__actions .brutalist-btn {
+        width: min(280px, 90%);
+    }
+}
+
 /* ===== Section Header ===== */
 .section-header {
     margin-bottom: 3rem;
@@ -459,6 +503,241 @@ textarea.input {
     font-size: 1rem;
     opacity: 0.8;
     max-width: 600px;
+}
+
+/* ===== Reviews ===== */
+.reviews {
+    padding: 6rem 0;
+    background:
+        radial-gradient(circle at top, rgba(255, 255, 255, 0.12) 0%, transparent 55%),
+        radial-gradient(circle at 20% 20%, rgba(255, 107, 74, 0.12) 0%, transparent 45%),
+        var(--gray-900);
+    color: var(--white);
+    border-top: 4px solid var(--black);
+    border-bottom: 4px solid var(--black);
+}
+
+.reviews__header {
+    text-align: center;
+    margin-bottom: 2.75rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.reviews__header .tag {
+    display: inline-block;
+    background: var(--sunset-glow);
+    color: var(--black);
+    padding: 0.5rem 1rem;
+    font-weight: 700;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    border: 2px solid var(--black);
+    box-shadow: 3px 3px 0 var(--black);
+}
+
+.reviews__header h2 {
+    font-size: clamp(2rem, 4vw, 3rem);
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: -0.02em;
+}
+
+.reviews__rating-line {
+    margin-top: 1rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.5rem 1.25rem;
+    border: 2px solid var(--black);
+    background: linear-gradient(145deg, #ffffff 0%, #efefef 100%);
+    box-shadow: 4px 4px 0 var(--black);
+    font-weight: 800;
+    font-size: 0.9rem;
+    text-transform: none;
+    letter-spacing: 0.04em;
+    color: var(--black);
+}
+
+.reviews__stars {
+    color: var(--sunset-coral);
+    letter-spacing: 0.2em;
+}
+
+.reviews__carousel {
+    margin-top: 2.5rem;
+}
+
+.reviews__viewport {
+    display: grid;
+    gap: 1.5rem;
+}
+
+.reviews__row {
+    overflow-x: auto;
+    overflow-y: hidden;
+    cursor: grab;
+    padding-bottom: 0.5rem;
+    touch-action: pan-y;
+    scrollbar-width: none;
+}
+
+.reviews__row.is-dragging {
+    cursor: grabbing;
+    user-select: none;
+}
+
+.reviews__row::-webkit-scrollbar {
+    display: none;
+}
+
+.reviews__track {
+    display: flex;
+    gap: 1.5rem;
+    width: max-content;
+    padding: 0 0.5rem;
+}
+
+.review-card {
+    flex: 0 0 min(320px, 85vw);
+    padding: 1.5rem;
+    box-shadow: 8px 8px 0 var(--black);
+    background: linear-gradient(145deg, #ffffff 0%, #f1f1f1 100%);
+    border: 4px solid var(--black);
+    display: flex;
+    flex-direction: column;
+    min-height: 280px;
+    color: var(--black);
+    position: relative;
+    overflow: hidden;
+}
+
+.review-card:nth-child(3n) {
+    background: linear-gradient(145deg, #f8f8f8 0%, #ececec 100%);
+}
+
+.review-card:nth-child(3n + 1) {
+    background: linear-gradient(145deg, #ffffff 0%, #f6f6f6 100%);
+}
+
+.review-card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: var(--sunset-glow);
+}
+
+.review-card__top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.75rem;
+    margin-bottom: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    font-weight: 800;
+    font-size: 0.7rem;
+}
+
+.review-card__stars {
+    color: var(--sunset-coral);
+    letter-spacing: 0.2em;
+}
+
+.review-card__service {
+    padding: 0.35rem 0.6rem;
+    border: 2px solid var(--black);
+    background: var(--accent-light);
+    text-align: right;
+    max-width: 170px;
+}
+
+.review-card__name {
+    font-size: 1rem;
+    font-weight: 900;
+    margin-bottom: 0.75rem;
+}
+
+.review-card__quote {
+    font-size: 0.9rem;
+    line-height: 1.7;
+    font-weight: 600;
+    color: #111;
+    display: -webkit-box;
+    -webkit-line-clamp: 7;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    min-height: 8.5rem;
+    flex: 1;
+}
+
+.review-card__footer {
+    margin-top: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+}
+
+.review-card__source {
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    font-weight: 800;
+    color: #444;
+}
+
+.review-card__cta {
+    padding: 0.55rem 0.85rem;
+    font-size: 0.7rem;
+    box-shadow: 3px 3px 0 var(--black);
+    white-space: nowrap;
+}
+
+.review-card__cta:hover {
+    transform: translate(-2px, -2px);
+    box-shadow: 5px 5px 0 var(--black);
+}
+
+.reviews__hint {
+    text-align: center;
+    margin-top: 1rem;
+    font-size: 0.7rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    opacity: 0.7;
+    color: var(--gray-200);
+}
+
+.reviews__cta {
+    display: flex;
+    justify-content: center;
+    margin-top: 2rem;
+}
+
+.reviews__cta .brutalist-btn {
+    background: var(--sunset-glow);
+    border-color: var(--black);
+    box-shadow: 5px 5px 0 var(--black);
+}
+
+.reviews__cta .brutalist-btn:hover {
+    transform: translate(-3px, -3px);
+    box-shadow: 8px 8px 0 var(--black);
+}
+
+@media (max-width: 900px) {
+    .review-card {
+        min-height: 240px;
+        flex-basis: min(300px, 85vw);
+    }
 }
 
 /* ===== Services ===== */
@@ -697,6 +976,66 @@ textarea.input {
 }
 
 @media (max-width: 600px) {
+    .section-header h2 {
+        font-size: clamp(1.75rem, 7vw, 2.5rem);
+    }
+
+    .section-header p {
+        max-width: 100%;
+        font-size: 0.95rem;
+    }
+
+    .reviews {
+        padding: 4.5rem 0;
+    }
+
+    .reviews__rating-line {
+        flex-wrap: wrap;
+        justify-content: center;
+        text-align: center;
+    }
+
+    .reviews__row {
+        padding-bottom: 0.75rem;
+    }
+
+    .review-card {
+        flex-basis: min(300px, 90vw);
+    }
+
+    .reviews__cta .brutalist-btn {
+        width: min(260px, 90vw);
+    }
+
+    .services,
+    .pricing,
+    .contact {
+        padding: 4.5rem 0;
+    }
+
+    .pricing__table th,
+    .pricing__table td {
+        padding: 0.85rem 0.75rem;
+        font-size: 0.8rem;
+    }
+
+    .pricing__table tr.featured td {
+        font-size: 1rem;
+    }
+
+    .contact__grid {
+        gap: 2rem;
+    }
+
+    .contact-card {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .footer {
+        padding: 3rem 0 1.75rem;
+    }
+
     .footer__main {
         flex-direction: column;
         text-align: center;
@@ -705,5 +1044,45 @@ textarea.input {
     .footer__links {
         flex-direction: column;
         gap: 2rem;
+    }
+}
+
+/* Footer City Links */
+.footer__cities {
+    margin-top: 1.5rem;
+}
+
+.footer__cities-title {
+    font-weight: 700;
+    font-size: 0.875rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 0.75rem;
+    color: var(--accent);
+}
+
+.footer__cities-list {
+    display: flex;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+}
+
+.footer__cities-list a {
+    color: var(--white);
+    font-size: 0.9rem;
+    opacity: 0.8;
+    transition: var(--transition);
+}
+
+.footer__cities-list a:hover {
+    color: var(--sunset-coral);
+    opacity: 1;
+}
+
+@media (max-width: 600px) {
+    .footer__cities-list {
+        flex-direction: column;
+        gap: 0.75rem;
+        align-items: center;
     }
 }
