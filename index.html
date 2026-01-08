@@ -12,6 +12,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="style.css?v=20260106-6">
+    <!-- EmailJS SDK -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
 </head>
 
 <body>
@@ -342,23 +344,27 @@
                         </div>
                     </div>
                 </div>
-                <form class="contact__form brutalist-card">
+                <form id="contact-form" class="contact__form brutalist-card">
                     <h3>Request a Quote</h3>
-                    <input type="text" class="input" placeholder="Your Name" required>
-                    <input type="tel" class="input" placeholder="Phone Number" required>
-                    <input type="email" class="input" placeholder="Email Address">
-                    <input type="text" class="input" placeholder="Vehicle Year, Make & Model" required>
-                    <select class="input" required>
+                    <input type="text" name="name" class="input" placeholder="Your Name" required>
+                    <input type="tel" name="phone" class="input" placeholder="Phone Number" required>
+                    <input type="email" name="email" class="input" placeholder="Email Address">
+                    <input type="text" name="vehicle" class="input" placeholder="Vehicle Year, Make &amp; Model"
+                        required>
+                    <select name="service" class="input" required>
                         <option value="">Select Service</option>
-                        <option value="windshield">Windshield Only</option>
-                        <option value="front-two">Front Two Windows</option>
-                        <option value="sides-rear">Sides + Rear</option>
-                        <option value="full-car">Full Car</option>
-                        <option value="removal">Tint Removal</option>
+                        <option value="Windshield Only">Windshield Only</option>
+                        <option value="Front Two Windows">Front Two Windows</option>
+                        <option value="Sides + Rear">Sides + Rear</option>
+                        <option value="Full Car">Full Car</option>
+                        <option value="Tint Removal">Tint Removal</option>
                     </select>
-                    <textarea class="input" placeholder="Additional Details (optional)" rows="3"></textarea>
-                    <button type="submit" class="brutalist-btn brutalist-btn--primary brutalist-btn--full">Send
-                        Request</button>
+                    <textarea name="details" class="input" placeholder="Additional Details (optional)"
+                        rows="3"></textarea>
+                    <input type="hidden" name="title" value="New Quote Request">
+                    <button type="submit" id="submit-btn"
+                        class="brutalist-btn brutalist-btn--primary brutalist-btn--full">Send Request</button>
+                    <p id="form-status" class="form-status"></p>
                 </form>
             </div>
         </div>
@@ -537,6 +543,73 @@
             window.addEventListener('resize', updateResetPoints);
 
             window.requestAnimationFrame(tick);
+        })();
+    </script>
+
+    <!-- EmailJS Contact Form Handler -->
+    <script type="text/javascript">
+        (function () {
+            // ========================================
+            // EMAILJS CONFIGURATION
+            // Replace YOUR_SERVICE_ID with your actual EmailJS Service ID
+            // ========================================
+            const EMAILJS_PUBLIC_KEY = 'leAlCbwYj8qNqMhA1';
+            const EMAILJS_SERVICE_ID = 'YOUR_SERVICE_ID';  // <-- REPLACE THIS
+            const EMAILJS_TEMPLATE_ID = 'template_p1smkx6';
+
+            // Initialize EmailJS
+            emailjs.init(EMAILJS_PUBLIC_KEY);
+
+            // Get form elements
+            const form = document.getElementById('contact-form');
+            const submitBtn = document.getElementById('submit-btn');
+            const formStatus = document.getElementById('form-status');
+
+            if (form) {
+                form.addEventListener('submit', function (event) {
+                    event.preventDefault();
+
+                    // Disable button and show loading state
+                    submitBtn.disabled = true;
+                    submitBtn.textContent = 'Sending...';
+                    formStatus.textContent = '';
+                    formStatus.className = 'form-status';
+
+                    // Get form data
+                    const formData = new FormData(form);
+
+                    // Build the message content for EmailJS
+                    const templateParams = {
+                        title: formData.get('title') || 'New Quote Request',
+                        name: formData.get('name'),
+                        email: formData.get('email') || 'No email provided',
+                        message: `
+Phone: ${formData.get('phone')}
+Vehicle: ${formData.get('vehicle')}
+Service: ${formData.get('service')}
+Details: ${formData.get('details') || 'None'}
+                        `.trim()
+                    };
+
+                    // Send email via EmailJS
+                    emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, templateParams)
+                        .then(function (response) {
+                            console.log('SUCCESS!', response.status, response.text);
+                            formStatus.textContent = '✓ Message sent successfully! We\'ll get back to you soon.';
+                            formStatus.className = 'form-status form-status--success';
+                            form.reset();
+                        })
+                        .catch(function (error) {
+                            console.error('FAILED...', error);
+                            formStatus.textContent = '✗ Failed to send message. Please call us at (714) 254-5641.';
+                            formStatus.className = 'form-status form-status--error';
+                        })
+                        .finally(function () {
+                            submitBtn.disabled = false;
+                            submitBtn.textContent = 'Send Request';
+                        });
+                });
+            }
         })();
     </script>
 </body>
