@@ -191,26 +191,6 @@ textarea.input {
     animation: shimmer 3s ease-in-out infinite;
 }
 
-.brutalist-btn--primary::before {
-    content: "";
-    position: absolute;
-    inset: 3px;
-    background: linear-gradient(120deg, rgba(255, 255, 255, 0) 15%, rgba(255, 255, 255, 0.55) 50%, rgba(255, 255, 255, 0) 85%);
-    opacity: 0;
-    transform: translateX(-35%);
-    transition: opacity 0.25s ease, transform 0.4s ease;
-    pointer-events: none;
-}
-
-.brutalist-btn--primary:hover {
-    filter: brightness(1.05);
-}
-
-.brutalist-btn--primary:hover::before {
-    opacity: 1;
-    transform: translateX(35%);
-}
-
 @keyframes shimmer {
 
     0%,
@@ -1463,7 +1443,6 @@ textarea.input {
 
 .info-card,
 .service-card,
-.review-card,
 .about-card {
     background: var(--glass-dark);
     border: 1px solid rgba(255, 255, 255, 0.18);
@@ -1508,10 +1487,7 @@ textarea.input {
     color: var(--text-gray);
 }
 
-.review-card p {
-    font-size: 0.98rem;
-    color: var(--text-light-gray);
-}
+/* Note: .review-card p styles removed - using main Brutalist styles instead */
 
 .review-stars {
     letter-spacing: 0.2em;
