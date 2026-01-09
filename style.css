@@ -671,22 +671,15 @@ textarea.input {
     flex: 0 0 min(320px, 85vw);
     padding: 1.5rem;
     box-shadow: 8px 8px 0 var(--black);
-    background: linear-gradient(145deg, #ffffff 0%, #f1f1f1 100%);
+    background: #ffffff !important;
     border: 4px solid var(--black);
     display: flex;
     flex-direction: column;
     min-height: 280px;
-    color: var(--black);
+    color: #000000 !important;
     position: relative;
     overflow: hidden;
-}
-
-.review-card:nth-child(3n) {
-    background: linear-gradient(145deg, #f8f8f8 0%, #ececec 100%);
-}
-
-.review-card:nth-child(3n + 1) {
-    background: linear-gradient(145deg, #ffffff 0%, #f6f6f6 100%);
+    border-radius: 0 !important;
 }
 
 .review-card::before {

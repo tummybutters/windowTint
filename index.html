@@ -11,7 +11,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap"
         rel="stylesheet">
-    <link rel="stylesheet" href="style.css?v=20260106-6">
+    <link rel="stylesheet" href="style.css?v=20260108-1">
     <!-- EmailJS SDK -->
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
 </head>
@@ -416,28 +416,47 @@
             let lastTime = null;
             let resumeTimeout;
             const rowStates = new Map();
+            const speed = 32;
+
+            const wrapOffset = (state) => {
+                if (!state || state.resetPoint <= 0) {
+                    return;
+                }
+                if (state.offset >= state.resetPoint) {
+                    state.offset -= state.resetPoint;
+                } else if (state.offset < 0) {
+                    state.offset += state.resetPoint;
+                }
+            };
 
             const setupRow = (row) => {
                 const track = row.querySelector('.reviews__track');
                 if (!track) {
                     return;
                 }
-                const cards = Array.from(track.children);
-                cards.forEach((card) => {
-                    const clone = card.cloneNode(true);
-                    clone.setAttribute('aria-hidden', 'true');
-                    track.appendChild(clone);
-                });
+                if (!track.dataset.cloned) {
+                    const cards = Array.from(track.children);
+                    cards.forEach((card) => {
+                        const clone = card.cloneNode(true);
+                        clone.setAttribute('aria-hidden', 'true');
+                        track.appendChild(clone);
+                    });
+                    track.dataset.cloned = 'true';
+                }
                 const direction = row.dataset.direction === 'left' ? -1 : 1;
                 const state = {
                     track,
                     direction,
-                    resetPoint: track.scrollWidth / 2
+                    resetPoint: track.scrollWidth / 2,
+                    offset: 0
                 };
-                rowStates.set(row, state);
                 if (direction === -1) {
-                    row.scrollLeft = state.resetPoint;
+                    state.offset = state.resetPoint;
+                    row.scrollLeft = state.offset;
+                } else {
+                    state.offset = row.scrollLeft;
                 }
+                rowStates.set(row, state);
             };
 
             rows.forEach(setupRow);
@@ -445,22 +464,10 @@
             const updateResetPoints = () => {
                 rowStates.forEach((state, row) => {
                     state.resetPoint = state.track.scrollWidth / 2;
-                    if (state.direction === -1 && row.scrollLeft === 0) {
-                        row.scrollLeft = state.resetPoint;
-                    }
+                    state.offset = row.scrollLeft;
+                    wrapOffset(state);
+                    row.scrollLeft = state.offset;
                 });
-            };
-
-            const normalizeRow = (row) => {
-                const state = rowStates.get(row);
-                if (!state) {
-                    return;
-                }
-                if (row.scrollLeft >= state.resetPoint) {
-                    row.scrollLeft -= state.resetPoint;
-                } else if (row.scrollLeft <= 0) {
-                    row.scrollLeft += state.resetPoint;
-                }
             };
 
             const tick = (time) => {
@@ -470,8 +477,12 @@
                 const delta = time - lastTime;
                 if (!isPaused) {
                     rowStates.forEach((state, row) => {
-                        row.scrollLeft += (32 * delta) / 1000 * state.direction;
-                        normalizeRow(row);
+                        if (state.resetPoint <= row.clientWidth) {
+                            return;
+                        }
+                        state.offset += (speed * delta) / 1000 * state.direction;
+                        wrapOffset(state);
+                        row.scrollLeft = state.offset;
                     });
                 }
                 lastTime = time;
@@ -490,6 +501,7 @@
                     return;
                 }
                 isPaused = false;
+                lastTime = null;
             };
 
             const handlePointerDown = (event) => {
@@ -500,6 +512,10 @@
                 activeRow = event.currentTarget;
                 startX = event.clientX;
                 startScrollLeft = activeRow.scrollLeft;
+                const state = rowStates.get(activeRow);
+                if (state) {
+                    state.offset = startScrollLeft;
+                }
                 activeRow.classList.add('is-dragging');
                 activeRow.setPointerCapture(event.pointerId);
             };
@@ -508,9 +524,14 @@
                 if (!activeRow) {
                     return;
                 }
+                const state = rowStates.get(activeRow);
+                if (!state) {
+                    return;
+                }
                 const delta = event.clientX - startX;
-                activeRow.scrollLeft = startScrollLeft - delta;
-                normalizeRow(activeRow);
+                state.offset = startScrollLeft - delta;
+                wrapOffset(state);
+                activeRow.scrollLeft = state.offset;
             };
 
             const handlePointerUp = (event) => {
@@ -518,6 +539,10 @@
                     return;
                 }
                 activeRow.classList.remove('is-dragging');
+                const state = rowStates.get(activeRow);
+                if (state) {
+                    state.offset = activeRow.scrollLeft;
+                }
                 try {
                     activeRow.releasePointerCapture(event.pointerId);
                 } catch (err) {
@@ -527,8 +552,12 @@
                 resumeTimeout = window.setTimeout(resumeAuto, 500);
             };
 
-            const handleWheel = () => {
+            const handleWheel = (event) => {
                 pauseAuto();
+                const state = rowStates.get(event.currentTarget);
+                if (state) {
+                    state.offset = event.currentTarget.scrollLeft;
+                }
                 resumeTimeout = window.setTimeout(resumeAuto, 700);
             };
 
@@ -579,16 +608,38 @@
                     const formData = new FormData(form);
 
                     // Build the message content for EmailJS
+                    const title = formData.get('title') || 'New Quote Request';
+                    const name = (formData.get('name') || '').trim() || 'Not provided';
+                    const phone = (formData.get('phone') || '').trim() || 'Not provided';
+                    const email = (formData.get('email') || '').trim() || 'Not provided';
+                    const vehicle = (formData.get('vehicle') || '').trim() || 'Not provided';
+                    const service = (formData.get('service') || '').trim() || 'Not provided';
+                    const details = (formData.get('details') || '').trim() || 'None';
+                    const message = [
+                        title,
+                        '-------------------------',
+                        'Contact',
+                        `Name: ${name}`,
+                        `Phone: ${phone}`,
+                        `Email: ${email}`,
+                        '',
+                        'Vehicle',
+                        `Vehicle: ${vehicle}`,
+                        `Service: ${service}`,
+                        '',
+                        'Additional Details',
+                        details
+                    ].join('\n');
+
                     const templateParams = {
-                        title: formData.get('title') || 'New Quote Request',
-                        name: formData.get('name'),
-                        email: formData.get('email') || 'No email provided',
-                        message: `
-Phone: ${formData.get('phone')}
-Vehicle: ${formData.get('vehicle')}
-Service: ${formData.get('service')}
-Details: ${formData.get('details') || 'None'}
-                        `.trim()
+                        title,
+                        name,
+                        email,
+                        phone,
+                        vehicle,
+                        service,
+                        details,
+                        message
                     };
 
                     // Send email via EmailJS
