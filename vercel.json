@@ -1,0 +1,25 @@
+{
+  "redirects": [
+    { "source": "/index.html", "destination": "/", "permanent": true },
+    { "source": "/window-tinting-orange-county", "destination": "/", "permanent": true },
+    { "source": "/services.html", "destination": "/window-tinting-gallery", "permanent": true },
+    { "source": "/irvine.html", "destination": "/irvine-window-tinting", "permanent": true },
+    { "source": "/irvine-windowtinting.html", "destination": "/irvine-window-tinting", "permanent": true },
+    { "source": "/newport-beach.html", "destination": "/newport-beach-window-tinting", "permanent": true },
+    { "source": "/newport-beach-windowtinting.html", "destination": "/newport-beach-window-tinting", "permanent": true },
+    { "source": "/tustin.html", "destination": "/tustin-window-tinting", "permanent": true },
+    { "source": "/tustin-windowtinting.html", "destination": "/tustin-window-tinting", "permanent": true },
+    { "source": "/costa-mesa-windowtinting.html", "destination": "/costa-mesa-window-tinting", "permanent": true },
+    { "source": "/laguna-beach-windowtinting.html", "destination": "/laguna-beach-window-tinting", "permanent": true },
+    { "source": "/aliso-viejo-windowtinting.html", "destination": "/aliso-viejo-window-tinting", "permanent": true }
+  ],
+  "rewrites": [
+    { "source": "/window-tinting-gallery", "destination": "/services.html" },
+    { "source": "/irvine-window-tinting", "destination": "/irvine.html" },
+    { "source": "/newport-beach-window-tinting", "destination": "/newport-beach.html" },
+    { "source": "/tustin-window-tinting", "destination": "/tustin.html" },
+    { "source": "/costa-mesa-window-tinting", "destination": "/costa-mesa-windowtinting.html" },
+    { "source": "/laguna-beach-window-tinting", "destination": "/laguna-beach-windowtinting.html" },
+    { "source": "/aliso-viejo-window-tinting", "destination": "/aliso-viejo-windowtinting.html" }
+  ]
+}
