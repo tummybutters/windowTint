@@ -17,16 +17,6 @@
       "permanent": true
     },
     {
-      "source": "/booking",
-      "destination": "/booking.html",
-      "permanent": true
-    },
-    {
-      "source": "/vip-booking",
-      "destination": "/vip-booking.html",
-      "permanent": true
-    },
-    {
       "source": "/irvine.html",
       "destination": "/irvine-window-tinting",
       "permanent": true
