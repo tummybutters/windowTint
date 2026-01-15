@@ -1885,19 +1885,19 @@ textarea.input {
     }
 
     .booking-steps__grid {
-        grid-template-columns: repeat(3, minmax(0, 1fr));
-        gap: 0.75rem;
+        grid-template-columns: 1fr;
+        gap: 1rem;
     }
 
     .booking-step {
-        padding-top: 2.5rem;
+        padding-top: 2.25rem;
     }
 
     .booking-step__number {
-        width: 2.5rem;
-        height: 2.5rem;
-        top: -1.25rem;
-        font-size: 1rem;
+        width: 2.25rem;
+        height: 2.25rem;
+        top: -1.125rem;
+        font-size: 0.95rem;
     }
 
     .booking-step h3 {
@@ -1905,6 +1905,6 @@ textarea.input {
     }
 
     .booking-step p {
-        font-size: 0.78rem;
+        font-size: 0.82rem;
     }
 }
