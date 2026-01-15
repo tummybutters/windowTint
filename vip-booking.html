@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VIP Booking | Obsidian Autoworks</title>
+    <meta name="robots" content="noindex, nofollow"> <!-- Secret landing page -->
+    <link rel="icon" type="image/png" href="favicon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css?v=20260115-vip">
+    <style>
+        :root {
+            --accent: #ff3e3e;
+            --bg: #000;
+            --text: #fff;
+        }
+
+        .vip-hero {
+            padding: 4rem 0 2rem;
+            background: var(--bg);
+            text-align: center;
+        }
+
+        .vip-hero h1 {
+            font-size: clamp(2.5rem, 8vw, 4.5rem);
+            margin-bottom: 1rem;
+            line-height: 0.9;
+        }
+
+        .vip-hero h1 span {
+            color: var(--accent);
+            display: block;
+        }
+
+        /* Review Collage Grid */
+        .collage-container {
+            max-width: 1400px;
+            margin: 0 auto 4rem;
+            padding: 0 2rem;
+        }
+
+        .collage-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            grid-auto-rows: 250px;
+            gap: 15px;
+        }
+
+        .collage-item {
+            position: relative;
+            overflow: hidden;
+            border: 3px solid #fff;
+            background: #1a1a1a;
+            transition: transform 0.3s ease;
+        }
+
+        .collage-item:hover {
+            transform: scale(1.02);
+            z-index: 10;
+        }
+
+        .collage-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0.7;
+            transition: opacity 0.3s;
+        }
+
+        .collage-item:hover img {
+            opacity: 1;
+        }
+
+        .collage-review {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 1.5rem;
+            background: linear-gradient(transparent, rgba(0, 0, 0, 0.9));
+            color: #fff;
+        }
+
+        .collage-review p {
+            font-size: 0.9rem;
+            font-weight: 500;
+            line-height: 1.2;
+            margin-bottom: 0.5rem;
+        }
+
+        .collage-review .reviewer {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--accent);
+            font-weight: 700;
+        }
+
+        /* Span across columns/rows for that irregular "cornucopia" look */
+        .item--large {
+            grid-column: span 2;
+            grid-row: span 2;
+        }
+
+        .item--wide {
+            grid-column: span 2;
+        }
+
+        .item--tall {
+            grid-row: span 2;
+        }
+
+        .vip-booking-section {
+            background: #fff;
+            color: #000;
+            padding: 5rem 0;
+            border-top: 5px solid var(--accent);
+        }
+
+        .vip-booking-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .vip-booking-header h2 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .trust-badges {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-bottom: 3rem;
+            flex-wrap: wrap;
+        }
+
+        .trust-badge {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+        }
+
+        .trust-badge span {
+            color: var(--accent);
+        }
+
+        @media (max-width: 900px) {
+            .collage-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 500px) {
+            .collage-grid {
+                grid-template-columns: 1fr;
+                grid-auto-rows: 300px;
+            }
+
+            .item--large,
+            .item--wide,
+            .item--tall {
+                grid-column: span 1;
+                grid-row: span 1;
+            }
+        }
+    </style>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-TR9ET60HX3"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-TR9ET60HX3');
+    </script>
+</head>
+
+<body class="dark-mode">
+    <nav class="nav">
+        <div class="nav__container">
+            <a href="/" class="nav__logo">
+                <img src="car-hero.png" alt="Obsidian Autoworks" class="nav__logo-car">
+                <span class="nav__logo-text">OBSIDIAN<span>AUTOWORKS</span></span>
+            </a>
+            <div class="nav__actions">
+                <a href="tel:7142545641" class="brutalist-btn brutalist-btn--outline">(714) 254-5641</a>
+            </div>
+        </div>
+    </nav>
+
+    <header class="vip-hero">
+        <div class="container">
+            <span class="tag" style="background: var(--accent); color: #fff;">EXCLUSIVE OFFER</span>
+            <h1>Join 2,600+ <span>Satisfied Drivers</span></h1>
+            <p>The highest rated mobile tint service in Orange County. We come to you.</p>
+        </div>
+    </header>
+
+    <section class="collage-container">
+        <div class="collage-grid">
+            <!-- Large Focus -->
+            <div class="collage-item item--large">
+                <img src="gallery/mercedes-benz-gls-01.jpg" alt="Mercedes GLS Window Tint">
+                <div class="collage-review">
+                    <p>"Oh my gosh!!! Blown away at how well they came out. The attention to detail is insane."</p>
+                    <div class="reviewer">Nesha Bowman ★★★★★</div>
+                </div>
+            </div>
+
+            <!-- Wide -->
+            <div class="collage-item item--wide">
+                <img src="gallery/bmw-m4-01.jpg" alt="BMW M4 Window Tint">
+                <div class="collage-review">
+                    <p>"Such a big difference bro. Definitely gives it a new look. I'll be hitting you up for other
+                        vehicles."</p>
+                    <div class="reviewer">Mark Cruz ★★★★★</div>
+                </div>
+            </div>
+
+            <!-- Standard -->
+            <div class="collage-item">
+                <img src="gallery/lexus-gx-01.jpg" alt="Lexus GX Window Tint">
+                <div class="collage-review">
+                    <p>"Dude I appreciate your work.. it's solid. commitment to detail."</p>
+                    <div class="reviewer">Joe Le ★★★★★</div>
+                </div>
+            </div>
+
+            <!-- Tall -->
+            <div class="collage-item item--tall">
+                <img src="gallery/porsche-cayenne-coupe-01.jpg" alt="Porsche Cayenne Window Tint">
+                <div class="collage-review">
+                    <p>"Car came out so good! Originally a fishbowl, now spectacular!"</p>
+                    <div class="reviewer">Jadelyn Belle ★★★★★</div>
+                </div>
+            </div>
+
+            <!-- Standard -->
+            <div class="collage-item">
+                <img src="gallery/toyota-tacoma-01.jpg" alt="Toyota Tacoma Window Tint">
+                <div class="collage-review">
+                    <p>"Bro thank you for your work... the truck looks very nice."</p>
+                    <div class="reviewer">Ahmad Bond ★★★★★</div>
+                </div>
+            </div>
+
+            <!-- Wide -->
+            <div class="collage-item item--wide">
+                <img src="gallery/cadillac-lyriq-01.jpg" alt="Cadillac Lyriq Window Tint">
+                <div class="collage-review">
+                    <p>"Best in the game! Did my car and came out 10/10."</p>
+                    <div class="reviewer">Bryan Rodriguez ★★★★★</div>
+                </div>
+            </div>
+
+            <!-- Standard -->
+            <div class="collage-item">
+                <img src="gallery/toyota-4runner-01.jpg" alt="Toyota 4Runner Window Tint">
+                <div class="collage-review">
+                    <p>"Best tinting service in OC! Whole car looks sleek now."</p>
+                    <div class="reviewer">Alex Brockman ★★★★★</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="vip-booking-section">
+        <div class="container">
+            <div class="vip-booking-header">
+                <h2>Secure Your <span>Time Slot</span></h2>
+                <div class="trust-badges">
+                    <div class="trust-badge"><span>✓</span> Mobile Service</div>
+                    <div class="trust-badge"><span>✓</span> Lifetime Warranty</div>
+                    <div class="trust-badge"><span>✓</span> Pay After Success</div>
+                </div>
+            </div>
+
+            <div id="cal-booking-embed"
+                style="width: 100%; min-height: 700px; overflow: hidden; border: 3px solid #000; border-radius: 4px;">
+            </div>
+
+            <div class="booking-note"
+                style="background: #f0f0f0; border-left: 5px solid #000; margin-top: 2rem; color: #000;">
+                <p>💳 No deposit required. Final pricing is confirmed at your appointment. Pay only after the work is
+                    done.</p>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container" style="text-align: center;">
+            <p>© 2026 Obsidian Autoworks. Premium Mobile Window Tinting.</p>
+        </div>
+    </footer>
+
+    <!-- Cal.com Embed & Sticky Lead Tracking -->
+    <script type="text/javascript">
+        (function (C, A, L) {
+            let p = function (a, ar) { a.q.push(ar); };
+            let d = C.document;
+            C.Cal = C.Cal || function () {
+                let cal = C.Cal;
+                let ar = arguments;
+                if (!cal.loaded) {
+                    cal.ns = {};
+                    cal.q = cal.q || [];
+                    d.head.appendChild(d.createElement("script")).src = A;
+                    cal.loaded = true;
+                }
+                if (ar[0] === L) {
+                    const api = function () { p(api, arguments); };
+                    const namespace = ar[1];
+                    api.q = api.q || [];
+                    typeof namespace === "string" ? (cal.ns[namespace] = api) && p(api, ar) : p(cal, ar);
+                    return;
+                }
+                p(cal, ar);
+            };
+        })(window, "https://app.cal.com/embed/embed.js", "init");
+
+        Cal("init", { origin: "https://cal.com" });
+
+        // Lead Tracking Logic
+        (function () {
+            const urlParams = new URLSearchParams(window.location.search);
+            const urlCid = urlParams.get('cid');
+            const urlPhone = urlParams.get('phone');
+
+            if (urlCid) localStorage.setItem('lead_track_cid', urlCid);
+            if (urlPhone) localStorage.setItem('lead_track_phone', urlPhone);
+
+            const leadId = urlCid || localStorage.getItem('lead_track_cid');
+            const phone = urlPhone || localStorage.getItem('lead_track_phone');
+
+            const trackingMetadata = {
+                source: 'vip_landing',
+                ...(leadId && { conversation_id: leadId }),
+                ...(phone && { phone: phone }),
+                landed_at: new Date().toISOString()
+            };
+
+            Cal("inline", {
+                elementOrSelector: "#cal-booking-embed",
+                calLink: "obisidianautoworks",
+                layout: "month_view",
+                config: { "metadata": trackingMetadata }
+            });
+
+            Cal("ui", {
+                "styles": { "branding": { "brandColor": "#000000" } },
+                "hideEventTypeDetails": false,
+                "layout": "month_view"
+            });
+
+            Cal("on", {
+                action: "bookingSuccessful",
+                callback: (e) => {
+                    gtag('event', 'vip_booking_completed', {
+                        'event_label': leadId || 'anonymous_vip',
+                        'conversation_id': leadId
+                    });
+                }
+            });
+        })();
+    </script>
+</body>
+
+</html>
