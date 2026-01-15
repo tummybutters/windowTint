@@ -59,7 +59,7 @@
             display: grid;
             grid-template-columns: repeat(4, minmax(0, 1fr));
             grid-auto-rows: clamp(190px, 22vw, 270px);
-            gap: 12px;
+            gap: 6px;
             padding: 1rem 0 2rem;
             overflow: visible;
         }
@@ -73,7 +73,7 @@
             transition: transform 0.3s ease;
             transform-origin: bottom left;
             height: 100%;
-            margin: -8px 0 0 -8px;
+            margin: -16px 0 0 -18px;
         }
 
         .collage-item:first-child {
@@ -123,13 +123,13 @@
         }
 
         /* Poker-deck collage offsets */
-        .collage-item:nth-child(1) { transform: rotate(-5deg) translateY(10px); z-index: 1; }
-        .collage-item:nth-child(2) { transform: rotate(-2deg) translateY(4px); z-index: 2; }
-        .collage-item:nth-child(3) { transform: rotate(2deg) translateY(2px); z-index: 3; }
-        .collage-item:nth-child(4) { transform: rotate(5deg) translateY(10px); z-index: 4; }
-        .collage-item:nth-child(5) { transform: rotate(-5deg) translateY(-4px); z-index: 1; }
-        .collage-item:nth-child(6) { transform: rotate(-1deg) translateY(-10px); z-index: 2; }
-        .collage-item:nth-child(7) { transform: rotate(3deg) translateY(-6px); z-index: 3; }
+        .collage-item:nth-child(1) { transform: rotate(-3deg) translateY(6px); z-index: 1; }
+        .collage-item:nth-child(2) { transform: rotate(-1.5deg) translateY(3px); z-index: 2; }
+        .collage-item:nth-child(3) { transform: rotate(1.5deg) translateY(2px); z-index: 3; }
+        .collage-item:nth-child(4) { transform: rotate(3deg) translateY(6px); z-index: 4; }
+        .collage-item:nth-child(5) { transform: rotate(-3deg) translateY(-6px); z-index: 1; }
+        .collage-item:nth-child(6) { transform: rotate(-1deg) translateY(-8px); z-index: 2; }
+        .collage-item:nth-child(7) { transform: rotate(2deg) translateY(-6px); z-index: 3; }
 
         .vip-booking-section {
             background: linear-gradient(145deg, var(--gray-800) 0%, var(--gray-900) 100%);
@@ -181,23 +181,23 @@
         @media (max-width: 900px) {
             .collage-grid {
                 grid-auto-rows: clamp(160px, 26vw, 230px);
-                gap: 10px;
+                gap: 6px;
             }
 
             .collage-item {
-                margin: -6px 0 0 -6px;
+                margin: -12px 0 0 -14px;
             }
         }
 
         @media (max-width: 500px) {
             .collage-grid {
                 grid-auto-rows: clamp(120px, 24vw, 160px);
-                gap: 8px;
+                gap: 4px;
                 padding-bottom: 1rem;
             }
 
             .collage-item {
-                margin: -4px 0 0 -4px;
+                margin: -10px 0 0 -10px;
             }
 
             .collage-review {
