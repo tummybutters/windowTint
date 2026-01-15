@@ -337,13 +337,26 @@ textarea.input {
 }
 
 .nav__logo {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 0.5rem;
     font-size: 1.25rem;
     font-weight: 900;
     letter-spacing: -0.02em;
     color: var(--white);
 }
 
-.nav__logo span {
+.nav__logo-car {
+    width: 48px;
+    height: auto;
+}
+
+.nav__logo-text {
+    white-space: nowrap;
+}
+
+.nav__logo-text span {
     color: var(--accent);
 }
 
@@ -1650,5 +1663,33 @@ textarea.input {
 
     .cta-button {
         width: 100%;
+    }
+}
+
+/* ===== Nav Car Hero ===== */
+.nav-car-hero {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem 1.5rem 0;
+    margin-top: 80px;
+    background: linear-gradient(135deg, var(--gray-900) 0%, var(--gray-800) 100%);
+}
+
+.nav-car-hero__img {
+    max-width: 400px;
+    width: 100%;
+    height: auto;
+    filter: drop-shadow(0 10px 30px rgba(0, 0, 0, 0.5));
+}
+
+@media (max-width: 768px) {
+    .nav-car-hero {
+        padding: 0.75rem 1rem 0;
+        margin-top: 60px;
+    }
+
+    .nav-car-hero__img {
+        max-width: 280px;
     }
 }
