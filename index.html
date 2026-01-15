@@ -46,7 +46,7 @@
                 <a href="#contact">Contact</a>
             </div>
             <div class="nav__actions">
-                <a href="https://cal.com/obisidianautoworks" class="brutalist-btn brutalist-btn--accent">Book Online</a>
+                <a href="/booking.html" class="brutalist-btn brutalist-btn--accent">Book Online</a>
                 <a href="tel:7142545641" class="brutalist-btn brutalist-btn--outline">(714) 254-5641</a>
             </div>
         </div>
@@ -63,7 +63,7 @@
             <p class="hero__subtitle">Professional installation at your home or workplace — no driving, no gas, no
                 hassle.<br>Serving Orange County, Los Angeles & Inland Empire.</p>
             <div class="hero__actions">
-                <a href="https://cal.com/obisidianautoworks" class="brutalist-btn brutalist-btn--primary">Book Online
+                <a href="/booking.html" class="brutalist-btn brutalist-btn--primary">Book Online
                     Now</a>
                 <a href="#pricing" class="brutalist-btn">See Pricing</a>
             </div>
@@ -233,6 +233,12 @@
                     </div>
                 </div>
                 <div class="reviews__hint">Drag to browse. Release to resume auto-scroll.</div>
+                <div class="reviews__cta">
+                    <a href="https://www.google.com/search?q=Obsidian+Mobile+Window-Tinting+OC+Reviews" target="_blank"
+                        rel="noopener" class="brutalist-btn brutalist-btn--primary brutalist-btn--large">
+                        ⭐ See All Google Reviews
+                    </a>
+                </div>
             </div>
         </div>
     </section>
@@ -337,6 +343,66 @@
             </div>
         </div>
     </section>
+
+    <!-- Booking Section with Cal.com Embed -->
+    <section id="booking" class="booking-section">
+        <div class="container">
+            <div class="section-header" style="text-align: center; margin-bottom: 2rem;">
+                <span class="tag">BOOK NOW</span>
+                <h2>Schedule Your <span>Appointment</span></h2>
+                <p style="margin-top: 1rem; opacity: 0.8;">Pick a time that works for you — we'll come to your location.
+                </p>
+            </div>
+
+            <p class="booking-note">💳 Final pricing is confirmed at your appointment. Pay only after the work is done —
+                at your home, office, or wherever works for you.</p>
+
+            <div id="cal-booking-embed" style="width: 100%; min-height: 700px; overflow: hidden; border-radius: 8px;">
+            </div>
+        </div>
+    </section>
+
+    <!-- Cal.com Embed Script -->
+    <script type="text/javascript">
+        (function (C, A, L) {
+            let p = function (a, ar) { a.q.push(ar); };
+            let d = C.document;
+            C.Cal = C.Cal || function () {
+                let cal = C.Cal;
+                let ar = arguments;
+                if (!cal.loaded) {
+                    cal.ns = {};
+                    cal.q = cal.q || [];
+                    d.head.appendChild(d.createElement("script")).src = A;
+                    cal.loaded = true;
+                }
+                if (ar[0] === L) {
+                    const api = function () { p(api, arguments); };
+                    const namespace = ar[1];
+                    api.q = api.q || [];
+                    typeof namespace === "string" ? (cal.ns[namespace] = api) && p(api, ar) : p(cal, ar);
+                    return;
+                }
+                p(cal, ar);
+            };
+        })(window, "https://app.cal.com/embed/embed.js", "init");
+
+        Cal("init", { origin: "https://cal.com" });
+
+        Cal("inline", {
+            elementOrSelector: "#cal-booking-embed",
+            calLink: "obisidianautoworks",
+            layout: "month_view"
+        });
+
+        Cal("ui", {
+            "styles": {
+                "branding": { "brandColor": "#000000" }
+            },
+            "hideEventTypeDetails": false,
+            "layout": "month_view"
+        });
+    </script>
 
     <section id="contact" class="contact">
         <div class="container">

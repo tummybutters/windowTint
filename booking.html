@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Your Window Tint Appointment | Obsidian Autoworks</title>
+    <meta name="description"
+        content="Schedule your mobile window tinting appointment online. We come to your location in Orange County. Pick a time, confirm your vehicle, and we'll handle the rest.">
+    <link rel="canonical" href="https://www.obsidianautoworksoc.com/booking">
+    <link rel="icon" type="image/png" href="favicon.png">
+    <meta property="og:title" content="Book Your Window Tint Appointment | Obsidian Autoworks">
+    <meta property="og:description"
+        content="Schedule your mobile window tinting appointment online. We come to your location in Orange County.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.obsidianautoworksoc.com/booking">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css?v=20260115-1">
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-TR9ET60HX3"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-TR9ET60HX3');
+    </script>
+</head>
+
+<body>
+    <nav class="nav">
+        <div class="nav__container">
+            <a href="/" class="nav__logo">
+                <img src="car-hero.png" alt="Obsidian Autoworks" class="nav__logo-car">
+                <span class="nav__logo-text">OBSIDIAN<span>AUTOWORKS</span></span>
+            </a>
+            <div class="nav__links">
+                <a href="/#services">Services</a>
+                <a href="/#pricing">Pricing</a>
+                <a href="/window-tinting-gallery.html">Gallery</a>
+                <a href="/#contact">Contact</a>
+            </div>
+            <div class="nav__actions">
+                <a href="/booking.html" class="brutalist-btn brutalist-btn--accent">Book Online</a>
+                <a href="tel:7142545641" class="brutalist-btn brutalist-btn--outline">(714) 254-5641</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Booking Hero -->
+    <header class="booking-hero">
+        <div class="container">
+            <div class="booking-hero__content">
+                <span class="tag">ONLINE BOOKING</span>
+                <h1>Schedule Your <span>Window Tint</span> Appointment</h1>
+                <p>Book in under 60 seconds. We'll come to your home, office, or anywhere in Orange County that works
+                    for you.</p>
+            </div>
+        </div>
+    </header>
+
+    <!-- How It Works -->
+    <section class="booking-steps">
+        <div class="container">
+            <div class="booking-steps__grid">
+                <div class="booking-step brutalist-card">
+                    <div class="booking-step__number">1</div>
+                    <h3>Pick a Time</h3>
+                    <p>Choose a date and time slot that fits your schedule. Morning, afternoon, or evening — we're
+                        flexible.</p>
+                </div>
+                <div class="booking-step brutalist-card">
+                    <div class="booking-step__number">2</div>
+                    <h3>Tell Us Your Vehicle</h3>
+                    <p>Share your vehicle details and the service you need. We'll confirm pricing before your
+                        appointment.</p>
+                </div>
+                <div class="booking-step brutalist-card">
+                    <div class="booking-step__number">3</div>
+                    <h3>We Come to You</h3>
+                    <p>Our mobile team arrives at your location with everything needed. Installation takes 1-4 hours
+                        depending on service.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Cal.com Booking Embed -->
+    <section class="booking-calendar">
+        <div class="container">
+            <div class="section-header" style="text-align: center; margin-bottom: 2rem;">
+                <h2>Select Your <span>Date & Time</span></h2>
+            </div>
+            <p class="booking-note">💳 Final pricing is confirmed at your appointment. Pay only after the work is done —
+                at your home, office, or wherever works for you.</p>
+            <div id="cal-booking-embed" style="width: 100%; min-height: 700px; overflow: hidden; border-radius: 8px;">
+            </div>
+        </div>
+    </section>
+
+    <!-- Cal.com Embed Script with Lead Tracking -->
+    <script type="text/javascript">
+        // Get tracking params from URL
+        // cid = conversation ID from Twil AI system (unique per lead)
+        // phone = customer phone number
+        // source = fallback for generic tracking (ai, website, etc.)
+        const urlParams = new URLSearchParams(window.location.search);
+        const conversationId = urlParams.get('cid') || null;
+        const customerPhone = urlParams.get('phone') || null;
+        const bookingSource = conversationId ? 'ai_lead' : (urlParams.get('source') || 'website');
+
+        // Build tracking metadata
+        const trackingMetadata = {
+            source: bookingSource,
+            ...(conversationId && { conversation_id: conversationId }),
+            ...(customerPhone && { phone: customerPhone }),
+            referrer: document.referrer || 'direct',
+            landed_at: new Date().toISOString()
+        };
+
+        // Log AI lead page visits to Google Analytics
+        if (conversationId) {
+            gtag('event', 'ai_lead_page_visit', {
+                'event_category': 'booking',
+                'event_label': conversationId,
+                'conversation_id': conversationId,
+                'phone': customerPhone
+            });
+            console.log('AI Lead visiting booking page:', conversationId);
+        } else if (urlParams.get('source') === 'ai') {
+            // Fallback for generic AI source without specific lead ID
+            gtag('event', 'ai_booking_page_visit', {
+                'event_category': 'booking',
+                'event_label': 'AI Text Referral'
+            });
+        }
+
+        (function (C, A, L) {
+            let p = function (a, ar) { a.q.push(ar); };
+            let d = C.document;
+            C.Cal = C.Cal || function () {
+                let cal = C.Cal;
+                let ar = arguments;
+                if (!cal.loaded) {
+                    cal.ns = {};
+                    cal.q = cal.q || [];
+                    d.head.appendChild(d.createElement("script")).src = A;
+                    cal.loaded = true;
+                }
+                if (ar[0] === L) {
+                    const api = function () { p(api, arguments); };
+                    const namespace = ar[1];
+                    api.q = api.q || [];
+                    typeof namespace === "string" ? (cal.ns[namespace] = api) && p(api, ar) : p(cal, ar);
+                    return;
+                }
+                p(cal, ar);
+            };
+        })(window, "https://app.cal.com/embed/embed.js", "init");
+
+        Cal("init", { origin: "https://cal.com" });
+
+        // Pass full tracking metadata to Cal.com
+        Cal("inline", {
+            elementOrSelector: "#cal-booking-embed",
+            calLink: "obisidianautoworks",
+            layout: "month_view",
+            config: {
+                "metadata": trackingMetadata
+            }
+        });
+
+        Cal("ui", {
+            "styles": {
+                "branding": { "brandColor": "#000000" }
+            },
+            "hideEventTypeDetails": false,
+            "layout": "month_view"
+        });
+
+        // Track when booking is completed with full lead attribution
+        Cal("on", {
+            action: "bookingSuccessful",
+            callback: (e) => {
+                const eventData = {
+                    'event_category': 'booking',
+                    'event_label': conversationId || bookingSource,
+                    'source': bookingSource
+                };
+
+                // Add lead-specific data if available
+                if (conversationId) {
+                    eventData.conversation_id = conversationId;
+                    eventData.phone = customerPhone;
+                }
+
+                gtag('event', 'booking_completed', eventData);
+                console.log('Booking completed:', {
+                    conversation_id: conversationId,
+                    phone: customerPhone,
+                    source: bookingSource
+                });
+            }
+        });
+    </script>
+
+    <!-- Booking Info -->
+    <section class="booking-info">
+        <div class="container">
+            <div class="booking-info__grid">
+                <div class="booking-info__card brutalist-card">
+                    <span class="booking-info__icon">📍</span>
+                    <h3>Service Area</h3>
+                    <p>We serve all of Orange County, Los Angeles, and the Inland Empire. If you're not sure, just ask —
+                        we probably cover your area.</p>
+                </div>
+                <div class="booking-info__card brutalist-card">
+                    <span class="booking-info__icon">⏱️</span>
+                    <h3>How Long Does It Take?</h3>
+                    <p><strong>Front windows:</strong> 1-1.5 hours<br><strong>Full car:</strong> 3-4 hours<br>We'll
+                        confirm timing when you book.</p>
+                </div>
+                <div class="booking-info__card brutalist-card">
+                    <span class="booking-info__icon">💳</span>
+                    <h3>Payment</h3>
+                    <p>Pay after the job is done. We accept cash, card, Venmo, and Zelle. No deposit required for most
+                        appointments.</p>
+                </div>
+                <div class="booking-info__card brutalist-card">
+                    <span class="booking-info__icon">🔄</span>
+                    <h3>Reschedule Anytime</h3>
+                    <p>Life happens. You can reschedule or cancel your appointment up to 24 hours before with no fees.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="booking-cta">
+        <div class="container">
+            <div class="booking-cta__content brutalist-card">
+                <h2>Prefer to Talk to Someone?</h2>
+                <p>Call or text us directly — we're happy to answer questions and help you choose the right tint for
+                    your vehicle.</p>
+                <div class="booking-cta__actions">
+                    <a href="tel:7142545641" class="brutalist-btn brutalist-btn--primary brutalist-btn--large">Call
+                        (714) 254-5641</a>
+                    <a href="mailto:obsidianautoworksoc@gmail.com" class="brutalist-btn brutalist-btn--large">Email
+                        Us</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__main">
+                <div class="footer__brand">
+                    <span class="footer__logo">OBSIDIAN<span>AUTOWORKS</span></span>
+                    <p>Mobile Car Window Tint Service</p>
+                    <div class="footer__cities">
+                        <div class="footer__cities-title">Service Areas</div>
+                        <div class="footer__cities-list">
+                            <a href="/irvine-window-tinting">Irvine</a>
+                            <a href="/newport-beach-window-tinting">Newport Beach</a>
+                            <a href="/tustin-window-tinting">Tustin</a>
+                            <a href="/costa-mesa-window-tinting">Costa Mesa</a>
+                            <a href="/laguna-beach-window-tinting">Laguna Beach</a>
+                            <a href="/aliso-viejo-window-tinting">Aliso Viejo</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="footer__links">
+                    <div><strong>Location</strong><br>OC / LA / IE<br>We Come To You!</div>
+                    <div><strong>Contact</strong><br><a
+                            href="mailto:obsidianautoworksoc@gmail.com">obsidianautoworksoc@gmail.com</a><br><a
+                            href="tel:7142545641">(714) 254-5641</a></div>
+                </div>
+            </div>
+            <div class="footer__bottom">
+                <p>© 2026 Obsidian Autoworks. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>

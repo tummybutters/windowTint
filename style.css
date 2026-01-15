@@ -660,7 +660,8 @@ textarea.input {
     overflow-y: hidden;
     cursor: grab;
     padding-bottom: 0.5rem;
-    touch-action: pan-y;
+    touch-action: pan-x;
+    -webkit-overflow-scrolling: touch;
     scrollbar-width: none;
 }
 
@@ -1691,5 +1692,195 @@ textarea.input {
 
     .nav-car-hero__img {
         max-width: 280px;
+    }
+}
+
+/* ===== Booking Section ===== */
+.booking-section {
+    padding: 5rem 0;
+    background: linear-gradient(145deg, var(--gray-800) 0%, var(--gray-900) 100%);
+    border-top: 4px solid var(--black);
+    border-bottom: 4px solid var(--black);
+}
+
+.booking-section .section-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#cal-booking-embed {
+    background: var(--white);
+    border: 4px solid var(--black);
+    box-shadow: var(--shadow-lg);
+}
+
+.booking-note {
+    text-align: center;
+    margin-top: 1.5rem;
+    padding: 1rem 1.5rem;
+    background: rgba(255, 255, 255, 0.05);
+    border: 2px solid rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    font-size: 0.95rem;
+    opacity: 0.9;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* ===== Booking Page Styles ===== */
+.booking-hero {
+    padding: 8rem 0 4rem;
+    background: linear-gradient(145deg, var(--gray-900) 0%, var(--gray-800) 100%);
+    text-align: center;
+}
+
+.booking-hero__content {
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.booking-hero h1 {
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    font-weight: 900;
+    line-height: 1.1;
+    text-transform: uppercase;
+    margin: 1rem 0;
+}
+
+.booking-hero h1 span {
+    background: var(--silver-shine);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.booking-hero p {
+    font-size: 1.1rem;
+    opacity: 0.85;
+    max-width: 550px;
+    margin: 0 auto;
+}
+
+.booking-steps {
+    padding: 4rem 0;
+    background: var(--gray-800);
+}
+
+.booking-steps__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+}
+
+.booking-step {
+    text-align: center;
+    position: relative;
+    padding-top: 3rem;
+}
+
+.booking-step__number {
+    position: absolute;
+    top: -1.5rem;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 3rem;
+    height: 3rem;
+    background: var(--sunset-glow);
+    border: 3px solid var(--black);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 900;
+    font-size: 1.25rem;
+}
+
+.booking-step h3 {
+    font-size: 1.25rem;
+    margin-bottom: 0.75rem;
+    text-transform: uppercase;
+}
+
+.booking-step p {
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+.booking-calendar {
+    padding: 4rem 0;
+    background: linear-gradient(145deg, var(--gray-800) 0%, var(--gray-900) 100%);
+}
+
+.booking-info {
+    padding: 4rem 0;
+    background: var(--gray-800);
+}
+
+.booking-info__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+}
+
+.booking-info__card {
+    text-align: center;
+    padding: 2rem 1.5rem;
+}
+
+.booking-info__icon {
+    font-size: 2.5rem;
+    display: block;
+    margin-bottom: 1rem;
+}
+
+.booking-info__card h3 {
+    font-size: 1.1rem;
+    margin-bottom: 0.75rem;
+    text-transform: uppercase;
+}
+
+.booking-info__card p {
+    font-size: 0.9rem;
+    line-height: 1.6;
+}
+
+.booking-cta {
+    padding: 4rem 0;
+    background: var(--gray-900);
+}
+
+.booking-cta__content {
+    text-align: center;
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 3rem;
+}
+
+.booking-cta__content h2 {
+    font-size: 1.75rem;
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+}
+
+.booking-cta__content p {
+    margin-bottom: 2rem;
+    line-height: 1.6;
+}
+
+.booking-cta__actions {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+@media (max-width: 768px) {
+    .booking-hero {
+        padding: 6rem 0 3rem;
+    }
+
+    .booking-cta__content {
+        padding: 2rem 1.5rem;
     }
 }
