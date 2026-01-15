@@ -172,6 +172,41 @@
             </div>
         </section>
     </main>
+    <script>
+        // Sticky Lead Tracking
+        (function () {
+            const urlParams = new URLSearchParams(window.location.search);
+            const urlCid = urlParams.get('cid');
+            const urlPhone = urlParams.get('phone');
+            if (urlCid) localStorage.setItem('lead_track_cid', urlCid);
+            if (urlPhone) localStorage.setItem('lead_track_phone', urlPhone);
+
+            const leadId = urlCid || localStorage.getItem('lead_track_cid');
+            const phone = urlPhone || localStorage.getItem('lead_track_phone');
+
+            if (leadId) {
+                const decorateLinks = () => {
+                    document.querySelectorAll('a[href*="cal.com"], a[href="/booking.html"]').forEach(link => {
+                        try {
+                            const url = new URL(link.href, window.location.origin);
+                            if (!url.searchParams.has('cid') && !url.searchParams.has('conversation_id')) {
+                                if (url.hostname === 'cal.com' || url.href.includes('cal.com')) {
+                                    url.searchParams.set('conversation_id', leadId);
+                                    if (phone) url.searchParams.set('phone', phone);
+                                } else if (url.pathname === '/booking.html') {
+                                    url.searchParams.set('cid', leadId);
+                                    if (phone) url.searchParams.set('phone', phone);
+                                }
+                                link.href = url.toString();
+                            }
+                        } catch (e) { }
+                    });
+                };
+                window.addEventListener('load', decorateLinks);
+                setInterval(decorateLinks, 2000);
+            }
+        })();
+    </script>
 </body>
 
 </html>

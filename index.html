@@ -362,7 +362,7 @@
         </div>
     </section>
 
-    <!-- Cal.com Embed Script -->
+    <!-- Cal.com Embed & Sticky Lead Tracking -->
     <script type="text/javascript">
         (function (C, A, L) {
             let p = function (a, ar) { a.q.push(ar); };
@@ -389,19 +389,55 @@
 
         Cal("init", { origin: "https://cal.com" });
 
-        Cal("inline", {
-            elementOrSelector: "#cal-booking-embed",
-            calLink: "obisidianautoworks",
-            layout: "month_view"
-        });
+        // Lead Tracking Logic
+        (function () {
+            const urlParams = new URLSearchParams(window.location.search);
+            const urlCid = urlParams.get('cid');
+            const urlPhone = urlParams.get('phone');
 
-        Cal("ui", {
-            "styles": {
-                "branding": { "brandColor": "#000000" }
-            },
-            "hideEventTypeDetails": false,
-            "layout": "month_view"
-        });
+            if (urlCid) localStorage.setItem('lead_track_cid', urlCid);
+            if (urlPhone) localStorage.setItem('lead_track_phone', urlPhone);
+
+            const leadId = urlCid || localStorage.getItem('lead_track_cid');
+            const phone = urlPhone || localStorage.getItem('lead_track_phone');
+
+            const trackingMetadata = {
+                source: leadId ? 'sms_ai_bot' : 'website',
+                ...(leadId && { conversation_id: leadId }),
+                ...(phone && { phone: phone })
+            };
+
+            Cal("inline", {
+                elementOrSelector: "#cal-booking-embed",
+                calLink: "obisidianautoworks",
+                layout: "month_view",
+                config: { "metadata": trackingMetadata }
+            });
+
+            Cal("ui", {
+                "styles": { "branding": { "brandColor": "#000000" } },
+                "hideEventTypeDetails": false,
+                "layout": "month_view"
+            });
+
+            // Decorate any outbound Cal.com links
+            if (leadId) {
+                const decorateLinks = () => {
+                    document.querySelectorAll('a[href*="cal.com"]').forEach(link => {
+                        try {
+                            const url = new URL(link.href);
+                            if (!url.searchParams.has('conversation_id')) {
+                                url.searchParams.set('conversation_id', leadId);
+                                if (phone) url.searchParams.set('phone', phone);
+                                link.href = url.toString();
+                            }
+                        } catch (e) { }
+                    });
+                };
+                window.addEventListener('load', decorateLinks);
+                setInterval(decorateLinks, 2000);
+            }
+        })();
     </script>
 
     <section id="contact" class="contact">

@@ -100,43 +100,8 @@
         </div>
     </section>
 
-    <!-- Cal.com Embed Script with Lead Tracking -->
+    <!-- Cal.com Embed Script with Sticky Lead Tracking -->
     <script type="text/javascript">
-        // Get tracking params from URL
-        // cid = conversation ID from Twil AI system (unique per lead)
-        // phone = customer phone number
-        // source = fallback for generic tracking (ai, website, etc.)
-        const urlParams = new URLSearchParams(window.location.search);
-        const conversationId = urlParams.get('cid') || null;
-        const customerPhone = urlParams.get('phone') || null;
-        const bookingSource = conversationId ? 'ai_lead' : (urlParams.get('source') || 'website');
-
-        // Build tracking metadata
-        const trackingMetadata = {
-            source: bookingSource,
-            ...(conversationId && { conversation_id: conversationId }),
-            ...(customerPhone && { phone: customerPhone }),
-            referrer: document.referrer || 'direct',
-            landed_at: new Date().toISOString()
-        };
-
-        // Log AI lead page visits to Google Analytics
-        if (conversationId) {
-            gtag('event', 'ai_lead_page_visit', {
-                'event_category': 'booking',
-                'event_label': conversationId,
-                'conversation_id': conversationId,
-                'phone': customerPhone
-            });
-            console.log('AI Lead visiting booking page:', conversationId);
-        } else if (urlParams.get('source') === 'ai') {
-            // Fallback for generic AI source without specific lead ID
-            gtag('event', 'ai_booking_page_visit', {
-                'event_category': 'booking',
-                'event_label': 'AI Text Referral'
-            });
-        }
-
         (function (C, A, L) {
             let p = function (a, ar) { a.q.push(ar); };
             let d = C.document;
@@ -162,48 +127,83 @@
 
         Cal("init", { origin: "https://cal.com" });
 
-        // Pass full tracking metadata to Cal.com
-        Cal("inline", {
-            elementOrSelector: "#cal-booking-embed",
-            calLink: "obisidianautoworks",
-            layout: "month_view",
-            config: {
-                "metadata": trackingMetadata
-            }
-        });
+        // Lead Tracking Logic
+        (function () {
+            const urlParams = new URLSearchParams(window.location.search);
+            const urlCid = urlParams.get('cid');
+            const urlPhone = urlParams.get('phone');
 
-        Cal("ui", {
-            "styles": {
-                "branding": { "brandColor": "#000000" }
-            },
-            "hideEventTypeDetails": false,
-            "layout": "month_view"
-        });
+            if (urlCid) localStorage.setItem('lead_track_cid', urlCid);
+            if (urlPhone) localStorage.setItem('lead_track_phone', urlPhone);
 
-        // Track when booking is completed with full lead attribution
-        Cal("on", {
-            action: "bookingSuccessful",
-            callback: (e) => {
-                const eventData = {
+            const leadId = urlCid || localStorage.getItem('lead_track_cid');
+            const phone = urlPhone || localStorage.getItem('lead_track_phone');
+            const bookingSource = leadId ? 'ai_lead' : (urlParams.get('source') || 'website');
+
+            const trackingMetadata = {
+                source: bookingSource,
+                ...(leadId && { conversation_id: leadId }),
+                ...(phone && { phone: phone }),
+                referrer: document.referrer || 'direct',
+                landed_at: new Date().toISOString()
+            };
+
+            // Log visits to GA
+            if (leadId) {
+                gtag('event', 'ai_lead_page_visit', {
                     'event_category': 'booking',
-                    'event_label': conversationId || bookingSource,
-                    'source': bookingSource
-                };
-
-                // Add lead-specific data if available
-                if (conversationId) {
-                    eventData.conversation_id = conversationId;
-                    eventData.phone = customerPhone;
-                }
-
-                gtag('event', 'booking_completed', eventData);
-                console.log('Booking completed:', {
-                    conversation_id: conversationId,
-                    phone: customerPhone,
-                    source: bookingSource
+                    'event_label': leadId,
+                    'conversation_id': leadId,
+                    'phone': phone
                 });
+                console.log('AI Lead recognized:', leadId);
             }
-        });
+
+            Cal("inline", {
+                elementOrSelector: "#cal-booking-embed",
+                calLink: "obisidianautoworks",
+                layout: "month_view",
+                config: { "metadata": trackingMetadata }
+            });
+
+            Cal("ui", {
+                "styles": { "branding": { "brandColor": "#000000" } },
+                "hideEventTypeDetails": false,
+                "layout": "month_view"
+            });
+
+            // Decorate links & track successful bookings
+            const decorateLinks = () => {
+                if (leadId) {
+                    document.querySelectorAll('a[href*="cal.com"]').forEach(link => {
+                        try {
+                            const url = new URL(link.href);
+                            if (!url.searchParams.has('conversation_id')) {
+                                url.searchParams.set('conversation_id', leadId);
+                                if (phone) url.searchParams.set('phone', phone);
+                                link.href = url.toString();
+                            }
+                        } catch (e) { }
+                    });
+                }
+            };
+
+            window.addEventListener('load', decorateLinks);
+            setInterval(decorateLinks, 2000);
+
+            Cal("on", {
+                action: "bookingSuccessful",
+                callback: (e) => {
+                    gtag('event', 'booking_completed', {
+                        'event_category': 'booking',
+                        'event_label': leadId || bookingSource,
+                        'source': bookingSource,
+                        'conversation_id': leadId,
+                        'phone': phone
+                    });
+                }
+            });
+        })();
     </script>
 
     <!-- Booking Info -->
