@@ -56,14 +56,12 @@
         }
 
         .collage-grid {
-            display: flex;
-            align-items: center;
-            gap: 0;
+            display: grid;
+            grid-template-columns: repeat(4, minmax(0, 1fr));
+            grid-auto-rows: clamp(190px, 22vw, 270px);
+            gap: 12px;
             padding: 1rem 0 2rem;
-            overflow-x: auto;
-            overflow-y: visible;
-            -webkit-overflow-scrolling: touch;
-            scroll-snap-type: x mandatory;
+            overflow: visible;
         }
 
         .collage-item {
@@ -74,10 +72,8 @@
             box-shadow: var(--shadow-md);
             transition: transform 0.3s ease;
             transform-origin: bottom left;
-            flex: 0 0 clamp(220px, 24vw, 320px);
-            height: clamp(230px, 26vw, 320px);
-            margin-left: -60px;
-            scroll-snap-align: center;
+            height: 100%;
+            margin: -8px 0 0 -8px;
         }
 
         .collage-item:first-child {
@@ -127,13 +123,13 @@
         }
 
         /* Poker-deck collage offsets */
-        .collage-item:nth-child(1) { transform: rotate(-6deg); z-index: 1; }
-        .collage-item:nth-child(2) { transform: rotate(-3deg); z-index: 2; }
-        .collage-item:nth-child(3) { transform: rotate(-1deg); z-index: 3; }
+        .collage-item:nth-child(1) { transform: rotate(-6deg) translateY(6px); z-index: 1; }
+        .collage-item:nth-child(2) { transform: rotate(-3deg) translateY(4px); z-index: 2; }
+        .collage-item:nth-child(3) { transform: rotate(-1deg) translateY(2px); z-index: 3; }
         .collage-item:nth-child(4) { transform: rotate(2deg); z-index: 4; }
-        .collage-item:nth-child(5) { transform: rotate(4deg); z-index: 5; }
-        .collage-item:nth-child(6) { transform: rotate(6deg); z-index: 6; }
-        .collage-item:nth-child(7) { transform: rotate(8deg); z-index: 7; }
+        .collage-item:nth-child(5) { transform: rotate(4deg) translateY(2px); z-index: 5; }
+        .collage-item:nth-child(6) { transform: rotate(6deg) translateY(4px); z-index: 6; }
+        .collage-item:nth-child(7) { transform: rotate(8deg) translateY(6px); z-index: 7; }
 
         .vip-booking-section {
             background: linear-gradient(145deg, var(--gray-800) 0%, var(--gray-900) 100%);
@@ -183,22 +179,37 @@
         }
 
         @media (max-width: 900px) {
+            .collage-grid {
+                grid-auto-rows: clamp(160px, 26vw, 230px);
+                gap: 10px;
+            }
+
             .collage-item {
-                flex-basis: clamp(200px, 55vw, 280px);
-                height: clamp(220px, 60vw, 320px);
-                margin-left: -50px;
+                margin: -6px 0 0 -6px;
             }
         }
 
         @media (max-width: 500px) {
             .collage-grid {
+                grid-auto-rows: clamp(120px, 24vw, 160px);
+                gap: 8px;
                 padding-bottom: 1rem;
             }
 
             .collage-item {
-                flex-basis: 70vw;
-                height: 75vw;
-                margin-left: -45px;
+                margin: -4px 0 0 -4px;
+            }
+
+            .collage-review {
+                padding: 0.8rem;
+            }
+
+            .collage-review p {
+                font-size: 0.75rem;
+            }
+
+            .collage-review .reviewer {
+                font-size: 0.65rem;
             }
         }
     </style>
