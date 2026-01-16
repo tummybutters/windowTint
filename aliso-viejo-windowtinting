@@ -61,7 +61,7 @@
             <div class="nav__links">
                 <a href="/#services">Services</a>
                 <a href="/#pricing">Pricing</a>
-                <a href="/window-tinting-gallery.html">Gallery</a>
+                <a href="/window-tinting-gallery">Gallery</a>
                 <a href="/#contact">Contact</a>
             </div>
             <a href="tel:7142545641" class="brutalist-btn">(714) 254-5641</a>
@@ -335,14 +335,14 @@
 
             if (leadId) {
                 const decorateLinks = () => {
-                    document.querySelectorAll('a[href*="cal.com"], a[href="/booking.html"]').forEach(link => {
+                    document.querySelectorAll('a[href*="cal.com"], a[href="/booking"]').forEach(link => {
                         try {
                             const url = new URL(link.href, window.location.origin);
                             if (!url.searchParams.has('cid') && !url.searchParams.has('conversation_id')) {
                                 if (url.hostname === 'cal.com' || url.href.includes('cal.com')) {
                                     url.searchParams.set('conversation_id', leadId);
                                     if (phone) url.searchParams.set('phone', phone);
-                                } else if (url.pathname === '/booking.html') {
+                                } else if (url.pathname === '/booking') {
                                     url.searchParams.set('cid', leadId);
                                     if (phone) url.searchParams.set('phone', phone);
                                 }

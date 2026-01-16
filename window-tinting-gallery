@@ -7,13 +7,13 @@
     <title>Car Window Tinting Gallery | Orange County Mobile</title>
     <meta name="description"
         content="See mobile ceramic car window tinting results in Orange County. Before and after photos of real installs. Get a quote today.">
-    <link rel="canonical" href="https://www.obsidianautoworksoc.com/window-tinting-gallery.html">
+    <link rel="canonical" href="https://www.obsidianautoworksoc.com/window-tinting-gallery">
     <link rel="icon" type="image/png" href="favicon.png">
     <meta property="og:title" content="Car Window Tinting Gallery | Orange County Mobile">
     <meta property="og:description"
         content="See mobile ceramic car window tinting results in Orange County. Before and after photos of real installs. Get a quote today.">
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://www.obsidianautoworksoc.com/window-tinting-gallery.html">
+    <meta property="og:url" content="https://www.obsidianautoworksoc.com/window-tinting-gallery">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap"
@@ -41,11 +41,11 @@
             <div class="nav__links">
                 <a href="/#services">Services</a>
                 <a href="/#pricing">Pricing</a>
-                <a href="/window-tinting-gallery.html" class="active">Gallery</a>
+                <a href="/window-tinting-gallery" class="active">Gallery</a>
                 <a href="/#contact">Contact</a>
             </div>
             <div class="nav__actions">
-                <a href="/booking.html" class="brutalist-btn brutalist-btn--accent">Book Online</a>
+                <a href="/booking" class="brutalist-btn brutalist-btn--accent">Book Online</a>
                 <a href="tel:7142545641" class="brutalist-btn brutalist-btn--outline">(714) 254-5641</a>
             </div>
         </div>
@@ -159,6 +159,32 @@
                     <div class="car-card">
                         <div class="car-card__images">
                             <div class="car-card__image">
+                                <a class="car-card__image-link" href="gallery/mercedes-benz-gls-01.jpg">
+                                    <img src="gallery/mercedes-benz-gls-01.jpg"
+                                        alt="Mercedes-Benz GLS with ceramic window tint, front-side view">
+                                </a>
+                            </div>
+                            <div class="car-card__image">
+                                <a class="car-card__image-link" href="gallery/mercedes-benz-gls-02.jpg">
+                                    <img src="gallery/mercedes-benz-gls-02.jpg"
+                                        alt="Mercedes-Benz GLS with ceramic window tint, side view">
+                                </a>
+                            </div>
+                        </div>
+                        <div class="car-card__info">
+                            <h3 class="car-card__title">Mercedes-Benz GLS</h3>
+                            <p class="car-card__desc">Ceramic tint for a clean, upscale SUV profile with added privacy.
+                            </p>
+                            <div class="car-card__tags">
+                                <span class="service-tag service-tag--primary">Ceramic Tint</span>
+                                <span class="service-tag">SUV</span>
+                                <span class="service-tag service-tag--addon">Privacy Focus</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="car-card">
+                        <div class="car-card__images">
+                            <div class="car-card__image">
                                 <a class="car-card__image-link" href="gallery/cadillac-lyriq-01.jpg">
                                     <img src="gallery/cadillac-lyriq-01.jpg"
                                         alt="Cadillac Lyriq with ceramic window tint, front three-quarter view">
@@ -256,6 +282,37 @@
                             </div>
                         </div>
                     </div>
+                    <div class="car-card car-card--tall">
+                        <div class="car-card__images car-card__images--triple">
+                            <div class="car-card__image">
+                                <a class="car-card__image-link" href="gallery/porsche-cayenne-coupe-01.jpg">
+                                    <img src="gallery/porsche-cayenne-coupe-01.jpg"
+                                        alt="Porsche Cayenne Coupe with ceramic window tint, front three-quarter view">
+                                </a>
+                            </div>
+                            <div class="car-card__image">
+                                <a class="car-card__image-link" href="gallery/porsche-cayenne-coupe-02.jpg">
+                                    <img src="gallery/porsche-cayenne-coupe-02.jpg"
+                                        alt="Porsche Cayenne Coupe with ceramic window tint, full side profile">
+                                </a>
+                            </div>
+                            <div class="car-card__image">
+                                <a class="car-card__image-link" href="gallery/porsche-cayenne-coupe-03.jpg">
+                                    <img src="gallery/porsche-cayenne-coupe-03.jpg"
+                                        alt="Porsche Cayenne Coupe with ceramic window tint, rear three-quarter view">
+                                </a>
+                            </div>
+                        </div>
+                        <div class="car-card__info">
+                            <h3 class="car-card__title">Porsche Cayenne Coupe</h3>
+                            <p class="car-card__desc">Ceramic tint for a sleek coupe-SUV profile with added privacy.</p>
+                            <div class="car-card__tags">
+                                <span class="service-tag service-tag--primary">Ceramic Tint</span>
+                                <span class="service-tag">SUV Coupe</span>
+                                <span class="service-tag service-tag--addon">Privacy Focus</span>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
@@ -347,7 +404,7 @@
                 <h2>Ready to Transform Your Ride?</h2>
                 <p>Get a free quote for your vehicle. We come to you!</p>
                 <div class="gallery-cta__actions">
-                    <a href="/booking.html" class="brutalist-btn brutalist-btn--primary brutalist-btn--large">
+                    <a href="/booking" class="brutalist-btn brutalist-btn--primary brutalist-btn--large">
                         Book Online Now
                     </a>
                     <a href="tel:7142545641" class="brutalist-btn brutalist-btn--large">
@@ -447,14 +504,14 @@
 
             if (leadId) {
                 const decorateLinks = () => {
-                    document.querySelectorAll('a[href*="cal.com"], a[href="/booking.html"]').forEach(link => {
+                    document.querySelectorAll('a[href*="cal.com"], a[href="/booking"]').forEach(link => {
                         try {
                             const url = new URL(link.href, window.location.origin);
                             if (!url.searchParams.has('cid') && !url.searchParams.has('conversation_id')) {
                                 if (url.hostname === 'cal.com' || url.href.includes('cal.com')) {
                                     url.searchParams.set('conversation_id', leadId);
                                     if (phone) url.searchParams.set('phone', phone);
-                                } else if (url.pathname === '/booking.html') {
+                                } else if (url.pathname === '/booking') {
                                     url.searchParams.set('cid', leadId);
                                     if (phone) url.searchParams.set('phone', phone);
                                 }

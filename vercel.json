@@ -17,6 +17,26 @@
       "permanent": true
     },
     {
+      "source": "/services",
+      "destination": "/window-tinting-gallery",
+      "permanent": true
+    },
+    {
+      "source": "/window-tinting-gallery.html",
+      "destination": "/window-tinting-gallery",
+      "permanent": true
+    },
+    {
+      "source": "/booking.html",
+      "destination": "/booking",
+      "permanent": true
+    },
+    {
+      "source": "/vip-booking.html",
+      "destination": "/vip-booking",
+      "permanent": true
+    },
+    {
       "source": "/irvine.html",
       "destination": "/irvine-window-tinting",
       "permanent": true
@@ -64,40 +84,60 @@
   ],
   "rewrites": [
     {
+      "source": "/",
+      "destination": "/index"
+    },
+    {
       "source": "/booking",
-      "destination": "/booking.html"
+      "destination": "/booking"
     },
     {
       "source": "/vip-booking",
-      "destination": "/vip-booking.html"
-    },
-    {
-      "source": "/window-tinting-gallery",
-      "destination": "/services.html"
+      "destination": "/vip-booking"
     },
     {
       "source": "/irvine-window-tinting",
-      "destination": "/irvine.html"
+      "destination": "/irvine"
     },
     {
       "source": "/newport-beach-window-tinting",
-      "destination": "/newport-beach.html"
+      "destination": "/newport-beach"
     },
     {
       "source": "/tustin-window-tinting",
-      "destination": "/tustin.html"
+      "destination": "/tustin"
     },
     {
       "source": "/costa-mesa-window-tinting",
-      "destination": "/costa-mesa-windowtinting.html"
+      "destination": "/costa-mesa-windowtinting"
     },
     {
       "source": "/laguna-beach-window-tinting",
-      "destination": "/laguna-beach-windowtinting.html"
+      "destination": "/laguna-beach-windowtinting"
     },
     {
       "source": "/aliso-viejo-window-tinting",
-      "destination": "/aliso-viejo-windowtinting.html"
+      "destination": "/aliso-viejo-windowtinting"
+    }
+  ],
+  "headers": [
+    {
+      "source": "/",
+      "headers": [
+        {
+          "key": "Content-Type",
+          "value": "text/html; charset=utf-8"
+        }
+      ]
+    },
+    {
+      "source": "/(index|booking|vip-booking|services|window-tinting-gallery|irvine|irvine-windowtinting|irvine-window-tinting|newport-beach|newport-beach-windowtinting|newport-beach-window-tinting|tustin|tustin-windowtinting|tustin-window-tinting|costa-mesa-windowtinting|costa-mesa-window-tinting|laguna-beach-windowtinting|laguna-beach-window-tinting|aliso-viejo-windowtinting|aliso-viejo-window-tinting)",
+      "headers": [
+        {
+          "key": "Content-Type",
+          "value": "text/html; charset=utf-8"
+        }
+      ]
     }
   ]
 }

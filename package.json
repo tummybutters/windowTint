@@ -2,6 +2,6 @@
   "name": "obsidian-autoworks-site",
   "private": true,
   "scripts": {
-    "dev": "python3 -m http.server 5173"
+    "dev": "python3 dev_server.py"
   }
 }
