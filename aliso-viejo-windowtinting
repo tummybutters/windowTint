@@ -335,17 +335,12 @@
 
             if (leadId) {
                 const decorateLinks = () => {
-                    document.querySelectorAll('a[href*="cal.com"], a[href="/booking"]').forEach(link => {
+                    document.querySelectorAll('a[href*="squareup.com"], a[href="/booking"]').forEach(link => {
                         try {
                             const url = new URL(link.href, window.location.origin);
                             if (!url.searchParams.has('cid') && !url.searchParams.has('conversation_id')) {
-                                if (url.hostname === 'cal.com' || url.href.includes('cal.com')) {
-                                    url.searchParams.set('conversation_id', leadId);
-                                    if (phone) url.searchParams.set('phone', phone);
-                                } else if (url.pathname === '/booking') {
-                                    url.searchParams.set('cid', leadId);
-                                    if (phone) url.searchParams.set('phone', phone);
-                                }
+                                url.searchParams.set('cid', leadId);
+                                if (phone) url.searchParams.set('phone', phone);
                                 link.href = url.toString();
                             }
                         } catch (e) { }

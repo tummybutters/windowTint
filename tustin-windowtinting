@@ -58,7 +58,7 @@
         <a href="/#pricing">Pricing</a>
         <a href="/#reviews">Reviews</a>
         <a href="/#contact">Contact</a>
-        <a href="https://cal.com/obisidianautoworks" class="nav-book-btn">Book Now</a>
+        <a href="https://app.squareup.com/appointments/book/py2a8n8lsuxp5n/LWC5SDBDX3R99/start" class="nav-book-btn">Book Now</a>
     </nav>
 
     <main>
@@ -71,7 +71,7 @@
                     UV defense, and sharp clarity without a shop drop-off.
                 </p>
                 <div class="hero-actions">
-                    <a href="https://cal.com/obisidianautoworks" class="cta-button booking">Book Online</a>
+                    <a href="https://app.squareup.com/appointments/book/py2a8n8lsuxp5n/LWC5SDBDX3R99/start" class="cta-button booking">Book Online</a>
                     <a href="/#contact" class="cta-button">Get a Free Quote</a>
                     <a href="/#pricing" class="cta-button secondary">See Pricing</a>
                     <span class="hero-note">Serving Tustin and all of Orange County</span>
@@ -114,7 +114,7 @@
                     </article>
                 </div>
                 <div class="section-actions">
-                    <a href="https://cal.com/obisidianautoworks" class="cta-button booking">Book in Tustin</a>
+                    <a href="https://app.squareup.com/appointments/book/py2a8n8lsuxp5n/LWC5SDBDX3R99/start" class="cta-button booking">Book in Tustin</a>
                     <a href="/#contact" class="cta-button secondary">Request Quote</a>
                 </div>
             </div>
@@ -164,7 +164,7 @@
                     <div class="contact-card">
                         <h3>Prefer to start at home?</h3>
                         <p>We come to your driveway, office, or garage with everything needed.</p>
-                        <a href="https://cal.com/obisidianautoworks" class="cta-button booking">Book Now Online</a>
+                        <a href="https://app.squareup.com/appointments/book/py2a8n8lsuxp5n/LWC5SDBDX3R99/start" class="cta-button booking">Book Now Online</a>
                         <a href="/#contact" class="cta-button secondary">Request a Quote</a>
                     </div>
                 </div>
@@ -185,17 +185,12 @@
 
             if (leadId) {
                 const decorateLinks = () => {
-                    document.querySelectorAll('a[href*="cal.com"], a[href="/booking"]').forEach(link => {
+                    document.querySelectorAll('a[href*="squareup.com"], a[href="/booking"]').forEach(link => {
                         try {
                             const url = new URL(link.href, window.location.origin);
                             if (!url.searchParams.has('cid') && !url.searchParams.has('conversation_id')) {
-                                if (url.hostname === 'cal.com' || url.href.includes('cal.com')) {
-                                    url.searchParams.set('conversation_id', leadId);
-                                    if (phone) url.searchParams.set('phone', phone);
-                                } else if (url.pathname === '/booking') {
-                                    url.searchParams.set('cid', leadId);
-                                    if (phone) url.searchParams.set('phone', phone);
-                                }
+                                url.searchParams.set('cid', leadId);
+                                if (phone) url.searchParams.set('phone', phone);
                                 link.href = url.toString();
                             }
                         } catch (e) { }

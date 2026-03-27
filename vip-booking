@@ -369,8 +369,9 @@
                 </div>
             </div>
 
-            <div id="cal-booking-embed" style="width: 100%; min-height: 700px; overflow: hidden; border-radius: 8px;">
-            </div>
+            <!-- Start Square Appointments Embed Code -->
+            <script src='https://square.site/appointments/buyer/widget/py2a8n8lsuxp5n/LWC5SDBDX3R99.js'></script>
+            <!-- End Square Appointments Embed Code -->
 
             <div class="booking-note" style="margin-top: 2rem;">
                 <p>💳 No deposit required. Final pricing is confirmed at your appointment. Pay only after the work is
@@ -385,34 +386,8 @@
         </div>
     </footer>
 
-    <!-- Cal.com Embed & Sticky Lead Tracking -->
+    <!-- Lead Tracking -->
     <script type="text/javascript">
-        (function (C, A, L) {
-            let p = function (a, ar) { a.q.push(ar); };
-            let d = C.document;
-            C.Cal = C.Cal || function () {
-                let cal = C.Cal;
-                let ar = arguments;
-                if (!cal.loaded) {
-                    cal.ns = {};
-                    cal.q = cal.q || [];
-                    d.head.appendChild(d.createElement("script")).src = A;
-                    cal.loaded = true;
-                }
-                if (ar[0] === L) {
-                    const api = function () { p(api, arguments); };
-                    const namespace = ar[1];
-                    api.q = api.q || [];
-                    typeof namespace === "string" ? (cal.ns[namespace] = api) && p(api, ar) : p(cal, ar);
-                    return;
-                }
-                p(cal, ar);
-            };
-        })(window, "https://app.cal.com/embed/embed.js", "init");
-
-        Cal("init", { origin: "https://cal.com" });
-
-        // Lead Tracking Logic
         (function () {
             const urlParams = new URLSearchParams(window.location.search);
             const urlCid = urlParams.get('cid');
@@ -424,35 +399,12 @@
             const leadId = urlCid || localStorage.getItem('lead_track_cid');
             const phone = urlPhone || localStorage.getItem('lead_track_phone');
 
-            const trackingMetadata = {
-                source: 'vip_landing',
-                ...(leadId && { conversation_id: leadId }),
-                ...(phone && { phone: phone }),
-                landed_at: new Date().toISOString()
-            };
-
-            Cal("inline", {
-                elementOrSelector: "#cal-booking-embed",
-                calLink: "obisidianautoworks",
-                layout: "month_view",
-                config: { "metadata": trackingMetadata }
-            });
-
-            Cal("ui", {
-                "styles": { "branding": { "brandColor": "#000000" } },
-                "hideEventTypeDetails": false,
-                "layout": "month_view"
-            });
-
-            Cal("on", {
-                action: "bookingSuccessful",
-                callback: (e) => {
-                    gtag('event', 'vip_booking_completed', {
-                        'event_label': leadId || 'anonymous_vip',
-                        'conversation_id': leadId
-                    });
-                }
-            });
+            if (leadId) {
+                gtag('event', 'vip_page_visit', {
+                    'event_label': leadId,
+                    'conversation_id': leadId
+                });
+            }
         })();
     </script>
     <script>
