@@ -1709,11 +1709,6 @@ textarea.input {
     align-items: center;
 }
 
-#cal-booking-embed {
-    background: var(--white);
-    border: 4px solid var(--black);
-    box-shadow: var(--shadow-lg);
-}
 
 .booking-note {
     text-align: center;
