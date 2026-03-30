@@ -354,8 +354,7 @@
                 </p>
             </div>
 
-            <p class="booking-note">💳 Final pricing is confirmed at your appointment. Pay only after the work is done —
-                at your home, office, or wherever works for you.</p>
+            <p class="booking-note">💳 Deposit required to lock in your appointment. Final pricing is confirmed before your service — at your home, office, or wherever works for you.</p>
 
             <!-- Start Square Appointments Embed Code -->
             <script src='https://square.site/appointments/buyer/widget/py2a8n8lsuxp5n/LWC5SDBDX3R99.js'></script>
