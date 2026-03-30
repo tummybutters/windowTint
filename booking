@@ -93,8 +93,7 @@
             <div class="section-header" style="text-align: center; margin-bottom: 2rem;">
                 <h2>Select Your <span>Date & Time</span></h2>
             </div>
-            <p class="booking-note">💳 Final pricing is confirmed at your appointment. Pay only after the work is done —
-                at your home, office, or wherever works for you.</p>
+            <p class="booking-note">💳 Deposit required to lock in your appointment. Final pricing is confirmed before your service — at your home, office, or wherever works for you.</p>
             <!-- Start Square Appointments Embed Code -->
             <script src='https://square.site/appointments/buyer/widget/py2a8n8lsuxp5n/LWC5SDBDX3R99.js'></script>
             <!-- End Square Appointments Embed Code -->
@@ -165,8 +164,7 @@
                 <div class="booking-info__card brutalist-card">
                     <span class="booking-info__icon">💳</span>
                     <h3>Payment</h3>
-                    <p>Pay after the job is done. We accept cash, card, Venmo, and Zelle. No deposit required for most
-                        appointments.</p>
+                    <p>Deposit required to secure your spot. We accept cash, card, Venmo, and Zelle. Remaining balance due after the job is done.</p>
                 </div>
                 <div class="booking-info__card brutalist-card">
                     <span class="booking-info__icon">🔄</span>
