@@ -338,7 +338,7 @@
                 </table>
             </div>
             <div class="pricing__cta">
-                <a href="tel:7142545641" class="brutalist-btn brutalist-btn--primary brutalist-btn--large">Get Your
+                <a href="tel:7146007134" class="brutalist-btn brutalist-btn--primary brutalist-btn--large">Get Your
                     Quote →</a>
             </div>
         </div>
@@ -403,10 +403,10 @@
                         <h2>READY TO <span>TINT?</span></h2>
                     </div>
                     <div class="contact__cards">
-                        <a href="tel:7142545641" class="brutalist-card contact-card">
+                        <a href="tel:7146007134" class="brutalist-card contact-card">
                             <span class="contact-card__icon">📞</span>
                             <span class="contact-card__label">Phone</span>
-                            <span class="contact-card__value">(714) 254-5641</span>
+                            <span class="contact-card__value">(714) 600-7134</span>
                         </a>
                         <a href="mailto:obsidianautoworksoc@gmail.com" class="brutalist-card contact-card">
                             <span class="contact-card__icon">✉️</span>
@@ -468,7 +468,7 @@
                     <div><strong>Location</strong><br>OC / LA / IE<br>We Come To You!</div>
                     <div><strong>Contact</strong><br><a
                             href="mailto:obsidianautoworksoc@gmail.com">obsidianautoworksoc@gmail.com</a><br><a
-                            href="tel:7142545641">(714) 254-5641</a></div>
+                            href="tel:7146007134">(714) 600-7134</a></div>
                 </div>
             </div>
             <div class="footer__bottom">
@@ -728,7 +728,7 @@
                         })
                         .catch(function (error) {
                             console.error('FAILED...', error);
-                            formStatus.textContent = '✗ Failed to send message. Please call us at (714) 254-5641.';
+                            formStatus.textContent = '✗ Failed to send message. Please call us at (714) 600-7134.';
                             formStatus.className = 'form-status form-status--error';
                         })
                         .finally(function () {
