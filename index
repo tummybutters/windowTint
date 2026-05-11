@@ -47,7 +47,7 @@
             </div>
             <div class="nav__actions">
                 <a href="/booking" class="brutalist-btn brutalist-btn--accent">Book Online</a>
-                <a href="tel:7142545641" class="brutalist-btn brutalist-btn--outline">(714) 254-5641</a>
+                <a href="#pricing" class="brutalist-btn">See Pricing</a>
             </div>
         </div>
     </nav>
@@ -65,7 +65,7 @@
             <div class="hero__actions">
                 <a href="/booking" class="brutalist-btn brutalist-btn--primary">Book Online
                     Now</a>
-                <a href="tel:7142545641" class="brutalist-btn brutalist-btn--outline">(714) 254-5641</a>
+                <a href="#pricing" class="brutalist-btn">See Pricing</a>
             </div>
         </div>
     </header>
