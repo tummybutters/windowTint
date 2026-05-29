@@ -5,8 +5,42 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>VIP Mobile Window Tinting Booking | Obsidian Autoworks</title>
-    <meta name="robots" content="noindex, nofollow"> <!-- Secret landing page -->
+    <meta name="description"
+        content="Book VIP mobile window tinting in Orange County with Obsidian Autoworks. Real customer results, ceramic film options, mobile service, and Square online booking.">
+    <link rel="canonical" href="https://www.obsidianautoworksoc.com/vip-booking">
     <link rel="icon" type="image/png" href="favicon.png">
+    <meta property="og:title" content="VIP Mobile Window Tinting Booking | Obsidian Autoworks">
+    <meta property="og:description"
+        content="Book mobile window tinting in Orange County with real customer results, ceramic film options, and online Square appointment scheduling.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.obsidianautoworksoc.com/vip-booking">
+    <meta property="og:image" content="https://www.obsidianautoworksoc.com/assets/hero-sunset.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="VIP Mobile Window Tinting Booking | Obsidian Autoworks">
+    <meta name="twitter:description"
+        content="Book mobile auto window tinting in Orange County. Obsidian Autoworks comes to you.">
+    <meta name="twitter:image" content="https://www.obsidianautoworksoc.com/assets/hero-sunset.png">
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "AutoRepair",
+            "name": "Obsidian Autoworks",
+            "url": "https://www.obsidianautoworksoc.com/vip-booking",
+            "telephone": "+17146007134",
+            "email": "obsidianautoworksoc@gmail.com",
+            "image": "https://www.obsidianautoworksoc.com/assets/hero-sunset.png",
+            "areaServed": ["Orange County", "Los Angeles", "Inland Empire"],
+            "priceRange": "$$",
+            "description": "Mobile automotive window tinting and ceramic tint installation for Orange County drivers.",
+            "makesOffer": {
+                "@type": "Offer",
+                "itemOffered": {
+                    "@type": "Service",
+                    "name": "Mobile automotive window tinting"
+                }
+            }
+        }
+    </script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap"
@@ -236,7 +270,6 @@
     </style>
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-TR9ET60HX3"></script>
-    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17846304809"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
         function gtag() { dataLayer.push(arguments); }
@@ -250,7 +283,7 @@
     <nav class="nav">
         <div class="nav__container">
             <a href="/" class="nav__logo">
-                <img src="car-hero.png" alt="Obsidian Autoworks" class="nav__logo-car">
+                <img src="car-hero.webp" alt="Obsidian Autoworks" class="nav__logo-car" width="500" height="200">
                 <span class="nav__logo-text">OBSIDIAN<span>AUTOWORKS</span></span>
             </a>
             <div class="nav__actions">
@@ -264,6 +297,10 @@
             <span class="tag">EXCLUSIVE OFFER</span>
             <h1>Join 2,600+ <span>Satisfied Drivers</span></h1>
             <p>The highest rated mobile tint service in Orange County. We come to you.</p>
+            <div class="hero__actions">
+                <a href="#vip-booking" class="brutalist-btn brutalist-btn--primary">Book VIP Slot</a>
+                <a href="tel:7146007134" class="brutalist-btn brutalist-btn--outline">Call (714) 600-7134</a>
+            </div>
         </div>
     </header>
 
@@ -271,7 +308,8 @@
         <div class="collage-grid">
             <!-- Large Focus -->
             <div class="collage-item item--large">
-                <img src="gallery/mercedes-benz-gls-01.jpg" alt="Mercedes GLS Window Tint">
+                <img src="gallery/optimized/vip-mercedes-benz-gls-01.webp" alt="Mercedes GLS Window Tint" width="900" height="1600"
+                    fetchpriority="high">
                 <div class="collage-review">
                     <p>"Oh my gosh!!! Blown away at how well they came out. The attention to detail is insane."</p>
                     <div class="reviewer">Nesha Bowman ★★★★★</div>
@@ -280,7 +318,7 @@
 
             <!-- Wide -->
             <div class="collage-item item--wide">
-                <img src="gallery/bmw-m4-01.jpg" alt="BMW M4 Window Tint">
+                <img src="gallery/optimized/vip-bmw-m4-01.webp" alt="BMW M4 Window Tint" width="760" height="810" loading="lazy">
                 <div class="collage-review">
                     <p>"Such a big difference bro. Definitely gives it a new look. I'll be hitting you up for other
                         vehicles."</p>
@@ -290,7 +328,7 @@
 
             <!-- Standard -->
             <div class="collage-item">
-                <img src="gallery/lexus-gx-01.jpg" alt="Lexus GX Window Tint">
+                <img src="gallery/optimized/vip-lexus-gx-01.webp" alt="Lexus GX Window Tint" width="760" height="713" loading="lazy">
                 <div class="collage-review">
                     <p>"Dude I appreciate your work.. it's solid. commitment to detail."</p>
                     <div class="reviewer">Joe Le ★★★★★</div>
@@ -299,7 +337,8 @@
 
             <!-- Tall -->
             <div class="collage-item item--tall">
-                <img src="gallery/porsche-cayenne-coupe-01.jpg" alt="Porsche Cayenne Window Tint">
+                <img src="gallery/optimized/vip-porsche-cayenne-coupe-01.webp" alt="Porsche Cayenne Window Tint" width="900"
+                    height="1600" loading="lazy">
                 <div class="collage-review">
                     <p>"Car came out so good! Originally a fishbowl, now spectacular!"</p>
                     <div class="reviewer">Jadelyn Belle ★★★★★</div>
@@ -308,7 +347,8 @@
 
             <!-- Standard -->
             <div class="collage-item">
-                <img src="gallery/toyota-tacoma-01.jpg" alt="Toyota Tacoma Window Tint">
+                <img src="gallery/optimized/vip-toyota-tacoma-01.webp" alt="Toyota Tacoma Window Tint" width="760" height="733"
+                    loading="lazy">
                 <div class="collage-review">
                     <p>"Bro thank you for your work... the truck looks very nice."</p>
                     <div class="reviewer">Ahmad Bond ★★★★★</div>
@@ -317,7 +357,8 @@
 
             <!-- Wide -->
             <div class="collage-item item--wide">
-                <img src="gallery/cadillac-lyriq-01.jpg" alt="Cadillac Lyriq Window Tint">
+                <img src="gallery/optimized/vip-cadillac-lyriq-01.webp" alt="Cadillac Lyriq Window Tint" width="760" height="702"
+                    loading="lazy">
                 <div class="collage-review">
                     <p>"Best in the game! Did my car and came out 10/10."</p>
                     <div class="reviewer">Bryan Rodriguez ★★★★★</div>
@@ -326,7 +367,8 @@
 
             <!-- Standard -->
             <div class="collage-item">
-                <img src="gallery/toyota-4runner-01.jpg" alt="Toyota 4Runner Window Tint">
+                <img src="gallery/optimized/vip-toyota-4runner-01.webp" alt="Toyota 4Runner Window Tint" width="760" height="646"
+                    loading="lazy">
                 <div class="collage-review">
                     <p>"Best tinting service in OC! Whole car looks sleek now."</p>
                     <div class="reviewer">Alex Brockman ★★★★★</div>
@@ -360,7 +402,7 @@
         </div>
     </section>
 
-    <section class="vip-booking-section">
+    <section class="vip-booking-section" id="vip-booking">
         <div class="container">
             <div class="vip-booking-header">
                 <h2>Secure Your <span>Time Slot</span></h2>
@@ -386,28 +428,6 @@
             <p>© 2026 Obsidian Autoworks. Premium Mobile Window Tinting.</p>
         </div>
     </footer>
-
-    <!-- Lead Tracking -->
-    <script type="text/javascript">
-        (function () {
-            const urlParams = new URLSearchParams(window.location.search);
-            const urlCid = urlParams.get('cid');
-            const urlPhone = urlParams.get('phone');
-
-            if (urlCid) localStorage.setItem('lead_track_cid', urlCid);
-            if (urlPhone) localStorage.setItem('lead_track_phone', urlPhone);
-
-            const leadId = urlCid || localStorage.getItem('lead_track_cid');
-            const phone = urlPhone || localStorage.getItem('lead_track_phone');
-
-            if (leadId) {
-                gtag('event', 'vip_page_visit', {
-                    'event_label': leadId,
-                    'conversation_id': leadId
-                });
-            }
-        })();
-    </script>
     <script>
         (() => {
             const items = document.querySelectorAll('.collage-item');
@@ -422,6 +442,7 @@
             });
         })();
     </script>
+    <script src="/lead-tracking.js" defer></script>
 </body>
 
 </html>

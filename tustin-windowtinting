@@ -42,7 +42,6 @@
     <link rel="stylesheet" href="style.css">
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-TR9ET60HX3"></script>
-    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17846304809"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
         function gtag() { dataLayer.push(arguments); }
@@ -173,36 +172,7 @@
             </div>
         </section>
     </main>
-    <script>
-        // Sticky Lead Tracking
-        (function () {
-            const urlParams = new URLSearchParams(window.location.search);
-            const urlCid = urlParams.get('cid');
-            const urlPhone = urlParams.get('phone');
-            if (urlCid) localStorage.setItem('lead_track_cid', urlCid);
-            if (urlPhone) localStorage.setItem('lead_track_phone', urlPhone);
-
-            const leadId = urlCid || localStorage.getItem('lead_track_cid');
-            const phone = urlPhone || localStorage.getItem('lead_track_phone');
-
-            if (leadId) {
-                const decorateLinks = () => {
-                    document.querySelectorAll('a[href*="squareup.com"], a[href="/booking"]').forEach(link => {
-                        try {
-                            const url = new URL(link.href, window.location.origin);
-                            if (!url.searchParams.has('cid') && !url.searchParams.has('conversation_id')) {
-                                url.searchParams.set('cid', leadId);
-                                if (phone) url.searchParams.set('phone', phone);
-                                link.href = url.toString();
-                            }
-                        } catch (e) { }
-                    });
-                };
-                window.addEventListener('load', decorateLinks);
-                setInterval(decorateLinks, 2000);
-            }
-        })();
-    </script>
+    <script src="/lead-tracking.js" defer></script>
 </body>
 
 </html>

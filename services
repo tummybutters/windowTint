@@ -22,7 +22,6 @@
     <link rel="stylesheet" href="services.css?v=20260106-5">
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-TR9ET60HX3"></script>
-    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17846304809"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
         function gtag() { dataLayer.push(arguments); }
@@ -37,7 +36,7 @@
     <nav class="nav">
         <div class="nav__container">
             <a href="/" class="nav__logo">
-                <img src="car-hero.png" alt="Obsidian Autoworks" class="nav__logo-car">
+                <img src="car-hero.webp" alt="Obsidian Autoworks" class="nav__logo-car" width="500" height="200">
                 <span class="nav__logo-text">OBSIDIAN<span>AUTOWORKS</span></span>
             </a>
             <div class="nav__links">
@@ -47,7 +46,7 @@
                 <a href="/#contact">Contact</a>
             </div>
             <div class="nav__actions">
-                <a href="/booking" class="brutalist-btn brutalist-btn--accent">Book Online</a>
+                <a href="/vip-booking" class="brutalist-btn brutalist-btn--accent">Book Online</a>
                 <a href="tel:7146007134" class="brutalist-btn brutalist-btn--outline">(714) 600-7134</a>
             </div>
         </div>
@@ -349,7 +348,7 @@
                 <h2>Ready to Transform Your Ride?</h2>
                 <p>Get a free quote for your vehicle. We come to you!</p>
                 <div class="gallery-cta__actions">
-                    <a href="/booking" class="brutalist-btn brutalist-btn--primary brutalist-btn--large">
+                    <a href="/vip-booking" class="brutalist-btn brutalist-btn--primary brutalist-btn--large">
                         Book Online Now
                     </a>
                     <a href="tel:7146007134" class="brutalist-btn brutalist-btn--large">
@@ -435,36 +434,7 @@
             }
         });
     </script>
-    <script>
-        // Sticky Lead Tracking
-        (function () {
-            const urlParams = new URLSearchParams(window.location.search);
-            const urlCid = urlParams.get('cid');
-            const urlPhone = urlParams.get('phone');
-            if (urlCid) localStorage.setItem('lead_track_cid', urlCid);
-            if (urlPhone) localStorage.setItem('lead_track_phone', urlPhone);
-
-            const leadId = urlCid || localStorage.getItem('lead_track_cid');
-            const phone = urlPhone || localStorage.getItem('lead_track_phone');
-
-            if (leadId) {
-                const decorateLinks = () => {
-                    document.querySelectorAll('a[href*="squareup.com"], a[href="/booking"]').forEach(link => {
-                        try {
-                            const url = new URL(link.href, window.location.origin);
-                            if (!url.searchParams.has('cid') && !url.searchParams.has('conversation_id')) {
-                                url.searchParams.set('cid', leadId);
-                                if (phone) url.searchParams.set('phone', phone);
-                                link.href = url.toString();
-                            }
-                        } catch (e) { }
-                    });
-                };
-                window.addEventListener('load', decorateLinks);
-                setInterval(decorateLinks, 2000);
-            }
-        })();
-    </script>
+    <script src="/lead-tracking.js" defer></script>
 </body>
 
 </html>

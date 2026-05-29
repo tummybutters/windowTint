@@ -1029,6 +1029,109 @@ textarea.input {
     box-shadow: var(--shadow-sm);
 }
 
+body.quote-modal-open {
+    overflow: hidden;
+}
+
+.quote-modal[hidden] {
+    display: none;
+}
+
+.quote-modal {
+    position: fixed;
+    inset: 0;
+    z-index: 1000;
+    display: grid;
+    place-items: center;
+    padding: 1.5rem;
+}
+
+.quote-modal__backdrop {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.72);
+    backdrop-filter: blur(6px);
+}
+
+.quote-modal__panel {
+    position: relative;
+    z-index: 1;
+    width: min(680px, 100%);
+    max-height: min(760px, calc(100vh - 3rem));
+    overflow-y: auto;
+    padding: clamp(1.25rem, 4vw, 2rem);
+    background: linear-gradient(145deg, #ffffff 0%, #f1f1f1 100%);
+    color: var(--black);
+    border: 4px solid var(--black);
+    box-shadow: 12px 12px 0 var(--black);
+}
+
+.quote-modal__close {
+    position: absolute;
+    top: 0.75rem;
+    right: 0.75rem;
+    width: 2.25rem;
+    height: 2.25rem;
+    border: 3px solid var(--black);
+    background: var(--sunset-glow);
+    color: var(--black);
+    font-size: 1.5rem;
+    font-weight: 900;
+    line-height: 1;
+    cursor: pointer;
+    box-shadow: 3px 3px 0 var(--black);
+}
+
+.quote-modal h3 {
+    margin: 0.75rem 0 0.5rem;
+    font-size: clamp(1.6rem, 5vw, 2.35rem);
+    line-height: 1;
+    text-transform: uppercase;
+}
+
+.quote-modal__intro {
+    max-width: 560px;
+    color: #333;
+    font-weight: 600;
+}
+
+.quote-modal__preview {
+    margin: 1.25rem 0;
+    padding: 1rem;
+    min-height: 170px;
+    white-space: pre-wrap;
+    font-family: var(--font);
+    font-size: 1rem;
+    line-height: 1.55;
+    background: #111;
+    color: var(--white);
+    border: 3px solid var(--black);
+    box-shadow: inset 0 0 0 2px rgba(255, 255, 255, 0.08);
+}
+
+.quote-modal__actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+}
+
+.quote-modal__actions .brutalist-btn {
+    flex: 1 1 145px;
+}
+
+.quote-modal__actions .brutalist-btn--outline {
+    color: var(--black);
+    border-color: var(--black);
+    box-shadow: 4px 4px 0 var(--black);
+}
+
+.quote-modal__status {
+    min-height: 1.4rem;
+    margin-top: 1rem;
+    font-weight: 800;
+    color: #166534;
+}
+
 /* ===== Footer ===== */
 .footer {
     background: var(--black);
@@ -1250,7 +1353,7 @@ textarea.input {
     text-align: center;
     padding: 160px 8vw 180px;
     overflow: hidden;
-    background: url("assets/hero-sunset.png") center/cover no-repeat;
+    background: url("assets/hero-sunset.webp") center/cover no-repeat;
 }
 
 .hero::before {
@@ -1709,6 +1812,13 @@ textarea.input {
     align-items: center;
 }
 
+.booking-section__actions {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-top: 2rem;
+}
 
 .booking-note {
     text-align: center;

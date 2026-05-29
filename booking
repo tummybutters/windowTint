@@ -21,7 +21,6 @@
     <link rel="stylesheet" href="style.css?v=20260115-1">
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-TR9ET60HX3"></script>
-    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17846304809"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
         function gtag() { dataLayer.push(arguments); }
@@ -35,7 +34,7 @@
     <nav class="nav">
         <div class="nav__container">
             <a href="/" class="nav__logo">
-                <img src="car-hero.png" alt="Obsidian Autoworks" class="nav__logo-car">
+                <img src="car-hero.webp" alt="Obsidian Autoworks" class="nav__logo-car" width="500" height="200">
                 <span class="nav__logo-text">OBSIDIAN<span>AUTOWORKS</span></span>
             </a>
             <div class="nav__links">
@@ -101,52 +100,6 @@
             <!-- End Square Appointments Embed Code -->
         </div>
     </section>
-
-    <!-- Lead Tracking -->
-    <script type="text/javascript">
-        (function () {
-            const urlParams = new URLSearchParams(window.location.search);
-            const urlCid = urlParams.get('cid');
-            const urlPhone = urlParams.get('phone');
-
-            if (urlCid) localStorage.setItem('lead_track_cid', urlCid);
-            if (urlPhone) localStorage.setItem('lead_track_phone', urlPhone);
-
-            const leadId = urlCid || localStorage.getItem('lead_track_cid');
-            const phone = urlPhone || localStorage.getItem('lead_track_phone');
-
-            // Log visits to GA
-            if (leadId) {
-                gtag('event', 'ai_lead_page_visit', {
-                    'event_category': 'booking',
-                    'event_label': leadId,
-                    'conversation_id': leadId,
-                    'phone': phone
-                });
-                console.log('AI Lead recognized:', leadId);
-            }
-
-            // Decorate booking links
-            const decorateLinks = () => {
-                if (leadId) {
-                    document.querySelectorAll('a[href*="squareup.com"], a[href="/booking"]').forEach(link => {
-                        try {
-                            const url = new URL(link.href, window.location.origin);
-                            if (!url.searchParams.has('cid') && !url.searchParams.has('conversation_id')) {
-                                url.searchParams.set('cid', leadId);
-                                if (phone) url.searchParams.set('phone', phone);
-                                link.href = url.toString();
-                            }
-                        } catch (e) { }
-                    });
-                }
-            };
-
-            window.addEventListener('load', decorateLinks);
-            setInterval(decorateLinks, 2000);
-        })();
-    </script>
-
     <!-- Booking Info -->
     <section class="booking-info">
         <div class="container">
@@ -225,6 +178,7 @@
             </div>
         </div>
     </footer>
+    <script src="/lead-tracking.js" defer></script>
 </body>
 
 </html>

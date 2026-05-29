@@ -19,11 +19,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="style.css?v=20260108-1">
-    <!-- EmailJS SDK -->
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-TR9ET60HX3"></script>
-    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17846304809"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
         function gtag() { dataLayer.push(arguments); }
@@ -38,7 +35,7 @@
     <nav class="nav">
         <div class="nav__container">
             <a href="/" class="nav__logo">
-                <img src="car-hero.png" alt="Obsidian Autoworks" class="nav__logo-car">
+                <img src="car-hero.webp" alt="Obsidian Autoworks" class="nav__logo-car" width="500" height="200">
                 <span class="nav__logo-text">OBSIDIAN<span>AUTOWORKS</span></span>
             </a>
             <div class="nav__links">
@@ -48,7 +45,7 @@
                 <a href="#contact">Contact</a>
             </div>
             <div class="nav__actions">
-                <a href="/booking" class="brutalist-btn brutalist-btn--accent">Book Online</a>
+                <a href="/vip-booking" class="brutalist-btn brutalist-btn--accent">Book Online</a>
                 <a href="#pricing" class="brutalist-btn">See Pricing</a>
             </div>
         </div>
@@ -65,7 +62,7 @@
             <p class="hero__subtitle">Professional installation at your home or workplace — no driving, no gas, no
                 hassle.<br>Serving Orange County, Los Angeles & Inland Empire.</p>
             <div class="hero__actions">
-                <a href="/booking" class="brutalist-btn brutalist-btn--primary">Book Online
+                <a href="/vip-booking" class="brutalist-btn brutalist-btn--primary">Book Online
                     Now</a>
                 <a href="#pricing" class="brutalist-btn">See Pricing</a>
             </div>
@@ -356,46 +353,14 @@
                 </p>
             </div>
 
-            <p class="booking-note">💳 Deposit required to lock in your appointment. Final pricing is confirmed before your service — at your home, office, or wherever works for you.</p>
+            <p class="booking-note">Deposit required to lock in your appointment. Final pricing is confirmed before your service — at your home, office, or wherever works for you.</p>
 
-            <!-- Start Square Appointments Embed Code -->
-            <script src='https://square.site/appointments/buyer/widget/py2a8n8lsuxp5n/LWC5SDBDX3R99.js'></script>
-            <!-- End Square Appointments Embed Code -->
+            <div class="booking-section__actions">
+                <a href="/vip-booking" class="brutalist-btn brutalist-btn--primary brutalist-btn--large">Book VIP Slot</a>
+                <a href="tel:7146007134" class="brutalist-btn brutalist-btn--large">Call First</a>
+            </div>
         </div>
     </section>
-
-    <!-- Lead Tracking -->
-    <script type="text/javascript">
-        (function () {
-            const urlParams = new URLSearchParams(window.location.search);
-            const urlCid = urlParams.get('cid');
-            const urlPhone = urlParams.get('phone');
-
-            if (urlCid) localStorage.setItem('lead_track_cid', urlCid);
-            if (urlPhone) localStorage.setItem('lead_track_phone', urlPhone);
-
-            const leadId = urlCid || localStorage.getItem('lead_track_cid');
-            const phone = urlPhone || localStorage.getItem('lead_track_phone');
-
-            if (leadId) {
-                const decorateLinks = () => {
-                    document.querySelectorAll('a[href*="squareup.com"], a[href="/booking"]').forEach(link => {
-                        try {
-                            const url = new URL(link.href, window.location.origin);
-                            if (!url.searchParams.has('cid') && !url.searchParams.has('conversation_id')) {
-                                url.searchParams.set('cid', leadId);
-                                if (phone) url.searchParams.set('phone', phone);
-                                link.href = url.toString();
-                            }
-                        } catch (e) { }
-                    });
-                };
-                window.addEventListener('load', decorateLinks);
-                setInterval(decorateLinks, 2000);
-            }
-        })();
-    </script>
-
     <section id="contact" class="contact">
         <div class="container">
             <div class="contact__grid">
@@ -441,12 +406,30 @@
                         rows="3"></textarea>
                     <input type="hidden" name="title" value="New Quote Request">
                     <button type="submit" id="submit-btn"
-                        class="brutalist-btn brutalist-btn--primary brutalist-btn--full">Send Request</button>
+                        class="brutalist-btn brutalist-btn--primary brutalist-btn--full">Preview Quote Text</button>
                     <p id="form-status" class="form-status"></p>
                 </form>
             </div>
         </div>
     </section>
+
+    <div class="quote-modal" id="quote-preview-modal" hidden>
+        <div class="quote-modal__backdrop" data-quote-close></div>
+        <div class="quote-modal__panel" role="dialog" aria-modal="true" aria-labelledby="quote-preview-title">
+            <button type="button" class="quote-modal__close" data-quote-close aria-label="Close quote preview">×</button>
+            <span class="tag">QUOTE DRAFT</span>
+            <h3 id="quote-preview-title">Review Your Message</h3>
+            <p class="quote-modal__intro">Send this to Obsidian so they can confirm pricing and the best appointment window.</p>
+            <pre id="quote-preview-text" class="quote-modal__preview"></pre>
+            <div class="quote-modal__actions">
+                <a id="quote-text-link" class="brutalist-btn brutalist-btn--primary" href="sms:+17146007134">Text Draft</a>
+                <a id="quote-email-link" class="brutalist-btn" href="mailto:obsidianautoworksoc@gmail.com">Email Draft</a>
+                <button type="button" id="quote-copy-btn" class="brutalist-btn">Copy Draft</button>
+                <button type="button" class="brutalist-btn brutalist-btn--outline" data-quote-close>Keep Editing</button>
+            </div>
+            <p id="quote-copy-status" class="quote-modal__status" aria-live="polite"></p>
+        </div>
+    </div>
 
     <footer class="footer">
         <div class="container">
@@ -653,94 +636,120 @@
         })();
     </script>
 
-    <!-- EmailJS Contact Form Handler -->
+    <!-- Quote Draft Handler -->
     <script type="text/javascript">
         (function () {
-            // ========================================
-            // EMAILJS CONFIGURATION
-            // Replace YOUR_SERVICE_ID with your actual EmailJS Service ID
-            // ========================================
-            const EMAILJS_PUBLIC_KEY = 'leAlCbwYj8qNqMhA1';
-            const EMAILJS_SERVICE_ID = 'YOUR_SERVICE_ID';  // <-- REPLACE THIS
-            const EMAILJS_TEMPLATE_ID = 'template_p1smkx6';
-
-            // Initialize EmailJS
-            emailjs.init(EMAILJS_PUBLIC_KEY);
-
-            // Get form elements
             const form = document.getElementById('contact-form');
             const submitBtn = document.getElementById('submit-btn');
             const formStatus = document.getElementById('form-status');
+            const modal = document.getElementById('quote-preview-modal');
+            const preview = document.getElementById('quote-preview-text');
+            const textLink = document.getElementById('quote-text-link');
+            const emailLink = document.getElementById('quote-email-link');
+            const copyBtn = document.getElementById('quote-copy-btn');
+            const copyStatus = document.getElementById('quote-copy-status');
 
-            if (form) {
-                form.addEventListener('submit', function (event) {
-                    event.preventDefault();
+            if (!form || !modal || !preview || !textLink || !emailLink || !copyBtn) return;
 
-                    // Disable button and show loading state
-                    submitBtn.disabled = true;
-                    submitBtn.textContent = 'Sending...';
-                    formStatus.textContent = '';
-                    formStatus.className = 'form-status';
+            let currentDraft = '';
 
-                    // Get form data
-                    const formData = new FormData(form);
+            const trackQuoteEvent = (eventName, extra = {}) => {
+                if (window.obsidianLeadTracking?.trackEvent) {
+                    window.obsidianLeadTracking.trackEvent(eventName, extra);
+                    return;
+                }
 
-                    // Build the message content for EmailJS
-                    const title = formData.get('title') || 'New Quote Request';
-                    const name = (formData.get('name') || '').trim() || 'Not provided';
-                    const phone = (formData.get('phone') || '').trim() || 'Not provided';
-                    const email = (formData.get('email') || '').trim() || 'Not provided';
-                    const vehicle = (formData.get('vehicle') || '').trim() || 'Not provided';
-                    const service = (formData.get('service') || '').trim() || 'Not provided';
-                    const details = (formData.get('details') || '').trim() || 'None';
-                    const message = [
-                        title,
-                        '-------------------------',
-                        'Contact',
-                        `Name: ${name}`,
-                        `Phone: ${phone}`,
-                        `Email: ${email}`,
-                        '',
-                        'Vehicle',
-                        `Vehicle: ${vehicle}`,
-                        `Service: ${service}`,
-                        '',
-                        'Additional Details',
-                        details
-                    ].join('\n');
+                if (typeof window.gtag === 'function') {
+                    window.gtag('event', eventName, {
+                        event_category: 'quote_draft',
+                        ...extra
+                    });
+                }
+            };
 
-                    const templateParams = {
-                        title,
-                        name,
-                        email,
-                        phone,
-                        vehicle,
-                        service,
-                        details,
-                        message
-                    };
+            const openModal = () => {
+                modal.hidden = false;
+                document.body.classList.add('quote-modal-open');
+                copyStatus.textContent = '';
+                textLink.focus();
+            };
 
-                    // Send email via EmailJS
-                    emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, templateParams)
-                        .then(function (response) {
-                            console.log('SUCCESS!', response.status, response.text);
-                            formStatus.textContent = '✓ Message sent successfully! We\'ll get back to you soon.';
-                            formStatus.className = 'form-status form-status--success';
-                            form.reset();
-                        })
-                        .catch(function (error) {
-                            console.error('FAILED...', error);
-                            formStatus.textContent = '✗ Failed to send message. Please call us at (714) 600-7134.';
-                            formStatus.className = 'form-status form-status--error';
-                        })
-                        .finally(function () {
-                            submitBtn.disabled = false;
-                            submitBtn.textContent = 'Send Request';
-                        });
+            const closeModal = () => {
+                modal.hidden = true;
+                document.body.classList.remove('quote-modal-open');
+                submitBtn.focus();
+            };
+
+            const buildDraft = (formData) => {
+                const name = (formData.get('name') || '').trim();
+                const phone = (formData.get('phone') || '').trim();
+                const email = (formData.get('email') || '').trim();
+                const vehicle = (formData.get('vehicle') || '').trim();
+                const service = (formData.get('service') || '').trim();
+                const details = (formData.get('details') || '').trim();
+
+                return {
+                    name,
+                    phone,
+                    email,
+                    vehicle,
+                    service,
+                    details,
+                    message: [
+                        `Hi Obsidian, this is ${name || 'a new customer'}.`,
+                        `I want a quote for ${service || 'window tinting'} on my ${vehicle || 'vehicle'}.`,
+                        `My phone number is ${phone || 'not provided'}${email ? ` and my email is ${email}` : ''}.`,
+                        details ? `Notes: ${details}` : '',
+                        'Can you confirm pricing and the best appointment time?'
+                    ].filter(Boolean).join('\n')
+                };
+            };
+
+            form.addEventListener('submit', function (event) {
+                event.preventDefault();
+                if (!form.reportValidity()) return;
+
+                const draft = buildDraft(new FormData(form));
+                currentDraft = draft.message;
+                preview.textContent = currentDraft;
+
+                const encodedBody = encodeURIComponent(currentDraft);
+                textLink.href = `sms:+17146007134?&body=${encodedBody}`;
+                emailLink.href = `mailto:obsidianautoworksoc@gmail.com?subject=${encodeURIComponent('Window Tint Quote Request')}&body=${encodedBody}`;
+
+                formStatus.textContent = 'Review the draft, then text, email, or copy it.';
+                formStatus.className = 'form-status form-status--success';
+                openModal();
+
+                trackQuoteEvent('quote_draft_created', {
+                    service: draft.service,
+                    vehicle: draft.vehicle
                 });
-            }
+            });
+
+            textLink.addEventListener('click', () => trackQuoteEvent('quote_text_click'));
+            emailLink.addEventListener('click', () => trackQuoteEvent('quote_email_click'));
+
+            copyBtn.addEventListener('click', async () => {
+                try {
+                    await navigator.clipboard.writeText(currentDraft);
+                    copyStatus.textContent = 'Copied.';
+                    trackQuoteEvent('quote_copy_click');
+                } catch (error) {
+                    copyStatus.textContent = 'Copy failed. Select the draft text and copy it manually.';
+                }
+            });
+
+            modal.querySelectorAll('[data-quote-close]').forEach((button) => {
+                button.addEventListener('click', closeModal);
+            });
+
+            document.addEventListener('keydown', (event) => {
+                if (event.key === 'Escape' && !modal.hidden) closeModal();
+            });
         })();
     </script>
+    <script src="/lead-tracking.js" defer></script>
 </body>
 
 </html>

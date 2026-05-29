@@ -42,7 +42,6 @@
     <link rel="stylesheet" href="city-pages.css">
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-TR9ET60HX3"></script>
-    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17846304809"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
         function gtag() { dataLayer.push(arguments); }
@@ -57,7 +56,7 @@
     <nav class="nav">
         <div class="nav__container">
             <a href="/" class="nav__logo">
-                <img src="car-hero.png" alt="Obsidian Autoworks" class="nav__logo-car">
+                <img src="car-hero.webp" alt="Obsidian Autoworks" class="nav__logo-car" width="500" height="200">
                 <span class="nav__logo-text">OBSIDIAN<span>AUTOWORKS</span></span>
             </a>
             <div class="nav__links">
@@ -77,7 +76,7 @@
                 in Aliso Viejo. Professional installation, convenient booking, and cooler cabins without leaving your
                 location.</p>
             <div class="city-hero__cta">
-                <a href="tel:7146007134" class="brutalist-btn">Book Your Aliso Viejo Tint</a>
+                <a href="/vip-booking" class="brutalist-btn">Book Your Aliso Viejo Tint</a>
             </div>
         </div>
     </header>
@@ -214,7 +213,7 @@
                         <div class="service-card__feature">Match existing tint or choose your preferred shade</div>
                         <div class="service-card__feature">Full edge-to-edge coverage with clean finish</div>
                     </div>
-                    <a href="tel:7146007134" class="service-card__cta">Book Now</a>
+                    <a href="/vip-booking" class="service-card__cta">Book Now</a>
                 </div>
                 <div class="service-card">
                     <h3 class="service-card__title">Sides + Rear</h3>
@@ -225,7 +224,7 @@
                         <div class="service-card__feature">Maximum heat rejection and privacy</div>
                         <div class="service-card__feature">Computer-cut precision for your exact vehicle model</div>
                     </div>
-                    <a href="tel:7146007134" class="service-card__cta">Book Now</a>
+                    <a href="/vip-booking" class="service-card__cta">Book Now</a>
                 </div>
                 <div class="service-card">
                     <h3 class="service-card__title">Full Car Package</h3>
@@ -236,7 +235,7 @@
                         <div class="service-card__feature">Avery Dennison IR Ceramic film throughout</div>
                         <div class="service-card__feature">Lifetime warranty on workmanship</div>
                     </div>
-                    <a href="tel:7146007134" class="service-card__cta">Book Now</a>
+                    <a href="/vip-booking" class="service-card__cta">Book Now</a>
                 </div>
             </div>
         </div>
@@ -323,36 +322,7 @@
             </div>
         </div>
     </footer>
-    <script>
-        // Sticky Lead Tracking
-        (function () {
-            const urlParams = new URLSearchParams(window.location.search);
-            const urlCid = urlParams.get('cid');
-            const urlPhone = urlParams.get('phone');
-            if (urlCid) localStorage.setItem('lead_track_cid', urlCid);
-            if (urlPhone) localStorage.setItem('lead_track_phone', urlPhone);
-
-            const leadId = urlCid || localStorage.getItem('lead_track_cid');
-            const phone = urlPhone || localStorage.getItem('lead_track_phone');
-
-            if (leadId) {
-                const decorateLinks = () => {
-                    document.querySelectorAll('a[href*="squareup.com"], a[href="/booking"]').forEach(link => {
-                        try {
-                            const url = new URL(link.href, window.location.origin);
-                            if (!url.searchParams.has('cid') && !url.searchParams.has('conversation_id')) {
-                                url.searchParams.set('cid', leadId);
-                                if (phone) url.searchParams.set('phone', phone);
-                                link.href = url.toString();
-                            }
-                        } catch (e) { }
-                    });
-                };
-                window.addEventListener('load', decorateLinks);
-                setInterval(decorateLinks, 2000);
-            }
-        })();
-    </script>
+    <script src="/lead-tracking.js" defer></script>
 </body>
 
 </html>

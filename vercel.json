@@ -52,12 +52,22 @@
       "permanent": true
     },
     {
+      "source": "/irvine-windowtinting",
+      "destination": "/irvine-window-tinting",
+      "permanent": true
+    },
+    {
       "source": "/newport-beach.html",
       "destination": "/newport-beach-window-tinting",
       "permanent": true
     },
     {
       "source": "/newport-beach-windowtinting.html",
+      "destination": "/newport-beach-window-tinting",
+      "permanent": true
+    },
+    {
+      "source": "/newport-beach-windowtinting",
       "destination": "/newport-beach-window-tinting",
       "permanent": true
     },
@@ -72,7 +82,17 @@
       "permanent": true
     },
     {
+      "source": "/tustin-windowtinting",
+      "destination": "/tustin-window-tinting",
+      "permanent": true
+    },
+    {
       "source": "/costa-mesa-windowtinting.html",
+      "destination": "/costa-mesa-window-tinting",
+      "permanent": true
+    },
+    {
+      "source": "/costa-mesa-windowtinting",
       "destination": "/costa-mesa-window-tinting",
       "permanent": true
     },
@@ -82,7 +102,17 @@
       "permanent": true
     },
     {
+      "source": "/laguna-beach-windowtinting",
+      "destination": "/laguna-beach-window-tinting",
+      "permanent": true
+    },
+    {
       "source": "/aliso-viejo-windowtinting.html",
+      "destination": "/aliso-viejo-window-tinting",
+      "permanent": true
+    },
+    {
+      "source": "/aliso-viejo-windowtinting",
       "destination": "/aliso-viejo-window-tinting",
       "permanent": true
     }
