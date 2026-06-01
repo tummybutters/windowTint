@@ -189,6 +189,7 @@
             color: var(--white);
             padding: 5rem 0;
             border-top: 4px solid var(--black);
+            scroll-margin-top: 6.5rem;
         }
 
         .vip-booking-header {
@@ -231,6 +232,275 @@
             color: var(--sunset-coral);
         }
 
+        .booking-router {
+            max-width: 980px;
+            min-height: 560px;
+            margin: 0 auto;
+            border: 4px solid var(--black);
+            background:
+                linear-gradient(135deg, rgba(255, 255, 255, 0.06), rgba(255, 255, 255, 0) 42%),
+                linear-gradient(145deg, #111 0%, #050505 100%);
+            box-shadow: 12px 12px 0 var(--black), 0 0 34px rgba(255, 107, 74, 0.16);
+            overflow: hidden;
+        }
+
+        .booking-router__top {
+            display: grid;
+            grid-template-columns: 1fr auto;
+            align-items: center;
+            gap: 1rem;
+            padding: 1.1rem 1.25rem;
+            border-bottom: 3px solid var(--black);
+            background: rgba(255, 255, 255, 0.05);
+        }
+
+        .booking-router__eyebrow,
+        .booking-router__count,
+        .booking-router__hint,
+        .booking-router__meta,
+        .booking-router__summary-label,
+        .booking-router__fineprint {
+            text-transform: uppercase;
+            letter-spacing: 0.12em;
+            font-weight: 700;
+        }
+
+        .booking-router__eyebrow {
+            color: var(--sunset-coral);
+            font-size: 0.78rem;
+        }
+
+        .booking-router__count {
+            color: var(--text-light-gray);
+            font-size: 0.75rem;
+            white-space: nowrap;
+        }
+
+        .booking-router__progress {
+            grid-column: 1 / -1;
+            height: 6px;
+            border: 2px solid var(--black);
+            background: rgba(255, 255, 255, 0.12);
+            overflow: hidden;
+        }
+
+        .booking-router__bar {
+            display: block;
+            width: 20%;
+            height: 100%;
+            background: var(--sunset-glow);
+            transition: width 0.45s cubic-bezier(0.22, 1, 0.36, 1);
+        }
+
+        .booking-router__body {
+            min-height: 470px;
+            padding: clamp(1.25rem, 4vw, 2.5rem);
+            display: grid;
+            align-content: center;
+            gap: 1.5rem;
+        }
+
+        .booking-router__stage {
+            display: grid;
+            gap: 1.35rem;
+            opacity: 1;
+            transform: translateY(0);
+            transition: opacity 0.34s ease, transform 0.34s ease;
+        }
+
+        .booking-router__stage.is-leaving {
+            opacity: 0;
+            transform: translateY(-14px);
+        }
+
+        .booking-router__stage.is-entering {
+            opacity: 0;
+            transform: translateY(18px);
+        }
+
+        .booking-router__hint {
+            color: rgba(255, 255, 255, 0.58);
+            font-size: 0.72rem;
+        }
+
+        .booking-router__question {
+            min-height: 3.2em;
+            font-size: clamp(2rem, 5vw, 3.6rem);
+            line-height: 0.95;
+            text-transform: uppercase;
+            letter-spacing: 0;
+        }
+
+        .booking-router__cursor {
+            display: inline-block;
+            width: 0.08em;
+            height: 0.9em;
+            margin-left: 0.08em;
+            background: var(--sunset-coral);
+            vertical-align: -0.08em;
+            animation: routerBlink 0.8s step-end infinite;
+        }
+
+        @keyframes routerBlink {
+            50% { opacity: 0; }
+        }
+
+        .booking-router__options {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 0.85rem;
+        }
+
+        .booking-router__options:not(.is-ready) {
+            pointer-events: none;
+        }
+
+        .booking-router__option {
+            min-height: 92px;
+            border: 3px solid var(--black);
+            background: linear-gradient(145deg, #fff 0%, #e9e9e9 100%);
+            color: var(--black);
+            box-shadow: 5px 5px 0 var(--black);
+            padding: 1rem;
+            text-align: left;
+            font-family: var(--font);
+            cursor: pointer;
+            transition: opacity 0.22s ease, transform 0.22s ease, box-shadow 0.18s ease, background 0.18s ease;
+            opacity: 0;
+            transform: translateY(12px);
+        }
+
+        .booking-router__options.is-ready .booking-router__option {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .booking-router__option:nth-child(2) { transition-delay: 0.04s; }
+        .booking-router__option:nth-child(3) { transition-delay: 0.08s; }
+        .booking-router__option:nth-child(4) { transition-delay: 0.12s; }
+        .booking-router__option:nth-child(5) { transition-delay: 0.16s; }
+        .booking-router__option:nth-child(6) { transition-delay: 0.2s; }
+
+        .booking-router__option:hover,
+        .booking-router__option.is-selected {
+            background: var(--sunset-glow);
+            transform: translate(-2px, -2px);
+            box-shadow: 7px 7px 0 var(--black);
+        }
+
+        .booking-router__option-title {
+            display: block;
+            font-size: 1.05rem;
+            font-weight: 900;
+            line-height: 1.1;
+            text-transform: uppercase;
+        }
+
+        .booking-router__option-copy {
+            display: block;
+            margin-top: 0.45rem;
+            font-size: 0.82rem;
+            font-weight: 600;
+            line-height: 1.35;
+            color: rgba(0, 0, 0, 0.72);
+        }
+
+        .booking-router__actions {
+            display: flex;
+            justify-content: space-between;
+            gap: 1rem;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .booking-router__back {
+            border: 0;
+            background: transparent;
+            color: var(--text-light-gray);
+            font-family: var(--font);
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 0.12em;
+            cursor: pointer;
+            opacity: 0.8;
+        }
+
+        .booking-router__back:hover {
+            opacity: 1;
+            color: var(--white);
+        }
+
+        .booking-router__summary {
+            display: grid;
+            gap: 1rem;
+        }
+
+        .booking-router__summary-card {
+            display: grid;
+            gap: 1rem;
+            border: 3px solid var(--black);
+            background: linear-gradient(145deg, #fff 0%, #eeeeee 100%);
+            color: var(--black);
+            box-shadow: 8px 8px 0 var(--black);
+            padding: clamp(1.25rem, 3vw, 2rem);
+        }
+
+        .booking-router__summary-label,
+        .booking-router__meta {
+            color: var(--sunset-coral);
+            font-size: 0.76rem;
+        }
+
+        .booking-router__summary-title {
+            font-size: clamp(1.8rem, 4vw, 2.8rem);
+            line-height: 0.98;
+            text-transform: uppercase;
+        }
+
+        .booking-router__price-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+            align-items: center;
+        }
+
+        .booking-router__price {
+            font-size: clamp(1.8rem, 5vw, 3rem);
+            line-height: 1;
+            font-weight: 900;
+        }
+
+        .booking-router__duration {
+            border: 2px solid var(--black);
+            padding: 0.35rem 0.6rem;
+            font-weight: 900;
+            text-transform: uppercase;
+            background: rgba(255, 107, 74, 0.16);
+        }
+
+        .booking-router__notes {
+            display: grid;
+            gap: 0.45rem;
+            color: rgba(0, 0, 0, 0.72);
+            font-weight: 650;
+        }
+
+        .booking-router__cta-row {
+            display: flex;
+            gap: 0.85rem;
+            flex-wrap: wrap;
+        }
+
+        .booking-router__fineprint {
+            color: rgba(255, 255, 255, 0.68);
+            font-size: 0.72rem;
+            line-height: 1.6;
+        }
+
+        .booking-router__hidden {
+            display: none;
+        }
+
         @media (max-width: 900px) {
             .collage-grid {
                 grid-auto-rows: clamp(160px, 26vw, 230px);
@@ -240,6 +510,10 @@
 
             .collage-item {
                 margin: -12px 0 0 -14px;
+            }
+
+            .booking-router__options {
+                grid-template-columns: 1fr;
             }
         }
 
@@ -265,6 +539,43 @@
 
             .collage-review .reviewer {
                 font-size: 0.65rem;
+            }
+
+            .booking-router {
+                min-height: 620px;
+            }
+
+            .booking-router__top {
+                grid-template-columns: 1fr;
+            }
+
+            .booking-router__body {
+                min-height: 520px;
+                align-content: start;
+            }
+
+            .booking-router__question {
+                min-height: 4.4em;
+            }
+
+            .booking-router__option {
+                min-height: 84px;
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .booking-router__bar,
+            .booking-router__stage,
+            .booking-router__option,
+            .booking-router__option:hover,
+            .booking-router__option.is-selected {
+                animation: none;
+                transition: none;
+                transform: none;
+            }
+
+            .booking-router__cursor {
+                display: none;
             }
         }
     </style>
@@ -413,12 +724,19 @@
                 </div>
             </div>
 
-            <!-- Start Square Appointments Embed Code -->
-            <script src='https://square.site/appointments/buyer/widget/py2a8n8lsuxp5n/LWC5SDBDX3R99.js'></script>
-            <!-- End Square Appointments Embed Code -->
+            <div class="booking-router" data-booking-router>
+                <div class="booking-router__top">
+                    <div class="booking-router__eyebrow">Find the right ceramic tint package</div>
+                    <div class="booking-router__count" data-router-count>Step 1 / 4</div>
+                    <div class="booking-router__progress" aria-hidden="true">
+                        <span class="booking-router__bar" data-router-bar></span>
+                    </div>
+                </div>
+                <div class="booking-router__body" data-router-body aria-live="polite"></div>
+            </div>
 
             <div class="booking-note" style="margin-top: 2rem;">
-                <p>💳 Deposit required to lock in your appointment. Final pricing is confirmed before your service.</p>
+                <p>Deposit required to lock in your appointment. Final pricing is confirmed before your service.</p>
             </div>
         </div>
     </section>
@@ -440,6 +758,611 @@
                     if (!isOpen) item.classList.add('is-open');
                 });
             });
+        })();
+    </script>
+    <script>
+        (() => {
+            const router = document.querySelector('[data-booking-router]');
+            if (!router) return;
+
+            const body = router.querySelector('[data-router-body]');
+            const count = router.querySelector('[data-router-count]');
+            const bar = router.querySelector('[data-router-bar]');
+            const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+            const squareBookingUrl = 'https://app.squareup.com/appointments/book/py2a8n8lsuxp5n/LWC5SDBDX3R99/start';
+            const squareServiceBase = 'https://book.squareup.com/appointments/py2a8n8lsuxp5n/location/LWC5SDBDX3R99/services/';
+            const phoneDisplay = '(714) 600-7134';
+            const smsNumber = '+17146007134';
+
+            // Square service IDs for direct per-service deep links.
+            const serviceBookingIds = {
+                coupe_full: 'JUN6RHUUDQW5SMYO56MZVCUH',
+                sedan_full: 'HPE2FJNY74MCHGFWRXKYZ5MQ',
+                truck_full: 'ESJYXLEGTMSTE3D6AW5HFL44',
+                coupe_sides: 'UC4S7Z4KSGJBLIOALQU6UD4M',
+                sedan_sides: '62GMDVIWKMWT4E6RFADMCUAM',
+                truck_sides: 'WNKCG235ZY23N3ONNPJ2SHYR',
+                front_sedan: '7OWRCL6JYKIRVSO7ZSBUD4D6',
+                front_truck: 'K5PYYZ4MSILSZF4Y6IVPOHHM',
+                windshield_sedan: 'UKH6P6P2G5FZEZH5JAFCZBNR',
+                windshield_truck: '26PZRLG4PMTM2MCMI63GGBPT',
+                single_window: 'TACRLG6ULGD5WIVGOTOLN3UY',
+                tesla3_full: 'JILGCI6OBYFCRVRIGGAKOY7U',
+                tesla3_sides: 'LIKZWBHDKFNVO2BQHZUOSRLA',
+                teslas_full: 'X2FR2PNRIOUEYCUIK2Z6CBEO',
+                teslas_sides: 'Q6MIKFCS2R3MWA47P4HOM32E',
+                teslas_roof: 'EAEDVGHZFCFNUX2PMBCFSYGT',
+                teslay_full: 'Q7AULCAMKOKL4OYNKGSYD4RH',
+                teslay_sides: 'JHXRL5MCLH5H3WVNBQUHJSPG',
+                teslay_roof: 'VTHEP4JD6GZLBTF6ODKPHHNL',
+                sunroof: 'HMD3ZZXWJVO6VUQEKXL2DYBT',
+                panoramic: 'VDFCYTPS6AJ2QW325DJITO62'
+            };
+
+            const state = {
+                vehicle: '',
+                teslaModel: '',
+                coverage: '',
+                addons: []
+            };
+            const history = [];
+
+            const services = {
+                coupe_full: {
+                    title: 'Coupe Vehicles - Full Car',
+                    price: '$720',
+                    duration: '3 hr 30 min',
+                    mode: 'book',
+                    note: 'Complete windshield, side, and rear window coverage using premium nano-ceramic film.'
+                },
+                sedan_full: {
+                    title: 'Sedan Vehicles - Full Car',
+                    price: '$820',
+                    duration: '4 hr',
+                    mode: 'book',
+                    note: 'Complete windshield, side, and rear window coverage using premium nano-ceramic film.'
+                },
+                truck_full: {
+                    title: 'Trucks, SUVs & Crossovers - Full Car',
+                    price: '$950',
+                    duration: '4 hr',
+                    mode: 'book',
+                    note: 'Complete windshield, side, and rear window coverage for larger vehicles.'
+                },
+                coupe_sides: {
+                    title: 'Coupe Vehicles - Sides & Rear',
+                    price: '$500',
+                    duration: '2 hr 30 min',
+                    mode: 'book',
+                    note: 'Side and rear glass ceramic coverage for a cleaner cabin and sharper look.'
+                },
+                sedan_sides: {
+                    title: 'Sedan Vehicles - Sides & Rear',
+                    price: '$600',
+                    duration: '3 hr 30 min',
+                    mode: 'book',
+                    note: 'Side and rear glass ceramic coverage for daily heat rejection.'
+                },
+                truck_sides: {
+                    title: 'Trucks, SUVs & Crossovers - Side & Rear',
+                    price: '$700',
+                    duration: '4 hr',
+                    mode: 'book',
+                    note: 'Side and rear ceramic coverage for larger cabins.'
+                },
+                front_sedan: {
+                    title: 'Front 2 Windows - Sedan and Coupe Vehicles',
+                    price: '$200',
+                    duration: '1 hr',
+                    mode: 'book',
+                    note: 'Driver and passenger front window coverage using premium nano-ceramic film.'
+                },
+                front_truck: {
+                    title: 'Front 2 Windows - Trucks, SUVs & Crossovers',
+                    price: '$220',
+                    duration: '1 hr',
+                    mode: 'book',
+                    note: 'Front window match package for larger vehicles.'
+                },
+                windshield_sedan: {
+                    title: 'Windshield Only - Sedan & Coupe Vehicles',
+                    price: '$220',
+                    duration: '1 hr 30 min',
+                    mode: 'book',
+                    note: 'Ceramic windshield protection to cut glare and heat.'
+                },
+                windshield_truck: {
+                    title: 'Windshield Only - Trucks, SUVs & Crossovers',
+                    price: '$250',
+                    duration: '1 hr 30 min',
+                    mode: 'book',
+                    note: 'Ceramic windshield protection for larger vehicles.'
+                },
+                single_window: {
+                    title: 'Single Window Service',
+                    price: '$100',
+                    duration: '30 min',
+                    mode: 'book',
+                    note: 'Single glass replacement or correction service.'
+                },
+                tesla3_full: {
+                    title: 'Tesla Model 3 - Full Car',
+                    price: '$1,000',
+                    duration: '5 hr',
+                    mode: 'book',
+                    note: 'Tesla-specific full car ceramic coverage.'
+                },
+                tesla3_sides: {
+                    title: 'Tesla Model 3 - Sides & Rear',
+                    price: '$800',
+                    duration: '4 hr',
+                    mode: 'book',
+                    note: 'Tesla-specific side and rear ceramic coverage.'
+                },
+                teslas_full: {
+                    title: 'Tesla Model S - Full Car',
+                    price: '$820',
+                    duration: '4 hr',
+                    mode: 'book',
+                    note: 'Tesla Model S full car ceramic package.'
+                },
+                teslas_sides: {
+                    title: 'Tesla Model S - Sides & Rear',
+                    price: '$600',
+                    duration: '3 hr 30 min',
+                    mode: 'book',
+                    note: 'Tesla Model S side and rear ceramic package.'
+                },
+                teslas_roof: {
+                    title: 'Tesla Model S - Panoramic Roof Add-On',
+                    price: '$400',
+                    duration: '2 hr',
+                    mode: 'book',
+                    note: 'Fixed-price panoramic roof add-on for Model S.'
+                },
+                teslay_full: {
+                    title: 'Tesla Model Y - Full Car',
+                    price: '$950',
+                    duration: '4 hr 30 min',
+                    mode: 'book',
+                    note: 'Tesla Model Y full car ceramic package.'
+                },
+                teslay_sides: {
+                    title: 'Tesla Model Y - Sides & Rear',
+                    price: '$700',
+                    duration: '3 hr 30 min',
+                    mode: 'book',
+                    note: 'Tesla Model Y side and rear ceramic package.'
+                },
+                teslay_roof: {
+                    title: 'Tesla Model Y - Panoramic Roof Add-On',
+                    price: '$400',
+                    duration: '2 hr',
+                    mode: 'book',
+                    note: 'Fixed-price panoramic roof add-on for Model Y.'
+                },
+                sunroof: {
+                    title: 'Sunroof Coverage',
+                    price: '$80',
+                    duration: '1 hr',
+                    mode: 'book',
+                    note: 'Sunroof coverage as a standalone booking or add-on.'
+                },
+                panoramic: {
+                    title: 'Panoramic Roof Coverage',
+                    price: '$180',
+                    duration: '1 hr 30 min',
+                    mode: 'book',
+                    note: 'Panoramic roof coverage as a standalone booking or add-on.'
+                },
+                quote_auto: {
+                    title: 'Custom Auto Tint Setup',
+                    price: 'Quote',
+                    duration: 'Confirm by text',
+                    mode: 'quote',
+                    note: 'Best for tint removal, chrome delete, mobile priority, mixed add-ons, or anything unusual.'
+                },
+                quote_architectural: {
+                    title: 'Residential or Commercial Architectural Film',
+                    price: 'Quote',
+                    duration: 'Site details needed',
+                    mode: 'quote',
+                    note: 'Best handled by text or call so the square footage, glass type, and access details are clear.'
+                }
+            };
+
+            Object.keys(serviceBookingIds).forEach((key) => {
+                if (services[key]) {
+                    services[key].bookingUrl = squareServiceBase + serviceBookingIds[key];
+                }
+            });
+
+            const steps = {
+                vehicle: {
+                    id: 'vehicle',
+                    total: 4,
+                    question: 'What are we tinting today?',
+                    hint: 'Start with the closest match. You can go back anytime.',
+                    options: [
+                        { label: 'Coupe', copy: 'Two-door car or compact coupe', value: 'coupe' },
+                        { label: 'Sedan', copy: 'Four-door car or similar profile', value: 'sedan' },
+                        { label: 'Truck / SUV', copy: 'Truck, SUV, crossover, or larger cabin', value: 'truck' },
+                        { label: 'Tesla', copy: 'Model 3, Model S, or Model Y', value: 'tesla' },
+                        { label: 'Home / Business', copy: 'Architectural film for property glass', value: 'architectural' },
+                        { label: 'Something custom', copy: 'Chrome delete, removal, mobile service, or not sure', value: 'custom' }
+                    ],
+                    next(value) {
+                        state.vehicle = value;
+                        if (value === 'architectural') return 'result';
+                        if (value === 'custom') return 'result';
+                        if (value === 'tesla') return 'teslaModel';
+                        return 'coverage';
+                    }
+                },
+                teslaModel: {
+                    id: 'teslaModel',
+                    total: 4,
+                    question: 'Which Tesla model?',
+                    hint: 'Tesla glass packages price a little differently.',
+                    options: [
+                        { label: 'Model 3', copy: 'Full car or sides and rear', value: '3' },
+                        { label: 'Model S', copy: 'Full, sides and rear, or pano roof', value: 's' },
+                        { label: 'Model Y', copy: 'Full, sides and rear, or pano roof', value: 'y' }
+                    ],
+                    next(value) {
+                        state.teslaModel = value;
+                        return 'coverage';
+                    }
+                },
+                coverage: {
+                    id: 'coverage',
+                    total: 4,
+                    question: 'What coverage do you want?',
+                    hint: 'Pick the main service first. Add-ons come next.',
+                    options() {
+                        if (state.vehicle === 'tesla') {
+                            const options = [
+                                { label: 'Full car', copy: 'Maximum heat rejection and complete look', value: 'full' },
+                                { label: 'Sides & rear', copy: 'Core cabin coverage', value: 'sides' }
+                            ];
+                            if (state.teslaModel === 's' || state.teslaModel === 'y') {
+                                options.push({ label: 'Panoramic roof', copy: 'Roof-only Tesla add-on', value: 'roof' });
+                            }
+                            options.push({ label: 'Not sure', copy: 'Let Kislev confirm the best package', value: 'custom' });
+                            return options;
+                        }
+
+                        return [
+                            { label: 'Full car', copy: 'Windshield, side, and rear glass', value: 'full' },
+                            { label: 'Sides & rear', copy: 'Side windows plus rear glass', value: 'sides' },
+                            { label: 'Front 2 windows', copy: 'Driver and passenger windows', value: 'front' },
+                            { label: 'Windshield only', copy: 'Heat and glare protection up front', value: 'windshield' },
+                            { label: 'Single window', copy: 'One window replacement or correction', value: 'single' },
+                            { label: 'Roof / sunroof', copy: 'Sunroof or panoramic glass', value: 'roof' }
+                        ];
+                    },
+                    next(value) {
+                        state.coverage = value;
+                        if (value === 'custom' || value === 'roof') return 'result';
+                        return 'addons';
+                    }
+                },
+                addons: {
+                    id: 'addons',
+                    total: 4,
+                    question: 'Anything else with it?',
+                    hint: 'Optional. These help us tee up the appointment correctly.',
+                    multi: true,
+                    options: [
+                        { label: 'Windshield sunstrip', copy: '$60 fixed add-on', value: 'sunstrip' },
+                        { label: 'Sunroof / pano roof', copy: 'Add roof glass if needed', value: 'roof' },
+                        { label: 'Old tint removal', copy: 'Usually needs confirmation', value: 'removal' },
+                        { label: 'Mobile / same-day priority', copy: 'Confirm availability first', value: 'priority' },
+                        { label: 'No add-ons', copy: 'Just the main package', value: 'none' }
+                    ],
+                    next(value) {
+                        if (value === 'none') {
+                            state.addons = [];
+                            return 'result';
+                        }
+
+                        if (state.addons.includes(value)) {
+                            state.addons = state.addons.filter((addon) => addon !== value);
+                        } else {
+                            state.addons = state.addons.filter((addon) => addon !== 'none').concat(value);
+                        }
+                        return 'addons';
+                    }
+                }
+            };
+
+            const getStepIndex = (stepId) => {
+                if (stepId === 'vehicle') return 1;
+                if (stepId === 'teslaModel') return 2;
+                if (stepId === 'coverage') return state.vehicle === 'tesla' ? 3 : 2;
+                if (stepId === 'addons') return state.vehicle === 'tesla' ? 4 : 3;
+                return 4;
+            };
+
+            const resolveService = () => {
+                if (state.vehicle === 'architectural') return services.quote_architectural;
+                if (state.vehicle === 'custom') return services.quote_auto;
+                if (state.coverage === 'custom') return services.quote_auto;
+
+                if (state.vehicle === 'tesla') {
+                    const key = `tesla${state.teslaModel}_${state.coverage}`;
+                    return services[key] || services.quote_auto;
+                }
+
+                if (state.coverage === 'full') return services[`${state.vehicle}_full`] || services.quote_auto;
+                if (state.coverage === 'sides') return services[`${state.vehicle}_sides`] || services.quote_auto;
+                if (state.coverage === 'front') return state.vehicle === 'truck' ? services.front_truck : services.front_sedan;
+                if (state.coverage === 'windshield') return state.vehicle === 'truck' ? services.windshield_truck : services.windshield_sedan;
+                if (state.coverage === 'single') return services.single_window;
+                if (state.coverage === 'roof') return services.panoramic;
+
+                return services.quote_auto;
+            };
+
+            const getAddonLabels = () => {
+                const labels = {
+                    sunstrip: 'Windshield sunstrip',
+                    roof: 'Sunroof / panoramic roof',
+                    removal: 'Old tint removal',
+                    priority: 'Mobile / same-day priority'
+                };
+                return state.addons.map((addon) => labels[addon]).filter(Boolean);
+            };
+
+            const hasVariableAddon = () => state.addons.some((addon) => addon === 'removal' || addon === 'priority');
+
+            const track = (eventName, payload = {}) => {
+                if (window.obsidianLeadTracking && typeof window.obsidianLeadTracking.trackEvent === 'function') {
+                    window.obsidianLeadTracking.trackEvent(eventName, payload);
+                } else if (typeof window.gtag === 'function') {
+                    window.gtag('event', eventName, {
+                        event_category: 'vip_booking_quiz',
+                        page_path: window.location.pathname,
+                        ...payload
+                    });
+                }
+            };
+
+            const buildTextHref = (service) => {
+                const addons = getAddonLabels();
+                const message = [
+                    `Hi Obsidian Autoworks, I just used the VIP booking helper.`,
+                    `Recommended service: ${service.title}.`,
+                    `Price/time shown: ${service.price}, ${service.duration}.`,
+                    addons.length ? `Add-ons: ${addons.join(', ')}.` : 'Add-ons: none.',
+                    'Can you confirm this is the right setup?'
+                ].join(' ');
+                return `sms:${smsNumber}?body=${encodeURIComponent(message)}`;
+            };
+
+            const maybeDecorateLinks = () => {
+                if (window.obsidianLeadTracking && typeof window.obsidianLeadTracking.decorateBookingTargets === 'function') {
+                    window.obsidianLeadTracking.decorateBookingTargets();
+                }
+            };
+
+            const typeText = (element, text, callback) => {
+                if (reducedMotion) {
+                    element.textContent = text;
+                    callback();
+                    return;
+                }
+
+                element.textContent = '';
+                let index = 0;
+                const tick = () => {
+                    element.textContent = text.slice(0, index);
+                    index += 1;
+                    if (index <= text.length) {
+                        window.setTimeout(tick, 20);
+                    } else {
+                        callback();
+                    }
+                };
+                tick();
+            };
+
+            const render = (stepId) => {
+                const current = steps[stepId];
+                if (!current) {
+                    renderResult();
+                    return;
+                }
+
+                const stepIndex = getStepIndex(stepId);
+                const options = typeof current.options === 'function' ? current.options() : current.options;
+                count.textContent = `Step ${stepIndex} / ${current.total}`;
+                bar.style.width = `${Math.max(20, (stepIndex / current.total) * 100)}%`;
+
+                body.innerHTML = `
+                    <div class="booking-router__stage is-entering" data-router-stage>
+                        <div>
+                            <div class="booking-router__hint">${current.hint}</div>
+                            <h3 class="booking-router__question">
+                                <span data-router-question></span><span class="booking-router__cursor" aria-hidden="true"></span>
+                            </h3>
+                        </div>
+                        <div class="booking-router__options" data-router-options></div>
+                        <div class="booking-router__actions">
+                            <button class="booking-router__back ${history.length ? '' : 'booking-router__hidden'}" type="button" data-router-back>Back</button>
+                            ${current.multi ? '<button class="brutalist-btn brutalist-btn--primary" type="button" data-router-finish>See Package</button>' : ''}
+                        </div>
+                    </div>
+                `;
+
+                const stage = body.querySelector('[data-router-stage]');
+                const question = body.querySelector('[data-router-question]');
+                const optionWrap = body.querySelector('[data-router-options]');
+                const back = body.querySelector('[data-router-back]');
+                const finish = body.querySelector('[data-router-finish]');
+
+                window.requestAnimationFrame(() => stage.classList.remove('is-entering'));
+
+                options.forEach((option) => {
+                    const button = document.createElement('button');
+                    button.type = 'button';
+                    button.className = 'booking-router__option';
+                    button.dataset.value = option.value;
+                    if (current.multi && state.addons.includes(option.value)) {
+                        button.classList.add('is-selected');
+                    }
+                    button.innerHTML = `
+                        <span class="booking-router__option-title">${option.label}</span>
+                        <span class="booking-router__option-copy">${option.copy}</span>
+                    `;
+                    optionWrap.appendChild(button);
+                });
+
+                typeText(question, current.question, () => {
+                    optionWrap.classList.add('is-ready');
+                });
+
+                optionWrap.addEventListener('click', (event) => {
+                    const button = event.target.closest('.booking-router__option');
+                    if (!button) return;
+
+                    optionWrap.querySelectorAll('.booking-router__option').forEach((node) => node.classList.remove('is-selected'));
+                    button.classList.add('is-selected');
+
+                    const value = button.dataset.value;
+                    const nextStep = current.next(value);
+                    track('vip_quiz_answer', {
+                        quiz_step: current.id,
+                        answer: value,
+                        vehicle: state.vehicle,
+                        tesla_model: state.teslaModel,
+                        coverage: state.coverage,
+                        addons: state.addons.join(',')
+                    });
+
+                    if (current.multi && nextStep === 'addons') {
+                        optionWrap.querySelectorAll('.booking-router__option').forEach((node) => {
+                            node.classList.toggle('is-selected', state.addons.includes(node.dataset.value));
+                        });
+                        return;
+                    }
+
+                    history.push(stepId);
+                    window.setTimeout(() => render(nextStep), 180);
+                });
+
+                if (finish) {
+                    finish.addEventListener('click', () => {
+                        history.push(stepId);
+                        renderResult();
+                    });
+                }
+
+                if (back) {
+                    back.addEventListener('click', () => {
+                        const previous = history.pop();
+                        if (previous) render(previous);
+                    });
+                }
+            };
+
+            const renderResult = () => {
+                const service = resolveService();
+                const addons = getAddonLabels();
+                const needsConfirmation = service.mode === 'quote' || hasVariableAddon();
+                count.textContent = 'Recommendation';
+                bar.style.width = '100%';
+
+                const notes = [
+                    service.note,
+                    addons.length ? `Selected add-ons: ${addons.join(', ')}.` : 'No add-ons selected.',
+                    needsConfirmation ? 'This setup should be confirmed by text or call before booking.' : 'Open Square and choose this package to lock the appointment.'
+                ];
+
+                body.innerHTML = `
+                    <div class="booking-router__stage is-entering" data-router-stage>
+                        <div class="booking-router__summary">
+                            <div class="booking-router__hint">Recommended package</div>
+                            <div class="booking-router__summary-card">
+                                <div class="booking-router__summary-label">${needsConfirmation ? 'Confirm first' : 'Ready to book'}</div>
+                                <h3 class="booking-router__summary-title">${service.title}</h3>
+                                <div class="booking-router__price-row">
+                                    <div class="booking-router__price">${service.price}</div>
+                                    <div class="booking-router__duration">${service.duration}</div>
+                                </div>
+                                <div class="booking-router__notes">
+                                    ${notes.map((note) => `<p>${note}</p>`).join('')}
+                                </div>
+                            </div>
+                            <div class="booking-router__cta-row">
+                                ${service.mode === 'book'
+                                    ? `<a class="brutalist-btn brutalist-btn--primary" href="${service.bookingUrl || squareBookingUrl}" data-router-book>Open Square Booking</a>`
+                                    : `<a class="brutalist-btn brutalist-btn--primary" href="${buildTextHref(service)}" data-router-text>Text This Setup</a>`}
+                                ${service.mode === 'book' && needsConfirmation
+                                    ? `<a class="brutalist-btn brutalist-btn--outline" href="${buildTextHref(service)}" data-router-text>Text Add-ons</a>`
+                                    : ''}
+                                ${service.mode === 'quote'
+                                    ? `<a class="brutalist-btn brutalist-btn--outline" href="tel:7146007134">Call ${phoneDisplay}</a>`
+                                    : ''}
+                                <button class="booking-router__back" type="button" data-router-restart>Start Over</button>
+                            </div>
+                            <p class="booking-router__fineprint">Square will handle the appointment time and deposit. If your setup includes removal, mobile priority, same-day timing, chrome delete, or architectural film, confirm with Kislev before locking the slot.</p>
+                        </div>
+                    </div>
+                `;
+
+                window.requestAnimationFrame(() => {
+                    const stage = body.querySelector('[data-router-stage]');
+                    if (stage) stage.classList.remove('is-entering');
+                    maybeDecorateLinks();
+                });
+
+                track('vip_quiz_recommendation', {
+                    service_title: service.title,
+                    service_price: service.price,
+                    service_mode: service.mode,
+                    vehicle: state.vehicle,
+                    tesla_model: state.teslaModel,
+                    coverage: state.coverage,
+                    addons: state.addons.join(',')
+                });
+
+                const bookLink = body.querySelector('[data-router-book]');
+                if (bookLink) {
+                    bookLink.addEventListener('click', () => {
+                        track('vip_quiz_square_click', {
+                            service_title: service.title,
+                            service_price: service.price,
+                            addons: state.addons.join(',')
+                        });
+                    });
+                }
+
+                const textLink = body.querySelector('[data-router-text]');
+                if (textLink) {
+                    textLink.addEventListener('click', () => {
+                        track('vip_quiz_text_click', {
+                            service_title: service.title,
+                            service_price: service.price,
+                            addons: state.addons.join(',')
+                        });
+                    });
+                }
+
+                const restart = body.querySelector('[data-router-restart]');
+                if (restart) {
+                    restart.addEventListener('click', () => {
+                        state.vehicle = '';
+                        state.teslaModel = '';
+                        state.coverage = '';
+                        state.addons = [];
+                        history.splice(0, history.length);
+                        render('vehicle');
+                    });
+                }
+            };
+
+            render('vehicle');
         })();
     </script>
     <script src="/lead-tracking.js" defer></script>
