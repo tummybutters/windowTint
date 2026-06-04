@@ -30,9 +30,11 @@
         'a[href="/vip-booking"]',
         'a[href^="/vip-booking?"]',
         'a[href*="app.squareup.com/appointments"]',
+        'a[href*="book.squareup.com/appointments"]',
         'a[href*="squareup.com/appointments"]',
         'a[href*="square.site/appointments"]',
         'iframe[src*="app.squareup.com/appointments"]',
+        'iframe[src*="book.squareup.com/appointments"]',
         'iframe[src*="square.site/appointments"]'
     ].join(',');
     const PHONE_SELECTOR = 'a[href^="tel:"]';
@@ -220,7 +222,7 @@
     };
 
     const titleBookingFrames = () => {
-        document.querySelectorAll('iframe[src*="app.squareup.com/appointments"], iframe[src*="square.site/appointments"]').forEach((frame) => {
+        document.querySelectorAll('iframe[src*="app.squareup.com/appointments"], iframe[src*="book.squareup.com/appointments"], iframe[src*="square.site/appointments"]').forEach((frame) => {
             if (!frame.getAttribute('title')) {
                 frame.setAttribute('title', 'Square appointment booking calendar for Obsidian Autoworks');
             }
