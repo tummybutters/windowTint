@@ -2,6 +2,7 @@
   "name": "obsidian-autoworks-site",
   "private": true,
   "scripts": {
-    "dev": "python3 dev_server.py"
+    "dev": "python3 dev_server.py",
+    "test:tracking": "node --check lead-tracking.js && node --check api/lead-events.js && node scripts/test-lead-tracking.mjs && node scripts/test-lead-events-api.mjs"
   }
 }

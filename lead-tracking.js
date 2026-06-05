@@ -1,5 +1,10 @@
 (function () {
     const STORAGE_KEYS = {
+        sessionId: 'lead_track_session_id',
+        firstSeenAt: 'lead_track_first_seen_at',
+        lastSeenAt: 'lead_track_last_seen_at',
+        firstLandingPage: 'lead_track_first_landing_page',
+        firstReferrer: 'lead_track_first_referrer',
         cid: 'lead_track_cid',
         phone: 'lead_track_phone',
         utmSource: 'lead_track_utm_source',
@@ -9,7 +14,8 @@
         utmContent: 'lead_track_utm_content',
         gclid: 'lead_track_gclid',
         gbraid: 'lead_track_gbraid',
-        wbraid: 'lead_track_wbraid'
+        wbraid: 'lead_track_wbraid',
+        events: 'lead_track_event_log'
     };
 
     const TRACKED_PARAMS = [
@@ -22,8 +28,36 @@
         'utm_content',
         'gclid',
         'gbraid',
-        'wbraid'
+        'wbraid',
+        'campaignid',
+        'adgroupid',
+        'creative',
+        'keyword',
+        'matchtype',
+        'device',
+        'network',
+        'loc_physical_ms',
+        'loc_interest_ms',
+        'placement',
+        'targetid',
+        'extensionid'
     ];
+    const MAX_STORED_EVENTS = 120;
+    const STORAGE_BY_PARAM = {
+        cid: STORAGE_KEYS.cid,
+        phone: STORAGE_KEYS.phone,
+        utm_source: STORAGE_KEYS.utmSource,
+        utm_medium: STORAGE_KEYS.utmMedium,
+        utm_campaign: STORAGE_KEYS.utmCampaign,
+        utm_term: STORAGE_KEYS.utmTerm,
+        utm_content: STORAGE_KEYS.utmContent,
+        gclid: STORAGE_KEYS.gclid,
+        gbraid: STORAGE_KEYS.gbraid,
+        wbraid: STORAGE_KEYS.wbraid
+    };
+    TRACKED_PARAMS.forEach((param) => {
+        if (!STORAGE_BY_PARAM[param]) STORAGE_BY_PARAM[param] = `lead_track_${param}`;
+    });
     const BOOKING_SELECTORS = [
         'a[href="/booking"]',
         'a[href^="/booking?"]',
@@ -41,6 +75,14 @@
 
     const readParams = () => new URLSearchParams(window.location.search);
 
+    const generateId = (prefix) => {
+        if (window.crypto && typeof window.crypto.randomUUID === 'function') {
+            return `${prefix}_${window.crypto.randomUUID()}`;
+        }
+
+        return `${prefix}_${Date.now().toString(36)}_${Math.random().toString(36).slice(2, 10)}`;
+    };
+
     const firstParam = (params, names) => {
         for (const name of names) {
             const value = params.get(name);
@@ -51,45 +93,58 @@
 
     const remember = () => {
         const params = readParams();
-        const cid = firstParam(params, ['cid', 'conversation_id', 'lead_id']);
-        const phone = firstParam(params, ['phone', 'lead_phone']);
-        const utmSource = params.get('utm_source') || '';
-        const utmMedium = params.get('utm_medium') || '';
-        const utmCampaign = params.get('utm_campaign') || '';
-        const utmTerm = params.get('utm_term') || '';
-        const utmContent = params.get('utm_content') || '';
-        const gclid = params.get('gclid') || '';
-        const gbraid = params.get('gbraid') || '';
-        const wbraid = params.get('wbraid') || '';
+        const now = new Date().toISOString();
 
-        if (cid) localStorage.setItem(STORAGE_KEYS.cid, cid);
-        if (phone) localStorage.setItem(STORAGE_KEYS.phone, phone);
-        if (utmSource) localStorage.setItem(STORAGE_KEYS.utmSource, utmSource);
-        if (utmMedium) localStorage.setItem(STORAGE_KEYS.utmMedium, utmMedium);
-        if (utmCampaign) localStorage.setItem(STORAGE_KEYS.utmCampaign, utmCampaign);
-        if (utmTerm) localStorage.setItem(STORAGE_KEYS.utmTerm, utmTerm);
-        if (utmContent) localStorage.setItem(STORAGE_KEYS.utmContent, utmContent);
-        if (gclid) localStorage.setItem(STORAGE_KEYS.gclid, gclid);
-        if (gbraid) localStorage.setItem(STORAGE_KEYS.gbraid, gbraid);
-        if (wbraid) localStorage.setItem(STORAGE_KEYS.wbraid, wbraid);
+        if (!localStorage.getItem(STORAGE_KEYS.sessionId)) {
+            localStorage.setItem(STORAGE_KEYS.sessionId, generateId('obsidian_session'));
+        }
+        if (!localStorage.getItem(STORAGE_KEYS.firstSeenAt)) {
+            localStorage.setItem(STORAGE_KEYS.firstSeenAt, now);
+        }
+        if (!localStorage.getItem(STORAGE_KEYS.firstLandingPage)) {
+            localStorage.setItem(STORAGE_KEYS.firstLandingPage, window.location.href);
+        }
+        if (!localStorage.getItem(STORAGE_KEYS.firstReferrer)) {
+            localStorage.setItem(STORAGE_KEYS.firstReferrer, document.referrer || '');
+        }
+        localStorage.setItem(STORAGE_KEYS.lastSeenAt, now);
+
+        const values = {
+            cid: firstParam(params, ['cid', 'conversation_id', 'lead_id']),
+            phone: firstParam(params, ['phone', 'lead_phone'])
+        };
+
+        TRACKED_PARAMS.forEach((param) => {
+            if (!values[param]) values[param] = params.get(param) || '';
+        });
+
+        Object.entries(values).forEach(([param, value]) => {
+            if (value) localStorage.setItem(STORAGE_BY_PARAM[param], value);
+        });
     };
 
-    const getLead = () => ({
-        cid: localStorage.getItem(STORAGE_KEYS.cid) || '',
-        phone: localStorage.getItem(STORAGE_KEYS.phone) || '',
-        utm_source: localStorage.getItem(STORAGE_KEYS.utmSource) || '',
-        utm_medium: localStorage.getItem(STORAGE_KEYS.utmMedium) || '',
-        utm_campaign: localStorage.getItem(STORAGE_KEYS.utmCampaign) || '',
-        utm_term: localStorage.getItem(STORAGE_KEYS.utmTerm) || '',
-        utm_content: localStorage.getItem(STORAGE_KEYS.utmContent) || '',
-        gclid: localStorage.getItem(STORAGE_KEYS.gclid) || '',
-        gbraid: localStorage.getItem(STORAGE_KEYS.gbraid) || '',
-        wbraid: localStorage.getItem(STORAGE_KEYS.wbraid) || ''
-    });
+    const getLead = () => {
+        const lead = {
+            session_id: localStorage.getItem(STORAGE_KEYS.sessionId) || '',
+            first_seen_at: localStorage.getItem(STORAGE_KEYS.firstSeenAt) || '',
+            last_seen_at: localStorage.getItem(STORAGE_KEYS.lastSeenAt) || '',
+            first_landing_page: localStorage.getItem(STORAGE_KEYS.firstLandingPage) || '',
+            first_referrer: localStorage.getItem(STORAGE_KEYS.firstReferrer) || ''
+        };
+
+        TRACKED_PARAMS.forEach((param) => {
+            lead[param] = localStorage.getItem(STORAGE_BY_PARAM[param]) || '';
+        });
+
+        return lead;
+    };
 
     const hasAttribution = (lead) => TRACKED_PARAMS.some((param) => Boolean(lead[param]));
 
     const applyParams = (url, lead) => {
+        if (lead.session_id && !url.searchParams.has('obsidian_session_id')) {
+            url.searchParams.set('obsidian_session_id', lead.session_id);
+        }
         if (lead.cid && !url.searchParams.has('cid') && !url.searchParams.has('conversation_id')) {
             url.searchParams.set('cid', lead.cid);
         }
@@ -120,6 +175,11 @@
         if (lead.wbraid && !url.searchParams.has('wbraid')) {
             url.searchParams.set('wbraid', lead.wbraid);
         }
+        ['campaignid', 'adgroupid', 'creative', 'keyword', 'matchtype', 'device', 'network', 'loc_physical_ms', 'loc_interest_ms', 'placement', 'targetid', 'extensionid'].forEach((param) => {
+            if (lead[param] && !url.searchParams.has(param)) {
+                url.searchParams.set(param, lead[param]);
+            }
+        });
     };
 
     const decorateBookingTargets = () => {
@@ -163,6 +223,7 @@
         if (!hasAttribution(lead)) return;
 
         document.querySelectorAll('form').forEach((form) => {
+            upsertHidden(form, 'lead_session_id', lead.session_id);
             upsertHidden(form, 'lead_cid', lead.cid);
             upsertHidden(form, 'lead_phone', lead.phone);
             upsertHidden(form, 'lead_utm_source', lead.utm_source);
@@ -174,16 +235,99 @@
             upsertHidden(form, 'lead_gbraid', lead.gbraid);
             upsertHidden(form, 'lead_wbraid', lead.wbraid);
             upsertHidden(form, 'lead_landing_page', window.location.href);
+            upsertHidden(form, 'lead_first_landing_page', lead.first_landing_page);
+            upsertHidden(form, 'lead_campaignid', lead.campaignid);
+            upsertHidden(form, 'lead_adgroupid', lead.adgroupid);
+            upsertHidden(form, 'lead_keyword', lead.keyword);
+            upsertHidden(form, 'lead_matchtype', lead.matchtype);
+            upsertHidden(form, 'lead_device', lead.device);
         });
+    };
+
+    const getEventLog = () => {
+        try {
+            const raw = localStorage.getItem(STORAGE_KEYS.events);
+            const parsed = raw ? JSON.parse(raw) : [];
+            return Array.isArray(parsed) ? parsed : [];
+        } catch (error) {
+            return [];
+        }
+    };
+
+    const setEventLog = (events) => {
+        localStorage.setItem(STORAGE_KEYS.events, JSON.stringify(events.slice(-MAX_STORED_EVENTS)));
+    };
+
+    const getEventEndpoint = () => {
+        if (window.OBSIDIAN_LEAD_EVENT_ENDPOINT) return window.OBSIDIAN_LEAD_EVENT_ENDPOINT;
+        const endpoint = document.documentElement && document.documentElement.getAttribute
+            ? document.documentElement.getAttribute('data-lead-event-endpoint')
+            : '';
+        return endpoint || '/api/lead-events';
+    };
+
+    const sendFirstPartyEvent = (event) => {
+        const endpoint = getEventEndpoint();
+        if (!endpoint) return;
+
+        const body = JSON.stringify(event);
+        if (window.navigator && typeof window.navigator.sendBeacon === 'function') {
+            const sent = window.navigator.sendBeacon(endpoint, body);
+            if (sent) return;
+        }
+
+        if (typeof window.fetch === 'function') {
+            window.fetch(endpoint, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body,
+                keepalive: true
+            }).catch(() => {});
+        }
+    };
+
+    const recordLeadEvent = (eventName, payload = {}, options = {}) => {
+        const lead = getLead();
+        if (options.requireAttribution && !hasAttribution(lead)) return;
+
+        const event = {
+            event_id: generateId('obsidian_event'),
+            event_name: eventName,
+            event_time: new Date().toISOString(),
+            session_id: lead.session_id,
+            page_url: window.location.href,
+            page_path: window.location.pathname,
+            referrer: document.referrer || lead.first_referrer,
+            lead,
+            payload
+        };
+
+        const events = getEventLog();
+        events.push(event);
+        setEventLog(events);
+        sendFirstPartyEvent(event);
+
+        return event;
+    };
+
+    const exportEventLog = () => JSON.stringify({
+        exported_at: new Date().toISOString(),
+        lead: getLead(),
+        events: getEventLog()
+    }, null, 2);
+
+    const clearEventLog = () => {
+        localStorage.removeItem(STORAGE_KEYS.events);
     };
 
     const sendAnalyticsEvent = (eventName, extra = {}, options = {}) => {
         const lead = getLead();
-        if (typeof window.gtag !== 'function') return;
-        if (options.requireAttribution && !hasAttribution(lead)) return;
+        const event = recordLeadEvent(eventName, extra, options);
+        if (!event || typeof window.gtag !== 'function') return event;
 
         window.gtag('event', eventName, {
             event_category: 'lead_attribution',
+            lead_session_id: lead.session_id,
             conversation_id: lead.cid,
             phone: lead.phone,
             utm_source: lead.utm_source,
@@ -194,9 +338,17 @@
             gclid: lead.gclid,
             gbraid: lead.gbraid,
             wbraid: lead.wbraid,
+            campaignid: lead.campaignid,
+            adgroupid: lead.adgroupid,
+            keyword: lead.keyword,
+            matchtype: lead.matchtype,
+            device: lead.device,
+            network: lead.network,
             page_path: window.location.pathname,
             ...extra
         });
+
+        return event;
     };
 
     const bindClickTracking = () => {
@@ -250,6 +402,13 @@
             });
         }
 
+        document.addEventListener('visibilitychange', () => {
+            if (document.visibilityState !== 'hidden') return;
+            sendAnalyticsEvent('lead_session_checkpoint', {
+                event_count: getEventLog().length
+            });
+        });
+
         let pendingRefresh = false;
         const scheduleRefresh = () => {
             if (pendingRefresh) return;
@@ -274,6 +433,10 @@
 
     window.obsidianLeadTracking = {
         getLead,
+        getEventLog,
+        exportEventLog,
+        clearEventLog,
+        recordEvent: recordLeadEvent,
         trackEvent: sendAnalyticsEvent,
         decorateBookingTargets,
         decorateForms

@@ -1128,6 +1128,19 @@
                 }
             };
 
+            const getQuizPayload = (service = null) => ({
+                vehicle: state.vehicle,
+                tesla_model: state.teslaModel,
+                coverage: state.coverage,
+                addons: state.addons.join(','),
+                addon_labels: getAddonLabels().join(', '),
+                service_title: service ? service.title : '',
+                service_price: service ? service.price : '',
+                service_duration: service ? service.duration : '',
+                service_mode: service ? service.mode : '',
+                square_booking_url: service && service.bookingUrl ? service.bookingUrl : ''
+            });
+
             const buildTextHref = (service) => {
                 const addons = getAddonLabels();
                 const message = [
@@ -1234,10 +1247,7 @@
                     track('vip_quiz_answer', {
                         quiz_step: current.id,
                         answer: value,
-                        vehicle: state.vehicle,
-                        tesla_model: state.teslaModel,
-                        coverage: state.coverage,
-                        addons: state.addons.join(',')
+                        ...getQuizPayload()
                     });
 
                     if (current.multi && nextStep === 'addons') {
@@ -1248,12 +1258,18 @@
                     }
 
                     history.push(stepId);
+                    track('vip_quiz_step_advance', {
+                        from_step: current.id,
+                        to_step: nextStep,
+                        ...getQuizPayload()
+                    });
                     window.setTimeout(() => render(nextStep), 180);
                 });
 
                 if (finish) {
                     finish.addEventListener('click', () => {
                         history.push(stepId);
+                        track('vip_quiz_finish_click', getQuizPayload());
                         renderResult();
                     });
                 }
@@ -1261,6 +1277,11 @@
                 if (back) {
                     back.addEventListener('click', () => {
                         const previous = history.pop();
+                        track('vip_quiz_back_click', {
+                            from_step: current.id,
+                            to_step: previous || '',
+                            ...getQuizPayload()
+                        });
                         if (previous) render(previous);
                     });
                 }
@@ -1318,22 +1339,17 @@
                 });
 
                 track('vip_quiz_recommendation', {
-                    service_title: service.title,
-                    service_price: service.price,
-                    service_mode: service.mode,
-                    vehicle: state.vehicle,
-                    tesla_model: state.teslaModel,
-                    coverage: state.coverage,
-                    addons: state.addons.join(',')
+                    needs_confirmation: needsConfirmation ? 'yes' : 'no',
+                    ...getQuizPayload(service)
                 });
 
                 const bookLink = body.querySelector('[data-router-book]');
                 if (bookLink) {
                     bookLink.addEventListener('click', () => {
                         track('vip_quiz_square_click', {
-                            service_title: service.title,
-                            service_price: service.price,
-                            addons: state.addons.join(',')
+                            link_url: bookLink.href,
+                            needs_confirmation: needsConfirmation ? 'yes' : 'no',
+                            ...getQuizPayload(service)
                         });
                     });
                 }
@@ -1342,9 +1358,20 @@
                 if (textLink) {
                     textLink.addEventListener('click', () => {
                         track('vip_quiz_text_click', {
-                            service_title: service.title,
-                            service_price: service.price,
-                            addons: state.addons.join(',')
+                            link_url: textLink.href,
+                            needs_confirmation: needsConfirmation ? 'yes' : 'no',
+                            ...getQuizPayload(service)
+                        });
+                    });
+                }
+
+                const callLink = body.querySelector('a[href^="tel:"]');
+                if (callLink) {
+                    callLink.addEventListener('click', () => {
+                        track('vip_quiz_call_click', {
+                            link_url: callLink.href,
+                            needs_confirmation: needsConfirmation ? 'yes' : 'no',
+                            ...getQuizPayload(service)
                         });
                     });
                 }
@@ -1352,6 +1379,7 @@
                 const restart = body.querySelector('[data-router-restart]');
                 if (restart) {
                     restart.addEventListener('click', () => {
+                        track('vip_quiz_restart_click', getQuizPayload(service));
                         state.vehicle = '';
                         state.teslaModel = '';
                         state.coverage = '';
