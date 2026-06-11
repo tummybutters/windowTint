@@ -72,6 +72,20 @@
         'iframe[src*="square.site/appointments"]'
     ].join(',');
     const PHONE_SELECTOR = 'a[href^="tel:"]';
+    const GOOGLE_ADS_ID = 'AW-17846304809';
+    const DEFAULT_ADS_CONVERSIONS = {
+        ai_booking_click: '',
+        phone_click: 'GVSvCK39u70cEKmA5L1C',
+        square_booking_click: '3k3PCLD9u70cEKmA5L1C',
+        vip_quiz_call_click: 'GVSvCK39u70cEKmA5L1C',
+        vip_quiz_square_click: '3k3PCLD9u70cEKmA5L1C'
+    };
+    const SQUARE_BOOKING_HOSTS = [
+        'app.squareup.com',
+        'book.squareup.com',
+        'squareup.com',
+        'square.site'
+    ];
 
     const readParams = () => new URLSearchParams(window.location.search);
 
@@ -348,7 +362,35 @@
             ...extra
         });
 
+        const adsConversions = {
+            ...DEFAULT_ADS_CONVERSIONS,
+            ...(window.OBSIDIAN_GOOGLE_ADS_CONVERSIONS || {})
+        };
+        const conversionLabel = adsConversions[eventName];
+        if (conversionLabel) {
+            window.gtag('event', 'conversion', {
+                send_to: `${GOOGLE_ADS_ID}/${conversionLabel}`,
+                event_category: 'lead_attribution',
+                lead_session_id: lead.session_id,
+                gclid: lead.gclid,
+                gbraid: lead.gbraid,
+                wbraid: lead.wbraid,
+                page_path: window.location.pathname,
+                ...extra
+            });
+        }
+
         return event;
+    };
+
+    const isSquareBookingLink = (href) => {
+        try {
+            const url = new URL(href, window.location.origin);
+            return SQUARE_BOOKING_HOSTS.some((host) => url.hostname === host || url.hostname.endsWith(`.${host}`))
+                && url.pathname.includes('/appointments');
+        } catch (error) {
+            return false;
+        }
     };
 
     const bindClickTracking = () => {
@@ -356,7 +398,8 @@
             const link = event.target.closest('a');
             if (!link || !link.matches(BOOKING_SELECTORS)) return;
 
-            sendAnalyticsEvent('ai_booking_click', {
+            const eventName = isSquareBookingLink(link.href) ? 'square_booking_click' : 'ai_booking_click';
+            sendAnalyticsEvent(eventName, {
                 link_url: link.href,
                 link_text: (link.textContent || '').trim().slice(0, 120)
             });

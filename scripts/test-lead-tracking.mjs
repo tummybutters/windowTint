@@ -131,7 +131,36 @@ assert.equal(answerEvent.lead.gclid, 'GCLID123');
 assert.equal(answerEvent.payload.answer, 'tesla');
 assert.equal(answerEvent.page_path, '/vip-booking');
 assert.ok(gtagCalls.some((call) => call[0] === 'event' && call[1] === 'vip_quiz_answer'));
+assert.ok(!gtagCalls.some((call) => call[0] === 'event' && call[1] === 'conversion'), 'unmapped quiz answer should not send Ads conversion');
 assert.ok(beacons.some((beacon) => beacon.url === '/api/lead-events'));
+
+tracker.trackEvent('phone_click', {
+  link_url: 'tel:7146007134'
+});
+assert.ok(gtagCalls.some((call) => (
+  call[0] === 'event'
+  && call[1] === 'conversion'
+  && call[2].send_to === 'AW-17846304809/GVSvCK39u70cEKmA5L1C'
+)), 'mapped phone click sends Google Ads conversion');
+
+tracker.trackEvent('square_booking_click', {
+  link_url: 'https://app.squareup.com/appointments/book/py2a8n8lsuxp5n/LWC5SDBDX3R99/start'
+});
+assert.ok(gtagCalls.some((call) => (
+  call[0] === 'event'
+  && call[1] === 'conversion'
+  && call[2].send_to === 'AW-17846304809/3k3PCLD9u70cEKmA5L1C'
+)), 'mapped direct Square click sends Google Ads conversion');
+
+tracker.trackEvent('vip_quiz_square_click', {
+  link_url: 'https://book.squareup.com/appointments/py2a8n8lsuxp5n/location/LWC5SDBDX3R99/services/test',
+  service_title: 'Tesla Model 3 - Full Car'
+});
+assert.ok(gtagCalls.some((call) => (
+  call[0] === 'event'
+  && call[1] === 'conversion'
+  && call[2].send_to === 'AW-17846304809/3k3PCLD9u70cEKmA5L1C'
+)), 'mapped Square click sends Google Ads conversion');
 
 const exported = JSON.parse(tracker.exportEventLog());
 assert.equal(exported.lead.session_id, lead.session_id);
