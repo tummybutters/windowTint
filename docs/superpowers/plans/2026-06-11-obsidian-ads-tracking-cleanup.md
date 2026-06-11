@@ -47,18 +47,18 @@
 **Files:**
 - Deploy current site repo.
 
-- [ ] Push only intentional site tracking changes.
-- [ ] Confirm production `/vip-booking` returns 200.
-- [ ] Confirm production `/lead-tracking.js` contains the new conversion map and no production tracking regression.
-- [ ] Confirm `/api/lead-events` still accepts valid events.
+- [x] Push only intentional site tracking changes.
+- [x] Confirm production `/vip-booking` returns 200.
+- [x] Confirm production `/lead-tracking.js` contains the new conversion map and no production tracking regression.
+- [x] Confirm `/api/lead-events` still accepts valid events.
 
 ### Task 5: Clean Google Ads Conversion Goals
 
 **Google Ads:**
 - Campaign: `Search | OC | Mobile Ceramic Tint | Agency Build`
 
-- [ ] Remove or stop using broken `Submit lead form` as a campaign optimization goal.
-- [ ] Keep `Phone call lead` as primary.
+- [x] Remove or stop using broken `Submit lead form` as a campaign optimization goal.
+- [x] Keep `Phone call lead` as primary.
 - [ ] Keep `Booking page visit - Obsidian` secondary only.
 - [x] Create or configure website `Phone click` and `Square booking click` conversion actions.
 - [x] Copy conversion labels into the site conversion map if Google requires direct `send_to` labels.
@@ -66,7 +66,8 @@
 ### Task 6: Verify Live Ads + Website Loop
 
 **Google Ads + Production:**
-- [ ] Confirm call asset `7146007134` remains enabled and eligible.
-- [ ] Confirm phone asset metrics still show Phone impressions / Phone calls.
+- [x] Confirm call asset `7146007134` remains enabled and eligible.
+- [x] Confirm phone asset metrics still show Phone impressions / Phone calls.
 - [ ] Confirm website events appear in the browser network/gtag flow.
+- [x] Confirm Ads conversion goals are campaign-specific: `Contacts` and `Phone call leads`.
 - [ ] Confirm Ads conversion actions show active/no recent conversions rather than misconfigured/inactive where expected.
