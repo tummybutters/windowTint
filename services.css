@@ -472,3 +472,21 @@ body.lightbox-open {
         width: min(280px, 90vw);
     }
 }
+
+
+.car-card__links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-top: 0.85rem;
+}
+
+.car-card__links a {
+    color: var(--black);
+    font-size: 0.78rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    text-decoration: underline;
+    text-decoration-thickness: 2px;
+    text-underline-offset: 3px;
+}

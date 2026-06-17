@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Window Tint Removal | Orange County Mobile</title>
+    <meta name="description" content="Window tint removal in Orange County for bubbling, peeling, purple, or damaged film. Get old tint removed and prep for fresh ceramic film.">
+    <link rel="canonical" href="https://www.obsidianautoworksoc.com/tint-removal">
+    <link rel="icon" type="image/png" href="favicon.png">
+    <meta property="og:title" content="Window Tint Removal | Orange County Mobile">
+    <meta property="og:description" content="Quote-based window tint removal for bubbling, peeling, purple, or damaged film.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.obsidianautoworksoc.com/tint-removal">
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Service",
+        "name": "Window Tint Removal",
+        "provider": { "@type": "AutomotiveBusiness", "name": "Obsidian Autoworks", "telephone": "+17146007134" },
+        "areaServed": "Orange County, CA",
+        "serviceType": "Automotive window tint removal"
+    }
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css?v=20260108-1">
+    <link rel="stylesheet" href="city-pages.css">
+    <link rel="stylesheet" href="seo-pages.css?v=20260617-2">
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-TR9ET60HX3"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-TR9ET60HX3');
+        gtag('config', 'AW-17846304809');
+    </script>
+</head>
+
+<body>
+    <nav class="nav"><div class="nav__container"><a href="/" class="nav__logo"><img src="car-hero.webp" alt="Obsidian Autoworks" class="nav__logo-car" width="500" height="200"><span class="nav__logo-text">OBSIDIAN<span>AUTOWORKS</span></span></a><div class="nav__links"><a href="/services">Services</a><a href="/window-tint-pricing">Pricing</a><a href="/window-tinting-gallery">Gallery</a><a href="/#contact">Contact</a></div><div class="nav__actions"><a href="/booking" class="brutalist-btn brutalist-btn--accent">Book Online</a><a href="tel:7146007134" class="brutalist-btn brutalist-btn--outline">(714) 600-7134</a></div></div></nav>
+    <main class="seo-page">
+        <header class="seo-hero"><div class="container seo-hero__grid"><div><span class="seo-kicker">Quote-Based Removal</span><h1>Window Tint Removal For <span>Bubbling Peeling Or Old Film</span></h1><p class="seo-hero__copy">Old tint can turn purple, bubble, peel, or leave adhesive behind. Removal is quoted by condition, glass count, and whether you want fresh ceramic tint after.</p><div class="seo-hero__actions"><a href="/booking" class="brutalist-btn brutalist-btn--primary">Request Removal Quote</a><a href="/ceramic-window-tinting" class="brutalist-btn">Retint With Ceramic</a></div></div><aside class="seo-hero__panel"><h2>When To Remove</h2><div class="seo-stat-list"><div class="seo-stat"><span class="seo-stat__mark">B</span><span>Bubbling or peeling film.</span></div><div class="seo-stat"><span class="seo-stat__mark">P</span><span>Purple, faded, or cheap old tint.</span></div><div class="seo-stat"><span class="seo-stat__mark">R</span><span>Removal before a clean retint.</span></div></div></aside></div></header>
+        <section class="seo-section seo-section--light"><div class="container"><div class="seo-section__header"><h2>What Affects Removal Pricing</h2><p>Tint removal is variable because old film does not fail the same way on every vehicle.</p></div><div class="seo-grid"><article class="seo-card"><h3>Film Condition</h3><p>Older adhesive, bubbling, and brittle film can add time.</p></article><article class="seo-card"><h3>Glass Count</h3><p>More windows and larger glass areas change the scope.</p></article><article class="seo-card"><h3>Retint Plan</h3><p>Removal can be paired with fresh ceramic tint when the schedule and scope fit.</p></article></div></div></section>
+        <section class="seo-section seo-section--cream"><div class="container"><div class="seo-section__header"><h2>Removal Plus Retint</h2><p>If the old tint is failing, the cleanest path is often removal followed by a better ceramic film package.</p></div><div class="seo-link-row"><a class="seo-link" href="/window-tint-pricing">Pricing</a><a class="seo-link" href="/full-car-window-tinting">Full Car</a><a class="seo-link" href="/sides-rear-window-tinting">Sides &amp; Rear</a><a class="seo-link" href="/ceramic-window-tinting">Ceramic Tint</a></div></div></section>
+        <section class="seo-section seo-section--dark"><div class="container"><div class="seo-section__header seo-section__header--center"><h2>Tint Removal FAQ</h2></div><div class="seo-faq"><details class="faq-item"><summary>Is tint removal a fixed price?</summary><p>No. It is quote-based because adhesive, film age, and window count change the work.</p></details><details class="faq-item"><summary>Can you remove and retint the same day?</summary><p>Sometimes. It depends on film condition, schedule, and the package you want after removal.</p></details><details class="faq-item"><summary>What should I send for a quote?</summary><p>Send vehicle year, make, model, and photos of the failing tint.</p></details></div></div></section>
+        <section class="seo-cta"><div class="container"><div class="seo-cta__box"><h2>Request A Tint Removal Quote</h2><p>Send photos of the old film and the package you want after removal.</p><div class="seo-cta__actions"><a href="/booking" class="brutalist-btn brutalist-btn--primary brutalist-btn--large">Request Quote</a><a href="tel:7146007134" class="brutalist-btn brutalist-btn--large">Call (714) 600-7134</a></div></div></div></section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__main">
+                <div class="footer__brand">
+                    <span class="footer__logo">OBSIDIAN<span>AUTOWORKS</span></span>
+                    <p>Mobile Car Window Tint Service</p>
+                    <div class="footer__cities">
+                        <div class="footer__cities-title">Service Areas</div>
+                        <div class="footer__cities-list">
+                            <a href="/irvine-window-tinting">Irvine</a>
+                            <a href="/newport-beach-window-tinting">Newport Beach</a>
+                            <a href="/tustin-window-tinting">Tustin</a>
+                            <a href="/costa-mesa-window-tinting">Costa Mesa</a>
+                            <a href="/laguna-beach-window-tinting">Laguna Beach</a>
+                            <a href="/aliso-viejo-window-tinting">Aliso Viejo</a>
+                            <a href="/santa-ana-window-tinting">Santa Ana</a>
+                            <a href="/anaheim-window-tinting">Anaheim</a>
+                            <a href="/huntington-beach-window-tinting">Huntington Beach</a>
+                            <a href="/orange-window-tinting">Orange</a>
+                            <a href="/mission-viejo-window-tinting">Mission Viejo</a>
+                            <a href="/lake-forest-window-tinting">Lake Forest</a>
+                            <a href="/dana-point-window-tinting">Dana Point</a>
+                            <a href="/san-clemente-window-tinting">San Clemente</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="footer__links">
+                    <div><strong>Services</strong><br><a href="/services">Services</a><br><a href="/window-tint-pricing">Pricing</a><br><a href="/ceramic-window-tinting">Ceramic</a><br><a href="/mobile-window-tinting">Mobile Tint</a></div>
+                    <div><strong>Packages</strong><br><a href="/full-car-window-tinting">Full Car</a><br><a href="/sides-rear-window-tinting">Sides &amp; Rear</a><br><a href="/front-two-window-tinting">Front Two</a><br><a href="/windshield-window-tinting">Windshield</a><br><a href="/tint-removal">Tint Removal</a></div>
+                    <div><strong>Tesla</strong><br><a href="/tesla-window-tinting">Tesla Tint</a><br><a href="/tesla-model-y-window-tinting">Model Y</a><br><a href="/tesla-model-3-window-tinting">Model 3</a></div>
+                    <div><strong>Guides</strong><br><a href="/window-tint-shades">Tint Shades</a><br><a href="/california-window-tint-law">California Tint Law</a><br><a href="/ceramic-vs-carbon-window-tint">Ceramic vs Carbon</a><br><a href="/how-long-does-window-tinting-take">Install Timing</a><br><a href="/is-mobile-window-tinting-worth-it">Mobile Tinting</a><br><a href="/how-to-choose-window-tint-percentage">Tint Percentage</a><br><a href="/does-window-tint-reduce-heat">Heat Reduction</a><br><a href="/window-tint-aftercare">Aftercare</a></div>
+                    <div><strong>Specialty</strong><br><a href="/architectural-window-film">Architectural Film</a><br><a href="/chrome-delete">Chrome Delete</a></div>
+                    <div><strong>Contact</strong><br><a href="mailto:obsidianautoworksoc@gmail.com">obsidianautoworksoc@gmail.com</a><br><a href="tel:7146007134">(714) 600-7134</a></div>
+                </div>
+            </div>
+            <div class="footer__bottom">
+                <p>© 2026 Obsidian Autoworks. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    <script src="/lead-tracking.js" defer></script>
+</body>
+
+</html>

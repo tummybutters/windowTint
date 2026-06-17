@@ -18,12 +18,7 @@
     },
     {
       "source": "/services.html",
-      "destination": "/window-tinting-gallery",
-      "permanent": true
-    },
-    {
-      "source": "/services",
-      "destination": "/window-tinting-gallery",
+      "destination": "/services",
       "permanent": true
     },
     {
@@ -115,6 +110,196 @@
       "source": "/aliso-viejo-windowtinting",
       "destination": "/aliso-viejo-window-tinting",
       "permanent": true
+    },
+    {
+      "source": "/window-tint-shades.html",
+      "destination": "/window-tint-shades",
+      "permanent": true
+    },
+    {
+      "source": "/california-window-tint-law.html",
+      "destination": "/california-window-tint-law",
+      "permanent": true
+    },
+    {
+      "source": "/tesla-model-y-window-tinting.html",
+      "destination": "/tesla-model-y-window-tinting",
+      "permanent": true
+    },
+    {
+      "source": "/tesla-model-3-window-tinting.html",
+      "destination": "/tesla-model-3-window-tinting",
+      "permanent": true
+    },
+    {
+      "source": "/architectural-window-film.html",
+      "destination": "/architectural-window-film",
+      "permanent": true
+    },
+    {
+      "source": "/chrome-delete.html",
+      "destination": "/chrome-delete",
+      "permanent": true
+    },
+    {
+      "source": "/window-tint-pricing.html",
+      "destination": "/window-tint-pricing",
+      "permanent": true
+    },
+    {
+      "source": "/ceramic-window-tinting.html",
+      "destination": "/ceramic-window-tinting",
+      "permanent": true
+    },
+    {
+      "source": "/mobile-window-tinting.html",
+      "destination": "/mobile-window-tinting",
+      "permanent": true
+    },
+    {
+      "source": "/full-car-window-tinting.html",
+      "destination": "/full-car-window-tinting",
+      "permanent": true
+    },
+    {
+      "source": "/sides-rear-window-tinting.html",
+      "destination": "/sides-rear-window-tinting",
+      "permanent": true
+    },
+    {
+      "source": "/front-two-window-tinting.html",
+      "destination": "/front-two-window-tinting",
+      "permanent": true
+    },
+    {
+      "source": "/windshield-window-tinting.html",
+      "destination": "/windshield-window-tinting",
+      "permanent": true
+    },
+    {
+      "source": "/tesla-window-tinting.html",
+      "destination": "/tesla-window-tinting",
+      "permanent": true
+    },
+    {
+      "source": "/tint-removal.html",
+      "destination": "/tint-removal",
+      "permanent": true
+    },
+    {
+      "source": "/irvine-window-tinting.html",
+      "destination": "/irvine-window-tinting",
+      "permanent": true
+    },
+    {
+      "source": "/newport-beach-window-tinting.html",
+      "destination": "/newport-beach-window-tinting",
+      "permanent": true
+    },
+    {
+      "source": "/tustin-window-tinting.html",
+      "destination": "/tustin-window-tinting",
+      "permanent": true
+    },
+    {
+      "source": "/costa-mesa-window-tinting.html",
+      "destination": "/costa-mesa-window-tinting",
+      "permanent": true
+    },
+    {
+      "source": "/laguna-beach-window-tinting.html",
+      "destination": "/laguna-beach-window-tinting",
+      "permanent": true
+    },
+    {
+      "source": "/aliso-viejo-window-tinting.html",
+      "destination": "/aliso-viejo-window-tinting",
+      "permanent": true
+    },
+    {
+      "source": "/santa-ana-window-tinting.html",
+      "destination": "/santa-ana-window-tinting",
+      "permanent": true
+    },
+    {
+      "source": "/anaheim-window-tinting.html",
+      "destination": "/anaheim-window-tinting",
+      "permanent": true
+    },
+    {
+      "source": "/huntington-beach-window-tinting.html",
+      "destination": "/huntington-beach-window-tinting",
+      "permanent": true
+    },
+    {
+      "source": "/orange-window-tinting.html",
+      "destination": "/orange-window-tinting",
+      "permanent": true
+    },
+    {
+      "source": "/mission-viejo-window-tinting.html",
+      "destination": "/mission-viejo-window-tinting",
+      "permanent": true
+    },
+    {
+      "source": "/lake-forest-window-tinting.html",
+      "destination": "/lake-forest-window-tinting",
+      "permanent": true
+    },
+    {
+      "source": "/dana-point-window-tinting.html",
+      "destination": "/dana-point-window-tinting",
+      "permanent": true
+    },
+    {
+      "source": "/san-clemente-window-tinting.html",
+      "destination": "/san-clemente-window-tinting",
+      "permanent": true
+    },
+    {
+      "source": "/ceramic-vs-carbon-window-tint.html",
+      "destination": "/ceramic-vs-carbon-window-tint",
+      "permanent": true
+    },
+    {
+      "source": "/how-long-does-window-tinting-take.html",
+      "destination": "/how-long-does-window-tinting-take",
+      "permanent": true
+    },
+    {
+      "source": "/is-mobile-window-tinting-worth-it.html",
+      "destination": "/is-mobile-window-tinting-worth-it",
+      "permanent": true
+    },
+    {
+      "source": "/how-to-choose-window-tint-percentage.html",
+      "destination": "/how-to-choose-window-tint-percentage",
+      "permanent": true
+    },
+    {
+      "source": "/does-window-tint-reduce-heat.html",
+      "destination": "/does-window-tint-reduce-heat",
+      "permanent": true
+    },
+    {
+      "source": "/window-tint-aftercare.html",
+      "destination": "/window-tint-aftercare",
+      "permanent": true
+    },
+    {
+      "source": "/irvine",
+      "destination": "/irvine-window-tinting",
+      "permanent": true
+    },
+    {
+      "source": "/newport-beach",
+      "destination": "/newport-beach-window-tinting",
+      "permanent": true
+    },
+    {
+      "source": "/tustin",
+      "destination": "/tustin-window-tinting",
+      "permanent": true
     }
   ],
   "rewrites": [
@@ -153,6 +338,126 @@
     {
       "source": "/aliso-viejo-window-tinting",
       "destination": "/aliso-viejo-windowtinting"
+    },
+    {
+      "source": "/window-tint-shades",
+      "destination": "/window-tint-shades"
+    },
+    {
+      "source": "/california-window-tint-law",
+      "destination": "/california-window-tint-law"
+    },
+    {
+      "source": "/tesla-model-y-window-tinting",
+      "destination": "/tesla-model-y-window-tinting"
+    },
+    {
+      "source": "/tesla-model-3-window-tinting",
+      "destination": "/tesla-model-3-window-tinting"
+    },
+    {
+      "source": "/architectural-window-film",
+      "destination": "/architectural-window-film"
+    },
+    {
+      "source": "/chrome-delete",
+      "destination": "/chrome-delete"
+    },
+    {
+      "source": "/services",
+      "destination": "/services"
+    },
+    {
+      "source": "/window-tint-pricing",
+      "destination": "/window-tint-pricing"
+    },
+    {
+      "source": "/ceramic-window-tinting",
+      "destination": "/ceramic-window-tinting"
+    },
+    {
+      "source": "/mobile-window-tinting",
+      "destination": "/mobile-window-tinting"
+    },
+    {
+      "source": "/full-car-window-tinting",
+      "destination": "/full-car-window-tinting"
+    },
+    {
+      "source": "/sides-rear-window-tinting",
+      "destination": "/sides-rear-window-tinting"
+    },
+    {
+      "source": "/front-two-window-tinting",
+      "destination": "/front-two-window-tinting"
+    },
+    {
+      "source": "/windshield-window-tinting",
+      "destination": "/windshield-window-tinting"
+    },
+    {
+      "source": "/tesla-window-tinting",
+      "destination": "/tesla-window-tinting"
+    },
+    {
+      "source": "/tint-removal",
+      "destination": "/tint-removal"
+    },
+    {
+      "source": "/santa-ana-window-tinting",
+      "destination": "/santa-ana-window-tinting"
+    },
+    {
+      "source": "/anaheim-window-tinting",
+      "destination": "/anaheim-window-tinting"
+    },
+    {
+      "source": "/huntington-beach-window-tinting",
+      "destination": "/huntington-beach-window-tinting"
+    },
+    {
+      "source": "/orange-window-tinting",
+      "destination": "/orange-window-tinting"
+    },
+    {
+      "source": "/mission-viejo-window-tinting",
+      "destination": "/mission-viejo-window-tinting"
+    },
+    {
+      "source": "/lake-forest-window-tinting",
+      "destination": "/lake-forest-window-tinting"
+    },
+    {
+      "source": "/dana-point-window-tinting",
+      "destination": "/dana-point-window-tinting"
+    },
+    {
+      "source": "/san-clemente-window-tinting",
+      "destination": "/san-clemente-window-tinting"
+    },
+    {
+      "source": "/ceramic-vs-carbon-window-tint",
+      "destination": "/ceramic-vs-carbon-window-tint"
+    },
+    {
+      "source": "/how-long-does-window-tinting-take",
+      "destination": "/how-long-does-window-tinting-take"
+    },
+    {
+      "source": "/is-mobile-window-tinting-worth-it",
+      "destination": "/is-mobile-window-tinting-worth-it"
+    },
+    {
+      "source": "/how-to-choose-window-tint-percentage",
+      "destination": "/how-to-choose-window-tint-percentage"
+    },
+    {
+      "source": "/does-window-tint-reduce-heat",
+      "destination": "/does-window-tint-reduce-heat"
+    },
+    {
+      "source": "/window-tint-aftercare",
+      "destination": "/window-tint-aftercare"
     }
   ],
   "headers": [
@@ -166,7 +471,7 @@
       ]
     },
     {
-      "source": "/(index|booking|vip-booking|services|window-tinting-gallery|irvine|irvine-windowtinting|irvine-window-tinting|newport-beach|newport-beach-windowtinting|newport-beach-window-tinting|tustin|tustin-windowtinting|tustin-window-tinting|costa-mesa-windowtinting|costa-mesa-window-tinting|laguna-beach-windowtinting|laguna-beach-window-tinting|aliso-viejo-windowtinting|aliso-viejo-window-tinting)",
+      "source": "/(index|booking|vip-booking|window-tinting-gallery|services|window-tint-pricing|ceramic-window-tinting|mobile-window-tinting|full-car-window-tinting|sides-rear-window-tinting|front-two-window-tinting|windshield-window-tinting|tesla-window-tinting|tint-removal|irvine|newport-beach|tustin|costa-mesa-windowtinting|laguna-beach-windowtinting|aliso-viejo-windowtinting|window-tint-shades|california-window-tint-law|tesla-model-y-window-tinting|tesla-model-3-window-tinting|architectural-window-film|chrome-delete|santa-ana-window-tinting|anaheim-window-tinting|huntington-beach-window-tinting|orange-window-tinting|mission-viejo-window-tinting|lake-forest-window-tinting|dana-point-window-tinting|san-clemente-window-tinting|ceramic-vs-carbon-window-tint|how-long-does-window-tinting-take|is-mobile-window-tinting-worth-it|how-to-choose-window-tint-percentage|does-window-tint-reduce-heat|window-tint-aftercare|irvine-window-tinting|newport-beach-window-tinting|tustin-window-tinting|costa-mesa-window-tinting|laguna-beach-window-tinting|aliso-viejo-window-tinting)",
       "headers": [
         {
           "key": "Content-Type",

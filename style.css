@@ -1167,7 +1167,14 @@ body.quote-modal-open {
 
 .footer__links {
     display: flex;
-    gap: 4rem;
+    flex-wrap: wrap;
+    gap: 1.25rem 2rem;
+    max-width: 920px;
+}
+
+.footer__links div {
+    min-width: 128px;
+    line-height: 1.8;
 }
 
 .footer__links a {
@@ -1253,6 +1260,10 @@ body.quote-modal-open {
     .footer__links {
         flex-direction: column;
         gap: 2rem;
+    }
+
+    .footer__links div {
+        min-width: 0;
     }
 }
 

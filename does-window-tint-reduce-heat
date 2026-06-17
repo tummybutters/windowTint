@@ -4,37 +4,52 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mobile Window Tinting Services | Orange County</title>
-    <meta name="description"
-        content="Mobile ceramic window tinting in Orange County. Full car tint, front windows, windshield, Tesla glass, tint removal, and mobile service at your location.">
-    <link rel="canonical" href="https://www.obsidianautoworksoc.com/services">
+    <title>Does Window Tint Reduce Heat? | Ceramic Tint Guide</title>
+    <meta name="description" content="Learn how ceramic window tint reduces heat, glare, and UV exposure, and why film quality matters more than simply choosing darker tint.">
+    <link rel="canonical" href="https://www.obsidianautoworksoc.com/does-window-tint-reduce-heat">
     <link rel="icon" type="image/png" href="favicon.png">
-    <meta property="og:title" content="Mobile Window Tinting Services | Orange County">
-    <meta property="og:description"
-        content="Explore Obsidian Autoworks mobile ceramic tint services, package options, Tesla tinting, tint removal, and quote-based add-ons.">
+    <meta property="og:title" content="Does Window Tint Reduce Heat? | Ceramic Tint Guide">
+    <meta property="og:description" content="Learn how ceramic window tint reduces heat, glare, and UV exposure, and why film quality matters more than simply choosing darker tint.">
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://www.obsidianautoworksoc.com/services">
+    <meta property="og:url" content="https://www.obsidianautoworksoc.com/does-window-tint-reduce-heat">
     <script type="application/ld+json">
     {
-        "@context": "https://schema.org",
-        "@type": "Service",
-        "name": "Mobile Ceramic Window Tinting Services",
-        "provider": {
-            "@type": "AutomotiveBusiness",
-            "name": "Obsidian Autoworks",
-            "telephone": "+17146007134"
-        },
-        "areaServed": "Orange County, CA",
-        "serviceType": "Mobile automotive window tinting"
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            "mainEntity": [
+                    {
+                            "@type": "Question",
+                            "name": "Will tint make my car cooler?",
+                            "acceptedAnswer": {
+                                    "@type": "Answer",
+                                    "text": "It can make the cabin more comfortable and reduce heat gain, especially with ceramic film."
+                            }
+                    },
+                    {
+                            "@type": "Question",
+                            "name": "Is darker tint cooler?",
+                            "acceptedAnswer": {
+                                    "@type": "Answer",
+                                    "text": "Not automatically. Ceramic performance matters more than darkness alone."
+                            }
+                    },
+                    {
+                            "@type": "Question",
+                            "name": "Does windshield tint help heat?",
+                            "acceptedAnswer": {
+                                    "@type": "Answer",
+                                    "text": "A properly chosen windshield film can help front-cabin heat and glare while keeping visibility in mind."
+                            }
+                    }
+            ]
     }
     </script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css?v=20260108-1">
     <link rel="stylesheet" href="city-pages.css">
-    <link rel="stylesheet" href="seo-pages.css?v=20260617-2">
+    <link rel="stylesheet" href="seo-pages.css?v=20260617-3">
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-TR9ET60HX3"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
@@ -69,25 +84,20 @@
         <header class="seo-hero">
             <div class="container seo-hero__grid">
                 <div>
-                    <span class="seo-kicker">Mobile Tint Services</span>
-                    <h1>Mobile Ceramic Window Tinting Services <span>In Orange County</span></h1>
-                    <p class="seo-hero__copy">Obsidian Autoworks brings premium ceramic window tinting to your home,
-                        office, garage, or approved install location. Pick the package, choose the shade, and keep your
-                        day moving.</p>
+                    <span class="seo-kicker">Heat Rejection</span>
+                    <h1>Does Window Tint Reduce Heat? <span>Yes, With The Right Film</span></h1>
+                    <p class="seo-hero__copy">Window tint can reduce heat, but the amount depends heavily on the film. A high-quality ceramic film is designed to reject infrared heat while keeping visibility practical.</p>
                     <div class="seo-hero__actions">
                         <a href="/booking" class="brutalist-btn brutalist-btn--primary">Book Mobile Tint</a>
                         <a href="/window-tint-pricing" class="brutalist-btn">See Pricing</a>
                     </div>
                 </div>
                 <aside class="seo-hero__panel">
-                    <h2>Core Services</h2>
+                    <h2>What Matters</h2>
                     <div class="seo-stat-list">
-                        <div class="seo-stat"><span class="seo-stat__mark">1</span><span>Full car, sides and rear,
-                                front two, and windshield ceramic tint.</span></div>
-                        <div class="seo-stat"><span class="seo-stat__mark">2</span><span>Tesla glass packages for Model
-                                3, Model Y, and Model S.</span></div>
-                        <div class="seo-stat"><span class="seo-stat__mark">3</span><span>Tint removal and quote-based
-                                add-ons when the scope fits.</span></div>
+                        <div class="seo-stat"><span class="seo-stat__mark">1</span><span>Ceramic film is the main heat-focused choice.</span></div>
+                        <div class="seo-stat"><span class="seo-stat__mark">2</span><span>Darker film is not automatically better for heat.</span></div>
+                        <div class="seo-stat"><span class="seo-stat__mark">3</span><span>Windshield and roof glass can change cabin comfort dramatically.</span></div>
                     </div>
                 </aside>
             </div>
@@ -96,49 +106,19 @@
         <section class="seo-section seo-section--light">
             <div class="container">
                 <div class="seo-section__header">
-                    <h2>Choose Your Tint Package</h2>
-                    <p>These are the main service paths. Each page gives pricing, timing, and the best-fit use case.</p>
+                    <h2>Quick Comparison</h2>
+                    <p>Use this as a planning page before choosing a package, shade, or appointment time.</p>
                 </div>
-                <div class="seo-grid">
-                    <article class="seo-card">
-                        <span class="seo-card__label">Complete</span>
-                        <h3>Full Car Window Tinting</h3>
-                        <p>Best for drivers who want full-cabin heat, UV, privacy, and style coverage.</p>
-                        <div class="seo-link-row"><a class="seo-link" href="/full-car-window-tinting">View Full Car</a></div>
-                    </article>
-                    <article class="seo-card">
-                        <span class="seo-card__label">Privacy</span>
-                        <h3>Sides And Rear</h3>
-                        <p>Popular for privacy, passenger comfort, and a cleaner side profile.</p>
-                        <div class="seo-link-row"><a class="seo-link" href="/sides-rear-window-tinting">View Sides And
-                                Rear</a></div>
-                    </article>
-                    <article class="seo-card">
-                        <span class="seo-card__label">Match</span>
-                        <h3>Front Two Windows</h3>
-                        <p>Match rear factory glass or improve front-row comfort without a full package.</p>
-                        <div class="seo-link-row"><a class="seo-link" href="/front-two-window-tinting">View Front
-                                Two</a></div>
-                    </article>
-                    <article class="seo-card">
-                        <span class="seo-card__label">Glare</span>
-                        <h3>Windshield Tinting</h3>
-                        <p>Helps with glare, UV exposure, and front-cabin heat when chosen carefully.</p>
-                        <div class="seo-link-row"><a class="seo-link" href="/windshield-window-tinting">View
-                                Windshield</a></div>
-                    </article>
-                    <article class="seo-card">
-                        <span class="seo-card__label">Tesla</span>
-                        <h3>Tesla Window Tinting</h3>
-                        <p>Model-specific ceramic tint for glass-heavy Tesla cabins.</p>
-                        <div class="seo-link-row"><a class="seo-link" href="/tesla-window-tinting">View Tesla Tint</a></div>
-                    </article>
-                    <article class="seo-card">
-                        <span class="seo-card__label">Repair</span>
-                        <h3>Tint Removal</h3>
-                        <p>Quote-based removal for bubbling, peeling, purple, or failed film before a retint.</p>
-                        <div class="seo-link-row"><a class="seo-link" href="/tint-removal">View Tint Removal</a></div>
-                    </article>
+                <div class="seo-table">
+                    <table>
+                        <tbody>
+                            <tr><th>Upgrade</th><th>Heat Impact</th><th>Best Fit</th></tr>
+                            <tr><td>Ceramic side/rear tint</td><td>Strong daily comfort improvement</td><td>Most vehicles</td></tr>
+                            <tr><td>Windshield tint</td><td>Big front-cabin glare and heat help</td><td>Drivers with bright commutes</td></tr>
+                            <tr><td>Tesla roof add-on</td><td>Important on glass-heavy cabins</td><td>Model 3/Y/S when appropriate</td></tr>
+                            <tr><td>Sunroof/panoramic roof</td><td>Can reduce overhead heat</td><td>Vehicles with large roof glass</td></tr>
+                        </tbody>
+                    </table>
                 </div>
             </div>
         </section>
@@ -146,23 +126,20 @@
         <section class="seo-section seo-section--dark">
             <div class="container">
                 <div class="seo-section__header seo-section__header--center">
-                    <h2>Why Mobile Install Works</h2>
-                    <p>The right space matters more than making you drive to a waiting room.</p>
+                    <h2>What To Know</h2>
                 </div>
                 <div class="seo-grid">
                     <article class="seo-card seo-card--dark">
-                        <h3>We Come To You</h3>
-                        <p>Home driveways, garages, workplaces, and fleet lots can all work when the install space is
-                            safe and suitable.</p>
+                        <h3>Why Ceramic Helps</h3>
+                        <p>Ceramic film targets infrared heat, which is a major part of what makes the cabin feel hot. That is why a lighter ceramic film can outperform a darker basic film.</p>
                     </article>
                     <article class="seo-card seo-card--dark">
-                        <h3>Premium Ceramic Film</h3>
-                        <p>Ceramic film is chosen for heat rejection, UV protection, privacy, and clean visibility.</p>
+                        <h3>Parked-Car Heat</h3>
+                        <p>Tint helps reduce heat gain, but no film turns a parked car into an air-conditioned space. It slows and softens the heat load.</p>
                     </article>
                     <article class="seo-card seo-card--dark">
-                        <h3>Clear Booking Path</h3>
-                        <p>Use pricing first, then book online or call to confirm the vehicle, shade, location, and
-                            timing.</p>
+                        <h3>Best Glass To Consider</h3>
+                        <p>Side and rear packages help privacy and comfort. Windshield and panoramic roof planning can matter a lot on vehicles with large glass areas.</p>
                     </article>
                 </div>
             </div>
@@ -171,19 +148,14 @@
         <section class="seo-section seo-section--cream">
             <div class="container">
                 <div class="seo-section__header">
-                    <h2>Plan Before You Book</h2>
-                    <p>Use these decision pages if you are not sure about shade, legality, or exact package.</p>
+                    <h2>Related Planning Pages</h2>
+                    <p>Move from research into the exact service, price, or booking path.</p>
                 </div>
                 <div class="seo-link-row">
-                    <a class="seo-link" href="/window-tint-pricing">Full Pricing</a>
                     <a class="seo-link" href="/ceramic-window-tinting">Ceramic Tint</a>
-                    <a class="seo-link" href="/mobile-window-tinting">Mobile Service</a>
-                    <a class="seo-link" href="/window-tint-shades">Tint Shades</a>
-                    <a class="seo-link" href="/california-window-tint-law">California Tint Law</a>
-                    <a class="seo-link" href="/ceramic-vs-carbon-window-tint">Ceramic vs Carbon</a>
-                    <a class="seo-link" href="/how-long-does-window-tinting-take">Install Timing</a>
-                    <a class="seo-link" href="/is-mobile-window-tinting-worth-it">Mobile Tinting Guide</a>
-                    <a class="seo-link" href="/window-tinting-gallery">Gallery</a>
+                    <a class="seo-link" href="/windshield-window-tinting">Windshield Tint</a>
+                    <a class="seo-link" href="/tesla-window-tinting">Tesla Tint</a>
+                    <a class="seo-link" href="/window-tint-pricing">Pricing</a>
                 </div>
             </div>
         </section>
@@ -191,23 +163,20 @@
         <section class="seo-section seo-section--light">
             <div class="container">
                 <div class="seo-section__header seo-section__header--center">
-                    <h2>Services FAQ</h2>
+                    <h2>FAQ</h2>
                 </div>
                 <div class="seo-faq">
                     <details class="faq-item">
-                        <summary>Do you come to my location?</summary>
-                        <p>Yes. Obsidian Autoworks is a mobile tint service for Orange County and nearby areas when the
-                            appointment space is suitable.</p>
+                        <summary>Will tint make my car cooler?</summary>
+                        <p>It can make the cabin more comfortable and reduce heat gain, especially with ceramic film.</p>
                     </details>
                     <details class="faq-item">
-                        <summary>What is the most complete package?</summary>
-                        <p>The full-car package is the most complete standard package. Tesla roof glass and some add-ons
-                            are quoted separately.</p>
+                        <summary>Is darker tint cooler?</summary>
+                        <p>Not automatically. Ceramic performance matters more than darkness alone.</p>
                     </details>
                     <details class="faq-item">
-                        <summary>Where should I start?</summary>
-                        <p>Start with the pricing page, then choose the package page that matches your vehicle and
-                            comfort goal.</p>
+                        <summary>Does windshield tint help heat?</summary>
+                        <p>A properly chosen windshield film can help front-cabin heat and glare while keeping visibility in mind.</p>
                     </details>
                 </div>
             </div>
@@ -216,11 +185,10 @@
         <section class="seo-cta">
             <div class="container">
                 <div class="seo-cta__box">
-                    <h2>Ready To Pick A Package?</h2>
-                    <p>Book online or call with your vehicle year, make, model, and the glass you want tinted.</p>
+                    <h2>Ready To Plan Your Tint?</h2>
+                    <p>Book online or call with your vehicle, preferred shade, and appointment location.</p>
                     <div class="seo-cta__actions">
-                        <a href="/booking" class="brutalist-btn brutalist-btn--primary brutalist-btn--large">Book
-                            Mobile Tint</a>
+                        <a href="/booking" class="brutalist-btn brutalist-btn--primary brutalist-btn--large">Book Online</a>
                         <a href="tel:7146007134" class="brutalist-btn brutalist-btn--large">Call (714) 600-7134</a>
                     </div>
                 </div>

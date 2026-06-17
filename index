@@ -14,11 +14,81 @@
         content="Tint shop near me? We come to you for mobile ceramic auto window tinting in Orange County. Done in about 2 hours with a lifetime warranty. Book now.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://www.obsidianautoworksoc.com/">
+    <script id="obsidian-localbusiness-schema" type="application/ld+json">
+    {
+            "@context": "https://schema.org",
+            "@graph": [
+                    {
+                            "@type": [
+                                    "LocalBusiness",
+                                    "AutomotiveBusiness"
+                            ],
+                            "@id": "https://www.obsidianautoworksoc.com/#business",
+                            "name": "Obsidian Autoworks",
+                            "url": "https://www.obsidianautoworksoc.com/",
+                            "telephone": "+17146007134",
+                            "email": "obsidianautoworksoc@gmail.com",
+                            "priceRange": "$",
+                            "areaServed": [
+                                    "Orange County, CA",
+                                    "Irvine, CA",
+                                    "Newport Beach, CA",
+                                    "Tustin, CA",
+                                    "Costa Mesa, CA",
+                                    "Laguna Beach, CA",
+                                    "Aliso Viejo, CA"
+                            ],
+                            "description": "Mobile ceramic automotive window tinting service for Orange County drivers."
+                    },
+                    {
+                            "@type": "OfferCatalog",
+                            "@id": "https://www.obsidianautoworksoc.com/#window-tint-offers",
+                            "name": "Mobile Window Tinting Services",
+                            "itemListElement": [
+                                    {
+                                            "@type": "Offer",
+                                            "itemOffered": {
+                                                    "@type": "Service",
+                                                    "name": "Full Car Window Tinting"
+                                            },
+                                            "url": "https://www.obsidianautoworksoc.com/full-car-window-tinting"
+                                    },
+                                    {
+                                            "@type": "Offer",
+                                            "itemOffered": {
+                                                    "@type": "Service",
+                                                    "name": "Front Two Window Tinting"
+                                            },
+                                            "url": "https://www.obsidianautoworksoc.com/front-two-window-tinting"
+                                    },
+                                    {
+                                            "@type": "Offer",
+                                            "itemOffered": {
+                                                    "@type": "Service",
+                                                    "name": "Tesla Window Tinting"
+                                            },
+                                            "url": "https://www.obsidianautoworksoc.com/tesla-window-tinting"
+                                    },
+                                    {
+                                            "@type": "Offer",
+                                            "itemOffered": {
+                                                    "@type": "Service",
+                                                    "name": "Tint Removal"
+                                            },
+                                            "url": "https://www.obsidianautoworksoc.com/tint-removal"
+                                    }
+                            ]
+                    }
+            ]
+    }
+    </script>
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="style.css?v=20260108-1">
+    <link rel="stylesheet" href="seo-pages.css?v=20260617-1">
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-TR9ET60HX3"></script>
     <script>
@@ -39,14 +109,14 @@
                 <span class="nav__logo-text">OBSIDIAN<span>AUTOWORKS</span></span>
             </a>
             <div class="nav__links">
-                <a href="#services">Services</a>
-                <a href="#pricing">Pricing</a>
+                <a href="/services">Services</a>
+                <a href="/window-tint-pricing">Pricing</a>
                 <a href="/window-tinting-gallery">Gallery</a>
                 <a href="#contact">Contact</a>
             </div>
             <div class="nav__actions">
-                <a href="/vip-booking" class="brutalist-btn brutalist-btn--accent">Book Online</a>
-                <a href="#pricing" class="brutalist-btn">See Pricing</a>
+                <a href="/booking" class="brutalist-btn brutalist-btn--accent">Book Online</a>
+                <a href="/window-tint-pricing" class="brutalist-btn">See Pricing</a>
             </div>
         </div>
     </nav>
@@ -62,9 +132,9 @@
             <p class="hero__subtitle">Professional installation at your home or workplace — no driving, no gas, no
                 hassle.<br>Serving Orange County, Los Angeles & Inland Empire.</p>
             <div class="hero__actions">
-                <a href="/vip-booking" class="brutalist-btn brutalist-btn--primary">Book Online
+                <a href="/booking" class="brutalist-btn brutalist-btn--primary">Book Online
                     Now</a>
-                <a href="#pricing" class="brutalist-btn">See Pricing</a>
+                <a href="/window-tint-pricing" class="brutalist-btn">See Pricing</a>
             </div>
         </div>
     </header>
@@ -297,6 +367,58 @@
         </div>
     </section>
 
+    <section class="services" aria-label="Window tint guides and specialty services">
+        <div class="container">
+            <div class="section-header">
+                <span class="tag">GUIDES &amp; SPECIALTY</span>
+                <h2>PLAN THE <span>RIGHT SETUP</span></h2>
+                <p>Use these quick decision pages before booking: shade choice, California tint rules, Tesla glass, and
+                    quote-based specialty add-ons.</p>
+            </div>
+            <div class="services__grid">
+                <div class="brutalist-card">
+                    <div class="brutalist-card__header">
+                        <div class="brutalist-card__icon">%</div>
+                        <div class="brutalist-card__alert">Tint Shade Guide</div>
+                    </div>
+                    <div class="brutalist-card__message">
+                        <p class="note">Compare 50%, 35%, 20%, and 5% tint before choosing the look.</p>
+                        <div class="home-guide-links">
+                            <a href="/window-tint-shades">Compare Shades</a>
+                            <a href="/california-window-tint-law">Check California Rules</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="brutalist-card">
+                    <div class="brutalist-card__header">
+                        <div class="brutalist-card__icon">T</div>
+                        <div class="brutalist-card__alert">Tesla Tinting</div>
+                    </div>
+                    <div class="brutalist-card__message">
+                        <p class="note">Model-specific ceramic tint pricing for the glass-heavy Tesla cabin.</p>
+                        <div class="home-guide-links">
+                            <a href="/tesla-model-y-window-tinting">Model Y Tinting</a>
+                            <a href="/tesla-model-3-window-tinting">Model 3 Tinting</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="brutalist-card">
+                    <div class="brutalist-card__header">
+                        <div class="brutalist-card__icon">+</div>
+                        <div class="brutalist-card__alert">Quote-Based Add-Ons</div>
+                    </div>
+                    <div class="brutalist-card__message">
+                        <p class="note">Specialty film and trim services quoted by scope, vehicle, or property.</p>
+                        <div class="home-guide-links">
+                            <a href="/architectural-window-film">Architectural Film</a>
+                            <a href="/chrome-delete">Chrome Delete</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <section id="pricing" class="pricing">
         <div class="container">
             <div class="section-header">
@@ -356,7 +478,7 @@
             <p class="booking-note">Deposit required to lock in your appointment. Final pricing is confirmed before your service — at your home, office, or wherever works for you.</p>
 
             <div class="booking-section__actions">
-                <a href="/vip-booking" class="brutalist-btn brutalist-btn--primary brutalist-btn--large">Book VIP Slot</a>
+                <a href="/booking" class="brutalist-btn brutalist-btn--primary brutalist-btn--large">Book Online</a>
                 <a href="tel:7146007134" class="brutalist-btn brutalist-btn--large">Call First</a>
             </div>
         </div>
@@ -446,14 +568,24 @@
                             <a href="/costa-mesa-window-tinting">Costa Mesa</a>
                             <a href="/laguna-beach-window-tinting">Laguna Beach</a>
                             <a href="/aliso-viejo-window-tinting">Aliso Viejo</a>
+                            <a href="/santa-ana-window-tinting">Santa Ana</a>
+                            <a href="/anaheim-window-tinting">Anaheim</a>
+                            <a href="/huntington-beach-window-tinting">Huntington Beach</a>
+                            <a href="/orange-window-tinting">Orange</a>
+                            <a href="/mission-viejo-window-tinting">Mission Viejo</a>
+                            <a href="/lake-forest-window-tinting">Lake Forest</a>
+                            <a href="/dana-point-window-tinting">Dana Point</a>
+                            <a href="/san-clemente-window-tinting">San Clemente</a>
                         </div>
                     </div>
                 </div>
                 <div class="footer__links">
-                    <div><strong>Location</strong><br>OC / LA / IE<br>We Come To You!</div>
-                    <div><strong>Contact</strong><br><a
-                            href="mailto:obsidianautoworksoc@gmail.com">obsidianautoworksoc@gmail.com</a><br><a
-                            href="tel:7146007134">(714) 600-7134</a></div>
+                    <div><strong>Services</strong><br><a href="/services">Services</a><br><a href="/window-tint-pricing">Pricing</a><br><a href="/ceramic-window-tinting">Ceramic</a><br><a href="/mobile-window-tinting">Mobile Tint</a></div>
+                    <div><strong>Packages</strong><br><a href="/full-car-window-tinting">Full Car</a><br><a href="/sides-rear-window-tinting">Sides &amp; Rear</a><br><a href="/front-two-window-tinting">Front Two</a><br><a href="/windshield-window-tinting">Windshield</a><br><a href="/tint-removal">Tint Removal</a></div>
+                    <div><strong>Tesla</strong><br><a href="/tesla-window-tinting">Tesla Tint</a><br><a href="/tesla-model-y-window-tinting">Model Y</a><br><a href="/tesla-model-3-window-tinting">Model 3</a></div>
+                    <div><strong>Guides</strong><br><a href="/window-tint-shades">Tint Shades</a><br><a href="/california-window-tint-law">California Tint Law</a><br><a href="/ceramic-vs-carbon-window-tint">Ceramic vs Carbon</a><br><a href="/how-long-does-window-tinting-take">Install Timing</a><br><a href="/is-mobile-window-tinting-worth-it">Mobile Tinting</a><br><a href="/how-to-choose-window-tint-percentage">Tint Percentage</a><br><a href="/does-window-tint-reduce-heat">Heat Reduction</a><br><a href="/window-tint-aftercare">Aftercare</a></div>
+                    <div><strong>Specialty</strong><br><a href="/architectural-window-film">Architectural Film</a><br><a href="/chrome-delete">Chrome Delete</a></div>
+                    <div><strong>Contact</strong><br><a href="mailto:obsidianautoworksoc@gmail.com">obsidianautoworksoc@gmail.com</a><br><a href="tel:7146007134">(714) 600-7134</a></div>
                 </div>
             </div>
             <div class="footer__bottom">

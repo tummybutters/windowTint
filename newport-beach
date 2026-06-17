@@ -4,49 +4,80 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Window Tinting Newport Beach | Mobile Tint Near Me</title>
-    <meta name="description"
-        content="Newport Beach tint shop near me? We come to you for mobile ceramic auto window tinting. Done in about 2 hours with a lifetime warranty. Book now.">
+    <title>Newport Beach Window Tinting | Mobile Ceramic Tint</title>
+    <meta name="description" content="Mobile ceramic window tinting in Newport Beach for luxury vehicles, coastal glare, UV protection, and clean privacy packages.">
     <link rel="canonical" href="https://www.obsidianautoworksoc.com/newport-beach-window-tinting">
     <link rel="icon" type="image/png" href="favicon.png">
-    <meta property="og:title" content="Window Tinting Newport Beach | Mobile Tint Near Me">
-    <meta property="og:description"
-        content="Newport Beach tint shop near me? We come to you for mobile ceramic auto window tinting. Done in about 2 hours with a lifetime warranty. Book now.">
+    <meta property="og:title" content="Newport Beach Window Tinting | Mobile Ceramic Tint">
+    <meta property="og:description" content="Mobile ceramic window tinting in Newport Beach for luxury vehicles, coastal glare, UV protection, and clean privacy packages.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://www.obsidianautoworksoc.com/newport-beach-window-tinting">
     <script type="application/ld+json">
     {
-        "@context": "https://schema.org",
-        "@type": [
-            "LocalBusiness",
-            "AutomotiveBusiness"
-        ],
-        "name": "Obsidian Autoworks",
-        "description": "Mobile window tinting in Newport Beach, CA.",
-        "url": "https://www.obsidianautoworksoc.com/newport-beach-window-tinting",
-        "telephone": "+17146007134",
-        "email": "obsidianautoworksoc@gmail.com",
-        "areaServed": [
-            "Newport Beach, CA",
-            "Orange County, CA"
-        ],
-        "serviceType": "Mobile window tinting",
-        "priceRange": "$$"
+            "@context": "https://schema.org",
+            "@graph": [
+                    {
+                            "@type": [
+                                    "LocalBusiness",
+                                    "AutomotiveBusiness"
+                            ],
+                            "@id": "https://www.obsidianautoworksoc.com/newport-beach-window-tinting#business",
+                            "name": "Obsidian Autoworks",
+                            "description": "Mobile ceramic window tinting in Newport Beach, CA.",
+                            "url": "https://www.obsidianautoworksoc.com/newport-beach-window-tinting",
+                            "telephone": "+17146007134",
+                            "email": "obsidianautoworksoc@gmail.com",
+                            "areaServed": [
+                                    "Newport Beach, CA",
+                                    "Orange County, CA"
+                            ],
+                            "serviceType": "Mobile automotive window tinting",
+                            "priceRange": "$$"
+                    },
+                    {
+                            "@type": "FAQPage",
+                            "@id": "https://www.obsidianautoworksoc.com/newport-beach-window-tinting#faq",
+                            "mainEntity": [
+                                    {
+                                            "@type": "Question",
+                                            "name": "How much is mobile window tinting in Newport Beach?",
+                                            "acceptedAnswer": {
+                                                    "@type": "Answer",
+                                                    "text": "Pricing depends on vehicle type, glass coverage, and film choice. Obsidian lists package pricing for full car, sides and rear, front two windows, windshield tinting, Tesla packages, and quote-based tint removal."
+                                            }
+                                    },
+                                    {
+                                            "@type": "Question",
+                                            "name": "Does Obsidian Autoworks come to my location in Newport Beach?",
+                                            "acceptedAnswer": {
+                                                    "@type": "Answer",
+                                                    "text": "Yes. Obsidian Autoworks is a mobile tint service and can install at suitable homes, offices, garages, and approved parking locations around Newport Beach."
+                                            }
+                                    },
+                                    {
+                                            "@type": "Question",
+                                            "name": "What kind of window tint film do you use?",
+                                            "acceptedAnswer": {
+                                                    "@type": "Answer",
+                                                    "text": "Obsidian focuses on premium ceramic film for heat rejection, UV protection, privacy, and clean visibility."
+                                            }
+                                    }
+                            ]
+                    }
+            ]
     }
     </script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css?v=20260108-1">
     <link rel="stylesheet" href="city-pages.css">
-    <!-- Google tag (gtag.js) -->
+    <link rel="stylesheet" href="seo-pages.css?v=20260617-3">
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-TR9ET60HX3"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
         function gtag() { dataLayer.push(arguments); }
         gtag('js', new Date());
-
         gtag('config', 'G-TR9ET60HX3');
         gtag('config', 'AW-17846304809');
     </script>
@@ -60,23 +91,24 @@
                 <span class="nav__logo-text">OBSIDIAN<span>AUTOWORKS</span></span>
             </a>
             <div class="nav__links">
-                <a href="/#services">Services</a>
-                <a href="/#pricing">Pricing</a>
+                <a href="/services">Services</a>
+                <a href="/window-tint-pricing">Pricing</a>
                 <a href="/window-tinting-gallery">Gallery</a>
                 <a href="/#contact">Contact</a>
             </div>
-            <a href="tel:7146007134" class="brutalist-btn">(714) 600-7134</a>
+            <div class="nav__actions">
+                <a href="/booking" class="brutalist-btn brutalist-btn--accent">Book Online</a>
+                <a href="tel:7146007134" class="brutalist-btn brutalist-btn--outline">(714) 600-7134</a>
+            </div>
         </div>
     </nav>
 
     <header class="city-hero">
         <div class="city-hero__container">
-            <h1 class="city-hero__title">Newport Beach Window Tinting | <span>Mobile Auto Tint</span> Service</h1>
-            <p class="city-hero__subtitle">Premium mobile ceramic window tinting delivered right to your home or office
-                in Newport Beach. Professional installation, convenient booking, and luxury results without leaving
-                your location.</p>
+            <h1 class="city-hero__title">Newport Beach Window Tinting | <span>Mobile Luxury Auto Tint</span></h1>
+            <p class="city-hero__subtitle">Premium mobile ceramic window tinting delivered to suitable homes, offices, garages, and approved install spots around Newport Beach.</p>
             <div class="city-hero__cta">
-                <a href="/vip-booking" class="brutalist-btn">Book Your Newport Beach Tint</a>
+                <a href="/booking" class="brutalist-btn">Book Your Newport Beach Tint</a>
             </div>
         </div>
     </header>
@@ -85,60 +117,31 @@
         <div class="container">
             <div class="city-info__grid">
                 <div class="city-info__content">
-                    <h2>Premium Car Window Tinting for Newport Beach</h2>
-                    <p>Our mobile window tinting service comes directly to your location throughout Newport Beach.
-                        Whether you're near Balboa Island, Fashion Island, or Corona del Mar, we bring our premium
-                        ceramic tinting services right to your doorstep — protecting your luxury vehicle from the
-                        coastal sun.</p>
-
+                    <h2>Mobile Window Tinting in Newport Beach, CA</h2>
+                    <p>Newport Beach drivers often want a tint package that looks refined on luxury vehicles while helping with coastal glare, UV exposure, and cabin heat. Obsidian brings premium ceramic film to suitable homes, offices, and garages around Newport Beach.</p>
                     <div class="service-areas">
-                        <div class="service-areas__title">Popular Service Areas in Newport Beach:</div>
+                        <div class="service-areas__title">Popular Newport Beach Service Areas:</div>
                         <div class="service-areas__grid">
-                            <div class="service-areas__item">Balboa Island</div>
                             <div class="service-areas__item">Fashion Island</div>
+                            <div class="service-areas__item">Balboa Island</div>
                             <div class="service-areas__item">Corona del Mar</div>
                             <div class="service-areas__item">Lido Isle</div>
                             <div class="service-areas__item">Newport Coast</div>
+                            <div class="service-areas__item">Dover Shores</div>
+                            <div class="service-areas__item">Mariners Mile</div>
                             <div class="service-areas__item">Balboa Peninsula</div>
                         </div>
                     </div>
-
-                    <div class="mobile-note">
-                        📍 Serving all of Newport Beach — protect your car from the coastal sun today!
-                    </div>
+                    <div class="mobile-note">Mobile install available when the appointment space is safe, shaded when possible, and workable for a clean tint job.</div>
                 </div>
 
                 <div class="why-choose">
-                    <div class="why-choose__title">Why Newport Beach Residents Choose Us:</div>
+                    <div class="why-choose__title">Why Newport Beach Drivers Choose Obsidian:</div>
                     <div class="why-choose__list">
-                        <div class="why-choose__item">
-                            <div class="why-choose__icon">✓</div>
-                            <div class="why-choose__content">
-                                <h4>Convenient On-Location Service</h4>
-                                <p>We come to your home, apartment, or workplace in Newport Beach</p>
-                            </div>
-                        </div>
-                        <div class="why-choose__item">
-                            <div class="why-choose__icon">✓</div>
-                            <div class="why-choose__content">
-                                <h4>Premium Ceramic Film</h4>
-                                <p>We use only the highest quality IR ceramic window film</p>
-                            </div>
-                        </div>
-                        <div class="why-choose__item">
-                            <div class="why-choose__icon">✓</div>
-                            <div class="why-choose__content">
-                                <h4>Coastal Protection</h4>
-                                <p>Block harsh UV rays and keep your interior cool in the beach sun</p>
-                            </div>
-                        </div>
-                        <div class="why-choose__item">
-                            <div class="why-choose__icon">✓</div>
-                            <div class="why-choose__content">
-                                <h4>Flexible Scheduling</h4>
-                                <p>Early morning and evening appointments available</p>
-                            </div>
-                        </div>
+                        <div class="why-choose__item"><div class="why-choose__icon">1</div><div class="why-choose__content"><h4>On-Location Service</h4><p>We come to the home, office, garage, or approved parking location.</p></div></div>
+                        <div class="why-choose__item"><div class="why-choose__icon">2</div><div class="why-choose__content"><h4>Premium Ceramic Film</h4><p>Built for heat rejection, UV protection, privacy, and clean visibility.</p></div></div>
+                        <div class="why-choose__item"><div class="why-choose__icon">3</div><div class="why-choose__content"><h4>Clear Package Path</h4><p>Compare pricing, pick the glass coverage, and book the right service.</p></div></div>
+                        <div class="why-choose__item"><div class="why-choose__icon">4</div><div class="why-choose__content"><h4>Local Fit</h4><p>Shade recommendations account for commute patterns, parking, and daily visibility.</p></div></div>
                     </div>
                 </div>
             </div>
@@ -148,27 +151,26 @@
     <section class="city-local">
         <div class="container">
             <div class="city-section-header">
-                <h2>Why Newport Beach Trusts Our Mobile Service</h2>
-                <p>Coastal sun and reflective glare along PCH can heat up cabins fast. Ceramic film helps cut glare and
-                    UV while protecting leather interiors in luxury vehicles.</p>
+                <h2>Newport Beach Tinting Notes</h2>
+                <p>Use this page as the local planning hub for ceramic tint, mobile service, pricing, and nearby Orange County route coverage.</p>
             </div>
             <div class="city-local__grid">
                 <div class="brutalist-card city-local__card">
                     <h3>Common Appointment Spots</h3>
                     <ul class="city-local__list">
-                        <li>Balboa Island driveways and Lido Isle homes</li>
-                        <li>Fashion Island parking areas</li>
-                        <li>Corona del Mar neighborhoods</li>
-                        <li>Newport Coast and Bayside communities</li>
+                        <li>Fashion Island-area appointments</li>
+                        <li>Corona del Mar garages</li>
+                        <li>Balboa Peninsula and Lido Isle homes</li>
+                        <li>Newport Coast driveways with suitable shade</li>
                     </ul>
                 </div>
                 <div class="brutalist-card city-local__card">
-                    <h3>Coastal-Focused Goals</h3>
+                    <h3>Frequent Newport Beach Requests</h3>
                     <ul class="city-local__list">
-                        <li>Glare reduction for shoreline drives</li>
-                        <li>UV protection for leather interiors</li>
-                        <li>Even, clean finish for luxury vehicles</li>
-                        <li>Privacy for beach parking</li>
+                        <li>Ceramic film for luxury sedans and SUVs</li>
+                        <li>Coastal glare reduction without a heavy look</li>
+                        <li>Factory-style rear privacy matches</li>
+                        <li>Windshield and panoramic glass comfort planning</li>
                     </ul>
                 </div>
             </div>
@@ -179,20 +181,20 @@
         <div class="container">
             <div class="city-section-header">
                 <h2>What Newport Beach Drivers Mention</h2>
-                <p>Feedback from recent coastal appointments and luxury vehicle installs.</p>
+                <p>Local proof points for the common ways mobile tint helps around Newport Beach.</p>
             </div>
             <div class="city-testimonials__grid">
                 <div class="testimonial-card">
-                    <p class="testimonial-card__quote">Glare reduction on PCH drives is noticeable right away.</p>
-                    <div class="testimonial-card__meta">Coupe owner, Corona del Mar</div>
+                    <p class="testimonial-card__quote">The finish looks right on the car without making it feel overdone.</p>
+                    <div class="testimonial-card__meta">Local driver, Newport Beach</div>
                 </div>
                 <div class="testimonial-card">
-                    <p class="testimonial-card__quote">Tint keeps the cabin cooler after beach parking.</p>
-                    <div class="testimonial-card__meta">SUV owner, Balboa Peninsula</div>
+                    <p class="testimonial-card__quote">Mobile install was easy around a busy Newport schedule.</p>
+                    <div class="testimonial-card__meta">Mobile tint client, Newport Beach</div>
                 </div>
                 <div class="testimonial-card">
-                    <p class="testimonial-card__quote">Clean, even finish on a luxury sedan without leaving home.</p>
-                    <div class="testimonial-card__meta">Sedan owner, Newport Coast</div>
+                    <p class="testimonial-card__quote">Glare is noticeably better on PCH and the cabin stays more comfortable.</p>
+                    <div class="testimonial-card__meta">Orange County vehicle owner, Newport Beach</div>
                 </div>
             </div>
         </div>
@@ -201,43 +203,49 @@
     <section class="city-services">
         <div class="container">
             <div class="city-services__header">
-                <h2>Ceramic Tint: The Choice for Luxury Vehicles</h2>
+                <h2>Popular Window Tint Services in Newport Beach</h2>
             </div>
             <div class="city-services__grid">
                 <div class="service-card">
                     <h3 class="service-card__title">Front Two Windows</h3>
-                    <div class="service-card__price">$180-$250</div>
-                    <div class="service-card__duration">1-1.5 Hours</div>
-                    <div class="service-card__features">
-                        <div class="service-card__feature">Premium ceramic film installation on driver & passenger
-                            windows</div>
-                        <div class="service-card__feature">Match existing tint or choose your preferred shade</div>
-                        <div class="service-card__feature">Full edge-to-edge coverage with clean finish</div>
-                    </div>
-                    <a href="/vip-booking" class="service-card__cta">Book Now</a>
+                    <div class="service-card__price">From $200</div>
+                    <div class="service-card__duration">About 1 hour</div>
+                    <div class="service-card__features"><div class="service-card__feature">Match rear privacy glass or improve front-row comfort</div><div class="service-card__feature">Great for sedans, coupes, trucks, and SUVs</div><div class="service-card__feature">Mobile install at a suitable local appointment spot</div></div>
+                    <a href="/front-two-window-tinting" class="service-card__cta">View Front Two</a>
                 </div>
                 <div class="service-card">
-                    <h3 class="service-card__title">Sides + Rear</h3>
-                    <div class="service-card__price">$500-$750</div>
-                    <div class="service-card__duration">2-3 Hours</div>
-                    <div class="service-card__features">
-                        <div class="service-card__feature">Complete side and rear window ceramic tinting</div>
-                        <div class="service-card__feature">Maximum heat rejection and privacy</div>
-                        <div class="service-card__feature">Computer-cut precision for your exact vehicle model</div>
-                    </div>
-                    <a href="/vip-booking" class="service-card__cta">Book Now</a>
+                    <h3 class="service-card__title">Mobile Ceramic Tint</h3>
+                    <div class="service-card__price">Package-based</div>
+                    <div class="service-card__duration">1-4+ hours</div>
+                    <div class="service-card__features"><div class="service-card__feature">Ceramic film for heat rejection and UV protection</div><div class="service-card__feature">Service brought to your home, office, or garage</div><div class="service-card__feature">Best first read for mobile tint expectations</div></div>
+                    <a href="/mobile-window-tinting" class="service-card__cta">View Mobile Tint</a>
                 </div>
                 <div class="service-card">
-                    <h3 class="service-card__title">Full Car Package</h3>
-                    <div class="service-card__price">$750-$1100</div>
-                    <div class="service-card__duration">3-4 Hours</div>
-                    <div class="service-card__features">
-                        <div class="service-card__feature">Complete vehicle tinting including windshield strip</div>
-                        <div class="service-card__feature">Avery Dennison IR Ceramic film throughout</div>
-                        <div class="service-card__feature">Lifetime warranty on workmanship</div>
-                    </div>
-                    <a href="/vip-booking" class="service-card__cta">Book Now</a>
+                    <h3 class="service-card__title">Full Car Ceramic Tint</h3>
+                    <div class="service-card__price">From $720</div>
+                    <div class="service-card__duration">3.5-4+ hours</div>
+                    <div class="service-card__features"><div class="service-card__feature">Unified shade and comfort across the vehicle</div><div class="service-card__feature">Strong fit for daily drivers, luxury cars, trucks, SUVs, and Teslas</div><div class="service-card__feature">Compare coupe, sedan, truck, SUV, and crossover pricing</div></div>
+                    <a href="/full-car-window-tinting" class="service-card__cta">View Full Car</a>
                 </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="seo-section seo-section--cream">
+        <div class="container">
+            <div class="seo-section__header">
+                <h2>Plan Your Newport Beach Appointment</h2>
+                <p>Compare package pricing, ceramic film benefits, shade choices, and nearby service-area pages before booking.</p>
+            </div>
+            <div class="seo-link-row">
+                <a class="seo-link" href="/window-tint-pricing">Pricing</a>
+                <a class="seo-link" href="/ceramic-window-tinting">Ceramic Tint</a>
+                <a class="seo-link" href="/mobile-window-tinting">Mobile Tinting</a>
+                <a class="seo-link" href="/window-tint-shades">Tint Shades</a>
+                <a class="seo-link" href="/california-window-tint-law">California Tint Law</a>
+                    <a class="seo-link" href="/costa-mesa-window-tinting">Costa Mesa</a>
+                    <a class="seo-link" href="/laguna-beach-window-tinting">Laguna Beach</a>
+                    <a class="seo-link" href="/huntington-beach-window-tinting">Huntington Beach</a>
             </div>
         </div>
     </section>
@@ -245,49 +253,28 @@
     <section class="city-faq">
         <div class="container">
             <div class="city-section-header">
-                <h2>Newport Beach Tinting FAQ</h2>
-                <p>Fast answers on pricing, ceramic film, and booking mobile window tinting.</p>
+                <h2>Newport Beach Window Tinting FAQ</h2>
+                <p>Fast answers on pricing, ceramic film, legality, and mobile appointments.</p>
             </div>
             <div class="city-faq__grid">
-                <details class="faq-item">
-                    <summary>How much is mobile window tinting in Newport Beach?</summary>
-                    <p>Pricing depends on your vehicle and film. See the package ranges above and request a fast quote to lock in a spot.</p>
-                </details>
-                <details class="faq-item">
-                    <summary>Can I book mobile window tinting near me this week?</summary>
-                    <p>Yes. We run daily routes across Newport Beach. Call or book online to reserve a time at your home or office.</p>
-                </details>
-                <details class="faq-item">
-                    <summary>Is this ceramic auto window tinting?</summary>
-                    <p>Yes, we install IR ceramic film for heat rejection and clarity, backed by a lifetime warranty.</p>
-                </details>
-                <details class="faq-item">
-                    <summary>How long does a mobile install take?</summary>
-                    <p>Front two windows usually take 1 to 1.5 hours. Most full cars finish in about 2 to 4 hours.</p>
-                </details>
-                <details class="faq-item">
-                    <summary>Do I still need a tint shop near me?</summary>
-                    <p>No. We bring the tint shop to your driveway or office parking so you can keep your day moving.</p>
-                </details>
-                <details class="faq-item">
-                    <summary>What do I need to provide on install day?</summary>
-                    <p>A safe parking spot and your keys are enough. We handle the rest and you pay when the job is done.</p>
-                </details>
+                <details class="faq-item"><summary>How much is mobile window tinting in Newport Beach?</summary><p>Pricing depends on your vehicle and coverage. Start with <a href="/window-tint-pricing">window tint pricing</a>, then book or call to confirm your exact glass package.</p></details>
+                <details class="faq-item"><summary>Can I book mobile tint near me this week?</summary><p>Often, yes. Availability depends on the route, vehicle, and install space. Use the booking page or call to check the soonest Newport Beach opening.</p></details>
+                <details class="faq-item"><summary>Is ceramic tint worth it for Newport Beach drivers?</summary><p>Ceramic film is usually the best fit when heat rejection, UV protection, and clear visibility matter more than simply making the windows darker.</p></details>
+                <details class="faq-item"><summary>What tint percentage should I choose?</summary><p>It depends on privacy, night visibility, and California rules. Review the <a href="/window-tint-shades">tint shade guide</a> and <a href="/california-window-tint-law">California tint law page</a> before booking.</p></details>
+                <details class="faq-item"><summary>Do you tint Teslas in Newport Beach?</summary><p>Yes. Tesla Model 3 and Model Y packages are available, with panoramic roof add-ons quoted separately when needed.</p></details>
+                <details class="faq-item"><summary>What do I need for a mobile appointment?</summary><p>A safe vehicle location, enough working space, access to the vehicle, and a reasonably clean glass surface are the main requirements.</p></details>
             </div>
         </div>
     </section>
-
 
     <section class="city-cta">
         <div class="container">
             <div class="city-cta__container">
                 <h2>Ready to Tint in <span>Newport Beach</span>?</h2>
-                <p>Get professional ceramic window tinting without the hassle of driving to a shop. We bring the shop to
-                    you — your driveway, office parking lot, or anywhere in Newport Beach that works for you.</p>
+                <p>Book online or call with your vehicle year, make, model, preferred shade, and appointment location.</p>
                 <div class="city-cta__actions">
-                    <a href="tel:7146007134" class="brutalist-btn brutalist-btn--primary brutalist-btn--large">Call Now:
-                        (714) 600-7134</a>
-                    <a href="/#contact" class="brutalist-btn brutalist-btn--large">Request Quote</a>
+                    <a href="/booking" class="brutalist-btn brutalist-btn--primary brutalist-btn--large">Book Online</a>
+                    <a href="tel:7146007134" class="brutalist-btn brutalist-btn--large">Call (714) 600-7134</a>
                 </div>
             </div>
         </div>
@@ -308,14 +295,24 @@
                             <a href="/costa-mesa-window-tinting">Costa Mesa</a>
                             <a href="/laguna-beach-window-tinting">Laguna Beach</a>
                             <a href="/aliso-viejo-window-tinting">Aliso Viejo</a>
+                            <a href="/santa-ana-window-tinting">Santa Ana</a>
+                            <a href="/anaheim-window-tinting">Anaheim</a>
+                            <a href="/huntington-beach-window-tinting">Huntington Beach</a>
+                            <a href="/orange-window-tinting">Orange</a>
+                            <a href="/mission-viejo-window-tinting">Mission Viejo</a>
+                            <a href="/lake-forest-window-tinting">Lake Forest</a>
+                            <a href="/dana-point-window-tinting">Dana Point</a>
+                            <a href="/san-clemente-window-tinting">San Clemente</a>
                         </div>
                     </div>
                 </div>
                 <div class="footer__links">
-                    <div><strong>Location</strong><br>OC / LA / IE<br>We Come To You!</div>
-                    <div><strong>Contact</strong><br><a
-                            href="mailto:obsidianautoworksoc@gmail.com">obsidianautoworksoc@gmail.com</a><br><a
-                            href="tel:7146007134">(714) 600-7134</a></div>
+                    <div><strong>Services</strong><br><a href="/services">Services</a><br><a href="/window-tint-pricing">Pricing</a><br><a href="/ceramic-window-tinting">Ceramic</a><br><a href="/mobile-window-tinting">Mobile Tint</a></div>
+                    <div><strong>Packages</strong><br><a href="/full-car-window-tinting">Full Car</a><br><a href="/sides-rear-window-tinting">Sides &amp; Rear</a><br><a href="/front-two-window-tinting">Front Two</a><br><a href="/windshield-window-tinting">Windshield</a><br><a href="/tint-removal">Tint Removal</a></div>
+                    <div><strong>Tesla</strong><br><a href="/tesla-window-tinting">Tesla Tint</a><br><a href="/tesla-model-y-window-tinting">Model Y</a><br><a href="/tesla-model-3-window-tinting">Model 3</a></div>
+                    <div><strong>Guides</strong><br><a href="/window-tint-shades">Tint Shades</a><br><a href="/california-window-tint-law">California Tint Law</a><br><a href="/ceramic-vs-carbon-window-tint">Ceramic vs Carbon</a><br><a href="/how-long-does-window-tinting-take">Install Timing</a><br><a href="/is-mobile-window-tinting-worth-it">Mobile Tinting</a><br><a href="/how-to-choose-window-tint-percentage">Tint Percentage</a><br><a href="/does-window-tint-reduce-heat">Heat Reduction</a><br><a href="/window-tint-aftercare">Aftercare</a></div>
+                    <div><strong>Specialty</strong><br><a href="/architectural-window-film">Architectural Film</a><br><a href="/chrome-delete">Chrome Delete</a></div>
+                    <div><strong>Contact</strong><br><a href="mailto:obsidianautoworksoc@gmail.com">obsidianautoworksoc@gmail.com</a><br><a href="tel:7146007134">(714) 600-7134</a></div>
                 </div>
             </div>
             <div class="footer__bottom">

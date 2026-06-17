@@ -4,28 +4,32 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mobile Window Tinting Services | Orange County</title>
+    <title>Tesla Model 3 Window Tinting | Orange County</title>
     <meta name="description"
-        content="Mobile ceramic window tinting in Orange County. Full car tint, front windows, windshield, Tesla glass, tint removal, and mobile service at your location.">
-    <link rel="canonical" href="https://www.obsidianautoworksoc.com/services">
+        content="Mobile Tesla Model 3 ceramic window tinting in Orange County. Full car and sides-and-rear packages for heat rejection, UV, and privacy.">
+    <link rel="canonical" href="https://www.obsidianautoworksoc.com/tesla-model-3-window-tinting">
     <link rel="icon" type="image/png" href="favicon.png">
-    <meta property="og:title" content="Mobile Window Tinting Services | Orange County">
+    <meta property="og:title" content="Tesla Model 3 Window Tinting | Orange County">
     <meta property="og:description"
-        content="Explore Obsidian Autoworks mobile ceramic tint services, package options, Tesla tinting, tint removal, and quote-based add-ons.">
+        content="Mobile Tesla Model 3 ceramic tinting with full-car and sides-and-rear package pricing.">
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://www.obsidianautoworksoc.com/services">
+    <meta property="og:url" content="https://www.obsidianautoworksoc.com/tesla-model-3-window-tinting">
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
         "@type": "Service",
-        "name": "Mobile Ceramic Window Tinting Services",
+        "name": "Tesla Model 3 Window Tinting",
         "provider": {
             "@type": "AutomotiveBusiness",
             "name": "Obsidian Autoworks",
             "telephone": "+17146007134"
         },
         "areaServed": "Orange County, CA",
-        "serviceType": "Mobile automotive window tinting"
+        "serviceType": "Mobile Tesla ceramic window tinting",
+        "offers": [
+            { "@type": "Offer", "name": "Tesla Model 3 Full Car", "price": "1000", "priceCurrency": "USD" },
+            { "@type": "Offer", "name": "Tesla Model 3 Sides and Rear", "price": "800", "priceCurrency": "USD" }
+        ]
     }
     </script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -34,7 +38,7 @@
         rel="stylesheet">
     <link rel="stylesheet" href="style.css?v=20260108-1">
     <link rel="stylesheet" href="city-pages.css">
-    <link rel="stylesheet" href="seo-pages.css?v=20260617-2">
+    <link rel="stylesheet" href="seo-pages.css?v=20260617-1">
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-TR9ET60HX3"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
@@ -69,25 +73,24 @@
         <header class="seo-hero">
             <div class="container seo-hero__grid">
                 <div>
-                    <span class="seo-kicker">Mobile Tint Services</span>
-                    <h1>Mobile Ceramic Window Tinting Services <span>In Orange County</span></h1>
-                    <p class="seo-hero__copy">Obsidian Autoworks brings premium ceramic window tinting to your home,
-                        office, garage, or approved install location. Pick the package, choose the shade, and keep your
-                        day moving.</p>
+                    <span class="seo-kicker">Tesla Glass</span>
+                    <h1>Tesla Model 3 Window Tinting That <span>Keeps The Cabin Cooler</span></h1>
+                    <p class="seo-hero__copy">The Model 3 cabin can heat up fast in Orange County sun. Mobile ceramic
+                        tint adds privacy, UV protection, and a more finished look without making you sit at a shop.</p>
                     <div class="seo-hero__actions">
-                        <a href="/booking" class="brutalist-btn brutalist-btn--primary">Book Mobile Tint</a>
-                        <a href="/window-tint-pricing" class="brutalist-btn">See Pricing</a>
+                        <a href="/booking" class="brutalist-btn brutalist-btn--primary">Book Model 3 Tint</a>
+                        <a href="/tesla-model-y-window-tinting" class="brutalist-btn">Compare Model Y</a>
                     </div>
                 </div>
                 <aside class="seo-hero__panel">
-                    <h2>Core Services</h2>
+                    <h2>Model 3 Pricing</h2>
                     <div class="seo-stat-list">
-                        <div class="seo-stat"><span class="seo-stat__mark">1</span><span>Full car, sides and rear,
-                                front two, and windshield ceramic tint.</span></div>
-                        <div class="seo-stat"><span class="seo-stat__mark">2</span><span>Tesla glass packages for Model
-                                3, Model Y, and Model S.</span></div>
-                        <div class="seo-stat"><span class="seo-stat__mark">3</span><span>Tint removal and quote-based
-                                add-ons when the scope fits.</span></div>
+                        <div class="seo-stat"><span class="seo-stat__mark">$</span><span>Full Car: $1,000, about 5
+                                hr</span></div>
+                        <div class="seo-stat"><span class="seo-stat__mark">$</span><span>Sides &amp; Rear: $800, about
+                                4 hr</span></div>
+                        <div class="seo-stat"><span class="seo-stat__mark">M</span><span>Mobile service at a suitable
+                                home or workplace location.</span></div>
                     </div>
                 </aside>
             </div>
@@ -96,49 +99,35 @@
         <section class="seo-section seo-section--light">
             <div class="container">
                 <div class="seo-section__header">
-                    <h2>Choose Your Tint Package</h2>
-                    <p>These are the main service paths. Each page gives pricing, timing, and the best-fit use case.</p>
+                    <h2>Model 3 Ceramic Tint Packages</h2>
+                    <p>Model 3 appointments are quoted clearly so you can choose between a full-cabin package or a
+                        sides-and-rear setup.</p>
                 </div>
-                <div class="seo-grid">
-                    <article class="seo-card">
-                        <span class="seo-card__label">Complete</span>
-                        <h3>Full Car Window Tinting</h3>
-                        <p>Best for drivers who want full-cabin heat, UV, privacy, and style coverage.</p>
-                        <div class="seo-link-row"><a class="seo-link" href="/full-car-window-tinting">View Full Car</a></div>
-                    </article>
-                    <article class="seo-card">
-                        <span class="seo-card__label">Privacy</span>
-                        <h3>Sides And Rear</h3>
-                        <p>Popular for privacy, passenger comfort, and a cleaner side profile.</p>
-                        <div class="seo-link-row"><a class="seo-link" href="/sides-rear-window-tinting">View Sides And
-                                Rear</a></div>
-                    </article>
-                    <article class="seo-card">
-                        <span class="seo-card__label">Match</span>
-                        <h3>Front Two Windows</h3>
-                        <p>Match rear factory glass or improve front-row comfort without a full package.</p>
-                        <div class="seo-link-row"><a class="seo-link" href="/front-two-window-tinting">View Front
-                                Two</a></div>
-                    </article>
-                    <article class="seo-card">
-                        <span class="seo-card__label">Glare</span>
-                        <h3>Windshield Tinting</h3>
-                        <p>Helps with glare, UV exposure, and front-cabin heat when chosen carefully.</p>
-                        <div class="seo-link-row"><a class="seo-link" href="/windshield-window-tinting">View
-                                Windshield</a></div>
-                    </article>
-                    <article class="seo-card">
-                        <span class="seo-card__label">Tesla</span>
-                        <h3>Tesla Window Tinting</h3>
-                        <p>Model-specific ceramic tint for glass-heavy Tesla cabins.</p>
-                        <div class="seo-link-row"><a class="seo-link" href="/tesla-window-tinting">View Tesla Tint</a></div>
-                    </article>
-                    <article class="seo-card">
-                        <span class="seo-card__label">Repair</span>
-                        <h3>Tint Removal</h3>
-                        <p>Quote-based removal for bubbling, peeling, purple, or failed film before a retint.</p>
-                        <div class="seo-link-row"><a class="seo-link" href="/tint-removal">View Tint Removal</a></div>
-                    </article>
+                <div class="seo-table">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Package</th>
+                                <th>Price</th>
+                                <th>Time</th>
+                                <th>Best For</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Tesla Model 3 Full Car</td>
+                                <td>$1,000</td>
+                                <td>5 hr</td>
+                                <td>Complete heat, UV, glare, and privacy upgrade</td>
+                            </tr>
+                            <tr>
+                                <td>Tesla Model 3 Sides &amp; Rear</td>
+                                <td>$800</td>
+                                <td>4 hr</td>
+                                <td>Privacy and side/rear heat control</td>
+                            </tr>
+                        </tbody>
+                    </table>
                 </div>
             </div>
         </section>
@@ -146,23 +135,23 @@
         <section class="seo-section seo-section--dark">
             <div class="container">
                 <div class="seo-section__header seo-section__header--center">
-                    <h2>Why Mobile Install Works</h2>
-                    <p>The right space matters more than making you drive to a waiting room.</p>
+                    <h2>Built For Tesla Daily Driving</h2>
                 </div>
                 <div class="seo-grid">
                     <article class="seo-card seo-card--dark">
-                        <h3>We Come To You</h3>
-                        <p>Home driveways, garages, workplaces, and fleet lots can all work when the install space is
-                            safe and suitable.</p>
+                        <h3>Large Glass Cabin</h3>
+                        <p>Model 3 glass lets in a lot of light. Ceramic film helps reduce the harsh cabin feel while
+                            keeping the car sharp.</p>
                     </article>
                     <article class="seo-card seo-card--dark">
-                        <h3>Premium Ceramic Film</h3>
-                        <p>Ceramic film is chosen for heat rejection, UV protection, privacy, and clean visibility.</p>
+                        <h3>Privacy Without Cheapening The Look</h3>
+                        <p>A clean ceramic install should look like it belongs on the vehicle, not like an afterthought.
+                        </p>
                     </article>
                     <article class="seo-card seo-card--dark">
-                        <h3>Clear Booking Path</h3>
-                        <p>Use pricing first, then book online or call to confirm the vehicle, shade, location, and
-                            timing.</p>
+                        <h3>Shade Guidance</h3>
+                        <p>Use the shade guide and California tint-law page before choosing front glass or windshield
+                            film.</p>
                     </article>
                 </div>
             </div>
@@ -171,18 +160,13 @@
         <section class="seo-section seo-section--cream">
             <div class="container">
                 <div class="seo-section__header">
-                    <h2>Plan Before You Book</h2>
-                    <p>Use these decision pages if you are not sure about shade, legality, or exact package.</p>
+                    <h2>Plan The Setup</h2>
+                    <p>These pages help you choose the right ceramic tint package before booking.</p>
                 </div>
                 <div class="seo-link-row">
-                    <a class="seo-link" href="/window-tint-pricing">Full Pricing</a>
-                    <a class="seo-link" href="/ceramic-window-tinting">Ceramic Tint</a>
-                    <a class="seo-link" href="/mobile-window-tinting">Mobile Service</a>
-                    <a class="seo-link" href="/window-tint-shades">Tint Shades</a>
+                    <a class="seo-link" href="/window-tint-shades">Tint Shade Guide</a>
                     <a class="seo-link" href="/california-window-tint-law">California Tint Law</a>
-                    <a class="seo-link" href="/ceramic-vs-carbon-window-tint">Ceramic vs Carbon</a>
-                    <a class="seo-link" href="/how-long-does-window-tinting-take">Install Timing</a>
-                    <a class="seo-link" href="/is-mobile-window-tinting-worth-it">Mobile Tinting Guide</a>
+                    <a class="seo-link" href="/tesla-model-y-window-tinting">Model Y Tinting</a>
                     <a class="seo-link" href="/window-tinting-gallery">Gallery</a>
                 </div>
             </div>
@@ -191,23 +175,23 @@
         <section class="seo-section seo-section--light">
             <div class="container">
                 <div class="seo-section__header seo-section__header--center">
-                    <h2>Services FAQ</h2>
+                    <h2>Model 3 FAQ</h2>
                 </div>
                 <div class="seo-faq">
                     <details class="faq-item">
-                        <summary>Do you come to my location?</summary>
-                        <p>Yes. Obsidian Autoworks is a mobile tint service for Orange County and nearby areas when the
-                            appointment space is suitable.</p>
+                        <summary>How long does Tesla Model 3 tinting take?</summary>
+                        <p>A Model 3 full-car appointment is estimated at about 5 hours. Sides and rear is about 4
+                            hours.</p>
                     </details>
                     <details class="faq-item">
-                        <summary>What is the most complete package?</summary>
-                        <p>The full-car package is the most complete standard package. Tesla roof glass and some add-ons
-                            are quoted separately.</p>
+                        <summary>Can you tint the Model 3 at my office?</summary>
+                        <p>Yes, as long as the location is suitable for a clean mobile install and has enough working
+                            space.</p>
                     </details>
                     <details class="faq-item">
-                        <summary>Where should I start?</summary>
-                        <p>Start with the pricing page, then choose the package page that matches your vehicle and
-                            comfort goal.</p>
+                        <summary>Which shade should I choose for a Model 3?</summary>
+                        <p>That depends on your privacy goals, legal considerations, and night driving comfort. Start
+                            with the shade guide, then confirm during booking.</p>
                     </details>
                 </div>
             </div>
@@ -216,11 +200,12 @@
         <section class="seo-cta">
             <div class="container">
                 <div class="seo-cta__box">
-                    <h2>Ready To Pick A Package?</h2>
-                    <p>Book online or call with your vehicle year, make, model, and the glass you want tinted.</p>
+                    <h2>Book Mobile Model 3 Tinting</h2>
+                    <p>Send your Model 3 year and the package you want. We will confirm the best appointment window,
+                        shade, and setup before install.</p>
                     <div class="seo-cta__actions">
-                        <a href="/booking" class="brutalist-btn brutalist-btn--primary brutalist-btn--large">Book
-                            Mobile Tint</a>
+                        <a href="/booking" class="brutalist-btn brutalist-btn--primary brutalist-btn--large">Book Model
+                            3 Tint</a>
                         <a href="tel:7146007134" class="brutalist-btn brutalist-btn--large">Call (714) 600-7134</a>
                     </div>
                 </div>

@@ -4,49 +4,80 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Window Tinting Laguna Beach | Mobile Tint Near Me</title>
-    <meta name="description"
-        content="Laguna Beach tint shop near me? We come to you for mobile ceramic auto window tinting. Done in about 2 hours with a lifetime warranty. Book now.">
+    <title>Laguna Beach Window Tinting | Mobile Ceramic Tint</title>
+    <meta name="description" content="Mobile ceramic window tinting in Laguna Beach for coastal glare, UV exposure, canyon parking, and premium daily-driver comfort.">
     <link rel="canonical" href="https://www.obsidianautoworksoc.com/laguna-beach-window-tinting">
     <link rel="icon" type="image/png" href="favicon.png">
-    <meta property="og:title" content="Window Tinting Laguna Beach | Mobile Tint Near Me">
-    <meta property="og:description"
-        content="Laguna Beach tint shop near me? We come to you for mobile ceramic auto window tinting. Done in about 2 hours with a lifetime warranty. Book now.">
+    <meta property="og:title" content="Laguna Beach Window Tinting | Mobile Ceramic Tint">
+    <meta property="og:description" content="Mobile ceramic window tinting in Laguna Beach for coastal glare, UV exposure, canyon parking, and premium daily-driver comfort.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://www.obsidianautoworksoc.com/laguna-beach-window-tinting">
     <script type="application/ld+json">
     {
-        "@context": "https://schema.org",
-        "@type": [
-            "LocalBusiness",
-            "AutomotiveBusiness"
-        ],
-        "name": "Obsidian Autoworks",
-        "description": "Mobile window tinting in Laguna Beach, CA.",
-        "url": "https://www.obsidianautoworksoc.com/laguna-beach-window-tinting",
-        "telephone": "+17146007134",
-        "email": "obsidianautoworksoc@gmail.com",
-        "areaServed": [
-            "Laguna Beach, CA",
-            "Orange County, CA"
-        ],
-        "serviceType": "Mobile window tinting",
-        "priceRange": "$$"
+            "@context": "https://schema.org",
+            "@graph": [
+                    {
+                            "@type": [
+                                    "LocalBusiness",
+                                    "AutomotiveBusiness"
+                            ],
+                            "@id": "https://www.obsidianautoworksoc.com/laguna-beach-window-tinting#business",
+                            "name": "Obsidian Autoworks",
+                            "description": "Mobile ceramic window tinting in Laguna Beach, CA.",
+                            "url": "https://www.obsidianautoworksoc.com/laguna-beach-window-tinting",
+                            "telephone": "+17146007134",
+                            "email": "obsidianautoworksoc@gmail.com",
+                            "areaServed": [
+                                    "Laguna Beach, CA",
+                                    "Orange County, CA"
+                            ],
+                            "serviceType": "Mobile automotive window tinting",
+                            "priceRange": "$$"
+                    },
+                    {
+                            "@type": "FAQPage",
+                            "@id": "https://www.obsidianautoworksoc.com/laguna-beach-window-tinting#faq",
+                            "mainEntity": [
+                                    {
+                                            "@type": "Question",
+                                            "name": "How much is mobile window tinting in Laguna Beach?",
+                                            "acceptedAnswer": {
+                                                    "@type": "Answer",
+                                                    "text": "Pricing depends on vehicle type, glass coverage, and film choice. Obsidian lists package pricing for full car, sides and rear, front two windows, windshield tinting, Tesla packages, and quote-based tint removal."
+                                            }
+                                    },
+                                    {
+                                            "@type": "Question",
+                                            "name": "Does Obsidian Autoworks come to my location in Laguna Beach?",
+                                            "acceptedAnswer": {
+                                                    "@type": "Answer",
+                                                    "text": "Yes. Obsidian Autoworks is a mobile tint service and can install at suitable homes, offices, garages, and approved parking locations around Laguna Beach."
+                                            }
+                                    },
+                                    {
+                                            "@type": "Question",
+                                            "name": "What kind of window tint film do you use?",
+                                            "acceptedAnswer": {
+                                                    "@type": "Answer",
+                                                    "text": "Obsidian focuses on premium ceramic film for heat rejection, UV protection, privacy, and clean visibility."
+                                            }
+                                    }
+                            ]
+                    }
+            ]
     }
     </script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css?v=20260108-1">
     <link rel="stylesheet" href="city-pages.css">
-    <!-- Google tag (gtag.js) -->
+    <link rel="stylesheet" href="seo-pages.css?v=20260617-3">
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-TR9ET60HX3"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
         function gtag() { dataLayer.push(arguments); }
         gtag('js', new Date());
-
         gtag('config', 'G-TR9ET60HX3');
         gtag('config', 'AW-17846304809');
     </script>
@@ -57,26 +88,27 @@
         <div class="nav__container">
             <a href="/" class="nav__logo">
                 <img src="car-hero.webp" alt="Obsidian Autoworks" class="nav__logo-car" width="500" height="200">
-                <span class="nav__logo-text"></span>OBSIDIAN<span>AUTOWORKS</span></span>
+                <span class="nav__logo-text">OBSIDIAN<span>AUTOWORKS</span></span>
             </a>
             <div class="nav__links">
-                <a href="/#services">Services</a>
-                <a href="/#pricing">Pricing</a>
+                <a href="/services">Services</a>
+                <a href="/window-tint-pricing">Pricing</a>
                 <a href="/window-tinting-gallery">Gallery</a>
                 <a href="/#contact">Contact</a>
             </div>
-            <a href="tel:7146007134" class="brutalist-btn">(714) 600-7134</a>
+            <div class="nav__actions">
+                <a href="/booking" class="brutalist-btn brutalist-btn--accent">Book Online</a>
+                <a href="tel:7146007134" class="brutalist-btn brutalist-btn--outline">(714) 600-7134</a>
+            </div>
         </div>
     </nav>
 
     <header class="city-hero">
         <div class="city-hero__container">
-            <h1 class="city-hero__title">Window Tinting Laguna Beach | <span>Mobile Auto Tint</span> at Your Door</h1>
-            <p class="city-hero__subtitle">Premium mobile ceramic window tinting delivered right to your home or office
-                in Laguna Beach. Professional installation, convenient booking, and coastal comfort without leaving
-                your location.</p>
+            <h1 class="city-hero__title">Laguna Beach Window Tinting | <span>Mobile Coastal Tint</span></h1>
+            <p class="city-hero__subtitle">Premium mobile ceramic window tinting delivered to suitable homes, offices, garages, and approved install spots around Laguna Beach.</p>
             <div class="city-hero__cta">
-                <a href="/vip-booking" class="brutalist-btn">Book Your Laguna Beach Tint</a>
+                <a href="/booking" class="brutalist-btn">Book Your Laguna Beach Tint</a>
             </div>
         </div>
     </header>
@@ -85,59 +117,31 @@
         <div class="container">
             <div class="city-info__grid">
                 <div class="city-info__content">
-                    <h2>Serving All of Laguna Beach, CA</h2>
-                    <p>Our mobile window tinting service comes directly to your location throughout Laguna Beach.
-                        Whether you're near Downtown, North Laguna, or Laguna Canyon, we bring premium ceramic tinting
-                        right to your driveway for crisp, coastal-ready visibility.</p>
-
+                    <h2>Mobile Window Tinting in Laguna Beach, CA</h2>
+                    <p>Laguna Beach drivers get strong sun, coastal glare, canyon roads, and limited parking windows. Obsidian handles ceramic tint at suitable local homes, garages, and approved install locations when the space is right.</p>
                     <div class="service-areas">
-                        <div class="service-areas__title">Popular Service Areas in Laguna Beach:</div>
+                        <div class="service-areas__title">Popular Laguna Beach Service Areas:</div>
                         <div class="service-areas__grid">
-                            <div class="service-areas__item">Downtown Laguna</div>
+                            <div class="service-areas__item">Main Beach</div>
+                            <div class="service-areas__item">Top of the World</div>
+                            <div class="service-areas__item">Arch Beach Heights</div>
                             <div class="service-areas__item">North Laguna</div>
                             <div class="service-areas__item">South Laguna</div>
                             <div class="service-areas__item">Laguna Canyon</div>
-                            <div class="service-areas__item">Top of the World</div>
-                            <div class="service-areas__item">Arch Beach Heights</div>
+                            <div class="service-areas__item">Bluebird Canyon</div>
+                            <div class="service-areas__item">Victoria Beach</div>
                         </div>
                     </div>
-
-                    <div class="mobile-note">
-                        📍 Proudly serving all of Laguna Beach — schedule your mobile tint appointment today!
-                    </div>
+                    <div class="mobile-note">Mobile install available when the appointment space is safe, shaded when possible, and workable for a clean tint job.</div>
                 </div>
 
                 <div class="why-choose">
-                    <div class="why-choose__title">Why Laguna Beach Residents Choose Us:</div>
+                    <div class="why-choose__title">Why Laguna Beach Drivers Choose Obsidian:</div>
                     <div class="why-choose__list">
-                        <div class="why-choose__item">
-                            <div class="why-choose__icon">✓</div>
-                            <div class="why-choose__content">
-                                <h4>Convenient On-Location Service</h4>
-                                <p>We come to your home, apartment, or workplace in Laguna Beach</p>
-                            </div>
-                        </div>
-                        <div class="why-choose__item">
-                            <div class="why-choose__icon">✓</div>
-                            <div class="why-choose__content">
-                                <h4>Premium Ceramic Film</h4>
-                                <p>We use only the highest quality IR ceramic window film</p>
-                            </div>
-                        </div>
-                        <div class="why-choose__item">
-                            <div class="why-choose__icon">✓</div>
-                            <div class="why-choose__content">
-                                <h4>Coastal UV Protection</h4>
-                                <p>Block harsh sun and protect interiors from UV exposure</p>
-                            </div>
-                        </div>
-                        <div class="why-choose__item">
-                            <div class="why-choose__icon">✓</div>
-                            <div class="why-choose__content">
-                                <h4>Flexible Scheduling</h4>
-                                <p>Early morning and evening appointments available</p>
-                            </div>
-                        </div>
+                        <div class="why-choose__item"><div class="why-choose__icon">1</div><div class="why-choose__content"><h4>On-Location Service</h4><p>We come to the home, office, garage, or approved parking location.</p></div></div>
+                        <div class="why-choose__item"><div class="why-choose__icon">2</div><div class="why-choose__content"><h4>Premium Ceramic Film</h4><p>Built for heat rejection, UV protection, privacy, and clean visibility.</p></div></div>
+                        <div class="why-choose__item"><div class="why-choose__icon">3</div><div class="why-choose__content"><h4>Clear Package Path</h4><p>Compare pricing, pick the glass coverage, and book the right service.</p></div></div>
+                        <div class="why-choose__item"><div class="why-choose__icon">4</div><div class="why-choose__content"><h4>Local Fit</h4><p>Shade recommendations account for commute patterns, parking, and daily visibility.</p></div></div>
                     </div>
                 </div>
             </div>
@@ -148,26 +152,25 @@
         <div class="container">
             <div class="city-section-header">
                 <h2>Laguna Beach Tinting Notes</h2>
-                <p>Coastal glare on PCH and hillside drives can make cabins heat up quickly. Ceramic film cuts glare,
-                    reduces heat, and keeps views clear for sunset drives.</p>
+                <p>Use this page as the local planning hub for ceramic tint, mobile service, pricing, and nearby Orange County route coverage.</p>
             </div>
             <div class="city-local__grid">
                 <div class="brutalist-card city-local__card">
                     <h3>Common Appointment Spots</h3>
                     <ul class="city-local__list">
-                        <li>Downtown Laguna neighborhoods</li>
-                        <li>North and South Laguna homes</li>
-                        <li>Laguna Canyon and hillside streets</li>
-                        <li>PCH-adjacent driveways</li>
+                        <li>Garages near Laguna Canyon</li>
+                        <li>Top of the World homes</li>
+                        <li>North and South Laguna driveways</li>
+                        <li>Approved coastal parking or work locations</li>
                     </ul>
                 </div>
                 <div class="brutalist-card city-local__card">
-                    <h3>Frequent Laguna Requests</h3>
+                    <h3>Frequent Laguna Beach Requests</h3>
                     <ul class="city-local__list">
-                        <li>Glare reduction for coastal drives</li>
-                        <li>UV protection for leather interiors</li>
-                        <li>Clear visibility for canyon roads</li>
-                        <li>Balanced privacy for beach parking</li>
+                        <li>Glare reduction for PCH and canyon driving</li>
+                        <li>UV protection for coastal parking</li>
+                        <li>Subtle ceramic tint on luxury vehicles</li>
+                        <li>Windshield comfort planning</li>
                     </ul>
                 </div>
             </div>
@@ -178,20 +181,20 @@
         <div class="container">
             <div class="city-section-header">
                 <h2>What Laguna Beach Drivers Mention</h2>
-                <p>Feedback from recent appointments across coastal neighborhoods and canyon routes.</p>
+                <p>Local proof points for the common ways mobile tint helps around Laguna Beach.</p>
             </div>
             <div class="city-testimonials__grid">
                 <div class="testimonial-card">
-                    <p class="testimonial-card__quote">Glare reduction on PCH drives is immediate.</p>
-                    <div class="testimonial-card__meta">Coupe owner, North Laguna</div>
+                    <p class="testimonial-card__quote">The car is more comfortable after sitting near the beach all afternoon.</p>
+                    <div class="testimonial-card__meta">Local driver, Laguna Beach</div>
                 </div>
                 <div class="testimonial-card">
-                    <p class="testimonial-card__quote">Cabin stays cooler after beach parking.</p>
-                    <div class="testimonial-card__meta">SUV owner, South Laguna</div>
+                    <p class="testimonial-card__quote">Mobile service saved a lot of parking hassle.</p>
+                    <div class="testimonial-card__meta">Mobile tint client, Laguna Beach</div>
                 </div>
                 <div class="testimonial-card">
-                    <p class="testimonial-card__quote">Clear visibility on canyon roads at night.</p>
-                    <div class="testimonial-card__meta">Sedan owner, Laguna Canyon</div>
+                    <p class="testimonial-card__quote">The tint looks clean without making night canyon driving feel sketchy.</p>
+                    <div class="testimonial-card__meta">Orange County vehicle owner, Laguna Beach</div>
                 </div>
             </div>
         </div>
@@ -200,43 +203,49 @@
     <section class="city-services">
         <div class="container">
             <div class="city-services__header">
-                <h2>Popular Services in Laguna Beach</h2>
+                <h2>Popular Window Tint Services in Laguna Beach</h2>
             </div>
             <div class="city-services__grid">
                 <div class="service-card">
                     <h3 class="service-card__title">Front Two Windows</h3>
-                    <div class="service-card__price">$180-$250</div>
-                    <div class="service-card__duration">1-1.5 Hours</div>
-                    <div class="service-card__features">
-                        <div class="service-card__feature">Premium ceramic film installation on driver & passenger
-                            windows</div>
-                        <div class="service-card__feature">Match existing tint or choose your preferred shade</div>
-                        <div class="service-card__feature">Full edge-to-edge coverage with clean finish</div>
-                    </div>
-                    <a href="/vip-booking" class="service-card__cta">Book Now</a>
+                    <div class="service-card__price">From $200</div>
+                    <div class="service-card__duration">About 1 hour</div>
+                    <div class="service-card__features"><div class="service-card__feature">Match rear privacy glass or improve front-row comfort</div><div class="service-card__feature">Great for sedans, coupes, trucks, and SUVs</div><div class="service-card__feature">Mobile install at a suitable local appointment spot</div></div>
+                    <a href="/front-two-window-tinting" class="service-card__cta">View Front Two</a>
                 </div>
                 <div class="service-card">
-                    <h3 class="service-card__title">Sides + Rear</h3>
-                    <div class="service-card__price">$500-$750</div>
-                    <div class="service-card__duration">2-3 Hours</div>
-                    <div class="service-card__features">
-                        <div class="service-card__feature">Complete side and rear window ceramic tinting</div>
-                        <div class="service-card__feature">Maximum heat rejection and privacy</div>
-                        <div class="service-card__feature">Computer-cut precision for your exact vehicle model</div>
-                    </div>
-                    <a href="/vip-booking" class="service-card__cta">Book Now</a>
+                    <h3 class="service-card__title">Mobile Ceramic Tint</h3>
+                    <div class="service-card__price">Package-based</div>
+                    <div class="service-card__duration">1-4+ hours</div>
+                    <div class="service-card__features"><div class="service-card__feature">Ceramic film for heat rejection and UV protection</div><div class="service-card__feature">Service brought to your home, office, or garage</div><div class="service-card__feature">Best first read for mobile tint expectations</div></div>
+                    <a href="/mobile-window-tinting" class="service-card__cta">View Mobile Tint</a>
                 </div>
                 <div class="service-card">
-                    <h3 class="service-card__title">Full Car Package</h3>
-                    <div class="service-card__price">$750-$1100</div>
-                    <div class="service-card__duration">3-4 Hours</div>
-                    <div class="service-card__features">
-                        <div class="service-card__feature">Complete vehicle tinting including windshield strip</div>
-                        <div class="service-card__feature">Avery Dennison IR Ceramic film throughout</div>
-                        <div class="service-card__feature">Lifetime warranty on workmanship</div>
-                    </div>
-                    <a href="/vip-booking" class="service-card__cta">Book Now</a>
+                    <h3 class="service-card__title">Full Car Ceramic Tint</h3>
+                    <div class="service-card__price">From $720</div>
+                    <div class="service-card__duration">3.5-4+ hours</div>
+                    <div class="service-card__features"><div class="service-card__feature">Unified shade and comfort across the vehicle</div><div class="service-card__feature">Strong fit for daily drivers, luxury cars, trucks, SUVs, and Teslas</div><div class="service-card__feature">Compare coupe, sedan, truck, SUV, and crossover pricing</div></div>
+                    <a href="/full-car-window-tinting" class="service-card__cta">View Full Car</a>
                 </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="seo-section seo-section--cream">
+        <div class="container">
+            <div class="seo-section__header">
+                <h2>Plan Your Laguna Beach Appointment</h2>
+                <p>Compare package pricing, ceramic film benefits, shade choices, and nearby service-area pages before booking.</p>
+            </div>
+            <div class="seo-link-row">
+                <a class="seo-link" href="/window-tint-pricing">Pricing</a>
+                <a class="seo-link" href="/ceramic-window-tinting">Ceramic Tint</a>
+                <a class="seo-link" href="/mobile-window-tinting">Mobile Tinting</a>
+                <a class="seo-link" href="/window-tint-shades">Tint Shades</a>
+                <a class="seo-link" href="/california-window-tint-law">California Tint Law</a>
+                    <a class="seo-link" href="/newport-beach-window-tinting">Newport Beach</a>
+                    <a class="seo-link" href="/dana-point-window-tinting">Dana Point</a>
+                    <a class="seo-link" href="/aliso-viejo-window-tinting">Aliso Viejo</a>
             </div>
         </div>
     </section>
@@ -244,49 +253,28 @@
     <section class="city-faq">
         <div class="container">
             <div class="city-section-header">
-                <h2>Laguna Beach Tinting FAQ</h2>
-                <p>Fast answers on pricing, ceramic film, and booking mobile window tinting.</p>
+                <h2>Laguna Beach Window Tinting FAQ</h2>
+                <p>Fast answers on pricing, ceramic film, legality, and mobile appointments.</p>
             </div>
             <div class="city-faq__grid">
-                <details class="faq-item">
-                    <summary>How much is mobile window tinting in Laguna Beach?</summary>
-                    <p>Pricing depends on your vehicle and film. See the package ranges above and request a fast quote to lock in a spot.</p>
-                </details>
-                <details class="faq-item">
-                    <summary>Can I book mobile window tinting near me this week?</summary>
-                    <p>Yes. We run daily routes across Laguna Beach. Call or book online to reserve a time at your home or office.</p>
-                </details>
-                <details class="faq-item">
-                    <summary>Is this ceramic auto window tinting?</summary>
-                    <p>Yes, we install IR ceramic film for heat rejection and clarity, backed by a lifetime warranty.</p>
-                </details>
-                <details class="faq-item">
-                    <summary>How long does a mobile install take?</summary>
-                    <p>Front two windows usually take 1 to 1.5 hours. Most full cars finish in about 2 to 4 hours.</p>
-                </details>
-                <details class="faq-item">
-                    <summary>Do I still need a tint shop near me?</summary>
-                    <p>No. We bring the tint shop to your driveway or office parking so you can keep your day moving.</p>
-                </details>
-                <details class="faq-item">
-                    <summary>What do I need to provide on install day?</summary>
-                    <p>A safe parking spot and your keys are enough. We handle the rest and you pay when the job is done.</p>
-                </details>
+                <details class="faq-item"><summary>How much is mobile window tinting in Laguna Beach?</summary><p>Pricing depends on your vehicle and coverage. Start with <a href="/window-tint-pricing">window tint pricing</a>, then book or call to confirm your exact glass package.</p></details>
+                <details class="faq-item"><summary>Can I book mobile tint near me this week?</summary><p>Often, yes. Availability depends on the route, vehicle, and install space. Use the booking page or call to check the soonest Laguna Beach opening.</p></details>
+                <details class="faq-item"><summary>Is ceramic tint worth it for Laguna Beach drivers?</summary><p>Ceramic film is usually the best fit when heat rejection, UV protection, and clear visibility matter more than simply making the windows darker.</p></details>
+                <details class="faq-item"><summary>What tint percentage should I choose?</summary><p>It depends on privacy, night visibility, and California rules. Review the <a href="/window-tint-shades">tint shade guide</a> and <a href="/california-window-tint-law">California tint law page</a> before booking.</p></details>
+                <details class="faq-item"><summary>Do you tint Teslas in Laguna Beach?</summary><p>Yes. Tesla Model 3 and Model Y packages are available, with panoramic roof add-ons quoted separately when needed.</p></details>
+                <details class="faq-item"><summary>What do I need for a mobile appointment?</summary><p>A safe vehicle location, enough working space, access to the vehicle, and a reasonably clean glass surface are the main requirements.</p></details>
             </div>
         </div>
     </section>
-
 
     <section class="city-cta">
         <div class="container">
             <div class="city-cta__container">
                 <h2>Ready to Tint in <span>Laguna Beach</span>?</h2>
-                <p>Get professional ceramic window tinting without the hassle of driving to a shop. We bring the shop to
-                    you — your driveway, office parking lot, or anywhere in Laguna Beach that works for you.</p>
+                <p>Book online or call with your vehicle year, make, model, preferred shade, and appointment location.</p>
                 <div class="city-cta__actions">
-                    <a href="tel:7146007134" class="brutalist-btn brutalist-btn--primary brutalist-btn--large">Call Now:
-                        (714) 600-7134</a>
-                    <a href="/#contact" class="brutalist-btn brutalist-btn--large">Request Quote</a>
+                    <a href="/booking" class="brutalist-btn brutalist-btn--primary brutalist-btn--large">Book Online</a>
+                    <a href="tel:7146007134" class="brutalist-btn brutalist-btn--large">Call (714) 600-7134</a>
                 </div>
             </div>
         </div>
@@ -307,14 +295,24 @@
                             <a href="/costa-mesa-window-tinting">Costa Mesa</a>
                             <a href="/laguna-beach-window-tinting">Laguna Beach</a>
                             <a href="/aliso-viejo-window-tinting">Aliso Viejo</a>
+                            <a href="/santa-ana-window-tinting">Santa Ana</a>
+                            <a href="/anaheim-window-tinting">Anaheim</a>
+                            <a href="/huntington-beach-window-tinting">Huntington Beach</a>
+                            <a href="/orange-window-tinting">Orange</a>
+                            <a href="/mission-viejo-window-tinting">Mission Viejo</a>
+                            <a href="/lake-forest-window-tinting">Lake Forest</a>
+                            <a href="/dana-point-window-tinting">Dana Point</a>
+                            <a href="/san-clemente-window-tinting">San Clemente</a>
                         </div>
                     </div>
                 </div>
                 <div class="footer__links">
-                    <div><strong>Location</strong><br>OC / LA / IE<br>We Come To You!</div>
-                    <div><strong>Contact</strong><br><a
-                            href="mailto:obsidianautoworksoc@gmail.com">obsidianautoworksoc@gmail.com</a><br><a
-                            href="tel:7146007134">(714) 600-7134</a></div>
+                    <div><strong>Services</strong><br><a href="/services">Services</a><br><a href="/window-tint-pricing">Pricing</a><br><a href="/ceramic-window-tinting">Ceramic</a><br><a href="/mobile-window-tinting">Mobile Tint</a></div>
+                    <div><strong>Packages</strong><br><a href="/full-car-window-tinting">Full Car</a><br><a href="/sides-rear-window-tinting">Sides &amp; Rear</a><br><a href="/front-two-window-tinting">Front Two</a><br><a href="/windshield-window-tinting">Windshield</a><br><a href="/tint-removal">Tint Removal</a></div>
+                    <div><strong>Tesla</strong><br><a href="/tesla-window-tinting">Tesla Tint</a><br><a href="/tesla-model-y-window-tinting">Model Y</a><br><a href="/tesla-model-3-window-tinting">Model 3</a></div>
+                    <div><strong>Guides</strong><br><a href="/window-tint-shades">Tint Shades</a><br><a href="/california-window-tint-law">California Tint Law</a><br><a href="/ceramic-vs-carbon-window-tint">Ceramic vs Carbon</a><br><a href="/how-long-does-window-tinting-take">Install Timing</a><br><a href="/is-mobile-window-tinting-worth-it">Mobile Tinting</a><br><a href="/how-to-choose-window-tint-percentage">Tint Percentage</a><br><a href="/does-window-tint-reduce-heat">Heat Reduction</a><br><a href="/window-tint-aftercare">Aftercare</a></div>
+                    <div><strong>Specialty</strong><br><a href="/architectural-window-film">Architectural Film</a><br><a href="/chrome-delete">Chrome Delete</a></div>
+                    <div><strong>Contact</strong><br><a href="mailto:obsidianautoworksoc@gmail.com">obsidianautoworksoc@gmail.com</a><br><a href="tel:7146007134">(714) 600-7134</a></div>
                 </div>
             </div>
             <div class="footer__bottom">
