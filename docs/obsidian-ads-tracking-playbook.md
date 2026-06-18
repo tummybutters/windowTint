@@ -31,6 +31,22 @@ window.obsidianLeadTracking.getEventLog()
 window.obsidianLeadTracking.exportEventLog()
 ```
 
+## Conversion Signal Split
+
+Google Ads should get one clean conversion event per lead action:
+
+- `square_booking_click` fires the `Square Booking Click - Obsidian` Ads conversion when a visitor clicks out to Square.
+- `phone_click` fires the `Website Phone Click - Obsidian` Ads conversion when a visitor clicks a `tel:` link.
+
+Quiz-specific events stay as first-party detail and should not also fire Ads conversions:
+
+- `vip_quiz_square_click`
+- `vip_quiz_call_click`
+- `vip_quiz_answer`
+- `vip_quiz_recommendation`
+
+This keeps the optimization signal clean while preserving the richer quiz trail in `/api/lead-events`.
+
 ## Google Ads Campaign Tracking Template
 
 Use this at the campaign level for `Search | OC | Mobile Ceramic Tint | Agency Build`:

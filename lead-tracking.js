@@ -76,9 +76,7 @@
     const DEFAULT_ADS_CONVERSIONS = {
         ai_booking_click: '',
         phone_click: 'GVSvCK39u70cEKmA5L1C',
-        square_booking_click: '3k3PCLD9u70cEKmA5L1C',
-        vip_quiz_call_click: 'GVSvCK39u70cEKmA5L1C',
-        vip_quiz_square_click: '3k3PCLD9u70cEKmA5L1C'
+        square_booking_click: '3k3PCLD9u70cEKmA5L1C'
     };
     const SQUARE_BOOKING_HOSTS = [
         'app.squareup.com',
