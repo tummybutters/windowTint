@@ -276,6 +276,37 @@
     font-weight: 700;
 }
 
+.seo-source-note {
+    margin-top: 1rem;
+    padding: 0.9rem 1rem;
+    border: 2px solid var(--black);
+    border-left: 6px solid var(--sunset-coral);
+    background: rgba(255, 255, 255, 0.74);
+    color: var(--black);
+    font-size: 0.94rem;
+    font-weight: 600;
+    line-height: 1.65;
+}
+
+.seo-source-note strong {
+    font-weight: 900;
+    text-transform: uppercase;
+}
+
+.seo-source-note a {
+    color: inherit;
+    font-weight: 900;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+}
+
+.seo-section--dark .seo-source-note {
+    background: rgba(255, 255, 255, 0.08);
+    color: var(--white);
+    border-color: var(--black);
+    border-left-color: var(--sunset-glow);
+}
+
 .seo-link-row {
     display: flex;
     flex-wrap: wrap;
