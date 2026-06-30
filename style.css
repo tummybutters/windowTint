@@ -857,6 +857,10 @@ textarea.input {
     display: inline-block;
 }
 
+.shade--clear {
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.96), rgba(190, 225, 255, 0.68));
+}
+
 .shade--light {
     background: rgba(0, 0, 0, 0.5);
 }

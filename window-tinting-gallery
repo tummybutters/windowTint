@@ -388,11 +388,18 @@
                     </div>
                     <div class="service-header__content">
                         <h2>Available Shades</h2>
-                        <p>Choose from multiple tint levels to match your style and needs. Custom shades can be sourced
-                            upon request.</p>
+                        <p>Choose from multiple tint levels to match your style and needs, including 80% Clear Shield
+                            IR for heat rejection with a nearly clear look.</p>
                     </div>
                 </div>
                 <div class="shades-showcase">
+                    <div class="shade-card">
+                        <div class="shade-preview shade-preview--clear"></div>
+                        <div class="shade-info">
+                            <h3>Clear Shield IR - 80%</h3>
+                            <p>Nearly clear ceramic infrared heat rejection with minimal privacy change.</p>
+                        </div>
+                    </div>
                     <div class="shade-card">
                         <div class="shade-preview shade-preview--light"></div>
                         <div class="shade-info">

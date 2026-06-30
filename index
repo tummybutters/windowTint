@@ -143,10 +143,10 @@
         <div class="container">
             <div class="reviews__header">
                 <span class="tag">REVIEWS</span>
-                <h2>Our Most Recent Reviews</h2>
+                <h2>28 Recent Google Reviews</h2>
                 <div class="reviews__rating-line">
                     <span class="reviews__stars" aria-label="5 out of 5 stars">★★★★★</span>
-                    <span>5.0 Customer Rating</span>
+                    <span>5.0 Google Customer Rating</span>
                 </div>
             </div>
             <div class="reviews__carousel">
@@ -156,73 +156,183 @@
                             <li class="review-card">
                                 <div class="review-card__top">
                                     <span class="review-card__stars" aria-label="5 out of 5 stars">★★★★★</span>
-                                    <span class="review-card__service">Service: Sides + Rear</span>
+                                    <span class="review-card__service">Recent Google Review</span>
                                 </div>
-                                <h3 class="review-card__name">Mark Cruz</h3>
-                                <blockquote class="review-card__quote">Such a big difference bro. Thanks again for the
-                                    work. Definitely gives it a new look. I'll be hitting you up for other
-                                    vehicles.</blockquote>
+                                <h3 class="review-card__name">David Christian</h3>
+                                <blockquote class="review-card__quote">My experience with this company has been nothing but professional and the utmost fun experience. These guys hold themselves to a high standard and customer satisfaction, and I would recommend these guys to anyone.</blockquote>
                                 <div class="review-card__footer">
-                                    <span class="review-card__source">Posted on Google</span>
+                                    <span class="review-card__source">Google • 2 hours ago</span>
                                     <a class="brutalist-btn brutalist-btn--primary review-card__cta"
-                                        href="/window-tinting-gallery">See Pictures</a>
+                                        href="/booking">Book Mobile Tint</a>
                                 </div>
                             </li>
                             <li class="review-card">
                                 <div class="review-card__top">
                                     <span class="review-card__stars" aria-label="5 out of 5 stars">★★★★★</span>
-                                    <span class="review-card__service">Service: Full truck tint</span>
+                                    <span class="review-card__service">Tesla Model Y + BMW M550i</span>
                                 </div>
-                                <h3 class="review-card__name">Ahmad Bond</h3>
-                                <blockquote class="review-card__quote">Bro thank you for your work... the truck looks
-                                    very nice... thank you... I'm going to recommend you with friends and
-                                    family.</blockquote>
+                                <h3 class="review-card__name">Amin Afalqa</h3>
+                                <blockquote class="review-card__quote">I’ve now had two cars tinted by Obsidian AutoWorks. First my parents Tesla Model Y, and now my 2018 BMW M550i and I couldn’t be happier with the results. The entire experience was quick, efficient, professional, and the quality of the work is outstanding. I went with 5% tint on the sides and rear, and the finish came out absolutely flawless. It completely transformed the look of my M550i it looks so much more aggressive and honestly just badass now. You can tell they take pride in their work and pay attention to every detail. If you’re looking for top tier tint with excellent customer service, I highly recommend Obsidian AutoWorks.</blockquote>
                                 <div class="review-card__footer">
-                                    <span class="review-card__source">Posted on Google</span>
+                                    <span class="review-card__source">Google • a day ago</span>
                                     <a class="brutalist-btn brutalist-btn--primary review-card__cta"
-                                        href="/window-tinting-gallery">See Pictures</a>
+                                        href="/booking">Book Mobile Tint</a>
                                 </div>
                             </li>
                             <li class="review-card">
                                 <div class="review-card__top">
                                     <span class="review-card__stars" aria-label="5 out of 5 stars">★★★★★</span>
-                                    <span class="review-card__service">Service: Full tint + Sunstrip</span>
+                                    <span class="review-card__service">Referral Install</span>
                                 </div>
-                                <h3 class="review-card__name">Corinna Townsend</h3>
-                                <blockquote class="review-card__quote">Thanks again. I love the results.</blockquote>
+                                <h3 class="review-card__name">Ian McDonald</h3>
+                                <blockquote class="review-card__quote">Recommended from a friend and they did not disappoint. Showed up early. Very professional. Car looks great. Definitely the kind of small business you root for.</blockquote>
                                 <div class="review-card__footer">
-                                    <span class="review-card__source">Posted on Google</span>
+                                    <span class="review-card__source">Google • 2 days ago</span>
                                     <a class="brutalist-btn brutalist-btn--primary review-card__cta"
-                                        href="/window-tinting-gallery">See Pictures</a>
+                                        href="/booking">Book Mobile Tint</a>
                                 </div>
                             </li>
                             <li class="review-card">
                                 <div class="review-card__top">
                                     <span class="review-card__stars" aria-label="5 out of 5 stars">★★★★★</span>
-                                    <span class="review-card__service">Service: Full tint</span>
+                                    <span class="review-card__service">Mobile Office Tint</span>
                                 </div>
-                                <h3 class="review-card__name">Joe Le</h3>
-                                <blockquote class="review-card__quote">Dude I appreciate your work.. it's solid. I'll
-                                    make sure to pass you around. I appreciate your commitment to the detail.
-                                </blockquote>
+                                <h3 class="review-card__name">Ramon Guzman</h3>
+                                <blockquote class="review-card__quote">The team at Obsidian is truly amazing! They keep you in the loop, ensuring you understand the process, offer options, and showcase past work so you can get a feel for what it might look like. The booking process was also a breeze. And the best part? They’re mobile! They came to my office and got it done. They’re my go-to tint company from now on, and I’ll always recommend them to others.</blockquote>
                                 <div class="review-card__footer">
-                                    <span class="review-card__source">Posted on Google</span>
+                                    <span class="review-card__source">Google • 3 days ago</span>
                                     <a class="brutalist-btn brutalist-btn--primary review-card__cta"
-                                        href="/window-tinting-gallery">See Pictures</a>
+                                        href="/booking">Book Mobile Tint</a>
                                 </div>
                             </li>
                             <li class="review-card">
                                 <div class="review-card__top">
                                     <span class="review-card__stars" aria-label="5 out of 5 stars">★★★★★</span>
-                                    <span class="review-card__service">Service: Sides + Rear</span>
+                                    <span class="review-card__service">Two-Vehicle Ceramic Tint</span>
                                 </div>
-                                <h3 class="review-card__name">Bryan Rodriguez</h3>
-                                <blockquote class="review-card__quote">Best in the game! Did my Sentra and came out
-                                    10/10.</blockquote>
+                                <h3 class="review-card__name">Ravish Patel</h3>
+                                <blockquote class="review-card__quote">Kislev, Elle, and team were awesome to work with! Great communication throughout the whole process and helped me choose the perfect shade for my wife’s SUV and my car! Will definitely be using them again and recommend anyone else to them. Can’t beat the convenience of them being mobile and prices are cheaper than most shops. Thanks again!</blockquote>
                                 <div class="review-card__footer">
-                                    <span class="review-card__source">Posted on Google</span>
+                                    <span class="review-card__source">Google • 2 weeks ago</span>
                                     <a class="brutalist-btn brutalist-btn--primary review-card__cta"
-                                        href="/window-tinting-gallery">See Pictures</a>
+                                        href="/booking">Book Mobile Tint</a>
+                                </div>
+                            </li>
+                            <li class="review-card">
+                                <div class="review-card__top">
+                                    <span class="review-card__stars" aria-label="5 out of 5 stars">★★★★★</span>
+                                    <span class="review-card__service">Flawless Tint Install</span>
+                                </div>
+                                <h3 class="review-card__name">Melvin Pena</h3>
+                                <blockquote class="review-card__quote">Very good quality and very well done job. The tint came out flawless. Very professional, knowledgeable, and easy to work with.</blockquote>
+                                <div class="review-card__footer">
+                                    <span class="review-card__source">Google • a month ago</span>
+                                    <a class="brutalist-btn brutalist-btn--primary review-card__cta"
+                                        href="/booking">Book Mobile Tint</a>
+                                </div>
+                            </li>
+                            <li class="review-card">
+                                <div class="review-card__top">
+                                    <span class="review-card__stars" aria-label="5 out of 5 stars">★★★★★</span>
+                                    <span class="review-card__service">Porsche Taycan Turbo S</span>
+                                </div>
+                                <h3 class="review-card__name">Mike Porter</h3>
+                                <blockquote class="review-card__quote">Just had my Porsche Taycan Turbo S tinted and I couldn’t be happier with the experience. The team did a phenomenal job from start to finish. Their attention to detail, professionalism, and quality of work truly stood out. The entire process was simple, smooth, and stress-free. They took the time to explain everything, answered all my questions, and delivered flawless results. The tint looks incredible and completely elevated the look of the car. If you’re looking for a trustworthy company that takes pride in their work and delivers top-tier results, this is the company to call. Highly recommend!</blockquote>
+                                <div class="review-card__footer">
+                                    <span class="review-card__source">Google • a month ago</span>
+                                    <a class="brutalist-btn brutalist-btn--primary review-card__cta"
+                                        href="/booking">Book Mobile Tint</a>
+                                </div>
+                            </li>
+                            <li class="review-card">
+                                <div class="review-card__top">
+                                    <span class="review-card__stars" aria-label="5 out of 5 stars">★★★★★</span>
+                                    <span class="review-card__service">Tint Removal + Ceramic Tint</span>
+                                </div>
+                                <h3 class="review-card__name">Dean Panuncialman</h3>
+                                <blockquote class="review-card__quote">I had an excellent experience with Obsidian Auto Works OC and Kislev. From start to finish, his communication was outstanding. He kept me updated throughout the process, answered all of my questions, and made scheduling incredibly easy. He removed the old tint and installed new 5% ceramic tint on two of my vehicles, and the quality of the work was flawless. The tint looks amazing, was installed perfectly, and you can tell he really takes pride in his work and attention to detail. I’ll definitely be calling him again for future work and recommending him to anyone looking for high-quality mobile tint services. Highly recommend!</blockquote>
+                                <div class="review-card__footer">
+                                    <span class="review-card__source">Google • a month ago</span>
+                                    <a class="brutalist-btn brutalist-btn--primary review-card__cta"
+                                        href="/booking">Book Mobile Tint</a>
+                                </div>
+                            </li>
+                            <li class="review-card">
+                                <div class="review-card__top">
+                                    <span class="review-card__stars" aria-label="5 out of 5 stars">★★★★★</span>
+                                    <span class="review-card__service">Repeat Customer</span>
+                                </div>
+                                <h3 class="review-card__name">mt cole78</h3>
+                                <blockquote class="review-card__quote">I’ve had my windows tinted by Obsidian Mobile Window Tinting OC more than once now, and every single experience has been top tier. Kislev truly goes above and beyond for his customers. I needed my windows done today and he was incredibly accommodating with changing the location to make it work for my schedule. That level of customer service is hard to find these days. The quality of his work is hands down the best in town. The tint looks flawless, clean, and professional every time. No bubbles, no imperfections, just amazing attention to detail. You can tell he takes pride in what he does and genuinely cares about making sure his customers leave happy. As a repeat customer, I can confidently say Obsidian Mobile Window Tinting OC consistently exceeds my expectations. Professional, reliable, responsive, and worth every penny. If you’re thinking about getting your windows tinted, stop searching and book with Obsidian Mobile Window Tinting OC. You will not regret it. 5 stars all the way.</blockquote>
+                                <div class="review-card__footer">
+                                    <span class="review-card__source">Google • a month ago</span>
+                                    <a class="brutalist-btn brutalist-btn--primary review-card__cta"
+                                        href="/booking">Book Mobile Tint</a>
+                                </div>
+                            </li>
+                            <li class="review-card">
+                                <div class="review-card__top">
+                                    <span class="review-card__stars" aria-label="5 out of 5 stars">★★★★★</span>
+                                    <span class="review-card__service">Tundra Driveway Install</span>
+                                </div>
+                                <h3 class="review-card__name">Ron Peregrin</h3>
+                                <blockquote class="review-card__quote">Excellent job tinting all the windows on my Tundra, in my driveway. Great customer service, punctual and the quality of work is outstanding. Highly recommended!</blockquote>
+                                <div class="review-card__footer">
+                                    <span class="review-card__source">Google • a month ago</span>
+                                    <a class="brutalist-btn brutalist-btn--primary review-card__cta"
+                                        href="/booking">Book Mobile Tint</a>
+                                </div>
+                            </li>
+                            <li class="review-card">
+                                <div class="review-card__top">
+                                    <span class="review-card__stars" aria-label="5 out of 5 stars">★★★★★</span>
+                                    <span class="review-card__service">Tint Removal</span>
+                                </div>
+                                <h3 class="review-card__name">Michael Campbell</h3>
+                                <blockquote class="review-card__quote">Kislev did a great job removing the tint from the back side and rear windows of a car I bought. Came to my house, did the job in a couple of hours, and left everything spotless when he was finished.</blockquote>
+                                <div class="review-card__footer">
+                                    <span class="review-card__source">Google • a month ago</span>
+                                    <a class="brutalist-btn brutalist-btn--primary review-card__cta"
+                                        href="/booking">Book Mobile Tint</a>
+                                </div>
+                            </li>
+                            <li class="review-card">
+                                <div class="review-card__top">
+                                    <span class="review-card__stars" aria-label="5 out of 5 stars">★★★★★</span>
+                                    <span class="review-card__service">Workplace Porsche Macan Tint</span>
+                                </div>
+                                <h3 class="review-card__name">Winston Bianco</h3>
+                                <blockquote class="review-card__quote">Kislev is the man! I met him through a coworker, and his reputation truly speaks for itself. He came directly to my workplace and spent the entire day working on my Macan. Everything was done professionally, meticulously, and with incredible attention to detail. I couldn’t be happier with the results. You truly get what you pay for, and this man is the best at what he does! Tint Job is immaculate, thanks Kislev!</blockquote>
+                                <div class="review-card__footer">
+                                    <span class="review-card__source">Google • a month ago</span>
+                                    <a class="brutalist-btn brutalist-btn--primary review-card__cta"
+                                        href="/booking">Book Mobile Tint</a>
+                                </div>
+                            </li>
+                            <li class="review-card">
+                                <div class="review-card__top">
+                                    <span class="review-card__stars" aria-label="5 out of 5 stars">★★★★★</span>
+                                    <span class="review-card__service">Next-Day Appointment</span>
+                                </div>
+                                <h3 class="review-card__name">Valeria Mejia</h3>
+                                <blockquote class="review-card__quote">I was able to schedule an appointment the next day. Service was great and would recommend to a friend.</blockquote>
+                                <div class="review-card__footer">
+                                    <span class="review-card__source">Google • a month ago</span>
+                                    <a class="brutalist-btn brutalist-btn--primary review-card__cta"
+                                        href="/booking">Book Mobile Tint</a>
+                                </div>
+                            </li>
+                            <li class="review-card">
+                                <div class="review-card__top">
+                                    <span class="review-card__stars" aria-label="5 out of 5 stars">★★★★★</span>
+                                    <span class="review-card__service">Full Ceramic Tint</span>
+                                </div>
+                                <h3 class="review-card__name">Tim L</h3>
+                                <blockquote class="review-card__quote">Kislev arrived at the appointment on time and ready to go. Though he is young, he is motivated, professional and friendly. He explained the process and worked diligently, finishing within the time frame he provided. Most importantly, the quality of the work was top notch. Everything was properly aligned, no bubbling, and the windows look fantastic. I opted for full ceramic tint and the heat rejection is nothing short of amazing. Kislev is very responsive and I highly recommend his services to anyone who has a discerning eye and wants the best quality workmanship and tint material.</blockquote>
+                                <div class="review-card__footer">
+                                    <span class="review-card__source">Google • 2 months ago</span>
+                                    <a class="brutalist-btn brutalist-btn--primary review-card__cta"
+                                        href="/booking">Book Mobile Tint</a>
                                 </div>
                             </li>
                         </ul>
@@ -232,70 +342,183 @@
                             <li class="review-card">
                                 <div class="review-card__top">
                                     <span class="review-card__stars" aria-label="5 out of 5 stars">★★★★★</span>
-                                    <span class="review-card__service">Service: Full tint</span>
+                                    <span class="review-card__service">Truck Tint</span>
                                 </div>
-                                <h3 class="review-card__name">Jadelyn Belle</h3>
-                                <blockquote class="review-card__quote">Car came out so good! My car was originally a
-                                    fishbowl, so I was looking to get ceramic tint. Something noticeably different, but
-                                    not too dark. Kislev from Obsidian Autoworks was able to do just that, and did a
-                                    spectacular job on my car!</blockquote>
+                                <h3 class="review-card__name">Jacob Graves</h3>
+                                <blockquote class="review-card__quote">Kislev did great work on my truck, I’m incredibly happy. I’m definitely going to use him for more vehicles in the future.</blockquote>
                                 <div class="review-card__footer">
-                                    <span class="review-card__source">Posted on Google</span>
+                                    <span class="review-card__source">Google • 2 months ago</span>
                                     <a class="brutalist-btn brutalist-btn--primary review-card__cta"
-                                        href="/window-tinting-gallery">See Pictures</a>
+                                        href="/booking">Book Mobile Tint</a>
                                 </div>
                             </li>
                             <li class="review-card">
                                 <div class="review-card__top">
                                     <span class="review-card__stars" aria-label="5 out of 5 stars">★★★★★</span>
-                                    <span class="review-card__service">Service: Full tint</span>
+                                    <span class="review-card__service">Honda Accord Tint</span>
                                 </div>
-                                <h3 class="review-card__name">Alex Brockman</h3>
-                                <blockquote class="review-card__quote">Best tinting service in OC! Whole car looks
-                                    sleek now. Will be back for my wife's car!</blockquote>
+                                <h3 class="review-card__name">Moe Moe</h3>
+                                <blockquote class="review-card__quote">So professional and sophisticated. He treated my Honda accord like a Rolls Royce. 7 stars if I could!</blockquote>
                                 <div class="review-card__footer">
-                                    <span class="review-card__source">Posted on Google</span>
+                                    <span class="review-card__source">Google • 2 months ago</span>
                                     <a class="brutalist-btn brutalist-btn--primary review-card__cta"
-                                        href="/window-tinting-gallery">See Pictures</a>
+                                        href="/booking">Book Mobile Tint</a>
                                 </div>
                             </li>
                             <li class="review-card">
                                 <div class="review-card__top">
                                     <span class="review-card__stars" aria-label="5 out of 5 stars">★★★★★</span>
-                                    <span class="review-card__service">Service: Windshield</span>
+                                    <span class="review-card__service">Professional Mobile Tint</span>
                                 </div>
-                                <h3 class="review-card__name">Bryan Santiago</h3>
-                                <blockquote class="review-card__quote">Amazing service! Kislev took his time with my
-                                    Tesla Model Y, and even came all the way to my house which was very convenient. I
-                                    got my windshield tinted by Kislev, and will have him back to replace the old tint
-                                    on the rest of my car.</blockquote>
+                                <h3 class="review-card__name">ANA MEDINA</h3>
+                                <blockquote class="review-card__quote">He was awesome, friendly, smart and professional. I will recommend my friends to him and definitely will share his business info.</blockquote>
                                 <div class="review-card__footer">
-                                    <span class="review-card__source">Posted on Google</span>
+                                    <span class="review-card__source">Google • 2 months ago</span>
                                     <a class="brutalist-btn brutalist-btn--primary review-card__cta"
-                                        href="/window-tinting-gallery">See Pictures</a>
+                                        href="/booking">Book Mobile Tint</a>
                                 </div>
                             </li>
                             <li class="review-card">
                                 <div class="review-card__top">
                                     <span class="review-card__stars" aria-label="5 out of 5 stars">★★★★★</span>
-                                    <span class="review-card__service">Service: Sides + Rear</span>
+                                    <span class="review-card__service">Sienna Mobile Tint</span>
                                 </div>
-                                <h3 class="review-card__name">Nesha Bowman</h3>
-                                <blockquote class="review-card__quote">Oh my gosh!!! Called here to get my windows
-                                    tinted and was referred to their person, Kislev, who either comes to your house or
-                                    your place of work to do the tinting. I've had all of my cars tinted back home in KY
-                                    and thought I'd never find a place as good as that one out here in CA. My standards
-                                    and expectations are very high and I have to say, I am blown away at how well they
-                                    came out on my Bronco. The attention to detail is insane. Kislev is a perfectionist.
-                                    Normally when I leave the tinting place I'm always slightly worried about what it'll
-                                    look like in several days because of the bubbles. Nope. Not this time. I loved it
-                                    from the get go and I can't imagine how good it's going to look in a week from now.
-                                    I can't imagine how good their car detailing and waxing services are if they have
-                                    someone this good doing windows.</blockquote>
+                                <h3 class="review-card__name">Gordon Sturm</h3>
+                                <blockquote class="review-card__quote">I just had my Sienna done by Obsidian Mobile Window Tint and the experience was top-notch. The owner showed up exactly when he said he would and kept me in the loop the whole time. The quality of the work is easily best in class, clean lines and a perfect finish. Knowing it’s backed by a lifetime guarantee gives me a lot of peace of mind. On top of that, he was super friendly and professional throughout the process. If you’re looking for high-end mobile tinting, I’d highly recommend!</blockquote>
                                 <div class="review-card__footer">
-                                    <span class="review-card__source">Posted on Google</span>
+                                    <span class="review-card__source">Google • 2 months ago</span>
                                     <a class="brutalist-btn brutalist-btn--primary review-card__cta"
-                                        href="/window-tinting-gallery">See Pictures</a>
+                                        href="/booking">Book Mobile Tint</a>
+                                </div>
+                            </li>
+                            <li class="review-card">
+                                <div class="review-card__top">
+                                    <span class="review-card__stars" aria-label="5 out of 5 stars">★★★★★</span>
+                                    <span class="review-card__service">Shop Partner Tint Work</span>
+                                </div>
+                                <h3 class="review-card__name">Jiggyrose</h3>
+                                <blockquote class="review-card__quote">We’ve had him come out to our shop at Evolving Motors a couple of times now and he consistently does great work. Clean installs, no bubbles, and he gets it done without any hassle. Punctual, professional, and easy to work with. If you need quality tint done right, look no further. We’ll definitely keep calling him back.</blockquote>
+                                <div class="review-card__footer">
+                                    <span class="review-card__source">Google • 2 months ago</span>
+                                    <a class="brutalist-btn brutalist-btn--primary review-card__cta"
+                                        href="/booking">Book Mobile Tint</a>
+                                </div>
+                            </li>
+                            <li class="review-card">
+                                <div class="review-card__top">
+                                    <span class="review-card__stars" aria-label="5 out of 5 stars">★★★★★</span>
+                                    <span class="review-card__service">Quality + Integrity</span>
+                                </div>
+                                <h3 class="review-card__name">Greg Chang</h3>
+                                <blockquote class="review-card__quote">Not only was their service affordably priced, but they were professional and ensured that the final product was high-quality. When there was a minor hiccup, instead of trying to hide it, they proactively identified and then addressed the issue fairly and with integrity. I would definitely use them again in the future.</blockquote>
+                                <div class="review-card__footer">
+                                    <span class="review-card__source">Google • 2 months ago</span>
+                                    <a class="brutalist-btn brutalist-btn--primary review-card__cta"
+                                        href="/booking">Book Mobile Tint</a>
+                                </div>
+                            </li>
+                            <li class="review-card">
+                                <div class="review-card__top">
+                                    <span class="review-card__stars" aria-label="5 out of 5 stars">★★★★★</span>
+                                    <span class="review-card__service">Dedicated Service</span>
+                                </div>
+                                <h3 class="review-card__name">Ana Gueta</h3>
+                                <blockquote class="review-card__quote">Very kind and dedicated to his work.</blockquote>
+                                <div class="review-card__footer">
+                                    <span class="review-card__source">Google • 2 months ago</span>
+                                    <a class="brutalist-btn brutalist-btn--primary review-card__cta"
+                                        href="/booking">Book Mobile Tint</a>
+                                </div>
+                            </li>
+                            <li class="review-card">
+                                <div class="review-card__top">
+                                    <span class="review-card__stars" aria-label="5 out of 5 stars">★★★★★</span>
+                                    <span class="review-card__service">Professional Service</span>
+                                </div>
+                                <h3 class="review-card__name">steve arroyo</h3>
+                                <blockquote class="review-card__quote">Very professional service and fair pricing for the quality product. I would recommend all my family and friends to him.</blockquote>
+                                <div class="review-card__footer">
+                                    <span class="review-card__source">Google • 3 months ago</span>
+                                    <a class="brutalist-btn brutalist-btn--primary review-card__cta"
+                                        href="/booking">Book Mobile Tint</a>
+                                </div>
+                            </li>
+                            <li class="review-card">
+                                <div class="review-card__top">
+                                    <span class="review-card__stars" aria-label="5 out of 5 stars">★★★★★</span>
+                                    <span class="review-card__service">Sunday Mobile Tint</span>
+                                </div>
+                                <h3 class="review-card__name">Tiffany Hernandez</h3>
+                                <blockquote class="review-card__quote">I had such a great experience with Obsidian Mobile Window Tinting OC. From the moment he arrived, he was friendly, professional, and just had the kind of positive attitude that makes you feel like you chose the right company. Sometimes all it takes is a warm smile and someone who clearly cares about their work, and that’s exactly what I got. He took his time and worked with real patience, making sure everything was done right. You can honestly see the difference when someone takes pride in what they do. The tint came out clean, smooth, and perfect. No rushing, no shortcuts, just quality work. What really impressed me was that he even came out on a Sunday, which made things so convenient for my schedule. That kind of reliability and dedication is hard to find these days. If you’re looking for a dependable mobile tint company that delivers amazing service and professional results, this is the one. I will absolutely be using Obsidian Mobile Window Tinting OC again for all of my future cars. Highly recommend!</blockquote>
+                                <div class="review-card__footer">
+                                    <span class="review-card__source">Google • 3 months ago</span>
+                                    <a class="brutalist-btn brutalist-btn--primary review-card__cta"
+                                        href="/booking">Book Mobile Tint</a>
+                                </div>
+                            </li>
+                            <li class="review-card">
+                                <div class="review-card__top">
+                                    <span class="review-card__stars" aria-label="5 out of 5 stars">★★★★★</span>
+                                    <span class="review-card__service">Mobile Tint + Product Guidance</span>
+                                </div>
+                                <h3 class="review-card__name">iliana villanueva</h3>
+                                <blockquote class="review-card__quote">Amazing service! Super happy with the results and his explanation of products. Completely changed the look of the vehicle for good. Great price and loved the fact that I got taken care of without leaving home. Best in the area for sure. Thank you!</blockquote>
+                                <div class="review-card__footer">
+                                    <span class="review-card__source">Google • 3 months ago</span>
+                                    <a class="brutalist-btn brutalist-btn--primary review-card__cta"
+                                        href="/booking">Book Mobile Tint</a>
+                                </div>
+                            </li>
+                            <li class="review-card">
+                                <div class="review-card__top">
+                                    <span class="review-card__stars" aria-label="5 out of 5 stars">★★★★★</span>
+                                    <span class="review-card__service">Corolla Mobile Tint</span>
+                                </div>
+                                <h3 class="review-card__name">ADAM R</h3>
+                                <blockquote class="review-card__quote">WOW! Just wow. Kislev is on another level. He’s professional at his work, knows what he’s doing and what he’s talking about. I have been searching for a while to find a good mobile tinter because I have no time going to a shop because of work, but let me just say his work is top tier. Never have I seen a mobile tinter with these types of skills and that is honest rather than just doing something for money. I’d book with him again and definitely in the future. Highly recommend him to anyone considering going with him. Super clean job on my Corolla, not one thing to complain about, loving the tint on it.</blockquote>
+                                <div class="review-card__footer">
+                                    <span class="review-card__source">Google • 3 months ago</span>
+                                    <a class="brutalist-btn brutalist-btn--primary review-card__cta"
+                                        href="/booking">Book Mobile Tint</a>
+                                </div>
+                            </li>
+                            <li class="review-card">
+                                <div class="review-card__top">
+                                    <span class="review-card__stars" aria-label="5 out of 5 stars">★★★★★</span>
+                                    <span class="review-card__service">Professional Tint Service</span>
+                                </div>
+                                <h3 class="review-card__name">Chuck Holdeman</h3>
+                                <blockquote class="review-card__quote">I’m so happy that I chose this company. He’s very professional about his job and very happy with the work he did. I would highly recommend him again and again. Price was great.</blockquote>
+                                <div class="review-card__footer">
+                                    <span class="review-card__source">Google • 3 months ago</span>
+                                    <a class="brutalist-btn brutalist-btn--primary review-card__cta"
+                                        href="/booking">Book Mobile Tint</a>
+                                </div>
+                            </li>
+                            <li class="review-card">
+                                <div class="review-card__top">
+                                    <span class="review-card__stars" aria-label="5 out of 5 stars">★★★★★</span>
+                                    <span class="review-card__service">Suburban + Silverado</span>
+                                </div>
+                                <h3 class="review-card__name">Jeffrey Scott Newton, Jr</h3>
+                                <blockquote class="review-card__quote">Kislev was professional, a great communicator, on time and gave a great experience. He did window tint on our 2025 Chevy Suburban and Silverado. Highly recommend!</blockquote>
+                                <div class="review-card__footer">
+                                    <span class="review-card__source">Google • 3 months ago</span>
+                                    <a class="brutalist-btn brutalist-btn--primary review-card__cta"
+                                        href="/booking">Book Mobile Tint</a>
+                                </div>
+                            </li>
+                            <li class="review-card">
+                                <div class="review-card__top">
+                                    <span class="review-card__stars" aria-label="5 out of 5 stars">★★★★★</span>
+                                    <span class="review-card__service">Clean Tint Install</span>
+                                </div>
+                                <h3 class="review-card__name">tomyleang leang</h3>
+                                <blockquote class="review-card__quote">Chill dude and clean tints. What more I need to say.</blockquote>
+                                <div class="review-card__footer">
+                                    <span class="review-card__source">Google • 3 months ago</span>
+                                    <a class="brutalist-btn brutalist-btn--primary review-card__cta"
+                                        href="/booking">Book Mobile Tint</a>
                                 </div>
                             </li>
                         </ul>
@@ -356,11 +579,12 @@
                     </div>
                     <div class="brutalist-card__message">
                         <ul class="shades-list">
+                            <li><span class="shade shade--clear"></span> Clear Shield IR - 80%</li>
                             <li><span class="shade shade--light"></span> Light — 50%</li>
                             <li><span class="shade shade--medium"></span> Medium — 20%</li>
                             <li><span class="shade shade--limo"></span> Limo — 5%</li>
                         </ul>
-                        <p class="note">Custom shades can be sourced if requested</p>
+                        <p class="note">80% clear Shield IR is available for heat rejection with a nearly clear look.</p>
                     </div>
                 </div>
             </div>
@@ -382,7 +606,7 @@
                         <div class="brutalist-card__alert">Tint Shade Guide</div>
                     </div>
                     <div class="brutalist-card__message">
-                        <p class="note">Compare 50%, 35%, 20%, and 5% tint before choosing the look.</p>
+                        <p class="note">Compare 80% Clear Shield IR, 50%, 35%, 20%, and 5% tint before choosing the look.</p>
                         <div class="home-guide-links">
                             <a href="/window-tint-shades">Compare Shades</a>
                             <a href="/california-window-tint-law">Check California Rules</a>

@@ -358,6 +358,10 @@ body.lightbox-open {
     background: rgba(0, 0, 0, 0.5);
 }
 
+.shade-preview--clear {
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.96), rgba(190, 225, 255, 0.68));
+}
+
 .shade-preview--medium {
     background: rgba(0, 0, 0, 0.8);
 }
