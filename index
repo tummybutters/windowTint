@@ -579,12 +579,12 @@
                     </div>
                     <div class="brutalist-card__message">
                         <ul class="shades-list">
-                            <li><span class="shade shade--clear"></span> Clear Shield IR - 80%</li>
-                            <li><span class="shade shade--light"></span> Light — 50%</li>
-                            <li><span class="shade shade--medium"></span> Medium — 20%</li>
+                            <li><span class="shade shade--clear"></span> Clear — 80% Shield IR</li>
+                            <li><span class="shade shade--light"></span> Light — 40%</li>
+                            <li><span class="shade shade--medium"></span> Medium — 15%</li>
                             <li><span class="shade shade--limo"></span> Limo — 5%</li>
                         </ul>
-                        <p class="note">80% clear Shield IR is available for heat rejection with a nearly clear look.</p>
+                        <p class="note">80% clear Shield IR is the premium, highest-cost clear film: stronger heat performance while keeping the glass looking clear.</p>
                     </div>
                 </div>
             </div>
@@ -606,7 +606,7 @@
                         <div class="brutalist-card__alert">Tint Shade Guide</div>
                     </div>
                     <div class="brutalist-card__message">
-                        <p class="note">Compare 80% Clear Shield IR, 50%, 35%, 20%, and 5% tint before choosing the look.</p>
+                        <p class="note">Compare Obsidian's current shades: 80% Clear Shield IR, 40% light, 15% medium, and 5% limo.</p>
                         <div class="home-guide-links">
                             <a href="/window-tint-shades">Compare Shades</a>
                             <a href="/california-window-tint-law">Check California Rules</a>

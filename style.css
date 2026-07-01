@@ -862,11 +862,11 @@ textarea.input {
 }
 
 .shade--light {
-    background: rgba(0, 0, 0, 0.5);
+    background: rgba(0, 0, 0, 0.4);
 }
 
 .shade--medium {
-    background: rgba(0, 0, 0, 0.8);
+    background: rgba(0, 0, 0, 0.85);
 }
 
 .shade--limo {

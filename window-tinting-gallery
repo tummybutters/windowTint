@@ -388,36 +388,36 @@
                     </div>
                     <div class="service-header__content">
                         <h2>Available Shades</h2>
-                        <p>Choose from multiple tint levels to match your style and needs, including 80% Clear Shield
-                            IR for heat rejection with a nearly clear look.</p>
+                        <p>Current shades: 80% Clear Shield IR, 40% light, 15% medium, and 5% limo. The 80% clear film
+                            is the premium option for heat rejection while keeping the clear look.</p>
                     </div>
                 </div>
                 <div class="shades-showcase">
                     <div class="shade-card">
                         <div class="shade-preview shade-preview--clear"></div>
                         <div class="shade-info">
-                            <h3>Clear Shield IR - 80%</h3>
-                            <p>Nearly clear ceramic infrared heat rejection with minimal privacy change.</p>
+                            <h3>Clear - 80% Shield IR</h3>
+                            <p>Premium clear infrared heat rejection with minimal privacy change. Highest-cost film Obsidian carries.</p>
                         </div>
                     </div>
                     <div class="shade-card">
                         <div class="shade-preview shade-preview--light"></div>
                         <div class="shade-info">
-                            <h3>Light — 50%</h3>
-                            <p>Maximum visibility with subtle privacy. Great for front windows where legal.</p>
+                            <h3>Light - 40%</h3>
+                            <p>Subtle shade with strong daily visibility. Good when you want a lighter traditional tint.</p>
                         </div>
                     </div>
                     <div class="shade-card">
                         <div class="shade-preview shade-preview--medium"></div>
                         <div class="shade-info">
-                            <h3>Medium — 20%</h3>
-                            <p>Popular choice for rear and back windows. Balanced privacy and visibility.</p>
+                            <h3>Medium - 15%</h3>
+                            <p>Darker privacy look without going full limo. Best planned around window location and night visibility.</p>
                         </div>
                     </div>
                     <div class="shade-card">
                         <div class="shade-preview shade-preview--limo"></div>
                         <div class="shade-info">
-                            <h3>Limo — 5%</h3>
+                            <h3>Limo - 5%</h3>
                             <p>Maximum privacy and heat rejection. Premium look for rear windows.</p>
                         </div>
                     </div>

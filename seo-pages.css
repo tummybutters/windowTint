@@ -241,7 +241,7 @@
 .shade-meter {
     height: 18px;
     border: 2px solid var(--black);
-    background: linear-gradient(90deg, #fbfdff 0%, #d9eefe 18%, #b8b8b8 42%, #555 72%, #070707 100%);
+    background: linear-gradient(90deg, #fbfdff 0%, #d9eefe 18%, #9a9a9a 48%, #202020 78%, #070707 100%);
     margin: 1rem 0;
 }
 
@@ -261,11 +261,11 @@
 }
 
 .shade-chip--light {
-    background: #777;
+    background: #6b6b6b;
 }
 
 .shade-chip--medium {
-    background: #2d2d2d;
+    background: #202020;
 }
 
 .shade-chip--dark {
