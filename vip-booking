@@ -771,10 +771,11 @@
             const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
             const squareBookingUrl = 'https://app.squareup.com/appointments/book/py2a8n8lsuxp5n/LWC5SDBDX3R99/start';
             const squareServiceBase = 'https://book.squareup.com/appointments/py2a8n8lsuxp5n/location/LWC5SDBDX3R99/services/';
+            const squareBookingEnabled = false;
             const phoneDisplay = '(714) 600-7134';
             const smsNumber = '+17146007134';
 
-            // Square service IDs for direct per-service deep links.
+            // Keep the Square service IDs ready for when Square exposes services again.
             const serviceBookingIds = {
                 coupe_full: 'JUN6RHUUDQW5SMYO56MZVCUH',
                 sedan_full: 'HPE2FJNY74MCHGFWRXKYZ5MQ',
@@ -1138,7 +1139,8 @@
                 service_price: service ? service.price : '',
                 service_duration: service ? service.duration : '',
                 service_mode: service ? service.mode : '',
-                square_booking_url: service && service.bookingUrl ? service.bookingUrl : ''
+                square_booking_url: service && service.bookingUrl && squareBookingEnabled ? service.bookingUrl : '',
+                square_booking_available: squareBookingEnabled ? 'yes' : 'no'
             });
 
             const buildTextHref = (service) => {
@@ -1290,14 +1292,15 @@
             const renderResult = () => {
                 const service = resolveService();
                 const addons = getAddonLabels();
-                const needsConfirmation = service.mode === 'quote' || hasVariableAddon();
+                const canBookInSquare = service.mode === 'book' && squareBookingEnabled && service.bookingUrl;
+                const needsConfirmation = service.mode === 'quote' || hasVariableAddon() || !canBookInSquare;
                 count.textContent = 'Recommendation';
                 bar.style.width = '100%';
 
                 const notes = [
                     service.note,
                     addons.length ? `Selected add-ons: ${addons.join(', ')}.` : 'No add-ons selected.',
-                    needsConfirmation ? 'This setup should be confirmed by text or call before booking.' : 'Open Square and choose this package to lock the appointment.'
+                    canBookInSquare ? 'Open Square and choose this package to lock the appointment.' : 'Call or text this setup and we will lock in the right appointment.'
                 ];
 
                 body.innerHTML = `
@@ -1305,7 +1308,7 @@
                         <div class="booking-router__summary">
                             <div class="booking-router__hint">Recommended package</div>
                             <div class="booking-router__summary-card">
-                                <div class="booking-router__summary-label">${needsConfirmation ? 'Confirm first' : 'Ready to book'}</div>
+                                <div class="booking-router__summary-label">${canBookInSquare ? 'Ready to book' : 'Ready to confirm'}</div>
                                 <h3 class="booking-router__summary-title">${service.title}</h3>
                                 <div class="booking-router__price-row">
                                     <div class="booking-router__price">${service.price}</div>
@@ -1316,10 +1319,13 @@
                                 </div>
                             </div>
                             <div class="booking-router__cta-row">
-                                ${service.mode === 'book'
+                                ${canBookInSquare
                                     ? `<a class="brutalist-btn brutalist-btn--primary" href="${service.bookingUrl || squareBookingUrl}" data-router-book>Open Square Booking</a>`
+                                    : service.mode === 'book'
+                                        ? `<a class="brutalist-btn brutalist-btn--primary" href="tel:7146007134">Call To Book This</a>
+                                           <a class="brutalist-btn brutalist-btn--outline" href="${buildTextHref(service)}" data-router-text>Text This Setup</a>`
                                     : `<a class="brutalist-btn brutalist-btn--primary" href="${buildTextHref(service)}" data-router-text>Text This Setup</a>`}
-                                ${service.mode === 'book' && needsConfirmation
+                                ${canBookInSquare && needsConfirmation
                                     ? `<a class="brutalist-btn brutalist-btn--outline" href="${buildTextHref(service)}" data-router-text>Text Add-ons</a>`
                                     : ''}
                                 ${service.mode === 'quote'
@@ -1327,7 +1333,7 @@
                                     : ''}
                                 <button class="booking-router__back" type="button" data-router-restart>Start Over</button>
                             </div>
-                            <p class="booking-router__fineprint">Square will handle the appointment time and deposit. If your setup includes removal, mobile priority, same-day timing, chrome delete, or architectural film, confirm with Kislev before locking the slot.</p>
+                            <p class="booking-router__fineprint">${canBookInSquare ? 'Square will handle the appointment time and deposit.' : 'Your selected package is included when you call or text, so Kislev can lock the right service without guessing.'} If your setup includes removal, mobile priority, same-day timing, chrome delete, or architectural film, confirm with Kislev before locking the slot.</p>
                         </div>
                     </div>
                 `;
