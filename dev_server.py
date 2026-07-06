@@ -61,6 +61,13 @@ class ExtensionlessHTMLHandler(SimpleHTTPRequestHandler):
         self._rewrite_path()
         super().do_HEAD()
 
+    def do_POST(self):
+        if self.path == "/api/lead-events":
+            self.send_response(204)
+            self.end_headers()
+            return
+        self.send_error(404, "Not Found")
+
     def guess_type(self, path):
         if Path(path).suffix == "":
             return "text/html; charset=utf-8"

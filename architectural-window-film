@@ -4,37 +4,38 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Architectural Window Film | Orange County</title>
+    <title>Residential Window Film Orange County | Obsidian Autoworks</title>
     <meta name="description"
-        content="Residential and commercial architectural window film quotes in Orange County for heat, glare, privacy, and UV protection.">
+        content="Premium residential window film in Orange County for heat, glare, daytime privacy, and UV protection. Call or send photos for a home window tint quote.">
     <link rel="canonical" href="https://www.obsidianautoworksoc.com/architectural-window-film">
     <link rel="icon" type="image/png" href="favicon.png">
-    <meta property="og:title" content="Architectural Window Film | Orange County">
+    <meta property="og:title" content="Residential Window Film Orange County | Obsidian Autoworks">
     <meta property="og:description"
-        content="Quote-based residential and commercial window film options for heat, glare, privacy, and UV protection.">
+        content="Quote-based home window film for Orange County homeowners who want cooler rooms, less glare, privacy, and premium installation.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://www.obsidianautoworksoc.com/architectural-window-film">
+    <meta property="og:image" content="https://www.obsidianautoworksoc.com/assets/residential-window-light.jpg">
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
         "@type": "Service",
-        "name": "Architectural Window Film",
+        "name": "Residential Window Film",
         "provider": {
             "@type": "LocalBusiness",
             "name": "Obsidian Autoworks",
             "telephone": "+17146007134"
         },
         "areaServed": "Orange County, CA",
-        "serviceType": "Residential and commercial architectural window film"
+        "serviceType": "Residential window film and home window tinting",
+        "description": "Quote-based residential window film for heat rejection, glare reduction, UV protection, and daytime privacy."
     }
     </script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap"
         rel="stylesheet">
-    <link rel="stylesheet" href="style.css?v=20260108-1">
+    <link rel="stylesheet" href="style.css?v=20260115-residential">
     <link rel="stylesheet" href="city-pages.css">
-    <link rel="stylesheet" href="seo-pages.css?v=20260617-1">
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-TR9ET60HX3"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
@@ -43,6 +44,722 @@
         gtag('config', 'G-TR9ET60HX3');
         gtag('config', 'AW-17846304809');
     </script>
+    <style>
+        .residential-page {
+            padding-top: 80px;
+            background:
+                radial-gradient(circle at 18% 15%, rgba(255, 107, 74, 0.18), transparent 28%),
+                linear-gradient(180deg, #070707 0%, #101010 54%, #060606 100%);
+            color: var(--white);
+        }
+
+        .res-hero {
+            min-height: auto;
+            display: grid;
+            align-items: center;
+            padding: 2.55rem 0 2.35rem;
+            border-bottom: 4px solid var(--black);
+            overflow: hidden;
+            position: relative;
+        }
+
+        .res-hero::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background:
+                linear-gradient(90deg, rgba(255, 255, 255, 0.04) 1px, transparent 1px),
+                linear-gradient(180deg, rgba(255, 255, 255, 0.035) 1px, transparent 1px);
+            background-size: 72px 72px;
+            opacity: 0.35;
+            pointer-events: none;
+        }
+
+        .res-hero__grid {
+            position: relative;
+            z-index: 1;
+            display: grid;
+            grid-template-columns: minmax(0, 1.02fr) minmax(360px, 0.78fr);
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .res-kicker {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.6rem;
+            padding: 0.45rem 0.7rem;
+            border: 3px solid var(--black);
+            background: var(--sunset-glow);
+            color: var(--black);
+            font-size: 0.72rem;
+            font-weight: 900;
+            text-transform: uppercase;
+            letter-spacing: 0.16em;
+            box-shadow: 5px 5px 0 var(--black);
+        }
+
+        .res-kicker::before {
+            content: "";
+            width: 0.7rem;
+            height: 0.7rem;
+            background: var(--black);
+        }
+
+        .res-hero h1 {
+            max-width: 900px;
+            margin: 1rem 0 0.9rem;
+            font-size: clamp(2.5rem, 5.25vw, 4.85rem);
+            line-height: 0.9;
+            font-weight: 900;
+            text-transform: uppercase;
+        }
+
+        .res-hero h1 span {
+            display: block;
+            background: var(--silver-shine-text);
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .res-hero__copy {
+            max-width: 720px;
+            color: rgba(255, 255, 255, 0.78);
+            font-size: 1rem;
+            line-height: 1.48;
+        }
+
+        .res-hero__actions,
+        .res-cta-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-top: 1.35rem;
+        }
+
+        .res-proof-strip {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+            margin-top: 1.35rem;
+        }
+
+        .res-proof-strip span {
+            display: inline-flex;
+            align-items: center;
+            min-height: 36px;
+            padding: 0.45rem 0.65rem;
+            border: 2px solid rgba(255, 255, 255, 0.65);
+            color: rgba(255, 255, 255, 0.82);
+            text-transform: uppercase;
+            font-size: 0.66rem;
+            font-weight: 800;
+            letter-spacing: 0.11em;
+        }
+
+        .res-photo-stack {
+            position: relative;
+            min-height: 370px;
+        }
+
+        .res-photo-card {
+            position: absolute;
+            border: 4px solid var(--black);
+            box-shadow: 12px 12px 0 var(--black);
+            overflow: hidden;
+            background: var(--white);
+        }
+
+        .res-photo-card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: saturate(0.88) contrast(1.05);
+        }
+
+        .res-photo-card--main {
+            inset: 0 0.8rem 3.4rem 2.4rem;
+        }
+
+        .res-photo-card--note {
+            right: 0;
+            bottom: 0;
+            width: min(84%, 330px);
+            padding: 0.85rem;
+            color: var(--black);
+            background: linear-gradient(135deg, #ffffff 0%, #f6f6f6 100%);
+        }
+
+        .res-photo-card--note strong {
+            display: block;
+            margin-bottom: 0.4rem;
+            font-size: 1.05rem;
+            text-transform: uppercase;
+        }
+
+        .res-photo-card--note p {
+            color: #333;
+            line-height: 1.42;
+        }
+
+        .res-photo-card--badge {
+            left: 0;
+            top: 2.4rem;
+            width: 145px;
+            padding: 0.75rem;
+            color: var(--black);
+            background: var(--sunset-glow);
+            text-transform: uppercase;
+            font-weight: 900;
+            letter-spacing: 0.08em;
+        }
+
+        .res-section {
+            padding: 3.35rem 0;
+        }
+
+        .res-section--light {
+            background: var(--white);
+            color: var(--black);
+        }
+
+        .res-section--warm {
+            background: linear-gradient(135deg, #fff7eb 0%, #f6ead9 100%);
+            color: var(--black);
+        }
+
+        .res-section--dark {
+            background: linear-gradient(180deg, #1a1a1a 0%, #090909 100%);
+            color: var(--white);
+        }
+
+        .res-section__header {
+            max-width: 820px;
+            margin-bottom: 1.65rem;
+        }
+
+        .res-section__header--center {
+            margin-right: auto;
+            margin-left: auto;
+            text-align: center;
+        }
+
+        .res-section__eyebrow {
+            display: inline-block;
+            margin-bottom: 0.8rem;
+            color: var(--sunset-coral);
+            font-size: 0.8rem;
+            font-weight: 900;
+            text-transform: uppercase;
+            letter-spacing: 0.18em;
+        }
+
+        .res-section h2 {
+            font-size: clamp(2rem, 4.25vw, 3.75rem);
+            line-height: 0.96;
+            font-weight: 900;
+            text-transform: uppercase;
+        }
+
+        .res-section__header p {
+            max-width: 760px;
+            margin-top: 0.8rem;
+            color: inherit;
+            opacity: 0.78;
+            font-size: 1rem;
+            line-height: 1.55;
+        }
+
+        .res-grid {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 1rem;
+        }
+
+        .res-card {
+            border: 4px solid var(--black);
+            background: var(--white);
+            color: var(--black);
+            box-shadow: 8px 8px 0 var(--black);
+            padding: 1.25rem;
+        }
+
+        .res-card--dark {
+            background: linear-gradient(145deg, #202020 0%, #111 100%);
+            color: var(--white);
+        }
+
+        .res-card__label {
+            display: inline-flex;
+            margin-bottom: 0.75rem;
+            padding: 0.35rem 0.55rem;
+            border: 2px solid var(--black);
+            background: var(--sunset-glow);
+            color: var(--black);
+            font-size: 0.72rem;
+            font-weight: 900;
+            text-transform: uppercase;
+        }
+
+        .res-card h3 {
+            margin-bottom: 0.5rem;
+            font-size: 1.35rem;
+            font-weight: 900;
+            text-transform: uppercase;
+        }
+
+        .res-card p,
+        .res-card li {
+            color: inherit;
+            opacity: 0.82;
+            line-height: 1.48;
+        }
+
+        .res-card ul {
+            display: grid;
+            gap: 0.45rem;
+            margin-top: 0.65rem;
+        }
+
+        .res-card li {
+            display: flex;
+            gap: 0.55rem;
+        }
+
+        .res-card li::before {
+            content: ">";
+            color: var(--sunset-coral);
+            font-weight: 900;
+        }
+
+        .res-diagnostic {
+            display: grid;
+            grid-template-columns: minmax(0, 0.92fr) minmax(0, 1.08fr);
+            gap: 1.15rem;
+            align-items: stretch;
+        }
+
+        .res-diagnostic__panel,
+        .res-diagnostic__summary {
+            border: 4px solid var(--black);
+            box-shadow: 10px 10px 0 var(--black);
+        }
+
+        .res-diagnostic__panel {
+            background: #101010;
+            color: var(--white);
+            padding: 1rem;
+        }
+
+        .res-diagnostic__top {
+            display: flex;
+            justify-content: space-between;
+            gap: 1rem;
+            padding-bottom: 0.8rem;
+            border-bottom: 3px solid rgba(255, 255, 255, 0.22);
+            color: rgba(255, 255, 255, 0.72);
+            font-size: 0.78rem;
+            font-weight: 900;
+            text-transform: uppercase;
+            letter-spacing: 0.14em;
+        }
+
+        .res-diagnostic__bar {
+            display: block;
+            height: 5px;
+            margin-top: 0.8rem;
+            background: rgba(255, 255, 255, 0.18);
+        }
+
+        .res-diagnostic__bar span {
+            display: block;
+            width: 33%;
+            height: 100%;
+            background: var(--sunset-glow);
+            transition: width 0.25s ease;
+        }
+
+        .res-diagnostic__body {
+            min-height: 260px;
+            padding-top: 0.9rem;
+        }
+
+        .res-diagnostic h3 {
+            margin-bottom: 0.65rem;
+            font-size: clamp(1.45rem, 2.55vw, 2.35rem);
+            line-height: 0.98;
+            font-weight: 900;
+            text-transform: uppercase;
+        }
+
+        .res-diagnostic__hint {
+            margin-bottom: 0.55rem;
+            color: rgba(255, 255, 255, 0.66);
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 0.12em;
+        }
+
+        .res-option-grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 0.45rem;
+        }
+
+        .res-option {
+            width: 100%;
+            padding: 0.58rem 0.68rem;
+            border: 3px solid var(--black);
+            background: var(--white);
+            color: var(--black);
+            box-shadow: 5px 5px 0 var(--black);
+            text-align: left;
+            cursor: pointer;
+            transition: transform 0.18s ease, box-shadow 0.18s ease, background 0.18s ease;
+        }
+
+        .res-option:hover,
+        .res-option.is-selected {
+            transform: translate(-2px, -2px);
+            box-shadow: 7px 7px 0 var(--black);
+            background: var(--sunset-glow);
+        }
+
+        .res-option strong,
+        .res-option span {
+            display: block;
+        }
+
+        .res-option strong {
+            font-size: 0.85rem;
+            text-transform: uppercase;
+        }
+
+        .res-option span {
+            margin-top: 0.18rem;
+            color: rgba(0, 0, 0, 0.68);
+            font-size: 0.78rem;
+            font-weight: 700;
+            line-height: 1.25;
+        }
+
+        .res-diagnostic__actions {
+            margin-top: 1rem;
+        }
+
+        .res-back {
+            border: 0;
+            background: transparent;
+            color: rgba(255, 255, 255, 0.68);
+            font: inherit;
+            font-weight: 900;
+            text-transform: uppercase;
+            letter-spacing: 0.12em;
+            cursor: pointer;
+        }
+
+        .res-diagnostic__summary {
+            background: var(--white);
+            color: var(--black);
+            padding: 1rem;
+        }
+
+        .res-diagnostic__summary h3 {
+            font-size: clamp(1.3rem, 2.15vw, 2.2rem);
+        }
+
+        .res-summary-list {
+            display: grid;
+            gap: 0.55rem;
+            margin: 0.9rem 0;
+        }
+
+        .res-summary-list div {
+            display: grid;
+            grid-template-columns: 120px 1fr;
+            gap: 0.8rem;
+            padding: 0.5rem 0.6rem;
+            border: 3px solid var(--black);
+            background: #f3f3f3;
+        }
+
+        .res-summary-list span {
+            font-weight: 900;
+            text-transform: uppercase;
+            font-size: 0.75rem;
+        }
+
+        .res-summary-list strong {
+            font-size: 0.98rem;
+        }
+
+        .res-fineprint {
+            margin-top: 0.75rem;
+            color: rgba(0, 0, 0, 0.62);
+            font-size: 0.86rem;
+            line-height: 1.45;
+        }
+
+        #residential-diagnostic {
+            padding: 2.75rem 0;
+        }
+
+        #residential-diagnostic .res-section__header {
+            display: grid;
+            grid-template-columns: minmax(0, 0.96fr) minmax(320px, 0.78fr);
+            column-gap: 1.35rem;
+            align-items: end;
+            max-width: none;
+            margin-bottom: 1.1rem;
+        }
+
+        #residential-diagnostic .res-section__eyebrow,
+        #residential-diagnostic h2 {
+            grid-column: 1;
+        }
+
+        #residential-diagnostic h2 {
+            font-size: clamp(1.9rem, 3.3vw, 3.1rem);
+        }
+
+        #residential-diagnostic .res-section__header p {
+            grid-column: 2;
+            grid-row: 1 / span 2;
+            margin-top: 0;
+            font-size: 0.92rem;
+            line-height: 1.42;
+        }
+
+        .res-process {
+            display: grid;
+            grid-template-columns: repeat(4, minmax(0, 1fr));
+            gap: 1rem;
+        }
+
+        .res-step {
+            position: relative;
+            min-height: 178px;
+            padding: 1.05rem;
+            border: 4px solid var(--black);
+            background: #111;
+            color: var(--white);
+            box-shadow: 8px 8px 0 var(--black);
+        }
+
+        .res-step__num {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 42px;
+            height: 42px;
+            margin-bottom: 0.75rem;
+            border: 3px solid var(--black);
+            background: var(--sunset-glow);
+            color: var(--black);
+            font-weight: 900;
+        }
+
+        .res-step h3 {
+            margin-bottom: 0.55rem;
+            font-size: 1.05rem;
+            text-transform: uppercase;
+        }
+
+        .res-step p {
+            color: rgba(255, 255, 255, 0.72);
+            line-height: 1.42;
+        }
+
+        .res-comparison {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            border: 4px solid var(--black);
+            box-shadow: 10px 10px 0 var(--black);
+            overflow: hidden;
+            background: var(--black);
+        }
+
+        .res-comparison__side {
+            min-height: 280px;
+            padding: 1.2rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            position: relative;
+            color: var(--white);
+        }
+
+        .res-comparison__side:first-child {
+            background:
+                linear-gradient(0deg, rgba(0, 0, 0, 0.8), transparent 65%),
+                linear-gradient(135deg, rgba(255, 179, 71, 0.88), rgba(255, 107, 74, 0.44)),
+                url("assets/residential-window-light.jpg") center/cover;
+            filter: saturate(1.1);
+        }
+
+        .res-comparison__side:last-child {
+            background:
+                linear-gradient(0deg, rgba(0, 0, 0, 0.82), transparent 65%),
+                linear-gradient(135deg, rgba(8, 8, 8, 0.32), rgba(255, 255, 255, 0.2)),
+                url("assets/residential-window-light.jpg") center/cover;
+            border-left: 4px solid var(--black);
+        }
+
+        .res-comparison__tag {
+            position: absolute;
+            top: 1rem;
+            left: 1rem;
+            padding: 0.45rem 0.65rem;
+            border: 2px solid var(--black);
+            background: var(--white);
+            color: var(--black);
+            font-size: 0.72rem;
+            font-weight: 900;
+            text-transform: uppercase;
+        }
+
+        .res-comparison h3 {
+            font-size: 1.35rem;
+            text-transform: uppercase;
+        }
+
+        .res-comparison p {
+            max-width: 420px;
+            color: rgba(255, 255, 255, 0.76);
+        }
+
+        .res-faq {
+            display: grid;
+            gap: 0.65rem;
+            max-width: 920px;
+            margin: 0 auto;
+        }
+
+        .res-faq details {
+            border: 4px solid var(--black);
+            background: var(--white);
+            color: var(--black);
+            box-shadow: 6px 6px 0 var(--black);
+        }
+
+        .res-faq summary {
+            padding: 0.9rem 1rem;
+            cursor: pointer;
+            font-weight: 900;
+            text-transform: uppercase;
+        }
+
+        .res-faq p {
+            padding: 0 1rem 1rem;
+            color: #333;
+            line-height: 1.5;
+        }
+
+        .res-final-cta {
+            padding: 3.35rem 0;
+            background:
+                linear-gradient(135deg, rgba(255, 107, 74, 0.24), rgba(255, 179, 71, 0.08)),
+                #070707;
+        }
+
+        .res-final-cta__box {
+            border: 4px solid var(--black);
+            background: var(--white);
+            color: var(--black);
+            box-shadow: 12px 12px 0 var(--black);
+            padding: clamp(1.8rem, 5vw, 3rem);
+        }
+
+        .res-final-cta h2 {
+            max-width: 900px;
+            font-size: clamp(2rem, 4.8vw, 4.15rem);
+            line-height: 0.92;
+            text-transform: uppercase;
+        }
+
+        .res-final-cta p {
+            max-width: 740px;
+            margin-top: 0.8rem;
+            color: #333;
+            font-size: 1.08rem;
+            line-height: 1.5;
+        }
+
+        @media (max-width: 1024px) {
+            .res-hero {
+                min-height: auto;
+            }
+
+            .res-hero__grid,
+            .res-diagnostic,
+            #residential-diagnostic .res-section__header {
+                grid-template-columns: 1fr;
+            }
+
+            #residential-diagnostic .res-section__header p {
+                grid-column: 1;
+                grid-row: auto;
+                margin-top: 0.8rem;
+            }
+
+            .res-photo-stack {
+                min-height: 400px;
+            }
+
+            .res-grid,
+            .res-process {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+        }
+
+        @media (max-width: 700px) {
+            .residential-page {
+                padding-top: 116px;
+            }
+
+            .res-hero,
+            .res-section,
+            .res-final-cta {
+                padding: 3rem 0;
+            }
+
+            .res-photo-stack {
+                min-height: 430px;
+            }
+
+            .res-photo-card--main {
+                inset: 0 0 6rem 1rem;
+            }
+
+            .res-photo-card--badge {
+                top: 1rem;
+                width: 150px;
+            }
+
+            .res-grid,
+            .res-process,
+            .res-option-grid,
+            .res-comparison {
+                grid-template-columns: 1fr;
+            }
+
+            .res-comparison__side:last-child {
+                border-left: 0;
+                border-top: 4px solid var(--black);
+            }
+
+            .res-summary-list div {
+                grid-template-columns: 1fr;
+            }
+
+            .res-hero__actions .brutalist-btn,
+            .res-cta-row .brutalist-btn {
+                width: 100%;
+                white-space: normal;
+            }
+        }
+    </style>
 </head>
 
 <body>
@@ -59,152 +776,249 @@
                 <a href="/#contact">Contact</a>
             </div>
             <div class="nav__actions">
-                <a href="/booking" class="brutalist-btn brutalist-btn--accent">Request Quote</a>
+                <a href="#residential-diagnostic" class="brutalist-btn brutalist-btn--accent">Home Quote</a>
                 <a href="tel:7146007134" class="brutalist-btn brutalist-btn--outline">(714) 600-7134</a>
             </div>
         </div>
     </nav>
 
-    <main class="seo-page">
-        <header class="seo-hero">
-            <div class="container seo-hero__grid">
+    <main class="residential-page">
+        <header class="res-hero">
+            <div class="container res-hero__grid">
                 <div>
-                    <span class="seo-kicker">Quote-Based Film</span>
-                    <h1>Architectural Window Film For <span>Homes And Businesses</span></h1>
-                    <p class="seo-hero__copy">Residential and commercial window film can reduce heat, soften glare, add
-                        daytime privacy, and help protect interiors from UV exposure. This service is quoted after
-                        reviewing the property and glass.</p>
-                    <div class="seo-hero__actions">
-                        <a href="/booking" class="brutalist-btn brutalist-btn--primary">Request A Quote</a>
-                        <a href="tel:7146007134" class="brutalist-btn">Call First</a>
+                    <span class="res-kicker">Residential Window Film</span>
+                    <h1>Cooler Rooms. <span>Cleaner Glass.</span> Less Glare.</h1>
+                    <p class="res-hero__copy">Premium home window film for Orange County properties with hot rooms,
+                        harsh glare, fading interiors, or street-facing privacy needs. Send photos or call first; the
+                        right residential film is quoted by the glass, the room, and the outcome you want.</p>
+                    <div class="res-hero__actions">
+                        <a href="tel:7146007134" class="brutalist-btn brutalist-btn--primary brutalist-btn--large"
+                            data-residential-cta="hero_call">Call For Home Quote</a>
+                        <a href="#residential-diagnostic" class="brutalist-btn brutalist-btn--outline brutalist-btn--large"
+                            data-residential-cta="hero_quiz">Start Home Film Check</a>
+                    </div>
+                    <div class="res-proof-strip" aria-label="Residential film benefits">
+                        <span>Heat Control</span>
+                        <span>Glare Reduction</span>
+                        <span>Daytime Privacy</span>
+                        <span>UV Protection</span>
                     </div>
                 </div>
-                <aside class="seo-hero__panel">
-                    <h2>Best Fit</h2>
-                    <div class="seo-stat-list">
-                        <div class="seo-stat"><span class="seo-stat__mark">R</span><span>Residential windows with heat,
-                                glare, fading, or privacy issues.</span></div>
-                        <div class="seo-stat"><span class="seo-stat__mark">C</span><span>Commercial glass where comfort
-                                and presentation both matter.</span></div>
-                        <div class="seo-stat"><span class="seo-stat__mark">Q</span><span>Quoted by scope, glass type,
-                                access, and film choice.</span></div>
+                <div class="res-photo-stack" aria-label="Residential window film visual">
+                    <figure class="res-photo-card res-photo-card--main">
+                        <img src="assets/residential-window-light.jpg"
+                            alt="Sunlight through residential windows before a home window film quote" width="1800"
+                            height="2700">
+                    </figure>
+                    <div class="res-photo-card res-photo-card--badge">Quote-first, no guessing</div>
+                    <div class="res-photo-card res-photo-card--note">
+                        <strong>Not a one-size-fits-all job.</strong>
+                        <p>Residential film depends on sun exposure, glass size, room use, privacy goals, and install
+                            access. That is why the page moves people toward a call or photo-based quote.</p>
                     </div>
-                </aside>
+                </div>
             </div>
         </header>
 
-        <section class="seo-section seo-section--light">
+        <section class="res-section res-section--light">
             <div class="container">
-                <div class="seo-section__header">
-                    <h2>Architectural Film Use Cases</h2>
-                    <p>This page is intentionally quote-based. The right film depends on the building, sun exposure,
-                        desired privacy, and how the glass is accessed.</p>
+                <div class="res-section__header">
+                    <span class="res-section__eyebrow">Why people ask for home film</span>
+                    <h2>Most homes do not need darker. They need smarter.</h2>
+                    <p>Residential tint should solve a real comfort problem without making the home feel cheap,
+                        closed-off, or over-dark. The page is built around the problems homeowners actually feel.</p>
                 </div>
-                <div class="seo-grid">
-                    <article class="seo-card">
-                        <span class="seo-card__label">Residential</span>
-                        <h3>Home Comfort</h3>
-                        <ul>
-                            <li>Reduce harsh afternoon heat in sunny rooms</li>
-                            <li>Lower glare on screens and living spaces</li>
-                            <li>Help protect flooring, furniture, and interiors from UV exposure</li>
-                        </ul>
+                <div class="res-grid">
+                    <article class="res-card">
+                        <span class="res-card__label">Heat</span>
+                        <h3>Hot Rooms</h3>
+                        <p>For west-facing rooms, upstairs bedrooms, large sliders, and glass that turns the room into a
+                            heat trap.</p>
                     </article>
-                    <article class="seo-card">
-                        <span class="seo-card__label">Commercial</span>
-                        <h3>Office And Storefront Glass</h3>
-                        <ul>
-                            <li>Improve comfort for work areas near glass</li>
-                            <li>Support a more polished customer-facing space</li>
-                            <li>Add privacy options where appropriate</li>
-                        </ul>
+                    <article class="res-card">
+                        <span class="res-card__label">Glare</span>
+                        <h3>Screen Glare</h3>
+                        <p>For living rooms, offices, TVs, monitors, and bright rooms where blinds are always closed.</p>
                     </article>
-                    <article class="seo-card">
-                        <span class="seo-card__label">Quote</span>
-                        <h3>What Affects Pricing</h3>
-                        <ul>
-                            <li>Glass size and quantity</li>
-                            <li>Access, height, and prep needs</li>
-                            <li>Film style, performance, and finish</li>
-                        </ul>
+                    <article class="res-card">
+                        <span class="res-card__label">Privacy</span>
+                        <h3>Street-Facing Glass</h3>
+                        <p>For windows near sidewalks, neighbors, entryways, or rooms where daytime privacy matters.</p>
                     </article>
-                </div>
-                <div class="seo-source-note"><strong>Building context:</strong> For homes and commercial spaces, window treatments are part of the broader energy and comfort conversation. The U.S. Department of Energy's <a href="https://www.energy.gov/energysaver/energy-efficient-window-coverings" target="_blank" rel="noopener">window coverings guidance</a> is useful background, but film choice still needs a glass-specific quote.</div>
-                <p class="seo-note">Architectural film is a quote-based service. Send photos, approximate dimensions,
-                    property type, and the problem you are trying to solve.</p>
-            </div>
-        </section>
-
-        <section class="seo-section seo-section--cream">
-            <div class="container">
-                <div class="seo-section__header">
-                    <h2>What To Send For A Faster Quote</h2>
-                </div>
-                <div class="seo-table">
-                    <table>
-                        <thead>
-                            <tr>
-                                <th>Detail</th>
-                                <th>Why It Matters</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>Photos of each window</td>
-                                <td>Shows access, size, frame type, and install conditions.</td>
-                            </tr>
-                            <tr>
-                                <td>Room or business use</td>
-                                <td>Helps match film to comfort, glare, privacy, or display needs.</td>
-                            </tr>
-                            <tr>
-                                <td>Approximate dimensions</td>
-                                <td>Speeds up material and labor estimating.</td>
-                            </tr>
-                            <tr>
-                                <td>Desired outcome</td>
-                                <td>Heat, glare, UV, privacy, or a mix of priorities.</td>
-                            </tr>
-                        </tbody>
-                    </table>
                 </div>
             </div>
         </section>
 
-        <section class="seo-section seo-section--light">
+        <section class="res-section res-section--dark" id="residential-diagnostic">
             <div class="container">
-                <div class="seo-section__header seo-section__header--center">
-                    <h2>Architectural Film FAQ</h2>
+                <div class="res-section__header">
+                    <span class="res-section__eyebrow">Home film check</span>
+                    <h2>Get the right quote path in under a minute.</h2>
+                    <p>No Square checkout here yet. Residential is custom enough that the smart move is to capture the
+                        problem, then call or text the setup with photos.</p>
                 </div>
-                <div class="seo-faq">
-                    <details class="faq-item">
-                        <summary>Do you quote residential and commercial film?</summary>
-                        <p>Yes, both are quote-based. Share the property type, window photos, and the outcome you want.
-                        </p>
+                <div class="res-diagnostic" data-residential-diagnostic>
+                    <div class="res-diagnostic__panel">
+                        <div class="res-diagnostic__top">
+                            <span data-res-count>Step 1 / 3</span>
+                            <span>Residential Quote</span>
+                        </div>
+                        <div class="res-diagnostic__bar" aria-hidden="true"><span data-res-bar></span></div>
+                        <div class="res-diagnostic__body" data-res-body></div>
+                    </div>
+                    <aside class="res-diagnostic__summary">
+                        <span class="res-card__label">Quote Summary</span>
+                        <h3 data-res-summary-title>Tell us what the glass needs to fix.</h3>
+                        <div class="res-summary-list">
+                            <div><span>Problem</span><strong data-res-summary-problem>Not selected yet</strong></div>
+                            <div><span>Glass</span><strong data-res-summary-glass>Not selected yet</strong></div>
+                            <div><span>Property</span><strong data-res-summary-property>Not selected yet</strong></div>
+                        </div>
+                        <p class="res-fineprint">Best next step: send photos of each window plus the room or side of the
+                            house. Kislev can confirm if the job is a fit before anyone guesses on price.</p>
+                    </aside>
+                </div>
+            </div>
+        </section>
+
+        <section class="res-section res-section--warm">
+            <div class="container">
+                <div class="res-section__header">
+                    <span class="res-section__eyebrow">What to send</span>
+                    <h2>Photos beat a bad estimate.</h2>
+                    <p>For residential window film, the quote depends on real conditions. The fastest path is a few
+                        photos and a clear note about the problem.</p>
+                </div>
+                <div class="res-process">
+                    <article class="res-step">
+                        <div class="res-step__num">1</div>
+                        <h3>Send Window Photos</h3>
+                        <p>Wide shot of the room, close-up of the frame, and a photo from outside if privacy matters.</p>
+                    </article>
+                    <article class="res-step">
+                        <div class="res-step__num">2</div>
+                        <h3>Name The Problem</h3>
+                        <p>Heat, glare, fading, privacy, or a mix. The outcome drives film choice.</p>
+                    </article>
+                    <article class="res-step">
+                        <div class="res-step__num">3</div>
+                        <h3>Confirm Scope</h3>
+                        <p>Number of windows, approximate size, city, and access details.</p>
+                    </article>
+                    <article class="res-step">
+                        <div class="res-step__num">4</div>
+                        <h3>Book The Install</h3>
+                        <p>Once the glass and film path are clear, the install can be scheduled properly.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="res-section res-section--light">
+            <div class="container">
+                <div class="res-section__header">
+                    <span class="res-section__eyebrow">Comfort without the cave</span>
+                    <h2>A premium home should still feel like a premium home.</h2>
+                    <p>The goal is to improve the room, not make the house look like a blacked-out storefront. The film
+                        recommendation should match the room, the glass, and the look of the property.</p>
+                </div>
+                <div class="res-comparison">
+                    <div class="res-comparison__side">
+                        <span class="res-comparison__tag">Before</span>
+                        <h3>Too much sun control by closing everything.</h3>
+                        <p>Blinds down, rooms still hot, screens washed out, furniture taking UV exposure.</p>
+                    </div>
+                    <div class="res-comparison__side">
+                        <span class="res-comparison__tag">After</span>
+                        <h3>Better glass performance without hiding the room.</h3>
+                        <p>Cleaner light, less glare, more comfort, and a film choice that fits the home.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="res-section res-section--dark">
+            <div class="container">
+                <div class="res-section__header">
+                    <span class="res-section__eyebrow">Residential jobs that fit</span>
+                    <h2>Built for Orange County homes with real sun problems.</h2>
+                </div>
+                <div class="res-grid">
+                    <article class="res-card res-card--dark">
+                        <span class="res-card__label">Large Glass</span>
+                        <h3>Sliders &amp; View Windows</h3>
+                        <ul>
+                            <li>Rooms that get direct afternoon sun</li>
+                            <li>Homes where blinds stay closed all day</li>
+                            <li>Living rooms, kitchens, and offices</li>
+                        </ul>
+                    </article>
+                    <article class="res-card res-card--dark">
+                        <span class="res-card__label">Privacy</span>
+                        <h3>Street-Facing Rooms</h3>
+                        <ul>
+                            <li>Front rooms near sidewalks or neighbors</li>
+                            <li>Daytime privacy without heavy curtains</li>
+                            <li>Glass that needs a cleaner finished look</li>
+                        </ul>
+                    </article>
+                    <article class="res-card res-card--dark">
+                        <span class="res-card__label">Protection</span>
+                        <h3>Interior Fading</h3>
+                        <ul>
+                            <li>Furniture, floors, and artwork exposed to sun</li>
+                            <li>Rooms with harsh UV and glare</li>
+                            <li>Homeowners who want comfort plus preservation</li>
+                        </ul>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="res-section res-section--warm">
+            <div class="container">
+                <div class="res-section__header res-section__header--center">
+                    <span class="res-section__eyebrow">FAQ</span>
+                    <h2>Residential film questions before the call.</h2>
+                </div>
+                <div class="res-faq">
+                    <details>
+                        <summary>Is this the same as car window tint?</summary>
+                        <p>No. Residential film is quoted around glass size, access, sun exposure, desired privacy, and
+                            the final look of the room.</p>
                     </details>
-                    <details class="faq-item">
-                        <summary>Is architectural film priced like car tint?</summary>
-                        <p>No. Property film depends on glass size, access, quantity, film selection, and prep work.</p>
+                    <details>
+                        <summary>Can it help with hot rooms?</summary>
+                        <p>Yes, heat reduction is one of the main reasons homeowners ask for window film, especially for
+                            west-facing rooms, sliders, and upstairs rooms.</p>
                     </details>
-                    <details class="faq-item">
-                        <summary>Can film help with hot rooms?</summary>
-                        <p>Yes, heat and glare reduction are common reasons to ask about architectural film, especially
-                            for sun-exposed glass.</p>
+                    <details>
+                        <summary>Will my house look too dark?</summary>
+                        <p>It does not have to. The point is choosing a film that solves the room problem while keeping
+                            the home looking clean and intentional.</p>
+                    </details>
+                    <details>
+                        <summary>Can I book this directly on Square?</summary>
+                        <p>Not yet. Residential film should be quoted after photos or a conversation, because each home
+                            has different glass, access, and comfort goals.</p>
                     </details>
                 </div>
             </div>
         </section>
 
-        <section class="seo-cta">
+        <section class="res-final-cta">
             <div class="container">
-                <div class="seo-cta__box">
-                    <h2>Request An Architectural Film Quote</h2>
-                    <p>Send photos and a short note about the space. We will confirm whether the job is a fit and what
-                        details are needed next.</p>
-                    <div class="seo-cta__actions">
-                        <a href="/booking" class="brutalist-btn brutalist-btn--primary brutalist-btn--large">Request
-                            Quote</a>
-                        <a href="tel:7146007134" class="brutalist-btn brutalist-btn--large">Call (714) 600-7134</a>
+                <div class="res-final-cta__box">
+                    <span class="res-card__label">Ready to price the glass?</span>
+                    <h2>Call or text photos before guessing on residential film.</h2>
+                    <p>Tell us the city, the window problem, and whether this is one room or the whole home. If the job
+                        is a fit, Kislev can confirm the next step and schedule the install path.</p>
+                    <div class="res-cta-row">
+                        <a href="tel:7146007134" class="brutalist-btn brutalist-btn--primary brutalist-btn--large"
+                            data-residential-cta="final_call">Call (714) 600-7134</a>
+                        <a href="sms:7146007134?&body=Hi%20Obsidian%20Autoworks%2C%20I%27m%20looking%20for%20residential%20window%20film.%20I%20can%20send%20photos%20and%20details%20for%20a%20home%20quote."
+                            class="brutalist-btn brutalist-btn--large" data-residential-cta="final_text">Text Window
+                            Photos</a>
                     </div>
                 </div>
             </div>
@@ -242,7 +1056,7 @@
                     <div><strong>Packages</strong><br><a href="/full-car-window-tinting">Full Car</a><br><a href="/sides-rear-window-tinting">Sides &amp; Rear</a><br><a href="/front-two-window-tinting">Front Two</a><br><a href="/windshield-window-tinting">Windshield</a><br><a href="/tint-removal">Tint Removal</a></div>
                     <div><strong>Tesla</strong><br><a href="/tesla-window-tinting">Tesla Tint</a><br><a href="/tesla-model-y-window-tinting">Model Y</a><br><a href="/tesla-model-3-window-tinting">Model 3</a></div>
                     <div><strong>Guides</strong><br><a href="/window-tint-shades">Tint Shades</a><br><a href="/california-window-tint-law">California Tint Law</a><br><a href="/ceramic-vs-carbon-window-tint">Ceramic vs Carbon</a><br><a href="/how-long-does-window-tinting-take">Install Timing</a><br><a href="/is-mobile-window-tinting-worth-it">Mobile Tinting</a><br><a href="/how-to-choose-window-tint-percentage">Tint Percentage</a><br><a href="/does-window-tint-reduce-heat">Heat Reduction</a><br><a href="/window-tint-aftercare">Aftercare</a></div>
-                    <div><strong>Specialty</strong><br><a href="/architectural-window-film">Architectural Film</a><br><a href="/chrome-delete">Chrome Delete</a></div>
+                    <div><strong>Specialty</strong><br><a href="/architectural-window-film">Residential Film</a><br><a href="/chrome-delete">Chrome Delete</a></div>
                     <div><strong>Contact</strong><br><a href="mailto:obsidianautoworksoc@gmail.com">obsidianautoworksoc@gmail.com</a><br><a href="tel:7146007134">(714) 600-7134</a></div>
                 </div>
             </div>
@@ -251,6 +1065,197 @@
             </div>
         </div>
     </footer>
+
+    <script>
+        (function () {
+            const phone = '7146007134';
+            const state = {
+                problem: '',
+                glass: '',
+                property: ''
+            };
+            const steps = [
+                {
+                    key: 'problem',
+                    eyebrow: 'Start with the problem',
+                    question: 'What should the film fix first?',
+                    options: [
+                        ['Heat', 'Rooms get too hot when the sun hits the glass'],
+                        ['Glare', 'TV, monitor, or living spaces are too bright'],
+                        ['Privacy', 'Street-facing or neighbor-facing windows'],
+                        ['Fading', 'Furniture, floors, or artwork get too much sun'],
+                        ['Not sure', 'You want Kislev to recommend the right path']
+                    ]
+                },
+                {
+                    key: 'glass',
+                    eyebrow: 'Scope the glass',
+                    question: 'What windows are we looking at?',
+                    options: [
+                        ['One room', 'A living room, office, bedroom, or kitchen'],
+                        ['Large sliders', 'Patio doors, view glass, or big panes'],
+                        ['Whole home', 'Multiple rooms or a larger residential project'],
+                        ['Front windows', 'Privacy or appearance for street-facing glass'],
+                        ['Custom', 'Odd shapes, high access, or mixed goals']
+                    ]
+                },
+                {
+                    key: 'property',
+                    eyebrow: 'Quote path',
+                    question: 'Where should we start?',
+                    options: [
+                        ['Call first', 'Best if you want pricing direction now'],
+                        ['Text photos', 'Best if you can send window photos'],
+                        ['Orange County home', 'Residential property in the OC service area'],
+                        ['Not ready yet', 'Save the setup and ask questions first']
+                    ]
+                }
+            ];
+
+            let stepIndex = 0;
+            const root = document.querySelector('[data-residential-diagnostic]');
+            if (!root) return;
+
+            const body = root.querySelector('[data-res-body]');
+            const count = root.querySelector('[data-res-count]');
+            const bar = root.querySelector('[data-res-bar]');
+            const summaryTitle = root.querySelector('[data-res-summary-title]');
+            const summaryProblem = root.querySelector('[data-res-summary-problem]');
+            const summaryGlass = root.querySelector('[data-res-summary-glass]');
+            const summaryProperty = root.querySelector('[data-res-summary-property]');
+
+            const track = (eventName, payload) => {
+                if (window.obsidianLeadTracking && typeof window.obsidianLeadTracking.trackEvent === 'function') {
+                    window.obsidianLeadTracking.trackEvent(eventName, {
+                        page_type: 'residential_window_film',
+                        residential_problem: state.problem,
+                        residential_glass: state.glass,
+                        residential_property: state.property,
+                        ...payload
+                    });
+                }
+            };
+
+            const updateSummary = () => {
+                summaryProblem.textContent = state.problem || 'Not selected yet';
+                summaryGlass.textContent = state.glass || 'Not selected yet';
+                summaryProperty.textContent = state.property || 'Not selected yet';
+                if (state.problem || state.glass || state.property) {
+                    summaryTitle.textContent = 'Good. Now send this setup with photos.';
+                }
+            };
+
+            const buildTextHref = () => {
+                const lines = [
+                    'Hi Obsidian Autoworks, I am looking for residential window film.',
+                    state.problem ? `Main problem: ${state.problem}` : '',
+                    state.glass ? `Glass/scope: ${state.glass}` : '',
+                    state.property ? `Quote path: ${state.property}` : '',
+                    'I can send photos for a home quote.'
+                ].filter(Boolean);
+                return `sms:${phone}?&body=${encodeURIComponent(lines.join('\n'))}`;
+            };
+
+            const renderFinish = () => {
+                count.textContent = 'Ready';
+                bar.style.width = '100%';
+                body.innerHTML = `
+                    <div class="res-diagnostic__hint">Recommended next step</div>
+                    <h3>Send photos or call before pricing.</h3>
+                    <p class="res-fineprint" style="color: rgba(255,255,255,0.72); margin: 0 0 1.35rem;">
+                        Residential film is best quoted after seeing the glass. This setup will be included when you text.
+                    </p>
+                    <div class="res-cta-row">
+                        <a href="tel:7146007134" class="brutalist-btn brutalist-btn--primary" data-res-final-call>Call For Quote</a>
+                        <a href="${buildTextHref()}" class="brutalist-btn" data-res-final-text>Text This Setup</a>
+                    </div>
+                    <div class="res-diagnostic__actions">
+                        <button class="res-back" type="button" data-res-restart>Start Over</button>
+                    </div>
+                `;
+                track('residential_quiz_finish', {});
+                body.querySelector('[data-res-final-call]').addEventListener('click', () => {
+                    track('residential_quiz_call_click', { link_url: `tel:${phone}` });
+                });
+                body.querySelector('[data-res-final-text]').addEventListener('click', () => {
+                    track('residential_quiz_text_click', { link_url: buildTextHref() });
+                });
+                body.querySelector('[data-res-restart]').addEventListener('click', () => {
+                    state.problem = '';
+                    state.glass = '';
+                    state.property = '';
+                    stepIndex = 0;
+                    track('residential_quiz_restart_click', {});
+                    updateSummary();
+                    renderStep();
+                });
+            };
+
+            const renderStep = () => {
+                const step = steps[stepIndex];
+                count.textContent = `Step ${stepIndex + 1} / ${steps.length}`;
+                bar.style.width = `${((stepIndex + 1) / steps.length) * 100}%`;
+                body.innerHTML = `
+                    <div class="res-diagnostic__hint">${step.eyebrow}</div>
+                    <h3>${step.question}</h3>
+                    <div class="res-option-grid"></div>
+                    <div class="res-diagnostic__actions">
+                        ${stepIndex > 0 ? '<button class="res-back" type="button" data-res-back>Back</button>' : ''}
+                    </div>
+                `;
+
+                const optionGrid = body.querySelector('.res-option-grid');
+                step.options.forEach(([label, copy]) => {
+                    const button = document.createElement('button');
+                    button.type = 'button';
+                    button.className = 'res-option';
+                    button.innerHTML = `<strong>${label}</strong><span>${copy}</span>`;
+                    button.addEventListener('click', () => {
+                        state[step.key] = label;
+                        track('residential_quiz_answer', {
+                            quiz_step: step.key,
+                            quiz_answer: label
+                        });
+                        updateSummary();
+                        if (stepIndex === steps.length - 1) {
+                            renderFinish();
+                        } else {
+                            stepIndex += 1;
+                            track('residential_quiz_step_advance', {
+                                next_step: steps[stepIndex].key
+                            });
+                            renderStep();
+                        }
+                    });
+                    optionGrid.appendChild(button);
+                });
+
+                const back = body.querySelector('[data-res-back]');
+                if (back) {
+                    back.addEventListener('click', () => {
+                        stepIndex = Math.max(0, stepIndex - 1);
+                        track('residential_quiz_back_click', {
+                            next_step: steps[stepIndex].key
+                        });
+                        renderStep();
+                    });
+                }
+            };
+
+            document.querySelectorAll('[data-residential-cta]').forEach((link) => {
+                link.addEventListener('click', () => {
+                    track('residential_cta_click', {
+                        cta_id: link.getAttribute('data-residential-cta'),
+                        link_url: link.href,
+                        link_text: (link.textContent || '').trim()
+                    });
+                });
+            });
+
+            renderStep();
+            updateSummary();
+        })();
+    </script>
     <script src="/lead-tracking.js" defer></script>
 </body>
 

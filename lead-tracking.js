@@ -437,7 +437,10 @@
         if (path === '/vip-booking') {
             sendAnalyticsEvent('vip_page_visit');
         }
-        if (path === '/booking' || path === '/vip-booking' || document.querySelector('.booking-calendar, #booking, #vip-booking')) {
+        if (path === '/architectural-window-film') {
+            sendAnalyticsEvent('residential_page_visit');
+        }
+        if (path === '/booking' || path === '/vip-booking' || path === '/architectural-window-film' || document.querySelector('.booking-calendar, #booking, #vip-booking')) {
             sendAnalyticsEvent('booking_landing_page_view', {
                 booking_path: path
             });

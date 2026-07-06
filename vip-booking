@@ -964,7 +964,7 @@
                     note: 'Best for tint removal, chrome delete, mobile priority, mixed add-ons, or anything unusual.'
                 },
                 quote_architectural: {
-                    title: 'Residential or Commercial Architectural Film',
+                    title: 'Residential Window Film Quote',
                     price: 'Quote',
                     duration: 'Site details needed',
                     mode: 'quote',
@@ -1333,7 +1333,7 @@
                                     : ''}
                                 <button class="booking-router__back" type="button" data-router-restart>Start Over</button>
                             </div>
-                            <p class="booking-router__fineprint">${canBookInSquare ? 'Square will handle the appointment time and deposit.' : 'Your selected package is included when you call or text, so Kislev can lock the right service without guessing.'} If your setup includes removal, mobile priority, same-day timing, chrome delete, or architectural film, confirm with Kislev before locking the slot.</p>
+                            <p class="booking-router__fineprint">${canBookInSquare ? 'Square will handle the appointment time and deposit.' : 'Your selected package is included when you call or text, so Kislev can lock the right service without guessing.'} If your setup includes removal, mobile priority, same-day timing, chrome delete, or residential window film, confirm with Kislev before locking the slot.</p>
                         </div>
                     </div>
                 `;
