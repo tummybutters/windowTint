@@ -820,7 +820,7 @@
             </div>
         </header>
 
-        <section class="res-section res-section--light">
+        <section class="res-section res-section--light" id="home-film-benefits">
             <div class="container">
                 <div class="res-section__header">
                     <span class="res-section__eyebrow">Why people ask for home film</span>
@@ -881,7 +881,7 @@
             </div>
         </section>
 
-        <section class="res-section res-section--warm">
+        <section class="res-section res-section--warm" id="what-to-send">
             <div class="container">
                 <div class="res-section__header">
                     <span class="res-section__eyebrow">What to send</span>
@@ -914,7 +914,7 @@
             </div>
         </section>
 
-        <section class="res-section res-section--light">
+        <section class="res-section res-section--light" id="comfort-privacy">
             <div class="container">
                 <div class="res-section__header">
                     <span class="res-section__eyebrow">Comfort without the cave</span>
@@ -937,7 +937,7 @@
             </div>
         </section>
 
-        <section class="res-section res-section--dark">
+        <section class="res-section res-section--dark" id="residential-fit">
             <div class="container">
                 <div class="res-section__header">
                     <span class="res-section__eyebrow">Residential jobs that fit</span>
@@ -975,7 +975,7 @@
             </div>
         </section>
 
-        <section class="res-section res-section--warm">
+        <section class="res-section res-section--warm" id="home-film-faq">
             <div class="container">
                 <div class="res-section__header res-section__header--center">
                     <span class="res-section__eyebrow">FAQ</span>
