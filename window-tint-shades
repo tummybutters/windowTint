@@ -4,12 +4,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Window Tint Shades | 5%, 20%, 35%, 50% Explained</title>
+    <title>Window Tint Shades | 80%, 45%, 30%, 15%, 5% Explained</title>
     <meta name="description"
-        content="Compare 5%, 20%, 35%, and 50% window tint shades for privacy, visibility, heat, and style before booking mobile tint in Orange County.">
+        content="Compare Shield IR 80%, 45%, 30%, 15%, and 5% window tint shades for privacy, visibility, heat, and style before booking mobile tint in Orange County.">
     <link rel="canonical" href="https://www.obsidianautoworksoc.com/window-tint-shades">
     <link rel="icon" type="image/png" href="favicon.png">
-    <meta property="og:title" content="Window Tint Shades | 5%, 20%, 35%, 50% Explained">
+    <meta property="og:title" content="Window Tint Shades | 80%, 45%, 30%, 15%, 5% Explained">
     <meta property="og:description"
         content="Compare popular tint shades before booking mobile ceramic window tinting in Orange County.">
     <meta property="og:type" content="website">
@@ -24,7 +24,15 @@
                 "name": "What window tint shade should I choose?",
                 "acceptedAnswer": {
                     "@type": "Answer",
-                    "text": "Most drivers choose a shade based on privacy, night visibility, heat, and local law. Lighter shades keep visibility high, while darker shades add more privacy."
+                    "text": "Most drivers choose a shade based on privacy, night visibility, heat, and local law. Obsidian currently offers Shield IR 80%, 45%, 30%, 15%, and 5% film options."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "What is Shield IR 80% tint?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Shield IR 80% is a clear-look premium film option available at an additional cost. It is designed for drivers who want higher performance while keeping the glass appearance light."
                 }
             },
             {
@@ -93,11 +101,12 @@
                     <h2>Quick Read</h2>
                     <div class="shade-meter" aria-hidden="true"></div>
                     <div class="seo-stat-list">
-                        <div class="seo-stat"><span class="seo-stat__mark">1</span><span>50% keeps the cabin bright
-                                while softening heat and glare.</span></div>
-                        <div class="seo-stat"><span class="seo-stat__mark">2</span><span>20% is the common privacy
-                                look for side and rear glass.</span></div>
-                        <div class="seo-stat"><span class="seo-stat__mark">3</span><span>5% is very dark and should be
+                        <div class="seo-stat"><span class="seo-stat__mark">1</span><span>Shield IR 80% keeps the clear
+                                look with premium performance at an additional cost.</span></div>
+                        <div class="seo-stat"><span class="seo-stat__mark">2</span><span>45% and 30% are cleaner
+                                daily-driver shade options.</span></div>
+                        <div class="seo-stat"><span class="seo-stat__mark">3</span><span>15% and 5% are darker privacy
+                                options that should be
                                 reserved for the right windows and use case.</span></div>
                     </div>
                 </aside>
@@ -123,25 +132,31 @@
                         </thead>
                         <tbody>
                             <tr>
-                                <td><span class="shade-chip shade-chip--light">50%</span></td>
-                                <td>Heat, UV, and glare control while staying subtle</td>
-                                <td>Light smoke</td>
-                                <td>Highest everyday visibility of this group</td>
+                                <td><span class="shade-chip shade-chip--clear">80%</span></td>
+                                <td>Premium Shield IR performance while maintaining a clear look</td>
+                                <td>Clear / barely tinted</td>
+                                <td>Highest visibility; available at an additional cost</td>
                             </tr>
                             <tr>
-                                <td><span class="shade-chip shade-chip--light">35%</span></td>
+                                <td><span class="shade-chip shade-chip--light">45%</span></td>
+                                <td>Light smoke, glare control, and everyday visibility</td>
+                                <td>Subtle light tint</td>
+                                <td>Visibility-friendly daily setup</td>
+                            </tr>
+                            <tr>
+                                <td><span class="shade-chip shade-chip--medium">30%</span></td>
                                 <td>Balanced style, privacy, and daytime comfort</td>
                                 <td>Noticeably tinted</td>
-                                <td>Still practical for many daily drivers</td>
+                                <td>Practical for many daily drivers</td>
                             </tr>
                             <tr>
-                                <td><span class="shade-chip shade-chip--medium">20%</span></td>
-                                <td>Privacy-focused sides and rear glass</td>
+                                <td><span class="shade-chip shade-chip--dark">15%</span></td>
+                                <td>Darker privacy-focused side and rear glass</td>
                                 <td>Dark premium finish</td>
                                 <td>More caution needed at night</td>
                             </tr>
                             <tr>
-                                <td><span class="shade-chip shade-chip--dark">5%</span></td>
+                                <td><span class="shade-chip shade-chip--limo">5%</span></td>
                                 <td>Maximum privacy where appropriate</td>
                                 <td>Limo-dark</td>
                                 <td>Very limited night visibility</td>
@@ -149,9 +164,9 @@
                         </tbody>
                     </table>
                 </div>
-                <p class="seo-note">Shade choice should always account for window location, driver visibility, and
-                    California rules. We can help you choose a setup that looks right without creating a daily driving
-                    problem.</p>
+                <p class="seo-note">Current film options are Shield IR 80% clear-look film, 45%, 30%, 15%, and 5%.
+                    Shield IR 80% is the premium clear option and is available at an additional cost. Shade choice
+                    should always account for window location, driver visibility, and California rules.</p>
             </div>
         </section>
 

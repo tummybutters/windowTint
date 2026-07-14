@@ -858,11 +858,21 @@ textarea.input {
 }
 
 .shade--light {
-    background: rgba(0, 0, 0, 0.5);
+    background: rgba(0, 0, 0, 0.45);
+}
+
+.shade--clear {
+    background:
+        linear-gradient(135deg, rgba(255, 255, 255, 0.75), rgba(210, 225, 235, 0.45)),
+        rgba(0, 0, 0, 0.08);
 }
 
 .shade--medium {
-    background: rgba(0, 0, 0, 0.8);
+    background: rgba(0, 0, 0, 0.65);
+}
+
+.shade--dark {
+    background: rgba(0, 0, 0, 0.85);
 }
 
 .shade--limo {

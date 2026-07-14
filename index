@@ -356,11 +356,13 @@
                     </div>
                     <div class="brutalist-card__message">
                         <ul class="shades-list">
-                            <li><span class="shade shade--light"></span> Light — 50%</li>
-                            <li><span class="shade shade--medium"></span> Medium — 20%</li>
-                            <li><span class="shade shade--limo"></span> Limo — 5%</li>
+                            <li><span class="shade shade--clear"></span> Shield IR 80% (clear)</li>
+                            <li><span class="shade shade--light"></span> Light - 45%</li>
+                            <li><span class="shade shade--medium"></span> Medium - 30%</li>
+                            <li><span class="shade shade--dark"></span> Dark - 15%</li>
+                            <li><span class="shade shade--limo"></span> Limo - 5%</li>
                         </ul>
-                        <p class="note">Custom shades can be sourced if requested</p>
+                        <p class="note">Shield IR 80% is available at an additional cost.</p>
                     </div>
                 </div>
             </div>
@@ -382,7 +384,7 @@
                         <div class="brutalist-card__alert">Tint Shade Guide</div>
                     </div>
                     <div class="brutalist-card__message">
-                        <p class="note">Compare 50%, 35%, 20%, and 5% tint before choosing the look.</p>
+                        <p class="note">Compare Shield IR 80%, 45%, 30%, 15%, and 5% tint before choosing the look.</p>
                         <div class="home-guide-links">
                             <a href="/window-tint-shades">Compare Shades</a>
                             <a href="/california-window-tint-law">Check California Rules</a>

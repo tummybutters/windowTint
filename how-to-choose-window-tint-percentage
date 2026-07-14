@@ -4,11 +4,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>How To Choose Window Tint Percentage | 5%, 20%, 35%, 50%</title>
+    <title>How To Choose Window Tint Percentage | 80%, 45%, 30%, 15%, 5%</title>
     <meta name="description" content="Choose the right window tint percentage by balancing privacy, heat, legal limits, night visibility, vehicle style, and glass location.">
     <link rel="canonical" href="https://www.obsidianautoworksoc.com/how-to-choose-window-tint-percentage">
     <link rel="icon" type="image/png" href="favicon.png">
-    <meta property="og:title" content="How To Choose Window Tint Percentage | 5%, 20%, 35%, 50%">
+    <meta property="og:title" content="How To Choose Window Tint Percentage | 80%, 45%, 30%, 15%, 5%">
     <meta property="og:description" content="Choose the right window tint percentage by balancing privacy, heat, legal limits, night visibility, vehicle style, and glass location.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://www.obsidianautoworksoc.com/how-to-choose-window-tint-percentage">
@@ -27,10 +27,10 @@
                     },
                     {
                             "@type": "Question",
-                            "name": "Is 20% tint too dark?",
+                            "name": "Is 15% tint too dark?",
                             "acceptedAnswer": {
                                     "@type": "Answer",
-                                    "text": "It can be right for rear glass, but drivers should consider night visibility and legality."
+                                    "text": "It can be right for rear glass and privacy-focused setups, but drivers should consider night visibility and legality."
                             }
                     },
                     {
@@ -95,10 +95,10 @@
                 <aside class="seo-hero__panel">
                     <h2>Rule Of Thumb</h2>
                     <div class="seo-stat-list">
-                        <div class="seo-stat"><span class="seo-stat__mark">1</span><span>50% is subtle and visibility-friendly.</span></div>
-                        <div class="seo-stat"><span class="seo-stat__mark">2</span><span>35% is balanced for many daily drivers.</span></div>
-                        <div class="seo-stat"><span class="seo-stat__mark">3</span><span>20% is privacy-forward on side and rear glass.</span></div>
-                        <div class="seo-stat"><span class="seo-stat__mark">4</span><span>5% is very dark and should be chosen carefully.</span></div>
+                        <div class="seo-stat"><span class="seo-stat__mark">1</span><span>80% Shield IR is the premium clear-look option.</span></div>
+                        <div class="seo-stat"><span class="seo-stat__mark">2</span><span>45% and 30% keep the vehicle practical for daily use.</span></div>
+                        <div class="seo-stat"><span class="seo-stat__mark">3</span><span>15% is privacy-forward on side and rear glass.</span></div>
+                        <div class="seo-stat"><span class="seo-stat__mark">4</span><span>5% is limo-dark and should be chosen carefully.</span></div>
                     </div>
                 </aside>
             </div>
@@ -114,9 +114,10 @@
                     <table>
                         <tbody>
                             <tr><th>Shade</th><th>Best For</th><th>Caution</th></tr>
-                            <tr><td>50%</td><td>Subtle comfort and glare control</td><td>Less privacy</td></tr>
-                            <tr><td>35%</td><td>Balanced style and visibility</td><td>May still be darker than expected on some cars</td></tr>
-                            <tr><td>20%</td><td>Privacy and strong exterior look</td><td>Night visibility requires care</td></tr>
+                            <tr><td>80% Shield IR</td><td>Clear-look premium performance</td><td>Available at an additional cost</td></tr>
+                            <tr><td>45%</td><td>Light smoke and visibility-friendly comfort</td><td>Less privacy than darker options</td></tr>
+                            <tr><td>30%</td><td>Balanced style and visibility</td><td>May still be darker than expected on some cars</td></tr>
+                            <tr><td>15%</td><td>Privacy and strong exterior look</td><td>Night visibility requires care</td></tr>
                             <tr><td>5%</td><td>Maximum privacy where appropriate</td><td>Very limited visibility and legal concerns</td></tr>
                         </tbody>
                     </table>
@@ -172,8 +173,8 @@
                         <p>There is no universal best percentage. The right setup depends on the window, vehicle, and driver.</p>
                     </details>
                     <details class="faq-item">
-                        <summary>Is 20% tint too dark?</summary>
-                        <p>It can be right for rear glass, but drivers should consider night visibility and legality.</p>
+                        <summary>Is 15% tint too dark?</summary>
+                        <p>It can be right for rear glass and privacy-focused setups, but drivers should consider night visibility and legality.</p>
                     </details>
                     <details class="faq-item">
                         <summary>Should windshield tint be dark?</summary>
