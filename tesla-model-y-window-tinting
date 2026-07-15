@@ -29,7 +29,7 @@
         "offers": [
             { "@type": "Offer", "name": "Tesla Model Y Full Car", "price": "950", "priceCurrency": "USD" },
             { "@type": "Offer", "name": "Tesla Model Y Sides and Rear", "price": "700", "priceCurrency": "USD" },
-            { "@type": "Offer", "name": "Tesla Model Y Panoramic Roof Add-On", "price": "400", "priceCurrency": "USD" }
+            { "@type": "Offer", "name": "Tesla Model Y Panoramic Roof Add-On", "price": "550", "priceCurrency": "USD" }
         ]
     }
     </script>
@@ -91,7 +91,7 @@
                                 min</span></div>
                         <div class="seo-stat"><span class="seo-stat__mark">$</span><span>Sides &amp; Rear: $700, about
                                 3 hr 30 min</span></div>
-                        <div class="seo-stat"><span class="seo-stat__mark">$</span><span>Panoramic Roof Add-On: $400,
+                        <div class="seo-stat"><span class="seo-stat__mark">$</span><span>Panoramic Roof Add-On: $550,
                                 about 2 hr</span></div>
                     </div>
                 </aside>
@@ -130,7 +130,7 @@
                             </tr>
                             <tr>
                                 <td>Panoramic Roof Add-On</td>
-                                <td>$400</td>
+                                <td>$550</td>
                                 <td>2 hr</td>
                                 <td>Extra heat control through the roof glass</td>
                             </tr>

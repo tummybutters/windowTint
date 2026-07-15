@@ -40,7 +40,7 @@ const validEvent = {
   },
   payload: {
     service_title: 'Tesla Model 3 - Full Car',
-    service_price: '$1,000'
+    service_price: '$1,150'
   }
 };
 

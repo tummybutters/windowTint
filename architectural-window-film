@@ -4,14 +4,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Residential Window Film Orange County | Obsidian Autoworks</title>
+    <title>Residential &amp; Commercial Window Film Orange County | Obsidian Autoworks</title>
     <meta name="description"
-        content="Premium residential window film in Orange County for heat, glare, daytime privacy, and UV protection. Call or send photos for a home window tint quote.">
+        content="Residential and commercial window film in Orange County. Schedule a free consultation or send measurements, photos, glass details, and project goals for a rough estimate.">
     <link rel="canonical" href="https://www.obsidianautoworksoc.com/architectural-window-film">
     <link rel="icon" type="image/png" href="favicon.png">
-    <meta property="og:title" content="Residential Window Film Orange County | Obsidian Autoworks">
+    <meta property="og:title" content="Residential &amp; Commercial Window Film Orange County | Obsidian Autoworks">
     <meta property="og:description"
-        content="Quote-based home window film for Orange County homeowners who want cooler rooms, less glare, privacy, and premium installation.">
+        content="Project-scoped window film for Orange County homes and businesses. Start with a free consultation or send the glass details needed for a rough estimate.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://www.obsidianautoworksoc.com/architectural-window-film">
     <meta property="og:image" content="https://www.obsidianautoworksoc.com/assets/residential-window-light.jpg">
@@ -19,15 +19,15 @@
     {
         "@context": "https://schema.org",
         "@type": "Service",
-        "name": "Residential Window Film",
+        "name": "Residential and Commercial Window Film",
         "provider": {
             "@type": "LocalBusiness",
             "name": "Obsidian Autoworks",
             "telephone": "+17146007134"
         },
         "areaServed": "Orange County, CA",
-        "serviceType": "Residential window film and home window tinting",
-        "description": "Quote-based residential window film for heat rejection, glare reduction, UV protection, and daytime privacy."
+        "serviceType": "Residential and commercial architectural window film",
+        "description": "Project-scoped architectural window film for heat rejection, glare reduction, privacy, security, decorative applications, and UV protection."
     }
     </script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -776,7 +776,7 @@
                 <a href="/#contact">Contact</a>
             </div>
             <div class="nav__actions">
-                <a href="#residential-diagnostic" class="brutalist-btn brutalist-btn--accent">Home Quote</a>
+                <a href="#residential-diagnostic" class="brutalist-btn brutalist-btn--accent">Project Check</a>
                 <a href="tel:7146007134" class="brutalist-btn brutalist-btn--outline">(714) 600-7134</a>
             </div>
         </div>
@@ -786,16 +786,17 @@
         <header class="res-hero">
             <div class="container res-hero__grid">
                 <div>
-                    <span class="res-kicker">Residential Window Film</span>
+                    <span class="res-kicker">Residential + Commercial Film</span>
                     <h1>Cooler Rooms. <span>Cleaner Glass.</span> Less Glare.</h1>
-                    <p class="res-hero__copy">Premium home window film for Orange County properties with hot rooms,
-                        harsh glare, fading interiors, or street-facing privacy needs. Send photos or call first; the
-                        right residential film is quoted by the glass, the room, and the outcome you want.</p>
+                    <p class="res-hero__copy">Premium architectural film for Orange County homes and businesses with
+                        hot rooms, harsh glare, fading interiors, privacy concerns, or specialty glass needs. We do not
+                        guess at pricing over the phone. Schedule a free consultation or send the project details we
+                        need to prepare a rough estimate.</p>
                     <div class="res-hero__actions">
                         <a href="tel:7146007134" class="brutalist-btn brutalist-btn--primary brutalist-btn--large"
-                            data-residential-cta="hero_call">Call For Home Quote</a>
+                            data-residential-cta="hero_call">Schedule Free Consultation</a>
                         <a href="#residential-diagnostic" class="brutalist-btn brutalist-btn--outline brutalist-btn--large"
-                            data-residential-cta="hero_quiz">Start Home Film Check</a>
+                            data-residential-cta="hero_quiz">Start Project Check</a>
                     </div>
                     <div class="res-proof-strip" aria-label="Residential film benefits">
                         <span>Heat Control</span>
@@ -807,14 +808,14 @@
                 <div class="res-photo-stack" aria-label="Residential window film visual">
                     <figure class="res-photo-card res-photo-card--main">
                         <img src="assets/residential-window-light.jpg"
-                            alt="Sunlight through residential windows before a home window film quote" width="1800"
+                            alt="Sunlight through architectural glass before a residential or commercial film consultation" width="1800"
                             height="2700">
                     </figure>
-                    <div class="res-photo-card res-photo-card--badge">Quote-first, no guessing</div>
+                    <div class="res-photo-card res-photo-card--badge">Scope first, then estimate</div>
                     <div class="res-photo-card res-photo-card--note">
                         <strong>Not a one-size-fits-all job.</strong>
-                        <p>Residential film depends on sun exposure, glass size, room use, privacy goals, and install
-                            access. That is why the page moves people toward a call or photo-based quote.</p>
+                        <p>Film compatibility and cost depend on measurements, window count, glass type, coatings,
+                            access, and the result you want. Those details come before any useful estimate.</p>
                     </div>
                 </div>
             </div>
@@ -823,10 +824,10 @@
         <section class="res-section res-section--light" id="home-film-benefits">
             <div class="container">
                 <div class="res-section__header">
-                    <span class="res-section__eyebrow">Why people ask for home film</span>
-                    <h2>Most homes do not need darker. They need smarter.</h2>
-                    <p>Residential tint should solve a real comfort problem without making the home feel cheap,
-                        closed-off, or over-dark. The page is built around the problems homeowners actually feel.</p>
+                    <span class="res-section__eyebrow">Why properties use architectural film</span>
+                    <h2>Most spaces do not need darker. They need smarter glass.</h2>
+                    <p>Architectural film should solve a real comfort, privacy, security, or design problem without
+                        making a home or business feel cheap, closed-off, or over-dark.</p>
                 </div>
                 <div class="res-grid">
                     <article class="res-card">
@@ -852,30 +853,32 @@
         <section class="res-section res-section--dark" id="residential-diagnostic">
             <div class="container">
                 <div class="res-section__header">
-                    <span class="res-section__eyebrow">Home film check</span>
-                    <h2>Get the right quote path in under a minute.</h2>
-                    <p>No Square checkout here yet. Residential is custom enough that the smart move is to capture the
-                        problem, then call or text the setup with photos.</p>
+                    <span class="res-section__eyebrow">Project intake</span>
+                    <h2>Get the right estimate path in under a minute.</h2>
+                    <p>Architectural film cannot be priced accurately from a phone description alone. Start with a
+                        free consultation, or send the measurements, photos, glass details, and project goals needed
+                        for a rough estimate.</p>
                 </div>
                 <div class="res-diagnostic" data-residential-diagnostic>
                     <div class="res-diagnostic__panel">
                         <div class="res-diagnostic__top">
                             <span data-res-count>Step 1 / 3</span>
-                            <span>Residential Quote</span>
+                            <span>Project Intake</span>
                         </div>
                         <div class="res-diagnostic__bar" aria-hidden="true"><span data-res-bar></span></div>
                         <div class="res-diagnostic__body" data-res-body></div>
                     </div>
                     <aside class="res-diagnostic__summary">
-                        <span class="res-card__label">Quote Summary</span>
-                        <h3 data-res-summary-title>Tell us what the glass needs to fix.</h3>
+                        <span class="res-card__label">Project Summary</span>
+                        <h3 data-res-summary-title>Tell us what the glass needs to accomplish.</h3>
                         <div class="res-summary-list">
-                            <div><span>Problem</span><strong data-res-summary-problem>Not selected yet</strong></div>
-                            <div><span>Glass</span><strong data-res-summary-glass>Not selected yet</strong></div>
-                            <div><span>Property</span><strong data-res-summary-property>Not selected yet</strong></div>
+                            <div><span>Goal</span><strong data-res-summary-problem>Not selected yet</strong></div>
+                            <div><span>Property / Glass</span><strong data-res-summary-glass>Not selected yet</strong></div>
+                            <div><span>Next Step</span><strong data-res-summary-property>Not selected yet</strong></div>
                         </div>
-                        <p class="res-fineprint">Best next step: send photos of each window plus the room or side of the
-                            house. Kislev can confirm if the job is a fit before anyone guesses on price.</p>
+                        <p class="res-fineprint">For a rough estimate, include photos, approximate measurements, window
+                            count, property type, and any glass or coating information you have. If those details are
+                            unclear, schedule a free consultation first.</p>
                     </aside>
                 </div>
             </div>
@@ -885,9 +888,9 @@
             <div class="container">
                 <div class="res-section__header">
                     <span class="res-section__eyebrow">What to send</span>
-                    <h2>Photos beat a bad estimate.</h2>
-                    <p>For residential window film, the quote depends on real conditions. The fastest path is a few
-                        photos and a clear note about the problem.</p>
+                    <h2>Good inputs make a useful estimate.</h2>
+                    <p>Residential and commercial film pricing depends on real glass conditions. These details help us
+                        recommend the right film and prepare a responsible rough estimate.</p>
                 </div>
                 <div class="res-process">
                     <article class="res-step">
@@ -897,18 +900,18 @@
                     </article>
                     <article class="res-step">
                         <div class="res-step__num">2</div>
-                        <h3>Name The Problem</h3>
-                        <p>Heat, glare, fading, privacy, or a mix. The outcome drives film choice.</p>
+                        <h3>Name The Goal</h3>
+                        <p>Heat reduction, privacy, security, decorative film, glare, UV protection, or a mix.</p>
                     </article>
                     <article class="res-step">
                         <div class="res-step__num">3</div>
-                        <h3>Confirm Scope</h3>
-                        <p>Number of windows, approximate size, city, and access details.</p>
+                        <h3>Measure &amp; Identify</h3>
+                        <p>Window count, approximate dimensions, property type, and glass type or coatings if known.</p>
                     </article>
                     <article class="res-step">
                         <div class="res-step__num">4</div>
-                        <h3>Book The Install</h3>
-                        <p>Once the glass and film path are clear, the install can be scheduled properly.</p>
+                        <h3>Review The Rough Estimate</h3>
+                        <p>Once the glass and project goal are clear, we can outline a realistic film and pricing path.</p>
                     </article>
                 </div>
             </div>
@@ -917,9 +920,9 @@
         <section class="res-section res-section--light" id="comfort-privacy">
             <div class="container">
                 <div class="res-section__header">
-                    <span class="res-section__eyebrow">Comfort without the cave</span>
-                    <h2>A premium home should still feel like a premium home.</h2>
-                    <p>The goal is to improve the room, not make the house look like a blacked-out storefront. The film
+                    <span class="res-section__eyebrow">Performance without the cave</span>
+                    <h2>A premium property should still feel open and intentional.</h2>
+                    <p>The goal is to improve the space, not make the glass look improvised or over-dark. The film
                         recommendation should match the room, the glass, and the look of the property.</p>
                 </div>
                 <div class="res-comparison">
@@ -940,8 +943,8 @@
         <section class="res-section res-section--dark" id="residential-fit">
             <div class="container">
                 <div class="res-section__header">
-                    <span class="res-section__eyebrow">Residential jobs that fit</span>
-                    <h2>Built for Orange County homes with real sun problems.</h2>
+                    <span class="res-section__eyebrow">Projects that fit</span>
+                    <h2>Built for Orange County properties with real glass problems.</h2>
                 </div>
                 <div class="res-grid">
                     <article class="res-card res-card--dark">
@@ -979,13 +982,13 @@
             <div class="container">
                 <div class="res-section__header res-section__header--center">
                     <span class="res-section__eyebrow">FAQ</span>
-                    <h2>Residential film questions before the call.</h2>
+                    <h2>Architectural film questions before an estimate.</h2>
                 </div>
                 <div class="res-faq">
                     <details>
                         <summary>Is this the same as car window tint?</summary>
-                        <p>No. Residential film is quoted around glass size, access, sun exposure, desired privacy, and
-                            the final look of the room.</p>
+                        <p>No. Residential and commercial film is scoped around glass size, type, coatings, access,
+                            sun exposure, project goals, and the final look of the property.</p>
                     </details>
                     <details>
                         <summary>Can it help with hot rooms?</summary>
@@ -993,14 +996,14 @@
                             west-facing rooms, sliders, and upstairs rooms.</p>
                     </details>
                     <details>
-                        <summary>Will my house look too dark?</summary>
-                        <p>It does not have to. The point is choosing a film that solves the room problem while keeping
-                            the home looking clean and intentional.</p>
+                        <summary>Will the glass look too dark?</summary>
+                        <p>It does not have to. The point is choosing a film that solves the project goal while keeping
+                            the property looking clean and intentional.</p>
                     </details>
                     <details>
                         <summary>Can I book this directly on Square?</summary>
-                        <p>Not yet. Residential film should be quoted after photos or a conversation, because each home
-                            has different glass, access, and comfort goals.</p>
+                        <p>Not yet. Architectural film should be scoped after a free consultation or review of photos,
+                            measurements, glass details, and project goals.</p>
                     </details>
                 </div>
             </div>
@@ -1009,16 +1012,17 @@
         <section class="res-final-cta">
             <div class="container">
                 <div class="res-final-cta__box">
-                    <span class="res-card__label">Ready to price the glass?</span>
-                    <h2>Call or text photos before guessing on residential film.</h2>
-                    <p>Tell us the city, the window problem, and whether this is one room or the whole home. If the job
-                        is a fit, Kislev can confirm the next step and schedule the install path.</p>
+                    <span class="res-card__label">Ready to scope the project?</span>
+                    <h2>Choose a free consultation or send the project details.</h2>
+                    <p>For a rough estimate, send measurements, photos, window count, any known glass or coating
+                        details, and what you want the film to accomplish. If you are not sure what to collect, start
+                        with a free consultation.</p>
                     <div class="res-cta-row">
                         <a href="tel:7146007134" class="brutalist-btn brutalist-btn--primary brutalist-btn--large"
-                            data-residential-cta="final_call">Call (714) 600-7134</a>
-                        <a href="sms:7146007134?&body=Hi%20Obsidian%20Autoworks%2C%20I%27m%20looking%20for%20residential%20window%20film.%20I%20can%20send%20photos%20and%20details%20for%20a%20home%20quote."
-                            class="brutalist-btn brutalist-btn--large" data-residential-cta="final_text">Text Window
-                            Photos</a>
+                            data-residential-cta="final_call">Schedule Free Consultation</a>
+                        <a href="sms:7146007134?&body=Hi%20Obsidian%20Autoworks%2C%20I%27m%20looking%20for%20residential%20or%20commercial%20window%20film.%20I%20can%20send%20measurements%2C%20photos%2C%20window%20count%2C%20glass%20details%2C%20and%20my%20project%20goals%20for%20a%20rough%20estimate."
+                            class="brutalist-btn brutalist-btn--large" data-residential-cta="final_text">Send Project
+                            Details</a>
                     </div>
                 </div>
             </div>
@@ -1078,35 +1082,37 @@
                 {
                     key: 'problem',
                     eyebrow: 'Start with the problem',
-                    question: 'What should the film fix first?',
+                    question: 'What should the film accomplish first?',
                     options: [
                         ['Heat', 'Rooms get too hot when the sun hits the glass'],
                         ['Glare', 'TV, monitor, or living spaces are too bright'],
-                        ['Privacy', 'Street-facing or neighbor-facing windows'],
-                        ['Fading', 'Furniture, floors, or artwork get too much sun'],
+                        ['Privacy', 'Street-facing, customer-facing, or neighbor-facing windows'],
+                        ['Security', 'Added glass retention or safety is the priority'],
+                        ['Decorative', 'A frosted, branded, or design-forward finish'],
+                        ['UV protection', 'Furniture, floors, products, or artwork get too much sun'],
                         ['Not sure', 'You want Kislev to recommend the right path']
                     ]
                 },
                 {
                     key: 'glass',
-                    eyebrow: 'Scope the glass',
-                    question: 'What windows are we looking at?',
+                    eyebrow: 'Scope the property',
+                    question: 'What kind of property or glass are we looking at?',
                     options: [
-                        ['One room', 'A living room, office, bedroom, or kitchen'],
-                        ['Large sliders', 'Patio doors, view glass, or big panes'],
-                        ['Whole home', 'Multiple rooms or a larger residential project'],
-                        ['Front windows', 'Privacy or appearance for street-facing glass'],
-                        ['Custom', 'Odd shapes, high access, or mixed goals']
+                        ['Home', 'One room, several rooms, or a whole-home project'],
+                        ['Storefront', 'Customer-facing glass, doors, or display windows'],
+                        ['Office / commercial', 'Interior or exterior glass at a business property'],
+                        ['Large panes / sliders', 'Patio doors, view glass, or oversized windows'],
+                        ['Custom / not sure', 'Specialty glass, high access, mixed goals, or unknown construction']
                     ]
                 },
                 {
                     key: 'property',
-                    eyebrow: 'Quote path',
-                    question: 'Where should we start?',
+                    eyebrow: 'Estimate path',
+                    question: 'How would you like to start?',
                     options: [
-                        ['Call first', 'Best if you want pricing direction now'],
-                        ['Text photos', 'Best if you can send window photos'],
-                        ['Orange County home', 'Residential property in the OC service area'],
+                        ['Free consultation', 'Best if you need help identifying the glass or project requirements'],
+                        ['Send project details', 'Best if you have measurements, photos, window count, and glass information'],
+                        ['Need measurement help', 'Start with a consultation before trying to estimate the scope'],
                         ['Not ready yet', 'Save the setup and ask questions first']
                     ]
                 }
@@ -1141,17 +1147,17 @@
                 summaryGlass.textContent = state.glass || 'Not selected yet';
                 summaryProperty.textContent = state.property || 'Not selected yet';
                 if (state.problem || state.glass || state.property) {
-                    summaryTitle.textContent = 'Good. Now send this setup with photos.';
+                    summaryTitle.textContent = 'Good. Choose a consultation or send the full project details.';
                 }
             };
 
             const buildTextHref = () => {
                 const lines = [
-                    'Hi Obsidian Autoworks, I am looking for residential window film.',
-                    state.problem ? `Main problem: ${state.problem}` : '',
-                    state.glass ? `Glass/scope: ${state.glass}` : '',
-                    state.property ? `Quote path: ${state.property}` : '',
-                    'I can send photos for a home quote.'
+                    'Hi Obsidian Autoworks, I am looking for residential or commercial window film.',
+                    state.problem ? `Project goal: ${state.problem}` : '',
+                    state.glass ? `Property/glass scope: ${state.glass}` : '',
+                    state.property ? `Preferred next step: ${state.property}` : '',
+                    'For a rough estimate, I can send measurements, photos, window count, and any glass type or coating details I have.'
                 ].filter(Boolean);
                 return `sms:${phone}?&body=${encodeURIComponent(lines.join('\n'))}`;
             };
@@ -1161,13 +1167,13 @@
                 bar.style.width = '100%';
                 body.innerHTML = `
                     <div class="res-diagnostic__hint">Recommended next step</div>
-                    <h3>Send photos or call before pricing.</h3>
+                    <h3>Choose a consultation or send the project details.</h3>
                     <p class="res-fineprint" style="color: rgba(255,255,255,0.72); margin: 0 0 1.35rem;">
-                        Residential film is best quoted after seeing the glass. This setup will be included when you text.
+                        A rough estimate needs measurements, photos, window count, glass details, and the result you want. If those are unclear, begin with a free consultation.
                     </p>
                     <div class="res-cta-row">
-                        <a href="tel:7146007134" class="brutalist-btn brutalist-btn--primary" data-res-final-call>Call For Quote</a>
-                        <a href="${buildTextHref()}" class="brutalist-btn" data-res-final-text>Text This Setup</a>
+                        <a href="tel:7146007134" class="brutalist-btn brutalist-btn--primary" data-res-final-call>Schedule Free Consultation</a>
+                        <a href="${buildTextHref()}" class="brutalist-btn" data-res-final-text>Send Project Details</a>
                     </div>
                     <div class="res-diagnostic__actions">
                         <button class="res-back" type="button" data-res-restart>Start Over</button>

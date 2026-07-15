@@ -27,8 +27,8 @@
         "areaServed": "Orange County, CA",
         "serviceType": "Mobile Tesla ceramic window tinting",
         "offers": [
-            { "@type": "Offer", "name": "Tesla Model 3 Full Car", "price": "1000", "priceCurrency": "USD" },
-            { "@type": "Offer", "name": "Tesla Model 3 Sides and Rear", "price": "800", "priceCurrency": "USD" }
+            { "@type": "Offer", "name": "Tesla Model 3 Full Car", "price": "1150", "priceCurrency": "USD" },
+            { "@type": "Offer", "name": "Tesla Model 3 Sides and Rear", "price": "950", "priceCurrency": "USD" }
         ]
     }
     </script>
@@ -85,9 +85,9 @@
                 <aside class="seo-hero__panel">
                     <h2>Model 3 Pricing</h2>
                     <div class="seo-stat-list">
-                        <div class="seo-stat"><span class="seo-stat__mark">$</span><span>Full Car: $1,000, about 5
+                        <div class="seo-stat"><span class="seo-stat__mark">$</span><span>Full Car: $1,150, about 5
                                 hr</span></div>
-                        <div class="seo-stat"><span class="seo-stat__mark">$</span><span>Sides &amp; Rear: $800, about
+                        <div class="seo-stat"><span class="seo-stat__mark">$</span><span>Sides &amp; Rear: $950, about
                                 4 hr</span></div>
                         <div class="seo-stat"><span class="seo-stat__mark">M</span><span>Mobile service at a suitable
                                 home or workplace location.</span></div>
@@ -116,13 +116,13 @@
                         <tbody>
                             <tr>
                                 <td>Tesla Model 3 Full Car</td>
-                                <td>$1,000</td>
+                                <td>$1,150</td>
                                 <td>5 hr</td>
                                 <td>Complete heat, UV, glare, and privacy upgrade</td>
                             </tr>
                             <tr>
                                 <td>Tesla Model 3 Sides &amp; Rear</td>
-                                <td>$800</td>
+                                <td>$950</td>
                                 <td>4 hr</td>
                                 <td>Privacy and side/rear heat control</td>
                             </tr>

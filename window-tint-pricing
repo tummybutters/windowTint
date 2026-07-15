@@ -24,8 +24,14 @@
             { "@type": "Offer", "name": "Coupe Full Car", "price": "720", "priceCurrency": "USD" },
             { "@type": "Offer", "name": "Sedan Full Car", "price": "820", "priceCurrency": "USD" },
             { "@type": "Offer", "name": "Trucks SUVs Crossovers Full Car", "price": "950", "priceCurrency": "USD" },
+            { "@type": "Offer", "name": "Tesla Model 3 Full Car", "price": "1150", "priceCurrency": "USD" },
+            { "@type": "Offer", "name": "Tesla Model 3 Sides and Rear", "price": "950", "priceCurrency": "USD" },
+            { "@type": "Offer", "name": "Tesla Model S Full Car", "price": "820", "priceCurrency": "USD" },
+            { "@type": "Offer", "name": "Tesla Model S Sides and Rear", "price": "600", "priceCurrency": "USD" },
+            { "@type": "Offer", "name": "Tesla Model S Panoramic Roof Add-On", "price": "550", "priceCurrency": "USD" },
             { "@type": "Offer", "name": "Tesla Model Y Full Car", "price": "950", "priceCurrency": "USD" },
-            { "@type": "Offer", "name": "Tesla Model 3 Full Car", "price": "1000", "priceCurrency": "USD" }
+            { "@type": "Offer", "name": "Tesla Model Y Sides and Rear", "price": "700", "priceCurrency": "USD" },
+            { "@type": "Offer", "name": "Tesla Model Y Panoramic Roof Add-On", "price": "550", "priceCurrency": "USD" }
         ]
     }
     </script>
@@ -137,14 +143,14 @@
                             <tr><th>Service</th><th>Price</th><th>Time</th></tr>
                         </thead>
                         <tbody>
-                            <tr><td><a href="/tesla-model-3-window-tinting">Tesla Model 3 Full Car</a></td><td>$1,000</td><td>5 hr</td></tr>
-                            <tr><td><a href="/tesla-model-3-window-tinting">Tesla Model 3 Sides &amp; Rear</a></td><td>$800</td><td>4 hr</td></tr>
+                            <tr><td><a href="/tesla-model-3-window-tinting">Tesla Model 3 Full Car</a></td><td>$1,150</td><td>5 hr</td></tr>
+                            <tr><td><a href="/tesla-model-3-window-tinting">Tesla Model 3 Sides &amp; Rear</a></td><td>$950</td><td>4 hr</td></tr>
                             <tr><td><a href="/tesla-window-tinting">Tesla Model S Full Car</a></td><td>$820</td><td>4 hr</td></tr>
                             <tr><td><a href="/tesla-window-tinting">Tesla Model S Sides &amp; Rear</a></td><td>$600</td><td>3 hr 30 min</td></tr>
-                            <tr><td><a href="/tesla-window-tinting">Tesla Model S Panoramic Roof Add-On</a></td><td>$400</td><td>2 hr</td></tr>
+                            <tr><td><a href="/tesla-window-tinting">Tesla Model S Panoramic Roof Add-On</a></td><td>$550</td><td>2 hr</td></tr>
                             <tr><td><a href="/tesla-model-y-window-tinting">Tesla Model Y Full Car</a></td><td>$950</td><td>4 hr 30 min</td></tr>
                             <tr><td><a href="/tesla-model-y-window-tinting">Tesla Model Y Sides &amp; Rear</a></td><td>$700</td><td>3 hr 30 min</td></tr>
-                            <tr><td><a href="/tesla-model-y-window-tinting">Tesla Model Y Panoramic Roof Add-On</a></td><td>$400</td><td>2 hr</td></tr>
+                            <tr><td><a href="/tesla-model-y-window-tinting">Tesla Model Y Panoramic Roof Add-On</a></td><td>$550</td><td>2 hr</td></tr>
                         </tbody>
                     </table>
                 </div>

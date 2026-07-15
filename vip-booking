@@ -705,9 +705,9 @@
                 </div>
                 <div class="booking-step brutalist-card">
                     <div class="booking-step__number">3</div>
-                    <h3>Final Pricing + Pay After</h3>
-                    <p>Final pricing is always confirmed over the phone or in person. You only pay after the job is
-                        finished.</p>
+                    <h3>Confirm The Scope</h3>
+                    <p>Auto pricing is confirmed before service. Property-film projects are estimated after we review
+                        the measurements, photos, glass details, and goals.</p>
                 </div>
             </div>
         </div>
@@ -888,14 +888,14 @@
                 },
                 tesla3_full: {
                     title: 'Tesla Model 3 - Full Car',
-                    price: '$1,000',
+                    price: '$1,150',
                     duration: '5 hr',
                     mode: 'book',
                     note: 'Tesla-specific full car ceramic coverage.'
                 },
                 tesla3_sides: {
                     title: 'Tesla Model 3 - Sides & Rear',
-                    price: '$800',
+                    price: '$950',
                     duration: '4 hr',
                     mode: 'book',
                     note: 'Tesla-specific side and rear ceramic coverage.'
@@ -916,7 +916,7 @@
                 },
                 teslas_roof: {
                     title: 'Tesla Model S - Panoramic Roof Add-On',
-                    price: '$400',
+                    price: '$550',
                     duration: '2 hr',
                     mode: 'book',
                     note: 'Fixed-price panoramic roof add-on for Model S.'
@@ -937,7 +937,7 @@
                 },
                 teslay_roof: {
                     title: 'Tesla Model Y - Panoramic Roof Add-On',
-                    price: '$400',
+                    price: '$550',
                     duration: '2 hr',
                     mode: 'book',
                     note: 'Fixed-price panoramic roof add-on for Model Y.'
@@ -964,11 +964,11 @@
                     note: 'Best for tint removal, chrome delete, mobile priority, mixed add-ons, or anything unusual.'
                 },
                 quote_architectural: {
-                    title: 'Residential Window Film Quote',
-                    price: 'Quote',
-                    duration: 'Site details needed',
+                    title: 'Architectural Film Consultation',
+                    price: 'Rough estimate after review',
+                    duration: 'Project details needed',
                     mode: 'quote',
-                    note: 'Best handled by text or call so the square footage, glass type, and access details are clear.'
+                    note: 'Schedule a free consultation or send measurements, photos, window count, glass type or coating details, and the project goal.'
                 }
             };
 
@@ -989,7 +989,7 @@
                         { label: 'Sedan', copy: 'Four-door car or similar profile', value: 'sedan' },
                         { label: 'Truck / SUV', copy: 'Truck, SUV, crossover, or larger cabin', value: 'truck' },
                         { label: 'Tesla', copy: 'Model 3, Model S, or Model Y', value: 'tesla' },
-                        { label: 'Home / Business', copy: 'Architectural film for property glass', value: 'architectural' },
+                        { label: 'Home / Business', copy: 'Residential or commercial architectural film', value: 'architectural' },
                         { label: 'Something custom', copy: 'Chrome delete, removal, mobile service, or not sure', value: 'custom' }
                     ],
                     next(value) {
@@ -1144,6 +1144,15 @@
             });
 
             const buildTextHref = (service) => {
+                if (state.vehicle === 'architectural') {
+                    const message = [
+                        'Hi Obsidian Autoworks, I am looking for residential or commercial window film.',
+                        'I can send measurements, photos, window count, and any glass type or coating details I have.',
+                        'My main goal is heat reduction, privacy, security, decorative film, glare control, or UV protection.',
+                        'Can we start with a free consultation or a rough estimate after you review the project details?'
+                    ].join(' ');
+                    return `sms:${smsNumber}?body=${encodeURIComponent(message)}`;
+                }
                 const addons = getAddonLabels();
                 const message = [
                     `Hi Obsidian Autoworks, I just used the VIP booking helper.`,
@@ -1292,6 +1301,7 @@
             const renderResult = () => {
                 const service = resolveService();
                 const addons = getAddonLabels();
+                const isArchitectural = state.vehicle === 'architectural';
                 const canBookInSquare = service.mode === 'book' && squareBookingEnabled && service.bookingUrl;
                 const needsConfirmation = service.mode === 'quote' || hasVariableAddon() || !canBookInSquare;
                 count.textContent = 'Recommendation';
@@ -1300,7 +1310,11 @@
                 const notes = [
                     service.note,
                     addons.length ? `Selected add-ons: ${addons.join(', ')}.` : 'No add-ons selected.',
-                    canBookInSquare ? 'Open Square and choose this package to lock the appointment.' : 'Call or text this setup and we will lock in the right appointment.'
+                    canBookInSquare
+                        ? 'Open Square and choose this package to lock the appointment.'
+                        : isArchitectural
+                            ? 'Send the project details for review, or call to schedule a free consultation.'
+                            : 'Call or text this setup and we will lock in the right appointment.'
                 ];
 
                 body.innerHTML = `
@@ -1324,16 +1338,20 @@
                                     : service.mode === 'book'
                                         ? `<a class="brutalist-btn brutalist-btn--primary" href="tel:7146007134">Call To Book This</a>
                                            <a class="brutalist-btn brutalist-btn--outline" href="${buildTextHref(service)}" data-router-text>Text This Setup</a>`
-                                    : `<a class="brutalist-btn brutalist-btn--primary" href="${buildTextHref(service)}" data-router-text>Text This Setup</a>`}
+                                    : `<a class="brutalist-btn brutalist-btn--primary" href="${buildTextHref(service)}" data-router-text>${isArchitectural ? 'Send Project Details' : 'Text This Setup'}</a>`}
                                 ${canBookInSquare && needsConfirmation
                                     ? `<a class="brutalist-btn brutalist-btn--outline" href="${buildTextHref(service)}" data-router-text>Text Add-ons</a>`
                                     : ''}
                                 ${service.mode === 'quote'
-                                    ? `<a class="brutalist-btn brutalist-btn--outline" href="tel:7146007134">Call ${phoneDisplay}</a>`
+                                    ? `<a class="brutalist-btn brutalist-btn--outline" href="tel:7146007134">${isArchitectural ? 'Schedule Free Consultation' : `Call ${phoneDisplay}`}</a>`
                                     : ''}
                                 <button class="booking-router__back" type="button" data-router-restart>Start Over</button>
                             </div>
-                            <p class="booking-router__fineprint">${canBookInSquare ? 'Square will handle the appointment time and deposit.' : 'Your selected package is included when you call or text, so Kislev can lock the right service without guessing.'} If your setup includes removal, mobile priority, same-day timing, chrome delete, or residential window film, confirm with Kislev before locking the slot.</p>
+                            <p class="booking-router__fineprint">${canBookInSquare
+                                ? 'Square will handle the appointment time and deposit.'
+                                : isArchitectural
+                                    ? 'Architectural film is reviewed before pricing. Photos, measurements, window count, glass details, and the project goal help Kislev prepare a responsible rough estimate.'
+                                    : 'Your selected package is included when you call or text, so Kislev can lock the right service without guessing.'} If your setup includes removal, mobile priority, same-day timing, chrome delete, or residential window film, confirm with Kislev before locking the slot.</p>
                         </div>
                     </div>
                 `;
