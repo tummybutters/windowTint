@@ -6,15 +6,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Residential &amp; Commercial Window Film Orange County | Obsidian Autoworks</title>
     <meta name="description"
-        content="Residential and commercial window film in Orange County. Schedule a free consultation or send measurements, photos, glass details, and project goals for a rough estimate.">
+        content="Residential and commercial window film in Orange County. Book a free consultation, see and keep film samples, or send project details for a rough estimate.">
     <link rel="canonical" href="https://www.obsidianautoworksoc.com/architectural-window-film">
     <link rel="icon" type="image/png" href="favicon.png">
     <meta property="og:title" content="Residential &amp; Commercial Window Film Orange County | Obsidian Autoworks">
     <meta property="og:description"
-        content="Project-scoped window film for Orange County homes and businesses. Start with a free consultation or send the glass details needed for a rough estimate.">
+        content="Cooler, more private spaces for Orange County homes and businesses. See and keep free film samples before your project is estimated.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://www.obsidianautoworksoc.com/architectural-window-film">
-    <meta property="og:image" content="https://www.obsidianautoworksoc.com/assets/residential-window-light.jpg">
+    <meta property="og:image" content="https://www.obsidianautoworksoc.com/assets/architectural-modern-home.jpg">
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
@@ -27,7 +27,7 @@
         },
         "areaServed": "Orange County, CA",
         "serviceType": "Residential and commercial architectural window film",
-        "description": "Project-scoped architectural window film for heat rejection, glare reduction, privacy, security, decorative applications, and UV protection."
+        "description": "Residential and commercial window film with free consultations, take-home film samples, and project-specific estimates for heat rejection, glare reduction, privacy, security, decorative applications, and UV protection."
     }
     </script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -759,6 +759,389 @@
                 white-space: normal;
             }
         }
+
+        /* Architectural campaign refresh: VIP rhythm, fewer sections, clearer next step. */
+        .residential-page {
+            background: #090909;
+        }
+
+        .res-hero {
+            min-height: clamp(570px, 72svh, 720px);
+            padding: 4.75rem 0 4.25rem;
+            place-items: center;
+            isolation: isolate;
+            text-align: center;
+            background:
+                linear-gradient(180deg, rgba(5, 5, 5, 0.38) 0%, rgba(5, 5, 5, 0.52) 50%, rgba(5, 5, 5, 0.9) 100%),
+                url("assets/architectural-modern-home.jpg") center 54% / cover no-repeat;
+        }
+
+        .res-hero::before {
+            background:
+                linear-gradient(90deg, rgba(0, 0, 0, 0.66) 0%, transparent 28%, transparent 72%, rgba(0, 0, 0, 0.58) 100%),
+                radial-gradient(circle at 50% 20%, rgba(255, 107, 74, 0.24), transparent 42%);
+            background-size: auto;
+            opacity: 1;
+        }
+
+        .res-hero::after {
+            content: "";
+            position: absolute;
+            inset: auto 0 0;
+            z-index: -1;
+            height: 5px;
+            background: var(--sunset-glow);
+        }
+
+        .res-hero__content {
+            position: relative;
+            z-index: 1;
+            width: min(100%, 980px);
+            margin: 0 auto;
+        }
+
+        .res-kicker {
+            padding: 0.5rem 0.85rem;
+            border-width: 2px;
+            box-shadow: 4px 4px 0 var(--black);
+            letter-spacing: 0.12em;
+        }
+
+        .res-kicker::before {
+            display: none;
+        }
+
+        .res-hero h1 {
+            max-width: 940px;
+            margin: 1.15rem auto 1rem;
+            font-size: clamp(3rem, 7.4vw, 6.4rem);
+            line-height: 0.88;
+            letter-spacing: 0;
+            text-wrap: balance;
+            text-shadow: 0 18px 48px rgba(0, 0, 0, 0.55);
+        }
+
+        .res-hero h1 span {
+            display: block;
+            background: var(--sunset-glow);
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .res-hero__copy {
+            max-width: 670px;
+            margin: 0 auto;
+            color: rgba(255, 255, 255, 0.92);
+            font-size: clamp(1rem, 1.7vw, 1.18rem);
+            line-height: 1.5;
+            text-wrap: balance;
+            text-shadow: 0 2px 22px rgba(0, 0, 0, 0.9);
+        }
+
+        .res-hero__actions {
+            justify-content: center;
+            margin-top: 1.5rem;
+        }
+
+        .res-hero-paths {
+            position: relative;
+            z-index: 2;
+            background: var(--white);
+            color: var(--black);
+            border-bottom: 4px solid var(--black);
+        }
+
+        .res-hero-paths__grid {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+        }
+
+        .res-hero-paths article {
+            min-height: 118px;
+            padding: 1.25rem 1.35rem;
+            border-right: 3px solid var(--black);
+        }
+
+        .res-hero-paths article:last-child {
+            border-right: 0;
+        }
+
+        .res-hero-paths span,
+        .res-hero-paths strong {
+            display: block;
+        }
+
+        .res-hero-paths span {
+            margin-bottom: 0.35rem;
+            color: var(--sunset-coral);
+            font-size: 0.75rem;
+            font-weight: 900;
+        }
+
+        .res-hero-paths strong {
+            font-size: 1.05rem;
+            text-transform: uppercase;
+        }
+
+        .res-hero-paths p {
+            margin-top: 0.25rem;
+            color: #4a4a4a;
+            font-size: 0.9rem;
+            line-height: 1.4;
+        }
+
+        .res-gallery {
+            padding: 2.75rem 0 3.5rem;
+            background: #090909;
+            color: var(--white);
+        }
+
+        .res-gallery__grid {
+            display: grid;
+            grid-template-columns: repeat(12, minmax(0, 1fr));
+            grid-template-rows: repeat(2, minmax(210px, 24vw));
+            gap: 10px;
+        }
+
+        .res-gallery figure {
+            position: relative;
+            overflow: hidden;
+            border: 3px solid var(--black);
+            background: #161616;
+        }
+
+        .res-gallery figure:first-child {
+            grid-column: 1 / span 8;
+            grid-row: 1 / span 2;
+        }
+
+        .res-gallery figure:nth-child(2),
+        .res-gallery figure:nth-child(3) {
+            grid-column: 9 / span 4;
+        }
+
+        .res-gallery img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.65s cubic-bezier(0.22, 1, 0.36, 1), filter 0.65s ease;
+        }
+
+        .res-gallery figure:first-child img {
+            object-position: center 58%;
+        }
+
+        .res-gallery figure:nth-child(2) img {
+            object-position: center 70%;
+        }
+
+        .res-gallery figure:hover img {
+            transform: scale(1.025);
+            filter: contrast(1.04) saturate(1.04);
+        }
+
+        .res-gallery figcaption {
+            position: absolute;
+            right: 0.75rem;
+            bottom: 0.75rem;
+            left: 0.75rem;
+            padding: 0.65rem 0.75rem;
+            background: rgba(8, 8, 8, 0.8);
+            color: var(--white);
+            font-size: 0.72rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            backdrop-filter: blur(8px);
+        }
+
+        .res-socal {
+            padding: 4rem 0;
+            background: var(--white);
+            color: var(--black);
+            text-align: center;
+        }
+
+        .res-socal h2 {
+            max-width: 980px;
+            margin: 0 auto;
+            font-size: clamp(2.35rem, 5.6vw, 5rem);
+            line-height: 0.95;
+            letter-spacing: 0;
+            text-transform: uppercase;
+            text-wrap: balance;
+        }
+
+        .res-socal h2 span {
+            color: var(--sunset-coral);
+        }
+
+        .res-socal p {
+            max-width: 620px;
+            margin: 1rem auto 0;
+            color: #4b4b4b;
+            font-size: 1.05rem;
+            line-height: 1.55;
+        }
+
+        #what-to-send {
+            background: #f1f1f1;
+        }
+
+        #what-to-send .res-section__header,
+        #residential-diagnostic .res-section__header {
+            display: block;
+            max-width: 760px;
+            margin: 0 auto 1.75rem;
+            text-align: center;
+        }
+
+        #what-to-send .res-section__header p,
+        #residential-diagnostic .res-section__header p {
+            max-width: 660px;
+            margin: 0.8rem auto 0;
+        }
+
+        #residential-diagnostic .res-section__header h2 {
+            font-size: clamp(2.2rem, 4.8vw, 4rem);
+        }
+
+        #residential-diagnostic {
+            scroll-margin-top: 88px;
+        }
+
+        .res-process {
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+        }
+
+        .res-step {
+            min-height: 200px;
+        }
+
+        .res-step p {
+            font-size: 0.95rem;
+        }
+
+        #home-film-faq {
+            background: #f1f1f1;
+        }
+
+        .res-final-cta__box {
+            max-width: 1040px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .res-final-cta h2,
+        .res-final-cta p {
+            margin-right: auto;
+            margin-left: auto;
+        }
+
+        .res-final-cta .res-cta-row {
+            justify-content: center;
+        }
+
+        @media (max-width: 900px) {
+            .res-hero-paths__grid,
+            .res-process {
+                grid-template-columns: 1fr;
+            }
+
+            .res-hero-paths article {
+                min-height: auto;
+                border-right: 0;
+                border-bottom: 3px solid var(--black);
+            }
+
+            .res-hero-paths article:last-child {
+                border-bottom: 0;
+            }
+
+            .res-gallery__grid {
+                grid-template-rows: repeat(2, minmax(190px, 34vw));
+            }
+
+            .res-gallery figure:first-child {
+                grid-column: 1 / span 7;
+            }
+
+            .res-gallery figure:nth-child(2),
+            .res-gallery figure:nth-child(3) {
+                grid-column: 8 / span 5;
+            }
+        }
+
+        @media (max-width: 700px) {
+            .res-hero {
+                min-height: 610px;
+                padding: 3.5rem 0 3.25rem;
+                background-position: 58% center;
+            }
+
+            .res-hero h1 {
+                font-size: clamp(3rem, 15vw, 4.5rem);
+            }
+
+            .res-hero__copy {
+                max-width: 34ch;
+            }
+
+            .res-gallery {
+                padding: 1.25rem 0 2.25rem;
+            }
+
+            .res-gallery__grid {
+                grid-template-columns: 1fr 1fr;
+                grid-template-rows: 330px 190px;
+                gap: 7px;
+            }
+
+            .res-gallery figure:first-child {
+                grid-column: 1 / -1;
+                grid-row: 1;
+            }
+
+            .res-gallery figure:nth-child(2),
+            .res-gallery figure:nth-child(3) {
+                grid-column: auto;
+                grid-row: 2;
+            }
+
+            .res-gallery figcaption {
+                right: 0.45rem;
+                bottom: 0.45rem;
+                left: 0.45rem;
+                padding: 0.5rem;
+                font-size: 0.62rem;
+            }
+
+            .res-socal {
+                padding: 3rem 0;
+            }
+
+            .res-socal h2 {
+                font-size: clamp(2.35rem, 12vw, 3.4rem);
+            }
+
+            .res-diagnostic {
+                gap: 0.75rem;
+            }
+
+            #residential-diagnostic {
+                scroll-margin-top: 122px;
+            }
+
+            .res-final-cta__box {
+                padding: 1.4rem;
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .res-gallery img {
+                transition: none;
+            }
+        }
     </style>
 </head>
 
@@ -776,7 +1159,7 @@
                 <a href="/#contact">Contact</a>
             </div>
             <div class="nav__actions">
-                <a href="#residential-diagnostic" class="brutalist-btn brutalist-btn--accent">Project Check</a>
+                <a href="#residential-diagnostic" class="brutalist-btn brutalist-btn--accent">Send Details</a>
                 <a href="tel:7146007134" class="brutalist-btn brutalist-btn--outline">(714) 600-7134</a>
             </div>
         </div>
@@ -784,67 +1167,94 @@
 
     <main class="residential-page">
         <header class="res-hero">
-            <div class="container res-hero__grid">
-                <div>
-                    <span class="res-kicker">Residential + Commercial Film</span>
-                    <h1>Cooler Rooms. <span>Cleaner Glass.</span> Less Glare.</h1>
-                    <p class="res-hero__copy">Premium architectural film for Orange County homes and businesses with
-                        hot rooms, harsh glare, fading interiors, privacy concerns, or specialty glass needs. We do not
-                        guess at pricing over the phone. Schedule a free consultation or send the project details we
-                        need to prepare a rough estimate.</p>
-                    <div class="res-hero__actions">
-                        <a href="tel:7146007134" class="brutalist-btn brutalist-btn--primary brutalist-btn--large"
-                            data-residential-cta="hero_call">Schedule Free Consultation</a>
-                        <a href="#residential-diagnostic" class="brutalist-btn brutalist-btn--outline brutalist-btn--large"
-                            data-residential-cta="hero_quiz">Start Project Check</a>
-                    </div>
-                    <div class="res-proof-strip" aria-label="Residential film benefits">
-                        <span>Heat Control</span>
-                        <span>Glare Reduction</span>
-                        <span>Daytime Privacy</span>
-                        <span>UV Protection</span>
-                    </div>
-                </div>
-                <div class="res-photo-stack" aria-label="Residential window film visual">
-                    <figure class="res-photo-card res-photo-card--main">
-                        <img src="assets/residential-window-light.jpg"
-                            alt="Sunlight through architectural glass before a residential or commercial film consultation" width="1800"
-                            height="2700">
-                    </figure>
-                    <div class="res-photo-card res-photo-card--badge">Scope first, then estimate</div>
-                    <div class="res-photo-card res-photo-card--note">
-                        <strong>Not a one-size-fits-all job.</strong>
-                        <p>Film compatibility and cost depend on measurements, window count, glass type, coatings,
-                            access, and the result you want. Those details come before any useful estimate.</p>
-                    </div>
+            <div class="container res-hero__content">
+                <span class="res-kicker">Southern California Window Film</span>
+                <h1>Keep the view. <span>Lose the heat.</span></h1>
+                <p class="res-hero__copy">Cooler, more private spaces for people who live in the best place in the
+                    world.</p>
+                <div class="res-hero__actions">
+                    <a href="tel:7146007134" class="brutalist-btn brutalist-btn--primary brutalist-btn--large"
+                        data-residential-cta="hero_call">Book Free Consultation</a>
+                    <a href="#residential-diagnostic" class="brutalist-btn brutalist-btn--outline brutalist-btn--large"
+                        data-residential-cta="hero_quiz">Send Project Details</a>
                 </div>
             </div>
         </header>
 
-        <section class="res-section res-section--light" id="home-film-benefits">
+        <section class="res-hero-paths" aria-label="How architectural window film estimates work">
+            <div class="container res-hero-paths__grid">
+                <article>
+                    <span>01</span>
+                    <strong>Free consultation</strong>
+                    <p>See real film samples in your space.</p>
+                </article>
+                <article>
+                    <span>02</span>
+                    <strong>Keep your favorites</strong>
+                    <p>Compare the free samples after we leave.</p>
+                </article>
+                <article>
+                    <span>03</span>
+                    <strong>Estimate after review</strong>
+                    <p>We check the glass, photos, and measurements first.</p>
+                </article>
+            </div>
+        </section>
+
+        <!-- Unsplash sources: Dominik / 8AZ_2om65TU; Sarguninder Singh / tGZB5xzWkGk; Duc Van / k7EsP4wMGyo. -->
+        <section class="res-gallery" aria-label="Residential and commercial architectural glass">
+            <div class="container">
+                <div class="res-gallery__grid">
+                    <figure>
+                        <img src="assets/architectural-modern-home.jpg"
+                            alt="Modern Southern California home with large glass doors" width="1800" height="1200"
+                            fetchpriority="high">
+                        <figcaption>Keep the light. Control the heat.</figcaption>
+                    </figure>
+                    <figure>
+                        <img src="assets/architectural-commercial-glass.jpg"
+                            alt="Commercial interior with tall sunlit glass" width="1400" height="2100" loading="lazy">
+                        <figcaption>Homes + businesses</figcaption>
+                    </figure>
+                    <figure>
+                        <img src="assets/architectural-private-glass.jpg"
+                            alt="Modern windows with a clean privacy treatment" width="1400" height="933" loading="lazy">
+                        <figcaption>Privacy without heavy curtains</figcaption>
+                    </figure>
+                </div>
+            </div>
+        </section>
+
+        <section class="res-socal" id="home-film-benefits">
+            <div class="container">
+                <h2>A cooler, more private way to live in <span>the best place in the world.</span></h2>
+                <p>Obsidian installs residential and commercial window film across Southern California for heat,
+                    glare, privacy, security, UV protection, and decorative glass.</p>
+            </div>
+        </section>
+
+        <section class="res-section res-section--light" id="what-to-send">
             <div class="container">
                 <div class="res-section__header">
-                    <span class="res-section__eyebrow">Why properties use architectural film</span>
-                    <h2>Most spaces do not need darker. They need smarter glass.</h2>
-                    <p>Architectural film should solve a real comfort, privacy, security, or design problem without
-                        making a home or business feel cheap, closed-off, or over-dark.</p>
+                    <h2>See it first. Price it right.</h2>
+                    <p>Architectural film is not an instant phone quote. We help you compare free samples, then review
+                        the glass and project details before we estimate the work.</p>
                 </div>
-                <div class="res-grid">
-                    <article class="res-card">
-                        <span class="res-card__label">Heat</span>
-                        <h3>Hot Rooms</h3>
-                        <p>For west-facing rooms, upstairs bedrooms, large sliders, and glass that turns the room into a
-                            heat trap.</p>
+                <div class="res-process">
+                    <article class="res-step">
+                        <div class="res-step__num">1</div>
+                        <h3>Show us the space</h3>
+                        <p>Book a free consultation, or send photos, window count, and rough measurements.</p>
                     </article>
-                    <article class="res-card">
-                        <span class="res-card__label">Glare</span>
-                        <h3>Screen Glare</h3>
-                        <p>For living rooms, offices, TVs, monitors, and bright rooms where blinds are always closed.</p>
+                    <article class="res-step">
+                        <div class="res-step__num">2</div>
+                        <h3>See and keep samples</h3>
+                        <p>Compare film on your real glass. Keep the free samples that feel right.</p>
                     </article>
-                    <article class="res-card">
-                        <span class="res-card__label">Privacy</span>
-                        <h3>Street-Facing Glass</h3>
-                        <p>For windows near sidewalks, neighbors, entryways, or rooms where daytime privacy matters.</p>
+                    <article class="res-step">
+                        <div class="res-step__num">3</div>
+                        <h3>Get the estimate</h3>
+                        <p>We review glass type, coatings, access, measurements, and your goal before pricing.</p>
                     </article>
                 </div>
             </div>
@@ -853,11 +1263,9 @@
         <section class="res-section res-section--dark" id="residential-diagnostic">
             <div class="container">
                 <div class="res-section__header">
-                    <span class="res-section__eyebrow">Project intake</span>
-                    <h2>Get the right estimate path in under a minute.</h2>
-                    <p>Architectural film cannot be priced accurately from a phone description alone. Start with a
-                        free consultation, or send the measurements, photos, glass details, and project goals needed
-                        for a rough estimate.</p>
+                    <h2>Tell us what you need.</h2>
+                    <p>This is not an instant quote. Answer three quick questions, then book a free consultation or
+                        send the photos and measurements needed for a rough estimate.</p>
                 </div>
                 <div class="res-diagnostic" data-residential-diagnostic>
                     <div class="res-diagnostic__panel">
@@ -884,126 +1292,26 @@
             </div>
         </section>
 
-        <section class="res-section res-section--warm" id="what-to-send">
-            <div class="container">
-                <div class="res-section__header">
-                    <span class="res-section__eyebrow">What to send</span>
-                    <h2>Good inputs make a useful estimate.</h2>
-                    <p>Residential and commercial film pricing depends on real glass conditions. These details help us
-                        recommend the right film and prepare a responsible rough estimate.</p>
-                </div>
-                <div class="res-process">
-                    <article class="res-step">
-                        <div class="res-step__num">1</div>
-                        <h3>Send Window Photos</h3>
-                        <p>Wide shot of the room, close-up of the frame, and a photo from outside if privacy matters.</p>
-                    </article>
-                    <article class="res-step">
-                        <div class="res-step__num">2</div>
-                        <h3>Name The Goal</h3>
-                        <p>Heat reduction, privacy, security, decorative film, glare, UV protection, or a mix.</p>
-                    </article>
-                    <article class="res-step">
-                        <div class="res-step__num">3</div>
-                        <h3>Measure &amp; Identify</h3>
-                        <p>Window count, approximate dimensions, property type, and glass type or coatings if known.</p>
-                    </article>
-                    <article class="res-step">
-                        <div class="res-step__num">4</div>
-                        <h3>Review The Rough Estimate</h3>
-                        <p>Once the glass and project goal are clear, we can outline a realistic film and pricing path.</p>
-                    </article>
-                </div>
-            </div>
-        </section>
-
-        <section class="res-section res-section--light" id="comfort-privacy">
-            <div class="container">
-                <div class="res-section__header">
-                    <span class="res-section__eyebrow">Performance without the cave</span>
-                    <h2>A premium property should still feel open and intentional.</h2>
-                    <p>The goal is to improve the space, not make the glass look improvised or over-dark. The film
-                        recommendation should match the room, the glass, and the look of the property.</p>
-                </div>
-                <div class="res-comparison">
-                    <div class="res-comparison__side">
-                        <span class="res-comparison__tag">Before</span>
-                        <h3>Too much sun control by closing everything.</h3>
-                        <p>Blinds down, rooms still hot, screens washed out, furniture taking UV exposure.</p>
-                    </div>
-                    <div class="res-comparison__side">
-                        <span class="res-comparison__tag">After</span>
-                        <h3>Better glass performance without hiding the room.</h3>
-                        <p>Cleaner light, less glare, more comfort, and a film choice that fits the home.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section class="res-section res-section--dark" id="residential-fit">
-            <div class="container">
-                <div class="res-section__header">
-                    <span class="res-section__eyebrow">Projects that fit</span>
-                    <h2>Built for Orange County properties with real glass problems.</h2>
-                </div>
-                <div class="res-grid">
-                    <article class="res-card res-card--dark">
-                        <span class="res-card__label">Large Glass</span>
-                        <h3>Sliders &amp; View Windows</h3>
-                        <ul>
-                            <li>Rooms that get direct afternoon sun</li>
-                            <li>Homes where blinds stay closed all day</li>
-                            <li>Living rooms, kitchens, and offices</li>
-                        </ul>
-                    </article>
-                    <article class="res-card res-card--dark">
-                        <span class="res-card__label">Privacy</span>
-                        <h3>Street-Facing Rooms</h3>
-                        <ul>
-                            <li>Front rooms near sidewalks or neighbors</li>
-                            <li>Daytime privacy without heavy curtains</li>
-                            <li>Glass that needs a cleaner finished look</li>
-                        </ul>
-                    </article>
-                    <article class="res-card res-card--dark">
-                        <span class="res-card__label">Protection</span>
-                        <h3>Interior Fading</h3>
-                        <ul>
-                            <li>Furniture, floors, and artwork exposed to sun</li>
-                            <li>Rooms with harsh UV and glare</li>
-                            <li>Homeowners who want comfort plus preservation</li>
-                        </ul>
-                    </article>
-                </div>
-            </div>
-        </section>
-
         <section class="res-section res-section--warm" id="home-film-faq">
             <div class="container">
                 <div class="res-section__header res-section__header--center">
-                    <span class="res-section__eyebrow">FAQ</span>
-                    <h2>Architectural film questions before an estimate.</h2>
+                    <h2>Before you choose a film.</h2>
                 </div>
                 <div class="res-faq">
                     <details>
-                        <summary>Is this the same as car window tint?</summary>
-                        <p>No. Residential and commercial film is scoped around glass size, type, coatings, access,
-                            sun exposure, project goals, and the final look of the property.</p>
+                        <summary>Can I get a price over the phone?</summary>
+                        <p>Not right away. We need photos, measurements, window count, glass details, and your goal
+                            before we can prepare a useful rough estimate.</p>
                     </details>
                     <details>
-                        <summary>Can it help with hot rooms?</summary>
-                        <p>Yes, heat reduction is one of the main reasons homeowners ask for window film, especially for
-                            west-facing rooms, sliders, and upstairs rooms.</p>
+                        <summary>Can I see the film before I choose?</summary>
+                        <p>Yes. We show you free film samples on your real glass. You can keep your favorites and compare
+                            them in the space.</p>
                     </details>
                     <details>
-                        <summary>Will the glass look too dark?</summary>
-                        <p>It does not have to. The point is choosing a film that solves the project goal while keeping
-                            the property looking clean and intentional.</p>
-                    </details>
-                    <details>
-                        <summary>Can I book this directly on Square?</summary>
-                        <p>Not yet. Architectural film should be scoped after a free consultation or review of photos,
-                            measurements, glass details, and project goals.</p>
+                        <summary>What should I send for an estimate?</summary>
+                        <p>Send wide and close photos, rough measurements, window count, property type, known glass or
+                            coating details, and whether you want heat control, privacy, security, or decorative film.</p>
                     </details>
                 </div>
             </div>
@@ -1012,14 +1320,12 @@
         <section class="res-final-cta">
             <div class="container">
                 <div class="res-final-cta__box">
-                    <span class="res-card__label">Ready to scope the project?</span>
-                    <h2>Choose a free consultation or send the project details.</h2>
-                    <p>For a rough estimate, send measurements, photos, window count, any known glass or coating
-                        details, and what you want the film to accomplish. If you are not sure what to collect, start
-                        with a free consultation.</p>
+                    <h2>Start with the glass. Not a guess.</h2>
+                    <p>Book a free consultation to see samples, or send your photos and measurements for a rough
+                        estimate.</p>
                     <div class="res-cta-row">
                         <a href="tel:7146007134" class="brutalist-btn brutalist-btn--primary brutalist-btn--large"
-                            data-residential-cta="final_call">Schedule Free Consultation</a>
+                            data-residential-cta="final_call">Book Free Consultation</a>
                         <a href="sms:7146007134?&body=Hi%20Obsidian%20Autoworks%2C%20I%27m%20looking%20for%20residential%20or%20commercial%20window%20film.%20I%20can%20send%20measurements%2C%20photos%2C%20window%20count%2C%20glass%20details%2C%20and%20my%20project%20goals%20for%20a%20rough%20estimate."
                             class="brutalist-btn brutalist-btn--large" data-residential-cta="final_text">Send Project
                             Details</a>
@@ -1034,7 +1340,7 @@
             <div class="footer__main">
                 <div class="footer__brand">
                     <span class="footer__logo">OBSIDIAN<span>AUTOWORKS</span></span>
-                    <p>Mobile Car Window Tint Service</p>
+                    <p>Automotive + Architectural Window Film</p>
                     <div class="footer__cities">
                         <div class="footer__cities-title">Service Areas</div>
                         <div class="footer__cities-list">
@@ -1110,7 +1416,7 @@
                     eyebrow: 'Estimate path',
                     question: 'How would you like to start?',
                     options: [
-                        ['Free consultation', 'Best if you need help identifying the glass or project requirements'],
+                        ['Free consultation', 'See free film samples in your space and keep your favorites'],
                         ['Send project details', 'Best if you have measurements, photos, window count, and glass information'],
                         ['Need measurement help', 'Start with a consultation before trying to estimate the scope'],
                         ['Not ready yet', 'Save the setup and ask questions first']
@@ -1147,7 +1453,7 @@
                 summaryGlass.textContent = state.glass || 'Not selected yet';
                 summaryProperty.textContent = state.property || 'Not selected yet';
                 if (state.problem || state.glass || state.property) {
-                    summaryTitle.textContent = 'Good. Choose a consultation or send the full project details.';
+                    summaryTitle.textContent = 'Good. Book a consultation or send the project details.';
                 }
             };
 
@@ -1167,12 +1473,12 @@
                 bar.style.width = '100%';
                 body.innerHTML = `
                     <div class="res-diagnostic__hint">Recommended next step</div>
-                    <h3>Choose a consultation or send the project details.</h3>
+                    <h3>See samples or send the project details.</h3>
                     <p class="res-fineprint" style="color: rgba(255,255,255,0.72); margin: 0 0 1.35rem;">
-                        A rough estimate needs measurements, photos, window count, glass details, and the result you want. If those are unclear, begin with a free consultation.
+                        A rough estimate comes after we review measurements, photos, window count, glass details, and your goal. Book a free consultation if you want to see and keep film samples first.
                     </p>
                     <div class="res-cta-row">
-                        <a href="tel:7146007134" class="brutalist-btn brutalist-btn--primary" data-res-final-call>Schedule Free Consultation</a>
+                        <a href="tel:7146007134" class="brutalist-btn brutalist-btn--primary" data-res-final-call>Book Free Consultation</a>
                         <a href="${buildTextHref()}" class="brutalist-btn" data-res-final-text>Send Project Details</a>
                     </div>
                     <div class="res-diagnostic__actions">
