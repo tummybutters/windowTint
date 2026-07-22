@@ -184,10 +184,52 @@ assert.ok(
 assert.ok(gtagCalls.some((call) => call[0] === 'event' && call[1] === 'vip_quiz_square_click'));
 assert.ok(gtagCalls.some((call) => call[0] === 'event' && call[1] === 'vip_quiz_call_click'));
 
+const submittedEvents = [];
+context.window.fetch = async (url, options) => {
+  submittedEvents.push({ url, options });
+  return { ok: true };
+};
+
+const consultationRequest = await tracker.submitLeadEvent('residential_consultation_request', {
+  consultation_name: 'Test Homeowner',
+  consultation_phone: '7146007134',
+  consultation_city_zip: 'Irvine 92618',
+  consultation_decision_maker: 'Homeowner and decision-maker',
+  consultation_property_type: 'Single-family home',
+  consultation_project_size: 'Several rooms',
+  consultation_goal: 'Heat reduction',
+  consultation_preferred_date: '2026-07-23',
+  consultation_preferred_time: 'Morning',
+  consultation_pricing_acknowledgement: 'acknowledged'
+}, {
+  lead: { phone: '7146007134' },
+  analyticsPayload: {
+    page_type: 'residential_window_film',
+    consultation_goal: 'Heat reduction'
+  }
+});
+
+assert.equal(consultationRequest.ok, true, 'a persisted consultation request reports success');
+assert.equal(submittedEvents.length, 1, 'a consultation request posts to the first-party endpoint once');
+assert.equal(submittedEvents[0].url, '/api/lead-events');
+const submittedBody = JSON.parse(submittedEvents[0].options.body);
+assert.equal(submittedBody.event_name, 'residential_consultation_request');
+assert.equal(submittedBody.lead.phone, '7146007134');
+assert.equal(submittedBody.payload.consultation_name, 'Test Homeowner');
+assert.ok(
+  gtagCalls.some((call) => call[0] === 'event' && call[1] === 'residential_consultation_request'),
+  'a persisted consultation request emits a GA4 event'
+);
+assert.ok(
+  !gtagCalls.some((call) => call[0] === 'conversion' && call[2].consultation_name === 'Test Homeowner'),
+  'a consultation request never becomes an Ads conversion'
+);
+
 const exported = JSON.parse(tracker.exportEventLog());
 assert.equal(exported.lead.session_id, lead.session_id);
 assert.ok(exported.events.some((event) => event.event_name === 'vip_quiz_answer'));
 assert.ok(exported.events.some((event) => event.event_name === 'square_booking_click'));
 assert.ok(exported.events.some((event) => event.event_name === 'vip_quiz_square_click'));
+assert.ok(exported.events.some((event) => event.event_name === 'residential_consultation_request'));
 
 console.log('lead-tracking smoke test passed');

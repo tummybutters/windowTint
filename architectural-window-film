@@ -6,12 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Residential &amp; Commercial Window Film Orange County | Obsidian Autoworks</title>
     <meta name="description"
-        content="Residential and commercial window film in Orange County. Book a free consultation, see and keep film samples, or send project details for a rough estimate.">
+        content="Residential and commercial window film in Orange County. Request an on-site consultation to review your glass, see film samples, and receive project-specific pricing.">
     <link rel="canonical" href="https://www.obsidianautoworksoc.com/architectural-window-film">
     <link rel="icon" type="image/png" href="favicon.png">
     <meta property="og:title" content="Residential &amp; Commercial Window Film Orange County | Obsidian Autoworks">
     <meta property="og:description"
-        content="Cooler, more private spaces for Orange County homes and businesses. See and keep free film samples before your project is estimated.">
+        content="Cooler, more private spaces for Orange County homes and businesses. Request an on-site consultation to review your glass and see film samples.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://www.obsidianautoworksoc.com/architectural-window-film">
     <meta property="og:image" content="https://www.obsidianautoworksoc.com/assets/architectural-modern-home.jpg">
@@ -27,7 +27,7 @@
         },
         "areaServed": "Orange County, CA",
         "serviceType": "Residential and commercial architectural window film",
-        "description": "Residential and commercial window film with free consultations, take-home film samples, and project-specific estimates for heat rejection, glare reduction, privacy, security, decorative applications, and UV protection."
+        "description": "Residential and commercial window film with on-site consultations, film samples, and project-specific pricing after an in-person glass and project assessment."
     }
     </script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -1010,6 +1010,87 @@
             scroll-margin-top: 88px;
         }
 
+        .res-consultation-form {
+            max-width: 920px;
+            margin: 0 auto;
+            padding: 1.5rem;
+            border: 3px solid var(--white);
+            background: rgba(255, 255, 255, 0.06);
+        }
+
+        .res-consultation-form__grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 1rem;
+        }
+
+        .res-form-field {
+            display: grid;
+            gap: 0.45rem;
+        }
+
+        .res-form-field--full {
+            grid-column: 1 / -1;
+        }
+
+        .res-form-field label,
+        .res-form-field legend {
+            color: rgba(255, 255, 255, 0.92);
+            font-size: 0.78rem;
+            font-weight: 900;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+        }
+
+        .res-form-field input,
+        .res-form-field select {
+            width: 100%;
+            min-height: 48px;
+            padding: 0.7rem 0.8rem;
+            border: 2px solid rgba(255, 255, 255, 0.72);
+            border-radius: 0;
+            background: var(--white);
+            color: var(--black);
+            font: inherit;
+        }
+
+        .res-form-field input:focus,
+        .res-form-field select:focus,
+        .res-form-check input:focus-visible {
+            outline: 3px solid var(--sunset-glow);
+            outline-offset: 2px;
+        }
+
+        .res-form-check {
+            display: flex;
+            gap: 0.65rem;
+            align-items: flex-start;
+            margin-top: 1.25rem;
+            color: rgba(255, 255, 255, 0.9);
+            line-height: 1.45;
+        }
+
+        .res-form-check input {
+            width: 1.15rem;
+            height: 1.15rem;
+            margin-top: 0.15rem;
+            accent-color: var(--sunset-coral);
+        }
+
+        .res-form-actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            align-items: center;
+            margin-top: 1.25rem;
+        }
+
+        .res-form-status {
+            min-height: 1.5rem;
+            color: rgba(255, 255, 255, 0.9);
+            font-weight: 700;
+        }
+
         .res-process {
             grid-template-columns: repeat(3, minmax(0, 1fr));
         }
@@ -1087,6 +1168,14 @@
                 max-width: 34ch;
             }
 
+            .res-consultation-form__grid {
+                grid-template-columns: 1fr;
+            }
+
+            .res-form-field--full {
+                grid-column: auto;
+            }
+
             .res-gallery {
                 padding: 1.25rem 0 2.25rem;
             }
@@ -1159,7 +1248,7 @@
                 <a href="/#contact">Contact</a>
             </div>
             <div class="nav__actions">
-                <a href="#residential-diagnostic" class="brutalist-btn brutalist-btn--accent">Send Details</a>
+                <a href="#residential-consultation" class="brutalist-btn brutalist-btn--accent">Request A Visit</a>
                 <a href="tel:7146007134" class="brutalist-btn brutalist-btn--outline">(714) 600-7134</a>
             </div>
         </div>
@@ -1173,10 +1262,10 @@
                 <p class="res-hero__copy">Cooler, more private spaces for people who live in the best place in the
                     world.</p>
                 <div class="res-hero__actions">
-                    <a href="tel:7146007134" class="brutalist-btn brutalist-btn--primary brutalist-btn--large"
-                        data-residential-cta="hero_call">Book Free Consultation</a>
-                    <a href="#residential-diagnostic" class="brutalist-btn brutalist-btn--outline brutalist-btn--large"
-                        data-residential-cta="hero_quiz">Send Project Details</a>
+                    <a href="#residential-consultation" class="brutalist-btn brutalist-btn--primary brutalist-btn--large"
+                        data-residential-cta="hero_request">Request An On-Site Consultation</a>
+                    <a href="tel:7146007134" class="brutalist-btn brutalist-btn--outline brutalist-btn--large"
+                        data-residential-cta="hero_call">Call To Schedule A Visit</a>
                 </div>
             </div>
         </header>
@@ -1195,8 +1284,8 @@
                 </article>
                 <article>
                     <span>03</span>
-                    <strong>Estimate after review</strong>
-                    <p>We check the glass, photos, and measurements first.</p>
+                    <strong>Pricing after assessment</strong>
+                    <p>We inspect the glass and project in person before pricing.</p>
                 </article>
             </div>
         </section>
@@ -1233,62 +1322,125 @@
             </div>
         </section>
 
-        <section class="res-section res-section--light" id="what-to-send">
+        <section class="res-section res-section--light" id="how-it-works">
             <div class="container">
                 <div class="res-section__header">
                     <h2>See it first. Price it right.</h2>
-                    <p>Architectural film is not an instant phone quote. We help you compare free samples, then review
-                        the glass and project details before we estimate the work.</p>
+                    <p>Architectural film is not an instant phone quote. We inspect your glass in person, show samples,
+                        and assess the project before pricing the work.</p>
                 </div>
                 <div class="res-process">
                     <article class="res-step">
                         <div class="res-step__num">1</div>
-                        <h3>Show us the space</h3>
-                        <p>Book a free consultation, or send photos, window count, and rough measurements.</p>
+                        <h3>Request a visit</h3>
+                        <p>Tell us where the project is and when you would prefer an on-site consultation.</p>
                     </article>
                     <article class="res-step">
                         <div class="res-step__num">2</div>
-                        <h3>See and keep samples</h3>
-                        <p>Compare film on your real glass. Keep the free samples that feel right.</p>
+                        <h3>Review the glass</h3>
+                        <p>We inspect the space, discuss your goals, and show the film options that fit.</p>
                     </article>
                     <article class="res-step">
                         <div class="res-step__num">3</div>
-                        <h3>Get the estimate</h3>
-                        <p>We review glass type, coatings, access, measurements, and your goal before pricing.</p>
+                        <h3>Receive project pricing</h3>
+                        <p>Pricing follows the on-site glass and project assessment.</p>
                     </article>
                 </div>
             </div>
         </section>
 
-        <section class="res-section res-section--dark" id="residential-diagnostic">
+        <section class="res-section res-section--dark" id="residential-consultation">
             <div class="container">
                 <div class="res-section__header">
-                    <h2>Tell us what you need.</h2>
-                    <p>This is not an instant quote. Answer three quick questions, then book a free consultation or
-                        send the photos and measurements needed for a rough estimate.</p>
+                    <h2>Request an on-site consultation.</h2>
+                    <p>We will follow up to confirm a visit. Pricing is provided after we assess your glass and project in person.</p>
                 </div>
-                <div class="res-diagnostic" data-residential-diagnostic>
-                    <div class="res-diagnostic__panel">
-                        <div class="res-diagnostic__top">
-                            <span data-res-count>Step 1 / 3</span>
-                            <span>Project Intake</span>
+                <form id="residential-consultation-form" class="res-consultation-form" data-residential-consultation-form>
+                    <div class="res-consultation-form__grid">
+                        <div class="res-form-field">
+                            <label for="consultation-name">Name</label>
+                            <input id="consultation-name" name="consultation_name" type="text" autocomplete="name" required>
                         </div>
-                        <div class="res-diagnostic__bar" aria-hidden="true"><span data-res-bar></span></div>
-                        <div class="res-diagnostic__body" data-res-body></div>
+                        <div class="res-form-field">
+                            <label for="consultation-phone">Phone</label>
+                            <input id="consultation-phone" name="consultation_phone" type="tel" autocomplete="tel" inputmode="tel" required>
+                        </div>
+                        <div class="res-form-field">
+                            <label for="consultation-city-zip">City or ZIP</label>
+                            <input id="consultation-city-zip" name="consultation_city_zip" type="text" autocomplete="postal-code" required>
+                        </div>
+                        <div class="res-form-field">
+                            <label for="consultation-decision-maker">Homeowner or decision-maker status</label>
+                            <select id="consultation-decision-maker" name="consultation_decision_maker" required>
+                                <option value="">Select one</option>
+                                <option>Homeowner and decision-maker</option>
+                                <option>Decision-maker for the property</option>
+                                <option>Renter with owner participation</option>
+                                <option>Not sure yet</option>
+                            </select>
+                        </div>
+                        <div class="res-form-field">
+                            <label for="consultation-property-type">Property type</label>
+                            <select id="consultation-property-type" name="consultation_property_type" required>
+                                <option value="">Select one</option>
+                                <option>Single-family home</option>
+                                <option>Condo or townhome</option>
+                                <option>Apartment or rental</option>
+                                <option>Storefront</option>
+                                <option>Office or commercial</option>
+                                <option>Other</option>
+                            </select>
+                        </div>
+                        <div class="res-form-field">
+                            <label for="consultation-project-size">Approximate project size</label>
+                            <select id="consultation-project-size" name="consultation_project_size" required>
+                                <option value="">Select one</option>
+                                <option>One room or a few windows</option>
+                                <option>Several rooms</option>
+                                <option>Whole home</option>
+                                <option>Large panes or sliders</option>
+                                <option>Not sure</option>
+                            </select>
+                        </div>
+                        <div class="res-form-field">
+                            <label for="consultation-goal">Main project goal</label>
+                            <select id="consultation-goal" name="consultation_goal" required>
+                                <option value="">Select one</option>
+                                <option>Heat reduction</option>
+                                <option>Glare reduction</option>
+                                <option>Privacy</option>
+                                <option>UV protection</option>
+                                <option>Security or safety</option>
+                                <option>Decorative glass</option>
+                                <option>Not sure</option>
+                            </select>
+                        </div>
+                        <div class="res-form-field">
+                            <label for="consultation-date">Preferred consultation date</label>
+                            <input id="consultation-date" name="consultation_preferred_date" type="date" required>
+                        </div>
+                        <div class="res-form-field res-form-field--full">
+                            <label for="consultation-time">Preferred consultation time</label>
+                            <select id="consultation-time" name="consultation_preferred_time" required>
+                                <option value="">Select one</option>
+                                <option>Morning</option>
+                                <option>Midday</option>
+                                <option>Afternoon</option>
+                                <option>Evening</option>
+                                <option>Flexible</option>
+                            </select>
+                        </div>
                     </div>
-                    <aside class="res-diagnostic__summary">
-                        <span class="res-card__label">Project Summary</span>
-                        <h3 data-res-summary-title>Tell us what the glass needs to accomplish.</h3>
-                        <div class="res-summary-list">
-                            <div><span>Goal</span><strong data-res-summary-problem>Not selected yet</strong></div>
-                            <div><span>Property / Glass</span><strong data-res-summary-glass>Not selected yet</strong></div>
-                            <div><span>Next Step</span><strong data-res-summary-property>Not selected yet</strong></div>
-                        </div>
-                        <p class="res-fineprint">For a rough estimate, include photos, approximate measurements, window
-                            count, property type, and any glass or coating information you have. If those details are
-                            unclear, schedule a free consultation first.</p>
-                    </aside>
-                </div>
+                    <label class="res-form-check" for="consultation-pricing-acknowledgement">
+                        <input id="consultation-pricing-acknowledgement" name="consultation_pricing_acknowledgement" type="checkbox" value="acknowledged" required>
+                        <span>I understand pricing follows an on-site assessment of the glass and project.</span>
+                    </label>
+                    <div class="res-form-actions">
+                        <button class="brutalist-btn brutalist-btn--primary" type="submit">Request An On-Site Consultation</button>
+                        <a href="tel:7146007134" class="brutalist-btn brutalist-btn--outline" data-residential-cta="form_call">Call To Schedule A Visit</a>
+                    </div>
+                    <p class="res-form-status" data-residential-consultation-status role="status" aria-live="polite"></p>
+                </form>
             </div>
         </section>
 
@@ -1300,8 +1452,7 @@
                 <div class="res-faq">
                     <details>
                         <summary>Can I get a price over the phone?</summary>
-                        <p>Not right away. We need photos, measurements, window count, glass details, and your goal
-                            before we can prepare a useful rough estimate.</p>
+                        <p>Pricing follows an on-site assessment. We inspect the glass, discuss your goals, and review the project before providing pricing.</p>
                     </details>
                     <details>
                         <summary>Can I see the film before I choose?</summary>
@@ -1309,9 +1460,8 @@
                             them in the space.</p>
                     </details>
                     <details>
-                        <summary>What should I send for an estimate?</summary>
-                        <p>Send wide and close photos, rough measurements, window count, property type, known glass or
-                            coating details, and whether you want heat control, privacy, security, or decorative film.</p>
+                        <summary>What happens during the consultation?</summary>
+                        <p>We review the glass, access, project size, and your goals in person, then provide project-specific pricing.</p>
                     </details>
                 </div>
             </div>
@@ -1321,14 +1471,11 @@
             <div class="container">
                 <div class="res-final-cta__box">
                     <h2>Start with the glass. Not a guess.</h2>
-                    <p>Book a free consultation to see samples, or send your photos and measurements for a rough
-                        estimate.</p>
+                    <p>Request an on-site consultation to review your glass, see samples, and receive pricing after the assessment.</p>
                     <div class="res-cta-row">
-                        <a href="tel:7146007134" class="brutalist-btn brutalist-btn--primary brutalist-btn--large"
-                            data-residential-cta="final_call">Book Free Consultation</a>
-                        <a href="sms:7146007134?&body=Hi%20Obsidian%20Autoworks%2C%20I%27m%20looking%20for%20residential%20or%20commercial%20window%20film.%20I%20can%20send%20measurements%2C%20photos%2C%20window%20count%2C%20glass%20details%2C%20and%20my%20project%20goals%20for%20a%20rough%20estimate."
-                            class="brutalist-btn brutalist-btn--large" data-residential-cta="final_text">Send Project
-                            Details</a>
+                        <a href="#residential-consultation" class="brutalist-btn brutalist-btn--primary brutalist-btn--large"
+                            data-residential-cta="final_request">Request An On-Site Consultation</a>
+                        <a href="tel:7146007134" class="brutalist-btn brutalist-btn--large" data-residential-cta="final_call">Call To Schedule A Visit</a>
                     </div>
                 </div>
             </div>
@@ -1378,194 +1525,85 @@
 
     <script>
         (function () {
-            const phone = '7146007134';
-            const state = {
-                problem: '',
-                glass: '',
-                property: ''
-            };
-            const steps = [
-                {
-                    key: 'problem',
-                    eyebrow: 'Start with the problem',
-                    question: 'What should the film accomplish first?',
-                    options: [
-                        ['Heat', 'Rooms get too hot when the sun hits the glass'],
-                        ['Glare', 'TV, monitor, or living spaces are too bright'],
-                        ['Privacy', 'Street-facing, customer-facing, or neighbor-facing windows'],
-                        ['Security', 'Added glass retention or safety is the priority'],
-                        ['Decorative', 'A frosted, branded, or design-forward finish'],
-                        ['UV protection', 'Furniture, floors, products, or artwork get too much sun'],
-                        ['Not sure', 'You want Kislev to recommend the right path']
-                    ]
-                },
-                {
-                    key: 'glass',
-                    eyebrow: 'Scope the property',
-                    question: 'What kind of property or glass are we looking at?',
-                    options: [
-                        ['Home', 'One room, several rooms, or a whole-home project'],
-                        ['Storefront', 'Customer-facing glass, doors, or display windows'],
-                        ['Office / commercial', 'Interior or exterior glass at a business property'],
-                        ['Large panes / sliders', 'Patio doors, view glass, or oversized windows'],
-                        ['Custom / not sure', 'Specialty glass, high access, mixed goals, or unknown construction']
-                    ]
-                },
-                {
-                    key: 'property',
-                    eyebrow: 'Estimate path',
-                    question: 'How would you like to start?',
-                    options: [
-                        ['Free consultation', 'See free film samples in your space and keep your favorites'],
-                        ['Send project details', 'Best if you have measurements, photos, window count, and glass information'],
-                        ['Need measurement help', 'Start with a consultation before trying to estimate the scope'],
-                        ['Not ready yet', 'Save the setup and ask questions first']
-                    ]
-                }
-            ];
+            const form = document.querySelector('[data-residential-consultation-form]');
+            if (!form) return;
 
-            let stepIndex = 0;
-            const root = document.querySelector('[data-residential-diagnostic]');
-            if (!root) return;
+            const status = document.querySelector('[data-residential-consultation-status]');
+            const submitButton = form.querySelector('button[type="submit"]');
+            let started = false;
 
-            const body = root.querySelector('[data-res-body]');
-            const count = root.querySelector('[data-res-count]');
-            const bar = root.querySelector('[data-res-bar]');
-            const summaryTitle = root.querySelector('[data-res-summary-title]');
-            const summaryProblem = root.querySelector('[data-res-summary-problem]');
-            const summaryGlass = root.querySelector('[data-res-summary-glass]');
-            const summaryProperty = root.querySelector('[data-res-summary-property]');
-
-            const track = (eventName, payload) => {
-                if (window.obsidianLeadTracking && typeof window.obsidianLeadTracking.trackEvent === 'function') {
-                    window.obsidianLeadTracking.trackEvent(eventName, {
-                        page_type: 'residential_window_film',
-                        residential_problem: state.problem,
-                        residential_glass: state.glass,
-                        residential_property: state.property,
-                        ...payload
-                    });
-                }
-            };
-
-            const updateSummary = () => {
-                summaryProblem.textContent = state.problem || 'Not selected yet';
-                summaryGlass.textContent = state.glass || 'Not selected yet';
-                summaryProperty.textContent = state.property || 'Not selected yet';
-                if (state.problem || state.glass || state.property) {
-                    summaryTitle.textContent = 'Good. Book a consultation or send the project details.';
-                }
-            };
-
-            const buildTextHref = () => {
-                const lines = [
-                    'Hi Obsidian Autoworks, I am looking for residential or commercial window film.',
-                    state.problem ? `Project goal: ${state.problem}` : '',
-                    state.glass ? `Property/glass scope: ${state.glass}` : '',
-                    state.property ? `Preferred next step: ${state.property}` : '',
-                    'For a rough estimate, I can send measurements, photos, window count, and any glass type or coating details I have.'
-                ].filter(Boolean);
-                return `sms:${phone}?&body=${encodeURIComponent(lines.join('\n'))}`;
-            };
-
-            const renderFinish = () => {
-                count.textContent = 'Ready';
-                bar.style.width = '100%';
-                body.innerHTML = `
-                    <div class="res-diagnostic__hint">Recommended next step</div>
-                    <h3>See samples or send the project details.</h3>
-                    <p class="res-fineprint" style="color: rgba(255,255,255,0.72); margin: 0 0 1.35rem;">
-                        A rough estimate comes after we review measurements, photos, window count, glass details, and your goal. Book a free consultation if you want to see and keep film samples first.
-                    </p>
-                    <div class="res-cta-row">
-                        <a href="tel:7146007134" class="brutalist-btn brutalist-btn--primary" data-res-final-call>Book Free Consultation</a>
-                        <a href="${buildTextHref()}" class="brutalist-btn" data-res-final-text>Send Project Details</a>
-                    </div>
-                    <div class="res-diagnostic__actions">
-                        <button class="res-back" type="button" data-res-restart>Start Over</button>
-                    </div>
-                `;
-                track('residential_quiz_finish', {});
-                body.querySelector('[data-res-final-call]').addEventListener('click', () => {
-                    track('residential_quiz_call_click', { link_url: `tel:${phone}` });
-                });
-                body.querySelector('[data-res-final-text]').addEventListener('click', () => {
-                    track('residential_quiz_text_click', { link_url: buildTextHref() });
-                });
-                body.querySelector('[data-res-restart]').addEventListener('click', () => {
-                    state.problem = '';
-                    state.glass = '';
-                    state.property = '';
-                    stepIndex = 0;
-                    track('residential_quiz_restart_click', {});
-                    updateSummary();
-                    renderStep();
+            const startConsultation = () => {
+                if (started || !window.obsidianLeadTracking) return;
+                started = true;
+                window.obsidianLeadTracking.trackEvent('residential_consultation_start', {
+                    page_type: 'residential_window_film'
                 });
             };
 
-            const renderStep = () => {
-                const step = steps[stepIndex];
-                count.textContent = `Step ${stepIndex + 1} / ${steps.length}`;
-                bar.style.width = `${((stepIndex + 1) / steps.length) * 100}%`;
-                body.innerHTML = `
-                    <div class="res-diagnostic__hint">${step.eyebrow}</div>
-                    <h3>${step.question}</h3>
-                    <div class="res-option-grid"></div>
-                    <div class="res-diagnostic__actions">
-                        ${stepIndex > 0 ? '<button class="res-back" type="button" data-res-back>Back</button>' : ''}
-                    </div>
-                `;
+            const fieldValue = (formData, name) => (formData.get(name) || '').toString().trim();
 
-                const optionGrid = body.querySelector('.res-option-grid');
-                step.options.forEach(([label, copy]) => {
-                    const button = document.createElement('button');
-                    button.type = 'button';
-                    button.className = 'res-option';
-                    button.innerHTML = `<strong>${label}</strong><span>${copy}</span>`;
-                    button.addEventListener('click', () => {
-                        state[step.key] = label;
-                        track('residential_quiz_answer', {
-                            quiz_step: step.key,
-                            quiz_answer: label
-                        });
-                        updateSummary();
-                        if (stepIndex === steps.length - 1) {
-                            renderFinish();
-                        } else {
-                            stepIndex += 1;
-                            track('residential_quiz_step_advance', {
-                                next_step: steps[stepIndex].key
-                            });
-                            renderStep();
-                        }
-                    });
-                    optionGrid.appendChild(button);
-                });
-
-                const back = body.querySelector('[data-res-back]');
-                if (back) {
-                    back.addEventListener('click', () => {
-                        stepIndex = Math.max(0, stepIndex - 1);
-                        track('residential_quiz_back_click', {
-                            next_step: steps[stepIndex].key
-                        });
-                        renderStep();
-                    });
-                }
-            };
-
+            form.addEventListener('focusin', startConsultation, { once: true });
             document.querySelectorAll('[data-residential-cta]').forEach((link) => {
                 link.addEventListener('click', () => {
-                    track('residential_cta_click', {
-                        cta_id: link.getAttribute('data-residential-cta'),
-                        link_url: link.href,
-                        link_text: (link.textContent || '').trim()
-                    });
+                    startConsultation();
+                    if (window.obsidianLeadTracking) {
+                        window.obsidianLeadTracking.trackEvent('residential_cta_click', {
+                            page_type: 'residential_window_film',
+                            cta_id: link.getAttribute('data-residential-cta'),
+                            link_url: link.href,
+                            link_text: (link.textContent || '').trim()
+                        });
+                    }
                 });
             });
 
-            renderStep();
-            updateSummary();
+            form.addEventListener('submit', async (event) => {
+                event.preventDefault();
+                startConsultation();
+                if (!form.checkValidity()) {
+                    form.reportValidity();
+                    return;
+                }
+                if (!window.obsidianLeadTracking || typeof window.obsidianLeadTracking.submitLeadEvent !== 'function') {
+                    status.textContent = 'We could not send your request. Please call to schedule a visit.';
+                    return;
+                }
+
+                const formData = new FormData(form);
+                const payload = {
+                    consultation_name: fieldValue(formData, 'consultation_name'),
+                    consultation_phone: fieldValue(formData, 'consultation_phone'),
+                    consultation_city_zip: fieldValue(formData, 'consultation_city_zip'),
+                    consultation_decision_maker: fieldValue(formData, 'consultation_decision_maker'),
+                    consultation_property_type: fieldValue(formData, 'consultation_property_type'),
+                    consultation_project_size: fieldValue(formData, 'consultation_project_size'),
+                    consultation_goal: fieldValue(formData, 'consultation_goal'),
+                    consultation_preferred_date: fieldValue(formData, 'consultation_preferred_date'),
+                    consultation_preferred_time: fieldValue(formData, 'consultation_preferred_time'),
+                    consultation_pricing_acknowledgement: fieldValue(formData, 'consultation_pricing_acknowledgement')
+                };
+
+                submitButton.disabled = true;
+                status.textContent = 'Sending your consultation request...';
+                const result = await window.obsidianLeadTracking.submitLeadEvent('residential_consultation_request', payload, {
+                    lead: { phone: payload.consultation_phone },
+                    analyticsPayload: {
+                        page_type: 'residential_window_film',
+                        consultation_property_type: payload.consultation_property_type,
+                        consultation_project_size: payload.consultation_project_size,
+                        consultation_goal: payload.consultation_goal,
+                        consultation_preferred_time: payload.consultation_preferred_time
+                    }
+                });
+
+                if (result.ok) {
+                    status.textContent = 'Request received. We will follow up to confirm your on-site consultation.';
+                    form.reset();
+                } else {
+                    status.textContent = 'We could not send your request. Please call to schedule a visit.';
+                    submitButton.disabled = false;
+                }
+            });
         })();
     </script>
     <script src="/lead-tracking.js" defer></script>

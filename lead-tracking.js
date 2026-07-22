@@ -387,8 +387,31 @@
         }
     };
 
+    const submitFirstPartyEvent = async (event) => {
+        const endpoint = getEventEndpoint();
+        if (!endpoint || typeof window.fetch !== 'function') return false;
+
+        queuePendingEvent(event);
+        try {
+            const response = await window.fetch(endpoint, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(event),
+                keepalive: true
+            });
+            if (!response || !response.ok) return false;
+            removePendingEvent(event.event_id);
+            return true;
+        } catch (error) {
+            return false;
+        }
+    };
+
     const recordLeadEvent = (eventName, payload = {}, options = {}) => {
-        const lead = getLead();
+        const lead = {
+            ...getLead(),
+            ...(options.lead || {})
+        };
         if (options.requireAttribution && !hasAttribution(lead)) return;
 
         const event = {
@@ -406,7 +429,7 @@
         const events = getEventLog();
         events.push(event);
         setEventLog(events);
-        sendFirstPartyEvent(event);
+        if (!options.deferDelivery) sendFirstPartyEvent(event);
 
         return event;
     };
@@ -421,10 +444,8 @@
         localStorage.removeItem(STORAGE_KEYS.events);
     };
 
-    const sendAnalyticsEvent = (eventName, extra = {}, options = {}) => {
-        const lead = getLead();
-        const event = recordLeadEvent(eventName, extra, options);
-        if (!event || typeof window.gtag !== 'function') return event;
+    const sendGoogleAnalyticsEvent = (eventName, extra = {}, lead = getLead()) => {
+        if (typeof window.gtag !== 'function') return;
 
         window.gtag('event', eventName, {
             event_category: 'lead_attribution',
@@ -466,8 +487,36 @@
                 ...extra
             });
         }
+    };
+
+    const sendAnalyticsEvent = (eventName, extra = {}, options = {}) => {
+        const lead = {
+            ...getLead(),
+            ...(options.lead || {})
+        };
+        const event = recordLeadEvent(eventName, extra, { ...options, lead });
+        if (!event) return event;
+
+        sendGoogleAnalyticsEvent(eventName, options.analyticsPayload || extra, lead);
 
         return event;
+    };
+
+    const submitLeadEvent = async (eventName, payload = {}, options = {}) => {
+        const lead = {
+            ...getLead(),
+            ...(options.lead || {})
+        };
+        const event = recordLeadEvent(eventName, payload, {
+            ...options,
+            lead,
+            deferDelivery: true
+        });
+        if (!event) return { ok: false, event: null };
+
+        const ok = await submitFirstPartyEvent(event);
+        if (ok) sendGoogleAnalyticsEvent(eventName, options.analyticsPayload || {}, lead);
+        return { ok, event };
     };
 
     let websiteCallTrackingConfigured = false;
@@ -604,6 +653,7 @@
         flushPendingEvents,
         recordEvent: recordLeadEvent,
         trackEvent: sendAnalyticsEvent,
+        submitLeadEvent,
         configureWebsiteCallTracking,
         decorateBookingTargets,
         decorateForms
