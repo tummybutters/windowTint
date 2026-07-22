@@ -25,6 +25,7 @@ const createStorage = () => {
 const localStorage = createStorage();
 const gtagCalls = [];
 const beacons = [];
+let idCounter = 0;
 
 const fakeDocument = {
   readyState: 'complete',
@@ -69,7 +70,8 @@ const context = {
     },
     crypto: {
       randomUUID() {
-        return '00000000-0000-4000-8000-000000000001';
+        idCounter += 1;
+        return `00000000-0000-4000-8000-${String(idCounter).padStart(12, '0')}`;
       }
     },
     dataLayer: [],
@@ -105,7 +107,24 @@ assert.ok(tracker, 'tracker is exposed on window');
 assert.equal(typeof tracker.getLead, 'function');
 assert.equal(typeof tracker.trackEvent, 'function');
 assert.equal(typeof tracker.getEventLog, 'function');
+assert.equal(typeof tracker.getPendingEvents, 'function');
+assert.equal(typeof tracker.flushPendingEvents, 'function');
 assert.equal(typeof tracker.exportEventLog, 'function');
+assert.equal(typeof tracker.configureWebsiteCallTracking, 'function');
+
+const websiteCallConfigs = gtagCalls.filter(
+  (call) => call[0] === 'config' && call[1] === 'AW-17846304809/060ZCNixtdQcEKmA5L1C'
+);
+assert.equal(websiteCallConfigs.length, 1, 'website call replacement is configured exactly once');
+assert.equal(websiteCallConfigs[0][2].phone_conversion_number, '(714) 600-7134');
+assert.equal(tracker.configureWebsiteCallTracking(), false, 'repeat configuration is deduplicated');
+assert.equal(
+  gtagCalls.filter(
+    (call) => call[0] === 'config' && call[1] === 'AW-17846304809/060ZCNixtdQcEKmA5L1C'
+  ).length,
+  1,
+  'manual retry does not duplicate website call configuration'
+);
 
 const lead = tracker.getLead();
 assert.equal(lead.gclid, 'GCLID123');
@@ -132,6 +151,7 @@ assert.equal(answerEvent.payload.answer, 'tesla');
 assert.equal(answerEvent.page_path, '/vip-booking');
 assert.ok(gtagCalls.some((call) => call[0] === 'event' && call[1] === 'vip_quiz_answer'));
 assert.ok(beacons.some((beacon) => beacon.url === '/api/lead-events'));
+assert.ok(tracker.getPendingEvents().some((entry) => entry.event.event_id === answerEvent.event_id));
 
 tracker.trackEvent('square_booking_click', {
   link_url: 'https://book.squareup.com/appointments/py2a8n8lsuxp5n/location/LWC5SDBDX3R99/services/test',
@@ -152,10 +172,10 @@ tracker.trackEvent('vip_quiz_call_click', {
 });
 
 const conversionCalls = gtagCalls.filter((call) => call[0] === 'event' && call[1] === 'conversion');
-assert.equal(conversionCalls.length, 2, 'only generic Square and phone events fire Ads conversions');
+assert.equal(conversionCalls.length, 1, 'only the diagnostic phone-click event fires an Ads conversion');
 assert.ok(
-  conversionCalls.some((call) => call[2].send_to === 'AW-17846304809/3k3PCLD9u70cEKmA5L1C'),
-  'Square booking click fires the Square Ads conversion'
+  !conversionCalls.some((call) => call[2].send_to === 'AW-17846304809/3k3PCLD9u70cEKmA5L1C'),
+  'disabled Square links never fire the stale Square Ads conversion'
 );
 assert.ok(
   conversionCalls.some((call) => call[2].send_to === 'AW-17846304809/GVSvCK39u70cEKmA5L1C'),

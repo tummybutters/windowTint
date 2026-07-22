@@ -460,6 +460,12 @@
       "destination": "/window-tint-aftercare"
     }
   ],
+  "crons": [
+    {
+      "path": "/api/attribution-maintenance",
+      "schedule": "17 11 * * *"
+    }
+  ],
   "headers": [
     {
       "source": "/",

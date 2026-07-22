@@ -6,12 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>VIP Mobile Window Tinting Booking | Obsidian Autoworks</title>
     <meta name="description"
-        content="Book VIP mobile window tinting in Orange County with Obsidian Autoworks. Real customer results, ceramic film options, mobile service, and Square online booking.">
+        content="Call or text Obsidian Autoworks for VIP mobile window tinting in Orange County, or use the tint-package finder before you contact us.">
     <link rel="canonical" href="https://www.obsidianautoworksoc.com/vip-booking">
     <link rel="icon" type="image/png" href="favicon.png">
     <meta property="og:title" content="VIP Mobile Window Tinting Booking | Obsidian Autoworks">
     <meta property="og:description"
-        content="Book mobile window tinting in Orange County with real customer results, ceramic film options, and online Square appointment scheduling.">
+        content="Call or text Obsidian Autoworks for mobile window tinting in Orange County, or use the tint-package finder before you contact us.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://www.obsidianautoworksoc.com/vip-booking">
     <meta property="og:image" content="https://www.obsidianautoworksoc.com/assets/hero-sunset.png">
@@ -609,8 +609,10 @@
             <h1>Join 2,600+ <span>Satisfied Drivers</span></h1>
             <p>The highest rated mobile tint service in Orange County. We come to you.</p>
             <div class="hero__actions">
-                <a href="#vip-booking" class="brutalist-btn brutalist-btn--primary">Book VIP Slot</a>
-                <a href="tel:7146007134" class="brutalist-btn brutalist-btn--outline">Call (714) 600-7134</a>
+                <a href="tel:7146007134" data-hero-primary class="brutalist-btn brutalist-btn--primary">Call For Tint Pricing</a>
+                <a href="sms:+17146007134?body=Hi%20Obsidian%20Autoworks%2C%20I%27d%20like%20help%20booking%20mobile%20window%20tint."
+                    data-hero-secondary class="brutalist-btn brutalist-btn--outline">Text Obsidian</a>
+                <a href="#vip-booking" data-hero-quiz class="brutalist-btn brutalist-btn--outline">Find My Tint Package</a>
             </div>
         </div>
     </header>
@@ -693,15 +695,14 @@
             <div class="booking-steps__grid">
                 <div class="booking-step brutalist-card">
                     <div class="booking-step__number">1</div>
-                    <h3>Pick a Time</h3>
-                    <p>Choose a date and time slot that fits your schedule. Morning, afternoon, or evening — we're
-                        flexible.</p>
+                    <h3>Find Your Package</h3>
+                    <p>Use the quick helper below to identify the closest service and starting price for your vehicle.</p>
                 </div>
                 <div class="booking-step brutalist-card">
                     <div class="booking-step__number">2</div>
-                    <h3>Tell Us Your Vehicle</h3>
-                    <p>Share your vehicle details and the service you need. We'll confirm pricing before your
-                        appointment.</p>
+                    <h3>Call or Text Kislev</h3>
+                    <p>Your recommendation is included when you contact us, so the conversation starts with the right
+                        vehicle and glass coverage.</p>
                 </div>
                 <div class="booking-step brutalist-card">
                     <div class="booking-step__number">3</div>
@@ -716,7 +717,7 @@
     <section class="vip-booking-section" id="vip-booking">
         <div class="container">
             <div class="vip-booking-header">
-                <h2>Secure Your <span>Time Slot</span></h2>
+                <h2>Find Your <span>Tint Package</span></h2>
                 <div class="trust-badges">
                     <div class="trust-badge"><span>✓</span> Mobile Service</div>
                     <div class="trust-badge"><span>✓</span> Lifetime Warranty</div>
@@ -736,7 +737,7 @@
             </div>
 
             <div class="booking-note" style="margin-top: 2rem;">
-                <p>Deposit required to lock in your appointment. Final pricing is confirmed before your service.</p>
+                <p>Use the package finder, then call or text to confirm final pricing, location, and appointment time.</p>
             </div>
         </div>
     </section>
@@ -769,36 +770,7 @@
             const count = router.querySelector('[data-router-count]');
             const bar = router.querySelector('[data-router-bar]');
             const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-            const squareBookingUrl = 'https://app.squareup.com/appointments/book/py2a8n8lsuxp5n/LWC5SDBDX3R99/start';
-            const squareServiceBase = 'https://book.squareup.com/appointments/py2a8n8lsuxp5n/location/LWC5SDBDX3R99/services/';
-            const squareBookingEnabled = false;
-            const phoneDisplay = '(714) 600-7134';
             const smsNumber = '+17146007134';
-
-            // Keep the Square service IDs ready for when Square exposes services again.
-            const serviceBookingIds = {
-                coupe_full: 'JUN6RHUUDQW5SMYO56MZVCUH',
-                sedan_full: 'HPE2FJNY74MCHGFWRXKYZ5MQ',
-                truck_full: 'ESJYXLEGTMSTE3D6AW5HFL44',
-                coupe_sides: 'UC4S7Z4KSGJBLIOALQU6UD4M',
-                sedan_sides: '62GMDVIWKMWT4E6RFADMCUAM',
-                truck_sides: 'WNKCG235ZY23N3ONNPJ2SHYR',
-                front_sedan: '7OWRCL6JYKIRVSO7ZSBUD4D6',
-                front_truck: 'K5PYYZ4MSILSZF4Y6IVPOHHM',
-                windshield_sedan: 'UKH6P6P2G5FZEZH5JAFCZBNR',
-                windshield_truck: '26PZRLG4PMTM2MCMI63GGBPT',
-                single_window: 'TACRLG6ULGD5WIVGOTOLN3UY',
-                tesla3_full: 'JILGCI6OBYFCRVRIGGAKOY7U',
-                tesla3_sides: 'LIKZWBHDKFNVO2BQHZUOSRLA',
-                teslas_full: 'X2FR2PNRIOUEYCUIK2Z6CBEO',
-                teslas_sides: 'Q6MIKFCS2R3MWA47P4HOM32E',
-                teslas_roof: 'EAEDVGHZFCFNUX2PMBCFSYGT',
-                teslay_full: 'Q7AULCAMKOKL4OYNKGSYD4RH',
-                teslay_sides: 'JHXRL5MCLH5H3WVNBQUHJSPG',
-                teslay_roof: 'VTHEP4JD6GZLBTF6ODKPHHNL',
-                sunroof: 'HMD3ZZXWJVO6VUQEKXL2DYBT',
-                panoramic: 'VDFCYTPS6AJ2QW325DJITO62'
-            };
 
             const state = {
                 vehicle: '',
@@ -972,12 +944,6 @@
                 }
             };
 
-            Object.keys(serviceBookingIds).forEach((key) => {
-                if (services[key]) {
-                    services[key].bookingUrl = squareServiceBase + serviceBookingIds[key];
-                }
-            });
-
             const steps = {
                 vehicle: {
                     id: 'vehicle',
@@ -1138,9 +1104,7 @@
                 service_title: service ? service.title : '',
                 service_price: service ? service.price : '',
                 service_duration: service ? service.duration : '',
-                service_mode: service ? service.mode : '',
-                square_booking_url: service && service.bookingUrl && squareBookingEnabled ? service.bookingUrl : '',
-                square_booking_available: squareBookingEnabled ? 'yes' : 'no'
+                service_mode: service ? service.mode : ''
             });
 
             const buildTextHref = (service) => {
@@ -1302,19 +1266,16 @@
                 const service = resolveService();
                 const addons = getAddonLabels();
                 const isArchitectural = state.vehicle === 'architectural';
-                const canBookInSquare = service.mode === 'book' && squareBookingEnabled && service.bookingUrl;
-                const needsConfirmation = service.mode === 'quote' || hasVariableAddon() || !canBookInSquare;
+                const needsConfirmation = service.mode === 'quote' || hasVariableAddon();
                 count.textContent = 'Recommendation';
                 bar.style.width = '100%';
 
                 const notes = [
                     service.note,
                     addons.length ? `Selected add-ons: ${addons.join(', ')}.` : 'No add-ons selected.',
-                    canBookInSquare
-                        ? 'Open Square and choose this package to lock the appointment.'
-                        : isArchitectural
-                            ? 'Send the project details for review, or call to schedule a free consultation.'
-                            : 'Call or text this setup and we will lock in the right appointment.'
+                    isArchitectural
+                        ? 'Call for a consultation or text the project details for review.'
+                        : 'Call or text this setup and we will lock in the right appointment.'
                 ];
 
                 body.innerHTML = `
@@ -1322,7 +1283,7 @@
                         <div class="booking-router__summary">
                             <div class="booking-router__hint">Recommended package</div>
                             <div class="booking-router__summary-card">
-                                <div class="booking-router__summary-label">${canBookInSquare ? 'Ready to book' : 'Ready to confirm'}</div>
+                                <div class="booking-router__summary-label">Ready to confirm</div>
                                 <h3 class="booking-router__summary-title">${service.title}</h3>
                                 <div class="booking-router__price-row">
                                     <div class="booking-router__price">${service.price}</div>
@@ -1333,25 +1294,13 @@
                                 </div>
                             </div>
                             <div class="booking-router__cta-row">
-                                ${canBookInSquare
-                                    ? `<a class="brutalist-btn brutalist-btn--primary" href="${service.bookingUrl || squareBookingUrl}" data-router-book>Open Square Booking</a>`
-                                    : service.mode === 'book'
-                                        ? `<a class="brutalist-btn brutalist-btn--primary" href="tel:7146007134">Call To Book This</a>
-                                           <a class="brutalist-btn brutalist-btn--outline" href="${buildTextHref(service)}" data-router-text>Text This Setup</a>`
-                                    : `<a class="brutalist-btn brutalist-btn--primary" href="${buildTextHref(service)}" data-router-text>${isArchitectural ? 'Send Project Details' : 'Text This Setup'}</a>`}
-                                ${canBookInSquare && needsConfirmation
-                                    ? `<a class="brutalist-btn brutalist-btn--outline" href="${buildTextHref(service)}" data-router-text>Text Add-ons</a>`
-                                    : ''}
-                                ${service.mode === 'quote'
-                                    ? `<a class="brutalist-btn brutalist-btn--outline" href="tel:7146007134">${isArchitectural ? 'Schedule Free Consultation' : `Call ${phoneDisplay}`}</a>`
-                                    : ''}
+                                <a class="brutalist-btn brutalist-btn--primary" href="tel:7146007134" data-router-call>${isArchitectural ? 'Call For Consultation' : 'Call To Book This'}</a>
+                                <a class="brutalist-btn brutalist-btn--outline" href="${buildTextHref(service)}" data-router-text>${isArchitectural ? 'Text Project Details' : 'Text This Setup'}</a>
                                 <button class="booking-router__back" type="button" data-router-restart>Start Over</button>
                             </div>
-                            <p class="booking-router__fineprint">${canBookInSquare
-                                ? 'Square will handle the appointment time and deposit.'
-                                : isArchitectural
-                                    ? 'Architectural film is reviewed before pricing. Photos, measurements, window count, glass details, and the project goal help Kislev prepare a responsible rough estimate.'
-                                    : 'Your selected package is included when you call or text, so Kislev can lock the right service without guessing.'} If your setup includes removal, mobile priority, same-day timing, chrome delete, or residential window film, confirm with Kislev before locking the slot.</p>
+                            <p class="booking-router__fineprint">${isArchitectural
+                                ? 'Architectural film is reviewed before pricing. Photos, measurements, window count, glass details, and the project goal help Kislev prepare a responsible rough estimate.'
+                                : 'Your selected package is included when you call or text, so Kislev can lock the right service without guessing.'} If your setup includes removal, mobile priority, same-day timing, chrome delete, or residential window film, confirm with Kislev before locking the slot.</p>
                         </div>
                     </div>
                 `;
@@ -1367,17 +1316,6 @@
                     ...getQuizPayload(service)
                 });
 
-                const bookLink = body.querySelector('[data-router-book]');
-                if (bookLink) {
-                    bookLink.addEventListener('click', () => {
-                        track('vip_quiz_square_click', {
-                            link_url: bookLink.href,
-                            needs_confirmation: needsConfirmation ? 'yes' : 'no',
-                            ...getQuizPayload(service)
-                        });
-                    });
-                }
-
                 const textLink = body.querySelector('[data-router-text]');
                 if (textLink) {
                     textLink.addEventListener('click', () => {
@@ -1389,7 +1327,7 @@
                     });
                 }
 
-                const callLink = body.querySelector('a[href^="tel:"]');
+                const callLink = body.querySelector('[data-router-call]');
                 if (callLink) {
                     callLink.addEventListener('click', () => {
                         track('vip_quiz_call_click', {
