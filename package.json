@@ -3,6 +3,21 @@
   "private": true,
   "scripts": {
     "dev": "python3 dev_server.py",
-    "test:tracking": "node --check lead-tracking.js && node --check api/lead-events.js && node scripts/test-lead-tracking.mjs && node scripts/test-lead-events-api.mjs"
+    "db:migrate": "node scripts/migrate-attribution-db.mjs",
+    "db:prune": "node scripts/prune-attribution-data.mjs",
+    "square:webhooks": "node scripts/sync-square-webhooks.mjs",
+    "square:reconcile": "node scripts/reconcile-square-lifecycle.mjs",
+    "test:tracking": "node --check lead-tracking.js && node --check api/lead-events.js && node --check api/square-webhooks.mjs && node --check api/attribution-maintenance.js && node --check lib/lead-event-normalize.js && node --check lib/lead-event-store.js && node --check lib/square-webhooks-handler.js && node --check lib/square-webhook-normalize.js && node --check lib/square-event-store.js && node --check lib/square-webhook-subscription.js && node --check lib/square-reconcile.js && node --check lib/attribution-retention-store.js && node scripts/test-lead-tracking.mjs && node scripts/test-lead-event-retry.mjs && node scripts/test-lead-event-normalize.mjs && node scripts/test-lead-event-store.mjs && node scripts/test-lead-events-api.mjs && node scripts/test-call-first-funnel.mjs && node scripts/test-square-webhook-normalize.mjs && node scripts/test-square-event-store.mjs && node scripts/test-square-webhook-subscription.mjs && node scripts/test-square-reconcile.mjs && node scripts/test-square-webhooks-api.mjs && node scripts/test-square-webhooks-vercel-adapter.mjs && node scripts/test-attribution-retention-store.mjs && node scripts/test-attribution-maintenance-api.mjs"
+  },
+  "dependencies": {
+    "@neondatabase/serverless": "^1.0.2",
+    "motion": "^11.11.13",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "square": "^45.0.1"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "^4.3.1",
+    "vite": "^5.4.0"
   }
 }

@@ -4,14 +4,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Book Mobile Window Tinting | Orange County</title>
+    <title>Call or Text for Mobile Window Tinting | Orange County</title>
     <meta name="description"
-        content="Book mobile auto window tinting in Orange County. Pick a time, confirm your vehicle, and we come to you. Fast quote, ceramic film. Book now.">
+        content="Call or text Obsidian Autoworks for mobile ceramic window tinting in Orange County, or use the tint-package quiz before you contact us.">
     <link rel="canonical" href="https://www.obsidianautoworksoc.com/booking">
     <link rel="icon" type="image/png" href="favicon.png">
-    <meta property="og:title" content="Book Mobile Window Tinting | Orange County">
+    <meta property="og:title" content="Call or Text for Mobile Window Tinting | Orange County">
     <meta property="og:description"
-        content="Book mobile auto window tinting in Orange County. Pick a time, confirm your vehicle, and we come to you. Fast quote, ceramic film. Book now.">
+        content="Call or text Obsidian Autoworks for mobile ceramic window tinting in Orange County, or use the tint-package quiz before you contact us.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://www.obsidianautoworksoc.com/booking">
     <script id="obsidian-booking-schema" type="application/ld+json">
@@ -19,22 +19,14 @@
             "@context": "https://schema.org",
             "@type": "Service",
             "@id": "https://www.obsidianautoworksoc.com/booking#mobile-window-tint-booking",
-            "name": "Mobile Window Tinting Appointment Booking",
+            "name": "Mobile Window Tinting Consultation",
             "provider": {
                     "@type": "AutomotiveBusiness",
                     "name": "Obsidian Autoworks",
                     "telephone": "+17146007134"
             },
             "areaServed": "Orange County, CA",
-            "serviceType": "Mobile ceramic automotive window tinting",
-            "potentialAction": {
-                    "@type": "ReserveAction",
-                    "target": "https://www.obsidianautoworksoc.com/booking",
-                    "result": {
-                            "@type": "Reservation",
-                            "name": "Mobile window tinting appointment"
-                    }
-            }
+            "serviceType": "Mobile ceramic automotive window tinting"
     }
     </script>
 
@@ -68,8 +60,8 @@
                 <a href="/#contact">Contact</a>
             </div>
             <div class="nav__actions">
-                <a href="/booking" class="brutalist-btn brutalist-btn--accent">Book Online</a>
-                <a href="tel:7146007134" class="brutalist-btn brutalist-btn--outline">(714) 600-7134</a>
+                <a href="tel:7146007134" class="brutalist-btn brutalist-btn--accent">Call For Pricing</a>
+                <a href="sms:+17146007134?body=Hi%20Obsidian%20Autoworks%2C%20I%27d%20like%20help%20booking%20mobile%20window%20tint." class="brutalist-btn brutalist-btn--outline">Text Us</a>
             </div>
         </div>
     </nav>
@@ -78,10 +70,10 @@
     <header class="booking-hero">
         <div class="container">
             <div class="booking-hero__content">
-                <span class="tag">ONLINE BOOKING</span>
-                <h1>Schedule Your <span>Window Tint</span> Appointment</h1>
-                <p>Book in under 60 seconds. We'll come to your home, office, or anywhere in Orange County that works
-                    for you.</p>
+                <span class="tag">MOBILE TINT IN ORANGE COUNTY</span>
+                <h1>Call or Text to <span>Book Window Tint</span></h1>
+                <p>Talk directly with Obsidian Autoworks, or use the quick package finder before you call. We come to
+                    your home, office, or another suitable location.</p>
             </div>
         </div>
     </header>
@@ -92,36 +84,41 @@
             <div class="booking-steps__grid">
                 <div class="booking-step brutalist-card">
                     <div class="booking-step__number">1</div>
-                    <h3>Pick a Time</h3>
-                    <p>Choose a date and time slot that fits your schedule. Morning, afternoon, or evening — we're
-                        flexible.</p>
+                    <h3>Choose a Starting Point</h3>
+                    <p>Call now if you know what you need, text the details, or use the package finder for a quick
+                        recommendation.</p>
                 </div>
                 <div class="booking-step brutalist-card">
                     <div class="booking-step__number">2</div>
-                    <h3>Tell Us Your Vehicle</h3>
-                    <p>Share your vehicle details and the service you need. We'll confirm pricing before your
-                        appointment.</p>
+                    <h3>Confirm the Vehicle</h3>
+                    <p>Share the year, make, model, glass coverage, and any old tint that may need removal.</p>
                 </div>
                 <div class="booking-step brutalist-card">
                     <div class="booking-step__number">3</div>
-                    <h3>We Come to You</h3>
-                    <p>Our mobile team arrives at your location with everything needed. Installation takes 1-4 hours
-                        depending on service.</p>
+                    <h3>Lock the Appointment</h3>
+                    <p>We confirm the right package, final price, location, and appointment time before service.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Square Appointments Booking -->
+    <!-- Call-first booking fallback -->
     <section class="booking-calendar">
         <div class="container">
             <div class="section-header" style="text-align: center; margin-bottom: 2rem;">
-                <h2>Select Your <span>Date & Time</span></h2>
+                <h2>Choose How You Want to <span>Start</span></h2>
             </div>
-            <p class="booking-note">💳 Deposit required to lock in your appointment. Final pricing is confirmed before your service — at your home, office, or wherever works for you.</p>
-            <!-- Start Square Appointments Embed Code -->
-            <script src='https://square.site/appointments/buyer/widget/py2a8n8lsuxp5n/LWC5SDBDX3R99.js'></script>
-            <!-- End Square Appointments Embed Code -->
+            <p class="booking-note">Calling is the fastest route. Texting works well when you want to send vehicle
+                details or photos. The package finder helps when you are not sure which service fits.</p>
+            <div class="booking-cta__actions" style="justify-content: center; margin-top: 2rem;">
+                <a href="tel:7146007134" data-booking-primary
+                    class="brutalist-btn brutalist-btn--primary brutalist-btn--large">Call (714) 600-7134</a>
+                <a href="sms:+17146007134?body=Hi%20Obsidian%20Autoworks%2C%20I%27d%20like%20help%20booking%20mobile%20window%20tint."
+                    data-booking-secondary class="brutalist-btn brutalist-btn--outline brutalist-btn--large">Text
+                    Obsidian</a>
+                <a href="/vip-booking#vip-booking" data-booking-quiz
+                    class="brutalist-btn brutalist-btn--outline brutalist-btn--large">Find My Tint Package</a>
+            </div>
         </div>
     </section>
     <!-- Booking Info -->
@@ -141,15 +138,14 @@
                         confirm timing when you book.</p>
                 </div>
                 <div class="booking-info__card brutalist-card">
-                    <span class="booking-info__icon">💳</span>
-                    <h3>Payment</h3>
-                    <p>Deposit required to secure your spot. We accept cash, card, Venmo, and Zelle. Remaining balance due after the job is done.</p>
+                    <span class="booking-info__icon">$</span>
+                    <h3>Pricing</h3>
+                    <p>We confirm the package, add-ons, and final price before the appointment so the scope is clear.</p>
                 </div>
                 <div class="booking-info__card brutalist-card">
-                    <span class="booking-info__icon">🔄</span>
-                    <h3>Reschedule Anytime</h3>
-                    <p>Life happens. You can reschedule or cancel your appointment up to 24 hours before with no fees.
-                    </p>
+                    <span class="booking-info__icon">↻</span>
+                    <h3>Need to Change Timing?</h3>
+                    <p>Call or text as soon as possible and we will help coordinate the next available time.</p>
                 </div>
             </div>
         </div>
@@ -159,14 +155,14 @@
     <section class="booking-cta">
         <div class="container">
             <div class="booking-cta__content brutalist-card">
-                <h2>Prefer to Talk to Someone?</h2>
-                <p>Call or text us directly — we're happy to answer questions and help you choose the right tint for
+                <h2>Ready to Get It Scheduled?</h2>
+                <p>Call or text directly. We are happy to answer questions and help you choose the right tint for
                     your vehicle.</p>
                 <div class="booking-cta__actions">
                     <a href="tel:7146007134" class="brutalist-btn brutalist-btn--primary brutalist-btn--large">Call
                         (714) 600-7134</a>
-                    <a href="mailto:obsidianautoworksoc@gmail.com" class="brutalist-btn brutalist-btn--large">Email
-                        Us</a>
+                    <a href="sms:+17146007134?body=Hi%20Obsidian%20Autoworks%2C%20I%27d%20like%20help%20booking%20mobile%20window%20tint."
+                        class="brutalist-btn brutalist-btn--large">Text Obsidian</a>
                 </div>
             </div>
         </div>

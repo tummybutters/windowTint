@@ -15,7 +15,8 @@
         gclid: 'lead_track_gclid',
         gbraid: 'lead_track_gbraid',
         wbraid: 'lead_track_wbraid',
-        events: 'lead_track_event_log'
+        events: 'lead_track_event_log',
+        pendingEvents: 'lead_track_pending_events'
     };
 
     const TRACKED_PARAMS = [
@@ -43,6 +44,10 @@
         'extensionid'
     ];
     const MAX_STORED_EVENTS = 120;
+    const MAX_PENDING_EVENTS = 120;
+    const MAX_DELIVERY_ATTEMPTS = 25;
+    const DELIVERY_BATCH_SIZE = 20;
+    const DELIVERY_RETRY_INTERVAL_MS = 15000;
     const STORAGE_BY_PARAM = {
         cid: STORAGE_KEYS.cid,
         phone: STORAGE_KEYS.phone,
@@ -61,8 +66,10 @@
     const BOOKING_SELECTORS = [
         'a[href="/booking"]',
         'a[href^="/booking?"]',
+        'a[href^="/booking#"]',
         'a[href="/vip-booking"]',
         'a[href^="/vip-booking?"]',
+        'a[href^="/vip-booking#"]',
         'a[href*="app.squareup.com/appointments"]',
         'a[href*="book.squareup.com/appointments"]',
         'a[href*="squareup.com/appointments"]',
@@ -72,11 +79,14 @@
         'iframe[src*="square.site/appointments"]'
     ].join(',');
     const PHONE_SELECTOR = 'a[href^="tel:"]';
+    const TEXT_SELECTOR = 'a[href^="sms:"]';
     const GOOGLE_ADS_ID = 'AW-17846304809';
+    const WEBSITE_CALL_CONFIG_ID = `${GOOGLE_ADS_ID}/060ZCNixtdQcEKmA5L1C`;
+    const WEBSITE_CALL_DISPLAY_NUMBER = '(714) 600-7134';
     const DEFAULT_ADS_CONVERSIONS = {
         ai_booking_click: '',
         phone_click: 'GVSvCK39u70cEKmA5L1C',
-        square_booking_click: '3k3PCLD9u70cEKmA5L1C'
+        square_booking_click: ''
     };
     const SQUARE_BOOKING_HOSTS = [
         'app.squareup.com',
@@ -270,6 +280,41 @@
         localStorage.setItem(STORAGE_KEYS.events, JSON.stringify(events.slice(-MAX_STORED_EVENTS)));
     };
 
+    const getPendingEvents = () => {
+        try {
+            const raw = localStorage.getItem(STORAGE_KEYS.pendingEvents);
+            const parsed = raw ? JSON.parse(raw) : [];
+            return Array.isArray(parsed)
+                ? parsed.filter((entry) => entry && entry.event && entry.event.event_id)
+                : [];
+        } catch (error) {
+            return [];
+        }
+    };
+
+    const setPendingEvents = (entries) => {
+        localStorage.setItem(STORAGE_KEYS.pendingEvents, JSON.stringify(entries.slice(-MAX_PENDING_EVENTS)));
+    };
+
+    const queuePendingEvent = (event) => {
+        const entries = getPendingEvents();
+        if (!entries.some((entry) => entry.event.event_id === event.event_id)) {
+            entries.push({ event, attempts: 0, last_attempt_at: '' });
+            setPendingEvents(entries);
+        }
+    };
+
+    const updatePendingEvent = (eventId, update) => {
+        const entries = getPendingEvents().map((entry) => (
+            entry.event.event_id === eventId ? { ...entry, ...update } : entry
+        ));
+        setPendingEvents(entries);
+    };
+
+    const removePendingEvent = (eventId) => {
+        setPendingEvents(getPendingEvents().filter((entry) => entry.event.event_id !== eventId));
+    };
+
     const getEventEndpoint = () => {
         if (window.OBSIDIAN_LEAD_EVENT_ENDPOINT) return window.OBSIDIAN_LEAD_EVENT_ENDPOINT;
         const endpoint = document.documentElement && document.documentElement.getAttribute
@@ -278,23 +323,67 @@
         return endpoint || '/api/lead-events';
     };
 
+    let flushPromise = null;
+
+    const flushPendingEvents = () => {
+        const endpoint = getEventEndpoint();
+        if (!endpoint || typeof window.fetch !== 'function') return Promise.resolve(false);
+        if (flushPromise) return flushPromise;
+
+        flushPromise = (async () => {
+            const entries = getPendingEvents()
+                .filter((entry) => entry.attempts < MAX_DELIVERY_ATTEMPTS)
+                .slice(0, DELIVERY_BATCH_SIZE);
+
+            for (const entry of entries) {
+                updatePendingEvent(entry.event.event_id, {
+                    attempts: entry.attempts + 1,
+                    last_attempt_at: new Date().toISOString()
+                });
+
+                try {
+                    const response = await window.fetch(endpoint, {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify(entry.event),
+                        keepalive: true
+                    });
+                    if (!response || !response.ok) throw new Error('Lead-event endpoint rejected delivery');
+                    removePendingEvent(entry.event.event_id);
+                } catch (error) {
+                    break;
+                }
+            }
+
+            return getPendingEvents().length === 0;
+        })().finally(() => {
+            flushPromise = null;
+        });
+
+        return flushPromise;
+    };
+
+    const beaconPendingEvents = () => {
+        const endpoint = getEventEndpoint();
+        if (!endpoint || !window.navigator || typeof window.navigator.sendBeacon !== 'function') return;
+
+        getPendingEvents().slice(0, DELIVERY_BATCH_SIZE).forEach((entry) => {
+            window.navigator.sendBeacon(endpoint, JSON.stringify(entry.event));
+        });
+    };
+
     const sendFirstPartyEvent = (event) => {
         const endpoint = getEventEndpoint();
         if (!endpoint) return;
 
-        const body = JSON.stringify(event);
-        if (window.navigator && typeof window.navigator.sendBeacon === 'function') {
-            const sent = window.navigator.sendBeacon(endpoint, body);
-            if (sent) return;
+        queuePendingEvent(event);
+        if (typeof window.fetch === 'function') {
+            flushPendingEvents().catch(() => {});
+            return;
         }
 
-        if (typeof window.fetch === 'function') {
-            window.fetch(endpoint, {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body,
-                keepalive: true
-            }).catch(() => {});
+        if (window.navigator && typeof window.navigator.sendBeacon === 'function') {
+            window.navigator.sendBeacon(endpoint, JSON.stringify(event));
         }
     };
 
@@ -381,6 +470,17 @@
         return event;
     };
 
+    let websiteCallTrackingConfigured = false;
+    const configureWebsiteCallTracking = () => {
+        if (websiteCallTrackingConfigured || typeof window.gtag !== 'function') return false;
+
+        window.gtag('config', WEBSITE_CALL_CONFIG_ID, {
+            phone_conversion_number: WEBSITE_CALL_DISPLAY_NUMBER
+        });
+        websiteCallTrackingConfigured = true;
+        return true;
+    };
+
     const isSquareBookingLink = (href) => {
         try {
             const url = new URL(href, window.location.origin);
@@ -412,6 +512,16 @@
                 link_text: (link.textContent || '').trim().slice(0, 120)
             });
         }, true);
+
+        document.addEventListener('click', (event) => {
+            const link = event.target.closest(TEXT_SELECTOR);
+            if (!link) return;
+
+            sendAnalyticsEvent('text_click', {
+                link_url: link.href,
+                link_text: (link.textContent || '').trim().slice(0, 120)
+            });
+        }, true);
     };
 
     const titleBookingFrames = () => {
@@ -424,6 +534,7 @@
 
     const boot = () => {
         remember();
+        configureWebsiteCallTracking();
         decorateBookingTargets();
         decorateForms();
         titleBookingFrames();
@@ -451,6 +562,7 @@
             sendAnalyticsEvent('lead_session_checkpoint', {
                 event_count: getEventLog().length
             });
+            beaconPendingEvents();
         });
 
         let pendingRefresh = false;
@@ -473,15 +585,26 @@
             decorateForms();
             titleBookingFrames();
         }, 2000);
+
+        window.setInterval(() => {
+            flushPendingEvents().catch(() => {});
+        }, DELIVERY_RETRY_INTERVAL_MS);
+
+        window.setInterval(configureWebsiteCallTracking, 2000);
+
+        flushPendingEvents().catch(() => {});
     };
 
     window.obsidianLeadTracking = {
         getLead,
         getEventLog,
+        getPendingEvents,
         exportEventLog,
         clearEventLog,
+        flushPendingEvents,
         recordEvent: recordLeadEvent,
         trackEvent: sendAnalyticsEvent,
+        configureWebsiteCallTracking,
         decorateBookingTargets,
         decorateForms
     };
