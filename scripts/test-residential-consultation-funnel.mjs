@@ -22,7 +22,8 @@ assert.match(page, /residential_consultation_start/, 'The form must emit a consu
 assert.match(page, /residential_consultation_request/, 'The form must emit a consultation-request event.');
 assert.match(page, /submitLeadEvent\('residential_consultation_request'/, 'The request event must wait for first-party persistence.');
 assert.match(tracking, /submitLeadEvent/, 'Shared tracking needs a first-party submission helper.');
-assert.doesNotMatch(tracking, /residential_consultation_(?:start|request):\s*['"][^'"]+/, 'Consultation events must not have Google Ads conversion mappings.');
+assert.doesNotMatch(tracking, /residential_consultation_start:\s*['"][^'"]+/, 'Consultation starts must remain diagnostic only.');
+assert.match(tracking, /residential_consultation_request:\s*['"]uZ_6CNyY8tQcEKmA5L1C['"]/, 'Persisted consultation requests must map to the dedicated Google Ads conversion.');
 
 for (const field of [
   'consultation_name',

@@ -86,6 +86,7 @@
     const DEFAULT_ADS_CONVERSIONS = {
         ai_booking_click: '',
         phone_click: 'GVSvCK39u70cEKmA5L1C',
+        residential_consultation_request: 'uZ_6CNyY8tQcEKmA5L1C',
         square_booking_click: ''
     };
     const SQUARE_BOOKING_HOSTS = [
