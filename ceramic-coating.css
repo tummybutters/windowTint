@@ -4,39 +4,20 @@
 }
 
 .coating-hero {
-    position: relative;
-    min-height: min(780px, calc(100vh - 80px));
+    min-height: min(560px, calc(100vh - 80px));
     display: flex;
-    align-items: flex-end;
+    align-items: center;
     overflow: hidden;
-    border-bottom: 5px solid var(--sunset-coral);
-}
-
-.coating-hero__media,
-.coating-hero__shade {
-    position: absolute;
-    inset: 0;
-}
-
-.coating-hero__media {
-    background-image: url("/assets/ceramic-coating/paint-detail.webp");
-    background-position: 62% 45%;
-    background-size: cover;
-    transform: scale(1.01);
-}
-
-.coating-hero__shade {
     background:
-        linear-gradient(90deg, rgba(0, 0, 0, 0.96) 0%, rgba(0, 0, 0, 0.76) 46%, rgba(0, 0, 0, 0.18) 78%),
-        linear-gradient(0deg, rgba(0, 0, 0, 0.74) 0%, transparent 45%);
+        linear-gradient(145deg, rgba(255, 255, 255, 0.05), transparent 38%),
+        linear-gradient(145deg, #181818 0%, #080808 100%);
 }
 
 .coating-hero__content {
-    position: relative;
-    z-index: 1;
     width: 100%;
-    padding-top: 5rem;
-    padding-bottom: 5rem;
+    padding-top: 5.5rem;
+    padding-bottom: 4.5rem;
+    text-align: center;
 }
 
 .coating-eyebrow,
@@ -57,20 +38,26 @@
 }
 
 .coating-hero h1 {
-    max-width: 900px;
-    margin: 1.1rem 0 1rem;
-    font-size: clamp(3rem, 7vw, 6.4rem);
-    line-height: 0.95;
+    max-width: 1120px;
+    margin: 1.25rem auto 1.2rem;
+    font-size: clamp(3rem, 6.4vw, 5.8rem);
+    line-height: 0.96;
     font-weight: 900;
     text-transform: uppercase;
 }
 
 .coating-hero h1 span {
-    color: var(--sunset-coral);
+    display: block;
+    background: var(--silver-shine);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
 }
 
 .coating-hero__copy {
     max-width: 660px;
+    margin-right: auto;
+    margin-left: auto;
     color: #f0f0f0;
     font-size: 1.16rem;
     line-height: 1.72;
@@ -79,6 +66,7 @@
 .coating-actions {
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
     gap: 1rem;
     margin-top: 2rem;
 }
@@ -95,11 +83,101 @@
     color: var(--black);
 }
 
-.coating-hero__note {
-    max-width: 640px;
-    margin-top: 1.4rem;
-    color: #d2d2d2;
-    font-size: 0.9rem;
+.coating-showcase {
+    padding: 2.5rem 0 4.5rem;
+    overflow: hidden;
+    background: #111;
+    border-bottom: 5px solid var(--sunset-coral);
+}
+
+.coating-showcase__heading {
+    max-width: 860px;
+    margin: 0 auto 2.6rem;
+    text-align: center;
+}
+
+.coating-showcase__heading h2 {
+    margin-top: 0.55rem;
+    font-size: clamp(2rem, 4.2vw, 3.7rem);
+    line-height: 1;
+    text-transform: uppercase;
+}
+
+.coating-showcase__grid {
+    display: grid;
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+    grid-auto-rows: clamp(260px, 30vw, 410px);
+    gap: 8px;
+    padding: 1rem 0 1.5rem;
+}
+
+.coating-showcase__grid figure {
+    position: relative;
+    min-width: 0;
+    height: 100%;
+    margin: 0;
+    overflow: hidden;
+    border: 4px solid var(--black);
+    background: #181818;
+    box-shadow: 8px 8px 0 var(--black);
+}
+
+.coating-showcase__grid figure:nth-child(1) {
+    grid-column: 1 / span 3;
+    transform: rotate(-2deg) translateY(5px);
+}
+
+.coating-showcase__grid figure:nth-child(2) {
+    grid-column: 4 / span 3;
+    transform: rotate(-0.75deg);
+}
+
+.coating-showcase__grid figure:nth-child(3) {
+    grid-column: 7 / span 3;
+    transform: rotate(1deg) translateY(2px);
+}
+
+.coating-showcase__grid figure:nth-child(4) {
+    grid-column: 10 / span 3;
+    transform: rotate(2deg) translateY(6px);
+}
+
+.coating-showcase__grid img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    transition: transform 0.35s ease;
+}
+
+.coating-showcase__grid figure:nth-child(1) img {
+    object-position: center 40%;
+}
+
+.coating-showcase__grid figure:hover img {
+    transform: scale(1.025);
+}
+
+.coating-showcase__cta {
+    display: grid;
+    justify-items: center;
+    max-width: 880px;
+    margin: 2.5rem auto 0;
+    padding-top: 2.5rem;
+    border-top: 3px solid #4a4a4a;
+    text-align: center;
+}
+
+.coating-showcase__cta p {
+    display: grid;
+    gap: 0.35rem;
+    color: #d5d5d5;
+}
+
+.coating-showcase__cta strong {
+    color: var(--white);
+    font-size: 1.35rem;
+    text-transform: uppercase;
 }
 
 .coating-proof {
@@ -246,44 +324,20 @@
     line-height: 1.7;
 }
 
-.coating-gallery {
-    padding: 6.5rem 0;
-    background: #f1f1f1;
-    color: var(--black);
+.coating-process__cta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 2rem;
+    margin-top: 2.5rem;
+    padding-top: 2.5rem;
+    border-top: 3px solid #555;
 }
 
-.coating-heading--light > p:last-child {
-    color: #333;
-}
-
-.coating-gallery__grid {
-    display: grid;
-    grid-template-columns: 1.25fr repeat(3, minmax(0, 0.75fr));
-    gap: 0.9rem;
-    min-height: 620px;
-}
-
-.coating-gallery__grid figure {
-    min-width: 0;
-    overflow: hidden;
-    border: 4px solid var(--black);
-    background: #181818;
-}
-
-.coating-gallery__grid img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: center;
-    transition: transform 0.35s ease;
-}
-
-.coating-gallery__grid figure:hover img {
-    transform: scale(1.025);
-}
-
-.coating-gallery__lead img {
-    object-position: center 40%;
+.coating-process__cta p {
+    max-width: 610px;
+    color: #d5d5d5;
+    line-height: 1.7;
 }
 
 .coating-fit {
@@ -416,25 +470,11 @@
         border-right-color: #555;
     }
 
-    .coating-gallery__grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-        min-height: 900px;
-    }
 }
 
 @media (max-width: 800px) {
     .coating-hero {
-        min-height: 700px;
-    }
-
-    .coating-hero__media {
-        background-position: 67% center;
-    }
-
-    .coating-hero__shade {
-        background:
-            linear-gradient(90deg, rgba(0, 0, 0, 0.92), rgba(0, 0, 0, 0.48)),
-            linear-gradient(0deg, rgba(0, 0, 0, 0.92) 0%, rgba(0, 0, 0, 0.2) 70%);
+        min-height: 520px;
     }
 
     .coating-intro__grid,
@@ -464,13 +504,12 @@
     }
 
     .coating-hero {
-        min-height: 670px;
+        min-height: 0;
     }
 
     .coating-hero__content,
     .coating-intro,
     .coating-process,
-    .coating-gallery,
     .coating-fit,
     .coating-call,
     .coating-final {
@@ -478,8 +517,19 @@
         padding-bottom: 4rem;
     }
 
+    .coating-hero__content {
+        padding-top: 3.75rem;
+        padding-bottom: 2.5rem;
+    }
+
     .coating-hero h1 {
-        font-size: 2.75rem;
+        font-size: clamp(2.25rem, 11vw, 3rem);
+        line-height: 0.98;
+    }
+
+    .coating-hero__copy {
+        font-size: 1rem;
+        line-height: 1.6;
     }
 
     .coating-actions,
@@ -489,6 +539,49 @@
 
     .coating-actions .brutalist-btn,
     .coating-call__actions .brutalist-btn {
+        width: 100%;
+    }
+
+    .coating-showcase {
+        padding-top: 1.75rem;
+        padding-bottom: 3.5rem;
+    }
+
+    .coating-showcase__heading {
+        margin-bottom: 1.5rem;
+    }
+
+    .coating-showcase__heading h2 {
+        font-size: 2rem;
+    }
+
+    .coating-showcase__grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        grid-auto-rows: clamp(220px, 68vw, 320px);
+        gap: 10px;
+        padding: 0.5rem 0 1rem;
+    }
+
+    .coating-showcase__grid figure:nth-child(1),
+    .coating-showcase__grid figure:nth-child(2),
+    .coating-showcase__grid figure:nth-child(3),
+    .coating-showcase__grid figure:nth-child(4) {
+        grid-column: auto;
+        transform: none;
+        box-shadow: 5px 5px 0 var(--black);
+    }
+
+    .coating-showcase__cta {
+        margin-top: 1.5rem;
+        padding-top: 2rem;
+    }
+
+    .coating-process__cta {
+        align-items: stretch;
+        flex-direction: column;
+    }
+
+    .coating-process__cta .brutalist-btn {
         width: 100%;
     }
 
@@ -522,15 +615,6 @@
         margin-top: 1.8rem;
     }
 
-    .coating-gallery__grid {
-        grid-template-columns: 1fr 1fr;
-        min-height: 660px;
-    }
-
-    .coating-gallery__grid figure {
-        min-height: 310px;
-    }
-
     .coating-fit__list div {
         grid-template-columns: 1fr;
         gap: 0.4rem;
@@ -538,7 +622,7 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
-    .coating-gallery__grid img {
+    .coating-showcase__grid img {
         transition: none;
     }
 }

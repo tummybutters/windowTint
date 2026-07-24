@@ -42,7 +42,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="/style.css?v=20260108-1">
-    <link rel="stylesheet" href="/ceramic-coating.css?v=20260724-1">
+    <link rel="stylesheet" href="/ceramic-coating.css?v=20260724-2">
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-TR9ET60HX3"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
@@ -75,23 +75,60 @@
 
     <main class="coating-page">
         <header class="coating-hero">
-            <div class="coating-hero__media" aria-hidden="true"></div>
-            <div class="coating-hero__shade" aria-hidden="true"></div>
             <div class="container coating-hero__content">
                 <p class="coating-eyebrow">Orange County Ceramic Coating</p>
-                <h1>First-Class Protection.<br><span>Real-World Finish.</span></h1>
-                <p class="coating-hero__copy">Your coating is only as good as the paint underneath it. We inspect,
-                    prepare, correct when needed, and coat the vehicle around its actual condition.</p>
+                <h1>Ceramic Coating for a<br><span>Richer Finish and Lasting Gloss</span></h1>
+                <p class="coating-hero__copy">Professional paint preparation and ceramic protection bring out deeper
+                    color, clearer reflections, and a finish that holds its gloss.</p>
                 <div class="coating-actions">
                     <a href="tel:7146007134" class="brutalist-btn brutalist-btn--primary brutalist-btn--large"
-                        data-lead-action="ceramic_coating_call">Call For A Coating Plan</a>
+                        data-lead-action="ceramic_coating_call">Call About Your Car</a>
                     <a href="sms:7146007134" class="brutalist-btn brutalist-btn--large coating-btn--glass"
                         data-lead-action="ceramic_coating_text">Text Vehicle Photos</a>
                 </div>
-                <p class="coating-hero__note">A short call gives us the vehicle, paint condition, goals, and a useful
-                    next step. No generic one-price answer.</p>
             </div>
         </header>
+
+        <section class="coating-showcase" id="results" aria-labelledby="coating-showcase-title">
+            <div class="container">
+                <div class="coating-showcase__heading">
+                    <p class="coating-kicker">Real Orange County vehicles</p>
+                    <h2 id="coating-showcase-title">See the depth in the finish.</h2>
+                </div>
+                <div class="coating-showcase__grid">
+                    <figure>
+                        <img src="/assets/ceramic-coating/white-mclaren.webp"
+                            alt="White McLaren in Orange County after premium exterior care" width="1012" height="1800"
+                            fetchpriority="high">
+                    </figure>
+                    <figure>
+                        <img src="/assets/ceramic-coating/paint-detail.webp"
+                            alt="Deep reflections in gray BMW paint after professional paint preparation" width="1012"
+                            height="1800">
+                    </figure>
+                    <figure>
+                        <img src="/assets/ceramic-coating/finished-vw.webp"
+                            alt="Finished Volkswagen with a rich reflective exterior" width="1012" height="1800">
+                    </figure>
+                    <figure>
+                        <img src="/assets/ceramic-coating/foam-bmw.webp"
+                            alt="BMW receiving the thorough preparation required before ceramic coating" width="1012"
+                            height="1800">
+                    </figure>
+                </div>
+                <div class="coating-showcase__cta">
+                    <p><strong>Want this kind of finish on your car?</strong><span>Call for a clear recommendation or
+                            text us a few photos.</span></p>
+                    <div class="coating-actions coating-actions--center">
+                        <a href="tel:7146007134"
+                            class="brutalist-btn brutalist-btn--primary brutalist-btn--large"
+                            data-lead-action="ceramic_coating_call">Call (714) 600-7134</a>
+                        <a href="sms:7146007134" class="brutalist-btn brutalist-btn--large"
+                            data-lead-action="ceramic_coating_text">Text Vehicle Photos</a>
+                    </div>
+                </div>
+            </div>
+        </section>
 
         <section class="coating-proof" aria-label="Ceramic coating service summary">
             <div class="container coating-proof__grid">
@@ -105,20 +142,18 @@
         <section class="coating-intro">
             <div class="container coating-intro__grid">
                 <div class="coating-intro__copy">
-                    <p class="coating-kicker">The honest version</p>
-                    <h2>Coating does not hide bad prep.</h2>
-                    <p>Ceramic coating can deepen gloss, make routine washing easier, and add a durable sacrificial
-                        layer over the finish. It does not erase scratches, stop rock chips, or make paint
-                        maintenance-free.</p>
-                    <p>That is why the conversation starts with the paint you have, not a package name. Some vehicles
-                        need a careful decontamination and polish. Others need targeted paint correction before the
-                        coating goes on.</p>
+                    <p class="coating-kicker">What creates the result</p>
+                    <h2>A richer finish starts with the paint underneath.</h2>
+                    <p>Ceramic coating adds durable protection and helps the finish hold its gloss, but the visible
+                        result begins before the coating is applied.</p>
+                    <p>We inspect the paint, remove bonded contamination, and correct defects where needed. That
+                        preparation is what lets the color, depth, and reflections come through cleanly.</p>
                 </div>
                 <figure class="coating-intro__image">
-                    <img src="/assets/ceramic-coating/paint-detail.webp"
-                        alt="Glossy gray BMW paint after detailing and ceramic coating preparation" width="1012"
+                    <img src="/assets/ceramic-coating/foam-sedan.webp"
+                        alt="Sedan receiving a thorough foam wash before ceramic coating preparation" width="1012"
                         height="1800">
-                    <figcaption>Real work. Natural light. No showroom render.</figcaption>
+                    <figcaption>Every finish starts with careful preparation.</figcaption>
                 </figure>
             </div>
         </section>
@@ -126,9 +161,9 @@
         <section class="coating-process" id="process">
             <div class="container">
                 <div class="coating-heading">
-                    <p class="coating-kicker">How the work gets done</p>
-                    <h2>Prep first. Protection second.</h2>
-                    <p>The correct process depends on the vehicle, but the order does not change.</p>
+                    <p class="coating-kicker">The process behind the finish</p>
+                    <h2>Every layer starts with proper preparation.</h2>
+                    <p>The exact correction depends on the vehicle, but the order does not change.</p>
                 </div>
                 <ol class="coating-process__grid">
                     <li>
@@ -152,37 +187,11 @@
                         <p>The prepared finish receives the coating, cure time, final inspection, and care guidance.</p>
                     </li>
                 </ol>
-            </div>
-        </section>
-
-        <section class="coating-gallery" id="results" aria-labelledby="coating-gallery-title">
-            <div class="container">
-                <div class="coating-heading coating-heading--light">
-                    <p class="coating-kicker">Orange County vehicles</p>
-                    <h2 id="coating-gallery-title">The finish has to hold up outside.</h2>
-                    <p>These are customer vehicles photographed where the work actually lives: driveways, garages, and
-                        Southern California streets.</p>
-                </div>
-                <div class="coating-gallery__grid">
-                    <figure class="coating-gallery__lead">
-                        <img src="/assets/ceramic-coating/white-mclaren.webp"
-                            alt="White McLaren in Orange County after premium exterior care" width="1012" height="1800">
-                    </figure>
-                    <figure>
-                        <img src="/assets/ceramic-coating/foam-bmw.webp"
-                            alt="BMW covered in foam during ceramic coating preparation" width="1012" height="1800"
-                            loading="lazy">
-                    </figure>
-                    <figure>
-                        <img src="/assets/ceramic-coating/foam-sedan.webp"
-                            alt="Sedan receiving a thorough foam wash before paint preparation" width="1012"
-                            height="1800" loading="lazy">
-                    </figure>
-                    <figure>
-                        <img src="/assets/ceramic-coating/finished-vw.webp"
-                            alt="Finished Volkswagen with a clean reflective exterior" width="1012" height="1800"
-                            loading="lazy">
-                    </figure>
+                <div class="coating-process__cta">
+                    <p>Not sure how much correction your paint needs? A few clear photos give us a useful starting
+                        point.</p>
+                    <a href="sms:7146007134" class="brutalist-btn brutalist-btn--large coating-btn--glass"
+                        data-lead-action="ceramic_coating_text">Text Photos For An Opinion</a>
                 </div>
             </div>
         </section>
@@ -190,8 +199,8 @@
         <section class="coating-fit" id="fit">
             <div class="container coating-fit__grid">
                 <div>
-                    <p class="coating-kicker">Good fit</p>
-                    <h2>Who gets the most value from coating?</h2>
+                    <p class="coating-kicker">Is it right for your car?</p>
+                    <h2>Coating makes the most sense when the finish matters to you.</h2>
                 </div>
                 <div class="coating-fit__list">
                     <div><strong>Newer vehicles</strong><span>Protect a finish before years of washing and sun add up.</span></div>
@@ -205,8 +214,8 @@
         <section class="coating-call" id="contact">
             <div class="container coating-call__grid">
                 <div>
-                    <p class="coating-kicker">Before you call</p>
-                    <h2>Three details give us a real starting point.</h2>
+                    <p class="coating-kicker">Get a clear recommendation</p>
+                    <h2>Tell us what you drive. We will tell you what it needs.</h2>
                 </div>
                 <div class="coating-call__details">
                     <span>Year, make, and model</span>
@@ -234,8 +243,8 @@
         <section class="coating-final">
             <div class="container">
                 <p class="coating-kicker">Obsidian Autoworks</p>
-                <h2>Protect the finish you actually drive.</h2>
-                <p>Call now for a short coating consultation or text clear photos of the vehicle and paint.</p>
+                <h2>Bring out the finish your car was built to have.</h2>
+                <p>Call for a short coating consultation or text clear photos of the vehicle and paint.</p>
                 <div class="coating-actions coating-actions--center">
                     <a href="tel:7146007134" class="brutalist-btn brutalist-btn--primary brutalist-btn--large"
                         data-lead-action="ceramic_coating_call">Call For Clarity</a>

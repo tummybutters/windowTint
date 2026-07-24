@@ -19,8 +19,23 @@ assert.match(page, /"serviceType": "Mobile automotive ceramic coating"/);
 assert.match(page, /<html[^>]+data-lead-service="ceramic_coating"/);
 assert.match(page, /href="tel:7146007134"/);
 assert.match(page, /href="sms:7146007134"/);
+assert.match(page, /Ceramic Coating for a/);
+assert.match(page, /Richer Finish and Lasting Gloss/);
+assert.match(page, /class="coating-showcase"/);
 assert.match(page, /assets\/ceramic-coating\/paint-detail\.webp/);
 assert.match(page, /assets\/ceramic-coating\/white-mclaren\.webp/);
+assert.ok(
+    page.indexOf('class="coating-showcase"') < page.indexOf('class="coating-proof"'),
+    'Expected the results showcase immediately after the hero and before the service summary'
+);
+assert.ok(
+    (page.match(/data-lead-action="ceramic_coating_call"/g) || []).length >= 4,
+    'Expected frequent call CTAs across the ceramic coating page'
+);
+assert.ok(
+    (page.match(/data-lead-action="ceramic_coating_text"/g) || []).length >= 4,
+    'Expected frequent text CTAs across the ceramic coating page'
+);
 for (const anchor of ['process', 'results', 'fit', 'contact']) {
     assert.match(page, new RegExp(`id="${anchor}"`));
 }
