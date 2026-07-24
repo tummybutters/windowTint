@@ -491,6 +491,15 @@
         }
     };
 
+    const getLeadContext = (link) => ({
+        service: (
+            (link && link.getAttribute('data-lead-service'))
+            || document.documentElement.getAttribute('data-lead-service')
+            || ''
+        ),
+        lead_action: (link && link.getAttribute('data-lead-action')) || ''
+    });
+
     const bindClickTracking = () => {
         document.addEventListener('click', (event) => {
             const link = event.target.closest('a');
@@ -509,7 +518,8 @@
 
             sendAnalyticsEvent('phone_click', {
                 link_url: link.href,
-                link_text: (link.textContent || '').trim().slice(0, 120)
+                link_text: (link.textContent || '').trim().slice(0, 120),
+                ...getLeadContext(link)
             });
         }, true);
 
@@ -519,7 +529,8 @@
 
             sendAnalyticsEvent('text_click', {
                 link_url: link.href,
-                link_text: (link.textContent || '').trim().slice(0, 120)
+                link_text: (link.textContent || '').trim().slice(0, 120),
+                ...getLeadContext(link)
             });
         }, true);
     };
@@ -550,6 +561,11 @@
         }
         if (path === '/architectural-window-film') {
             sendAnalyticsEvent('residential_page_visit');
+        }
+        if (path === '/ceramic-coating') {
+            sendAnalyticsEvent('ceramic_coating_page_visit', {
+                service: 'ceramic_coating'
+            });
         }
         if (path === '/booking' || path === '/vip-booking' || path === '/architectural-window-film' || document.querySelector('.booking-calendar, #booking, #vip-booking')) {
             sendAnalyticsEvent('booking_landing_page_view', {

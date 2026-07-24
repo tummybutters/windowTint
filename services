@@ -4,28 +4,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mobile Window Tinting Services | Orange County</title>
+    <title>Automotive Services | Obsidian Autoworks Orange County</title>
     <meta name="description"
-        content="Mobile ceramic window tinting in Orange County. Full car tint, front windows, windshield, Tesla glass, tint removal, and mobile service at your location.">
+        content="Mobile ceramic coating and ceramic window tinting in Orange County, including paint preparation, correction options, full-car tint, Tesla glass, and tint removal.">
     <link rel="canonical" href="https://www.obsidianautoworksoc.com/services">
     <link rel="icon" type="image/png" href="favicon.png">
-    <meta property="og:title" content="Mobile Window Tinting Services | Orange County">
+    <meta property="og:title" content="Automotive Services | Obsidian Autoworks Orange County">
     <meta property="og:description"
-        content="Explore Obsidian Autoworks mobile ceramic tint services, package options, Tesla tinting, tint removal, and quote-based add-ons.">
+        content="Explore Obsidian Autoworks ceramic coating, mobile ceramic tint, Tesla tinting, tint removal, and specialty automotive services.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://www.obsidianautoworksoc.com/services">
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
         "@type": "Service",
-        "name": "Mobile Ceramic Window Tinting Services",
+        "name": "Obsidian Autoworks Automotive Services",
         "provider": {
             "@type": "AutomotiveBusiness",
             "name": "Obsidian Autoworks",
             "telephone": "+17146007134"
         },
         "areaServed": "Orange County, CA",
-        "serviceType": "Mobile automotive window tinting"
+        "serviceType": ["Mobile automotive ceramic coating", "Mobile automotive window tinting"]
     }
     </script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -54,6 +54,7 @@
             </a>
             <div class="nav__links">
                 <a href="/services">Services</a>
+                <a href="/ceramic-coating">Ceramic Coating</a>
                 <a href="/window-tint-pricing">Pricing</a>
                 <a href="/window-tinting-gallery">Gallery</a>
                 <a href="/#contact">Contact</a>
@@ -69,25 +70,25 @@
         <header class="seo-hero">
             <div class="container seo-hero__grid">
                 <div>
-                    <span class="seo-kicker">Mobile Tint Services</span>
-                    <h1>Mobile Ceramic Window Tinting Services <span>In Orange County</span></h1>
-                    <p class="seo-hero__copy">Obsidian Autoworks brings premium ceramic window tinting to your home,
-                        office, garage, or approved install location. Pick the package, choose the shade, and keep your
-                        day moving.</p>
+                    <span class="seo-kicker">Automotive Appearance Services</span>
+                    <h1>Premium Vehicle Protection <span>In Orange County</span></h1>
+                    <p class="seo-hero__copy">Obsidian Autoworks brings ceramic coating and ceramic window tinting to
+                        suitable homes, garages, workplaces, and arranged Orange County locations. Start with the
+                        finish, comfort, or protection goal that matters to you.</p>
                     <div class="seo-hero__actions">
-                        <a href="/booking" class="brutalist-btn brutalist-btn--primary">Book Mobile Tint</a>
-                        <a href="/window-tint-pricing" class="brutalist-btn">See Pricing</a>
+                        <a href="tel:7146007134" class="brutalist-btn brutalist-btn--primary">Call Obsidian</a>
+                        <a href="/ceramic-coating" class="brutalist-btn">Explore Coating</a>
                     </div>
                 </div>
                 <aside class="seo-hero__panel">
                     <h2>Core Services</h2>
                     <div class="seo-stat-list">
-                        <div class="seo-stat"><span class="seo-stat__mark">1</span><span>Full car, sides and rear,
+                        <div class="seo-stat"><span class="seo-stat__mark">1</span><span>Paint preparation, correction
+                                options, and ceramic coating.</span></div>
+                        <div class="seo-stat"><span class="seo-stat__mark">2</span><span>Full car, sides and rear,
                                 front two, and windshield ceramic tint.</span></div>
-                        <div class="seo-stat"><span class="seo-stat__mark">2</span><span>Tesla glass packages for Model
+                        <div class="seo-stat"><span class="seo-stat__mark">3</span><span>Tesla glass packages for Model
                                 3, Model Y, and Model S.</span></div>
-                        <div class="seo-stat"><span class="seo-stat__mark">3</span><span>Tint removal and quote-based
-                                add-ons when the scope fits.</span></div>
                     </div>
                 </aside>
             </div>
@@ -96,10 +97,17 @@
         <section class="seo-section seo-section--light">
             <div class="container">
                 <div class="seo-section__header">
-                    <h2>Choose Your Tint Package</h2>
-                    <p>These are the main service paths. Each page gives pricing, timing, and the best-fit use case.</p>
+                    <h2>Choose Your Service</h2>
+                    <p>Start with the vehicle goal. We will help define the condition, scope, and next step.</p>
                 </div>
                 <div class="seo-grid">
+                    <article class="seo-card">
+                        <span class="seo-card__label">Paint Protection</span>
+                        <h3>Ceramic Coating</h3>
+                        <p>Paint preparation, correction options, ceramic protection, and care guidance based on the
+                            vehicle's actual finish.</p>
+                        <div class="seo-link-row"><a class="seo-link" href="/ceramic-coating">View Ceramic Coating</a></div>
+                    </article>
                     <article class="seo-card">
                         <span class="seo-card__label">Complete</span>
                         <h3>Full Car Window Tinting</h3>
@@ -255,7 +263,7 @@
                     </div>
                 </div>
                 <div class="footer__links">
-                    <div><strong>Services</strong><br><a href="/services">Services</a><br><a href="/window-tint-pricing">Pricing</a><br><a href="/ceramic-window-tinting">Ceramic</a><br><a href="/mobile-window-tinting">Mobile Tint</a></div>
+                    <div><strong>Services</strong><br><a href="/services">Services</a><br><a href="/ceramic-coating">Ceramic Coating</a><br><a href="/window-tint-pricing">Tint Pricing</a><br><a href="/ceramic-window-tinting">Ceramic Tint</a><br><a href="/mobile-window-tinting">Mobile Tint</a></div>
                     <div><strong>Packages</strong><br><a href="/full-car-window-tinting">Full Car</a><br><a href="/sides-rear-window-tinting">Sides &amp; Rear</a><br><a href="/front-two-window-tinting">Front Two</a><br><a href="/windshield-window-tinting">Windshield</a><br><a href="/tint-removal">Tint Removal</a></div>
                     <div><strong>Tesla</strong><br><a href="/tesla-window-tinting">Tesla Tint</a><br><a href="/tesla-model-y-window-tinting">Model Y</a><br><a href="/tesla-model-3-window-tinting">Model 3</a></div>
                     <div><strong>Guides</strong><br><a href="/window-tint-shades">Tint Shades</a><br><a href="/california-window-tint-law">California Tint Law</a><br><a href="/ceramic-vs-carbon-window-tint">Ceramic vs Carbon</a><br><a href="/how-long-does-window-tinting-take">Install Timing</a><br><a href="/is-mobile-window-tinting-worth-it">Mobile Tinting</a><br><a href="/how-to-choose-window-tint-percentage">Tint Percentage</a><br><a href="/does-window-tint-reduce-heat">Heat Reduction</a><br><a href="/window-tint-aftercare">Aftercare</a></div>

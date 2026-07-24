@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en" data-lead-service="ceramic_coating">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mobile Ceramic Coating | Obsidian Autoworks</title>
+    <meta name="description"
+        content="Mobile ceramic coating, paint preparation, and correction for Orange County vehicles. Call or text Obsidian Autoworks for a coating plan based on your paint.">
+    <link rel="canonical" href="https://www.obsidianautoworksoc.com/ceramic-coating">
+    <link rel="icon" type="image/png" href="/favicon.png">
+    <meta property="og:title" content="Mobile Ceramic Coating | Obsidian Autoworks">
+    <meta property="og:description"
+        content="First-class ceramic coating with honest prep, correction options, and real Orange County work.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.obsidianautoworksoc.com/ceramic-coating">
+    <meta property="og:image"
+        content="https://www.obsidianautoworksoc.com/assets/ceramic-coating/paint-detail.webp">
+    <meta name="twitter:card" content="summary_large_image">
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Service",
+        "name": "Mobile Ceramic Coating",
+        "description": "Automotive paint preparation, correction options, and ceramic coating in Orange County, California.",
+        "provider": {
+            "@type": "AutomotiveBusiness",
+            "name": "Obsidian Autoworks",
+            "url": "https://www.obsidianautoworksoc.com/",
+            "telephone": "+17146007134"
+        },
+        "areaServed": {
+            "@type": "AdministrativeArea",
+            "name": "Orange County, California"
+        },
+        "serviceType": "Mobile automotive ceramic coating",
+        "url": "https://www.obsidianautoworksoc.com/ceramic-coating"
+    }
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="/style.css?v=20260108-1">
+    <link rel="stylesheet" href="/ceramic-coating.css?v=20260724-1">
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-TR9ET60HX3"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-TR9ET60HX3');
+        gtag('config', 'AW-17846304809');
+    </script>
+</head>
+
+<body>
+    <nav class="nav">
+        <div class="nav__container">
+            <a href="/" class="nav__logo" aria-label="Obsidian Autoworks home">
+                <img src="/car-hero.webp" alt="" class="nav__logo-car" width="500" height="200">
+                <span class="nav__logo-text">OBSIDIAN<span>AUTOWORKS</span></span>
+            </a>
+            <div class="nav__links">
+                <a href="/services">Services</a>
+                <a href="/ceramic-coating" aria-current="page">Ceramic Coating</a>
+                <a href="/window-tint-pricing">Tint Pricing</a>
+                <a href="/window-tinting-gallery">Gallery</a>
+            </div>
+            <div class="nav__actions">
+                <a href="sms:7146007134" class="brutalist-btn">Text Photos</a>
+                <a href="tel:7146007134" class="brutalist-btn brutalist-btn--accent">Call Now</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="coating-page">
+        <header class="coating-hero">
+            <div class="coating-hero__media" aria-hidden="true"></div>
+            <div class="coating-hero__shade" aria-hidden="true"></div>
+            <div class="container coating-hero__content">
+                <p class="coating-eyebrow">Orange County Ceramic Coating</p>
+                <h1>First-Class Protection.<br><span>Real-World Finish.</span></h1>
+                <p class="coating-hero__copy">Your coating is only as good as the paint underneath it. We inspect,
+                    prepare, correct when needed, and coat the vehicle around its actual condition.</p>
+                <div class="coating-actions">
+                    <a href="tel:7146007134" class="brutalist-btn brutalist-btn--primary brutalist-btn--large"
+                        data-lead-action="ceramic_coating_call">Call For A Coating Plan</a>
+                    <a href="sms:7146007134" class="brutalist-btn brutalist-btn--large coating-btn--glass"
+                        data-lead-action="ceramic_coating_text">Text Vehicle Photos</a>
+                </div>
+                <p class="coating-hero__note">A short call gives us the vehicle, paint condition, goals, and a useful
+                    next step. No generic one-price answer.</p>
+            </div>
+        </header>
+
+        <section class="coating-proof" aria-label="Ceramic coating service summary">
+            <div class="container coating-proof__grid">
+                <div><strong>01</strong><span>Paint assessed before the plan</span></div>
+                <div><strong>02</strong><span>Prep and correction matched to condition</span></div>
+                <div><strong>03</strong><span>Coating installed at a suitable OC location</span></div>
+                <div><strong>04</strong><span>Care instructions after delivery</span></div>
+            </div>
+        </section>
+
+        <section class="coating-intro">
+            <div class="container coating-intro__grid">
+                <div class="coating-intro__copy">
+                    <p class="coating-kicker">The honest version</p>
+                    <h2>Coating does not hide bad prep.</h2>
+                    <p>Ceramic coating can deepen gloss, make routine washing easier, and add a durable sacrificial
+                        layer over the finish. It does not erase scratches, stop rock chips, or make paint
+                        maintenance-free.</p>
+                    <p>That is why the conversation starts with the paint you have, not a package name. Some vehicles
+                        need a careful decontamination and polish. Others need targeted paint correction before the
+                        coating goes on.</p>
+                </div>
+                <figure class="coating-intro__image">
+                    <img src="/assets/ceramic-coating/paint-detail.webp"
+                        alt="Glossy gray BMW paint after detailing and ceramic coating preparation" width="1012"
+                        height="1800">
+                    <figcaption>Real work. Natural light. No showroom render.</figcaption>
+                </figure>
+            </div>
+        </section>
+
+        <section class="coating-process" id="process">
+            <div class="container">
+                <div class="coating-heading">
+                    <p class="coating-kicker">How the work gets done</p>
+                    <h2>Prep first. Protection second.</h2>
+                    <p>The correct process depends on the vehicle, but the order does not change.</p>
+                </div>
+                <ol class="coating-process__grid">
+                    <li>
+                        <span>01</span>
+                        <h3>Inspect</h3>
+                        <p>We review paint condition, prior care, problem areas, and the finish you want.</p>
+                    </li>
+                    <li>
+                        <span>02</span>
+                        <h3>Decontaminate</h3>
+                        <p>Thorough wash and surface preparation remove what should not be sealed beneath coating.</p>
+                    </li>
+                    <li>
+                        <span>03</span>
+                        <h3>Correct</h3>
+                        <p>Polishing or paint correction is matched to visible defects and the agreed scope.</p>
+                    </li>
+                    <li>
+                        <span>04</span>
+                        <h3>Coat</h3>
+                        <p>The prepared finish receives the coating, cure time, final inspection, and care guidance.</p>
+                    </li>
+                </ol>
+            </div>
+        </section>
+
+        <section class="coating-gallery" id="results" aria-labelledby="coating-gallery-title">
+            <div class="container">
+                <div class="coating-heading coating-heading--light">
+                    <p class="coating-kicker">Orange County vehicles</p>
+                    <h2 id="coating-gallery-title">The finish has to hold up outside.</h2>
+                    <p>These are customer vehicles photographed where the work actually lives: driveways, garages, and
+                        Southern California streets.</p>
+                </div>
+                <div class="coating-gallery__grid">
+                    <figure class="coating-gallery__lead">
+                        <img src="/assets/ceramic-coating/white-mclaren.webp"
+                            alt="White McLaren in Orange County after premium exterior care" width="1012" height="1800">
+                    </figure>
+                    <figure>
+                        <img src="/assets/ceramic-coating/foam-bmw.webp"
+                            alt="BMW covered in foam during ceramic coating preparation" width="1012" height="1800"
+                            loading="lazy">
+                    </figure>
+                    <figure>
+                        <img src="/assets/ceramic-coating/foam-sedan.webp"
+                            alt="Sedan receiving a thorough foam wash before paint preparation" width="1012"
+                            height="1800" loading="lazy">
+                    </figure>
+                    <figure>
+                        <img src="/assets/ceramic-coating/finished-vw.webp"
+                            alt="Finished Volkswagen with a clean reflective exterior" width="1012" height="1800"
+                            loading="lazy">
+                    </figure>
+                </div>
+            </div>
+        </section>
+
+        <section class="coating-fit" id="fit">
+            <div class="container coating-fit__grid">
+                <div>
+                    <p class="coating-kicker">Good fit</p>
+                    <h2>Who gets the most value from coating?</h2>
+                </div>
+                <div class="coating-fit__list">
+                    <div><strong>Newer vehicles</strong><span>Protect a finish before years of washing and sun add up.</span></div>
+                    <div><strong>Dark paint</strong><span>Improve gloss and make careful maintenance more manageable.</span></div>
+                    <div><strong>Daily drivers</strong><span>Choose protection that is meant to live through real use.</span></div>
+                    <div><strong>Enthusiast cars</strong><span>Pair the coating plan with correction where the finish needs it.</span></div>
+                </div>
+            </div>
+        </section>
+
+        <section class="coating-call" id="contact">
+            <div class="container coating-call__grid">
+                <div>
+                    <p class="coating-kicker">Before you call</p>
+                    <h2>Three details give us a real starting point.</h2>
+                </div>
+                <div class="coating-call__details">
+                    <span>Year, make, and model</span>
+                    <span>Current paint condition</span>
+                    <span>Your protection and finish goals</span>
+                </div>
+                <div class="coating-call__actions">
+                    <a href="tel:7146007134" class="brutalist-btn brutalist-btn--primary brutalist-btn--large"
+                        data-lead-action="ceramic_coating_call">Call (714) 600-7134</a>
+                    <a href="sms:7146007134" class="brutalist-btn brutalist-btn--large"
+                        data-lead-action="ceramic_coating_text">Text Photos Instead</a>
+                </div>
+            </div>
+        </section>
+
+        <section class="coating-area">
+            <div class="container">
+                <p class="coating-area__label">Serving Orange County</p>
+                <p>Tustin <span>/</span> Newport Beach <span>/</span> Lake Forest <span>/</span> Aliso Viejo
+                    <span>/</span> Rancho Santa Margarita <span>/</span> surrounding communities
+                </p>
+            </div>
+        </section>
+
+        <section class="coating-final">
+            <div class="container">
+                <p class="coating-kicker">Obsidian Autoworks</p>
+                <h2>Protect the finish you actually drive.</h2>
+                <p>Call now for a short coating consultation or text clear photos of the vehicle and paint.</p>
+                <div class="coating-actions coating-actions--center">
+                    <a href="tel:7146007134" class="brutalist-btn brutalist-btn--primary brutalist-btn--large"
+                        data-lead-action="ceramic_coating_call">Call For Clarity</a>
+                    <a href="sms:7146007134" class="brutalist-btn brutalist-btn--large coating-btn--glass"
+                        data-lead-action="ceramic_coating_text">Text Obsidian</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__main">
+                <div class="footer__brand">
+                    <span class="footer__logo">OBSIDIAN<span>AUTOWORKS</span></span>
+                    <p>Mobile automotive appearance services across Orange County.</p>
+                </div>
+                <div class="footer__links">
+                    <div><strong>Services</strong><br><a href="/ceramic-coating">Ceramic Coating</a><br><a
+                            href="/ceramic-window-tinting">Ceramic Window Tint</a><br><a
+                            href="/mobile-window-tinting">Mobile Tint</a></div>
+                    <div><strong>Proof</strong><br><a href="/window-tinting-gallery">Window Tint Gallery</a><br><a
+                            href="/services">All Services</a></div>
+                    <div><strong>Contact</strong><br><a
+                            href="mailto:obsidianautoworksoc@gmail.com">obsidianautoworksoc@gmail.com</a><br><a
+                            href="tel:7146007134">(714) 600-7134</a><br><a href="sms:7146007134">Text Us</a></div>
+                </div>
+            </div>
+            <div class="footer__bottom">
+                <p>© 2026 Obsidian Autoworks. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    <script src="/lead-tracking.js" defer></script>
+</body>
+
+</html>
