@@ -4,6 +4,8 @@ import { readFile } from 'node:fs/promises';
 const root = new URL('../', import.meta.url);
 const booking = await readFile(new URL('booking', root), 'utf8');
 const vipBooking = await readFile(new URL('vip-booking', root), 'utf8');
+const mobileTint = await readFile(new URL('mobile-window-tinting', root), 'utf8');
+const ceramicTint = await readFile(new URL('ceramic-window-tinting', root), 'utf8');
 const tracking = await readFile(new URL('lead-tracking.js', root), 'utf8');
 
 const squarePattern = /(?:app\.squareup\.com|book\.squareup\.com|squareup\.com\/appointments|square\.site\/appointments)/i;
@@ -28,6 +30,21 @@ assert.match(vipBooking, /data-hero-quiz[^>]*href="#vip-booking"|href="#vip-book
 assert.match(vipBooking, /data-router-call/, 'Every quiz recommendation needs an explicit call action.');
 assert.match(vipBooking, /data-router-text/, 'Every quiz recommendation needs an explicit text action.');
 assert.doesNotMatch(vipBooking, /data-router-book|vip_quiz_square_click|square_booking_url|square_booking_available/, 'Quiz results must not expose stale Square behavior or payload fields.');
+
+for (const [name, page, service] of [
+  ['mobile tint', mobileTint, 'mobile_tint'],
+  ['ceramic tint', ceramicTint, 'ceramic_tint']
+]) {
+  assert.match(page, new RegExp(`<html[^>]+data-lead-service="${service}"`), `The ${name} page must identify its lead service.`);
+  assert.match(page, /data-hero-primary[^>]*href="tel:7146007134"|href="tel:7146007134"[^>]*data-hero-primary/, `The ${name} hero needs a primary call action.`);
+  assert.match(page, /data-hero-secondary[^>]*href="sms:\+17146007134|href="sms:\+17146007134[^>]*data-hero-secondary/, `The ${name} hero needs a secondary text action.`);
+  assert.match(page, /data-cta-primary[^>]*href="tel:7146007134"|href="tel:7146007134"[^>]*data-cta-primary/, `The ${name} final CTA needs a primary call action.`);
+  assert.match(page, /data-cta-secondary[^>]*href="sms:\+17146007134|href="sms:\+17146007134[^>]*data-cta-secondary/, `The ${name} final CTA needs a secondary text action.`);
+
+  const heroPrimaryIndex = page.indexOf('data-hero-primary');
+  const heroSecondaryIndex = page.indexOf('data-hero-secondary');
+  assert.ok(heroPrimaryIndex < heroSecondaryIndex, `The ${name} hero actions must be ordered call, then text.`);
+}
 
 assert.match(tracking, /const TEXT_SELECTOR = 'a\[href\^="sms:"\]'/, 'Shared tracking needs an SMS selector.');
 assert.match(tracking, /sendAnalyticsEvent\('text_click'/, 'Shared tracking needs to record text clicks.');
