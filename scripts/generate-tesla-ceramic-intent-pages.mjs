@@ -306,7 +306,7 @@ const render = (page) => {
 };
 
 for (const page of pages) {
-  await writeFile(new URL(page.route, root), render(page));
+  await writeFile(new URL(`${page.route}.html`, root), render(page));
 }
 
 console.log(`generated ${pages.length} Tesla and ceramic tint intent pages`);

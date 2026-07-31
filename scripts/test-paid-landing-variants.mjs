@@ -19,11 +19,11 @@ const coatingGeneral = await readOptional('ceramic-coating');
 const coatingCost = await readOptional('ceramic-coating-cost-paint-correction');
 const coatingIrvine = await readOptional('ceramic-coating-irvine');
 const coatingLuxury = await readOptional('luxury-ev-ceramic-coating');
-const teslaModelY = await readOptional('tesla-model-y-window-tint');
-const teslaModel3 = await readOptional('tesla-model-3-window-tint');
-const cybertruck = await readOptional('tesla-cybertruck-window-tint');
-const mobileCeramicNearMe = await readOptional('mobile-ceramic-window-tint-near-me');
-const nanoCeramic = await readOptional('nano-ceramic-window-tint');
+const teslaModelY = await readOptional('tesla-model-y-window-tint.html');
+const teslaModel3 = await readOptional('tesla-model-3-window-tint.html');
+const cybertruck = await readOptional('tesla-cybertruck-window-tint.html');
+const mobileCeramicNearMe = await readOptional('mobile-ceramic-window-tint-near-me.html');
+const nanoCeramic = await readOptional('nano-ceramic-window-tint.html');
 const css = await readOptional('paid-landing.css');
 const devServer = await readFile(new URL('dev_server.py', root), 'utf8');
 const vercel = JSON.parse(await readFile(new URL('vercel.json', root), 'utf8'));
@@ -109,14 +109,19 @@ for (const [name, page, service, variant, route] of paidVariants) {
   assert.ok(finalCall >= 0 && finalCall < finalText, `${name} final actions must be ordered call, then text.`);
   assert.match(page, /href="tel:7146007134"/, `${name} must use the approved call number.`);
   assert.match(page, /href="sms:\+17146007134\?body=/, `${name} must provide a prefilled text action.`);
-  assert.match(devServer, new RegExp(`"\\/${route}": "\\/${route}"`), `${name} must be registered in the local server.`);
+  const localDestination = newIntentRoutes.has(route) ? `${route}\\.html` : route;
+  assert.match(
+    devServer,
+    new RegExp(`"\\/${route}": "\\/${localDestination}"`),
+    `${name} must be registered in the local server.`
+  );
   assert.ok(
     vercel.headers.some((header) => header.source.includes(route)),
     `${name} must be covered by the production HTML content-type rule.`
   );
   if (newIntentRoutes.has(route)) {
     assert.ok(
-      vercel.rewrites.some((rewrite) => rewrite.source === `/${route}` && rewrite.destination === `/${route}`),
+      vercel.rewrites.some((rewrite) => rewrite.source === `/${route}` && rewrite.destination === `/${route}.html`),
       `${name} must be explicitly published as an extensionless Vercel route.`
     );
   }
