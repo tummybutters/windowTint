@@ -15,7 +15,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700;800&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="/style.css?v=20260108-1">
-    <link rel="stylesheet" href="/paid-landing.css?v=20260729-1">
+    <link rel="stylesheet" href="/paid-landing.css?v=20260730-vip1">
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-TR9ET60HX3"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
@@ -38,13 +38,10 @@
     </nav>
 
     <main>
-        <header class="paid-hero">
-            <img class="paid-hero__media" src="/assets/paid-landing/mobile-porsche-front.webp"
-                alt="Porsche with finished ceramic window tint at an Orange County home" width="1012" height="1800"
-                fetchpriority="high">
-            <div class="paid-shell paid-hero__content">
+        <header class="paid-hero paid-hero--vip">
+            <div class="paid-shell paid-hero__content paid-hero__content--centered">
                 <p class="paid-eyebrow">Window tinting near you - Orange County</p>
-                <h1>The Tint Shop Comes to You</h1>
+                <h1>The Tint Shop <span>Comes to You</span></h1>
                 <p class="paid-hero__copy">Mobile ceramic window tinting at a suitable home or workplace. Send your
                     vehicle, city, and shade goal so we can confirm the film, install space, weather, and availability.
                 </p>
@@ -57,6 +54,28 @@
                 </div>
             </div>
         </header>
+        <section class="paid-hero-strip" aria-label="Real mobile tint work">
+            <div class="paid-hero-strip__grid">
+                <figure class="paid-hero-strip__item">
+                    <img src="/assets/paid-landing/mobile-porsche-rear.webp"
+                        alt="Rear view of a Porsche after mobile window tinting" width="1012" height="1800"
+                        fetchpriority="high">
+                    <figcaption>Finished rear glass</figcaption>
+                </figure>
+                <figure class="paid-hero-strip__item">
+                    <img src="/assets/paid-landing/mobile-porsche-front.webp"
+                        alt="Porsche with finished ceramic window tint at an Orange County home" width="1012"
+                        height="1800" fetchpriority="high">
+                    <figcaption>Installed where the car lives</figcaption>
+                </figure>
+                <figure class="paid-hero-strip__item">
+                    <img src="/assets/paid-landing/mobile-porsche-side.webp"
+                        alt="Side profile of a Porsche with finished window tint" width="1012" height="1800"
+                        fetchpriority="high">
+                    <figcaption>Consistent side-glass shade</figcaption>
+                </figure>
+            </div>
+        </section>
 
         <section class="paid-proof" aria-label="Mobile tint service details">
             <div class="paid-shell paid-proof__grid">

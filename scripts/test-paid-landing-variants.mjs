@@ -53,6 +53,23 @@ for (const [name, page, service, variant, route] of paidVariants) {
   assert.match(page, /<meta name="robots" content="noindex, nofollow">/, `${name} must remain outside organic indexing.`);
   assert.match(page, /<script src="\/lead-tracking\.js" defer><\/script>/, `${name} must use the shared attribution tracker.`);
   assert.match(page, /<link rel="stylesheet" href="\/paid-landing\.css/, `${name} must use the shared paid-landing stylesheet.`);
+  assert.match(page, /class="paid-hero paid-hero--vip"/, `${name} must use the exact VIP hero shell.`);
+  assert.match(
+    page,
+    /class="paid-shell paid-hero__content paid-hero__content--centered"/,
+    `${name} hero content must be centered like the VIP page.`
+  );
+  assert.match(page, /<section class="paid-hero-strip"/, `${name} must place the photo deck directly under the hero.`);
+  assert.equal(
+    (page.match(/class="paid-hero-strip__item/g) || []).length,
+    3,
+    `${name} must use three real photos in the spanning VIP deck.`
+  );
+  assert.doesNotMatch(
+    page,
+    /class="paid-hero__media"/,
+    `${name} must not revert to a left-aligned background-image hero.`
+  );
   assert.doesNotMatch(page, squarePattern, `${name} must not expose Square.`);
   assert.doesNotMatch(page, bookingPattern, `${name} must not route paid traffic to booking.`);
   assert.doesNotMatch(page, prohibitedBrandPattern, `${name} must not contain stale customer-facing brands.`);

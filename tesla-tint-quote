@@ -15,7 +15,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700;800&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="/style.css?v=20260108-1">
-    <link rel="stylesheet" href="/paid-landing.css?v=20260729-1">
+    <link rel="stylesheet" href="/paid-landing.css?v=20260730-vip1">
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-TR9ET60HX3"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
@@ -38,13 +38,10 @@
     </nav>
 
     <main>
-        <header class="paid-hero">
-            <img class="paid-hero__media" src="/assets/paid-landing/tesla-model-y-front.webp"
-                alt="Silver Tesla Model Y with finished ceramic window tint at an Orange County home" width="1012"
-                height="1800" fetchpriority="high">
-            <div class="paid-shell paid-hero__content">
+        <header class="paid-hero paid-hero--vip">
+            <div class="paid-shell paid-hero__content paid-hero__content--centered">
                 <p class="paid-eyebrow">Mobile Tesla tint - Orange County</p>
-                <h1>Tesla Tint, Priced by Model</h1>
+                <h1>Tesla Tint, <span>Priced by Model</span></h1>
                 <p class="paid-hero__copy">Tell us your Tesla model and the glass you want tinted. We will confirm the
                     package, shade, mobile install location, and exact appointment details before service.</p>
                 <div class="paid-hero__actions">
@@ -56,6 +53,28 @@
                 </div>
             </div>
         </header>
+        <section class="paid-hero-strip" aria-label="Real Tesla tint work">
+            <div class="paid-hero-strip__grid">
+                <figure class="paid-hero-strip__item">
+                    <img src="/assets/paid-landing/tesla-model-y-rear.webp"
+                        alt="Rear view of a Tesla Model Y after ceramic tint installation" width="1012" height="1800"
+                        fetchpriority="high">
+                    <figcaption>Finished side and rear glass</figcaption>
+                </figure>
+                <figure class="paid-hero-strip__item">
+                    <img src="/assets/paid-landing/tesla-model-y-front.webp"
+                        alt="Silver Tesla Model Y with finished ceramic window tint at an Orange County home"
+                        width="1012" height="1800" fetchpriority="high">
+                    <figcaption>Model Y mobile tint</figcaption>
+                </figure>
+                <figure class="paid-hero-strip__item">
+                    <img src="/assets/paid-landing/tesla-glass-roof.webp"
+                        alt="Interior view of the Tesla panoramic glass roof" width="1012" height="1800"
+                        fetchpriority="high">
+                    <figcaption>Panoramic roof glass</figcaption>
+                </figure>
+            </div>
+        </section>
 
         <section class="paid-proof" aria-label="Tesla tint service details">
             <div class="paid-shell paid-proof__grid">

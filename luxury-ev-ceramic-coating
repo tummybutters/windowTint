@@ -15,7 +15,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700;800&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="/style.css?v=20260108-1">
-    <link rel="stylesheet" href="/paid-landing.css?v=20260730-1">
+    <link rel="stylesheet" href="/paid-landing.css?v=20260730-vip1">
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-TR9ET60HX3"></script>
     <script>
         window.OBSIDIAN_GOOGLE_ADS_CONFIG = {
@@ -46,13 +46,10 @@
     </nav>
 
     <main>
-        <header class="paid-hero">
-            <img class="paid-hero__media" src="/assets/ceramic-coating/white-mclaren.webp"
-                alt="White performance car showing a clean reflective finish after professional exterior care"
-                width="1012" height="1800" fetchpriority="high">
-            <div class="paid-shell paid-hero__content">
+        <header class="paid-hero paid-hero--vip">
+            <div class="paid-shell paid-hero__content paid-hero__content--centered">
                 <p class="paid-eyebrow">Luxury and EV ceramic coating - Orange County</p>
-                <h1>Protect the Finish You Chose the Car For.</h1>
+                <h1>Protect the Finish <span>You Chose the Car For.</span></h1>
                 <p class="paid-hero__copy">Paint preparation, correction options, and ceramic protection for Tesla,
                     BMW, Porsche, Audi, and other vehicles where the finish deserves an intentional plan.</p>
                 <div class="paid-hero__actions">
@@ -65,6 +62,28 @@
                 </div>
             </div>
         </header>
+        <section class="paid-hero-strip" aria-label="Luxury and EV ceramic coating results">
+            <div class="paid-hero-strip__grid">
+                <figure class="paid-hero-strip__item">
+                    <img src="/assets/ceramic-coating/foam-bmw.webp"
+                        alt="BMW undergoing preparation before ceramic coating" width="1012" height="1800"
+                        fetchpriority="high">
+                    <figcaption>Vehicle-specific preparation</figcaption>
+                </figure>
+                <figure class="paid-hero-strip__item">
+                    <img src="/assets/ceramic-coating/white-mclaren.webp"
+                        alt="White performance car showing a reflective finish after professional exterior care"
+                        width="1012" height="1800" fetchpriority="high">
+                    <figcaption>Protection for special finishes</figcaption>
+                </figure>
+                <figure class="paid-hero-strip__item">
+                    <img src="/assets/ceramic-coating/paint-detail.webp"
+                        alt="Close view of deep reflection in prepared automotive paint" width="1012" height="1800"
+                        fetchpriority="high">
+                    <figcaption>Paint clarity worth protecting</figcaption>
+                </figure>
+            </div>
+        </section>
 
         <section class="paid-proof" aria-label="Luxury and EV coating details">
             <div class="paid-shell paid-proof__grid">
