@@ -43,7 +43,6 @@ const paidVariants = [
   ['windshield', windshield, 'windshield_tint', 'windshield_action_v1', 'windshield-ceramic-tint'],
   ['ceramic-tint pricing', ceramicTintPricing, 'ceramic_tint', 'ceramic_pricing_v1', 'ceramic-window-tint-pricing'],
   ['coating cost', coatingCost, 'ceramic_coating', 'coating_cost_correction_v1', 'ceramic-coating-cost-paint-correction'],
-  ['Irvine coating', coatingIrvine, 'ceramic_coating', 'coating_irvine_v1', 'ceramic-coating-irvine'],
   ['luxury and EV coating', coatingLuxury, 'ceramic_coating', 'coating_luxury_ev_v1', 'luxury-ev-ceramic-coating']
 ];
 
