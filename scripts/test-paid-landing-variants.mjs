@@ -46,6 +46,13 @@ assert.ok(css, 'The paid-search variants need a shared stylesheet.');
 const squarePattern = /(?:app\.squareup\.com|book\.squareup\.com|squareup\.com\/appointments|square\.site\/appointments)/i;
 const prohibitedBrandPattern = /\b(?:Pure|First[- ]Class)\b/i;
 const bookingPattern = /href="\/(?:vip-)?booking(?:[?#"])/i;
+const newIntentRoutes = new Set([
+  'tesla-model-y-window-tint',
+  'tesla-model-3-window-tint',
+  'tesla-cybertruck-window-tint',
+  'mobile-ceramic-window-tint-near-me',
+  'nano-ceramic-window-tint'
+]);
 
 const paidVariants = [
   ['Tesla', tesla, 'tesla_tint', 'tesla_action_v1', 'tesla-tint-quote'],
@@ -107,6 +114,12 @@ for (const [name, page, service, variant, route] of paidVariants) {
     vercel.headers.some((header) => header.source.includes(route)),
     `${name} must be covered by the production HTML content-type rule.`
   );
+  if (newIntentRoutes.has(route)) {
+    assert.ok(
+      vercel.rewrites.some((rewrite) => rewrite.source === `/${route}` && rewrite.destination === `/${route}`),
+      `${name} must be explicitly published as an extensionless Vercel route.`
+    );
+  }
 }
 
 for (const [name, page] of [

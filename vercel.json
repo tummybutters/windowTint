@@ -405,6 +405,26 @@
       "destination": "/tesla-window-tinting"
     },
     {
+      "source": "/tesla-model-y-window-tint",
+      "destination": "/tesla-model-y-window-tint"
+    },
+    {
+      "source": "/tesla-model-3-window-tint",
+      "destination": "/tesla-model-3-window-tint"
+    },
+    {
+      "source": "/tesla-cybertruck-window-tint",
+      "destination": "/tesla-cybertruck-window-tint"
+    },
+    {
+      "source": "/mobile-ceramic-window-tint-near-me",
+      "destination": "/mobile-ceramic-window-tint-near-me"
+    },
+    {
+      "source": "/nano-ceramic-window-tint",
+      "destination": "/nano-ceramic-window-tint"
+    },
+    {
       "source": "/tint-removal",
       "destination": "/tint-removal"
     },
