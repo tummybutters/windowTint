@@ -37,7 +37,10 @@ for (const [city, citySlug, localMarker] of cities) {
   assert.match(page, new RegExp(`<html[^>]+data-lead-service="ceramic_coating"`));
   assert.match(page, new RegExp(`<html[^>]+data-lead-variant="${variant}"`));
   assert.match(page, /class="paid-hero paid-hero--vip"/);
-  assert.match(page, new RegExp(`Mobile Ceramic Coating in ${city}`, 'i'));
+  const h1 = page.match(/<h1>([\s\S]*?)<\/h1>/)?.[1].replace(/<[^>]+>/g, '').replace(/\s+/g, ' ').trim();
+  const heroCopy = page.match(/<p class="paid-hero__copy">([\s\S]*?)<\/p>/)?.[1].replace(/\s+/g, ' ').trim();
+  assert.equal(h1, `Ceramic Coating in ${city}`, `${city} H1 must say only what the page offers and where.`);
+  assert.ok(heroCopy.split(/\s+/).length <= 18, `${city} hero support copy must stay plain and brief.`);
   assert.match(page, new RegExp(localMarker, 'i'));
   assert.equal((page.match(/class="paid-hero-strip__item/g) || []).length, 7);
   assert.match(page, new RegExp(`data-lead-action="coating_${citySlug.replaceAll('-', '_')}_call"`));

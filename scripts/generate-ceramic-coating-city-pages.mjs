@@ -6,9 +6,7 @@ const cities = [
   {
     city: 'Irvine',
     slug: 'irvine',
-    dream: 'A Finish Worth Protecting.',
     meta: 'Mobile ceramic coating in Irvine with paint preparation, correction options, and direct call or text quoting from Obsidian Autoworks.',
-    heroCopy: 'Professional coating for Irvine vehicles, delivered with disciplined paint preparation and a finish designed to look composed in every light.',
     localMarker: 'business parks and residential garages',
     localHeading: 'Coating Service Built Around Irvine',
     localBody: 'From business parks and residential garages to suitable covered driveways, we qualify the workspace before the appointment so preparation, application, and curing are protected.',
@@ -23,9 +21,7 @@ const cities = [
   {
     city: 'Lake Forest',
     slug: 'lake-forest',
-    dream: 'Deep Gloss, Properly Protected.',
     meta: 'Mobile ceramic coating in Lake Forest with paint correction, garage-ready service qualification, and direct photo quoting from Obsidian Autoworks.',
-    heroCopy: 'A cleaner, deeper finish for Lake Forest vehicles, backed by careful preparation, correction matched to the paint, and long-term protection.',
     localMarker: 'garage and covered-driveway setups',
     localHeading: 'A Mobile Setup That Respects the Process',
     localBody: 'Lake Forest garage and covered-driveway setups can be excellent coating environments when access, light, water, power, airflow, and cure time are confirmed first.',
@@ -40,9 +36,7 @@ const cities = [
   {
     city: 'Aliso Viejo',
     slug: 'aliso-viejo',
-    dream: 'Clarity That Lasts Beyond the Detail.',
     meta: 'Mobile ceramic coating in Aliso Viejo for deeper gloss, easier upkeep, and paint correction matched to your vehicle by Obsidian Autoworks.',
-    heroCopy: 'Mobile ceramic coating for Aliso Viejo drivers who want genuine paint clarity, easier maintenance, and protection without generic package guessing.',
     localMarker: 'hillside sun and inland dust',
     localHeading: 'Paint Protection for Aliso Viejo Conditions',
     localBody: 'Hillside sun and inland dust can make an unprotected finish look flatter between washes. We pair the coating with the preparation needed to preserve depth and reflection.',
@@ -57,9 +51,7 @@ const cities = [
   {
     city: 'Newport Beach',
     slug: 'newport-beach',
-    dream: 'Coastal Protection, Without Compromise.',
     meta: 'Mobile ceramic coating in Newport Beach with coastal paint-protection planning, correction options, and direct photo quoting from Obsidian Autoworks.',
-    heroCopy: 'A high-clarity finish for Newport Beach vehicles, prepared and protected for coastal exposure, frequent sun, and the standard your vehicle deserves.',
     localMarker: 'coastal air and salt residue',
     localHeading: 'Protection Planned for the Coast',
     localBody: 'Coastal air and salt residue can settle on paint even when the vehicle is not driven far. Proper decontamination and a disciplined maintenance plan matter as much as the coating itself.',
@@ -74,9 +66,7 @@ const cities = [
   {
     city: 'Costa Mesa',
     slug: 'costa-mesa',
-    dream: 'A Richer Finish for Every Mile.',
     meta: 'Mobile ceramic coating in Costa Mesa with paint enhancement, correction options, and direct call or text consultations from Obsidian Autoworks.',
-    heroCopy: 'Professional ceramic protection for Costa Mesa vehicles that see real mileage, real sun, and deserve more than a temporary detail shine.',
     localMarker: 'daily freeway driving and open-air parking',
     localHeading: 'Built for Costa Mesa Daily Driving',
     localBody: 'Daily freeway driving and open-air parking bring road film, sun, dust, and frequent washing. We prepare the surface around that reality before adding long-term protection.',
@@ -91,9 +81,7 @@ const cities = [
   {
     city: 'Tustin',
     slug: 'tustin',
-    dream: 'Professional Gloss at Your Door.',
     meta: 'Mobile ceramic coating in Tustin with paint preparation, correction matched to your finish, and call-first quoting from Obsidian Autoworks.',
-    heroCopy: 'A polished, protected finish for Tustin vehicles, completed with careful preparation and direct recommendations based on the actual paint.',
     localMarker: 'garage, driveway, or suitable workplace',
     localHeading: 'Mobile Coating That Starts With the Workspace',
     localBody: 'A garage, driveway, or suitable workplace can support professional coating when there is enough room, protection from the elements, utility access, and uninterrupted cure time.',
@@ -108,9 +96,7 @@ const cities = [
   {
     city: 'Mission Viejo',
     slug: 'mission-viejo',
-    dream: 'Depth That Survives the Daily Drive.',
     meta: 'Mobile ceramic coating in Mission Viejo for deeper gloss, paint correction, and easier upkeep with direct vehicle-photo quoting from Obsidian Autoworks.',
-    heroCopy: 'A more composed finish for Mission Viejo vehicles, with preparation and protection selected around your paint rather than a one-size package.',
     localMarker: 'sun exposure and hillside dust',
     localHeading: 'Protection for Mission Viejo Exposure',
     localBody: 'Sun exposure and hillside dust can mute the finish and increase wash frequency. We focus first on paint clarity, then protect it with the right coating duration.',
@@ -125,9 +111,7 @@ const cities = [
   {
     city: 'Laguna Hills',
     slug: 'laguna-hills',
-    dream: 'Refined Protection in Every Reflection.',
     meta: 'Mobile ceramic coating in Laguna Hills with paint correction options, long-term gloss, and direct call or text quoting from Obsidian Autoworks.',
-    heroCopy: 'Professional paint protection for Laguna Hills vehicles, designed around finish quality, realistic maintenance, and the way the vehicle is actually stored.',
     localMarker: 'warm inland sun and regular road dust',
     localHeading: 'A Better Finish for Laguna Hills Driving',
     localBody: 'Warm inland sun and regular road dust can leave paint looking dry and difficult to maintain. Proper preparation and ceramic protection create a smoother, richer surface.',
@@ -185,8 +169,8 @@ const render = (data) => {
     <main>
         <header class="paid-hero paid-hero--vip"><div class="paid-shell paid-hero__content paid-hero__content--centered">
             <p class="paid-eyebrow">Mobile ceramic coating in ${data.city}</p>
-            <h1>Mobile Ceramic Coating in ${data.city}. <span>${data.dream}</span></h1>
-            <p class="paid-hero__copy">${data.heroCopy}</p>
+            <h1>Ceramic Coating <span>in ${data.city}</span></h1>
+            <p class="paid-hero__copy">We prep, correct, and protect your paint at a suitable ${data.city} location.</p>
             <div class="paid-hero__actions"><a data-hero-primary data-lead-action="${action}_call" class="paid-button paid-button--primary" href="tel:7146007134">Call for ${data.city} service</a><a data-hero-secondary data-lead-action="${action}_text" class="paid-button paid-button--ghost" href="sms:+17146007134?body=${textBody}">Text vehicle photos</a><a data-hero-tertiary class="paid-button paid-button--ghost" href="#service">See local service</a></div>
         </div></header>
         <section class="paid-hero-strip" aria-label="${data.city} ceramic coating results"><div class="paid-hero-strip__grid">${photoCards(data.city, data.localMarker)}
