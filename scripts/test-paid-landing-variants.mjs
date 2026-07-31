@@ -120,6 +120,12 @@ for (const [name, page, service, variant, route] of paidVariants) {
     `${name} must be covered by the production HTML content-type rule.`
   );
   assert.equal(vercel.cleanUrls, true, `${name} must publish HTML files at extensionless URLs.`);
+  if (newIntentRoutes.has(route)) {
+    assert.ok(
+      vercel.rewrites.some((rewrite) => rewrite.source === `/${route}` && rewrite.destination === `/${route}`),
+      `${name} must activate its clean production route.`
+    );
+  }
 }
 
 for (const [name, page] of [
