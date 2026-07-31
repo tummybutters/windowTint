@@ -1,4 +1,4 @@
-import { writeFile } from 'node:fs/promises';
+import { mkdir, writeFile } from 'node:fs/promises';
 
 const root = new URL('../', import.meta.url);
 
@@ -306,7 +306,9 @@ const render = (page) => {
 };
 
 for (const page of pages) {
-  await writeFile(new URL(`${page.route}.html`, root), render(page));
+  const directory = new URL(`${page.route}/`, root);
+  await mkdir(directory, { recursive: true });
+  await writeFile(new URL('index.html', directory), render(page));
 }
 
 console.log(`generated ${pages.length} Tesla and ceramic tint intent pages`);
