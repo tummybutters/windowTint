@@ -19,6 +19,11 @@ const coatingGeneral = await readOptional('ceramic-coating');
 const coatingCost = await readOptional('ceramic-coating-cost-paint-correction');
 const coatingIrvine = await readOptional('ceramic-coating-irvine');
 const coatingLuxury = await readOptional('luxury-ev-ceramic-coating');
+const teslaModelY = await readOptional('tesla-model-y-window-tint');
+const teslaModel3 = await readOptional('tesla-model-3-window-tint');
+const cybertruck = await readOptional('tesla-cybertruck-window-tint');
+const mobileCeramicNearMe = await readOptional('mobile-ceramic-window-tint-near-me');
+const nanoCeramic = await readOptional('nano-ceramic-window-tint');
 const css = await readOptional('paid-landing.css');
 const devServer = await readFile(new URL('dev_server.py', root), 'utf8');
 const vercel = JSON.parse(await readFile(new URL('vercel.json', root), 'utf8'));
@@ -31,6 +36,11 @@ assert.ok(coatingGeneral, 'The general ceramic-coating page must exist.');
 assert.ok(coatingCost, 'The coating cost and correction variant must exist.');
 assert.ok(coatingIrvine, 'The Irvine coating variant must exist.');
 assert.ok(coatingLuxury, 'The luxury and EV coating variant must exist.');
+assert.ok(teslaModelY, 'The paid Model Y tint variant must exist.');
+assert.ok(teslaModel3, 'The paid Model 3 tint variant must exist.');
+assert.ok(cybertruck, 'The paid Cybertruck tint variant must exist.');
+assert.ok(mobileCeramicNearMe, 'The mobile ceramic near-me variant must exist.');
+assert.ok(nanoCeramic, 'The nano ceramic tint variant must exist.');
 assert.ok(css, 'The paid-search variants need a shared stylesheet.');
 
 const squarePattern = /(?:app\.squareup\.com|book\.squareup\.com|squareup\.com\/appointments|square\.site\/appointments)/i;
@@ -42,6 +52,11 @@ const paidVariants = [
   ['near-me mobile', nearMe, 'mobile_tint', 'near_me_mobile_v1', 'mobile-window-tinting-near-me'],
   ['windshield', windshield, 'windshield_tint', 'windshield_action_v1', 'windshield-ceramic-tint'],
   ['ceramic-tint pricing', ceramicTintPricing, 'ceramic_tint', 'ceramic_pricing_v1', 'ceramic-window-tint-pricing'],
+  ['Tesla Model Y', teslaModelY, 'tesla_tint', 'tesla_model_y_v1', 'tesla-model-y-window-tint'],
+  ['Tesla Model 3', teslaModel3, 'tesla_tint', 'tesla_model_3_v1', 'tesla-model-3-window-tint'],
+  ['Cybertruck', cybertruck, 'tesla_tint', 'tesla_cybertruck_v1', 'tesla-cybertruck-window-tint'],
+  ['mobile ceramic near-me', mobileCeramicNearMe, 'ceramic_tint', 'ceramic_near_me_v1', 'mobile-ceramic-window-tint-near-me'],
+  ['nano ceramic', nanoCeramic, 'ceramic_tint', 'nano_ceramic_v1', 'nano-ceramic-window-tint'],
   ['coating cost', coatingCost, 'ceramic_coating', 'coating_cost_correction_v1', 'ceramic-coating-cost-paint-correction'],
   ['luxury and EV coating', coatingLuxury, 'ceramic_coating', 'coating_luxury_ev_v1', 'luxury-ev-ceramic-coating']
 ];
@@ -74,6 +89,7 @@ for (const [name, page, service, variant, route] of paidVariants) {
   assert.doesNotMatch(page, squarePattern, `${name} must not expose Square.`);
   assert.doesNotMatch(page, bookingPattern, `${name} must not route paid traffic to booking.`);
   assert.doesNotMatch(page, prohibitedBrandPattern, `${name} must not contain stale customer-facing brands.`);
+  assert.doesNotMatch(page, /\bundefined\b/i, `${name} must not render missing configuration values.`);
 
   const heroCall = page.indexOf('data-hero-primary');
   const heroText = page.indexOf('data-hero-secondary');
@@ -97,7 +113,12 @@ for (const [name, page] of [
   ['Tesla', tesla],
   ['near-me mobile', nearMe],
   ['windshield', windshield],
-  ['ceramic-tint pricing', ceramicTintPricing]
+  ['ceramic-tint pricing', ceramicTintPricing],
+  ['Tesla Model Y', teslaModelY],
+  ['Tesla Model 3', teslaModel3],
+  ['Cybertruck', cybertruck],
+  ['mobile ceramic near-me', mobileCeramicNearMe],
+  ['nano ceramic', nanoCeramic]
 ]) {
   assert.match(page, /AW-17846304809/, `${name} must initialize the mobile-tint Ads account.`);
   assert.doesNotMatch(page, /AW-18301955625/, `${name} must not initialize the coating Ads account.`);
@@ -159,6 +180,30 @@ assert.match(ceramicTintPricing, /\$200/, 'Ceramic pricing page must expose the 
 assert.match(ceramicTintPricing, /\$500/, 'Ceramic pricing page must expose the sides-and-rear starting price.');
 assert.match(ceramicTintPricing, /\$720/, 'Ceramic pricing page must expose the full-car starting price.');
 assert.match(ceramicTintPricing, /heat rejection/i, 'Ceramic pricing page must connect price to ceramic-film value.');
+
+assert.match(teslaModelY, /<h1>Tesla Model Y <span>Window Tint<\/span><\/h1>/, 'Model Y must use a short search-matching H1.');
+assert.match(teslaModelY, /Sides &amp; Rear[\s\S]*\$700/, 'Model Y must publish the approved sides-and-rear price.');
+assert.match(teslaModelY, /Full Car[\s\S]*\$950/, 'Model Y must publish the approved full-car price.');
+assert.match(teslaModelY, /Panoramic Roof[\s\S]*\$550/, 'Model Y must publish the approved roof add-on price.');
+assert.match(teslaModelY, /tesla-model-y-front\.webp/, 'Model Y must use the supplied Model Y proof.');
+
+assert.match(teslaModel3, /<h1>Tesla Model 3 <span>Window Tint<\/span><\/h1>/, 'Model 3 must use a short search-matching H1.');
+assert.match(teslaModel3, /Sides &amp; Rear[\s\S]*\$950/, 'Model 3 must publish the approved sides-and-rear price.');
+assert.match(teslaModel3, /Full Car[\s\S]*\$1,150/, 'Model 3 must publish the approved full-car price.');
+assert.doesNotMatch(teslaModel3, /alt="[^"]*Model 3[^"]*"[\s\S]{0,180}tesla-model-y/i, 'Model 3 must not label Model Y proof as Model 3.');
+
+assert.match(cybertruck, /<h1>Cybertruck <span>Window Tint<\/span><\/h1>/, 'Cybertruck must use a short search-matching H1.');
+assert.doesNotMatch(cybertruck, /\$[0-9]/, 'Cybertruck must not publish unconfirmed pricing.');
+assert.match(cybertruck, /exact quote/i, 'Cybertruck must use a quote-first offer.');
+
+assert.match(mobileCeramicNearMe, /<h1>Mobile Ceramic <span>Window Tint<\/span><\/h1>/, 'Mobile ceramic must use a short search-matching H1.');
+assert.match(mobileCeramicNearMe, /home or workplace/i, 'Mobile ceramic must explain the qualified mobile service area.');
+assert.match(mobileCeramicNearMe, /mobile-porsche-front\.webp/, 'Mobile ceramic must use real mobile-install proof.');
+
+assert.match(nanoCeramic, /<h1>Nano Ceramic <span>Window Tint<\/span><\/h1>/, 'Nano ceramic must use a short search-matching H1.');
+assert.match(nanoCeramic, /heat rejection/i, 'Nano ceramic must explain heat-rejection intent.');
+assert.match(nanoCeramic, /UV protection/i, 'Nano ceramic must explain UV protection.');
+assert.doesNotMatch(nanoCeramic, /\b(?:99|100)%\b/, 'Nano ceramic must not invent a numerical performance rating.');
 
 assert.match(coatingCost, /Paint Correction/i, 'Coating cost page must match correction intent.');
 assert.match(coatingCost, /\$550/, 'Coating cost page must expose the one-year starting price.');
