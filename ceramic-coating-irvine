@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en" data-lead-service="ceramic_coating" data-lead-variant="coating_irvine_v1">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mobile Ceramic Coating Irvine | Obsidian Autoworks</title>
+    <meta name="description"
+        content="Mobile ceramic coating and paint preparation for Irvine vehicles. Call or text Obsidian Autoworks with your vehicle, Irvine location, and paint goals.">
+    <meta name="robots" content="noindex, nofollow">
+    <link rel="canonical" href="https://www.obsidianautoworksoc.com/ceramic-coating">
+    <link rel="icon" type="image/png" href="/favicon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="/style.css?v=20260108-1">
+    <link rel="stylesheet" href="/paid-landing.css?v=20260730-1">
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-TR9ET60HX3"></script>
+    <script>
+        window.OBSIDIAN_GOOGLE_ADS_CONFIG = {
+            id: 'AW-18301955625',
+            websiteCallConfigId: '',
+            conversions: {
+                phone_click: 'BU5VCLCasNkcEKnchpdE',
+                text_click: 'qbmnCLOasNkcEKnchpdE'
+            }
+        };
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-TR9ET60HX3');
+        gtag('config', 'AW-18301955625');
+    </script>
+</head>
+
+<body class="paid-page">
+    <nav class="paid-nav" aria-label="Primary navigation">
+        <div class="paid-shell paid-nav__inner">
+            <a class="paid-brand" href="/">Obsidian <span>Autoworks</span></a>
+            <div class="paid-nav__actions">
+                <a class="paid-link" href="#service">Irvine mobile service</a>
+                <a class="paid-button paid-button--ghost" href="tel:7146007134">Call (714) 600-7134</a>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <header class="paid-hero">
+            <img class="paid-hero__media" src="/assets/ceramic-coating/white-mclaren.webp"
+                alt="White McLaren showing a clean reflective finish after professional exterior care" width="1012"
+                height="1800" fetchpriority="high">
+            <div class="paid-shell paid-hero__content">
+                <p class="paid-eyebrow">Mobile ceramic coating in Irvine</p>
+                <h1>Irvine Paint Protection, Brought to You.</h1>
+                <p class="paid-hero__copy">Professional paint preparation, correction options, and ceramic coating
+                    delivered as a mobile service to suitable Irvine homes and workplaces.</p>
+                <div class="paid-hero__actions">
+                    <a data-hero-primary data-lead-action="coating_irvine_call"
+                        class="paid-button paid-button--primary" href="tel:7146007134">Call for Irvine service</a>
+                    <a data-hero-secondary data-lead-action="coating_irvine_text"
+                        class="paid-button paid-button--ghost"
+                        href="sms:+17146007134?body=Hi%20Obsidian%20Autoworks%2C%20I%27d%20like%20ceramic%20coating%20in%20Irvine.%20My%20vehicle%2C%20Irvine%20location%2C%20paint%20condition%2C%20and%20protection%20goal%20are%3A%20">Text
+                        vehicle photos</a>
+                </div>
+            </div>
+        </header>
+
+        <section class="paid-proof" aria-label="Irvine ceramic coating service">
+            <div class="paid-shell paid-proof__grid">
+                <div class="paid-proof__item"><strong>Irvine mobile service</strong><span>Home and workplace options
+                        where access and conditions are suitable.</span></div>
+                <div class="paid-proof__item"><strong>Paint assessed first</strong><span>Correction is matched to the
+                        finish, not added automatically.</span></div>
+                <div class="paid-proof__item"><strong>Call or text directly</strong><span>Discuss the vehicle with the
+                        team before scheduling.</span></div>
+            </div>
+        </section>
+
+        <section class="paid-band paid-band--paper" id="service">
+            <div class="paid-shell">
+                <div class="paid-section-heading">
+                    <span>Service built around the location</span>
+                    <h2>What Mobile Coating Needs in Irvine</h2>
+                    <p>The right environment protects the preparation, correction, application, and cure process. We
+                        confirm the location before service.</p>
+                </div>
+                <div class="paid-packages">
+                    <article class="paid-package"><h3>Vehicle access</h3><p>Enough room to work safely around every
+                            panel that is included.</p><div class="paid-package__price"><small>Confirm</small>Space</div></article>
+                    <article class="paid-package"><h3>Protected conditions</h3><p>A garage or suitable covered area
+                            protects the finish from sun, wind, dust, and weather.</p><div class="paid-package__price"><small>Confirm</small>Cover</div></article>
+                    <article class="paid-package"><h3>Water and power</h3><p>We confirm practical site access based on
+                            the agreed preparation and correction scope.</p><div class="paid-package__price"><small>Confirm</small>Access</div></article>
+                </div>
+            </div>
+        </section>
+
+        <section class="paid-band paid-band--ink">
+            <div class="paid-shell">
+                <div class="paid-section-heading">
+                    <span>Real finish work</span>
+                    <h2>Prep Creates the Reflection</h2>
+                    <p>Coating protects the surface. Decontamination and correction determine how much clarity and
+                        depth you see underneath it.</p>
+                </div>
+                <div class="paid-photo-grid">
+                    <figure class="paid-photo"><img src="/assets/ceramic-coating/foam-sedan.webp"
+                            alt="Sedan receiving thorough wash preparation before ceramic coating" width="1012"
+                            height="1800"><figcaption>Preparation before protection</figcaption></figure>
+                    <figure class="paid-photo"><img src="/assets/ceramic-coating/paint-detail.webp"
+                            alt="Detailed paint showing deep gloss after professional preparation" width="1012"
+                            height="1800"><figcaption>Clarity after proper paint work</figcaption></figure>
+                </div>
+            </div>
+        </section>
+
+        <section class="paid-band paid-band--silver">
+            <div class="paid-shell">
+                <div class="paid-section-heading"><span>Fast qualification</span><h2>Text Four Things</h2></div>
+                <div class="paid-steps">
+                    <article class="paid-step"><div><h3>Your vehicle</h3><p>Send the year, make, model, color, and
+                                current condition.</p></div></article>
+                    <article class="paid-step"><div><h3>Your Irvine location</h3><p>Share the neighborhood or
+                                cross-streets and whether the work area is a garage or covered space.</p></div></article>
+                    <article class="paid-step"><div><h3>Paint photos</h3><p>Use clear daylight or direct-light photos
+                                that show swirls, scratches, water spots, and problem panels.</p></div></article>
+                    <article class="paid-step"><div><h3>Your goal</h3><p>Tell us whether the priority is gloss,
+                                long-term protection, easier maintenance, or visible defect improvement.</p></div></article>
+                </div>
+            </div>
+        </section>
+
+        <section class="paid-band paid-band--paper">
+            <div class="paid-shell">
+                <div class="paid-section-heading"><span>Irvine service FAQ</span><h2>Before We Come Out</h2></div>
+                <div class="paid-faq">
+                    <details><summary>Can coating be completed at my Irvine apartment?</summary><p>It depends on
+                            vehicle access, property rules, shade or enclosure, water and power access, and whether the
+                            location can remain controlled during the work.</p></details>
+                    <details><summary>Can you work at an Irvine office?</summary><p>Potentially. We confirm property
+                            permission, access, protection from the elements, and the expected service duration.</p></details>
+                    <details><summary>How do I get an accurate quote?</summary><p>Call or text vehicle details,
+                            location information, clear paint photos, and the result you want.</p></details>
+                </div>
+            </div>
+        </section>
+
+        <section class="paid-cta">
+            <div class="paid-shell paid-cta__inner">
+                <div><h2>Show Us the Car and the Irvine Setup.</h2><p>Call now or text the vehicle, location, paint
+                        condition, and protection goal.</p></div>
+                <div class="paid-cta__actions">
+                    <a data-cta-primary data-lead-action="coating_irvine_call"
+                        class="paid-button paid-button--primary" href="tel:7146007134">Call for Irvine coating</a>
+                    <a data-cta-secondary data-lead-action="coating_irvine_text"
+                        class="paid-button paid-button--ghost"
+                        href="sms:+17146007134?body=Hi%20Obsidian%20Autoworks%2C%20I%27d%20like%20ceramic%20coating%20in%20Irvine.%20My%20vehicle%2C%20Irvine%20location%2C%20paint%20condition%2C%20and%20protection%20goal%20are%3A%20">Text
+                        photos &amp; location</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="paid-footer"><div class="paid-shell paid-footer__inner"><span>Obsidian Autoworks</span><span>Mobile
+                ceramic coating in Irvine and Orange County</span></div></footer>
+    <div class="paid-mobile-actions" aria-label="Contact Obsidian Autoworks">
+        <a data-lead-action="coating_irvine_call" href="tel:7146007134">Call</a>
+        <a data-lead-action="coating_irvine_text"
+            href="sms:+17146007134?body=Hi%20Obsidian%20Autoworks%2C%20I%27d%20like%20ceramic%20coating%20in%20Irvine.%20My%20vehicle%2C%20Irvine%20location%2C%20paint%20condition%2C%20and%20protection%20goal%20are%3A%20">Text</a>
+    </div>
+    <script src="/lead-tracking.js" defer></script>
+</body>
+
+</html>

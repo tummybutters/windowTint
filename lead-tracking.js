@@ -80,13 +80,23 @@
     ].join(',');
     const PHONE_SELECTOR = 'a[href^="tel:"]';
     const TEXT_SELECTOR = 'a[href^="sms:"]';
-    const GOOGLE_ADS_ID = 'AW-17846304809';
-    const WEBSITE_CALL_CONFIG_ID = `${GOOGLE_ADS_ID}/060ZCNixtdQcEKmA5L1C`;
-    const WEBSITE_CALL_DISPLAY_NUMBER = '(714) 600-7134';
+    const GOOGLE_ADS_CONFIG = window.OBSIDIAN_GOOGLE_ADS_CONFIG || {};
+    const GOOGLE_ADS_ID = GOOGLE_ADS_CONFIG.id || 'AW-17846304809';
+    const WEBSITE_CALL_CONFIG_ID = Object.prototype.hasOwnProperty.call(
+        GOOGLE_ADS_CONFIG,
+        'websiteCallConfigId'
+    )
+        ? GOOGLE_ADS_CONFIG.websiteCallConfigId
+        : `${GOOGLE_ADS_ID}/060ZCNixtdQcEKmA5L1C`;
+    const WEBSITE_CALL_DISPLAY_NUMBER = (
+        GOOGLE_ADS_CONFIG.websiteCallDisplayNumber || '(714) 600-7134'
+    );
     const DEFAULT_ADS_CONVERSIONS = {
         ai_booking_click: '',
         phone_click: 'GVSvCK39u70cEKmA5L1C',
-        square_booking_click: ''
+        text_click: 'CyqpCMPso9kcEKmA5L1C',
+        square_booking_click: '',
+        ...(GOOGLE_ADS_CONFIG.conversions || {})
     };
     const SQUARE_BOOKING_HOSTS = [
         'app.squareup.com',
@@ -472,7 +482,11 @@
 
     let websiteCallTrackingConfigured = false;
     const configureWebsiteCallTracking = () => {
-        if (websiteCallTrackingConfigured || typeof window.gtag !== 'function') return false;
+        if (
+            websiteCallTrackingConfigured
+            || !WEBSITE_CALL_CONFIG_ID
+            || typeof window.gtag !== 'function'
+        ) return false;
 
         window.gtag('config', WEBSITE_CALL_CONFIG_ID, {
             phone_conversion_number: WEBSITE_CALL_DISPLAY_NUMBER
@@ -491,11 +505,20 @@
         }
     };
 
+    const documentLeadAttribute = (name) => (
+        document.documentElement
+        && typeof document.documentElement.getAttribute === 'function'
+        && document.documentElement.getAttribute(name)
+    ) || '';
+
     const getLeadContext = (link) => ({
         service: (
             (link && link.getAttribute('data-lead-service'))
-            || document.documentElement.getAttribute('data-lead-service')
-            || ''
+            || documentLeadAttribute('data-lead-service')
+        ),
+        landing_variant: (
+            (link && link.getAttribute('data-lead-variant'))
+            || documentLeadAttribute('data-lead-variant')
         ),
         lead_action: (link && link.getAttribute('data-lead-action')) || ''
     });
@@ -552,7 +575,15 @@
         bindClickTracking();
 
         const path = window.location.pathname;
-        sendAnalyticsEvent('ai_lead_page_visit', {}, { requireAttribution: true });
+        const pageLeadContext = getLeadContext();
+        sendAnalyticsEvent('ai_lead_page_visit', pageLeadContext, { requireAttribution: true });
+        if (pageLeadContext.landing_variant) {
+            sendAnalyticsEvent(
+                'paid_landing_page_view',
+                pageLeadContext,
+                { requireAttribution: true }
+            );
+        }
         if (path === '/booking' || document.querySelector('.booking-calendar, #booking')) {
             sendAnalyticsEvent('ai_booking_page_visit');
         }
@@ -563,9 +594,7 @@
             sendAnalyticsEvent('residential_page_visit');
         }
         if (path === '/ceramic-coating') {
-            sendAnalyticsEvent('ceramic_coating_page_visit', {
-                service: 'ceramic_coating'
-            });
+            sendAnalyticsEvent('ceramic_coating_page_visit', pageLeadContext);
         }
         if (path === '/booking' || path === '/vip-booking' || path === '/architectural-window-film' || document.querySelector('.booking-calendar, #booking, #vip-booking')) {
             sendAnalyticsEvent('booking_landing_page_view', {

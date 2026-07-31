@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en" data-lead-service="windshield_tint" data-lead-variant="windshield_action_v1">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Windshield Ceramic Tint Quote | Obsidian Autoworks</title>
+    <meta name="description"
+        content="Windshield ceramic tint pricing for Orange County sedans, coupes, trucks, and SUVs. Call or text Obsidian Autoworks to confirm film, visibility, and mobile installation.">
+    <meta name="robots" content="noindex, nofollow">
+    <link rel="canonical" href="https://www.obsidianautoworksoc.com/windshield-window-tinting">
+    <link rel="icon" type="image/png" href="/favicon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="/style.css?v=20260108-1">
+    <link rel="stylesheet" href="/paid-landing.css?v=20260730-1">
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-TR9ET60HX3"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-TR9ET60HX3');
+        gtag('config', 'AW-17846304809');
+    </script>
+</head>
+
+<body class="paid-page">
+    <nav class="paid-nav" aria-label="Primary navigation">
+        <div class="paid-shell paid-nav__inner">
+            <a class="paid-brand" href="/">Obsidian <span>Autoworks</span></a>
+            <div class="paid-nav__actions">
+                <a class="paid-link" href="#pricing">Windshield pricing</a>
+                <a class="paid-button paid-button--ghost" href="tel:7146007134">Call (714) 600-7134</a>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <header class="paid-hero">
+            <img class="paid-hero__media" src="/assets/paid-landing/tesla-model-y-front.webp"
+                alt="Tesla Model Y showing its large front glass after mobile ceramic tint service" width="1012"
+                height="1800" fetchpriority="high">
+            <div class="paid-shell paid-hero__content">
+                <p class="paid-eyebrow">Windshield ceramic tint - Orange County</p>
+                <h1>Cooler Front Glass. Clearer Quote.</h1>
+                <p class="paid-hero__copy">Get windshield-only pricing, then confirm your vehicle, film choice,
+                    visibility goals, California requirements, and mobile install location directly with us.</p>
+                <div class="paid-hero__actions">
+                    <a data-hero-primary data-lead-action="windshield_quote_call"
+                        class="paid-button paid-button--primary" href="tel:7146007134">Call about windshield tint</a>
+                    <a data-hero-secondary data-lead-action="windshield_quote_text"
+                        class="paid-button paid-button--ghost"
+                        href="sms:+17146007134?body=Hi%20Obsidian%20Autoworks%2C%20I%27d%20like%20a%20windshield%20ceramic%20tint%20quote.%20My%20vehicle%2C%20city%2C%20requested%20glass%2C%20and%20shade%20goal%20are%3A%20">Text
+                        vehicle details</a>
+                </div>
+            </div>
+        </header>
+
+        <section class="paid-proof" aria-label="Windshield tint service details">
+            <div class="paid-shell paid-proof__grid">
+                <div class="paid-proof__item"><strong>Windshield only</strong><span>Quote the front glass without
+                        buying a full-car package.</span></div>
+                <div class="paid-proof__item"><strong>Ceramic performance</strong><span>Heat, glare, UV, and optical
+                        clarity are part of the film conversation.</span></div>
+                <div class="paid-proof__item"><strong>Mobile in OC</strong><span>Installed at a suitable clean,
+                        weather-safe location.</span></div>
+            </div>
+        </section>
+
+        <section class="paid-band paid-band--paper" id="pricing">
+            <div class="paid-shell">
+                <div class="paid-section-heading">
+                    <span>Current windshield menu</span>
+                    <h2>Simple Front-Glass Pricing</h2>
+                    <p>These prices match the current Obsidian tint menu. Final film and shade are confirmed after we
+                        check the vehicle and discuss California windshield rules.</p>
+                </div>
+                <div class="paid-packages">
+                    <article class="paid-package">
+                        <h3>Sedan or coupe</h3>
+                        <p>Windshield-only ceramic tint for standard passenger-car front glass.</p>
+                        <div class="paid-package__price"><small>Current price</small>$220</div>
+                    </article>
+                    <article class="paid-package">
+                        <h3>Truck or SUV</h3>
+                        <p>Windshield-only ceramic tint for larger front glass.</p>
+                        <div class="paid-package__price"><small>Current price</small>$250</div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="paid-band paid-band--ink">
+            <div class="paid-shell">
+                <div class="paid-section-heading">
+                    <span>Large glass deserves care</span>
+                    <h2>Film Choice Is More Than Darkness</h2>
+                    <p>Windshield tint needs a clear conversation about visibility, heat rejection, glare, film
+                        performance, and the rules that apply to front glass.</p>
+                </div>
+                <div class="paid-photo-grid">
+                    <figure class="paid-photo">
+                        <img src="/assets/paid-landing/tesla-glass-roof.webp"
+                            alt="Interior view showing the scale and visibility through Tesla automotive glass"
+                            width="1012" height="1800">
+                        <figcaption>Clarity and visibility matter</figcaption>
+                    </figure>
+                    <figure class="paid-photo">
+                        <img src="/assets/paid-landing/tesla-model-y-rear.webp"
+                            alt="Finished ceramic tint on a silver Tesla Model Y" width="1012" height="1800">
+                        <figcaption>Clean ceramic-film finish</figcaption>
+                    </figure>
+                </div>
+            </div>
+        </section>
+
+        <section class="paid-band paid-band--silver">
+            <div class="paid-shell">
+                <div class="paid-section-heading">
+                    <span>Before we schedule</span>
+                    <h2>Four Details Set the Quote</h2>
+                </div>
+                <div class="paid-steps">
+                    <article class="paid-step"><div><h3>Vehicle</h3><p>Send the year, make, and model so we can confirm
+                                the windshield size and glass type.</p></div></article>
+                    <article class="paid-step"><div><h3>Comfort goal</h3><p>Tell us whether heat, glare, UV exposure,
+                                or appearance is the priority.</p></div></article>
+                    <article class="paid-step"><div><h3>Visibility and legality</h3><p>We will discuss suitable film
+                                choices and California restrictions before service.</p></div></article>
+                    <article class="paid-step"><div><h3>Install location</h3><p>Confirm a clean garage or protected
+                                space with suitable access and weather conditions.</p></div></article>
+                </div>
+            </div>
+        </section>
+
+        <section class="paid-band paid-band--paper">
+            <div class="paid-shell">
+                <div class="paid-section-heading"><span>Windshield FAQ</span><h2>Know Before You Tint</h2></div>
+                <div class="paid-faq">
+                    <details><summary>Is windshield tint legal in California?</summary><p>California regulates
+                            windshield film more strictly than rear glass. We confirm the requested setup with you,
+                            but the vehicle owner remains responsible for legal compliance.</p></details>
+                    <details><summary>Do I need dark film for heat rejection?</summary><p>Not necessarily. Ceramic
+                            film performance and visible-light transmission are separate considerations.</p></details>
+                    <details><summary>Can windshield tint be installed mobile?</summary><p>Yes, when the location is
+                            enclosed or sufficiently protected from wind, dust, weather, and interruptions.</p></details>
+                </div>
+            </div>
+        </section>
+
+        <section class="paid-cta">
+            <div class="paid-shell paid-cta__inner">
+                <div><h2>Start With Your Windshield.</h2><p>Call for a quick conversation or text the vehicle, city,
+                        front-glass request, and shade goal.</p></div>
+                <div class="paid-cta__actions">
+                    <a data-cta-primary data-lead-action="windshield_quote_call"
+                        class="paid-button paid-button--primary" href="tel:7146007134">Call Obsidian</a>
+                    <a data-cta-secondary data-lead-action="windshield_quote_text"
+                        class="paid-button paid-button--ghost"
+                        href="sms:+17146007134?body=Hi%20Obsidian%20Autoworks%2C%20I%27d%20like%20a%20windshield%20ceramic%20tint%20quote.%20My%20vehicle%2C%20city%2C%20requested%20glass%2C%20and%20shade%20goal%20are%3A%20">Text
+                        the details</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="paid-footer"><div class="paid-shell paid-footer__inner"><span>Obsidian Autoworks</span><span>Mobile
+                ceramic window tinting in Orange County</span></div></footer>
+    <div class="paid-mobile-actions" aria-label="Contact Obsidian Autoworks">
+        <a data-lead-action="windshield_quote_call" href="tel:7146007134">Call</a>
+        <a data-lead-action="windshield_quote_text"
+            href="sms:+17146007134?body=Hi%20Obsidian%20Autoworks%2C%20I%27d%20like%20a%20windshield%20ceramic%20tint%20quote.%20My%20vehicle%2C%20city%2C%20requested%20glass%2C%20and%20shade%20goal%20are%3A%20">Text</a>
+    </div>
+    <script src="/lead-tracking.js" defer></script>
+</body>
+
+</html>

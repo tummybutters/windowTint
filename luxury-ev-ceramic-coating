@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en" data-lead-service="ceramic_coating" data-lead-variant="coating_luxury_ev_v1">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Luxury and EV Ceramic Coating | Obsidian Autoworks</title>
+    <meta name="description"
+        content="Ceramic coating and paint preparation for Tesla, BMW, Porsche, Audi, EV, and enthusiast vehicles in Orange County.">
+    <meta name="robots" content="noindex, nofollow">
+    <link rel="canonical" href="https://www.obsidianautoworksoc.com/ceramic-coating">
+    <link rel="icon" type="image/png" href="/favicon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="/style.css?v=20260108-1">
+    <link rel="stylesheet" href="/paid-landing.css?v=20260730-1">
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-TR9ET60HX3"></script>
+    <script>
+        window.OBSIDIAN_GOOGLE_ADS_CONFIG = {
+            id: 'AW-18301955625',
+            websiteCallConfigId: '',
+            conversions: {
+                phone_click: 'BU5VCLCasNkcEKnchpdE',
+                text_click: 'qbmnCLOasNkcEKnchpdE'
+            }
+        };
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-TR9ET60HX3');
+        gtag('config', 'AW-18301955625');
+    </script>
+</head>
+
+<body class="paid-page">
+    <nav class="paid-nav" aria-label="Primary navigation">
+        <div class="paid-shell paid-nav__inner">
+            <a class="paid-brand" href="/">Obsidian <span>Autoworks</span></a>
+            <div class="paid-nav__actions">
+                <a class="paid-link" href="#fit">Vehicle-specific plan</a>
+                <a class="paid-button paid-button--ghost" href="tel:7146007134">Call (714) 600-7134</a>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <header class="paid-hero">
+            <img class="paid-hero__media" src="/assets/ceramic-coating/white-mclaren.webp"
+                alt="White performance car showing a clean reflective finish after professional exterior care"
+                width="1012" height="1800" fetchpriority="high">
+            <div class="paid-shell paid-hero__content">
+                <p class="paid-eyebrow">Luxury and EV ceramic coating - Orange County</p>
+                <h1>Protect the Finish You Chose the Car For.</h1>
+                <p class="paid-hero__copy">Paint preparation, correction options, and ceramic protection for Tesla,
+                    BMW, Porsche, Audi, and other vehicles where the finish deserves an intentional plan.</p>
+                <div class="paid-hero__actions">
+                    <a data-hero-primary data-lead-action="coating_luxury_call"
+                        class="paid-button paid-button--primary" href="tel:7146007134">Call about your vehicle</a>
+                    <a data-hero-secondary data-lead-action="coating_luxury_text"
+                        class="paid-button paid-button--ghost"
+                        href="sms:+17146007134?body=Hi%20Obsidian%20Autoworks%2C%20I%27d%20like%20a%20luxury%20or%20EV%20ceramic%20coating%20quote.%20My%20vehicle%2C%20city%2C%20paint%20condition%2C%20and%20finish%20goal%20are%3A%20">Text
+                        vehicle photos</a>
+                </div>
+            </div>
+        </header>
+
+        <section class="paid-proof" aria-label="Luxury and EV coating details">
+            <div class="paid-shell paid-proof__grid">
+                <div class="paid-proof__item"><strong>Paint-specific assessment</strong><span>New-car paint and used
+                        enthusiast paint need different preparation.</span></div>
+                <div class="paid-proof__item"><strong>Correction with purpose</strong><span>Match the work to visible
+                        defects and the finish you expect.</span></div>
+                <div class="paid-proof__item"><strong>Mobile Orange County service</strong><span>Qualified private
+                        garages and protected work locations.</span></div>
+            </div>
+        </section>
+
+        <section class="paid-band paid-band--paper" id="fit">
+            <div class="paid-shell">
+                <div class="paid-section-heading">
+                    <span>One page, vehicle-specific conversation</span>
+                    <h2>Built for the Way Different Paint Ages</h2>
+                    <p>We use one high-intent experience for these vehicle searches, then tailor the scope after
+                        inspecting the actual finish.</p>
+                </div>
+                <div class="paid-packages">
+                    <article class="paid-package"><h3>Tesla and EV</h3><p>Assess delivery condition, wash marks,
+                            high-touch panels, gloss, and the mobile work environment.</p><div class="paid-package__price"><small>Plan for</small>Use</div></article>
+                    <article class="paid-package"><h3>BMW and Audi</h3><p>Match decontamination and correction to the
+                            paint condition, color, and desired depth.</p><div class="paid-package__price"><small>Plan for</small>Finish</div></article>
+                    <article class="paid-package"><h3>Porsche and enthusiast cars</h3><p>Prioritize careful prep,
+                            correction boundaries, panel condition, and maintenance expectations.</p><div class="paid-package__price"><small>Plan for</small>Care</div></article>
+                </div>
+            </div>
+        </section>
+
+        <section class="paid-band paid-band--ink">
+            <div class="paid-shell">
+                <div class="paid-section-heading">
+                    <span>Real paint, real preparation</span>
+                    <h2>Depth Comes Before Protection</h2>
+                    <p>The visible result begins with clean paint and a correction plan that respects the current
+                        finish.</p>
+                </div>
+                <div class="paid-photo-grid">
+                    <figure class="paid-photo"><img src="/assets/ceramic-coating/foam-bmw.webp"
+                            alt="BMW undergoing careful preparation before ceramic coating" width="1012" height="1800">
+                        <figcaption>Preparation on a BMW finish</figcaption></figure>
+                    <figure class="paid-photo"><img src="/assets/ceramic-coating/paint-detail.webp"
+                            alt="Close view of deep reflection in prepared automotive paint" width="1012" height="1800">
+                        <figcaption>Paint clarity worth protecting</figcaption></figure>
+                </div>
+            </div>
+        </section>
+
+        <section class="paid-band paid-band--silver">
+            <div class="paid-shell">
+                <div class="paid-section-heading"><span>How the plan is built</span><h2>Start With Evidence</h2></div>
+                <div class="paid-steps">
+                    <article class="paid-step"><div><h3>Identify the vehicle</h3><p>Send year, model, color, mileage,
+                                and whether the paint is original, repaired, wrapped, or previously coated.</p></div></article>
+                    <article class="paid-step"><div><h3>Show the finish</h3><p>Clear direct-light photos reveal swirls,
+                                water spots, scratches, contamination, and problem panels.</p></div></article>
+                    <article class="paid-step"><div><h3>Set the expectation</h3><p>Choose stronger gloss, practical
+                                protection, easier maintenance, or visible defect improvement.</p></div></article>
+                    <article class="paid-step"><div><h3>Confirm the environment</h3><p>We verify access, protection,
+                                weather, and cure conditions before mobile service.</p></div></article>
+                </div>
+            </div>
+        </section>
+
+        <section class="paid-band paid-band--paper">
+            <div class="paid-shell">
+                <div class="paid-section-heading"><span>Luxury and EV FAQ</span><h2>Protect Without Guessing</h2></div>
+                <div class="paid-faq">
+                    <details><summary>Does a new vehicle still need paint preparation?</summary><p>Often, yes.
+                            Transport, dealer handling, washing, and storage can leave contamination or defects that
+                            should be assessed before coating.</p></details>
+                    <details><summary>Is the process different for Tesla paint?</summary><p>The process is based on
+                            the observed finish rather than assumptions about a badge. We inspect the actual paint and
+                            match the work to its condition.</p></details>
+                    <details><summary>Do you coat BMW, Porsche, and Audi vehicles?</summary><p>These searches can all
+                            start here. Call or text the exact model and paint condition so we can recommend the right
+                            scope.</p></details>
+                </div>
+            </div>
+        </section>
+
+        <section class="paid-cta">
+            <div class="paid-shell paid-cta__inner">
+                <div><h2>Tell Us What You Drive.</h2><p>Call for a direct recommendation or text vehicle photos,
+                        location, paint condition, and finish goal.</p></div>
+                <div class="paid-cta__actions">
+                    <a data-cta-primary data-lead-action="coating_luxury_call"
+                        class="paid-button paid-button--primary" href="tel:7146007134">Call Obsidian</a>
+                    <a data-cta-secondary data-lead-action="coating_luxury_text"
+                        class="paid-button paid-button--ghost"
+                        href="sms:+17146007134?body=Hi%20Obsidian%20Autoworks%2C%20I%27d%20like%20a%20luxury%20or%20EV%20ceramic%20coating%20quote.%20My%20vehicle%2C%20city%2C%20paint%20condition%2C%20and%20finish%20goal%20are%3A%20">Text
+                        photos instead</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="paid-footer"><div class="paid-shell paid-footer__inner"><span>Obsidian Autoworks</span><span>Luxury
+                and EV ceramic coating in Orange County</span></div></footer>
+    <div class="paid-mobile-actions" aria-label="Contact Obsidian Autoworks">
+        <a data-lead-action="coating_luxury_call" href="tel:7146007134">Call</a>
+        <a data-lead-action="coating_luxury_text"
+            href="sms:+17146007134?body=Hi%20Obsidian%20Autoworks%2C%20I%27d%20like%20a%20luxury%20or%20EV%20ceramic%20coating%20quote.%20My%20vehicle%2C%20city%2C%20paint%20condition%2C%20and%20finish%20goal%20are%3A%20">Text</a>
+    </div>
+    <script src="/lead-tracking.js" defer></script>
+</body>
+
+</html>

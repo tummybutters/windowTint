@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en" data-lead-service="tesla_tint" data-lead-variant="tesla_action_v1">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tesla Tint Quote | Obsidian Autoworks</title>
+    <meta name="description"
+        content="See Tesla ceramic tint package pricing, real Model Y results, and mobile installation options from Obsidian Autoworks in Orange County.">
+    <meta name="robots" content="noindex, nofollow">
+    <link rel="canonical" href="https://www.obsidianautoworksoc.com/tesla-window-tinting">
+    <link rel="icon" type="image/png" href="/favicon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="/style.css?v=20260108-1">
+    <link rel="stylesheet" href="/paid-landing.css?v=20260729-1">
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-TR9ET60HX3"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-TR9ET60HX3');
+        gtag('config', 'AW-17846304809');
+    </script>
+</head>
+
+<body class="paid-page">
+    <nav class="paid-nav" aria-label="Primary navigation">
+        <div class="paid-shell paid-nav__inner">
+            <a class="paid-brand" href="/">Obsidian <span>Autoworks</span></a>
+            <div class="paid-nav__actions">
+                <a class="paid-link" href="#packages">Tesla pricing</a>
+                <a class="paid-button paid-button--ghost" href="tel:7146007134">Call (714) 600-7134</a>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <header class="paid-hero">
+            <img class="paid-hero__media" src="/assets/paid-landing/tesla-model-y-front.webp"
+                alt="Silver Tesla Model Y with finished ceramic window tint at an Orange County home" width="1012"
+                height="1800" fetchpriority="high">
+            <div class="paid-shell paid-hero__content">
+                <p class="paid-eyebrow">Mobile Tesla tint - Orange County</p>
+                <h1>Tesla Tint, Priced by Model</h1>
+                <p class="paid-hero__copy">Tell us your Tesla model and the glass you want tinted. We will confirm the
+                    package, shade, mobile install location, and exact appointment details before service.</p>
+                <div class="paid-hero__actions">
+                    <a data-hero-primary data-lead-action="tesla_quote_call"
+                        class="paid-button paid-button--primary" href="tel:7146007134">Call for Tesla tint</a>
+                    <a data-hero-secondary data-lead-action="tesla_quote_text" class="paid-button paid-button--ghost"
+                        href="sms:+17146007134?body=Hi%20Obsidian%20Autoworks%2C%20I%27d%20like%20a%20Tesla%20tint%20quote.%20My%20model%2C%20year%2C%20package%2C%20city%2C%20and%20shade%20goal%20are%3A%20">Text
+                        model &amp; package</a>
+                </div>
+            </div>
+        </header>
+
+        <section class="paid-proof" aria-label="Tesla tint service details">
+            <div class="paid-shell paid-proof__grid">
+                <div class="paid-proof__item"><strong>Model-specific pricing</strong><span>Model 3, Model Y, and Model
+                        S packages.</span></div>
+                <div class="paid-proof__item"><strong>Mobile installation</strong><span>Qualified homes and workplaces
+                        across Orange County.</span></div>
+                <div class="paid-proof__item"><strong>Ceramic film</strong><span>Heat, glare, privacy, and a
+                        factory-clean finish.</span></div>
+            </div>
+        </section>
+
+        <section class="paid-band paid-band--paper" id="packages">
+            <div class="paid-shell">
+                <div class="paid-section-heading">
+                    <span>Choose your glass</span>
+                    <h2>Current Tesla Packages</h2>
+                    <p>Pricing below reflects the existing Obsidian Tesla package menu. Call or text to confirm your
+                        model year, shade, roof glass, and installation location.</p>
+                </div>
+                <div class="paid-packages">
+                    <article class="paid-package">
+                        <h3>Model Y</h3>
+                        <p>Model Y Sides &amp; Rear <strong>$700</strong>. Full Car <strong>$950</strong>.</p>
+                        <div class="paid-package__price"><small>Starting at</small>$700</div>
+                    </article>
+                    <article class="paid-package">
+                        <h3>Model 3</h3>
+                        <p>Model 3 Sides &amp; Rear <strong>$950</strong>. Full Car <strong>$1,150</strong>.</p>
+                        <div class="paid-package__price"><small>Starting at</small>$950</div>
+                    </article>
+                    <article class="paid-package">
+                        <h3>Model S</h3>
+                        <p>Model S Sides &amp; Rear <strong>$600</strong>. Full Car <strong>$820</strong>.</p>
+                        <div class="paid-package__price"><small>Starting at</small>$600</div>
+                    </article>
+                    <article class="paid-package">
+                        <h3>Roof glass</h3>
+                        <p>Panoramic Roof Add-On <strong>$550</strong> for listed Model Y and Model S packages.</p>
+                        <div class="paid-package__price"><small>Add-on</small>$550</div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="paid-band paid-band--ink">
+            <div class="paid-shell">
+                <div class="paid-section-heading">
+                    <span>Real Obsidian work</span>
+                    <h2>Finished Glass, Inside and Out</h2>
+                    <p>This Model Y was completed at the customer's home. The exterior view shows the clean side and
+                        rear finish; the interior view shows the scale of Tesla's glass roof.</p>
+                </div>
+                <div class="paid-photo-grid">
+                    <figure class="paid-photo">
+                        <img src="/assets/paid-landing/tesla-model-y-rear.webp"
+                            alt="Rear three-quarter view of a silver Tesla Model Y after ceramic tint installation"
+                            width="1012" height="1800" loading="lazy">
+                        <figcaption>Model Y - finished side and rear glass</figcaption>
+                    </figure>
+                    <figure class="paid-photo">
+                        <img src="/assets/paid-landing/tesla-glass-roof.webp"
+                            alt="Interior view of the Tesla panoramic glass roof" width="1012" height="1800"
+                            loading="lazy">
+                        <figcaption>Tesla panoramic glass - quoted separately</figcaption>
+                    </figure>
+                </div>
+            </div>
+        </section>
+
+        <section class="paid-band paid-band--silver">
+            <div class="paid-shell">
+                <div class="paid-section-heading">
+                    <span>Fast quote path</span>
+                    <h2>What We Need From You</h2>
+                </div>
+                <div class="paid-steps">
+                    <article class="paid-step">
+                        <div>
+                            <h3>Model and year</h3>
+                            <p>Model 3, Model Y, or Model S, plus the model year so we can confirm the glass layout.</p>
+                        </div>
+                    </article>
+                    <article class="paid-step">
+                        <div>
+                            <h3>Package and shade goal</h3>
+                            <p>Tell us whether you want sides and rear, full car, windshield, or roof glass, and the
+                                privacy level you have in mind.</p>
+                        </div>
+                    </article>
+                    <article class="paid-step">
+                        <div>
+                            <h3>City and install space</h3>
+                            <p>Share your Orange County city and whether the vehicle will be in a driveway, garage, or
+                                workplace area suitable for mobile installation.</p>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="paid-band paid-band--paper">
+            <div class="paid-shell">
+                <div class="paid-section-heading">
+                    <span>Tesla tint questions</span>
+                    <h2>Before You Choose</h2>
+                </div>
+                <div class="paid-faq">
+                    <details>
+                        <summary>Does Tesla roof glass cost extra?</summary>
+                        <p>Panoramic roof glass is quoted separately because it adds material and installation time.</p>
+                    </details>
+                    <details>
+                        <summary>Can the work be done at my home?</summary>
+                        <p>Yes, when the driveway or garage provides enough clean, safe space and weather conditions are
+                            suitable.</p>
+                    </details>
+                    <details>
+                        <summary>Will ceramic tint make the cabin cooler?</summary>
+                        <p>Ceramic film is chosen to reduce heat feel and glare while adding privacy. Results depend on
+                            the selected glass and film package.</p>
+                    </details>
+                </div>
+            </div>
+        </section>
+
+        <section class="paid-cta">
+            <div class="paid-shell paid-cta__inner">
+                <div>
+                    <h2>Get the Right Tesla Package</h2>
+                    <p>Call now or text your model, year, package, city, and shade goal. Obsidian will confirm the
+                        details before scheduling.</p>
+                </div>
+                <div class="paid-cta__actions">
+                    <a data-cta-primary data-lead-action="tesla_quote_call"
+                        class="paid-button paid-button--primary" href="tel:7146007134">Call Obsidian</a>
+                    <a data-cta-secondary data-lead-action="tesla_quote_text" class="paid-button paid-button--ghost"
+                        href="sms:+17146007134?body=Hi%20Obsidian%20Autoworks%2C%20I%27d%20like%20a%20Tesla%20tint%20quote.%20My%20model%2C%20year%2C%20package%2C%20city%2C%20and%20shade%20goal%20are%3A%20">Text
+                        model &amp; package</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="paid-footer">
+        <div class="paid-shell paid-footer__inner">
+            <span>Obsidian Autoworks - Mobile window tinting in Orange County</span>
+            <a href="tel:7146007134">(714) 600-7134</a>
+        </div>
+    </footer>
+
+    <div class="paid-mobile-actions" aria-label="Contact Obsidian Autoworks">
+        <a class="paid-button paid-button--primary" href="tel:7146007134">Call now</a>
+        <a class="paid-button paid-button--ghost"
+            href="sms:+17146007134?body=Hi%20Obsidian%20Autoworks%2C%20I%27d%20like%20a%20Tesla%20tint%20quote.%20My%20model%2C%20year%2C%20package%2C%20city%2C%20and%20shade%20goal%20are%3A%20">Text
+            details</a>
+    </div>
+    <script src="/lead-tracking.js" defer></script>
+</body>
+
+</html>

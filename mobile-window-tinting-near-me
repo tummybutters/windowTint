@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en" data-lead-service="mobile_tint" data-lead-variant="near_me_mobile_v1">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mobile Window Tinting Near Me | Obsidian Autoworks</title>
+    <meta name="description"
+        content="Mobile ceramic window tinting at suitable homes and workplaces across Orange County. Call or text Obsidian Autoworks with your vehicle and city.">
+    <meta name="robots" content="noindex, nofollow">
+    <link rel="canonical" href="https://www.obsidianautoworksoc.com/mobile-window-tinting">
+    <link rel="icon" type="image/png" href="/favicon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="/style.css?v=20260108-1">
+    <link rel="stylesheet" href="/paid-landing.css?v=20260729-1">
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-TR9ET60HX3"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-TR9ET60HX3');
+        gtag('config', 'AW-17846304809');
+    </script>
+</head>
+
+<body class="paid-page">
+    <nav class="paid-nav" aria-label="Primary navigation">
+        <div class="paid-shell paid-nav__inner">
+            <a class="paid-brand" href="/">Obsidian <span>Autoworks</span></a>
+            <div class="paid-nav__actions">
+                <a class="paid-link" href="#how-it-works">How mobile tint works</a>
+                <a class="paid-button paid-button--ghost" href="tel:7146007134">Call (714) 600-7134</a>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <header class="paid-hero">
+            <img class="paid-hero__media" src="/assets/paid-landing/mobile-porsche-front.webp"
+                alt="Porsche with finished ceramic window tint at an Orange County home" width="1012" height="1800"
+                fetchpriority="high">
+            <div class="paid-shell paid-hero__content">
+                <p class="paid-eyebrow">Window tinting near you - Orange County</p>
+                <h1>The Tint Shop Comes to You</h1>
+                <p class="paid-hero__copy">Mobile ceramic window tinting at a suitable home or workplace. Send your
+                    vehicle, city, and shade goal so we can confirm the film, install space, weather, and availability.
+                </p>
+                <div class="paid-hero__actions">
+                    <a data-hero-primary data-lead-action="near_me_call" class="paid-button paid-button--primary"
+                        href="tel:7146007134">Call for mobile tint</a>
+                    <a data-hero-secondary data-lead-action="near_me_text" class="paid-button paid-button--ghost"
+                        href="sms:+17146007134?body=Hi%20Obsidian%20Autoworks%2C%20I%27d%20like%20mobile%20window%20tinting.%20My%20vehicle%2C%20city%2C%20and%20shade%20goal%20are%3A%20">Text
+                        vehicle &amp; city</a>
+                </div>
+            </div>
+        </header>
+
+        <section class="paid-proof" aria-label="Mobile tint service details">
+            <div class="paid-shell paid-proof__grid">
+                <div class="paid-proof__item"><strong>At your location</strong><span>Suitable driveways, garages, and
+                        workplaces.</span></div>
+                <div class="paid-proof__item"><strong>Orange County mobile</strong><span>Local service without a shop
+                        waiting room.</span></div>
+                <div class="paid-proof__item"><strong>Ceramic film</strong><span>Heat rejection, privacy, and a clean
+                        finished look.</span></div>
+            </div>
+        </section>
+
+        <section class="paid-band paid-band--paper" id="how-it-works">
+            <div class="paid-shell">
+                <div class="paid-section-heading">
+                    <span>Before we roll out</span>
+                    <h2>A Mobile Setup That Protects the Finish</h2>
+                    <p>Mobile tinting works best when the vehicle has a clean, safe install area. A quick call or text
+                        lets us check the variables that matter before confirming the appointment.</p>
+                </div>
+                <div class="paid-steps">
+                    <article class="paid-step">
+                        <div>
+                            <h3>Vehicle and glass</h3>
+                            <p>Tell us the year, make, model, and whether you want the front two, sides and rear,
+                                windshield, or a full-car package.</p>
+                        </div>
+                    </article>
+                    <article class="paid-step">
+                        <div>
+                            <h3>City and install space</h3>
+                            <p>Share your Orange County city and a quick note about the driveway, garage, or workplace
+                                area available around the vehicle.</p>
+                        </div>
+                    </article>
+                    <article class="paid-step">
+                        <div>
+                            <h3>Shade, access, and weather</h3>
+                            <p>We confirm your shade goal, access, space, and weather conditions before the mobile
+                                appointment is locked in.</p>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="paid-band paid-band--ink">
+            <div class="paid-shell">
+                <div class="paid-section-heading">
+                    <span>Real mobile work</span>
+                    <h2>Finished Where the Car Lives</h2>
+                    <p>This Porsche was photographed at the customer's home after tint installation. The result is the
+                        point: clean glass, consistent shade, and no trip to a waiting room.</p>
+                </div>
+                <div class="paid-photo-grid">
+                    <figure class="paid-photo">
+                        <img src="/assets/paid-landing/mobile-porsche-rear.webp"
+                            alt="Rear three-quarter view of a Porsche after mobile window tinting" width="1012"
+                            height="1800" loading="lazy">
+                        <figcaption>Finished rear and side glass</figcaption>
+                    </figure>
+                    <figure class="paid-photo">
+                        <img src="/assets/paid-landing/mobile-porsche-side.webp"
+                            alt="Side profile of a Porsche with finished window tint" width="1012" height="1800"
+                            loading="lazy">
+                        <figcaption>Consistent shade across the side glass</figcaption>
+                    </figure>
+                </div>
+            </div>
+        </section>
+
+        <section class="paid-band paid-band--silver">
+            <div class="paid-shell">
+                <div class="paid-section-heading">
+                    <span>What to expect</span>
+                    <h2>Built for a Clear Yes or No</h2>
+                    <p>We do not make you guess whether your location will work. Send the details and we will tell you
+                        what package fits, whether the space is suitable, and the next available mobile window.</p>
+                </div>
+                <div class="paid-packages">
+                    <article class="paid-package">
+                        <h3>Home</h3>
+                        <p>Driveways and garages with safe access, enough working room, and suitable conditions.</p>
+                        <div class="paid-package__price"><small>Best for</small>Convenience</div>
+                    </article>
+                    <article class="paid-package">
+                        <h3>Workplace</h3>
+                        <p>Office and workplace parking areas where property rules and working space allow.</p>
+                        <div class="paid-package__price"><small>Best for</small>Weekdays</div>
+                    </article>
+                    <article class="paid-package">
+                        <h3>Multi-vehicle</h3>
+                        <p>Households and small fleets can be reviewed together when the location is suitable.</p>
+                        <div class="paid-package__price"><small>Best for</small>Planning</div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="paid-band paid-band--paper">
+            <div class="paid-shell">
+                <div class="paid-section-heading">
+                    <span>Mobile tint questions</span>
+                    <h2>Before We Confirm</h2>
+                </div>
+                <div class="paid-faq">
+                    <details>
+                        <summary>Do I need a garage?</summary>
+                        <p>Not always. Shade, weather, working room, cleanliness, and safe access determine whether a
+                            driveway or garage is suitable.</p>
+                    </details>
+                    <details>
+                        <summary>Can you tint at my office?</summary>
+                        <p>Yes, when the property allows it and the vehicle has enough clear space for a safe, clean
+                            installation.</p>
+                    </details>
+                    <details>
+                        <summary>What should I text for a quote?</summary>
+                        <p>Send your vehicle, city, glass package, shade goal, and a quick photo of the install area.</p>
+                    </details>
+                </div>
+            </div>
+        </section>
+
+        <section class="paid-cta">
+            <div class="paid-shell paid-cta__inner">
+                <div>
+                    <h2>See If Mobile Tint Fits Your Location</h2>
+                    <p>Call now or text your vehicle, city, and shade goal. We will confirm the package and whether your
+                        home or workplace is suitable.</p>
+                </div>
+                <div class="paid-cta__actions">
+                    <a data-cta-primary data-lead-action="near_me_call" class="paid-button paid-button--primary"
+                        href="tel:7146007134">Call Obsidian</a>
+                    <a data-cta-secondary data-lead-action="near_me_text" class="paid-button paid-button--ghost"
+                        href="sms:+17146007134?body=Hi%20Obsidian%20Autoworks%2C%20I%27d%20like%20mobile%20window%20tinting.%20My%20vehicle%2C%20city%2C%20and%20shade%20goal%20are%3A%20">Text
+                        vehicle &amp; city</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="paid-footer">
+        <div class="paid-shell paid-footer__inner">
+            <span>Obsidian Autoworks - Mobile window tinting in Orange County</span>
+            <a href="tel:7146007134">(714) 600-7134</a>
+        </div>
+    </footer>
+
+    <div class="paid-mobile-actions" aria-label="Contact Obsidian Autoworks">
+        <a class="paid-button paid-button--primary" href="tel:7146007134">Call now</a>
+        <a class="paid-button paid-button--ghost"
+            href="sms:+17146007134?body=Hi%20Obsidian%20Autoworks%2C%20I%27d%20like%20mobile%20window%20tinting.%20My%20vehicle%2C%20city%2C%20and%20shade%20goal%20are%3A%20">Text
+            details</a>
+    </div>
+    <script src="/lead-tracking.js" defer></script>
+</body>
+
+</html>

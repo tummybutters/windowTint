@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en" data-lead-service="ceramic_tint" data-lead-variant="ceramic_pricing_v1">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ceramic Window Tint Pricing | Obsidian Autoworks</title>
+    <meta name="description"
+        content="Compare Orange County mobile ceramic tint prices for front windows, sides and rear, full cars, windshields, and larger vehicles.">
+    <meta name="robots" content="noindex, nofollow">
+    <link rel="canonical" href="https://www.obsidianautoworksoc.com/window-tint-pricing">
+    <link rel="icon" type="image/png" href="/favicon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="/style.css?v=20260108-1">
+    <link rel="stylesheet" href="/paid-landing.css?v=20260730-1">
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-TR9ET60HX3"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-TR9ET60HX3');
+        gtag('config', 'AW-17846304809');
+    </script>
+</head>
+
+<body class="paid-page">
+    <nav class="paid-nav" aria-label="Primary navigation">
+        <div class="paid-shell paid-nav__inner">
+            <a class="paid-brand" href="/">Obsidian <span>Autoworks</span></a>
+            <div class="paid-nav__actions">
+                <a class="paid-link" href="#pricing">Package prices</a>
+                <a class="paid-button paid-button--ghost" href="tel:7146007134">Call (714) 600-7134</a>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <header class="paid-hero">
+            <img class="paid-hero__media" src="/assets/paid-landing/mobile-porsche-side.webp"
+                alt="Black Porsche receiving mobile ceramic window tint service in Orange County" width="1012"
+                height="1800" fetchpriority="high">
+            <div class="paid-shell paid-hero__content">
+                <p class="paid-eyebrow">Mobile ceramic tint pricing - Orange County</p>
+                <h1>See the Price Before the Pitch.</h1>
+                <p class="paid-hero__copy">Compare the current package menu, then call or text your exact vehicle,
+                    glass, city, and shade goal for confirmation.</p>
+                <div class="paid-hero__actions">
+                    <a data-hero-primary data-lead-action="ceramic_pricing_call"
+                        class="paid-button paid-button--primary" href="tel:7146007134">Call for a final quote</a>
+                    <a data-hero-secondary data-lead-action="ceramic_pricing_text"
+                        class="paid-button paid-button--ghost"
+                        href="sms:+17146007134?body=Hi%20Obsidian%20Autoworks%2C%20I%27d%20like%20a%20ceramic%20tint%20quote.%20My%20vehicle%2C%20city%2C%20requested%20glass%2C%20and%20shade%20goal%20are%3A%20">Text
+                        vehicle &amp; glass</a>
+                </div>
+            </div>
+        </header>
+
+        <section class="paid-proof" aria-label="Ceramic tint benefits">
+            <div class="paid-shell paid-proof__grid">
+                <div class="paid-proof__item"><strong>Clear package menu</strong><span>Start with the glass you
+                        actually want tinted.</span></div>
+                <div class="paid-proof__item"><strong>Ceramic performance</strong><span>Heat rejection, UV protection,
+                        privacy, and clean visibility.</span></div>
+                <div class="paid-proof__item"><strong>Mobile installation</strong><span>Qualified Orange County homes
+                        and workplaces.</span></div>
+            </div>
+        </section>
+
+        <section class="paid-band paid-band--paper" id="pricing">
+            <div class="paid-shell">
+                <div class="paid-section-heading">
+                    <span>Current Obsidian menu</span>
+                    <h2>Ceramic Tint Package Pricing</h2>
+                    <p>Prices vary by vehicle size and selected glass. These starting points match the current
+                        published menu and are confirmed before service.</p>
+                </div>
+                <div class="paid-packages">
+                    <article class="paid-package"><h3>Front two</h3><p>Sedan or coupe front windows. Truck and SUV
+                            front-two packages start at $220.</p><div class="paid-package__price"><small>From</small>$200</div></article>
+                    <article class="paid-package"><h3>Sides and rear</h3><p>Coupe package. Sedans start at $600 and
+                            trucks or SUVs at $700.</p><div class="paid-package__price"><small>From</small>$500</div></article>
+                    <article class="paid-package"><h3>Full car</h3><p>Coupe package. Sedans start at $820 and trucks
+                            or SUVs at $950.</p><div class="paid-package__price"><small>From</small>$720</div></article>
+                    <article class="paid-package"><h3>Windshield</h3><p>Sedan or coupe windshield. Truck and SUV
+                            windshield packages start at $250.</p><div class="paid-package__price"><small>From</small>$220</div></article>
+                </div>
+            </div>
+        </section>
+
+        <section class="paid-band paid-band--ink">
+            <div class="paid-shell">
+                <div class="paid-section-heading">
+                    <span>Real mobile installation</span>
+                    <h2>Performance Without a Shop Waiting Room</h2>
+                    <p>Ceramic tint can bring heat rejection and a cleaner cabin feel to your driveway or workplace
+                        when the install location is suitable.</p>
+                </div>
+                <div class="paid-photo-grid">
+                    <figure class="paid-photo"><img src="/assets/paid-landing/mobile-porsche-front.webp"
+                            alt="Front view of a Porsche at a mobile tint installation location" width="1012"
+                            height="1800"><figcaption>Qualified mobile setup</figcaption></figure>
+                    <figure class="paid-photo"><img src="/assets/paid-landing/mobile-porsche-rear.webp"
+                            alt="Rear and side glass on a Porsche during mobile ceramic tint service" width="1012"
+                            height="1800"><figcaption>Vehicle-specific glass coverage</figcaption></figure>
+                </div>
+            </div>
+        </section>
+
+        <section class="paid-band paid-band--silver">
+            <div class="paid-shell">
+                <div class="paid-section-heading"><span>What changes the quote</span><h2>Four Useful Details</h2></div>
+                <div class="paid-steps">
+                    <article class="paid-step"><div><h3>Vehicle size</h3><p>Coupe, sedan, truck, SUV, and Tesla glass
+                                layouts use different amounts of film and install time.</p></div></article>
+                    <article class="paid-step"><div><h3>Requested glass</h3><p>Choose front two, sides and rear, full
+                                car, windshield, or roof glass.</p></div></article>
+                    <article class="paid-step"><div><h3>Shade and goal</h3><p>Tell us whether heat, glare, privacy, or
+                                exterior appearance matters most.</p></div></article>
+                    <article class="paid-step"><div><h3>Install location</h3><p>A clean garage or protected workspace
+                                helps produce a professional mobile result.</p></div></article>
+                </div>
+            </div>
+        </section>
+
+        <section class="paid-band paid-band--paper">
+            <div class="paid-shell">
+                <div class="paid-section-heading"><span>Ceramic tint FAQ</span><h2>Price and Performance</h2></div>
+                <div class="paid-faq">
+                    <details><summary>Why does vehicle size change the price?</summary><p>Larger vehicles generally
+                            require more film, larger patterns, and more installation time.</p></details>
+                    <details><summary>Does darker tint always mean better heat rejection?</summary><p>No. Film
+                            construction and heat-rejection performance matter alongside visible darkness.</p></details>
+                    <details><summary>Is the listed price final?</summary><p>We confirm the vehicle, glass, film,
+                            shade, existing tint, and installation conditions before service.</p></details>
+                </div>
+            </div>
+        </section>
+
+        <section class="paid-cta">
+            <div class="paid-shell paid-cta__inner">
+                <div><h2>Get the Right Glass at the Right Price.</h2><p>Call now or text your vehicle, city, requested
+                        glass, and shade goal.</p></div>
+                <div class="paid-cta__actions">
+                    <a data-cta-primary data-lead-action="ceramic_pricing_call"
+                        class="paid-button paid-button--primary" href="tel:7146007134">Call for pricing</a>
+                    <a data-cta-secondary data-lead-action="ceramic_pricing_text"
+                        class="paid-button paid-button--ghost"
+                        href="sms:+17146007134?body=Hi%20Obsidian%20Autoworks%2C%20I%27d%20like%20a%20ceramic%20tint%20quote.%20My%20vehicle%2C%20city%2C%20requested%20glass%2C%20and%20shade%20goal%20are%3A%20">Text
+                        the details</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="paid-footer"><div class="paid-shell paid-footer__inner"><span>Obsidian Autoworks</span><span>Mobile
+                ceramic window tinting in Orange County</span></div></footer>
+    <div class="paid-mobile-actions" aria-label="Contact Obsidian Autoworks">
+        <a data-lead-action="ceramic_pricing_call" href="tel:7146007134">Call</a>
+        <a data-lead-action="ceramic_pricing_text"
+            href="sms:+17146007134?body=Hi%20Obsidian%20Autoworks%2C%20I%27d%20like%20a%20ceramic%20tint%20quote.%20My%20vehicle%2C%20city%2C%20requested%20glass%2C%20and%20shade%20goal%20are%3A%20">Text</a>
+    </div>
+    <script src="/lead-tracking.js" defer></script>
+</body>
+
+</html>

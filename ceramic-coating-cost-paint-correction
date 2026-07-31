@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en" data-lead-service="ceramic_coating" data-lead-variant="coating_cost_correction_v1">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ceramic Coating Cost and Paint Correction | Obsidian Autoworks</title>
+    <meta name="description"
+        content="Compare Orange County ceramic coating and paint-correction packages from $550, including one-year, five-year, and Level 2 options.">
+    <meta name="robots" content="noindex, nofollow">
+    <link rel="canonical" href="https://www.obsidianautoworksoc.com/ceramic-coating">
+    <link rel="icon" type="image/png" href="/favicon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="/style.css?v=20260108-1">
+    <link rel="stylesheet" href="/paid-landing.css?v=20260730-1">
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-TR9ET60HX3"></script>
+    <script>
+        window.OBSIDIAN_GOOGLE_ADS_CONFIG = {
+            id: 'AW-18301955625',
+            websiteCallConfigId: '',
+            conversions: {
+                phone_click: 'BU5VCLCasNkcEKnchpdE',
+                text_click: 'qbmnCLOasNkcEKnchpdE'
+            }
+        };
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-TR9ET60HX3');
+        gtag('config', 'AW-18301955625');
+    </script>
+</head>
+
+<body class="paid-page">
+    <nav class="paid-nav" aria-label="Primary navigation">
+        <div class="paid-shell paid-nav__inner">
+            <a class="paid-brand" href="/">Obsidian <span>Autoworks</span></a>
+            <div class="paid-nav__actions">
+                <a class="paid-link" href="#packages">Compare packages</a>
+                <a class="paid-button paid-button--ghost" href="tel:7146007134">Call (714) 600-7134</a>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <header class="paid-hero">
+            <img class="paid-hero__media" src="/assets/ceramic-coating/paint-detail.webp"
+                alt="Detailed BMW paint showing deep reflection after professional preparation" width="1012"
+                height="1800" fetchpriority="high">
+            <div class="paid-shell paid-hero__content">
+                <p class="paid-eyebrow">Ceramic coating cost - Orange County</p>
+                <h1>Know What the Finish Costs.</h1>
+                <p class="paid-hero__copy">Compare coating and paint-correction starting prices, then send your
+                    vehicle details and photos so we can match the work to its actual paint condition.</p>
+                <div class="paid-hero__actions">
+                    <a data-hero-primary data-lead-action="coating_cost_call"
+                        class="paid-button paid-button--primary" href="tel:7146007134">Call about your paint</a>
+                    <a data-hero-secondary data-lead-action="coating_cost_text"
+                        class="paid-button paid-button--ghost"
+                        href="sms:+17146007134?body=Hi%20Obsidian%20Autoworks%2C%20I%27d%20like%20a%20ceramic%20coating%20and%20paint%20correction%20quote.%20My%20vehicle%2C%20city%2C%20paint%20condition%2C%20and%20protection%20goal%20are%3A%20">Text
+                        vehicle photos</a>
+                </div>
+            </div>
+        </header>
+
+        <section class="paid-proof" aria-label="Ceramic coating pricing details">
+            <div class="paid-shell paid-proof__grid">
+                <div class="paid-proof__item"><strong>Packages from $550</strong><span>Start with protection length and
+                        visible paint condition.</span></div>
+                <div class="paid-proof__item"><strong>Correction matched to paint</strong><span>Do not pay for work the
+                        finish does not need.</span></div>
+                <div class="paid-proof__item"><strong>Mobile in Orange County</strong><span>Qualified locations with
+                        appropriate access and conditions.</span></div>
+            </div>
+        </section>
+
+        <section class="paid-band paid-band--paper" id="packages">
+            <div class="paid-shell">
+                <div class="paid-section-heading">
+                    <span>Starting-price ladder</span>
+                    <h2>Coating and Correction Packages</h2>
+                    <p>Every price is a starting point. Final scope depends on vehicle size, paint condition,
+                        contamination, existing defects, and the finish you expect.</p>
+                </div>
+                <div class="paid-packages">
+                    <article class="paid-package">
+                        <h3>One-year coating</h3>
+                        <p>Paint enhancement and a one-year ceramic coating for vehicles that need gloss and
+                            practical protection.</p>
+                        <div class="paid-package__price"><small>From</small>$550</div>
+                    </article>
+                    <article class="paid-package">
+                        <h3>Five-year coating</h3>
+                        <p>One-step paint enhancement and a five-year coating for a longer protection plan.</p>
+                        <div class="paid-package__price"><small>From</small>$700</div>
+                    </article>
+                    <article class="paid-package">
+                        <h3>Level 2 correction</h3>
+                        <p>Two-step correction targeting heavier visible defects, followed by a five-year coating.</p>
+                        <div class="paid-package__price"><small>From</small>$900</div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="paid-band paid-band--ink">
+            <div class="paid-shell">
+                <div class="paid-section-heading">
+                    <span>The difference is underneath</span>
+                    <h2>Coating Does Not Hide Bad Paint</h2>
+                    <p>Preparation and correction determine how much depth, gloss, and clarity show through the final
+                        coating.</p>
+                </div>
+                <div class="paid-photo-grid">
+                    <figure class="paid-photo"><img src="/assets/ceramic-coating/foam-bmw.webp"
+                            alt="BMW receiving thorough wash preparation before ceramic coating" width="1012"
+                            height="1800"><figcaption>Decontamination before correction</figcaption></figure>
+                    <figure class="paid-photo"><img src="/assets/ceramic-coating/finished-vw.webp"
+                            alt="Volkswagen paint with a finished reflective coating result" width="1012"
+                            height="1800"><figcaption>Finished gloss after proper prep</figcaption></figure>
+                </div>
+            </div>
+        </section>
+
+        <section class="paid-band paid-band--silver">
+            <div class="paid-shell">
+                <div class="paid-section-heading"><span>How we scope it</span><h2>Photos First, Guesswork Last</h2></div>
+                <div class="paid-steps">
+                    <article class="paid-step"><div><h3>Vehicle details</h3><p>Year, make, model, color, and approximate
+                                mileage establish a useful starting point.</p></div></article>
+                    <article class="paid-step"><div><h3>Paint condition</h3><p>Send clear sun or inspection-light
+                                photos of swirls, scratches, water spots, and problem panels.</p></div></article>
+                    <article class="paid-step"><div><h3>Finish goal</h3><p>Choose practical protection, stronger gloss,
+                                or deeper correction based on what matters to you.</p></div></article>
+                    <article class="paid-step"><div><h3>Confirmed scope</h3><p>We confirm preparation, correction,
+                                coating duration, location, and price before service.</p></div></article>
+                </div>
+            </div>
+        </section>
+
+        <section class="paid-band paid-band--paper">
+            <div class="paid-shell">
+                <div class="paid-section-heading"><span>Cost FAQ</span><h2>What You Are Paying For</h2></div>
+                <div class="paid-faq">
+                    <details><summary>Why is paint correction priced separately?</summary><p>Correction is labor
+                            matched to the defects in the paint. A newer clean vehicle and a heavily swirled vehicle
+                            should not receive the same scope by default.</p></details>
+                    <details><summary>Does ceramic coating remove scratches?</summary><p>No. Correction improves
+                            eligible defects before coating; the coating then protects the prepared finish.</p></details>
+                    <details><summary>Are the listed prices guaranteed?</summary><p>They are starting prices. We
+                            confirm vehicle size, paint condition, requested correction, and install conditions before
+                            service.</p></details>
+                </div>
+            </div>
+        </section>
+
+        <section class="paid-cta">
+            <div class="paid-shell paid-cta__inner">
+                <div><h2>Send the Paint. Get the Right Plan.</h2><p>Call for a direct recommendation or text clear
+                        vehicle photos and your protection goal.</p></div>
+                <div class="paid-cta__actions">
+                    <a data-cta-primary data-lead-action="coating_cost_call"
+                        class="paid-button paid-button--primary" href="tel:7146007134">Call about coating</a>
+                    <a data-cta-secondary data-lead-action="coating_cost_text"
+                        class="paid-button paid-button--ghost"
+                        href="sms:+17146007134?body=Hi%20Obsidian%20Autoworks%2C%20I%27d%20like%20a%20ceramic%20coating%20and%20paint%20correction%20quote.%20My%20vehicle%2C%20city%2C%20paint%20condition%2C%20and%20protection%20goal%20are%3A%20">Text
+                        photos instead</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="paid-footer"><div class="paid-shell paid-footer__inner"><span>Obsidian Autoworks</span><span>Mobile
+                ceramic coating in Orange County</span></div></footer>
+    <div class="paid-mobile-actions" aria-label="Contact Obsidian Autoworks">
+        <a data-lead-action="coating_cost_call" href="tel:7146007134">Call</a>
+        <a data-lead-action="coating_cost_text"
+            href="sms:+17146007134?body=Hi%20Obsidian%20Autoworks%2C%20I%27d%20like%20a%20ceramic%20coating%20and%20paint%20correction%20quote.%20My%20vehicle%2C%20city%2C%20paint%20condition%2C%20and%20protection%20goal%20are%3A%20">Text</a>
+    </div>
+    <script src="/lead-tracking.js" defer></script>
+</body>
+
+</html>

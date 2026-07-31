@@ -22,6 +22,9 @@ const event = {
   payload: {
     link_url: 'sms:7146007134?body=private message',
     service_title: 'Full Car Tint',
+    service: 'ceramic_coating',
+    landing_variant: 'coating_cost_correction_v1',
+    lead_action: 'coating_cost_text',
     ignored_private_field: 'do not keep me'
   }
 };
@@ -35,6 +38,9 @@ assert.equal(record.event_id, event.event_id);
 assert.equal(record.source, 'google_ads');
 assert.equal(record.payload.link_url, 'sms:');
 assert.equal(record.payload.service_title, 'Full Car Tint');
+assert.equal(record.payload.service, 'ceramic_coating');
+assert.equal(record.payload.landing_variant, 'coating_cost_correction_v1');
+assert.equal(record.payload.lead_action, 'coating_cost_text');
 assert.equal(record.payload.ignored_private_field, undefined);
 assert.doesNotMatch(record.page_url, /phone=/);
 assert.match(record.page_url, /gclid=click-1/);

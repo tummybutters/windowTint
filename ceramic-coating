@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" data-lead-service="ceramic_coating">
+<html lang="en" data-lead-service="ceramic_coating" data-lead-variant="coating_general_v1">
 
 <head>
     <meta charset="UTF-8">
@@ -45,11 +45,19 @@
     <link rel="stylesheet" href="/ceramic-coating.css?v=20260724-2">
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-TR9ET60HX3"></script>
     <script>
+        window.OBSIDIAN_GOOGLE_ADS_CONFIG = {
+            id: 'AW-18301955625',
+            websiteCallConfigId: '',
+            conversions: {
+                phone_click: 'BU5VCLCasNkcEKnchpdE',
+                text_click: 'qbmnCLOasNkcEKnchpdE'
+            }
+        };
         window.dataLayer = window.dataLayer || [];
         function gtag() { dataLayer.push(arguments); }
         gtag('js', new Date());
         gtag('config', 'G-TR9ET60HX3');
-        gtag('config', 'AW-17846304809');
+        gtag('config', 'AW-18301955625');
     </script>
 </head>
 
@@ -191,7 +199,7 @@
                     <p>Not sure how much correction your paint needs? A few clear photos give us a useful starting
                         point.</p>
                     <a href="sms:7146007134" class="brutalist-btn brutalist-btn--large coating-btn--glass"
-                        data-lead-action="ceramic_coating_text">Text Photos For An Opinion</a>
+                        data-lead-action="ceramic_coating_text">Text Paint Photos</a>
                 </div>
             </div>
         </section>
