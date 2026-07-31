@@ -2,7 +2,7 @@
 
 > **For agentic workers:** REQUIRED SUB-SKILL: Use superpowers:subagent-driven-development (recommended) or superpowers:executing-plans to implement this plan task-by-task. Steps use checkbox (`- [ ]`) syntax for tracking.
 
-**Goal:** Make all seven paid-search variants use the exact centered `/vip-booking` hero composition and spanning photo-deck treatment while preserving their intent-specific sections and tracking.
+**Goal:** Make all seven paid-search variants use the exact centered `/vip-booking` hero composition and full seven-card photo-wall treatment while preserving their intent-specific sections and tracking.
 
 **Architecture:** Keep each extensionless HTML page and the shared `paid-landing.css`. Add one shared VIP hero/photo-strip contract, then update only the hero markup and redundant photo-proof sections on each variant.
 
@@ -26,7 +26,7 @@
 
 **Interfaces:**
 - Consumes: the seven paid variant HTML files.
-- Produces: assertions for `.paid-hero--vip`, centered content, and `.paid-hero-strip`.
+- Produces: assertions for `.paid-hero--vip`, centered content, three hero actions, and a seven-card `.paid-hero-strip`.
 
 - [ ] **Step 1: Write failing assertions**
 
@@ -36,7 +36,8 @@ Require each page to contain:
 assert.match(page, /class="paid-hero paid-hero--vip"/);
 assert.match(page, /class="paid-shell paid-hero__content paid-hero__content--centered"/);
 assert.match(page, /<section class="paid-hero-strip"/);
-assert.equal((page.match(/class="paid-hero-strip__item/g) || []).length, 3);
+assert.equal((page.match(/class="paid-hero-strip__item/g) || []).length, 7);
+assert.match(page, /data-hero-tertiary/);
 ```
 
 - [ ] **Step 2: Run the contract test**
@@ -52,15 +53,15 @@ Expected: FAIL because the old background-image hero is still present.
 
 **Interfaces:**
 - Consumes: `.paid-hero--vip`, `.paid-hero__content--centered`, and `.paid-hero-strip`.
-- Produces: a centered dark hero and responsive three-card photo deck.
+- Produces: a centered dark hero and responsive seven-card photo wall.
 
 - [ ] **Step 1: Replace the old left-overlay hero rules**
 
-Implement a dark centered hero, orange offer tag, silver second-line treatment, centered CTA row, and a bordered/rotated three-image deck spanning the viewport.
+Implement a dark centered hero, orange offer tag, silver second-line treatment, centered three-action CTA row, and the bordered/rotated seven-card wall spanning the viewport.
 
 - [ ] **Step 2: Add responsive behavior**
 
-At `760px` and below, keep the headline centered, stack CTAs, and render a horizontally spanning three-column photo strip without overflow.
+At `760px` and below, keep the headline centered, stack CTAs, and render the photo wall as a compact two-column composition without horizontal overflow.
 
 ### Task 3: Convert All Seven Variants
 
@@ -75,11 +76,11 @@ At `760px` and below, keep the headline centered, stack CTAs, and render a horiz
 
 **Interfaces:**
 - Consumes: the shared VIP hero classes and each page's existing three real photos.
-- Produces: seven centered heroes followed immediately by three-image decks.
+- Produces: seven centered heroes followed immediately by seven-card photo walls.
 
 - [ ] **Step 1: Convert tint variants**
 
-Remove the background hero image, preserve intent copy and CTA attributes, and move the three existing page images into the hero photo deck.
+Preserve the approved call/text attributes, add an in-page third action, lead with intent-specific real vehicle images, and complete the seven-card photo wall with existing Obsidian proof images.
 
 - [ ] **Step 2: Convert coating variants**
 

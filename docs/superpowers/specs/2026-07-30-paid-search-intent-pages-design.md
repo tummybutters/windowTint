@@ -25,7 +25,8 @@ Create eight paid-search destinations across window tinting and ceramic coating,
 The seven new pages reuse `paid-landing.css` and the existing paid-page structure:
 
 - The exact `/vip-booking` hero composition: a centered offer tag, centered headline, centered supporting copy, and centered call/text CTA row on a dark stage
-- A three-image real-vehicle strip immediately beneath the hero, spanning the page width with the same overlapping, bordered photo-deck character as `/vip-booking`
+- The full seven-card `/vip-booking` photo wall immediately beneath the hero, using the same overlapping 12-column desktop composition and a compact two-column mobile composition
+- Three centered hero actions in this order: tracked call, tracked prefilled text, then an intent-specific in-page jump
 - Call as the primary action
 - Prefilled text as the secondary action
 - Proof strip, service/package section, process, FAQ, and final CTA
@@ -33,7 +34,7 @@ The seven new pages reuse `paid-landing.css` and the existing paid-page structur
 - No booking or Square links
 - `noindex, nofollow` while the pages are paid-search experiments
 
-Each page changes the headline, proof image, offer details, FAQ, CTA wording, and tracking variant. Exact- and phrase-match versions of the same intent use the same destination.
+Each page changes the headline, first proof images, offer details, FAQ, CTA wording, and tracking variant. Exact- and phrase-match versions of the same intent use the same destination. Hero language should sell the desired ownership experience in a restrained, high-status voice; avoid generic superlatives, urgency theater, and slang.
 
 The VIP hero is a visual contract, not loose inspiration. Paid variants must not use a left-aligned headline over a full-bleed background image, a cream hero, or a split hero. The intent-specific sections below the photo strip remain in place and inherit the VIP page's black, white, silver, and sunset-orange visual language.
 

@@ -45,14 +45,21 @@ body.paid-page {
 .paid-brand {
     display: inline-flex;
     align-items: center;
+    gap: 0.55rem;
     color: var(--paid-white);
     font-size: 1rem;
     font-weight: 800;
     text-transform: uppercase;
 }
 
+.paid-brand__mark {
+    width: 44px;
+    height: 24px;
+    object-fit: contain;
+}
+
 .paid-brand span {
-    color: var(--paid-coral);
+    color: var(--paid-silver);
 }
 
 .paid-nav__actions {
@@ -109,7 +116,7 @@ body.paid-page {
 
 .paid-hero {
     position: relative;
-    background: linear-gradient(145deg, #111 0%, #1d1d1d 100%);
+    background: #121212;
     text-align: center;
 }
 
@@ -120,7 +127,7 @@ body.paid-page {
 .paid-hero__content {
     position: relative;
     z-index: 2;
-    padding: clamp(4.5rem, 8vw, 7rem) 0 clamp(3rem, 6vw, 5rem);
+    padding: clamp(3.25rem, 6vw, 5.25rem) 0 clamp(2.5rem, 4vw, 3.75rem);
 }
 
 .paid-hero__content--centered {
@@ -146,7 +153,7 @@ body.paid-page {
     max-width: 980px;
     margin: 0 0 1rem;
     color: var(--paid-white);
-    font-size: clamp(2.8rem, 7.4vw, 6.5rem);
+    font-size: clamp(2.8rem, 6vw, 5.1rem);
     line-height: 0.9;
     font-weight: 800;
     text-transform: uppercase;
@@ -154,11 +161,7 @@ body.paid-page {
 
 .paid-hero h1 span {
     display: block;
-    background: linear-gradient(180deg, #fff 0%, #aeb2b5 90%);
-    background-clip: text;
-    color: transparent;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+    color: var(--paid-silver);
 }
 
 .paid-hero__copy {
@@ -181,56 +184,94 @@ body.paid-page {
 .paid-hero-strip {
     position: relative;
     z-index: 3;
-    padding: 0 1rem clamp(2.75rem, 5vw, 4.5rem);
+    padding: 0 2rem clamp(3rem, 6vw, 5rem);
     background: var(--paid-ink);
 }
 
 .paid-hero-strip__grid {
-    width: min(1480px, 100%);
+    width: min(1500px, 100%);
     display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    align-items: stretch;
-    gap: 0;
-    margin: -1.4rem auto 0;
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+    grid-auto-rows: clamp(190px, 19vw, 285px);
+    gap: 6px;
+    row-gap: 28px;
+    margin: -0.8rem auto 0;
+    padding: 1rem 0 2rem;
+    overflow: visible;
 }
 
 .paid-hero-strip__item {
     position: relative;
-    height: clamp(250px, 30vw, 430px);
+    height: 100%;
     min-width: 0;
     overflow: hidden;
     border: 4px solid var(--paid-ink);
     background: #151515;
-    box-shadow: 8px 10px 0 rgba(255, 255, 255, 0.1);
-    transform-origin: center bottom;
+    box-shadow: 8px 10px 0 rgba(0, 0, 0, 0.55);
+    transform-origin: bottom left;
+    margin: -16px 0 0 -18px;
+    transition: transform 220ms ease;
 }
 
 .paid-hero-strip__item:nth-child(1) {
     z-index: 1;
-    transform: rotate(-2.5deg) translateY(8px);
+    grid-column: 1 / span 3;
+    margin-left: 0;
+    transform: rotate(-3deg) translateY(6px);
 }
 
 .paid-hero-strip__item:nth-child(2) {
-    z-index: 3;
-    transform: translateY(-4px) scale(1.025);
+    z-index: 2;
+    grid-column: 4 / span 3;
+    transform: rotate(-1.5deg) translateY(3px);
 }
 
 .paid-hero-strip__item:nth-child(3) {
+    z-index: 3;
+    grid-column: 7 / span 3;
+    transform: rotate(1.5deg) translateY(2px);
+}
+
+.paid-hero-strip__item:nth-child(4) {
+    z-index: 4;
+    grid-column: 10 / span 3;
+    transform: rotate(3deg) translateY(6px);
+}
+
+.paid-hero-strip__item:nth-child(5) {
+    z-index: 1;
+    grid-column: 3 / span 3;
+    transform: rotate(-3deg) translateY(-6px);
+}
+
+.paid-hero-strip__item:nth-child(6) {
     z-index: 2;
-    transform: rotate(2.5deg) translateY(8px);
+    grid-column: 6 / span 3;
+    transform: rotate(-1deg) translateY(-8px);
+}
+
+.paid-hero-strip__item:nth-child(7) {
+    z-index: 3;
+    grid-column: 9 / span 3;
+    transform: rotate(2deg) translateY(-6px);
 }
 
 .paid-hero-strip__item img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    opacity: 0.82;
+    opacity: 0.72;
     transition: opacity 180ms ease, transform 240ms ease;
+}
+
+.paid-hero-strip__item:hover {
+    z-index: 10;
+    transform: translateY(-6px) rotate(0deg) scale(1.02);
 }
 
 .paid-hero-strip__item:hover img {
     opacity: 1;
-    transform: scale(1.025);
+    transform: scale(1.02);
 }
 
 .paid-hero-strip__item figcaption {
@@ -238,12 +279,22 @@ body.paid-page {
     right: 0;
     bottom: 0;
     left: 0;
-    padding: 3rem 1.1rem 1rem;
+    padding: 3.5rem 1.15rem 1.1rem;
     background: linear-gradient(transparent, rgba(0, 0, 0, 0.92));
     color: var(--paid-white);
-    font-size: 0.78rem;
+}
+
+.paid-hero-strip__item figcaption p {
+    margin: 0 0 0.45rem;
+    font-size: 0.84rem;
+    font-weight: 600;
+    line-height: 1.25;
+}
+
+.paid-hero-strip__reviewer {
+    color: var(--paid-coral);
+    font-size: 0.72rem;
     font-weight: 800;
-    letter-spacing: 0.04em;
     text-transform: uppercase;
 }
 
@@ -531,7 +582,7 @@ body.paid-page {
 
     .paid-hero__content {
         max-width: none;
-        padding: 3.5rem 0 3rem;
+        padding: 3rem 0 2.6rem;
     }
 
     .paid-hero h1 {
@@ -545,23 +596,46 @@ body.paid-page {
     }
 
     .paid-hero-strip {
-        padding: 0 0.4rem 2.5rem;
+        padding: 0 0.75rem 2.75rem;
     }
 
     .paid-hero-strip__grid {
-        margin-top: -0.8rem;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        grid-auto-rows: clamp(170px, 55vw, 245px);
+        gap: 5px;
+        row-gap: 16px;
+        margin-top: -0.5rem;
     }
 
     .paid-hero-strip__item {
-        height: clamp(170px, 58vw, 250px);
+        grid-column: auto !important;
+        height: 100%;
+        margin: -8px 0 0 -9px;
         border-width: 3px;
         box-shadow: 4px 6px 0 rgba(255, 255, 255, 0.08);
     }
 
+    .paid-hero-strip__item:first-child {
+        margin-left: 0;
+    }
+
+    .paid-hero-strip__item:nth-child(7) {
+        grid-column: 1 / -1 !important;
+        width: calc(50% - 3px);
+        justify-self: center;
+    }
+
     .paid-hero-strip__item figcaption {
-        padding: 2.5rem 0.5rem 0.65rem;
-        font-size: 0.58rem;
+        padding: 2.8rem 0.7rem 0.7rem;
+    }
+
+    .paid-hero-strip__item figcaption p {
+        font-size: 0.68rem;
         line-height: 1.25;
+    }
+
+    .paid-hero-strip__reviewer {
+        font-size: 0.58rem;
     }
 
     .paid-proof__grid {

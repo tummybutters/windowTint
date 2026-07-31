@@ -62,9 +62,11 @@ for (const [name, page, service, variant, route] of paidVariants) {
   assert.match(page, /<section class="paid-hero-strip"/, `${name} must place the photo deck directly under the hero.`);
   assert.equal(
     (page.match(/class="paid-hero-strip__item/g) || []).length,
-    3,
-    `${name} must use three real photos in the spanning VIP deck.`
+    7,
+    `${name} must use the full seven-photo VIP wall.`
   );
+  assert.match(page, /data-hero-tertiary/, `${name} must include an intent-specific third hero action.`);
+  assert.match(page, /class="paid-hero-strip__reviewer"/, `${name} photo wall must include proof labels.`);
   assert.doesNotMatch(
     page,
     /class="paid-hero__media"/,
@@ -76,10 +78,12 @@ for (const [name, page, service, variant, route] of paidVariants) {
 
   const heroCall = page.indexOf('data-hero-primary');
   const heroText = page.indexOf('data-hero-secondary');
+  const heroTertiary = page.indexOf('data-hero-tertiary');
   const finalCall = page.indexOf('data-cta-primary');
   const finalText = page.indexOf('data-cta-secondary');
 
   assert.ok(heroCall >= 0 && heroCall < heroText, `${name} hero actions must be ordered call, then text.`);
+  assert.ok(heroText < heroTertiary, `${name} in-page hero action must follow call and text.`);
   assert.ok(finalCall >= 0 && finalCall < finalText, `${name} final actions must be ordered call, then text.`);
   assert.match(page, /href="tel:7146007134"/, `${name} must use the approved call number.`);
   assert.match(page, /href="sms:\+17146007134\?body=/, `${name} must provide a prefilled text action.`);

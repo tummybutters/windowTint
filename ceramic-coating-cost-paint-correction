@@ -37,7 +37,10 @@
 <body class="paid-page">
     <nav class="paid-nav" aria-label="Primary navigation">
         <div class="paid-shell paid-nav__inner">
-            <a class="paid-brand" href="/">Obsidian <span>Autoworks</span></a>
+            <a class="paid-brand" href="/">
+                <img class="paid-brand__mark" src="/car-hero.webp" alt="" width="500" height="200">
+                OBSIDIAN<span>AUTOWORKS</span>
+            </a>
             <div class="paid-nav__actions">
                 <a class="paid-link" href="#packages">Compare packages</a>
                 <a class="paid-button paid-button--ghost" href="tel:7146007134">Call (714) 600-7134</a>
@@ -49,9 +52,9 @@
         <header class="paid-hero paid-hero--vip">
             <div class="paid-shell paid-hero__content paid-hero__content--centered">
                 <p class="paid-eyebrow">Ceramic coating cost - Orange County</p>
-                <h1>Know What <span>The Finish Costs.</span></h1>
-                <p class="paid-hero__copy">Compare coating and paint-correction starting prices, then send your
-                    vehicle details and photos so we can match the work to its actual paint condition.</p>
+                <h1>Depth, Gloss, Protection. <span>Priced With Clarity.</span></h1>
+                <p class="paid-hero__copy">Start with transparent package pricing, then match paint correction and
+                    protection to the finish your vehicle actually needs.</p>
                 <div class="paid-hero__actions">
                     <a data-hero-primary data-lead-action="coating_cost_call"
                         class="paid-button paid-button--primary" href="tel:7146007134">Call about your paint</a>
@@ -59,6 +62,8 @@
                         class="paid-button paid-button--ghost"
                         href="sms:+17146007134?body=Hi%20Obsidian%20Autoworks%2C%20I%27d%20like%20a%20ceramic%20coating%20and%20paint%20correction%20quote.%20My%20vehicle%2C%20city%2C%20paint%20condition%2C%20and%20protection%20goal%20are%3A%20">Text
                         vehicle photos</a>
+                    <a data-hero-tertiary class="paid-button paid-button--ghost" href="#packages">Compare
+                        packages</a>
                 </div>
             </div>
         </header>
@@ -68,19 +73,49 @@
                     <img src="/assets/ceramic-coating/foam-bmw.webp"
                         alt="BMW undergoing preparation before ceramic coating" width="1012" height="1800"
                         fetchpriority="high">
-                    <figcaption>Preparation first</figcaption>
+                    <figcaption><p>Protection starts with disciplined surface preparation.</p>
+                        <span class="paid-hero-strip__reviewer">Obsidian process</span></figcaption>
                 </figure>
                 <figure class="paid-hero-strip__item">
                     <img src="/assets/ceramic-coating/paint-detail.webp"
                         alt="Detailed BMW paint showing deep reflection after professional preparation" width="1012"
                         height="1800" fetchpriority="high">
-                    <figcaption>Correction matched to the paint</figcaption>
+                    <figcaption><p>Correction is matched to the paint, not added from a template.</p>
+                        <span class="paid-hero-strip__reviewer">Paint-specific scope</span></figcaption>
                 </figure>
                 <figure class="paid-hero-strip__item">
                     <img src="/assets/ceramic-coating/finished-vw.webp"
                         alt="Finished Volkswagen paint after ceramic coating service" width="1012" height="1800"
                         fetchpriority="high">
-                    <figcaption>Protected finished gloss</figcaption>
+                    <figcaption><p>Deep gloss and a cleaner finish with long-term protection.</p>
+                        <span class="paid-hero-strip__reviewer">Finished result</span></figcaption>
+                </figure>
+                <figure class="paid-hero-strip__item">
+                    <img src="/assets/ceramic-coating/foam-sedan.webp"
+                        alt="Sedan receiving wash preparation before ceramic coating" width="1012" height="1800"
+                        loading="lazy">
+                    <figcaption><p>Every package begins with the condition of the actual vehicle.</p>
+                        <span class="paid-hero-strip__reviewer">Condition first</span></figcaption>
+                </figure>
+                <figure class="paid-hero-strip__item">
+                    <img src="/assets/ceramic-coating/white-mclaren.webp"
+                        alt="White performance car showing a reflective exterior finish" width="1012" height="1800"
+                        loading="lazy">
+                    <figcaption><p>A high-clarity finish that looks right in direct light.</p>
+                        <span class="paid-hero-strip__reviewer">Finish standard</span></figcaption>
+                </figure>
+                <figure class="paid-hero-strip__item">
+                    <img src="/gallery/optimized/vip-cadillac-lyriq-01.webp"
+                        alt="Cadillac Lyriq displayed after professional vehicle care" width="760" height="702"
+                        loading="lazy">
+                    <figcaption><p>Protection selected around the vehicle and the way it is used.</p>
+                        <span class="paid-hero-strip__reviewer">Vehicle-specific plan</span></figcaption>
+                </figure>
+                <figure class="paid-hero-strip__item">
+                    <img src="/gallery/optimized/vip-bmw-m4-01.webp"
+                        alt="BMW M4 displayed after professional vehicle care" width="760" height="810" loading="lazy">
+                    <figcaption><p>Call or text photos for a direct recommendation before scheduling.</p>
+                        <span class="paid-hero-strip__reviewer">Direct consultation</span></figcaption>
                 </figure>
             </div>
         </section>

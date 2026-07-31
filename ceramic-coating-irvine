@@ -37,7 +37,10 @@
 <body class="paid-page">
     <nav class="paid-nav" aria-label="Primary navigation">
         <div class="paid-shell paid-nav__inner">
-            <a class="paid-brand" href="/">Obsidian <span>Autoworks</span></a>
+            <a class="paid-brand" href="/">
+                <img class="paid-brand__mark" src="/car-hero.webp" alt="" width="500" height="200">
+                OBSIDIAN<span>AUTOWORKS</span>
+            </a>
             <div class="paid-nav__actions">
                 <a class="paid-link" href="#service">Irvine mobile service</a>
                 <a class="paid-button paid-button--ghost" href="tel:7146007134">Call (714) 600-7134</a>
@@ -49,9 +52,9 @@
         <header class="paid-hero paid-hero--vip">
             <div class="paid-shell paid-hero__content paid-hero__content--centered">
                 <p class="paid-eyebrow">Mobile ceramic coating in Irvine</p>
-                <h1>Irvine Paint Protection, <span>Brought to You.</span></h1>
-                <p class="paid-hero__copy">Professional paint preparation, correction options, and ceramic coating
-                    delivered as a mobile service to suitable Irvine homes and workplaces.</p>
+                <h1>Long-Term Gloss. <span>Professionally Protected.</span></h1>
+                <p class="paid-hero__copy">Mobile ceramic coating for Irvine vehicles, with careful paint preparation,
+                    correction options, and a finish built to stay easier to maintain.</p>
                 <div class="paid-hero__actions">
                     <a data-hero-primary data-lead-action="coating_irvine_call"
                         class="paid-button paid-button--primary" href="tel:7146007134">Call for Irvine service</a>
@@ -59,6 +62,8 @@
                         class="paid-button paid-button--ghost"
                         href="sms:+17146007134?body=Hi%20Obsidian%20Autoworks%2C%20I%27d%20like%20ceramic%20coating%20in%20Irvine.%20My%20vehicle%2C%20Irvine%20location%2C%20paint%20condition%2C%20and%20protection%20goal%20are%3A%20">Text
                         vehicle photos</a>
+                    <a data-hero-tertiary class="paid-button paid-button--ghost" href="#service">See Irvine
+                        service</a>
                 </div>
             </div>
         </header>
@@ -68,19 +73,49 @@
                     <img src="/assets/ceramic-coating/foam-sedan.webp"
                         alt="Sedan receiving wash preparation before ceramic coating" width="1012" height="1800"
                         fetchpriority="high">
-                    <figcaption>Mobile preparation in Irvine</figcaption>
+                    <figcaption><p>Careful preparation at a suitable Irvine home or workplace.</p>
+                        <span class="paid-hero-strip__reviewer">Irvine mobile service</span></figcaption>
                 </figure>
                 <figure class="paid-hero-strip__item">
                     <img src="/assets/ceramic-coating/white-mclaren.webp"
                         alt="White McLaren showing a reflective finish after professional exterior care" width="1012"
                         height="1800" fetchpriority="high">
-                    <figcaption>Paint protection at your location</figcaption>
+                    <figcaption><p>Deep gloss, clean reflections, and protection built around the car.</p>
+                        <span class="paid-hero-strip__reviewer">Finish standard</span></figcaption>
                 </figure>
                 <figure class="paid-hero-strip__item">
                     <img src="/assets/ceramic-coating/paint-detail.webp"
                         alt="Detailed paint showing deep gloss after professional preparation" width="1012"
                         height="1800" fetchpriority="high">
-                    <figcaption>Clarity under the coating</figcaption>
+                    <figcaption><p>The coating protects the finish underneath, so paint condition comes first.</p>
+                        <span class="paid-hero-strip__reviewer">Paint-specific scope</span></figcaption>
+                </figure>
+                <figure class="paid-hero-strip__item">
+                    <img src="/assets/ceramic-coating/foam-bmw.webp"
+                        alt="BMW undergoing preparation before ceramic coating" width="1012" height="1800"
+                        loading="lazy">
+                    <figcaption><p>Preparation gives protection a cleaner foundation.</p>
+                        <span class="paid-hero-strip__reviewer">Obsidian process</span></figcaption>
+                </figure>
+                <figure class="paid-hero-strip__item">
+                    <img src="/assets/ceramic-coating/finished-vw.webp"
+                        alt="Volkswagen showing a finished reflective exterior" width="1012" height="1800"
+                        loading="lazy">
+                    <figcaption><p>A richer finished surface designed to stay easier to care for.</p>
+                        <span class="paid-hero-strip__reviewer">Protected result</span></figcaption>
+                </figure>
+                <figure class="paid-hero-strip__item">
+                    <img src="/gallery/optimized/vip-cadillac-lyriq-01.webp"
+                        alt="Cadillac Lyriq displayed after professional vehicle care" width="760" height="702"
+                        loading="lazy">
+                    <figcaption><p>Vehicle, location, paint, and expectations shape the final plan.</p>
+                        <span class="paid-hero-strip__reviewer">Vehicle-specific plan</span></figcaption>
+                </figure>
+                <figure class="paid-hero-strip__item">
+                    <img src="/gallery/optimized/vip-bmw-m4-01.webp"
+                        alt="BMW M4 displayed after professional vehicle care" width="760" height="810" loading="lazy">
+                    <figcaption><p>Send photos before scheduling for a more precise recommendation.</p>
+                        <span class="paid-hero-strip__reviewer">Direct consultation</span></figcaption>
                 </figure>
             </div>
         </section>

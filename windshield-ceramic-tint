@@ -29,7 +29,10 @@
 <body class="paid-page">
     <nav class="paid-nav" aria-label="Primary navigation">
         <div class="paid-shell paid-nav__inner">
-            <a class="paid-brand" href="/">Obsidian <span>Autoworks</span></a>
+            <a class="paid-brand" href="/">
+                <img class="paid-brand__mark" src="/car-hero.webp" alt="" width="500" height="200">
+                OBSIDIAN<span>AUTOWORKS</span>
+            </a>
             <div class="paid-nav__actions">
                 <a class="paid-link" href="#pricing">Windshield pricing</a>
                 <a class="paid-button paid-button--ghost" href="tel:7146007134">Call (714) 600-7134</a>
@@ -41,9 +44,9 @@
         <header class="paid-hero paid-hero--vip">
             <div class="paid-shell paid-hero__content paid-hero__content--centered">
                 <p class="paid-eyebrow">Windshield ceramic tint - Orange County</p>
-                <h1>Cooler Front Glass. <span>Clearer Quote.</span></h1>
-                <p class="paid-hero__copy">Get windshield-only pricing, then confirm your vehicle, film choice,
-                    visibility goals, California requirements, and mobile install location directly with us.</p>
+                <h1>Drive Cooler. <span>Keep the View Clear.</span></h1>
+                <p class="paid-hero__copy">Premium ceramic windshield film selected for heat control, glare
+                    reduction, and clean optical clarity.</p>
                 <div class="paid-hero__actions">
                     <a data-hero-primary data-lead-action="windshield_quote_call"
                         class="paid-button paid-button--primary" href="tel:7146007134">Call about windshield tint</a>
@@ -51,6 +54,8 @@
                         class="paid-button paid-button--ghost"
                         href="sms:+17146007134?body=Hi%20Obsidian%20Autoworks%2C%20I%27d%20like%20a%20windshield%20ceramic%20tint%20quote.%20My%20vehicle%2C%20city%2C%20requested%20glass%2C%20and%20shade%20goal%20are%3A%20">Text
                         vehicle details</a>
+                    <a data-hero-tertiary class="paid-button paid-button--ghost" href="#pricing">See windshield
+                        options</a>
                 </div>
             </div>
         </header>
@@ -60,19 +65,46 @@
                     <img src="/assets/paid-landing/tesla-model-y-rear.webp"
                         alt="Rear view of a Tesla Model Y with finished ceramic tint" width="1012" height="1800"
                         fetchpriority="high">
-                    <figcaption>Balanced glass finish</figcaption>
+                    <figcaption><p>A balanced glass finish that keeps the vehicle looking intentional.</p>
+                        <span class="paid-hero-strip__reviewer">Ceramic glass film</span></figcaption>
                 </figure>
                 <figure class="paid-hero-strip__item">
                     <img src="/assets/paid-landing/tesla-model-y-front.webp"
                         alt="Tesla Model Y showing its large front glass after mobile ceramic tint service"
                         width="1012" height="1800" fetchpriority="high">
-                    <figcaption>Front-glass ceramic tint</figcaption>
+                    <figcaption><p>Heat control where the cabin takes the most direct sun.</p>
+                        <span class="paid-hero-strip__reviewer">Front-glass comfort</span></figcaption>
                 </figure>
                 <figure class="paid-hero-strip__item">
                     <img src="/assets/paid-landing/tesla-glass-roof.webp"
                         alt="Interior view through Tesla panoramic glass" width="1012" height="1800"
                         fetchpriority="high">
-                    <figcaption>Large-glass heat control</figcaption>
+                    <figcaption><p>Optical clarity and comfort matter most on large glass.</p>
+                        <span class="paid-hero-strip__reviewer">Clear ceramic performance</span></figcaption>
+                </figure>
+                <figure class="paid-hero-strip__item">
+                    <img src="/gallery/optimized/vip-mercedes-benz-gls-01.webp"
+                        alt="Mercedes GLS with finished window tint" width="900" height="1600" loading="lazy">
+                    <figcaption><p>"Blown away at how well they came out. The attention to detail is insane."</p>
+                        <span class="paid-hero-strip__reviewer">Nesha Bowman ★★★★★</span></figcaption>
+                </figure>
+                <figure class="paid-hero-strip__item">
+                    <img src="/gallery/optimized/vip-bmw-m4-01.webp"
+                        alt="BMW M4 with finished window tint" width="760" height="810" loading="lazy">
+                    <figcaption><p>"Such a big difference. Definitely gives it a new look."</p>
+                        <span class="paid-hero-strip__reviewer">Mark Cruz ★★★★★</span></figcaption>
+                </figure>
+                <figure class="paid-hero-strip__item">
+                    <img src="/gallery/optimized/vip-cadillac-lyriq-01.webp"
+                        alt="Cadillac Lyriq with finished window tint" width="760" height="702" loading="lazy">
+                    <figcaption><p>"Best in the game. Did my car and it came out 10/10."</p>
+                        <span class="paid-hero-strip__reviewer">Bryan Rodriguez ★★★★★</span></figcaption>
+                </figure>
+                <figure class="paid-hero-strip__item">
+                    <img src="/gallery/optimized/vip-toyota-4runner-01.webp"
+                        alt="Toyota 4Runner with finished window tint" width="760" height="646" loading="lazy">
+                    <figcaption><p>"Best tinting service in OC. The whole car looks sleek now."</p>
+                        <span class="paid-hero-strip__reviewer">Alex Brockman ★★★★★</span></figcaption>
                 </figure>
             </div>
         </section>

@@ -29,7 +29,10 @@
 <body class="paid-page">
     <nav class="paid-nav" aria-label="Primary navigation">
         <div class="paid-shell paid-nav__inner">
-            <a class="paid-brand" href="/">Obsidian <span>Autoworks</span></a>
+            <a class="paid-brand" href="/">
+                <img class="paid-brand__mark" src="/car-hero.webp" alt="" width="500" height="200">
+                OBSIDIAN<span>AUTOWORKS</span>
+            </a>
             <div class="paid-nav__actions">
                 <a class="paid-link" href="#how-it-works">How mobile tint works</a>
                 <a class="paid-button paid-button--ghost" href="tel:7146007134">Call (714) 600-7134</a>
@@ -40,17 +43,18 @@
     <main>
         <header class="paid-hero paid-hero--vip">
             <div class="paid-shell paid-hero__content paid-hero__content--centered">
-                <p class="paid-eyebrow">Window tinting near you - Orange County</p>
-                <h1>The Tint Shop <span>Comes to You</span></h1>
-                <p class="paid-hero__copy">Mobile ceramic window tinting at a suitable home or workplace. Send your
-                    vehicle, city, and shade goal so we can confirm the film, install space, weather, and availability.
-                </p>
+                <p class="paid-eyebrow">Mobile ceramic tint - Orange County</p>
+                <h1>A Cooler, Cleaner Cabin. <span>Without Losing Your Day.</span></h1>
+                <p class="paid-hero__copy">Premium ceramic window film installed at your home or workplace, with a
+                    clean factory-style finish and direct pricing for your vehicle.</p>
                 <div class="paid-hero__actions">
                     <a data-hero-primary data-lead-action="near_me_call" class="paid-button paid-button--primary"
                         href="tel:7146007134">Call for mobile tint</a>
                     <a data-hero-secondary data-lead-action="near_me_text" class="paid-button paid-button--ghost"
                         href="sms:+17146007134?body=Hi%20Obsidian%20Autoworks%2C%20I%27d%20like%20mobile%20window%20tinting.%20My%20vehicle%2C%20city%2C%20and%20shade%20goal%20are%3A%20">Text
                         vehicle &amp; city</a>
+                    <a data-hero-tertiary class="paid-button paid-button--ghost" href="#how-it-works">See the mobile
+                        experience</a>
                 </div>
             </div>
         </header>
@@ -60,19 +64,46 @@
                     <img src="/assets/paid-landing/mobile-porsche-rear.webp"
                         alt="Rear view of a Porsche after mobile window tinting" width="1012" height="1800"
                         fetchpriority="high">
-                    <figcaption>Finished rear glass</figcaption>
+                    <figcaption><p>Finished glass with a consistent, factory-clean shade.</p>
+                        <span class="paid-hero-strip__reviewer">Mobile ceramic tint</span></figcaption>
                 </figure>
                 <figure class="paid-hero-strip__item">
                     <img src="/assets/paid-landing/mobile-porsche-front.webp"
                         alt="Porsche with finished ceramic window tint at an Orange County home" width="1012"
                         height="1800" fetchpriority="high">
-                    <figcaption>Installed where the car lives</figcaption>
+                    <figcaption><p>The installation comes to the place your car already lives.</p>
+                        <span class="paid-hero-strip__reviewer">At-home service</span></figcaption>
                 </figure>
                 <figure class="paid-hero-strip__item">
                     <img src="/assets/paid-landing/mobile-porsche-side.webp"
                         alt="Side profile of a Porsche with finished window tint" width="1012" height="1800"
                         fetchpriority="high">
-                    <figcaption>Consistent side-glass shade</figcaption>
+                    <figcaption><p>A cleaner profile, cooler cabin, and no waiting room.</p>
+                        <span class="paid-hero-strip__reviewer">Orange County mobile</span></figcaption>
+                </figure>
+                <figure class="paid-hero-strip__item">
+                    <img src="/gallery/optimized/vip-mercedes-benz-gls-01.webp"
+                        alt="Mercedes GLS with finished window tint" width="900" height="1600" loading="lazy">
+                    <figcaption><p>"Blown away at how well they came out. The attention to detail is insane."</p>
+                        <span class="paid-hero-strip__reviewer">Nesha Bowman ★★★★★</span></figcaption>
+                </figure>
+                <figure class="paid-hero-strip__item">
+                    <img src="/gallery/optimized/vip-bmw-m4-01.webp"
+                        alt="BMW M4 with finished window tint" width="760" height="810" loading="lazy">
+                    <figcaption><p>"Such a big difference. Definitely gives it a new look."</p>
+                        <span class="paid-hero-strip__reviewer">Mark Cruz ★★★★★</span></figcaption>
+                </figure>
+                <figure class="paid-hero-strip__item">
+                    <img src="/gallery/optimized/vip-cadillac-lyriq-01.webp"
+                        alt="Cadillac Lyriq with finished window tint" width="760" height="702" loading="lazy">
+                    <figcaption><p>"Best in the game. Did my car and it came out 10/10."</p>
+                        <span class="paid-hero-strip__reviewer">Bryan Rodriguez ★★★★★</span></figcaption>
+                </figure>
+                <figure class="paid-hero-strip__item">
+                    <img src="/gallery/optimized/vip-toyota-4runner-01.webp"
+                        alt="Toyota 4Runner with finished window tint" width="760" height="646" loading="lazy">
+                    <figcaption><p>"Best tinting service in OC. The whole car looks sleek now."</p>
+                        <span class="paid-hero-strip__reviewer">Alex Brockman ★★★★★</span></figcaption>
                 </figure>
             </div>
         </section>

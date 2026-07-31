@@ -29,7 +29,10 @@
 <body class="paid-page">
     <nav class="paid-nav" aria-label="Primary navigation">
         <div class="paid-shell paid-nav__inner">
-            <a class="paid-brand" href="/">Obsidian <span>Autoworks</span></a>
+            <a class="paid-brand" href="/">
+                <img class="paid-brand__mark" src="/car-hero.webp" alt="" width="500" height="200">
+                OBSIDIAN<span>AUTOWORKS</span>
+            </a>
             <div class="paid-nav__actions">
                 <a class="paid-link" href="#packages">Tesla pricing</a>
                 <a class="paid-button paid-button--ghost" href="tel:7146007134">Call (714) 600-7134</a>
@@ -40,16 +43,18 @@
     <main>
         <header class="paid-hero paid-hero--vip">
             <div class="paid-shell paid-hero__content paid-hero__content--centered">
-                <p class="paid-eyebrow">Mobile Tesla tint - Orange County</p>
-                <h1>Tesla Tint, <span>Priced by Model</span></h1>
-                <p class="paid-hero__copy">Tell us your Tesla model and the glass you want tinted. We will confirm the
-                    package, shade, mobile install location, and exact appointment details before service.</p>
+                <p class="paid-eyebrow">Tesla ceramic tint - Orange County</p>
+                <h1>Make the Glass <span>Match the Car.</span></h1>
+                <p class="paid-hero__copy">Model-specific ceramic tint for a cooler cabin, cleaner profile, and
+                    consistent shade across your Tesla's glass.</p>
                 <div class="paid-hero__actions">
                     <a data-hero-primary data-lead-action="tesla_quote_call"
                         class="paid-button paid-button--primary" href="tel:7146007134">Call for Tesla tint</a>
                     <a data-hero-secondary data-lead-action="tesla_quote_text" class="paid-button paid-button--ghost"
                         href="sms:+17146007134?body=Hi%20Obsidian%20Autoworks%2C%20I%27d%20like%20a%20Tesla%20tint%20quote.%20My%20model%2C%20year%2C%20package%2C%20city%2C%20and%20shade%20goal%20are%3A%20">Text
                         model &amp; package</a>
+                    <a data-hero-tertiary class="paid-button paid-button--ghost" href="#packages">See Tesla
+                        packages</a>
                 </div>
             </div>
         </header>
@@ -59,19 +64,46 @@
                     <img src="/assets/paid-landing/tesla-model-y-rear.webp"
                         alt="Rear view of a Tesla Model Y after ceramic tint installation" width="1012" height="1800"
                         fetchpriority="high">
-                    <figcaption>Finished side and rear glass</figcaption>
+                    <figcaption><p>Consistent shade across the side and rear glass.</p>
+                        <span class="paid-hero-strip__reviewer">Tesla ceramic tint</span></figcaption>
                 </figure>
                 <figure class="paid-hero-strip__item">
                     <img src="/assets/paid-landing/tesla-model-y-front.webp"
                         alt="Silver Tesla Model Y with finished ceramic window tint at an Orange County home"
                         width="1012" height="1800" fetchpriority="high">
-                    <figcaption>Model Y mobile tint</figcaption>
+                    <figcaption><p>A cleaner exterior profile without changing the car's character.</p>
+                        <span class="paid-hero-strip__reviewer">Model Y mobile tint</span></figcaption>
                 </figure>
                 <figure class="paid-hero-strip__item">
                     <img src="/assets/paid-landing/tesla-glass-roof.webp"
                         alt="Interior view of the Tesla panoramic glass roof" width="1012" height="1800"
                         fetchpriority="high">
-                    <figcaption>Panoramic roof glass</figcaption>
+                    <figcaption><p>Large-glass heat control considered as part of the full cabin.</p>
+                        <span class="paid-hero-strip__reviewer">Panoramic glass</span></figcaption>
+                </figure>
+                <figure class="paid-hero-strip__item">
+                    <img src="/gallery/optimized/vip-porsche-cayenne-coupe-01.webp"
+                        alt="Porsche Cayenne with finished window tint" width="900" height="1600" loading="lazy">
+                    <figcaption><p>"Originally a fishbowl, now spectacular."</p>
+                        <span class="paid-hero-strip__reviewer">Jadelyn Belle ★★★★★</span></figcaption>
+                </figure>
+                <figure class="paid-hero-strip__item">
+                    <img src="/gallery/optimized/vip-bmw-m4-01.webp"
+                        alt="BMW M4 with finished window tint" width="760" height="810" loading="lazy">
+                    <figcaption><p>"Such a big difference. Definitely gives it a new look."</p>
+                        <span class="paid-hero-strip__reviewer">Mark Cruz ★★★★★</span></figcaption>
+                </figure>
+                <figure class="paid-hero-strip__item">
+                    <img src="/gallery/optimized/vip-cadillac-lyriq-01.webp"
+                        alt="Cadillac Lyriq with finished window tint" width="760" height="702" loading="lazy">
+                    <figcaption><p>"Best in the game. Did my car and it came out 10/10."</p>
+                        <span class="paid-hero-strip__reviewer">Bryan Rodriguez ★★★★★</span></figcaption>
+                </figure>
+                <figure class="paid-hero-strip__item">
+                    <img src="/gallery/optimized/vip-toyota-4runner-01.webp"
+                        alt="Toyota 4Runner with finished window tint" width="760" height="646" loading="lazy">
+                    <figcaption><p>"Best tinting service in OC. The whole car looks sleek now."</p>
+                        <span class="paid-hero-strip__reviewer">Alex Brockman ★★★★★</span></figcaption>
                 </figure>
             </div>
         </section>

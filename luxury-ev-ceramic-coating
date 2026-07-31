@@ -37,7 +37,10 @@
 <body class="paid-page">
     <nav class="paid-nav" aria-label="Primary navigation">
         <div class="paid-shell paid-nav__inner">
-            <a class="paid-brand" href="/">Obsidian <span>Autoworks</span></a>
+            <a class="paid-brand" href="/">
+                <img class="paid-brand__mark" src="/car-hero.webp" alt="" width="500" height="200">
+                OBSIDIAN<span>AUTOWORKS</span>
+            </a>
             <div class="paid-nav__actions">
                 <a class="paid-link" href="#fit">Vehicle-specific plan</a>
                 <a class="paid-button paid-button--ghost" href="tel:7146007134">Call (714) 600-7134</a>
@@ -49,9 +52,9 @@
         <header class="paid-hero paid-hero--vip">
             <div class="paid-shell paid-hero__content paid-hero__content--centered">
                 <p class="paid-eyebrow">Luxury and EV ceramic coating - Orange County</p>
-                <h1>Protect the Finish <span>You Chose the Car For.</span></h1>
-                <p class="paid-hero__copy">Paint preparation, correction options, and ceramic protection for Tesla,
-                    BMW, Porsche, Audi, and other vehicles where the finish deserves an intentional plan.</p>
+                <h1>The Finish <span>Deserves the Same Standard.</span></h1>
+                <p class="paid-hero__copy">Paint preparation, correction, and ceramic protection tailored to Tesla,
+                    BMW, Porsche, Audi, and other vehicles chosen for how they look and feel.</p>
                 <div class="paid-hero__actions">
                     <a data-hero-primary data-lead-action="coating_luxury_call"
                         class="paid-button paid-button--primary" href="tel:7146007134">Call about your vehicle</a>
@@ -59,6 +62,8 @@
                         class="paid-button paid-button--ghost"
                         href="sms:+17146007134?body=Hi%20Obsidian%20Autoworks%2C%20I%27d%20like%20a%20luxury%20or%20EV%20ceramic%20coating%20quote.%20My%20vehicle%2C%20city%2C%20paint%20condition%2C%20and%20finish%20goal%20are%3A%20">Text
                         vehicle photos</a>
+                    <a data-hero-tertiary class="paid-button paid-button--ghost" href="#fit">See the finish
+                        standard</a>
                 </div>
             </div>
         </header>
@@ -68,19 +73,49 @@
                     <img src="/assets/ceramic-coating/foam-bmw.webp"
                         alt="BMW undergoing preparation before ceramic coating" width="1012" height="1800"
                         fetchpriority="high">
-                    <figcaption>Vehicle-specific preparation</figcaption>
+                    <figcaption><p>Preparation selected for the actual finish, not just the badge.</p>
+                        <span class="paid-hero-strip__reviewer">Vehicle-specific process</span></figcaption>
                 </figure>
                 <figure class="paid-hero-strip__item">
                     <img src="/assets/ceramic-coating/white-mclaren.webp"
                         alt="White performance car showing a reflective finish after professional exterior care"
                         width="1012" height="1800" fetchpriority="high">
-                    <figcaption>Protection for special finishes</figcaption>
+                    <figcaption><p>Depth and clarity that preserve the presence of the vehicle.</p>
+                        <span class="paid-hero-strip__reviewer">Finish standard</span></figcaption>
                 </figure>
                 <figure class="paid-hero-strip__item">
                     <img src="/assets/ceramic-coating/paint-detail.webp"
                         alt="Close view of deep reflection in prepared automotive paint" width="1012" height="1800"
                         fetchpriority="high">
-                    <figcaption>Paint clarity worth protecting</figcaption>
+                    <figcaption><p>Correction where it adds value, restraint where the paint is already right.</p>
+                        <span class="paid-hero-strip__reviewer">Paint-specific scope</span></figcaption>
+                </figure>
+                <figure class="paid-hero-strip__item">
+                    <img src="/assets/ceramic-coating/finished-vw.webp"
+                        alt="Volkswagen showing a finished reflective exterior" width="1012" height="1800"
+                        loading="lazy">
+                    <figcaption><p>Long-term protection that keeps the surface easier to maintain.</p>
+                        <span class="paid-hero-strip__reviewer">Protected result</span></figcaption>
+                </figure>
+                <figure class="paid-hero-strip__item">
+                    <img src="/assets/ceramic-coating/foam-sedan.webp"
+                        alt="Sedan receiving wash preparation before ceramic coating" width="1012" height="1800"
+                        loading="lazy">
+                    <figcaption><p>Every durable result begins with a disciplined foundation.</p>
+                        <span class="paid-hero-strip__reviewer">Obsidian process</span></figcaption>
+                </figure>
+                <figure class="paid-hero-strip__item">
+                    <img src="/gallery/optimized/vip-cadillac-lyriq-01.webp"
+                        alt="Cadillac Lyriq displayed after professional vehicle care" width="760" height="702"
+                        loading="lazy">
+                    <figcaption><p>EV and luxury paint each get a plan built around current condition.</p>
+                        <span class="paid-hero-strip__reviewer">Vehicle-specific plan</span></figcaption>
+                </figure>
+                <figure class="paid-hero-strip__item">
+                    <img src="/gallery/optimized/vip-bmw-m4-01.webp"
+                        alt="BMW M4 displayed after professional vehicle care" width="760" height="810" loading="lazy">
+                    <figcaption><p>Send the vehicle, city, and paint photos for a direct recommendation.</p>
+                        <span class="paid-hero-strip__reviewer">Direct consultation</span></figcaption>
                 </figure>
             </div>
         </section>
