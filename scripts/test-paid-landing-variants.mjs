@@ -119,12 +119,7 @@ for (const [name, page, service, variant, route] of paidVariants) {
     vercel.headers.some((header) => header.source.includes(route)),
     `${name} must be covered by the production HTML content-type rule.`
   );
-  if (newIntentRoutes.has(route)) {
-    assert.ok(
-      vercel.rewrites.some((rewrite) => rewrite.source === `/${route}` && rewrite.destination === `/${route}.html`),
-      `${name} must be explicitly published as an extensionless Vercel route.`
-    );
-  }
+  assert.equal(vercel.cleanUrls, true, `${name} must publish HTML files at extensionless URLs.`);
 }
 
 for (const [name, page] of [
