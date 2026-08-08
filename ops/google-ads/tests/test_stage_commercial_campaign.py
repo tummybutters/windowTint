@@ -3,7 +3,10 @@
 from __future__ import annotations
 
 import importlib.util
+import inspect
+import hashlib
 import json
+import re
 import tempfile
 import unittest
 from pathlib import Path
@@ -224,6 +227,24 @@ class CommercialPlanTests(unittest.TestCase):
         self.assertEqual(assets["structured_snippet"]["header"], "Types")
         self.assertEqual(len(assets["structured_snippet"]["values"]), 5)
 
+    def test_image_manifest_is_exact_verified_and_google_ready(self):
+        images = self.plan["assets"]["images"]
+        self.assertEqual(len(images), 8)
+        self.assertEqual({item["field_type"] for item in images}, {"AD_IMAGE"})
+        self.assertEqual(sum(item["format"] == "landscape" for item in images), 4)
+        self.assertEqual(sum(item["format"] == "square" for item in images), 4)
+        self.assertEqual(sum(not item["synthetic"] for item in images), 2)
+        self.assertEqual(sum(item["synthetic"] for item in images), 6)
+        for item in images:
+            path = self.stager.REPO_ROOT / item["path"]
+            self.assertTrue(path.is_file(), item["path"])
+            data = path.read_bytes()
+            self.assertEqual(len(data), item["bytes"])
+            self.assertLessEqual(len(data), 5_120_000)
+            self.assertEqual(hashlib.sha256(data).hexdigest(), item["sha256"])
+            self.assertEqual(self.stager.jpeg_dimensions(data), tuple(item["pixel_dimensions"]))
+            self.assertIn(item["sha256"][:12], item["name"])
+
     def test_goal_contains_only_two_qualified_60_second_call_actions(self):
         conversion = self.plan["conversion"]
         self.assertEqual(
@@ -282,7 +303,7 @@ class CommercialPlanTests(unittest.TestCase):
             config_updates[0]["conversionGoalCampaignConfigOperation"]["update"]["customConversionGoal"],
             "$result:custom_goal:0",
         )
-        self.assertEqual(len(regular_updates), len(self.plan["conversion"]["regular_goal_pairs"]))
+        self.assertEqual(len(regular_updates), len(self.plan["conversion"]["addressable_regular_goal_pairs"]))
         self.assertTrue(
             all(
                 item["campaignConversionGoalOperation"]["update"]["biddable"] is False
@@ -290,6 +311,10 @@ class CommercialPlanTests(unittest.TestCase):
                 for item in regular_updates
             )
         )
+        serialized = json.dumps(regular_updates)
+        self.assertNotIn("~UNKNOWN", serialized)
+        self.assertNotIn("~UNSPECIFIED", serialized)
+        self.assertIn(("PHONE_CALL_LEAD", "UNKNOWN"), self.plan["conversion"]["regular_goal_pairs"])
 
     def test_initial_operations_use_correct_services_language_and_asset_associations(self):
         phases = self.stager.build_initial_operation_phases(self.plan)
@@ -297,8 +322,8 @@ class CommercialPlanTests(unittest.TestCase):
         self.assertEqual(by_name["keywords"]["service"], "adGroupCriteria")
         self.assertEqual(by_name["paused_rsas"]["service"], "adGroupAds")
         self.assertTrue(any("language" in op["create"] for op in by_name["criteria"]["operations"]))
-        self.assertEqual(len(by_name["assets"]["operations"]), 10)
-        self.assertEqual(len(by_name["campaign_assets"]["operations"]), 10)
+        self.assertEqual(len(by_name["assets"]["operations"]), 18)
+        self.assertEqual(len(by_name["campaign_assets"]["operations"]), 18)
         self.assertEqual(by_name["campaign_assets"]["operations"][0]["create"]["asset"], "$result:assets:0")
         call = by_name["assets"]["operations"][0]["create"]["callAsset"]
         self.assertEqual(call["callConversionReportingState"], "USE_RESOURCE_LEVEL_CALL_CONVERSION_ACTION")
@@ -316,6 +341,15 @@ class CommercialPlanTests(unittest.TestCase):
         goal = by_name["campaign_goal_isolation"]["operations"][0]["conversionGoalCampaignConfigOperation"]["update"]
         self.assertIn("conversionGoalCampaignConfigs", goal["resourceName"])
         self.assertNotIn("campaign", goal)
+
+        image_creates = by_name["assets"]["operations"][10:]
+        self.assertEqual(len(image_creates), 8)
+        self.assertTrue(all(op["create"]["imageAsset"]["data"].startswith("$image_data:") for op in image_creates))
+        image_links = by_name["campaign_assets"]["operations"][10:]
+        self.assertEqual(
+            [op["create"]["fieldType"] for op in image_links],
+            [item["field_type"] for item in self.plan["assets"]["images"]],
+        )
 
     def test_reference_resolver_uses_campaign_id_inside_goal_resource_name(self):
         resolved = self.stager._resolve(
@@ -342,10 +376,16 @@ class CommercialPlanTests(unittest.TestCase):
                 {"category": "PURCHASE", "origin": "WEBSITE", "biddable": False},
             ],
         }
-        self.stager.verify_goal_isolation(target)
+        expected_pairs = [("CONTACT", "WEBSITE"), ("PURCHASE", "WEBSITE")]
+        self.stager.verify_goal_isolation(target, expected_pairs)
+        for goal in target["campaign_goals"]:
+            goal.pop("biddable")
+        self.stager.verify_goal_isolation(target, expected_pairs)
+        with self.assertRaisesRegex(self.stager.GuardError, "goal pair set"):
+            self.stager.verify_goal_isolation({**target, "campaign_goals": []}, expected_pairs)
         target["campaign_goals"][0]["biddable"] = True
         with self.assertRaisesRegex(self.stager.GuardError, "regular campaign goal"):
-            self.stager.verify_goal_isolation(target)
+            self.stager.verify_goal_isolation(target, expected_pairs)
 
     def test_cli_defaults_to_read_only_and_apply_enable_are_separate_guarded_modes(self):
         default = self.stager.parse_args([])
@@ -381,6 +421,10 @@ class CommercialPlanTests(unittest.TestCase):
         self.stager.run_read_only_queries(client)
         self.assertGreaterEqual(len(client.queries), 6)
         self.assertTrue(all("SELECT" in query.upper() for query in client.queries))
+        named_groups = next(query for query in client.queries if "FROM ad_group WHERE" in query)
+        self.assertIn("campaign.name", named_groups)
+        named_campaign = next(query for query in client.queries if "FROM campaign WHERE campaign.name" in query)
+        self.assertIn("campaign.advertising_channel_type", named_campaign)
 
     def test_evidence_is_deterministic_and_redacts_tokens_errors_and_request_ids(self):
         first = self.stager.build_evidence(self.plan, valid_live_state(self.stager))
@@ -452,8 +496,68 @@ class CommercialPlanTests(unittest.TestCase):
         self.assertIn("containsEuPoliticalAdvertising", encoded)
         self.assertIn("DOES_NOT_CONTAIN_EU_POLITICAL_ADVERTISING", encoded)
         self.assertNotIn("$result:", encoded)
+        self.assertNotIn("$image_data:", encoded)
         self.assertIn("customers/8605345590/campaigns/-2", encoded)
         self.assertTrue(all(len(op) == 1 for op in batch["operations"]))
+
+        declared = []
+        for operation in batch["operations"]:
+            body = next(iter(operation.values()))
+            resource_name = body.get("create", {}).get("resourceName")
+            if resource_name:
+                declared.append(resource_name)
+        expected = [resource for resources in batch["temporary_resources"].values() for resource in resources]
+        self.assertCountEqual(declared, expected)
+        self.assertEqual(len(declared), len(set(declared)))
+        referenced = set(re.findall(r"customers/8605345590/[A-Za-z]+/-\d+", encoded))
+        self.assertTrue(set(expected).issubset(referenced))
+        self.assertEqual(
+            referenced - set(expected),
+            {
+                "customers/8605345590/conversionGoalCampaignConfigs/-2",
+                "customers/8605345590/campaignConversionGoals/-2",
+            },
+        )
+
+        image_operations = [
+            op["assetOperation"]["create"]
+            for op in batch["operations"]
+            if "assetOperation" in op and "imageAsset" in op["assetOperation"].get("create", {})
+        ]
+        self.assertEqual(len(image_operations), 8)
+        for operation, expected_image in zip(image_operations, self.plan["assets"]["images"]):
+            import base64
+
+            data = base64.b64decode(operation["imageAsset"]["data"])
+            self.assertEqual(hashlib.sha256(data).hexdigest(), expected_image["sha256"])
+            attestation = operation["syntheticContentInfo"]["advertiserAttestation"]
+            self.assertEqual(attestation["source"], "ADVERTISER_ATTESTED")
+            self.assertEqual(attestation["status"], "IS_SYNTHETIC" if expected_image["synthetic"] else "NOT_SYNTHETIC")
+
+    def test_post_apply_queries_use_campaign_resource_not_invalid_pseudo_fields(self):
+        source = STAGER_PATH.read_text()
+        self.assertNotIn("ad_group_criterion.campaign =", source)
+        self.assertNotIn("ad_group_ad.campaign =", source)
+        self.assertIn("campaign.resource_name =", source)
+
+    def test_full_readback_contract_requests_and_compares_every_launch_surface(self):
+        source = inspect.getsource(self.stager.verify_full_campaign_readback)
+        for field in (
+            "campaign.bidding_strategy_type", "campaign_budget.name", "campaign_budget.status",
+            "campaign_criterion.type", "campaign_criterion.device.type", "campaign_asset.status",
+            "asset.sitelink_asset.link_text",
+            "asset.final_urls",
+            "asset.callout_asset.callout_text", "asset.structured_snippet_asset.header",
+            "asset.structured_snippet_asset.values",
+            "asset.synthetic_content_info.advertiser_attestation.source",
+            "asset.synthetic_content_info.advertiser_attestation.status",
+            "asset.call_asset.country_code", "conversion_action.type",
+            "networkSettings", "geoTargetTypeSetting", "RSA headline/description readback drift",
+            "keyword status/CPC readback drift", "asset association/content readback drift",
+            'get("enhancedCpcEnabled", False)',
+        ):
+            self.assertIn(field, source)
+        self.assertNotIn("except rest.GoogleAdsRestError", source)
 
     def test_google_ads_response_normalizes_direct_operation_results(self):
         class Response:

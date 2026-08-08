@@ -358,6 +358,120 @@
         "Window Film Options",
         "Office & Storefront"
       ],
+      "images": [
+        {
+          "bytes": 283996,
+          "field_type": "AD_IMAGE",
+          "format": "square",
+          "name": "Search | OC | Commercial Window Film | Obsidian Build | Image real-office-square 38f62bdb7c06",
+          "path": "assets/commercial-window-film/ads/real-office-square.jpg",
+          "pixel_dimensions": [
+            1200,
+            1200
+          ],
+          "provenance": "user-provided real commercial office photo; high-fidelity crop",
+          "sha256": "38f62bdb7c06d45f20f42b756e1a494ab1a98eb40cc842180fac58431bd26cb4",
+          "synthetic": false
+        },
+        {
+          "bytes": 151132,
+          "field_type": "AD_IMAGE",
+          "format": "landscape",
+          "name": "Search | OC | Commercial Window Film | Obsidian Build | Image real-office-landscape 6adfd7e9cee0",
+          "path": "assets/commercial-window-film/ads/real-office-landscape.jpg",
+          "pixel_dimensions": [
+            1200,
+            628
+          ],
+          "provenance": "user-provided real commercial office photo; high-fidelity crop",
+          "sha256": "6adfd7e9cee0ccaed4a183bbde8c6efdda113bcd29d602a57f3dfbfabd938165",
+          "synthetic": false
+        },
+        {
+          "bytes": 225316,
+          "field_type": "AD_IMAGE",
+          "format": "square",
+          "name": "Search | OC | Commercial Window Film | Obsidian Build | Image generated-storefront-square 19bb2170bbfb",
+          "path": "assets/commercial-window-film/ads/generated-storefront-square.jpg",
+          "pixel_dimensions": [
+            1200,
+            1200
+          ],
+          "provenance": "OpenAI-generated commercial storefront application visualization",
+          "sha256": "19bb2170bbfb9f5484fea00a48e6d1dcf4115dcb8a7efd23e42168e4148b0af9",
+          "synthetic": true
+        },
+        {
+          "bytes": 197917,
+          "field_type": "AD_IMAGE",
+          "format": "landscape",
+          "name": "Search | OC | Commercial Window Film | Obsidian Build | Image generated-storefront-landscape 67007f26bf6b",
+          "path": "assets/commercial-window-film/ads/generated-storefront-landscape.jpg",
+          "pixel_dimensions": [
+            1200,
+            628
+          ],
+          "provenance": "OpenAI-generated commercial storefront application visualization",
+          "sha256": "67007f26bf6b30e97003d6545a6bfb43e553766961baba27a842311c9b66b17b",
+          "synthetic": true
+        },
+        {
+          "bytes": 179995,
+          "field_type": "AD_IMAGE",
+          "format": "square",
+          "name": "Search | OC | Commercial Window Film | Obsidian Build | Image generated-privacy-office-square 1e9e0cd94677",
+          "path": "assets/commercial-window-film/ads/generated-privacy-office-square.jpg",
+          "pixel_dimensions": [
+            1200,
+            1200
+          ],
+          "provenance": "OpenAI-generated commercial office privacy-film application visualization",
+          "sha256": "1e9e0cd946779d0bec7b02f0ac26c8bdefefeb69179f8c548f80872c0104dcba",
+          "synthetic": true
+        },
+        {
+          "bytes": 117584,
+          "field_type": "AD_IMAGE",
+          "format": "landscape",
+          "name": "Search | OC | Commercial Window Film | Obsidian Build | Image generated-privacy-office-landscape 8b08072fa5f8",
+          "path": "assets/commercial-window-film/ads/generated-privacy-office-landscape.jpg",
+          "pixel_dimensions": [
+            1200,
+            628
+          ],
+          "provenance": "OpenAI-generated commercial office privacy-film application visualization",
+          "sha256": "8b08072fa5f8d4b45dccb8065d5c0bef48266a66828fc7e0581f24ea1dddd66a",
+          "synthetic": true
+        },
+        {
+          "bytes": 295506,
+          "field_type": "AD_IMAGE",
+          "format": "square",
+          "name": "Search | OC | Commercial Window Film | Obsidian Build | Image generated-lobby-square d8ff833a34e9",
+          "path": "assets/commercial-window-film/ads/generated-lobby-square.jpg",
+          "pixel_dimensions": [
+            1200,
+            1200
+          ],
+          "provenance": "OpenAI-generated commercial lobby solar-film application visualization",
+          "sha256": "d8ff833a34e937ed16f178e99b19cd503825117fb3497a854435732ec0f70285",
+          "synthetic": true
+        },
+        {
+          "bytes": 142039,
+          "field_type": "AD_IMAGE",
+          "format": "landscape",
+          "name": "Search | OC | Commercial Window Film | Obsidian Build | Image generated-lobby-landscape 0282519044a2",
+          "path": "assets/commercial-window-film/ads/generated-lobby-landscape.jpg",
+          "pixel_dimensions": [
+            1200,
+            628
+          ],
+          "provenance": "OpenAI-generated commercial lobby solar-film application visualization",
+          "sha256": "0282519044a22712b710aa43992e7ef1c78a69b1a06e84d8603f81c63f6d27e9",
+          "synthetic": true
+        }
+      ],
       "sitelinks": [
         {
           "final_url": "https://www.obsidianautoworksoc.com/commercial-window-film-socal#solutions",
@@ -592,6 +706,52 @@
       }
     ],
     "conversion": {
+      "addressable_regular_goal_pairs": [
+        [
+          "BOOK_APPOINTMENT",
+          "CALL_FROM_ADS"
+        ],
+        [
+          "BOOK_APPOINTMENT",
+          "WEBSITE"
+        ],
+        [
+          "CONTACT",
+          "GOOGLE_HOSTED"
+        ],
+        [
+          "CONTACT",
+          "WEBSITE"
+        ],
+        [
+          "ENGAGEMENT",
+          "GOOGLE_HOSTED"
+        ],
+        [
+          "GET_DIRECTIONS",
+          "GOOGLE_HOSTED"
+        ],
+        [
+          "PAGE_VIEW",
+          "GOOGLE_HOSTED"
+        ],
+        [
+          "PHONE_CALL_LEAD",
+          "CALL_FROM_ADS"
+        ],
+        [
+          "PHONE_CALL_LEAD",
+          "WEBSITE"
+        ],
+        [
+          "PURCHASE",
+          "WEBSITE"
+        ],
+        [
+          "SUBMIT_LEAD_FORM",
+          "WEBSITE"
+        ]
+      ],
       "consultation_action": {
         "account_default": false,
         "category": "SUBMIT_LEAD_FORM",
@@ -666,7 +826,7 @@
       ]
     },
     "customer_id": "8605345590",
-    "fingerprint": "a30041f2a6fae3d9f1491fa5b611254dc2507c382208eb0e1267faa0de9cf7f7",
+    "fingerprint": "117927406219dac2a681bf3aa455c4fce045c993a57fb1cc47e2e825ea0bddda",
     "locations": [
       {
         "geo_target_constant": "geoTargetConstants/1013532",
@@ -905,6 +1065,54 @@
           "name": "Search | OC | Commercial Window Film | Obsidian Build | Request Site Review"
         }
       },
+      "asset:Search | OC | Commercial Window Film | Obsidian Build | Image generated-lobby-landscape 0282519044a2": {
+        "decision": "create",
+        "expected": {
+          "name": "Search | OC | Commercial Window Film | Obsidian Build | Image generated-lobby-landscape 0282519044a2"
+        }
+      },
+      "asset:Search | OC | Commercial Window Film | Obsidian Build | Image generated-lobby-square d8ff833a34e9": {
+        "decision": "create",
+        "expected": {
+          "name": "Search | OC | Commercial Window Film | Obsidian Build | Image generated-lobby-square d8ff833a34e9"
+        }
+      },
+      "asset:Search | OC | Commercial Window Film | Obsidian Build | Image generated-privacy-office-landscape 8b08072fa5f8": {
+        "decision": "create",
+        "expected": {
+          "name": "Search | OC | Commercial Window Film | Obsidian Build | Image generated-privacy-office-landscape 8b08072fa5f8"
+        }
+      },
+      "asset:Search | OC | Commercial Window Film | Obsidian Build | Image generated-privacy-office-square 1e9e0cd94677": {
+        "decision": "create",
+        "expected": {
+          "name": "Search | OC | Commercial Window Film | Obsidian Build | Image generated-privacy-office-square 1e9e0cd94677"
+        }
+      },
+      "asset:Search | OC | Commercial Window Film | Obsidian Build | Image generated-storefront-landscape 67007f26bf6b": {
+        "decision": "create",
+        "expected": {
+          "name": "Search | OC | Commercial Window Film | Obsidian Build | Image generated-storefront-landscape 67007f26bf6b"
+        }
+      },
+      "asset:Search | OC | Commercial Window Film | Obsidian Build | Image generated-storefront-square 19bb2170bbfb": {
+        "decision": "create",
+        "expected": {
+          "name": "Search | OC | Commercial Window Film | Obsidian Build | Image generated-storefront-square 19bb2170bbfb"
+        }
+      },
+      "asset:Search | OC | Commercial Window Film | Obsidian Build | Image real-office-landscape 6adfd7e9cee0": {
+        "decision": "create",
+        "expected": {
+          "name": "Search | OC | Commercial Window Film | Obsidian Build | Image real-office-landscape 6adfd7e9cee0"
+        }
+      },
+      "asset:Search | OC | Commercial Window Film | Obsidian Build | Image real-office-square 38f62bdb7c06": {
+        "decision": "create",
+        "expected": {
+          "name": "Search | OC | Commercial Window Film | Obsidian Build | Image real-office-square 38f62bdb7c06"
+        }
+      },
       "asset:Site Review": {
         "decision": "create",
         "expected": {
@@ -953,7 +1161,7 @@
       }
     }
   },
-  "plan_fingerprint": "a30041f2a6fae3d9f1491fa5b611254dc2507c382208eb0e1267faa0de9cf7f7",
+  "plan_fingerprint": "117927406219dac2a681bf3aa455c4fce045c993a57fb1cc47e2e825ea0bddda",
   "read_only": true,
   "runtime": "Homebrew Python 3.14 required for live auth",
   "schema_version": 1,
