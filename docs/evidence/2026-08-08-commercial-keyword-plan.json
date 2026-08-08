@@ -1,0 +1,414 @@
+{
+  "api_version": "v24",
+  "campaign": {
+    "customer_id": "8605345590",
+    "daily_budget_micros": 25000000,
+    "final_url": "https://www.obsidianautoworksoc.com/commercial-window-film-socal",
+    "name": "Search | OC | Commercial Window Film | Obsidian Build"
+  },
+  "campaign_negatives": {
+    "automotive": [
+      "car",
+      "auto",
+      "vehicle",
+      "truck",
+      "windshield",
+      "tesla"
+    ],
+    "diy_retail": [
+      "diy",
+      "kit",
+      "roll",
+      "amazon",
+      "walmart",
+      "wholesale",
+      "home depot",
+      "supplier",
+      "for sale"
+    ],
+    "employment_training": [
+      "job",
+      "jobs",
+      "career",
+      "salary",
+      "training",
+      "school"
+    ],
+    "research_intent": [
+      "definition",
+      "how to install",
+      "reviews",
+      "movie",
+      "camera",
+      "phone screen",
+      "blinds",
+      "curtains",
+      "window replacement",
+      "glass repair"
+    ],
+    "residential": [
+      "residential",
+      "home",
+      "house"
+    ]
+  },
+  "cpc_limitations": "A user-provided United States Keyword Planner export supplies commercial bid evidence, but national volume is not 19-city demand. These $25/day operational Manual CPC caps stay at or below relevant aggregate low-range bids (Solar $2.25 versus $2.33 maximum; Safety $2.50 versus $2.65 observed) until 19-city commercial estimates are available.",
+  "ideas": [],
+  "keyword_planner_error": {
+    "google_ads_error_code": "DEVELOPER_TOKEN_NOT_APPROVED",
+    "http_status": 403
+  },
+  "keyword_planner_ui_export": {
+    "aggregates_by_ad_group": {
+      "Commercial Window Film": {
+        "average_monthly_searches_total": 16870,
+        "high_top_of_page_bid_micros_max": 76410000,
+        "high_top_of_page_bid_micros_min": 3690000,
+        "keyword_count": 113,
+        "low_top_of_page_bid_micros_max": 11000000,
+        "low_top_of_page_bid_micros_min": 260000
+      },
+      "Privacy Decorative Film": {
+        "average_monthly_searches_total": 1340,
+        "high_top_of_page_bid_micros_max": 47290000,
+        "high_top_of_page_bid_micros_min": 2270000,
+        "keyword_count": 36,
+        "low_top_of_page_bid_micros_max": 12130000,
+        "low_top_of_page_bid_micros_min": 240000
+      },
+      "Safety Security Film": {
+        "average_monthly_searches_total": 170,
+        "high_top_of_page_bid_micros_max": 21170000,
+        "high_top_of_page_bid_micros_min": 21170000,
+        "keyword_count": 6,
+        "low_top_of_page_bid_micros_max": 2650000,
+        "low_top_of_page_bid_micros_min": 2650000
+      },
+      "Solar Heat Glare Film": {
+        "average_monthly_searches_total": 2580,
+        "high_top_of_page_bid_micros_max": 34120000,
+        "high_top_of_page_bid_micros_min": 4290000,
+        "keyword_count": 14,
+        "low_top_of_page_bid_micros_max": 2330000,
+        "low_top_of_page_bid_micros_min": 240000
+      }
+    },
+    "date_range": "July 1, 2025 - June 30, 2026",
+    "relevant_keyword_rows": 169,
+    "scope": {
+      "limitation": "National Keyword Planner volume is not 19-city demand; it informs only conservative commercial bid planning.",
+      "planner_location": "United States"
+    },
+    "source": "user_provided_google_keyword_planner_ui_export",
+    "source_format": "utf-16le-tab-separated",
+    "total_keyword_rows": 237
+  },
+  "launch_decisions": [
+    {
+      "ad_group": "Commercial Window Film",
+      "bid_basis": "national_keyword_planner_ui_export_low_range_conservative_cap",
+      "cpc_status": "commercial_bid_evidence_national_scope_not_19_city_demand",
+      "keywords": [
+        {
+          "match_type": "EXACT",
+          "text": "commercial window film"
+        },
+        {
+          "match_type": "PHRASE",
+          "text": "commercial window film"
+        },
+        {
+          "match_type": "EXACT",
+          "text": "commercial window tinting"
+        },
+        {
+          "match_type": "PHRASE",
+          "text": "commercial window tinting"
+        },
+        {
+          "match_type": "EXACT",
+          "text": "commercial window film installers near me"
+        },
+        {
+          "match_type": "PHRASE",
+          "text": "commercial window film installers near me"
+        },
+        {
+          "match_type": "EXACT",
+          "text": "commercial window tinting near me"
+        },
+        {
+          "match_type": "EXACT",
+          "text": "commercial window film installation"
+        },
+        {
+          "match_type": "PHRASE",
+          "text": "commercial window film installation"
+        },
+        {
+          "match_type": "EXACT",
+          "text": "commercial window film near me"
+        },
+        {
+          "match_type": "PHRASE",
+          "text": "commercial window film near me"
+        },
+        {
+          "match_type": "EXACT",
+          "text": "architectural window film"
+        },
+        {
+          "match_type": "EXACT",
+          "text": "building window tinting"
+        },
+        {
+          "match_type": "PHRASE",
+          "text": "building window tinting"
+        },
+        {
+          "match_type": "EXACT",
+          "text": "storefront window tinting"
+        },
+        {
+          "match_type": "PHRASE",
+          "text": "storefront window tinting"
+        },
+        {
+          "match_type": "EXACT",
+          "text": "office window tinting"
+        },
+        {
+          "match_type": "PHRASE",
+          "text": "office window tinting"
+        }
+      ],
+      "max_cpc_micros": 5250000
+    },
+    {
+      "ad_group": "Solar Heat Glare Film",
+      "bid_basis": "national_keyword_planner_ui_export_low_range_conservative_cap",
+      "cpc_status": "commercial_bid_evidence_national_scope_not_19_city_demand",
+      "keywords": [
+        {
+          "match_type": "EXACT",
+          "text": "commercial solar window film"
+        },
+        {
+          "match_type": "PHRASE",
+          "text": "commercial solar window film"
+        },
+        {
+          "match_type": "PHRASE",
+          "text": "office window film"
+        },
+        {
+          "match_type": "EXACT",
+          "text": "office window film installation"
+        },
+        {
+          "match_type": "PHRASE",
+          "text": "office window film installation"
+        },
+        {
+          "match_type": "EXACT",
+          "text": "commercial uv window film"
+        },
+        {
+          "match_type": "PHRASE",
+          "text": "commercial uv window film"
+        }
+      ],
+      "max_cpc_micros": 2250000
+    },
+    {
+      "ad_group": "Privacy Decorative Film",
+      "bid_basis": "national_keyword_planner_ui_export_low_range_conservative_cap",
+      "cpc_status": "commercial_bid_evidence_national_scope_not_19_city_demand",
+      "keywords": [
+        {
+          "match_type": "EXACT",
+          "text": "office privacy window film"
+        },
+        {
+          "match_type": "PHRASE",
+          "text": "office privacy window film"
+        },
+        {
+          "match_type": "PHRASE",
+          "text": "commercial decorative window film"
+        },
+        {
+          "match_type": "EXACT",
+          "text": "office window frosting"
+        },
+        {
+          "match_type": "PHRASE",
+          "text": "office window frosting"
+        },
+        {
+          "match_type": "EXACT",
+          "text": "office glass frosting"
+        },
+        {
+          "match_type": "PHRASE",
+          "text": "office glass frosting"
+        },
+        {
+          "match_type": "EXACT",
+          "text": "commercial window privacy film"
+        },
+        {
+          "match_type": "PHRASE",
+          "text": "commercial window privacy film"
+        }
+      ],
+      "max_cpc_micros": 5250000
+    },
+    {
+      "ad_group": "Safety Security Film",
+      "bid_basis": "national_keyword_planner_ui_export_low_range_conservative_cap",
+      "cpc_status": "commercial_bid_evidence_national_scope_not_19_city_demand",
+      "keywords": [
+        {
+          "match_type": "EXACT",
+          "text": "commercial security window film"
+        },
+        {
+          "match_type": "PHRASE",
+          "text": "commercial security window film"
+        },
+        {
+          "match_type": "PHRASE",
+          "text": "commercial safety window film"
+        },
+        {
+          "match_type": "EXACT",
+          "text": "security window film installation near me"
+        },
+        {
+          "match_type": "PHRASE",
+          "text": "security window film installation near me"
+        },
+        {
+          "match_type": "EXACT",
+          "text": "commercial security film installation"
+        },
+        {
+          "match_type": "PHRASE",
+          "text": "commercial security film installation"
+        },
+        {
+          "match_type": "EXACT",
+          "text": "commercial window security film"
+        },
+        {
+          "match_type": "PHRASE",
+          "text": "commercial window security film"
+        }
+      ],
+      "max_cpc_micros": 2500000
+    }
+  ],
+  "live_search_term_fallback": {
+    "adjacent_window_film_cpc_range_micros": {
+      "high": 5510000,
+      "low": 2850000
+    },
+    "explicit_commercial_term_count": 0,
+    "query_date_range": "2025-08-08 through 2026-08-08",
+    "scope": "Account search-term fallback only; zero commercial history is not a demand estimate. Adjacent residential-film CPC is only a conservative boundary for provisional operational caps.",
+    "search_term_rows_examined": 460
+  },
+  "operation": "read_only",
+  "outcome": "keyword_planner_access_unavailable",
+  "public_autocomplete_evidence": {
+    "captured_on": "2026-08-08",
+    "limitation": "Suggestion wording only; not Keyword Planner volume, competition, or CPC evidence.",
+    "source": "Google autocomplete",
+    "suggestions": [
+      "commercial window film installers near me",
+      "commercial window film near me",
+      "commercial window film installation",
+      "commercial window film companies",
+      "commercial window tinting near me",
+      "commercial window tinting for buildings",
+      "commercial window tinting cost",
+      "office window film installation",
+      "office window film near me",
+      "office privacy window film",
+      "office frosted window film",
+      "office glass film",
+      "commercial security window film",
+      "security window film installation near me",
+      "window security film installation cost",
+      "commercial UV window film",
+      "commercial solar control window film"
+    ]
+  },
+  "request": {
+    "excluded_cities": [
+      "Garden Grove",
+      "Santa Ana",
+      "Stanton",
+      "Westminster"
+    ],
+    "geo_target_constants": [
+      "geoTargetConstants/1013532",
+      "geoTargetConstants/1013705",
+      "geoTargetConstants/1013719",
+      "geoTargetConstants/1013883",
+      "geoTargetConstants/1013918",
+      "geoTargetConstants/1013920",
+      "geoTargetConstants/1013921",
+      "geoTargetConstants/1013922",
+      "geoTargetConstants/9052259",
+      "geoTargetConstants/1013925",
+      "geoTargetConstants/1014017",
+      "geoTargetConstants/1014058",
+      "geoTargetConstants/9191962",
+      "geoTargetConstants/1014171",
+      "geoTargetConstants/1014217",
+      "geoTargetConstants/1014228",
+      "geoTargetConstants/1014352",
+      "geoTargetConstants/1014372",
+      "geoTargetConstants/1014420"
+    ],
+    "included_cities": [
+      "Aliso Viejo",
+      "Costa Mesa",
+      "Dana Point",
+      "Irvine",
+      "Ladera Ranch",
+      "Laguna Beach",
+      "Laguna Hills",
+      "Laguna Niguel",
+      "Laguna Woods",
+      "Lake Forest",
+      "Mission Viejo",
+      "Newport Beach",
+      "Rancho Mission Viejo",
+      "Rancho Santa Margarita",
+      "San Clemente",
+      "San Juan Capistrano",
+      "Tustin",
+      "Villa Park",
+      "Yorba Linda"
+    ],
+    "language": "English",
+    "seed_themes": [
+      "commercial window film",
+      "commercial window tinting",
+      "office window film",
+      "office window tinting",
+      "building window film",
+      "storefront window film",
+      "architectural window film",
+      "commercial solar control window film",
+      "commercial privacy window film",
+      "commercial decorative window film",
+      "commercial safety window film",
+      "commercial security window film"
+    ]
+  },
+  "service": "KeywordPlanIdeaService.generateKeywordIdeas"
+}
