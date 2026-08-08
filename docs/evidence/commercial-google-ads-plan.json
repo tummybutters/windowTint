@@ -1,0 +1,948 @@
+{
+  "customer_id": "8605345590",
+  "plan": {
+    "ad_groups": [
+      {
+        "cpc_bid_micros": 5250000,
+        "keywords": [
+          {
+            "match_type": "EXACT",
+            "status": "ENABLED",
+            "text": "commercial window film"
+          },
+          {
+            "match_type": "PHRASE",
+            "status": "ENABLED",
+            "text": "commercial window film"
+          },
+          {
+            "match_type": "EXACT",
+            "status": "ENABLED",
+            "text": "commercial window tinting"
+          },
+          {
+            "match_type": "PHRASE",
+            "status": "ENABLED",
+            "text": "commercial window tinting"
+          },
+          {
+            "match_type": "EXACT",
+            "status": "ENABLED",
+            "text": "commercial window film installers near me"
+          },
+          {
+            "match_type": "PHRASE",
+            "status": "ENABLED",
+            "text": "commercial window film installers near me"
+          },
+          {
+            "match_type": "EXACT",
+            "status": "ENABLED",
+            "text": "commercial window tinting near me"
+          },
+          {
+            "match_type": "EXACT",
+            "status": "ENABLED",
+            "text": "commercial window film installation"
+          },
+          {
+            "match_type": "PHRASE",
+            "status": "ENABLED",
+            "text": "commercial window film installation"
+          },
+          {
+            "match_type": "EXACT",
+            "status": "ENABLED",
+            "text": "commercial window film near me"
+          },
+          {
+            "match_type": "PHRASE",
+            "status": "ENABLED",
+            "text": "commercial window film near me"
+          },
+          {
+            "match_type": "EXACT",
+            "status": "ENABLED",
+            "text": "architectural window film"
+          },
+          {
+            "match_type": "EXACT",
+            "status": "ENABLED",
+            "text": "building window tinting"
+          },
+          {
+            "match_type": "PHRASE",
+            "status": "ENABLED",
+            "text": "building window tinting"
+          },
+          {
+            "match_type": "EXACT",
+            "status": "ENABLED",
+            "text": "storefront window tinting"
+          },
+          {
+            "match_type": "PHRASE",
+            "status": "ENABLED",
+            "text": "storefront window tinting"
+          },
+          {
+            "match_type": "EXACT",
+            "status": "ENABLED",
+            "text": "office window tinting"
+          },
+          {
+            "match_type": "PHRASE",
+            "status": "ENABLED",
+            "text": "office window tinting"
+          }
+        ],
+        "name": "Commercial Window Film",
+        "rsa": {
+          "descriptions": [
+            "Commercial film for offices, storefronts and buildings.",
+            "Talk through your site and window-film options.",
+            "Review heat, glare and privacy needs for your glass.",
+            "Request a commercial window-film site review."
+          ],
+          "final_urls": [
+            "https://www.obsidianautoworksoc.com/commercial-window-film-socal"
+          ],
+          "headlines": [
+            "Commercial Window Film",
+            "Office & Storefront Film",
+            "Request a Site Review",
+            "Window Film For Buildings",
+            "Commercial Glass Film",
+            "Discuss Film Options",
+            "Office Window Film",
+            "Storefront Window Film",
+            "Plan Your Site Review",
+            "Commercial Film Install"
+          ],
+          "status": "PAUSED"
+        },
+        "status": "ENABLED"
+      },
+      {
+        "cpc_bid_micros": 2250000,
+        "keywords": [
+          {
+            "match_type": "EXACT",
+            "status": "ENABLED",
+            "text": "commercial solar window film"
+          },
+          {
+            "match_type": "PHRASE",
+            "status": "ENABLED",
+            "text": "commercial solar window film"
+          },
+          {
+            "match_type": "PHRASE",
+            "status": "ENABLED",
+            "text": "office window film"
+          },
+          {
+            "match_type": "EXACT",
+            "status": "ENABLED",
+            "text": "office window film installation"
+          },
+          {
+            "match_type": "PHRASE",
+            "status": "ENABLED",
+            "text": "office window film installation"
+          },
+          {
+            "match_type": "EXACT",
+            "status": "ENABLED",
+            "text": "commercial uv window film"
+          },
+          {
+            "match_type": "PHRASE",
+            "status": "ENABLED",
+            "text": "commercial uv window film"
+          }
+        ],
+        "name": "Solar Heat Glare Film",
+        "rsa": {
+          "descriptions": [
+            "Explore solar-control film for commercial glass.",
+            "Discuss glare, heat and privacy needs for your space.",
+            "Review window-film options for your commercial site.",
+            "Request a site review for your building glass."
+          ],
+          "final_urls": [
+            "https://www.obsidianautoworksoc.com/commercial-window-film-socal"
+          ],
+          "headlines": [
+            "Solar Control Window Film",
+            "Cut Heat & Window Glare",
+            "Film For Offices",
+            "Request a Site Review",
+            "Commercial Solar Film",
+            "Manage Window Glare",
+            "Film For Storefronts",
+            "Building Window Film",
+            "Discuss Your Glass",
+            "Solar Film Options"
+          ],
+          "status": "PAUSED"
+        },
+        "status": "ENABLED"
+      },
+      {
+        "cpc_bid_micros": 5250000,
+        "keywords": [
+          {
+            "match_type": "EXACT",
+            "status": "ENABLED",
+            "text": "office privacy window film"
+          },
+          {
+            "match_type": "PHRASE",
+            "status": "ENABLED",
+            "text": "office privacy window film"
+          },
+          {
+            "match_type": "PHRASE",
+            "status": "ENABLED",
+            "text": "commercial decorative window film"
+          },
+          {
+            "match_type": "EXACT",
+            "status": "ENABLED",
+            "text": "office window frosting"
+          },
+          {
+            "match_type": "PHRASE",
+            "status": "ENABLED",
+            "text": "office window frosting"
+          },
+          {
+            "match_type": "EXACT",
+            "status": "ENABLED",
+            "text": "office glass frosting"
+          },
+          {
+            "match_type": "PHRASE",
+            "status": "ENABLED",
+            "text": "office glass frosting"
+          },
+          {
+            "match_type": "EXACT",
+            "status": "ENABLED",
+            "text": "commercial window privacy film"
+          },
+          {
+            "match_type": "PHRASE",
+            "status": "ENABLED",
+            "text": "commercial window privacy film"
+          }
+        ],
+        "name": "Privacy Decorative Film",
+        "rsa": {
+          "descriptions": [
+            "Privacy and decorative film options for office glass.",
+            "Review coverage, finish and installation needs.",
+            "Discuss film options for conference rooms and offices.",
+            "Request a site review for commercial glass."
+          ],
+          "final_urls": [
+            "https://www.obsidianautoworksoc.com/commercial-window-film-socal"
+          ],
+          "headlines": [
+            "Office Privacy Window Film",
+            "Decorative Glass Film",
+            "Frosted Office Film",
+            "Request a Site Review",
+            "Commercial Privacy Film",
+            "Office Glass Film",
+            "Privacy Film Options",
+            "Decorative Window Film",
+            "Discuss Your Finish",
+            "Film For Office Glass"
+          ],
+          "status": "PAUSED"
+        },
+        "status": "ENABLED"
+      },
+      {
+        "cpc_bid_micros": 2500000,
+        "keywords": [
+          {
+            "match_type": "EXACT",
+            "status": "ENABLED",
+            "text": "commercial security window film"
+          },
+          {
+            "match_type": "PHRASE",
+            "status": "ENABLED",
+            "text": "commercial security window film"
+          },
+          {
+            "match_type": "PHRASE",
+            "status": "ENABLED",
+            "text": "commercial safety window film"
+          },
+          {
+            "match_type": "EXACT",
+            "status": "ENABLED",
+            "text": "security window film installation near me"
+          },
+          {
+            "match_type": "PHRASE",
+            "status": "ENABLED",
+            "text": "security window film installation near me"
+          },
+          {
+            "match_type": "EXACT",
+            "status": "ENABLED",
+            "text": "commercial security film installation"
+          },
+          {
+            "match_type": "PHRASE",
+            "status": "ENABLED",
+            "text": "commercial security film installation"
+          },
+          {
+            "match_type": "EXACT",
+            "status": "ENABLED",
+            "text": "commercial window security film"
+          },
+          {
+            "match_type": "PHRASE",
+            "status": "ENABLED",
+            "text": "commercial window security film"
+          }
+        ],
+        "name": "Safety Security Film",
+        "rsa": {
+          "descriptions": [
+            "Discuss safety and security window-film options.",
+            "Plan coverage for commercial windows and glass.",
+            "Review commercial film options for your glass.",
+            "Request a site review for your building."
+          ],
+          "final_urls": [
+            "https://www.obsidianautoworksoc.com/commercial-window-film-socal"
+          ],
+          "headlines": [
+            "Commercial Security Film",
+            "Safety Window Film",
+            "Security Film Installation",
+            "Request a Site Review",
+            "Commercial Safety Film",
+            "Security Window Film",
+            "Film For Building Glass",
+            "Discuss Your Coverage",
+            "Commercial Glass Film",
+            "Safety Film Options"
+          ],
+          "status": "PAUSED"
+        },
+        "status": "ENABLED"
+      }
+    ],
+    "assets": {
+      "call": {
+        "resource_name": "customers/8605345590/assets/320657161326"
+      },
+      "callouts": [
+        "Commercial Spaces",
+        "Site Review",
+        "Window Film Options",
+        "Office & Storefront"
+      ],
+      "sitelinks": [
+        {
+          "final_url": "https://www.obsidianautoworksoc.com/commercial-window-film-socal#solutions",
+          "text": "Commercial Solutions"
+        },
+        {
+          "final_url": "https://www.obsidianautoworksoc.com/commercial-window-film-socal#process",
+          "text": "Our Process"
+        },
+        {
+          "final_url": "https://www.obsidianautoworksoc.com/commercial-window-film-socal#privacy-decorative",
+          "text": "Privacy & Decorative"
+        },
+        {
+          "final_url": "https://www.obsidianautoworksoc.com/commercial-window-film-socal#site-review",
+          "text": "Request Site Review"
+        }
+      ],
+      "structured_snippet": {
+        "header": "Types",
+        "values": [
+          "Solar Control",
+          "Privacy",
+          "Decorative",
+          "Safety",
+          "Security"
+        ]
+      }
+    },
+    "budget": {
+      "amount_micros": 25000000,
+      "delivery_method": "STANDARD",
+      "name": "Search | OC | Commercial Window Film | Obsidian Build | Budget",
+      "status": "ENABLED"
+    },
+    "campaign": {
+      "advertising_channel_type": "SEARCH",
+      "bidding_strategy": "MANUAL_CPC",
+      "device_bid_modifiers": {},
+      "devices": [
+        "DESKTOP",
+        "MOBILE",
+        "TABLET"
+      ],
+      "enhanced_cpc_enabled": false,
+      "geo_target_type_setting": {
+        "negative_geo_target_type": "PRESENCE",
+        "positive_geo_target_type": "PRESENCE"
+      },
+      "language_constants": [
+        "languageConstants/1000"
+      ],
+      "name": "Search | OC | Commercial Window Film | Obsidian Build",
+      "network_settings": {
+        "target_content_network": false,
+        "target_google_search": true,
+        "target_partner_search_network": false,
+        "target_search_network": false
+      },
+      "status": "PAUSED"
+    },
+    "campaign_negative_keywords": [
+      {
+        "match_type": "PHRASE",
+        "status": "ENABLED",
+        "text": "residential"
+      },
+      {
+        "match_type": "PHRASE",
+        "status": "ENABLED",
+        "text": "home"
+      },
+      {
+        "match_type": "PHRASE",
+        "status": "ENABLED",
+        "text": "house"
+      },
+      {
+        "match_type": "PHRASE",
+        "status": "ENABLED",
+        "text": "car"
+      },
+      {
+        "match_type": "PHRASE",
+        "status": "ENABLED",
+        "text": "auto"
+      },
+      {
+        "match_type": "PHRASE",
+        "status": "ENABLED",
+        "text": "vehicle"
+      },
+      {
+        "match_type": "PHRASE",
+        "status": "ENABLED",
+        "text": "truck"
+      },
+      {
+        "match_type": "PHRASE",
+        "status": "ENABLED",
+        "text": "windshield"
+      },
+      {
+        "match_type": "PHRASE",
+        "status": "ENABLED",
+        "text": "tesla"
+      },
+      {
+        "match_type": "PHRASE",
+        "status": "ENABLED",
+        "text": "diy"
+      },
+      {
+        "match_type": "PHRASE",
+        "status": "ENABLED",
+        "text": "kit"
+      },
+      {
+        "match_type": "PHRASE",
+        "status": "ENABLED",
+        "text": "roll"
+      },
+      {
+        "match_type": "PHRASE",
+        "status": "ENABLED",
+        "text": "amazon"
+      },
+      {
+        "match_type": "PHRASE",
+        "status": "ENABLED",
+        "text": "walmart"
+      },
+      {
+        "match_type": "PHRASE",
+        "status": "ENABLED",
+        "text": "wholesale"
+      },
+      {
+        "match_type": "PHRASE",
+        "status": "ENABLED",
+        "text": "home depot"
+      },
+      {
+        "match_type": "PHRASE",
+        "status": "ENABLED",
+        "text": "supplier"
+      },
+      {
+        "match_type": "PHRASE",
+        "status": "ENABLED",
+        "text": "for sale"
+      },
+      {
+        "match_type": "PHRASE",
+        "status": "ENABLED",
+        "text": "job"
+      },
+      {
+        "match_type": "PHRASE",
+        "status": "ENABLED",
+        "text": "jobs"
+      },
+      {
+        "match_type": "PHRASE",
+        "status": "ENABLED",
+        "text": "career"
+      },
+      {
+        "match_type": "PHRASE",
+        "status": "ENABLED",
+        "text": "salary"
+      },
+      {
+        "match_type": "PHRASE",
+        "status": "ENABLED",
+        "text": "training"
+      },
+      {
+        "match_type": "PHRASE",
+        "status": "ENABLED",
+        "text": "school"
+      },
+      {
+        "match_type": "PHRASE",
+        "status": "ENABLED",
+        "text": "definition"
+      },
+      {
+        "match_type": "PHRASE",
+        "status": "ENABLED",
+        "text": "how to install"
+      },
+      {
+        "match_type": "PHRASE",
+        "status": "ENABLED",
+        "text": "reviews"
+      },
+      {
+        "match_type": "PHRASE",
+        "status": "ENABLED",
+        "text": "movie"
+      },
+      {
+        "match_type": "PHRASE",
+        "status": "ENABLED",
+        "text": "camera"
+      },
+      {
+        "match_type": "PHRASE",
+        "status": "ENABLED",
+        "text": "phone screen"
+      },
+      {
+        "match_type": "PHRASE",
+        "status": "ENABLED",
+        "text": "blinds"
+      },
+      {
+        "match_type": "PHRASE",
+        "status": "ENABLED",
+        "text": "curtains"
+      },
+      {
+        "match_type": "PHRASE",
+        "status": "ENABLED",
+        "text": "window replacement"
+      },
+      {
+        "match_type": "PHRASE",
+        "status": "ENABLED",
+        "text": "glass repair"
+      }
+    ],
+    "conversion": {
+      "consultation_action": {
+        "account_default": false,
+        "category": "SUBMIT_LEAD_FORM",
+        "counting_type": "ONE_PER_CLICK",
+        "logical_resource_name": "$result:consultation_action:0",
+        "name": "Commercial Consultation Request - Obsidian",
+        "primary_for_goal": false
+      },
+      "custom_goal": {
+        "conversion_actions": [
+          "customers/8605345590/conversionActions/7441005241",
+          "customers/8605345590/conversionActions/7693228248"
+        ],
+        "name": "Search | OC | Commercial Window Film | Obsidian Build | Qualified 60s Calls Goal"
+      },
+      "explicitly_non_biddable": [
+        "proxy calls",
+        "Square purchases",
+        "text leads",
+        "residential leads",
+        "Commercial Consultation Request - Obsidian"
+      ],
+      "regular_goal_pairs": [
+        [
+          "BOOK_APPOINTMENT",
+          "CALL_FROM_ADS"
+        ],
+        [
+          "BOOK_APPOINTMENT",
+          "WEBSITE"
+        ],
+        [
+          "CONTACT",
+          "GOOGLE_HOSTED"
+        ],
+        [
+          "CONTACT",
+          "WEBSITE"
+        ],
+        [
+          "ENGAGEMENT",
+          "GOOGLE_HOSTED"
+        ],
+        [
+          "GET_DIRECTIONS",
+          "GOOGLE_HOSTED"
+        ],
+        [
+          "PAGE_VIEW",
+          "GOOGLE_HOSTED"
+        ],
+        [
+          "PHONE_CALL_LEAD",
+          "CALL_FROM_ADS"
+        ],
+        [
+          "PHONE_CALL_LEAD",
+          "UNKNOWN"
+        ],
+        [
+          "PHONE_CALL_LEAD",
+          "WEBSITE"
+        ],
+        [
+          "PURCHASE",
+          "WEBSITE"
+        ],
+        [
+          "SUBMIT_LEAD_FORM",
+          "WEBSITE"
+        ]
+      ]
+    },
+    "customer_id": "8605345590",
+    "fingerprint": "2b780a7f073f8cd516697938ba8c5111378da76488b600a2fad54804f99b07c4",
+    "locations": [
+      {
+        "geo_target_constant": "geoTargetConstants/1013532",
+        "negative": false,
+        "source_criterion_resource_name": "customers/8605345590/campaignCriteria/24006593417~1013532",
+        "status": "ENABLED",
+        "target_type": "City"
+      },
+      {
+        "geo_target_constant": "geoTargetConstants/1013705",
+        "negative": false,
+        "source_criterion_resource_name": "customers/8605345590/campaignCriteria/24006593417~1013705",
+        "status": "ENABLED",
+        "target_type": "City"
+      },
+      {
+        "geo_target_constant": "geoTargetConstants/1013719",
+        "negative": false,
+        "source_criterion_resource_name": "customers/8605345590/campaignCriteria/24006593417~1013719",
+        "status": "ENABLED",
+        "target_type": "City"
+      },
+      {
+        "geo_target_constant": "geoTargetConstants/1013883",
+        "negative": false,
+        "source_criterion_resource_name": "customers/8605345590/campaignCriteria/24006593417~1013883",
+        "status": "ENABLED",
+        "target_type": "City"
+      },
+      {
+        "geo_target_constant": "geoTargetConstants/1013918",
+        "negative": false,
+        "source_criterion_resource_name": "customers/8605345590/campaignCriteria/24006593417~1013918",
+        "status": "ENABLED",
+        "target_type": "City"
+      },
+      {
+        "geo_target_constant": "geoTargetConstants/1013920",
+        "negative": false,
+        "source_criterion_resource_name": "customers/8605345590/campaignCriteria/24006593417~1013920",
+        "status": "ENABLED",
+        "target_type": "City"
+      },
+      {
+        "geo_target_constant": "geoTargetConstants/1013921",
+        "negative": false,
+        "source_criterion_resource_name": "customers/8605345590/campaignCriteria/24006593417~1013921",
+        "status": "ENABLED",
+        "target_type": "City"
+      },
+      {
+        "geo_target_constant": "geoTargetConstants/1013922",
+        "negative": false,
+        "source_criterion_resource_name": "customers/8605345590/campaignCriteria/24006593417~1013922",
+        "status": "ENABLED",
+        "target_type": "City"
+      },
+      {
+        "geo_target_constant": "geoTargetConstants/1013925",
+        "negative": false,
+        "source_criterion_resource_name": "customers/8605345590/campaignCriteria/24006593417~1013925",
+        "status": "ENABLED",
+        "target_type": "City"
+      },
+      {
+        "geo_target_constant": "geoTargetConstants/1014017",
+        "negative": false,
+        "source_criterion_resource_name": "customers/8605345590/campaignCriteria/24006593417~1014017",
+        "status": "ENABLED",
+        "target_type": "City"
+      },
+      {
+        "geo_target_constant": "geoTargetConstants/1014058",
+        "negative": false,
+        "source_criterion_resource_name": "customers/8605345590/campaignCriteria/24006593417~1014058",
+        "status": "ENABLED",
+        "target_type": "City"
+      },
+      {
+        "geo_target_constant": "geoTargetConstants/1014171",
+        "negative": false,
+        "source_criterion_resource_name": "customers/8605345590/campaignCriteria/24006593417~1014171",
+        "status": "ENABLED",
+        "target_type": "City"
+      },
+      {
+        "geo_target_constant": "geoTargetConstants/1014217",
+        "negative": false,
+        "source_criterion_resource_name": "customers/8605345590/campaignCriteria/24006593417~1014217",
+        "status": "ENABLED",
+        "target_type": "City"
+      },
+      {
+        "geo_target_constant": "geoTargetConstants/1014228",
+        "negative": false,
+        "source_criterion_resource_name": "customers/8605345590/campaignCriteria/24006593417~1014228",
+        "status": "ENABLED",
+        "target_type": "City"
+      },
+      {
+        "geo_target_constant": "geoTargetConstants/1014352",
+        "negative": false,
+        "source_criterion_resource_name": "customers/8605345590/campaignCriteria/24006593417~1014352",
+        "status": "ENABLED",
+        "target_type": "City"
+      },
+      {
+        "geo_target_constant": "geoTargetConstants/1014372",
+        "negative": false,
+        "source_criterion_resource_name": "customers/8605345590/campaignCriteria/24006593417~1014372",
+        "status": "ENABLED",
+        "target_type": "City"
+      },
+      {
+        "geo_target_constant": "geoTargetConstants/1014420",
+        "negative": false,
+        "source_criterion_resource_name": "customers/8605345590/campaignCriteria/24006593417~1014420",
+        "status": "ENABLED",
+        "target_type": "City"
+      },
+      {
+        "geo_target_constant": "geoTargetConstants/9052259",
+        "negative": false,
+        "source_criterion_resource_name": "customers/8605345590/campaignCriteria/24006593417~9052259",
+        "status": "ENABLED",
+        "target_type": "City"
+      },
+      {
+        "geo_target_constant": "geoTargetConstants/9191962",
+        "negative": false,
+        "source_criterion_resource_name": "customers/8605345590/campaignCriteria/24006593417~9191962",
+        "status": "ENABLED",
+        "target_type": "City"
+      },
+      {
+        "geo_target_constant": "geoTargetConstants/1013812",
+        "negative": true,
+        "source_criterion_resource_name": "customers/8605345590/campaignCriteria/24006593417~1013812",
+        "status": "ENABLED",
+        "target_type": "City"
+      },
+      {
+        "geo_target_constant": "geoTargetConstants/1014247",
+        "negative": true,
+        "source_criterion_resource_name": "customers/8605345590/campaignCriteria/24006593417~1014247",
+        "status": "ENABLED",
+        "target_type": "City"
+      },
+      {
+        "geo_target_constant": "geoTargetConstants/1014302",
+        "negative": true,
+        "source_criterion_resource_name": "customers/8605345590/campaignCriteria/24006593417~1014302",
+        "status": "ENABLED",
+        "target_type": "City"
+      },
+      {
+        "geo_target_constant": "geoTargetConstants/1014394",
+        "negative": true,
+        "source_criterion_resource_name": "customers/8605345590/campaignCriteria/24006593417~1014394",
+        "status": "ENABLED",
+        "target_type": "City"
+      }
+    ],
+    "reconciliation": {
+      "ad_group:Commercial Window Film": {
+        "decision": "create",
+        "expected": {
+          "cpcBidMicros": "5250000",
+          "name": "Commercial Window Film",
+          "status": "ENABLED"
+        }
+      },
+      "ad_group:Privacy Decorative Film": {
+        "decision": "create",
+        "expected": {
+          "cpcBidMicros": "5250000",
+          "name": "Privacy Decorative Film",
+          "status": "ENABLED"
+        }
+      },
+      "ad_group:Safety Security Film": {
+        "decision": "create",
+        "expected": {
+          "cpcBidMicros": "2500000",
+          "name": "Safety Security Film",
+          "status": "ENABLED"
+        }
+      },
+      "ad_group:Solar Heat Glare Film": {
+        "decision": "create",
+        "expected": {
+          "cpcBidMicros": "2250000",
+          "name": "Solar Heat Glare Film",
+          "status": "ENABLED"
+        }
+      },
+      "asset:Commercial Solutions": {
+        "decision": "create",
+        "expected": {
+          "name": "Search | OC | Commercial Window Film | Obsidian Build | Commercial Solutions"
+        }
+      },
+      "asset:Commercial Spaces": {
+        "decision": "create",
+        "expected": {
+          "name": "Search | OC | Commercial Window Film | Obsidian Build | Commercial Spaces"
+        }
+      },
+      "asset:Office & Storefront": {
+        "decision": "create",
+        "expected": {
+          "name": "Search | OC | Commercial Window Film | Obsidian Build | Office & Storefront"
+        }
+      },
+      "asset:Our Process": {
+        "decision": "create",
+        "expected": {
+          "name": "Search | OC | Commercial Window Film | Obsidian Build | Our Process"
+        }
+      },
+      "asset:Privacy & Decorative": {
+        "decision": "create",
+        "expected": {
+          "name": "Search | OC | Commercial Window Film | Obsidian Build | Privacy & Decorative"
+        }
+      },
+      "asset:Request Site Review": {
+        "decision": "create",
+        "expected": {
+          "name": "Search | OC | Commercial Window Film | Obsidian Build | Request Site Review"
+        }
+      },
+      "asset:Site Review": {
+        "decision": "create",
+        "expected": {
+          "name": "Search | OC | Commercial Window Film | Obsidian Build | Site Review"
+        }
+      },
+      "asset:Types": {
+        "decision": "create",
+        "expected": {
+          "name": "Search | OC | Commercial Window Film | Obsidian Build | Types"
+        }
+      },
+      "asset:Window Film Options": {
+        "decision": "create",
+        "expected": {
+          "name": "Search | OC | Commercial Window Film | Obsidian Build | Window Film Options"
+        }
+      },
+      "budget": {
+        "decision": "create",
+        "expected": {
+          "amountMicros": "25000000",
+          "name": "Search | OC | Commercial Window Film | Obsidian Build | Budget"
+        }
+      },
+      "campaign": {
+        "decision": "create",
+        "expected": {
+          "advertisingChannelType": "SEARCH",
+          "name": "Search | OC | Commercial Window Film | Obsidian Build",
+          "status": "PAUSED"
+        }
+      },
+      "consultation_action": {
+        "decision": "create",
+        "expected": {
+          "name": "Commercial Consultation Request - Obsidian",
+          "primaryForGoal": false
+        }
+      },
+      "custom_goal": {
+        "decision": "create",
+        "expected": {
+          "name": "Search | OC | Commercial Window Film | Obsidian Build | Qualified 60s Calls Goal"
+        }
+      }
+    }
+  },
+  "plan_fingerprint": "2b780a7f073f8cd516697938ba8c5111378da76488b600a2fad54804f99b07c4",
+  "read_only": true,
+  "schema_version": 1,
+  "source_fingerprint": "d340427914ff0c17ed817c9e4ff594f2e087e60b032ef9c7f6fa81d9d1ad0a2b"
+}

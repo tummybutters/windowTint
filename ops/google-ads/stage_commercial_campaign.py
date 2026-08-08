@@ -1,0 +1,407 @@
+#!/usr/bin/env python3
+"""Guarded, paused-first stager for Obsidian commercial window film Search.
+
+The default command is deliberately read-only.  ``--apply`` requires an exact
+confirmation token and writes only paused campaign/ad resources; ``--enable``
+is a separate, deliberately small action after a human has reviewed readback.
+"""
+
+from __future__ import annotations
+
+import argparse
+import hashlib
+import importlib.util
+import json
+from pathlib import Path
+from typing import Any
+
+HERE = Path(__file__).resolve().parent
+
+
+def _load_local(name: str):
+    spec = importlib.util.spec_from_file_location(name, HERE / f"{name}.py")
+    if spec is None or spec.loader is None:
+        raise RuntimeError(f"Cannot load {name}")
+    module = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(module)
+    return module
+
+
+config = _load_local("commercial_campaign_config")
+rest = _load_local("google_ads_rest")
+
+CALLS_FROM_ADS_ACTION = "customers/8605345590/conversionActions/7441005241"
+QUALIFIED_WEBSITE_CALL_ACTION = "customers/8605345590/conversionActions/7693228248"
+CALL_ASSET = "customers/8605345590/assets/320657161326"
+APPLY_CONFIRMATION_TOKEN = "CREATE_PAUSED_COMMERCIAL_CAMPAIGN"
+ENABLE_CONFIRMATION_TOKEN = "ENABLE_REVIEWED_COMMERCIAL_CAMPAIGN"
+
+# This compatibility constant is deliberately empty: live
+# customer_conversion_goal rows, not an invented static list, define every
+# regular category/origin pair the newly created campaign must disable.
+REGULAR_GOAL_PAIRS: tuple[tuple[str, str], ...] = ()
+
+
+class GuardError(RuntimeError):
+    """Raised before a potentially unsafe Ads operation is constructed."""
+
+
+def _short_hash(value: Any) -> str:
+    return hashlib.sha256(json.dumps(value, sort_keys=True, separators=(",", ":")).encode()).hexdigest()
+
+
+def _named(name: str) -> str:
+    return f"{config.CAMPAIGN_NAME} | {name}"
+
+
+def _rsa(headlines: list[str], descriptions: list[str]) -> dict[str, Any]:
+    return {"status": "PAUSED", "final_urls": [config.FINAL_URL], "headlines": headlines, "descriptions": descriptions}
+
+
+RSA_COPY = {
+    "Commercial Window Film": _rsa(
+        ["Commercial Window Film", "Office & Storefront Film", "Request a Site Review", "Window Film For Buildings", "Commercial Glass Film", "Discuss Film Options", "Office Window Film", "Storefront Window Film", "Plan Your Site Review", "Commercial Film Install"],
+        ["Commercial film for offices, storefronts and buildings.", "Talk through your site and window-film options.", "Review heat, glare and privacy needs for your glass.", "Request a commercial window-film site review."],
+    ),
+    "Solar Heat Glare Film": _rsa(
+        ["Solar Control Window Film", "Cut Heat & Window Glare", "Film For Offices", "Request a Site Review", "Commercial Solar Film", "Manage Window Glare", "Film For Storefronts", "Building Window Film", "Discuss Your Glass", "Solar Film Options"],
+        ["Explore solar-control film for commercial glass.", "Discuss glare, heat and privacy needs for your space.", "Review window-film options for your commercial site.", "Request a site review for your building glass."],
+    ),
+    "Privacy Decorative Film": _rsa(
+        ["Office Privacy Window Film", "Decorative Glass Film", "Frosted Office Film", "Request a Site Review", "Commercial Privacy Film", "Office Glass Film", "Privacy Film Options", "Decorative Window Film", "Discuss Your Finish", "Film For Office Glass"],
+        ["Privacy and decorative film options for office glass.", "Review coverage, finish and installation needs.", "Discuss film options for conference rooms and offices.", "Request a site review for commercial glass."],
+    ),
+    "Safety Security Film": _rsa(
+        ["Commercial Security Film", "Safety Window Film", "Security Film Installation", "Request a Site Review", "Commercial Safety Film", "Security Window Film", "Film For Building Glass", "Discuss Your Coverage", "Commercial Glass Film", "Safety Film Options"],
+        ["Discuss safety and security window-film options.", "Plan coverage for commercial windows and glass.", "Review commercial film options for your glass.", "Request a site review for your building."],
+    ),
+}
+
+
+def _expect(condition: bool, message: str) -> None:
+    if not condition:
+        raise GuardError(message)
+
+
+def validate_live_state(state: dict[str, Any]) -> None:
+    customer = state.get("customer", {})
+    _expect(customer.get("id", "").replace("-", "") == config.CUSTOMER_ID, "customer identity is outside guarded scope")
+    _expect(customer.get("currencyCode") == "USD", "customer currency drift")
+    _expect(customer.get("timeZone") == "America/Los_Angeles", "customer timezone drift")
+    _expect(not customer.get("testAccount", False), "test account is outside launch scope")
+    _expect(customer.get("conversionTrackingStatus") == "CONVERSION_TRACKING_MANAGED_BY_SELF", "conversion tracking is not managed by this customer")
+    _expect(customer.get("googleAdsConversionCustomer") == f"customers/{config.CUSTOMER_ID}", "conversion customer is outside guarded scope")
+    locations = state.get("source_locations", [])
+    positive = [x for x in locations if not x.get("negative")]
+    negative = [x for x in locations if x.get("negative")]
+    expected_positive = set(config.city_geo_target_constants())
+    expected_negative = {f"geoTargetConstants/{v}" for v in config.EXCLUDED_CITIES.values()}
+    _expect(len(positive) == 19 and len(negative) == 4, "source geography must contain exactly 19 included and 4 excluded cities")
+    _expect({x.get("geo_target_constant") for x in positive} == expected_positive, "source positive geography drift")
+    _expect({x.get("geo_target_constant") for x in negative} == expected_negative, "source negative geography drift")
+    _expect(all(x.get("target_type") == "City" and x.get("source_criterion_resource_name") or x.get("criterion_resource_name") for x in locations), "source city criterion is incomplete")
+    actions = {x.get("resourceName"): x for x in state.get("conversion_actions", [])}
+    for action_id in (CALLS_FROM_ADS_ACTION, QUALIFIED_WEBSITE_CALL_ACTION):
+        action = actions.get(action_id, {})
+        _expect(action.get("status") == "ENABLED", "required call conversion is not enabled")
+        _expect(str(action.get("phoneCallDurationSeconds")) == "60", "required call conversion must be 60-second")
+        _expect(action.get("countingType") == "ONE_PER_CLICK", "required call conversion counting-type drift")
+    asset = state.get("call_asset", {})
+    _expect(asset.get("resourceName") == CALL_ASSET and asset.get("status") == "ENABLED", "required existing call asset drift")
+    _expect(asset.get("type") == "CALL" and asset.get("primaryStatus") == "ELIGIBLE", "existing call asset is not eligible")
+    goals = state.get("customer_conversion_goals", [])
+    _expect(bool(goals), "customer conversion goals are required for goal isolation")
+    _expect(all(goal.get("category") and goal.get("origin") for goal in goals), "customer conversion goal pair is incomplete")
+
+
+def build_plan(state: dict[str, Any]) -> dict[str, Any]:
+    validate_live_state(state)
+    locations = []
+    for item in state["source_locations"]:
+        locations.append({
+            "geo_target_constant": item["geo_target_constant"], "negative": item["negative"],
+            "status": "ENABLED", "target_type": "City",
+            "source_criterion_resource_name": item.get("source_criterion_resource_name", item.get("criterion_resource_name")),
+        })
+    groups = []
+    for name, group in config.AD_GROUPS.items():
+        keywords = [dict(item, status="ENABLED") for item in group["launch_keywords"]]
+        _expect(all(config.is_valid_launch_keyword(k["text"], k["match_type"]) for k in keywords), "launch keyword guard failed")
+        groups.append({"name": name, "status": "ENABLED", "cpc_bid_micros": group["max_cpc_micros"], "keywords": keywords, "rsa": RSA_COPY[name]})
+    negative_keywords = [
+        {"text": term, "match_type": "PHRASE", "status": "ENABLED"}
+        for terms in config.CAMPAIGN_NEGATIVES.values() for term in terms
+    ]
+    plan = {
+        "customer_id": config.CUSTOMER_ID,
+        "budget": {"name": _named("Budget"), "amount_micros": config.DAILY_BUDGET_MICROS, "delivery_method": "STANDARD", "status": "ENABLED"},
+        "campaign": {
+            "name": config.CAMPAIGN_NAME, "status": "PAUSED", "advertising_channel_type": "SEARCH", "bidding_strategy": "MANUAL_CPC", "enhanced_cpc_enabled": False,
+            "network_settings": {"target_google_search": True, "target_search_network": False, "target_content_network": False, "target_partner_search_network": False},
+            "geo_target_type_setting": {"positive_geo_target_type": "PRESENCE", "negative_geo_target_type": "PRESENCE"},
+            "language_constants": [config.LANGUAGE_CONSTANT], "devices": ["DESKTOP", "MOBILE", "TABLET"], "device_bid_modifiers": {},
+        },
+        "locations": sorted(locations, key=lambda x: (x["negative"], x["geo_target_constant"])),
+        "ad_groups": groups, "campaign_negative_keywords": negative_keywords,
+        "assets": {
+            "call": {"resource_name": CALL_ASSET},
+            "sitelinks": [
+                {"text": "Commercial Solutions", "final_url": config.FINAL_URL + "#solutions"},
+                {"text": "Our Process", "final_url": config.FINAL_URL + "#process"},
+                {"text": "Privacy & Decorative", "final_url": config.FINAL_URL + "#privacy-decorative"},
+                {"text": "Request Site Review", "final_url": config.FINAL_URL + "#site-review"},
+            ],
+            "callouts": ["Commercial Spaces", "Site Review", "Window Film Options", "Office & Storefront"],
+            "structured_snippet": {"header": "Types", "values": ["Solar Control", "Privacy", "Decorative", "Safety", "Security"]},
+        },
+        "conversion": {
+            "custom_goal": {"name": _named("Qualified 60s Calls Goal"), "conversion_actions": [CALLS_FROM_ADS_ACTION, QUALIFIED_WEBSITE_CALL_ACTION]},
+            "consultation_action": {"logical_resource_name": "$result:consultation_action:0", "name": "Commercial Consultation Request - Obsidian", "category": "SUBMIT_LEAD_FORM", "counting_type": "ONE_PER_CLICK", "primary_for_goal": False, "account_default": False},
+            "explicitly_non_biddable": ["proxy calls", "Square purchases", "text leads", "residential leads", "Commercial Consultation Request - Obsidian"],
+            "regular_goal_pairs": sorted({(goal["category"], goal["origin"]) for goal in state["customer_conversion_goals"]}),
+        },
+    }
+    plan["fingerprint"] = _short_hash({k: v for k, v in plan.items() if k != "fingerprint"})
+    return plan
+
+
+def reconcile_named_resource(kind: str, expected: dict[str, Any], existing: list[dict[str, Any]], fingerprint_fields: tuple[str, ...]) -> dict[str, Any]:
+    name = expected.get("name")
+    matches = [row for row in existing if row.get("name") == name]
+    if len(matches) > 1:
+        raise GuardError(f"duplicate same-name {kind} resources")
+    if not matches:
+        return {"decision": "create", "expected": expected}
+    match = matches[0]
+    if any(str(match.get(field)) != str(expected.get(field)) for field in fingerprint_fields):
+        raise GuardError(f"same-name drift for {kind}")
+    return {"decision": "reuse", "resource_name": match.get("resourceName")}
+
+
+def reconcile_plan_named_resources(plan: dict[str, Any], named: dict[str, list[dict[str, Any]]]) -> dict[str, dict[str, Any]]:
+    """Fail closed on names already used by a mismatched launch resource."""
+    expectations = {
+        "budget": ({"name": plan["budget"]["name"], "amountMicros": str(plan["budget"]["amount_micros"])}, named.get("budgets", []), ("name", "amountMicros")),
+        "campaign": ({"name": plan["campaign"]["name"], "status": "PAUSED", "advertisingChannelType": "SEARCH"}, named.get("campaigns", []), ("name", "status", "advertisingChannelType")),
+        "consultation_action": ({"name": plan["conversion"]["consultation_action"]["name"], "primaryForGoal": False}, named.get("conversion_actions", []), ("name", "primaryForGoal")),
+        "custom_goal": ({"name": plan["conversion"]["custom_goal"]["name"]}, named.get("custom_goals", []), ("name",)),
+    }
+    for group in plan["ad_groups"]:
+        expectations[f"ad_group:{group['name']}"] = ({"name": group["name"], "status": group["status"], "cpcBidMicros": str(group["cpc_bid_micros"])}, named.get("ad_groups", []), ("name", "status", "cpcBidMicros"))
+    for label in [x["text"] for x in plan["assets"]["sitelinks"]] + plan["assets"]["callouts"] + ["Types"]:
+        expectations[f"asset:{label}"] = ({"name": _named(label)}, named.get("assets", []), ("name",))
+    return {kind: reconcile_named_resource(kind, expected, rows, fields) for kind, (expected, rows, fields) in expectations.items()}
+
+
+def _op(create_type: str, payload: dict[str, Any]) -> dict[str, Any]:
+    return {create_type: {"create": payload}}
+
+
+def build_initial_operation_phases(plan: dict[str, Any]) -> list[dict[str, Any]]:
+    cid = plan["customer_id"]
+    budget = {"name": plan["budget"]["name"], "amountMicros": str(plan["budget"]["amount_micros"]), "deliveryMethod": "STANDARD"}
+    network = {"targetGoogleSearch": True, "targetSearchNetwork": False, "targetContentNetwork": False, "targetPartnerSearchNetwork": False}
+    geo = {"positiveGeoTargetType": "PRESENCE", "negativeGeoTargetType": "PRESENCE"}
+    campaign = {"name": plan["campaign"]["name"], "status": "PAUSED", "advertisingChannelType": "SEARCH", "campaignBudget": "$result:budget:0", "manualCpc": {"enhancedCpcEnabled": False}, "networkSettings": network, "geoTargetTypeSetting": geo}
+    phases = [
+        {"name": "budget", "service": "campaignBudgets", "operations": [{"create": budget}], "result_key": "budget"},
+        {"name": "campaign", "service": "campaigns", "operations": [{"create": campaign}], "result_key": "campaign"},
+        {"name": "custom_goal", "service": "customConversionGoals", "operations": [{"create": {"name": plan["conversion"]["custom_goal"]["name"], "conversionActions": plan["conversion"]["custom_goal"]["conversion_actions"]}}], "result_key": "custom_goal"},
+        {"name": "consultation_action", "service": "conversionActions", "operations": [{"create": {"name": plan["conversion"]["consultation_action"]["name"], "category": "SUBMIT_LEAD_FORM", "type": "WEBPAGE", "countingType": "ONE_PER_CLICK", "primaryForGoal": False}}], "result_key": "consultation_action"},
+    ]
+    campaign_ref = "$result:campaign:0"
+    criteria = [{"create": {"campaign": campaign_ref, "negative": False, "status": "ENABLED", "language": {"languageConstant": config.LANGUAGE_CONSTANT}}}]
+    for item in plan["locations"]:
+        criteria.append({"create": {"campaign": campaign_ref, "negative": item["negative"], "status": "ENABLED", "location": {"geoTargetConstant": item["geo_target_constant"]}}})
+    for item in plan["campaign_negative_keywords"]:
+        criteria.append({"create": {"campaign": campaign_ref, "negative": True, "keyword": {"text": item["text"], "matchType": item["match_type"]}}})
+    phases.append({"name": "criteria", "service": "campaignCriteria", "operations": criteria, "result_key": "criteria"})
+    group_ops = []
+    for group in plan["ad_groups"]:
+        group_ops.append({"create": {"name": group["name"], "campaign": campaign_ref, "status": "ENABLED", "cpcBidMicros": str(group["cpc_bid_micros"])}})
+    phases.append({"name": "ad_groups", "service": "adGroups", "operations": group_ops, "result_key": "ad_groups"})
+    keyword_ops = []
+    rsa_ops = []
+    for index, group in enumerate(plan["ad_groups"]):
+        group_ref = f"$result:ad_groups:{index}"
+        for keyword in group["keywords"]:
+            keyword_ops.append({"create": {"adGroup": group_ref, "status": "ENABLED", "keyword": {"text": keyword["text"], "matchType": keyword["match_type"]}, "cpcBidMicros": str(group["cpc_bid_micros"])}})
+        rsa_ops.append({"create": {"adGroup": group_ref, "status": "PAUSED", "ad": {"finalUrls": group["rsa"]["final_urls"], "responsiveSearchAd": {"headlines": [{"text": x} for x in group["rsa"]["headlines"]], "descriptions": [{"text": x} for x in group["rsa"]["descriptions"]]}}}})
+    phases.append({"name": "keywords", "service": "adGroupCriteria", "operations": keyword_ops, "result_key": "keywords"})
+    phases.append({"name": "paused_rsas", "service": "adGroupAds", "operations": rsa_ops, "result_key": "ads"})
+    asset_ops = []
+    for item in plan["assets"]["sitelinks"]:
+        asset_ops.append({"create": {"name": _named(item["text"]), "finalUrls": [item["final_url"]], "sitelinkAsset": {"linkText": item["text"]}}})
+    for text in plan["assets"]["callouts"]:
+        asset_ops.append({"create": {"name": _named(text), "calloutAsset": {"calloutText": text}}})
+    snippet = plan["assets"]["structured_snippet"]
+    asset_ops.append({"create": {"name": _named("Types"), "structuredSnippetAsset": {"header": snippet["header"], "values": snippet["values"]}}})
+    phases.append({"name": "assets", "service": "assets", "operations": asset_ops, "result_key": "assets"})
+    association_ops = [{"create": {"campaign": campaign_ref, "asset": CALL_ASSET, "fieldType": "CALL"}}]
+    for index in range(4): association_ops.append({"create": {"campaign": campaign_ref, "asset": f"$result:assets:{index}", "fieldType": "SITELINK"}})
+    for index in range(4, 8): association_ops.append({"create": {"campaign": campaign_ref, "asset": f"$result:assets:{index}", "fieldType": "CALLOUT"}})
+    association_ops.append({"create": {"campaign": campaign_ref, "asset": "$result:assets:8", "fieldType": "STRUCTURED_SNIPPET"}})
+    phases.append({"name": "campaign_assets", "service": "campaignAssets", "operations": association_ops, "result_key": "campaign_assets"})
+    goal_ops = [{"conversionGoalCampaignConfigOperation": {"update": {"resourceName": f"customers/{cid}/conversionGoalCampaignConfigs/$campaign_id:campaign:0", "customConversionGoal": "$result:custom_goal:0"}, "updateMask": "custom_conversion_goal"}}]
+    for category, origin in plan["conversion"]["regular_goal_pairs"]:
+        goal_ops.append({"campaignConversionGoalOperation": {"update": {"resourceName": f"customers/{cid}/campaignConversionGoals/$campaign_id:campaign:0~{category}~{origin}", "biddable": False}, "updateMask": "biddable"}})
+    phases.append({"name": "campaign_goal_isolation", "service": "googleAds", "operations": goal_ops, "result_key": "goal_isolation"})
+    return phases
+
+
+def verify_goal_isolation(target: dict[str, Any]) -> None:
+    config_row = target.get("goal_config", {})
+    custom = target.get("custom_goal", {})
+    _expect(config_row.get("customConversionGoal") == custom.get("resourceName"), "campaign custom goal is not bound")
+    _expect(custom.get("status") in {None, "ENABLED"}, "commercial custom goal is not enabled")
+    _expect(custom.get("conversionActions") == [CALLS_FROM_ADS_ACTION, QUALIFIED_WEBSITE_CALL_ACTION], "custom goal must contain only qualified 60-second calls")
+    for goal in target.get("campaign_goals", []):
+        _expect(goal.get("biddable") is False, "regular campaign goal remains biddable")
+
+
+def run_read_only_queries(client: Any) -> dict[str, Any]:
+    queries = {
+        "customer": "SELECT customer.id, customer.descriptive_name, customer.currency_code, customer.time_zone, customer.test_account, customer.conversion_tracking_setting.conversion_tracking_status, customer.conversion_tracking_setting.google_ads_conversion_customer FROM customer LIMIT 1",
+        "source_campaign": "SELECT campaign.resource_name, campaign.name FROM campaign WHERE campaign.resource_name = 'customers/8605345590/campaigns/24006593417' LIMIT 1",
+        "source_locations": "SELECT campaign_criterion.resource_name, campaign_criterion.negative, campaign_criterion.status, campaign_criterion.location.geo_target_constant FROM campaign_criterion WHERE campaign_criterion.campaign = 'customers/8605345590/campaigns/24006593417' AND campaign_criterion.type = LOCATION",
+        "conversion_actions": "SELECT conversion_action.resource_name, conversion_action.name, conversion_action.status, conversion_action.type, conversion_action.category, conversion_action.origin, conversion_action.primary_for_goal, conversion_action.counting_type, conversion_action.phone_call_duration_seconds FROM conversion_action WHERE conversion_action.resource_name IN ('customers/8605345590/conversionActions/7441005241', 'customers/8605345590/conversionActions/7693228248')",
+        "call_asset": "SELECT campaign_asset.status, campaign_asset.primary_status, asset.resource_name, asset.type, asset.call_asset.phone_number, asset.call_asset.call_conversion_reporting_state FROM campaign_asset WHERE campaign_asset.campaign = 'customers/8605345590/campaigns/24006593417' AND asset.resource_name = 'customers/8605345590/assets/320657161326'",
+        "named_resources": f"SELECT campaign.resource_name, campaign.name, campaign.status FROM campaign WHERE campaign.name = '{config.CAMPAIGN_NAME}'",
+        "named_budgets": f"SELECT campaign_budget.resource_name, campaign_budget.name, campaign_budget.amount_micros, campaign_budget.status FROM campaign_budget WHERE campaign_budget.name = '{_named('Budget')}'",
+        "named_ad_groups": f"SELECT ad_group.resource_name, ad_group.name, ad_group.status, ad_group.cpc_bid_micros FROM ad_group WHERE ad_group.name LIKE '{config.CAMPAIGN_NAME} | %'",
+        "named_assets": f"SELECT asset.resource_name, asset.name FROM asset WHERE asset.name LIKE '{config.CAMPAIGN_NAME} | %'",
+        "named_conversions": "SELECT conversion_action.resource_name, conversion_action.name, conversion_action.primary_for_goal FROM conversion_action WHERE conversion_action.name = 'Commercial Consultation Request - Obsidian'",
+        "named_custom_goals": f"SELECT custom_conversion_goal.resource_name, custom_conversion_goal.name FROM custom_conversion_goal WHERE custom_conversion_goal.name = '{_named('Qualified 60s Calls Goal')}'",
+        "campaign_goals": "SELECT campaign_conversion_goal.resource_name, campaign_conversion_goal.category, campaign_conversion_goal.origin, campaign_conversion_goal.biddable FROM campaign_conversion_goal WHERE campaign_conversion_goal.campaign = 'customers/8605345590/campaigns/24006593417'",
+        "customer_conversion_goals": "SELECT customer_conversion_goal.category, customer_conversion_goal.origin FROM customer_conversion_goal",
+    }
+    return {name: client.search(query) for name, query in queries.items()}
+
+
+def _camel(row: dict[str, Any], key: str, default: Any = None) -> Any:
+    return row.get(key, row.get(key.replace("_", ""), default))
+
+
+def state_from_queries(rows: dict[str, list[dict[str, Any]]]) -> dict[str, Any]:
+    # REST GAQL encodes nested objects; retain only the fields this stager trusts.
+    customer = (rows.get("customer") or [{}])[0].get("customer", {})
+    def loc(row: dict[str, Any]) -> dict[str, Any]:
+        c = row.get("campaignCriterion", row.get("campaign_criterion", {})); location = c.get("location", {})
+        geo = location.get("geoTargetConstant", location.get("geo_target_constant"))
+        city = next((n for n, v in config._INCLUDED_CITY_IDS.items() if geo == f"geoTargetConstants/{v}"), next((n for n, v in config.EXCLUDED_CITIES.items() if geo == f"geoTargetConstants/{v}"), ""))
+        return {"criterion_resource_name": c.get("resourceName", c.get("resource_name")), "geo_target_constant": geo, "negative": c.get("negative"), "status": c.get("status"), "city": city, "target_type": "City"}
+    tracking = customer.get("conversionTrackingSetting", customer.get("conversion_tracking_setting", {}))
+    return {
+        "customer": {"id": customer.get("id"), "descriptiveName": customer.get("descriptiveName"), "currencyCode": customer.get("currencyCode"), "timeZone": customer.get("timeZone"), "testAccount": customer.get("testAccount", False), "conversionTrackingStatus": tracking.get("conversionTrackingStatus"), "googleAdsConversionCustomer": tracking.get("googleAdsConversionCustomer")},
+        "source_campaign": (rows.get("source_campaign") or [{}])[0].get("campaign", {}),
+        "source_locations": [loc(r) for r in rows.get("source_locations", [])],
+        "conversion_actions": [r.get("conversionAction", r.get("conversion_action", {})) for r in rows.get("conversion_actions", [])],
+        "call_asset": {
+            **(rows.get("call_asset") or [{}])[0].get("asset", {}),
+            "status": (rows.get("call_asset") or [{}])[0].get("campaignAsset", {}).get("status"),
+            "primaryStatus": (rows.get("call_asset") or [{}])[0].get("campaignAsset", {}).get("primaryStatus"),
+        },
+        "customer_conversion_goals": [r.get("customerConversionGoal", r.get("customer_conversion_goal", {})) for r in rows.get("customer_conversion_goals", [])],
+        "named_resources": {
+            "campaigns": [r.get("campaign", {}) for r in rows.get("named_resources", [])],
+            "budgets": [r.get("campaignBudget", {}) for r in rows.get("named_budgets", [])],
+            "ad_groups": [r.get("adGroup", {}) for r in rows.get("named_ad_groups", [])],
+            "assets": [r.get("asset", {}) for r in rows.get("named_assets", [])],
+            "conversion_actions": [r.get("conversionAction", {}) for r in rows.get("named_conversions", [])],
+            "custom_goals": [r.get("customConversionGoal", {}) for r in rows.get("named_custom_goals", [])],
+        },
+    }
+
+
+def build_evidence(plan: dict[str, Any], state: dict[str, Any]) -> dict[str, Any]:
+    return {"schema_version": 1, "customer_id": plan["customer_id"], "read_only": True, "plan_fingerprint": plan["fingerprint"], "source_fingerprint": _short_hash({"locations": plan["locations"], "conversions": state.get("conversion_actions", []), "call_asset": state.get("call_asset", {})}), "plan": rest.redact_for_evidence(plan)}
+
+
+def _resolve(value: Any, results: dict[str, list[str]]) -> Any:
+    if isinstance(value, dict): return {k: _resolve(v, results) for k, v in value.items()}
+    if isinstance(value, list): return [_resolve(v, results) for v in value]
+    if isinstance(value, str):
+        import re
+        def substitute(match):
+            mode, key, index = match.groups()
+            resource = results[key][int(index)]
+            return resource.rsplit("/", 1)[-1] if mode == "campaign_id" else resource
+        return re.sub(r"\$(result|campaign_id):([a-z_]+):(\d+)", substitute, value)
+    return value
+
+
+def apply_operation_phases(client: Any, phases: list[dict[str, Any]], manifest_path: Path, after_write=None) -> dict[str, Any]:
+    manifest = {"schema_version": 1, "completed_phase_count": 0, "resources": {}}
+    resolved: dict[str, list[str]] = {}
+    for phase in phases:
+        response = client.mutate(phase["service"], _resolve(phase["operations"], resolved))
+        resources = [row.get("resourceName") for row in response.get("results", []) if row.get("resourceName")]
+        resolved[phase.get("result_key", phase["name"])] = resources
+        manifest["completed_phase_count"] += 1
+        manifest["resources"][phase["name"]] = resources
+        manifest_path.parent.mkdir(parents=True, exist_ok=True)
+        manifest_path.write_text(json.dumps(rest.redact_for_evidence(manifest), indent=2, sort_keys=True) + "\n")
+        if after_write: after_write(manifest_path)
+    return manifest
+
+
+def verify_apply_readback(client: Any, plan: dict[str, Any]) -> dict[str, Any]:
+    """GAQL-only post-write guard; aborts handoff unless created resources stayed paused."""
+    state = state_from_queries(run_read_only_queries(client))
+    campaigns = state["named_resources"]["campaigns"]
+    matching = [row for row in campaigns if row.get("name") == plan["campaign"]["name"]]
+    _expect(len(matching) == 1 and matching[0].get("status") == "PAUSED", "post-apply campaign readback is not exactly one paused campaign")
+    _expect(len(state["named_resources"]["ad_groups"]) >= 4, "post-apply ad-group readback is incomplete")
+    _expect(len(state["named_resources"]["assets"]) >= 9, "post-apply asset readback is incomplete")
+    return {"campaign": matching[0].get("resourceName"), "status": "PAUSED", "readback": "GAQL"}
+
+
+def build_enable_operation(campaign_resource_name: str = "$reviewed_paused_campaign") -> dict[str, Any]:
+    """Return—not execute—the sole permitted paused-to-enabled operation."""
+    return {"name": "enable", "service": "campaigns", "operations": [{"update": {"resourceName": campaign_resource_name, "status": "ENABLED"}, "updateMask": "status"}]}
+
+
+def parse_args(argv=None):
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("--env-file", type=Path, default=Path(".env"))
+    parser.add_argument("--evidence", type=Path, default=Path("docs/evidence/commercial-google-ads-plan.json"))
+    parser.add_argument("--recovery-manifest", type=Path, default=Path("docs/evidence/commercial-google-ads-recovery.json"))
+    parser.add_argument("--validate", action="store_true")
+    parser.add_argument("--apply", action="store_true")
+    parser.add_argument("--enable", action="store_true")
+    parser.add_argument("--confirm", default="")
+    return parser.parse_args(argv)
+
+
+def command_mode(args) -> str:
+    if args.apply and args.enable: raise GuardError("--apply and --enable cannot be combined")
+    if args.apply:
+        if args.confirm != APPLY_CONFIRMATION_TOKEN: raise GuardError("--apply requires the exact confirmation token")
+        return "apply"
+    if args.enable:
+        if args.confirm != ENABLE_CONFIRMATION_TOKEN: raise GuardError("--enable requires the exact confirmation token")
+        return "enable"
+    return "validate"
+
+
+def main(argv=None) -> int:
+    args = parse_args(argv); mode = command_mode(args)
+    env = rest.load_env(args.env_file)
+    client = rest.build_client_from_env(env, customer_id=config.CUSTOMER_ID, allow_mutation=mode != "validate")
+    raw = run_read_only_queries(client); state = state_from_queries(raw); plan = build_plan(state)
+    plan["reconciliation"] = reconcile_plan_named_resources(plan, state["named_resources"])
+    evidence = build_evidence(plan, state); args.evidence.parent.mkdir(parents=True, exist_ok=True); args.evidence.write_text(json.dumps(evidence, indent=2, sort_keys=True) + "\n")
+    if mode == "validate":
+        print(json.dumps(evidence, indent=2, sort_keys=True)); return 0
+    if mode == "apply":
+        apply_operation_phases(client, build_initial_operation_phases(plan), args.recovery_manifest)
+        verify_apply_readback(client, plan)
+        print("Paused commercial campaign resources staged; no enable operation was sent."); return 0
+    # Enable is intentionally a dry, separately reviewable operation.  It is
+    # never sent by this program, even with the confirmation token.
+    print(json.dumps(build_enable_operation(), indent=2))
+    return 0
+
+
+if __name__ == "__main__":
+    raise SystemExit(main())
