@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en" data-lead-service="commercial_window_film">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Commercial Window Film Orange County | Obsidian Autoworks</title>
+    <meta name="description"
+        content="Commercial window film for Orange County offices, storefronts, hospitality, healthcare, and shared spaces. Explore solar control, privacy, decorative, safety, security, and UV film options.">
+    <meta name="robots" content="index,follow">
+    <link rel="canonical" href="https://www.obsidianautoworksoc.com/commercial-window-film">
+    <link rel="icon" type="image/png" href="/favicon.png">
+    <meta property="og:title" content="Commercial Window Film Orange County | Obsidian Autoworks">
+    <meta property="og:description"
+        content="Plan commercial glass for heat and glare, privacy, decorative finishes, safety, security, and UV exposure with a project-specific site review.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.obsidianautoworksoc.com/commercial-window-film">
+    <meta property="og:image"
+        content="https://www.obsidianautoworksoc.com/assets/architectural-commercial-glass.jpg">
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@graph": [
+            {
+                "@type": "LocalBusiness",
+                "@id": "https://www.obsidianautoworksoc.com/#business",
+                "name": "Obsidian Autoworks",
+                "url": "https://www.obsidianautoworksoc.com/",
+                "telephone": "+17146007134",
+                "areaServed": ["Orange County, CA", "Southern California"]
+            },
+            {
+                "@type": "Service",
+                "@id": "https://www.obsidianautoworksoc.com/commercial-window-film#service",
+                "name": "Commercial Window Film",
+                "url": "https://www.obsidianautoworksoc.com/commercial-window-film",
+                "serviceType": "Commercial architectural window film",
+                "description": "Project-specific commercial window film planning for solar control, glare, privacy, decorative glass, safety, security, and UV exposure.",
+                "provider": {
+                    "@id": "https://www.obsidianautoworksoc.com/#business"
+                },
+                "areaServed": ["Orange County, CA", "Southern California"]
+            }
+        ]
+    }
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800;900&amp;family=Space+Grotesk:wght@400;500;600;700&amp;display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="/style.css?v=20260108-1">
+    <link rel="stylesheet" href="/commercial-window-film.css?v=20260808-1">
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-TR9ET60HX3"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-TR9ET60HX3');
+        gtag('config', 'AW-17846304809');
+    </script>
+</head>
+
+<body class="commercial-page commercial-page--organic">
+    <nav class="nav commercial-nav" aria-label="Primary navigation">
+        <div class="nav__container">
+            <a href="/" class="nav__logo" aria-label="Obsidian Autoworks home">
+                <span class="nav__logo-text">OBSIDIAN<span>AUTOWORKS</span></span>
+            </a>
+            <div class="nav__links">
+                <a href="#applications">Applications</a>
+                <a href="#solutions">Solutions</a>
+                <a href="#process">Process</a>
+                <a href="#site-review">Site review</a>
+            </div>
+            <div class="nav__actions">
+                <a href="tel:+17146007134" class="brutalist-btn brutalist-btn--outline"
+                    data-lead-action="commercial_window_film_call">(714) 600-7134</a>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <header class="commercial-hero commercial-hero--organic">
+            <div class="commercial-shell commercial-hero__grid">
+                <div class="commercial-hero__copy">
+                    <p class="commercial-overline">Commercial glass / Orange County</p>
+                    <h1>Commercial Window Film <span>Built Around the Space.</span></h1>
+                    <p class="commercial-hero__lede">Start with the property, the glass, and the problem to solve.
+                        Obsidian reviews commercial window film options for solar control, privacy, decorative design,
+                        safety, security, and UV exposure across Southern California.</p>
+                    <div class="commercial-actions">
+                        <a href="tel:+17146007134" class="commercial-button commercial-button--signal"
+                            data-lead-action="commercial_window_film_call">Call for a site review</a>
+                        <a href="sms:+17146007134?body=Hi%20Obsidian%20Autoworks%2C%20I%27d%20like%20a%20commercial%20window%20film%20site%20review.%20Property%20city%3A%20%0AProject%20goal%3A%20%0AI%20can%20send%20photos%20and%20rough%20measurements%3A%20"
+                            class="commercial-button commercial-button--line"
+                            data-lead-action="commercial_window_film_text">Text project details</a>
+                    </div>
+                </div>
+                <figure class="commercial-hero__figure">
+                    <img src="/assets/architectural-commercial-glass.jpg"
+                        alt="Sunlight across the glass facade of a commercial building" width="1400" height="2100"
+                        fetchpriority="high">
+                    <figcaption><strong>Application example</strong> Generic architectural image — not an Obsidian
+                        project.</figcaption>
+                </figure>
+            </div>
+            <div class="commercial-rail" aria-label="Commercial window film priorities">
+                <span>Solar control</span><span>Privacy</span><span>Decorative</span><span>Safety + security</span>
+            </div>
+        </header>
+
+        <section class="commercial-section commercial-section--paper" id="applications">
+            <div class="commercial-shell">
+                <div class="commercial-heading commercial-heading--split">
+                    <div>
+                        <p class="commercial-overline">Commercial applications</p>
+                        <h2>Different buildings. Different glass decisions.</h2>
+                    </div>
+                    <p>Film selection starts with how the space is used, who sees through the glass, where the sun
+                        lands, and what access the project requires.</p>
+                </div>
+                <div class="commercial-property-grid">
+                    <article><span>01</span><h3>Offices</h3><p>Exterior glazing, conference rooms, interior partitions, and shared work areas.</p></article>
+                    <article><span>02</span><h3>Storefronts + restaurants</h3><p>Customer-facing glass, street exposure, display areas, and entry doors.</p></article>
+                    <article><span>03</span><h3>Hospitality + healthcare</h3><p>Guest, patient, staff, and service spaces with distinct privacy and light needs.</p></article>
+                    <article><span>04</span><h3>Multi-family common areas</h3><p>Lobbies, amenity rooms, management offices, and other shared commercial glass.</p></article>
+                </div>
+            </div>
+        </section>
+
+        <section class="commercial-section commercial-section--ink" id="solutions">
+            <div class="commercial-shell">
+                <div class="commercial-heading">
+                    <p class="commercial-overline">Film solutions</p>
+                    <h2>Define the outcome before choosing the film.</h2>
+                </div>
+                <div class="commercial-solution-list">
+                    <article><p class="commercial-solution-list__number">01 / Climate</p><h3>Solar, heat + glare</h3><p>Review film options intended to manage sun-exposed glass, screen glare, and uneven comfort while considering the existing glazing.</p></article>
+                    <article><p class="commercial-solution-list__number">02 / Visibility</p><h3>Privacy + decorative film</h3><p>Explore frosted, patterned, and visibility-control applications for customer, staff, meeting, and interior glass.</p></article>
+                    <article><p class="commercial-solution-list__number">03 / Glass retention</p><h3>Safety + security film</h3><p>Discuss the site, glass, attachment approach, and project intent before identifying an appropriate system.</p></article>
+                    <article><p class="commercial-solution-list__number">04 / Exposure</p><h3>UV + fade considerations</h3><p>Review sun exposure around furnishings, finishes, displays, and occupied areas without promising elimination of fading.</p></article>
+                </div>
+            </div>
+        </section>
+
+        <section class="commercial-section commercial-section--image" id="privacy-decorative">
+            <div class="commercial-shell commercial-image-callout">
+                <figure>
+                    <img src="/assets/architectural-private-glass.jpg"
+                        alt="Modern architectural glass with a privacy treatment" width="1400" height="933"
+                        loading="lazy">
+                    <figcaption><strong>Application example</strong> Generic architectural image — not an Obsidian
+                        project.</figcaption>
+                </figure>
+                <div>
+                    <p class="commercial-overline">Privacy / design</p>
+                    <h2>Make glass work harder without closing the room.</h2>
+                    <p>Privacy and decorative films can shape sightlines, divide interior areas, and add a deliberate
+                        finish. The right direction depends on viewing angles, lighting, glass location, and the level
+                        of privacy the space needs.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="commercial-section commercial-section--paper" id="process">
+            <div class="commercial-shell">
+                <div class="commercial-heading">
+                    <p class="commercial-overline">Project process</p>
+                    <h2>A site-specific path from problem to scope.</h2>
+                </div>
+                <ol class="commercial-process">
+                    <li><span>01</span><div><h3>Share the property</h3><p>Send the city, property type, photos, rough measurements, and the primary goal.</p></div></li>
+                    <li><span>02</span><div><h3>Review the glass + access</h3><p>We discuss the glazing, project areas, access, use of the space, and any details still needed.</p></div></li>
+                    <li><span>03</span><div><h3>Compare an approach</h3><p>Film direction and scope are based on the actual site rather than a generic one-size-fits-all package.</p></div></li>
+                    <li><span>04</span><div><h3>Confirm the next step</h3><p>After the review, we can identify what is ready for an estimate and what requires further site information.</p></div></li>
+                </ol>
+            </div>
+        </section>
+
+        <section class="commercial-section commercial-section--signal" id="site-review">
+            <div class="commercial-shell commercial-site-review">
+                <div>
+                    <p class="commercial-overline">Commercial consultation / site review</p>
+                    <h2>Start with the glass. Then define the work.</h2>
+                    <p>Call to discuss the project, or text the property city, photos, rough measurements, and the
+                        problem you want the film to address. No instant estimate is implied.</p>
+                </div>
+                <div class="commercial-site-review__actions">
+                    <a href="tel:+17146007134" class="commercial-button commercial-button--dark"
+                        data-lead-action="commercial_window_film_call">Call (714) 600-7134</a>
+                    <a href="sms:+17146007134?body=Hi%20Obsidian%20Autoworks%2C%20I%27d%20like%20a%20commercial%20window%20film%20site%20review.%20Property%20city%3A%20%0AProject%20goal%3A%20%0AI%20can%20send%20photos%20and%20rough%20measurements%3A%20"
+                        class="commercial-button commercial-button--light"
+                        data-lead-action="commercial_window_film_text">Text the project</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer commercial-footer">
+        <div class="container">
+            <div class="footer__main">
+                <div class="footer__brand">
+                    <span class="footer__logo">OBSIDIAN<span>AUTOWORKS</span></span>
+                    <p>Commercial architectural window film in Orange County and Southern California.</p>
+                </div>
+                <div class="footer__links">
+                    <div><strong>Commercial film</strong><br><a href="#solutions">Solutions</a><br><a href="#process">Process</a><br><a href="#site-review">Site review</a></div>
+                    <div><strong>Contact</strong><br><a href="tel:+17146007134">(714) 600-7134</a><br><a href="mailto:obsidianautoworksoc@gmail.com">Email Obsidian</a></div>
+                </div>
+            </div>
+            <div class="footer__bottom"><p>&copy; 2026 Obsidian Autoworks. All rights reserved.</p></div>
+        </div>
+    </footer>
+    <script src="/lead-tracking.js" defer></script>
+</body>
+
+</html>

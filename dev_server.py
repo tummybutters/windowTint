@@ -48,6 +48,8 @@ REWRITE_PATHS = {
     "/tesla-model-y-window-tinting": "/tesla-model-y-window-tinting",
     "/tesla-model-3-window-tinting": "/tesla-model-3-window-tinting",
     "/architectural-window-film": "/architectural-window-film",
+    "/commercial-window-film": "/commercial-window-film",
+    "/commercial-window-film-socal": "/commercial-window-film-socal",
     "/chrome-delete": "/chrome-delete",
     "/santa-ana-window-tinting": "/santa-ana-window-tinting",
     "/anaheim-window-tinting": "/anaheim-window-tinting",

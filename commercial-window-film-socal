@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en" data-lead-service="commercial_window_film" data-lead-variant="commercial_socal_v1">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Commercial Window Film Southern California | Obsidian Autoworks</title>
+    <meta name="description"
+        content="Commercial window film site reviews for Orange County and Southern California offices, storefronts, hospitality, healthcare, and shared spaces. Call or text Obsidian Autoworks.">
+    <meta name="robots" content="noindex,follow">
+    <link rel="canonical" href="https://www.obsidianautoworksoc.com/commercial-window-film">
+    <link rel="icon" type="image/png" href="/favicon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800;900&amp;family=Space+Grotesk:wght@400;500;600;700&amp;display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="/style.css?v=20260108-1">
+    <link rel="stylesheet" href="/commercial-window-film.css?v=20260808-1">
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-TR9ET60HX3"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-TR9ET60HX3');
+        gtag('config', 'AW-17846304809');
+    </script>
+</head>
+
+<body class="commercial-page commercial-page--paid">
+    <nav class="commercial-paid-nav" aria-label="Commercial page navigation">
+        <div class="commercial-shell commercial-paid-nav__inner">
+            <a class="commercial-wordmark" href="/" aria-label="Obsidian Autoworks home">OBSIDIAN<span>AUTOWORKS</span></a>
+            <div class="commercial-paid-nav__links">
+                <a href="#solutions">Solutions</a>
+                <a href="#process">Process</a>
+                <a href="#privacy-decorative">Privacy</a>
+                <a href="#site-review">Site review</a>
+            </div>
+            <a href="tel:+17146007134" class="commercial-button commercial-button--line commercial-paid-nav__call"
+                data-lead-action="commercial_window_film_call">Call (714) 600-7134</a>
+        </div>
+    </nav>
+
+    <main>
+        <header class="commercial-paid-hero">
+            <div class="commercial-shell commercial-paid-hero__grid">
+                <div class="commercial-paid-hero__content">
+                    <p class="commercial-overline">Orange County / Southern California</p>
+                    <h1>Commercial Window Film <span>Starts With the Site.</span></h1>
+                    <p>Tell us what the glass needs to accomplish. We review the property, project area, access, and
+                        intended outcome before defining a film direction or estimate path.</p>
+                    <div class="commercial-paid-hero__actions">
+                        <a href="tel:+17146007134" class="commercial-button commercial-button--signal"
+                            data-lead-action="commercial_window_film_call">Call for a site review</a>
+                        <a href="sms:+17146007134?body=Hi%20Obsidian%20Autoworks%2C%20I%27d%20like%20a%20commercial%20window%20film%20site%20review.%20Property%20city%3A%20%0AProperty%20type%3A%20%0AProject%20goal%3A%20%0AI%20can%20send%20photos%20and%20rough%20measurements%3A%20"
+                            class="commercial-button commercial-button--line"
+                            data-lead-action="commercial_window_film_text">Text project details</a>
+                        <a href="#commercial-qualifier" class="commercial-button commercial-button--quiet">Build a
+                            project brief</a>
+                    </div>
+                    <p class="commercial-paid-hero__note">Call first for a direct conversation. Text if photos and
+                        rough measurements are ready. Use the brief below if the scope is still taking shape.</p>
+                </div>
+                <figure class="commercial-paid-hero__figure">
+                    <img src="/assets/architectural-commercial-glass.jpg"
+                        alt="Sunlit glass facade on a commercial building" width="1400" height="2100"
+                        fetchpriority="high">
+                    <figcaption><strong>Application example</strong><span>Generic architectural image — not an
+                            Obsidian project.</span></figcaption>
+                </figure>
+            </div>
+            <div class="commercial-paid-hero__index" aria-label="Page index">
+                <a href="#solutions"><span>01</span> Film solutions</a>
+                <a href="#process"><span>02</span> Project process</a>
+                <a href="#privacy-decorative"><span>03</span> Privacy + decorative</a>
+                <a href="#site-review"><span>04</span> Site review</a>
+            </div>
+        </header>
+
+        <section class="commercial-section commercial-section--paper" id="solutions">
+            <div class="commercial-shell">
+                <div class="commercial-heading commercial-heading--split">
+                    <div><p class="commercial-overline">Commercial film solutions</p><h2>One glass surface can have several jobs.</h2></div>
+                    <p>The starting point is the business need—not a preselected film. Existing glazing, sightlines,
+                        sun exposure, and access all shape the project conversation.</p>
+                </div>
+                <div class="commercial-paid-solutions">
+                    <article><span>Solar / glare</span><h3>Work with the sun-facing glass.</h3><p>Review film options intended to manage solar load and glare in occupied or display-facing areas.</p></article>
+                    <article><span>Privacy / design</span><h3>Control views and define space.</h3><p>Consider frosted, patterned, or visibility-control film for exterior and interior glass.</p></article>
+                    <article><span>Safety / security</span><h3>Start with the system intent.</h3><p>Discuss the glass, attachment approach, access, and intended retention goal before choosing a direction.</p></article>
+                    <article><span>UV / fade</span><h3>Review what is exposed.</h3><p>Map sunlight around furnishings, finishes, products, and work areas without promising elimination of fading.</p></article>
+                </div>
+            </div>
+        </section>
+
+        <section class="commercial-section commercial-section--ink" id="process">
+            <div class="commercial-shell">
+                <div class="commercial-heading"><p class="commercial-overline">Commercial project process</p><h2>Details first. Scope second.</h2></div>
+                <ol class="commercial-process commercial-process--dark">
+                    <li><span>01</span><div><h3>Describe the property</h3><p>Share the city, property type, affected areas, and the main problem the film should address.</p></div></li>
+                    <li><span>02</span><div><h3>Send what you have</h3><p>Photos and rough measurements help frame the conversation. Unknown details can be identified during review.</p></div></li>
+                    <li><span>03</span><div><h3>Review glass + access</h3><p>The glass, coatings, access, viewing angles, and operating environment inform the film direction.</p></div></li>
+                    <li><span>04</span><div><h3>Define the next step</h3><p>We identify what can move toward an estimate and what needs more site information.</p></div></li>
+                </ol>
+            </div>
+        </section>
+
+        <section class="commercial-section commercial-section--image" id="privacy-decorative">
+            <div class="commercial-shell commercial-image-callout">
+                <figure>
+                    <img src="/assets/architectural-private-glass.jpg"
+                        alt="Architectural glass shown with a privacy treatment" width="1400" height="933"
+                        loading="lazy">
+                    <figcaption><strong>Application example</strong> Generic architectural image — not an Obsidian
+                        project.</figcaption>
+                </figure>
+                <div>
+                    <p class="commercial-overline">Privacy + decorative film</p>
+                    <h2>Shape sightlines without making the space feel closed.</h2>
+                    <p>Meeting rooms, office partitions, storefronts, entries, and customer-facing glass may each
+                        require a different balance of privacy, light, and appearance. A site review helps identify the
+                        right questions before film is selected.</p>
+                    <a href="sms:+17146007134?body=Hi%20Obsidian%20Autoworks%2C%20I%27d%20like%20to%20discuss%20privacy%20or%20decorative%20commercial%20window%20film.%20Property%20city%3A%20%0AI%20can%20send%20photos%20and%20rough%20measurements%3A%20"
+                        class="commercial-inline-link" data-lead-action="commercial_window_film_text">Text privacy or
+                        decorative details &rarr;</a>
+                </div>
+            </div>
+        </section>
+
+        <section class="commercial-section commercial-section--qualifier" id="site-review">
+            <div class="commercial-shell commercial-site-review-intro">
+                <div>
+                    <p class="commercial-overline">Commercial consultation / site review</p>
+                    <h2>Choose the fastest path to a useful conversation.</h2>
+                </div>
+                <p>Call now, text the property details, or answer four short questions to compose a project brief.
+                    The qualifier does not send a message, determine fit, or create an estimate.</p>
+            </div>
+            <div class="commercial-shell commercial-site-review-actions">
+                <a href="tel:+17146007134" class="commercial-button commercial-button--signal"
+                    data-lead-action="commercial_window_film_call">Call (714) 600-7134</a>
+                <a href="sms:+17146007134?body=Hi%20Obsidian%20Autoworks%2C%20I%27d%20like%20a%20commercial%20window%20film%20site%20review.%20Property%20city%3A%20%0AProperty%20type%3A%20%0AProject%20goal%3A%20%0AI%20can%20send%20photos%20and%20rough%20measurements%3A%20"
+                    class="commercial-button commercial-button--line"
+                    data-lead-action="commercial_window_film_text">Text project details</a>
+            </div>
+            <div class="commercial-shell">
+                <div class="commercial-qualifier" id="commercial-qualifier">
+                    <div class="commercial-qualifier__meta">
+                        <span data-commercial-step>Step 1 of 4</span>
+                        <span>Project brief / not an estimate</span>
+                    </div>
+                    <div class="commercial-qualifier__track" role="progressbar" aria-label="Project brief progress"
+                        aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
+                        <span data-commercial-progress></span>
+                    </div>
+                    <div class="commercial-qualifier__body" data-commercial-qualifier-body>
+                        <p>Loading project questions&hellip;</p>
+                    </div>
+                    <p class="commercial-sr-only" aria-live="polite" data-commercial-live></p>
+                    <noscript><p>JavaScript is needed for the four-step project brief. Call (714) 600-7134 or use the
+                        prefilled text action above instead.</p></noscript>
+                </div>
+            </div>
+        </section>
+
+        <section class="commercial-section commercial-section--signal commercial-final-cta">
+            <div class="commercial-shell commercial-site-review">
+                <div><p class="commercial-overline">Start with the site</p><h2>Bring the building into the first conversation.</h2><p>Property city, photos, rough measurements, and the primary goal give us a practical place to start.</p></div>
+                <div class="commercial-site-review__actions">
+                    <a href="tel:+17146007134" class="commercial-button commercial-button--dark"
+                        data-lead-action="commercial_window_film_call">Call Obsidian</a>
+                    <a href="sms:+17146007134?body=Hi%20Obsidian%20Autoworks%2C%20I%27d%20like%20a%20commercial%20window%20film%20site%20review.%20Property%20city%3A%20%0AProject%20goal%3A%20%0AI%20can%20send%20photos%20and%20rough%20measurements%3A%20"
+                        class="commercial-button commercial-button--light"
+                        data-lead-action="commercial_window_film_text">Text the property</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="commercial-paid-footer">
+        <div class="commercial-shell"><span>Obsidian Autoworks / Commercial window film</span><a
+                href="tel:+17146007134" data-lead-action="commercial_window_film_call">(714) 600-7134</a></div>
+    </footer>
+
+    <div class="paid-mobile-actions" aria-label="Contact Obsidian Autoworks">
+        <a href="tel:+17146007134" class="commercial-button commercial-button--signal"
+            data-lead-action="commercial_window_film_call">Call now</a>
+        <a href="sms:+17146007134?body=Hi%20Obsidian%20Autoworks%2C%20I%27d%20like%20a%20commercial%20window%20film%20site%20review.%20Property%20city%3A%20%0AProject%20goal%3A%20%0AI%20can%20send%20photos%20and%20rough%20measurements%3A%20"
+            class="commercial-button commercial-button--line" data-lead-action="commercial_window_film_text">Text
+            details</a>
+    </div>
+
+    <script src="/lead-tracking.js" defer></script>
+    <script src="/lib/commercial-qualifier.js" defer></script>
+    <script src="/commercial-window-film-qualifier.js" defer></script>
+</body>
+
+</html>
