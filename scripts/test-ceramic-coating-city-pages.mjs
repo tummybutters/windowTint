@@ -46,6 +46,7 @@ for (const [city, citySlug, localMarker] of cities) {
   assert.match(page, new RegExp(`data-lead-action="coating_${citySlug.replaceAll('-', '_')}_call"`));
   assert.match(page, new RegExp(`data-lead-action="coating_${citySlug.replaceAll('-', '_')}_text"`));
   assert.match(page, /id: 'AW-18301955625'/);
+  assert.match(page, /websiteCallConfigId: 'AW-18301955625\/1asCCLrhh9wcEKnchpdE'/);
   assert.doesNotMatch(page, /AW-17846304809/);
   assert.doesNotMatch(page, /(?:app\.squareup\.com|book\.squareup\.com|href="\/(?:vip-)?booking)/i);
 

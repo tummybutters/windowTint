@@ -15,7 +15,7 @@
     <link rel="stylesheet" href="/paid-landing.css?v=20260731-city1">
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-TR9ET60HX3"></script>
     <script>
-        window.OBSIDIAN_GOOGLE_ADS_CONFIG = { id: 'AW-18301955625', websiteCallConfigId: '', conversions: { phone_click: 'BU5VCLCasNkcEKnchpdE', text_click: 'qbmnCLOasNkcEKnchpdE' } };
+        window.OBSIDIAN_GOOGLE_ADS_CONFIG = { id: 'AW-18301955625', websiteCallConfigId: 'AW-18301955625/1asCCLrhh9wcEKnchpdE', conversions: { phone_click: 'BU5VCLCasNkcEKnchpdE', text_click: 'qbmnCLOasNkcEKnchpdE' } };
         window.dataLayer = window.dataLayer || [];
         function gtag() { dataLayer.push(arguments); }
         gtag('js', new Date());

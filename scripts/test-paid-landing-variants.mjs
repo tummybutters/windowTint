@@ -144,6 +144,11 @@ for (const [name, page] of [
   ['luxury and EV coating', coatingLuxury]
 ]) {
   assert.match(page, /id: 'AW-18301955625'/, `${name} must initialize the coating Ads account.`);
+  assert.match(
+    page,
+    /websiteCallConfigId: 'AW-18301955625\/1asCCLrhh9wcEKnchpdE'/,
+    `${name} must initialize the qualified coating website-call action.`
+  );
   assert.match(page, /phone_click: 'BU5VCLCasNkcEKnchpdE'/, `${name} must use the coating phone-click action.`);
   assert.match(page, /text_click: 'qbmnCLOasNkcEKnchpdE'/, `${name} must use the coating text-click action.`);
   assert.doesNotMatch(page, /AW-17846304809/, `${name} must not initialize the mobile-tint Ads account.`);
@@ -219,6 +224,11 @@ assert.match(nanoCeramic, /UV protection/i, 'Nano ceramic must explain UV protec
 assert.doesNotMatch(nanoCeramic, /\b(?:99|100)%\b/, 'Nano ceramic must not invent a numerical performance rating.');
 
 assert.match(coatingCost, /Paint Correction/i, 'Coating cost page must match correction intent.');
+assert.match(
+  coatingCost,
+  /<h1>Ceramic Coating Cost <span>&amp; Paint Correction<\/span><\/h1>/,
+  'Coating cost page H1 must literally match coating-cost and paint-correction intent.'
+);
 assert.match(coatingCost, /\$550/, 'Coating cost page must expose the one-year starting price.');
 assert.match(coatingCost, /\$700/, 'Coating cost page must expose the five-year starting price.');
 assert.match(coatingCost, /\$900/, 'Coating cost page must expose the Level 2 starting price.');

@@ -11,7 +11,7 @@
     <link rel="icon" type="image/png" href="/favicon.png">
     <meta property="og:title" content="Mobile Ceramic Coating | Obsidian Autoworks">
     <meta property="og:description"
-        content="First-class ceramic coating with honest prep, correction options, and real Orange County work.">
+        content="Premium ceramic coating with honest prep, correction options, and real Orange County work.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://www.obsidianautoworksoc.com/ceramic-coating">
     <meta property="og:image"
@@ -47,7 +47,7 @@
     <script>
         window.OBSIDIAN_GOOGLE_ADS_CONFIG = {
             id: 'AW-18301955625',
-            websiteCallConfigId: '',
+            websiteCallConfigId: 'AW-18301955625/1asCCLrhh9wcEKnchpdE',
             conversions: {
                 phone_click: 'BU5VCLCasNkcEKnchpdE',
                 text_click: 'qbmnCLOasNkcEKnchpdE'
@@ -85,15 +85,18 @@
         <header class="coating-hero">
             <div class="container coating-hero__content">
                 <p class="coating-eyebrow">Orange County Ceramic Coating</p>
-                <h1>Ceramic Coating for a<br><span>Richer Finish and Lasting Gloss</span></h1>
-                <p class="coating-hero__copy">Professional paint preparation and ceramic protection bring out deeper
-                    color, clearer reflections, and a finish that holds its gloss.</p>
+                <h1>Mobile Ceramic Coating<br><span>in Orange County</span></h1>
+                <p class="coating-hero__copy">Paint correction and ceramic protection brought to a suitable home or
+                    workplace. Packages start at $550.</p>
                 <div class="coating-actions">
                     <a href="tel:7146007134" class="brutalist-btn brutalist-btn--primary brutalist-btn--large"
                         data-lead-action="ceramic_coating_call">Call About Your Car</a>
                     <a href="sms:7146007134" class="brutalist-btn brutalist-btn--large coating-btn--glass"
                         data-lead-action="ceramic_coating_text">Text Vehicle Photos</a>
                 </div>
+                <p class="coating-hero__price-link"><a
+                        href="/ceramic-coating-cost-paint-correction#packages">Packages from $550. Compare coating and
+                        paint-correction options.</a></p>
             </div>
         </header>
 

@@ -71,6 +71,23 @@
     margin-top: 2rem;
 }
 
+.coating-hero__price-link {
+    margin: 1.35rem auto 0;
+    font-size: 0.95rem;
+    font-weight: 800;
+}
+
+.coating-hero__price-link a {
+    color: var(--white);
+    text-decoration-color: var(--sunset-coral);
+    text-decoration-thickness: 2px;
+    text-underline-offset: 0.35rem;
+}
+
+.coating-hero__price-link a:hover {
+    color: var(--sunset-coral);
+}
+
 .coating-btn--glass {
     border-color: var(--white);
     background: rgba(0, 0, 0, 0.7);

@@ -20,7 +20,7 @@
     <script>
         window.OBSIDIAN_GOOGLE_ADS_CONFIG = {
             id: 'AW-18301955625',
-            websiteCallConfigId: '',
+            websiteCallConfigId: 'AW-18301955625/1asCCLrhh9wcEKnchpdE',
             conversions: {
                 phone_click: 'BU5VCLCasNkcEKnchpdE',
                 text_click: 'qbmnCLOasNkcEKnchpdE'
@@ -52,9 +52,9 @@
         <header class="paid-hero paid-hero--vip">
             <div class="paid-shell paid-hero__content paid-hero__content--centered">
                 <p class="paid-eyebrow">Ceramic coating cost - Orange County</p>
-                <h1>Depth, Gloss, Protection. <span>Priced With Clarity.</span></h1>
-                <p class="paid-hero__copy">Start with transparent package pricing, then match paint correction and
-                    protection to the finish your vehicle actually needs.</p>
+                <h1>Ceramic Coating Cost <span>&amp; Paint Correction</span></h1>
+                <p class="paid-hero__copy">Ceramic coating packages start at $550. We match paint correction to the
+                    condition of your vehicle before work begins.</p>
                 <div class="paid-hero__actions">
                     <a data-hero-primary data-lead-action="coating_cost_call"
                         class="paid-button paid-button--primary" href="tel:7146007134">Call about your paint</a>
