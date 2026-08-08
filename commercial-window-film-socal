@@ -18,11 +18,19 @@
     <link rel="stylesheet" href="/commercial-window-film.css?v=20260808-1">
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-TR9ET60HX3"></script>
     <script>
+        window.OBSIDIAN_GOOGLE_ADS_CONFIG = {
+            id: 'AW-18301955625',
+            websiteCallConfigId: 'AW-18301955625/1asCCLrhh9wcEKnchpdE',
+            conversions: {
+                phone_click: '',
+                text_click: ''
+            }
+        };
         window.dataLayer = window.dataLayer || [];
         function gtag() { dataLayer.push(arguments); }
         gtag('js', new Date());
         gtag('config', 'G-TR9ET60HX3');
-        gtag('config', 'AW-17846304809');
+        gtag('config', 'AW-18301955625');
     </script>
 </head>
 

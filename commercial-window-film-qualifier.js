@@ -33,6 +33,15 @@
             });
         };
 
+        const focusWithoutScroll = (element) => {
+            if (!element) return;
+            try {
+                element.focus({ preventScroll: true });
+            } catch (error) {
+                element.focus();
+            }
+        };
+
         const setProgress = (complete) => {
             const current = complete ? model.QUESTIONS.length : stepIndex + 1;
             const percentage = complete ? 100 : (stepIndex / model.QUESTIONS.length) * 100;
@@ -49,7 +58,7 @@
             body.innerHTML = `
                 <div class="commercial-qualifier__result">
                     <p class="commercial-overline">Project brief</p>
-                    <h3>Bring the right details to the first conversation.</h3>
+                    <h3 tabindex="-1">Bring the right details to the first conversation.</h3>
                     <pre data-commercial-summary></pre>
                     <p>No message has been sent. Add the property city, photos, and rough measurements when you text.</p>
                     <div class="commercial-qualifier__result-actions">
@@ -69,11 +78,12 @@
                 stepIndex = 0;
                 started = false;
                 liveRegion.textContent = 'Commercial project qualifier restarted.';
-                renderQuestion();
+                renderQuestion({ focusChoice: true });
             });
+            focusWithoutScroll(body.querySelector('.commercial-qualifier__result h3'));
         };
 
-        const renderQuestion = () => {
+        const renderQuestion = ({ focusChoice = false } = {}) => {
             const question = model.QUESTIONS[stepIndex];
             setProgress(false);
             body.innerHTML = `
@@ -113,10 +123,14 @@
                     }
 
                     stepIndex += 1;
-                    renderQuestion();
+                    renderQuestion({ focusChoice: true });
                 });
                 choices.appendChild(button);
             });
+
+            if (focusChoice) {
+                focusWithoutScroll(body.querySelector('.commercial-qualifier__choice'));
+            }
         };
 
         renderQuestion();

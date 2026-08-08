@@ -70,6 +70,30 @@ const headerCovers = (header, route) => {
   return source.slice(2, -1).split('|').includes(route.replace(/^\//, ''));
 };
 
+const requireCommercialAdsConfig = (html, pageLabel) => {
+  const trackingScript = html.search(/<script\b[^>]*src=["']\/lead-tracking\.js["'][^>]*><\/script>/i);
+  const configStart = html.indexOf('window.OBSIDIAN_GOOGLE_ADS_CONFIG');
+  assert.ok(configStart >= 0, `${pageLabel} must define window.OBSIDIAN_GOOGLE_ADS_CONFIG.`);
+  assert.ok(configStart < trackingScript, `${pageLabel} must define the commercial Ads config before lead-tracking.js.`);
+
+  const configEnd = html.indexOf('</script>', configStart);
+  const configSource = html.slice(configStart, configEnd);
+  assert.match(configSource, /\bid\s*:\s*["']AW-18301955625["']/, `${pageLabel} must use the commercial Ads account.`);
+  assert.match(
+    configSource,
+    /\bwebsiteCallConfigId\s*:\s*["']AW-18301955625\/1asCCLrhh9wcEKnchpdE["']/,
+    `${pageLabel} must configure the qualified 60-second website-call action.`
+  );
+  assert.match(configSource, /\bphone_click\s*:\s*["']["']/, `${pageLabel} phone clicks must remain diagnostic only.`);
+  assert.match(configSource, /\btext_click\s*:\s*["']["']/, `${pageLabel} text clicks must remain diagnostic only.`);
+  assert.match(
+    html.slice(0, trackingScript),
+    /gtag\s*\(\s*["']config["']\s*,\s*["']AW-18301955625["']\s*\)/,
+    `${pageLabel} must initialize the commercial Ads account.`
+  );
+  assert.doesNotMatch(html, /AW-17846304809/, `${pageLabel} must not initialize or inherit the mobile-tint Ads account.`);
+};
+
 const organic = await readOptional('commercial-window-film');
 const paid = await readOptional('commercial-window-film-socal');
 const qualifierController = await readOptional('commercial-window-film-qualifier.js');
@@ -81,6 +105,9 @@ const vercel = JSON.parse(await readFile(new URL('vercel.json', root), 'utf8'));
 assert.ok(organic, 'The /commercial-window-film organic page must exist.');
 assert.ok(paid, 'The /commercial-window-film-socal paid page must exist.');
 assert.ok(qualifierController, 'The paid page qualifier controller must exist.');
+
+requireCommercialAdsConfig(organic, 'The organic page');
+requireCommercialAdsConfig(paid, 'The paid page');
 
 assert.match(metaContent(organic, 'robots'), /^index\s*,\s*follow$/i, 'The organic page must be indexable.');
 assert.equal(
@@ -173,6 +200,26 @@ assert.deepEqual(
   'The qualifier controller must use only the four approved commercial engagement events.'
 );
 assert.doesNotMatch(qualifierController, /gtag\s*\([\s\S]{0,160}['"]conversion['"]|\bsend_to\b|\bAW-\d+/i, 'Qualifier progress and completion must never fire a Google Ads conversion.');
+assert.match(
+  qualifierController,
+  /\.focus\s*\(\s*\{\s*preventScroll\s*:\s*true\s*\}\s*\)/,
+  'Dynamic qualifier steps must restore focus without causing scroll jumps.'
+);
+assert.match(
+  qualifierController,
+  /querySelector\(\s*['"]\.commercial-qualifier__choice['"]\s*\)/,
+  'The qualifier must focus the first choice after a step replacement.'
+);
+assert.match(
+  qualifierController,
+  /querySelector\(\s*['"]\.commercial-qualifier__result h3['"]\s*\)/,
+  'The qualifier must focus the result heading after completion.'
+);
+assert.match(
+  qualifierController,
+  /renderQuestion\(\s*\{\s*focusChoice\s*:\s*true\s*\}\s*\)/,
+  'Restart and answer transitions must request focus on the newly rendered first choice.'
+);
 
 assert.match(devServer, /"\/commercial-window-film"\s*:\s*"\/commercial-window-film"/, 'The organic local route must resolve.');
 assert.match(devServer, /"\/commercial-window-film-socal"\s*:\s*"\/commercial-window-film-socal"/, 'The paid local route must resolve.');
