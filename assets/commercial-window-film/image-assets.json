@@ -1,0 +1,77 @@
+{
+  "schema_version": 1,
+  "google_ads_specs": {
+    "square": "1200x1200",
+    "landscape": "1200x628",
+    "maximum_bytes": 5120000,
+    "safe_area": "central 80 percent"
+  },
+  "rights_confirmed": true,
+  "rights_basis": "The user supplied the authentic office photo and explicitly authorized packaging it with the generated commercial visualization assets for the website and Google Ads.",
+  "assets": [
+    {
+      "path": "ads/real-office-square.jpg",
+      "provenance": "user-provided real commercial office photo; high-fidelity crop",
+      "format": "square",
+      "dimensions": "1200x1200",
+      "bytes": 283996,
+      "sha256": "38f62bdb7c06d45f20f42b756e1a494ab1a98eb40cc842180fac58431bd26cb4"
+    },
+    {
+      "path": "ads/real-office-landscape.jpg",
+      "provenance": "user-provided real commercial office photo; high-fidelity crop",
+      "format": "landscape",
+      "dimensions": "1200x628",
+      "bytes": 151132,
+      "sha256": "6adfd7e9cee0ccaed4a183bbde8c6efdda113bcd29d602a57f3dfbfabd938165"
+    },
+    {
+      "path": "ads/generated-storefront-square.jpg",
+      "provenance": "OpenAI-generated commercial storefront application visualization",
+      "format": "square",
+      "dimensions": "1200x1200",
+      "bytes": 225316,
+      "sha256": "19bb2170bbfb9f5484fea00a48e6d1dcf4115dcb8a7efd23e42168e4148b0af9"
+    },
+    {
+      "path": "ads/generated-storefront-landscape.jpg",
+      "provenance": "OpenAI-generated commercial storefront application visualization",
+      "format": "landscape",
+      "dimensions": "1200x628",
+      "bytes": 197917,
+      "sha256": "67007f26bf6b30e97003d6545a6bfb43e553766961baba27a842311c9b66b17b"
+    },
+    {
+      "path": "ads/generated-privacy-office-square.jpg",
+      "provenance": "OpenAI-generated commercial office privacy-film application visualization",
+      "format": "square",
+      "dimensions": "1200x1200",
+      "bytes": 179995,
+      "sha256": "1e9e0cd946779d0bec7b02f0ac26c8bdefefeb69179f8c548f80872c0104dcba"
+    },
+    {
+      "path": "ads/generated-privacy-office-landscape.jpg",
+      "provenance": "OpenAI-generated commercial office privacy-film application visualization",
+      "format": "landscape",
+      "dimensions": "1200x628",
+      "bytes": 117584,
+      "sha256": "8b08072fa5f8d4b45dccb8065d5c0bef48266a66828fc7e0581f24ea1dddd66a"
+    },
+    {
+      "path": "ads/generated-lobby-square.jpg",
+      "provenance": "OpenAI-generated commercial lobby solar-film application visualization",
+      "format": "square",
+      "dimensions": "1200x1200",
+      "bytes": 295506,
+      "sha256": "d8ff833a34e937ed16f178e99b19cd503825117fb3497a854435732ec0f70285"
+    },
+    {
+      "path": "ads/generated-lobby-landscape.jpg",
+      "provenance": "OpenAI-generated commercial lobby solar-film application visualization",
+      "format": "landscape",
+      "dimensions": "1200x628",
+      "bytes": 142039,
+      "sha256": "0282519044a22712b710aa43992e7ef1c78a69b1a06e84d8603f81c63f6d27e9"
+    }
+  ]
+}

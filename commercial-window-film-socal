@@ -70,11 +70,11 @@
                         rough measurements are ready. Use the brief below if the scope is still taking shape.</p>
                 </div>
                 <figure class="commercial-paid-hero__figure">
-                    <img src="/assets/architectural-commercial-glass.jpg"
-                        alt="Sunlit glass facade on a commercial building" width="1400" height="2100"
+                    <img src="/assets/commercial-window-film/obsidian-commercial-office.webp"
+                        alt="Commercial office glazing photographed from inside a real project" width="1400" height="2100"
                         fetchpriority="high">
-                    <figcaption><strong>Application example</strong><span>Generic architectural image — not an
-                            Obsidian project.</span></figcaption>
+                    <figcaption><strong>Real project photo</strong><span>Commercial office glazing photographed on
+                            site.</span></figcaption>
                 </figure>
             </div>
             <div class="commercial-paid-hero__index" aria-label="Page index">
@@ -116,11 +116,11 @@
         <section class="commercial-section commercial-section--image" id="privacy-decorative">
             <div class="commercial-shell commercial-image-callout">
                 <figure>
-                    <img src="/assets/architectural-private-glass.jpg"
-                        alt="Architectural glass shown with a privacy treatment" width="1400" height="933"
+                    <img src="/assets/commercial-window-film/commercial-privacy-visualization.webp"
+                        alt="Commercial conference room glass with frosted privacy film bands" width="1400" height="933"
                         loading="lazy">
-                    <figcaption><strong>Application example</strong> Generic architectural image — not an Obsidian
-                        project.</figcaption>
+                    <figcaption><strong>Application visualization</strong> AI-generated commercial privacy-film
+                        concept — not an Obsidian project.</figcaption>
                 </figure>
                 <div>
                     <p class="commercial-overline">Privacy + decorative film</p>

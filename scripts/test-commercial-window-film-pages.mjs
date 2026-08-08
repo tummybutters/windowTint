@@ -101,13 +101,25 @@ const commercialCss = await readOptional('commercial-window-film.css');
 const devServer = await readFile(new URL('dev_server.py', root), 'utf8');
 const sitemap = await readFile(new URL('sitemap.xml', root), 'utf8');
 const vercel = JSON.parse(await readFile(new URL('vercel.json', root), 'utf8'));
+const commercialPhoto = await readOptional('assets/commercial-window-film/obsidian-commercial-office.webp');
+const privacyVisualization = await readOptional('assets/commercial-window-film/commercial-privacy-visualization.webp');
 
 assert.ok(organic, 'The /commercial-window-film organic page must exist.');
 assert.ok(paid, 'The /commercial-window-film-socal paid page must exist.');
 assert.ok(qualifierController, 'The paid page qualifier controller must exist.');
+assert.ok(commercialPhoto, 'The commercial pages must ship the real office project photo.');
+assert.ok(privacyVisualization, 'The commercial pages must ship the privacy-film application visualization.');
 
 requireCommercialAdsConfig(organic, 'The organic page');
 requireCommercialAdsConfig(paid, 'The paid page');
+
+for (const [html, label] of [[organic, 'organic'], [paid, 'paid']]) {
+  assert.match(html, /src=["']\/assets\/commercial-window-film\/obsidian-commercial-office\.webp["']/i, `${label} page must use the real commercial office photo.`);
+  assert.match(html, /src=["']\/assets\/commercial-window-film\/commercial-privacy-visualization\.webp["']/i, `${label} page must use the commercial privacy visualization.`);
+  assert.match(visibleText(html), /Real project photo/i, `${label} page must visibly identify the real project photo.`);
+  assert.match(visibleText(html), /AI-generated commercial privacy-film concept/i, `${label} page must disclose the generated visualization.`);
+  assert.doesNotMatch(html, /Generic architectural image/i, `${label} page must not retain generic architectural imagery.`);
+}
 
 assert.match(metaContent(organic, 'robots'), /^index\s*,\s*follow$/i, 'The organic page must be indexable.');
 assert.equal(
