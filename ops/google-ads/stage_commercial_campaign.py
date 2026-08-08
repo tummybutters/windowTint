@@ -39,6 +39,12 @@ QUALIFIED_WEBSITE_CALL_ACTION = "customers/8605345590/conversionActions/76932282
 CALL_ASSET = "customers/8605345590/assets/320657161326"
 APPLY_CONFIRMATION_TOKEN = "CREATE_PAUSED_COMMERCIAL_CAMPAIGN"
 ENABLE_CONFIRMATION_TOKEN = "ENABLE_REVIEWED_COMMERCIAL_CAMPAIGN"
+REVIEWED_RSA_RESOURCES = (
+    "customers/8605345590/adGroupAds/196849750257~820325919497",
+    "customers/8605345590/adGroupAds/196849750297~820325919500",
+    "customers/8605345590/adGroupAds/196849750457~820325919503",
+    "customers/8605345590/adGroupAds/196849750497~820325919506",
+)
 
 # This compatibility constant is deliberately empty: live
 # customer_conversion_goal rows, not an invented static list, define every
@@ -527,7 +533,12 @@ def verify_apply_readback(client: Any, plan: dict[str, Any]) -> dict[str, Any]:
     return {"campaign": matching[0].get("resourceName"), "status": "PAUSED", "readback": "GAQL"}
 
 
-def verify_full_campaign_readback(client: Any, plan: dict[str, Any], campaign_resource: str) -> dict[str, Any]:
+def verify_full_campaign_readback(
+    client: Any,
+    plan: dict[str, Any],
+    campaign_resource: str,
+    expected_rsa_status: str = "PAUSED",
+) -> dict[str, Any]:
     """Compare every staged family by GAQL before any human enable review.
 
     This routine is intentionally only reached after the atomic request, or for
@@ -536,7 +547,7 @@ def verify_full_campaign_readback(client: Any, plan: dict[str, Any], campaign_re
     escaped = campaign_resource
     queries = {
         "campaign": f"SELECT campaign.resource_name, campaign.name, campaign.status, campaign.advertising_channel_type, campaign.bidding_strategy_type, campaign.campaign_budget, campaign.manual_cpc.enhanced_cpc_enabled, campaign.network_settings.target_google_search, campaign.network_settings.target_search_network, campaign.network_settings.target_content_network, campaign.network_settings.target_partner_search_network, campaign.geo_target_type_setting.positive_geo_target_type, campaign.geo_target_type_setting.negative_geo_target_type, campaign.contains_eu_political_advertising, campaign_budget.resource_name, campaign_budget.name, campaign_budget.amount_micros, campaign_budget.delivery_method, campaign_budget.status FROM campaign WHERE campaign.resource_name = '{escaped}'",
-        "criteria": f"SELECT campaign_criterion.type, campaign_criterion.negative, campaign_criterion.status, campaign_criterion.location.geo_target_constant, campaign_criterion.language.language_constant, campaign_criterion.device.type, campaign_criterion.keyword.text, campaign_criterion.keyword.match_type FROM campaign_criterion WHERE campaign_criterion.campaign = '{escaped}'",
+        "criteria": f"SELECT campaign_criterion.type, campaign_criterion.negative, campaign_criterion.status, campaign_criterion.location.geo_target_constant, campaign_criterion.language.language_constant, campaign_criterion.device.type, campaign_criterion.bid_modifier, campaign_criterion.keyword.text, campaign_criterion.keyword.match_type FROM campaign_criterion WHERE campaign_criterion.campaign = '{escaped}'",
         "ad_groups": f"SELECT ad_group.resource_name, ad_group.name, ad_group.status, ad_group.cpc_bid_micros FROM ad_group WHERE ad_group.campaign = '{escaped}'",
         "keywords": f"SELECT ad_group_criterion.ad_group, ad_group_criterion.status, ad_group_criterion.keyword.text, ad_group_criterion.keyword.match_type, ad_group_criterion.cpc_bid_micros FROM ad_group_criterion WHERE campaign.resource_name = '{escaped}' AND ad_group_criterion.type = KEYWORD",
         "rsas": f"SELECT ad_group_ad.ad_group, ad_group_ad.status, ad_group_ad.ad.type, ad_group_ad.ad.final_urls, ad_group_ad.ad.responsive_search_ad.headlines, ad_group_ad.ad.responsive_search_ad.descriptions FROM ad_group_ad WHERE campaign.resource_name = '{escaped}' AND ad_group_ad.ad.type = RESPONSIVE_SEARCH_AD",
@@ -568,7 +579,21 @@ def verify_full_campaign_readback(client: Any, plan: dict[str, Any], campaign_re
     expected_geo = {(x["geo_target_constant"], x["negative"]) for x in plan["locations"]}
     _expect(actual_geo == expected_geo, "location criteria readback drift")
     _expect(all(x.get("status") == "ENABLED" for x in locations), "criterion status readback drift")
-    _expect(not any(x.get("type") == "DEVICE" or x.get("device") for x in locations), "device criterion drift")
+    device_rows = [x for x in locations if x.get("type") == "DEVICE"]
+    actual_devices = {
+        (
+            x.get("device", {}).get("type"),
+            x.get("status"),
+            bool(x.get("negative")),
+            str(x.get("bidModifier", 1.0)),
+        )
+        for x in device_rows
+    }
+    expected_device_types = {"DESKTOP", "MOBILE", "TABLET"}
+    _expect(
+        actual_devices == {(device, "ENABLED", False, "1.0") for device in expected_device_types},
+        "device criterion drift",
+    )
     languages = [x.get("language", {}).get("languageConstant") for x in locations if x.get("language")]
     _expect(languages == [config.LANGUAGE_CONSTANT], "language criterion readback drift")
     negative = {(x.get("keyword", {}).get("text"), x.get("keyword", {}).get("matchType")) for x in locations if x.get("negative") and x.get("keyword")}
@@ -584,7 +609,7 @@ def verify_full_campaign_readback(client: Any, plan: dict[str, Any], campaign_re
     rsas = [r.get("adGroupAd", {}) for r in rows["rsas"]]
     expected_rsas = {(group["name"], tuple(group["rsa"]["headlines"]), tuple(group["rsa"]["descriptions"]), tuple(group["rsa"]["final_urls"])) for group in plan["ad_groups"]}
     actual_rsas = {(name_by_resource.get(item.get("adGroup")), tuple(x.get("text") for x in item.get("ad", {}).get("responsiveSearchAd", {}).get("headlines", [])), tuple(x.get("text") for x in item.get("ad", {}).get("responsiveSearchAd", {}).get("descriptions", [])), tuple(item.get("ad", {}).get("finalUrls", []))) for item in rsas}
-    _expect(len(rsas) == 4 and all(x.get("status") == "PAUSED" for x in rsas) and actual_rsas == expected_rsas, "RSA headline/description readback drift")
+    _expect(len(rsas) == 4 and all(x.get("status") == expected_rsa_status for x in rsas) and actual_rsas == expected_rsas, "RSA headline/description readback drift")
     associations = [r.get("campaignAsset", {}) for r in rows["assets"]]
     _expect(len(associations) == 18, "campaign asset association readback drift")
     _expect(all(item.get("status") == "ENABLED" for item in associations), "asset association status readback drift")
@@ -630,7 +655,24 @@ def verify_full_campaign_readback(client: Any, plan: dict[str, Any], campaign_re
     return {"campaign": campaign_resource, "readback": "GAQL", "synthetic_attestation": "verified", "checked": sorted(rows)}
 
 
-def build_enable_operation(campaign_resource_name: str = "$reviewed_paused_campaign") -> dict[str, Any]:
+def build_rsa_status_operations(resource_names: list[str], status: str) -> list[dict[str, Any]]:
+    """Build status-only updates for the four exact reviewed commercial RSAs."""
+    if status not in {"PAUSED", "ENABLED"}:
+        raise GuardError("unsupported RSA status")
+    if len(resource_names) != 4 or len(set(resource_names)) != 4:
+        raise GuardError("exactly four unique RSA resources are required")
+    if set(resource_names) != set(REVIEWED_RSA_RESOURCES):
+        raise GuardError("RSA resources do not match the reviewed RSA set")
+    return [
+        {
+            "update": {"resourceName": resource_name, "status": status},
+            "updateMask": "status",
+        }
+        for resource_name in resource_names
+    ]
+
+
+def build_enable_operation(campaign_resource_name: str) -> dict[str, Any]:
     """Return—not execute—the sole permitted paused-to-enabled operation."""
     return {"name": "enable", "service": "campaigns", "operations": [{"update": {"resourceName": campaign_resource_name, "status": "ENABLED"}, "updateMask": "status"}]}
 
@@ -661,7 +703,7 @@ def command_mode(args) -> str:
 def main(argv=None) -> int:
     args = parse_args(argv); mode = command_mode(args)
     env = rest.load_env(args.env_file)
-    client = rest.build_client_from_env(env, customer_id=config.CUSTOMER_ID, allow_mutation=mode != "validate")
+    client = rest.build_client_from_env(env, customer_id=config.CUSTOMER_ID, allow_mutation=mode == "apply")
     raw = run_read_only_queries(client); state = state_from_queries(raw); plan = build_plan(state)
     plan["reconciliation"] = reconcile_plan_named_resources(plan, state["named_resources"])
     evidence = build_evidence(plan, state); args.evidence.parent.mkdir(parents=True, exist_ok=True); args.evidence.write_text(json.dumps(evidence, indent=2, sort_keys=True) + "\n")
@@ -677,9 +719,13 @@ def main(argv=None) -> int:
         campaign_resource = next(item for item in manifest["resources"]["atomic_paused_create"] if "/campaigns/" in item)
         verify_full_campaign_readback(client, plan, campaign_resource)
         print("Paused commercial campaign resources staged; no enable operation was sent."); return 0
-    # Enable is intentionally a dry, separately reviewable operation.  It is
-    # never sent by this program, even with the confirmation token.
-    print(json.dumps(build_enable_operation(), indent=2))
+    # Enable is intentionally a dry, separately reviewable operation. It first
+    # verifies the final ready state, then prints the sole campaign update.
+    retry_action = assert_retry_safe(plan["reconciliation"])
+    _expect(retry_action == "readback_only", "enable review requires one exact existing campaign")
+    existing_campaign = plan["reconciliation"]["campaign"]["resource_name"]
+    verify_full_campaign_readback(client, plan, existing_campaign, expected_rsa_status="ENABLED")
+    print(json.dumps(build_enable_operation(existing_campaign), indent=2))
     return 0
 
 

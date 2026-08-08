@@ -992,172 +992,108 @@
     ],
     "reconciliation": {
       "ad_group:Commercial Window Film": {
-        "decision": "create",
-        "expected": {
-          "cpcBidMicros": "5250000",
-          "name": "Commercial Window Film",
-          "status": "ENABLED"
-        }
+        "decision": "reuse",
+        "resource_name": "customers/8605345590/adGroups/196849750257"
       },
       "ad_group:Privacy Decorative Film": {
-        "decision": "create",
-        "expected": {
-          "cpcBidMicros": "5250000",
-          "name": "Privacy Decorative Film",
-          "status": "ENABLED"
-        }
+        "decision": "reuse",
+        "resource_name": "customers/8605345590/adGroups/196849750457"
       },
       "ad_group:Safety Security Film": {
-        "decision": "create",
-        "expected": {
-          "cpcBidMicros": "2500000",
-          "name": "Safety Security Film",
-          "status": "ENABLED"
-        }
+        "decision": "reuse",
+        "resource_name": "customers/8605345590/adGroups/196849750497"
       },
       "ad_group:Solar Heat Glare Film": {
-        "decision": "create",
-        "expected": {
-          "cpcBidMicros": "2250000",
-          "name": "Solar Heat Glare Film",
-          "status": "ENABLED"
-        }
+        "decision": "reuse",
+        "resource_name": "customers/8605345590/adGroups/196849750297"
       },
       "asset:Commercial Call": {
-        "decision": "create",
-        "expected": {
-          "name": "Search | OC | Commercial Window Film | Obsidian Build | Commercial Call"
-        }
+        "decision": "reuse",
+        "resource_name": "customers/8605345590/assets/405260301966"
       },
       "asset:Commercial Solutions": {
-        "decision": "create",
-        "expected": {
-          "name": "Search | OC | Commercial Window Film | Obsidian Build | Commercial Solutions"
-        }
+        "decision": "reuse",
+        "resource_name": "customers/8605345590/assets/405190580932"
       },
       "asset:Commercial Spaces": {
-        "decision": "create",
-        "expected": {
-          "name": "Search | OC | Commercial Window Film | Obsidian Build | Commercial Spaces"
-        }
+        "decision": "reuse",
+        "resource_name": "customers/8605345590/assets/405190580941"
       },
       "asset:Office & Storefront": {
-        "decision": "create",
-        "expected": {
-          "name": "Search | OC | Commercial Window Film | Obsidian Build | Office & Storefront"
-        }
+        "decision": "reuse",
+        "resource_name": "customers/8605345590/assets/405260301969"
       },
       "asset:Our Process": {
-        "decision": "create",
-        "expected": {
-          "name": "Search | OC | Commercial Window Film | Obsidian Build | Our Process"
-        }
+        "decision": "reuse",
+        "resource_name": "customers/8605345590/assets/405190580935"
       },
       "asset:Privacy & Decorative": {
-        "decision": "create",
-        "expected": {
-          "name": "Search | OC | Commercial Window Film | Obsidian Build | Privacy & Decorative"
-        }
+        "decision": "reuse",
+        "resource_name": "customers/8605345590/assets/405190580938"
       },
       "asset:Request Site Review": {
-        "decision": "create",
-        "expected": {
-          "name": "Search | OC | Commercial Window Film | Obsidian Build | Request Site Review"
-        }
+        "decision": "reuse",
+        "resource_name": "customers/8605345590/assets/405260313804"
       },
       "asset:Search | OC | Commercial Window Film | Obsidian Build | Image generated-lobby-landscape 0282519044a2": {
-        "decision": "create",
-        "expected": {
-          "name": "Search | OC | Commercial Window Film | Obsidian Build | Image generated-lobby-landscape 0282519044a2"
-        }
+        "decision": "reuse",
+        "resource_name": "customers/8605345590/assets/405260301972"
       },
       "asset:Search | OC | Commercial Window Film | Obsidian Build | Image generated-lobby-square d8ff833a34e9": {
-        "decision": "create",
-        "expected": {
-          "name": "Search | OC | Commercial Window Film | Obsidian Build | Image generated-lobby-square d8ff833a34e9"
-        }
+        "decision": "reuse",
+        "resource_name": "customers/8605345590/assets/405260313810"
       },
       "asset:Search | OC | Commercial Window Film | Obsidian Build | Image generated-privacy-office-landscape 8b08072fa5f8": {
-        "decision": "create",
-        "expected": {
-          "name": "Search | OC | Commercial Window Film | Obsidian Build | Image generated-privacy-office-landscape 8b08072fa5f8"
-        }
+        "decision": "reuse",
+        "resource_name": "customers/8605345590/assets/405190580959"
       },
       "asset:Search | OC | Commercial Window Film | Obsidian Build | Image generated-privacy-office-square 1e9e0cd94677": {
-        "decision": "create",
-        "expected": {
-          "name": "Search | OC | Commercial Window Film | Obsidian Build | Image generated-privacy-office-square 1e9e0cd94677"
-        }
+        "decision": "reuse",
+        "resource_name": "customers/8605345590/assets/405190580956"
       },
       "asset:Search | OC | Commercial Window Film | Obsidian Build | Image generated-storefront-landscape 67007f26bf6b": {
-        "decision": "create",
-        "expected": {
-          "name": "Search | OC | Commercial Window Film | Obsidian Build | Image generated-storefront-landscape 67007f26bf6b"
-        }
+        "decision": "reuse",
+        "resource_name": "customers/8605345590/assets/405190580953"
       },
       "asset:Search | OC | Commercial Window Film | Obsidian Build | Image generated-storefront-square 19bb2170bbfb": {
-        "decision": "create",
-        "expected": {
-          "name": "Search | OC | Commercial Window Film | Obsidian Build | Image generated-storefront-square 19bb2170bbfb"
-        }
+        "decision": "reuse",
+        "resource_name": "customers/8605345590/assets/405190580950"
       },
       "asset:Search | OC | Commercial Window Film | Obsidian Build | Image real-office-landscape 6adfd7e9cee0": {
-        "decision": "create",
-        "expected": {
-          "name": "Search | OC | Commercial Window Film | Obsidian Build | Image real-office-landscape 6adfd7e9cee0"
-        }
+        "decision": "reuse",
+        "resource_name": "customers/8605345590/assets/405260313807"
       },
       "asset:Search | OC | Commercial Window Film | Obsidian Build | Image real-office-square 38f62bdb7c06": {
-        "decision": "create",
-        "expected": {
-          "name": "Search | OC | Commercial Window Film | Obsidian Build | Image real-office-square 38f62bdb7c06"
-        }
+        "decision": "reuse",
+        "resource_name": "customers/8605345590/assets/405088317938"
       },
       "asset:Site Review": {
-        "decision": "create",
-        "expected": {
-          "name": "Search | OC | Commercial Window Film | Obsidian Build | Site Review"
-        }
+        "decision": "reuse",
+        "resource_name": "customers/8605345590/assets/405190559614"
       },
       "asset:Types": {
-        "decision": "create",
-        "expected": {
-          "name": "Search | OC | Commercial Window Film | Obsidian Build | Types"
-        }
+        "decision": "reuse",
+        "resource_name": "customers/8605345590/assets/405190580947"
       },
       "asset:Window Film Options": {
-        "decision": "create",
-        "expected": {
-          "name": "Search | OC | Commercial Window Film | Obsidian Build | Window Film Options"
-        }
+        "decision": "reuse",
+        "resource_name": "customers/8605345590/assets/405190580944"
       },
       "budget": {
-        "decision": "create",
-        "expected": {
-          "amountMicros": "25000000",
-          "name": "Search | OC | Commercial Window Film | Obsidian Build | Budget"
-        }
+        "decision": "reuse",
+        "resource_name": "customers/8605345590/campaignBudgets/15773530259"
       },
       "campaign": {
-        "decision": "create",
-        "expected": {
-          "advertisingChannelType": "SEARCH",
-          "name": "Search | OC | Commercial Window Film | Obsidian Build",
-          "status": "PAUSED"
-        }
+        "decision": "reuse",
+        "resource_name": "customers/8605345590/campaigns/24117892229"
       },
       "consultation_action": {
-        "decision": "create",
-        "expected": {
-          "name": "Commercial Consultation Request - Obsidian",
-          "primaryForGoal": false
-        }
+        "decision": "reuse",
+        "resource_name": "customers/8605345590/conversionActions/7714216498"
       },
       "custom_goal": {
-        "decision": "create",
-        "expected": {
-          "name": "Search | OC | Commercial Window Film | Obsidian Build | Qualified 60s Calls Goal"
-        }
+        "decision": "reuse",
+        "resource_name": "customers/8605345590/customConversionGoals/6458609431"
       }
     }
   },

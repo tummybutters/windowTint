@@ -1,0 +1,43 @@
+{
+  "schema_version": 1,
+  "customer_id": "8605345590",
+  "campaign_id": "24117892229",
+  "campaign_name": "Search | OC | Commercial Window Film | Obsidian Build",
+  "campaign_status": "PAUSED",
+  "recorded_at_utc": "2026-08-08T19:34:47Z",
+  "mutation": {
+    "service": "adGroupAds",
+    "http_status": 200,
+    "request_id_digest": "90c811ec28b1b874b35aca89fb78e36d7faf1ceb58df5c5eb4b69ff34ec5c923",
+    "update_mask": "status",
+    "status": "ENABLED",
+    "resources": [
+      "customers/8605345590/adGroupAds/196849750257~820325919497",
+      "customers/8605345590/adGroupAds/196849750297~820325919500",
+      "customers/8605345590/adGroupAds/196849750457~820325919503",
+      "customers/8605345590/adGroupAds/196849750497~820325919506"
+    ]
+  },
+  "campaign_pause_correction": {
+    "reason": "Campaign status changed to ENABLED after the paused-state audit; restored to the required one-switch launch state.",
+    "service": "campaigns",
+    "http_status": 200,
+    "request_id_digest": "e3402e04ae3403e060678a1831d011abc47fdef874e42b945c3336c6a5438ea7",
+    "resource_name": "customers/8605345590/campaigns/24117892229",
+    "update_mask": "status",
+    "status": "PAUSED"
+  },
+  "post_mutation_readback": {
+    "campaign_status": "PAUSED",
+    "rsa_count": 4,
+    "rsa_status": "ENABLED",
+    "full_gaql_contract": "PASS",
+    "remaining_operation_count": 1,
+    "remaining_operation": {
+      "service": "campaigns",
+      "resource_name": "customers/8605345590/campaigns/24117892229",
+      "update_mask": "status",
+      "status": "ENABLED"
+    }
+  }
+}

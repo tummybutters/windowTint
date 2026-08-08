@@ -360,6 +360,32 @@ class CommercialPlanTests(unittest.TestCase):
         operation = self.stager.build_enable_operation("customers/8605345590/campaigns/123")
         self.assertEqual(operation["operations"][0]["update"]["status"], "ENABLED")
 
+    def test_rsa_prepare_operations_enable_exactly_four_reviewed_ads(self):
+        resources = [
+            f"customers/8605345590/adGroupAds/{ad_group_id}~{ad_id}"
+            for ad_group_id, ad_id in (
+                ("196849750257", "820325919497"),
+                ("196849750297", "820325919500"),
+                ("196849750457", "820325919503"),
+                ("196849750497", "820325919506"),
+            )
+        ]
+        operations = self.stager.build_rsa_status_operations(resources, "ENABLED")
+        self.assertEqual(len(operations), 4)
+        self.assertEqual(
+            [item["update"]["resourceName"] for item in operations],
+            resources,
+        )
+        self.assertTrue(all(item["update"]["status"] == "ENABLED" for item in operations))
+        self.assertTrue(all(item["updateMask"] == "status" for item in operations))
+        with self.assertRaisesRegex(self.stager.GuardError, "exactly four"):
+            self.stager.build_rsa_status_operations(resources[:3], "ENABLED")
+        with self.assertRaisesRegex(self.stager.GuardError, "unsupported RSA status"):
+            self.stager.build_rsa_status_operations(resources, "REMOVED")
+        wrong_resources = [*resources[:3], "customers/8605345590/adGroupAds/999~888"]
+        with self.assertRaisesRegex(self.stager.GuardError, "reviewed RSA set"):
+            self.stager.build_rsa_status_operations(wrong_resources, "ENABLED")
+
     def test_goal_readback_rejects_any_regular_biddable_proxy(self):
         target = {
             "goal_config": {"customConversionGoal": "customers/8605345590/customConversionGoals/99"},
@@ -544,7 +570,7 @@ class CommercialPlanTests(unittest.TestCase):
         source = inspect.getsource(self.stager.verify_full_campaign_readback)
         for field in (
             "campaign.bidding_strategy_type", "campaign_budget.name", "campaign_budget.status",
-            "campaign_criterion.type", "campaign_criterion.device.type", "campaign_asset.status",
+            "campaign_criterion.type", "campaign_criterion.device.type", "campaign_criterion.bid_modifier", "campaign_asset.status",
             "asset.sitelink_asset.link_text",
             "asset.final_urls",
             "asset.callout_asset.callout_text", "asset.structured_snippet_asset.header",
@@ -558,6 +584,14 @@ class CommercialPlanTests(unittest.TestCase):
         ):
             self.assertIn(field, source)
         self.assertNotIn("except rest.GoogleAdsRestError", source)
+        self.assertIn('{"DESKTOP", "MOBILE", "TABLET"}', source)
+        self.assertIn("expected_rsa_status", source)
+
+    def test_enable_operation_requires_a_resolved_campaign_resource(self):
+        with self.assertRaises(TypeError):
+            self.stager.build_enable_operation()
+        source = inspect.getsource(self.stager.build_enable_operation)
+        self.assertNotIn("$reviewed_paused_campaign", source)
 
     def test_google_ads_response_normalizes_direct_operation_results(self):
         class Response:
