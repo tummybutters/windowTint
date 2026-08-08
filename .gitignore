@@ -1,3 +1,4 @@
 .firecrawl/
 .playwright-cli/
 output/
+.vercel
