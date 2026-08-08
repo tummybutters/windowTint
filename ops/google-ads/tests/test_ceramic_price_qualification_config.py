@@ -22,6 +22,12 @@ class CeramicPriceQualificationConfigTests(unittest.TestCase):
         self.assertEqual(config.PROTECTED_AD_GROUP_IDS, {"199530570158", "199530652518"})
         self.assertEqual(config.DUPLICATE_CUSTOMER_ID, "8605345590")
         self.assertEqual(config.DUPLICATE_CAMPAIGN_ID, "24058475904")
+        self.assertEqual(config.EXPECTED_LOCATION_IDS, {
+            "1013532", "1013705", "1013883", "1013921", "1013925",
+            "1014017", "1014058", "1014171", "1014352", "9051776",
+        })
+        self.assertEqual(config.PAUSED_WASTE_PHRASE_CRITERION_ID, "341345628706")
+        self.assertEqual(config.EXPECTED_CAMPAIGN_NEGATIVE_COUNT, 59)
 
     def test_price_is_visible_and_pinned(self):
         for ad in (config.CORE_RSA, config.COST_RSA):

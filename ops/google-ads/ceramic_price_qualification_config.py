@@ -18,6 +18,23 @@ PROTECTED_AD_GROUP_IDS = frozenset({"199530570158", "199530652518"})
 DUPLICATE_CUSTOMER_ID = "8605345590"
 DUPLICATE_CAMPAIGN_ID = "24058475904"
 
+EXPECTED_LOCATION_IDS = frozenset(
+    {
+        "1013532",  # Aliso Viejo
+        "1013705",  # Costa Mesa
+        "1013883",  # Irvine
+        "1013921",  # Laguna Hills
+        "1013925",  # Lake Forest
+        "1014017",  # Mission Viejo
+        "1014058",  # Newport Beach
+        "1014171",  # Rancho Santa Margarita
+        "1014352",  # Tustin
+        "9051776",  # Coto de Caza
+    }
+)
+PAUSED_WASTE_PHRASE_CRITERION_ID = "341345628706"
+EXPECTED_CAMPAIGN_NEGATIVE_COUNT = 59
+
 OLD_CORE_AD_IDS = frozenset({"818560843375"})
 OLD_COST_AD_IDS = frozenset({"818560843378", "819021913646"})
 
