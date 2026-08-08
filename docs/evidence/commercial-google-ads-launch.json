@@ -1,0 +1,37 @@
+{
+  "schema_version": 1,
+  "customer_id": "8605345590",
+  "campaign_id": "24117892229",
+  "campaign_name": "Search | OC | Commercial Window Film | Obsidian Build",
+  "recorded_at_utc": "2026-08-08T19:41:19Z",
+  "authorization": "User confirmed that enabling the campaign was intentional.",
+  "launch_mutation": {
+    "service": "campaigns",
+    "http_status": 200,
+    "request_id_digest": "3d75bf26a4e9292328a0932d01eb3e88020faac968ed1fc66451b94742b05890",
+    "resource_name": "customers/8605345590/campaigns/24117892229",
+    "update_mask": "status",
+    "status": "ENABLED"
+  },
+  "live_readback": {
+    "campaign_status": "ENABLED",
+    "campaign_serving_status": "SERVING",
+    "campaign_primary_status": "PENDING",
+    "campaign_primary_status_reasons": [
+      "MOST_ADS_UNDER_REVIEW"
+    ],
+    "daily_budget_micros": 25000000,
+    "rsa_count": 4,
+    "rsa_status": "ENABLED",
+    "rsa_primary_status": "PENDING",
+    "rsa_review_status": "REVIEW_IN_PROGRESS",
+    "rsa_approval_status": "UNKNOWN",
+    "rsa_primary_status_reasons": [
+      "AD_GROUP_AD_UNDER_REVIEW"
+    ],
+    "date": "2026-08-08",
+    "impressions": 0,
+    "clicks": 0,
+    "cost_micros": 0
+  }
+}
