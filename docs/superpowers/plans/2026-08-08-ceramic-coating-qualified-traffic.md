@@ -298,7 +298,7 @@ COST_DESCRIPTIONS = (
 )
 ```
 
-Set `CORE_RSA.finalUrls` to `https://www.obsidianautoworksoc.com/ceramic-coating`, display paths to `ceramic-coating` and `packages-795`, and `COST_RSA.finalUrls` to `https://www.obsidianautoworksoc.com/ceramic-coating-cost-paint-correction#packages`, display paths to `coating-cost` and `from-795`.
+Set `CORE_RSA.finalUrls` to `https://www.obsidianautoworksoc.com/ceramic-coating`, `path1` to `ceramic-coating`, and `path2` to `packages-795`. Set `COST_RSA.finalUrls` to `https://www.obsidianautoworksoc.com/ceramic-coating-cost-paint-correction#packages`, `path1` to `coating-cost`, and `path2` to `from-795`.
 
 - [ ] **Step 4: Run the config tests**
 
@@ -488,10 +488,11 @@ Each create operation must use:
       "status": "ENABLED",
       "ad": {
         "finalUrls": ad["finalUrls"],
-        "displayUrlPaths": ad["displayUrlPaths"],
         "responsiveSearchAd": {
           "headlines": ad["headlines"],
           "descriptions": ad["descriptions"],
+          "path1": ad["path1"],
+          "path2": ad["path2"],
         },
       },
     }
