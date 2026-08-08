@@ -344,7 +344,13 @@
     ],
     "assets": {
       "call": {
-        "resource_name": "customers/8605345590/assets/320657161326"
+        "call_conversion_action": "customers/8605345590/conversionActions/7441005241",
+        "call_conversion_reporting_state": "USE_RESOURCE_LEVEL_CALL_CONVERSION_ACTION",
+        "country_code": "US",
+        "name": "Search | OC | Commercial Window Film | Obsidian Build | Commercial Call",
+        "phone_number": "+17146007134",
+        "rationale": "Existing call asset reports at account level; commercial campaign requires canonical resource-level 60-second Calls from ads attribution.",
+        "supersedes_existing_asset": "customers/8605345590/assets/320657161326"
       },
       "callouts": [
         "Commercial Spaces",
@@ -660,7 +666,7 @@
       ]
     },
     "customer_id": "8605345590",
-    "fingerprint": "2b780a7f073f8cd516697938ba8c5111378da76488b600a2fad54804f99b07c4",
+    "fingerprint": "a30041f2a6fae3d9f1491fa5b611254dc2507c382208eb0e1267faa0de9cf7f7",
     "locations": [
       {
         "geo_target_constant": "geoTargetConstants/1013532",
@@ -857,6 +863,12 @@
           "status": "ENABLED"
         }
       },
+      "asset:Commercial Call": {
+        "decision": "create",
+        "expected": {
+          "name": "Search | OC | Commercial Window Film | Obsidian Build | Commercial Call"
+        }
+      },
       "asset:Commercial Solutions": {
         "decision": "create",
         "expected": {
@@ -941,8 +953,9 @@
       }
     }
   },
-  "plan_fingerprint": "2b780a7f073f8cd516697938ba8c5111378da76488b600a2fad54804f99b07c4",
+  "plan_fingerprint": "a30041f2a6fae3d9f1491fa5b611254dc2507c382208eb0e1267faa0de9cf7f7",
   "read_only": true,
+  "runtime": "Homebrew Python 3.14 required for live auth",
   "schema_version": 1,
   "source_fingerprint": "d340427914ff0c17ed817c9e4ff594f2e087e60b032ef9c7f6fa81d9d1ad0a2b"
 }

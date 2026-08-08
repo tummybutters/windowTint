@@ -222,7 +222,9 @@ class GoogleAdsRestClient:
                 normalized_results.append({"resourceName": result["resourceName"]})
                 continue
             resources = [
-                nested.get("result", {}).get("resourceName")
+                # googleAds:mutate returns e.g. campaignResult.resourceName
+                # directly; service-specific endpoints may wrap result once.
+                nested.get("resourceName") or nested.get("result", {}).get("resourceName")
                 for nested in result.values()
                 if isinstance(nested, dict)
             ]

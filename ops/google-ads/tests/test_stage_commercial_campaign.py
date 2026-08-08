@@ -212,7 +212,9 @@ class CommercialPlanTests(unittest.TestCase):
 
     def test_asset_plan_uses_existing_call_and_required_extensions(self):
         assets = self.plan["assets"]
-        self.assertEqual(assets["call"]["resource_name"], "customers/8605345590/assets/320657161326")
+        self.assertEqual(assets["call"]["call_conversion_reporting_state"], "USE_RESOURCE_LEVEL_CALL_CONVERSION_ACTION")
+        self.assertEqual(assets["call"]["call_conversion_action"], self.stager.CALLS_FROM_ADS_ACTION)
+        self.assertEqual(assets["call"]["supersedes_existing_asset"], self.stager.CALL_ASSET)
         self.assertEqual(len(assets["sitelinks"]), 4)
         self.assertEqual(
             {item["final_url"].split("#", 1)[1] for item in assets["sitelinks"]},
@@ -295,9 +297,12 @@ class CommercialPlanTests(unittest.TestCase):
         self.assertEqual(by_name["keywords"]["service"], "adGroupCriteria")
         self.assertEqual(by_name["paused_rsas"]["service"], "adGroupAds")
         self.assertTrue(any("language" in op["create"] for op in by_name["criteria"]["operations"]))
-        self.assertEqual(len(by_name["assets"]["operations"]), 9)
+        self.assertEqual(len(by_name["assets"]["operations"]), 10)
         self.assertEqual(len(by_name["campaign_assets"]["operations"]), 10)
-        self.assertEqual(by_name["campaign_assets"]["operations"][0]["create"]["asset"], self.stager.CALL_ASSET)
+        self.assertEqual(by_name["campaign_assets"]["operations"][0]["create"]["asset"], "$result:assets:0")
+        call = by_name["assets"]["operations"][0]["create"]["callAsset"]
+        self.assertEqual(call["callConversionReportingState"], "USE_RESOURCE_LEVEL_CALL_CONVERSION_ACTION")
+        self.assertEqual(call["callConversionAction"], self.stager.CALLS_FROM_ADS_ACTION)
         self.assertNotIn("status", by_name["budget"]["operations"][0]["create"])
         campaign = by_name["campaign"]["operations"][0]["create"]
         self.assertIn("networkSettings", campaign)
@@ -305,7 +310,7 @@ class CommercialPlanTests(unittest.TestCase):
         rsa = by_name["paused_rsas"]["operations"][0]["create"]["ad"]
         self.assertIn("finalUrls", rsa)
         self.assertNotIn("finalUrls", rsa["responsiveSearchAd"])
-        sitelink = by_name["assets"]["operations"][0]["create"]
+        sitelink = by_name["assets"]["operations"][1]["create"]
         self.assertIn("finalUrls", sitelink)
         self.assertNotIn("finalUrls", sitelink["sitelinkAsset"])
         goal = by_name["campaign_goal_isolation"]["operations"][0]["conversionGoalCampaignConfigOperation"]["update"]
@@ -438,6 +443,29 @@ class CommercialPlanTests(unittest.TestCase):
         self.assertEqual([item["completed_phase_count"] for item in snapshots], [1, 2])
         self.assertEqual(result["completed_phase_count"], 2)
         self.assertNotIn("request-1", json.dumps(result))
+
+    def test_atomic_create_uses_one_google_ads_batch_and_valid_temp_references(self):
+        batch = self.stager.build_atomic_create_batch(self.plan)
+        self.assertEqual(batch["service"], "googleAds")
+        self.assertTrue(batch["operations"])
+        encoded = json.dumps(batch, sort_keys=True)
+        self.assertIn("containsEuPoliticalAdvertising", encoded)
+        self.assertIn("DOES_NOT_CONTAIN_EU_POLITICAL_ADVERTISING", encoded)
+        self.assertNotIn("$result:", encoded)
+        self.assertIn("customers/8605345590/campaigns/-2", encoded)
+        self.assertTrue(all(len(op) == 1 for op in batch["operations"]))
+
+    def test_google_ads_response_normalizes_direct_operation_results(self):
+        class Response:
+            status_code = 200
+            text = "{}"
+            headers = {"request-id": "test"}
+            def json(self):
+                return {"mutateOperationResponses": [{"campaignResult": {"resourceName": "customers/8605345590/campaigns/7"}}]}
+        class Session:
+            def post(self, *args, **kwargs): return Response()
+        client = self.rest.GoogleAdsRestClient(customer_id="8605345590", developer_token="d", access_token="a", login_customer_id="1", allow_mutation=True, session=Session())
+        self.assertEqual(client.mutate("googleAds", [{"campaignOperation": {"create": {}}}])["results"], [{"resourceName": "customers/8605345590/campaigns/7"}])
 
 
 if __name__ == "__main__":
