@@ -44,7 +44,7 @@ assert.ok(nanoCeramic, 'The nano ceramic tint variant must exist.');
 assert.ok(css, 'The paid-search variants need a shared stylesheet.');
 
 const squarePattern = /(?:app\.squareup\.com|book\.squareup\.com|squareup\.com\/appointments|square\.site\/appointments)/i;
-const prohibitedBrandPattern = /\b(?:Pure|First[- ]Class)\b/i;
+const prohibitedBrandPattern = /\b(?:Pure Mobile Detailing|First[- ]Class)\b/i;
 const bookingPattern = /href="\/(?:vip-)?booking(?:[?#"])/i;
 const newIntentRoutes = new Set([
   'tesla-model-y-window-tint',
@@ -154,6 +154,30 @@ for (const [name, page] of [
   assert.doesNotMatch(page, /AW-17846304809/, `${name} must not initialize the mobile-tint Ads account.`);
 }
 
+for (const required of [
+  'Ceramic Refresh Package',
+  'GYEON CanCoat EVO',
+  '1.5–2 years',
+  '$795–$995',
+  'Premium Protection Package',
+  'GYEON Pure EVO',
+  '2–3 years',
+  '$1,295–$1,695',
+  'Signature Correction &amp; Coating',
+  'GYEON Mohs EVO',
+  '4 years',
+  '$2,495–$2,995',
+  'Concours Package',
+  'GYEON Syncro EVO',
+  '$3,500+'
+]) {
+  assert.ok(coatingCost.includes(required), `Coating cost page must include ${required}.`);
+}
+assert.match(coatingCost, /Most popular/i);
+assert.match(coatingCost, /Flagship package/i);
+assert.doesNotMatch(coatingCost, /\$(?:550|700|900)\b/);
+assert.doesNotMatch(coatingCost, /warrant(?:y|ies)/i);
+
 assert.match(
   coatingGeneral,
   /<html[^>]+data-lead-service="ceramic_coating"[^>]+data-lead-variant="coating_general_v1"/,
@@ -229,9 +253,10 @@ assert.match(
   /<h1>Ceramic Coating Cost <span>&amp; Paint Correction<\/span><\/h1>/,
   'Coating cost page H1 must literally match coating-cost and paint-correction intent.'
 );
-assert.match(coatingCost, /\$550/, 'Coating cost page must expose the one-year starting price.');
-assert.match(coatingCost, /\$700/, 'Coating cost page must expose the five-year starting price.');
-assert.match(coatingCost, /\$900/, 'Coating cost page must expose the Level 2 starting price.');
+assert.match(coatingCost, /\$795–\$995/, 'Coating cost page must expose the Refresh range.');
+assert.match(coatingCost, /\$1,295–\$1,695/, 'Coating cost page must expose the Premium range.');
+assert.match(coatingCost, /\$2,495–\$2,995/, 'Coating cost page must expose the Signature range.');
+assert.match(coatingCost, /\$3,500\+/, 'Coating cost page must expose the Concours starting price.');
 assert.match(coatingCost, /paint condition/i, 'Coating cost page must qualify prices by paint condition.');
 
 assert.match(coatingIrvine, /Irvine/g, 'Irvine coating page must consistently match local intent.');
