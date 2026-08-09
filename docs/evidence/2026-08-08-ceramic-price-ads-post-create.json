@@ -1,0 +1,723 @@
+{
+  "campaign_id": "24054610950",
+  "created_at": "2026-08-09T00:01:27.995330+00:00",
+  "customer_id": "8591070105",
+  "landing_pages": {
+    "https://www.obsidianautoworksoc.com/ceramic-coating": 200,
+    "https://www.obsidianautoworksoc.com/ceramic-coating-cost-paint-correction": 200
+  },
+  "mode": "validate",
+  "operations": [],
+  "request_id_sha256": null,
+  "result": {},
+  "schema_version": 1,
+  "snapshot": {
+    "ad_groups": {
+      "199530568558": {
+        "cpc_bid_micros": 7000000,
+        "name": "Coating Cost + Paint Correction",
+        "status": "ENABLED"
+      },
+      "199530570158": {
+        "cpc_bid_micros": 8000000,
+        "name": "Ceramic Coating - Cities",
+        "status": "ENABLED"
+      },
+      "199530647918": {
+        "cpc_bid_micros": 9500000,
+        "name": "Ceramic Coating - Core",
+        "status": "ENABLED"
+      },
+      "199530652518": {
+        "cpc_bid_micros": 6000000,
+        "name": "Ceramic Coating - Luxury + EV",
+        "status": "ENABLED"
+      }
+    },
+    "ads": [
+      {
+        "ad_group_id": "199530568558",
+        "ad_id": "818560843378",
+        "descriptions": [
+          {
+            "text": "Cost depends on vehicle size, paint condition, prep, and correction needs."
+          },
+          {
+            "text": "Call for a clear coating plan before booking. We explain what your paint needs."
+          },
+          {
+            "text": "Choose paint enhancement or correction based on visible defects and finish goals."
+          },
+          {
+            "text": "Mobile ceramic coating across Orange County by Obsidian Autoworks."
+          }
+        ],
+        "final_urls": [
+          "https://www.obsidianautoworksoc.com/ceramic-coating"
+        ],
+        "headlines": [
+          {
+            "text": "Ceramic Coating Cost"
+          },
+          {
+            "text": "Paint Correction + Coating"
+          },
+          {
+            "text": "Restore Depth And Gloss"
+          },
+          {
+            "text": "One-Step Paint Enhancement"
+          },
+          {
+            "text": "Prep Matched To Your Paint"
+          },
+          {
+            "text": "Obsidian Autoworks"
+          },
+          {
+            "text": "Call For Coating Options"
+          },
+          {
+            "text": "A Richer, Deeper Finish"
+          },
+          {
+            "text": "Long-Lasting Paint Gloss"
+          },
+          {
+            "text": "Mobile Service Across OC"
+          },
+          {
+            "text": "Paint Correction Near You"
+          },
+          {
+            "text": "Know Prep Before Booking"
+          },
+          {
+            "text": "Text Photos For Guidance"
+          },
+          {
+            "text": "Correction When Needed"
+          },
+          {
+            "text": "Protect Your Vehicle Paint"
+          }
+        ],
+        "path1": "ceramic",
+        "path2": "options",
+        "policy_approval_status": "APPROVED",
+        "primary_status": "ELIGIBLE",
+        "resource_name": "customers/8591070105/adGroupAds/199530568558~818560843378",
+        "status": "ENABLED"
+      },
+      {
+        "ad_group_id": "199530568558",
+        "ad_id": "819021913646",
+        "descriptions": [
+          {
+            "text": "One-year coating with paint enhancement from $550. Five-year options start at $700."
+          },
+          {
+            "text": "Level 2 includes two-step correction and a five-year coating, starting at $900."
+          },
+          {
+            "text": "Text vehicle photos for the right prep, coating length, and clear starting price."
+          },
+          {
+            "text": "Obsidian brings ceramic coating and paint correction to Orange County locations."
+          }
+        ],
+        "final_urls": [
+          "https://www.obsidianautoworksoc.com/ceramic-coating-cost-paint-correction"
+        ],
+        "headlines": [
+          {
+            "text": "Ceramic Coating Cost"
+          },
+          {
+            "text": "Coating Packages From $550"
+          },
+          {
+            "text": "5-Year Coating From $700"
+          },
+          {
+            "text": "Level 2 Coating From $900"
+          },
+          {
+            "text": "Paint Correction + Coating"
+          },
+          {
+            "text": "Know Pricing Before Booking"
+          },
+          {
+            "text": "Text Photos For Exact Scope"
+          },
+          {
+            "text": "Obsidian Autoworks"
+          },
+          {
+            "text": "Mobile Service Across OC"
+          },
+          {
+            "text": "One-Year Coating From $550"
+          },
+          {
+            "text": "Deep Gloss. Easier Care"
+          },
+          {
+            "text": "Prep Matched To Your Paint"
+          },
+          {
+            "text": "Call For Coating Pricing"
+          },
+          {
+            "text": "Restore Depth And Gloss"
+          },
+          {
+            "text": "Correction Only If Needed"
+          }
+        ],
+        "path1": "ceramic",
+        "path2": "pricing",
+        "policy_approval_status": "APPROVED",
+        "primary_status": "ELIGIBLE",
+        "resource_name": "customers/8591070105/adGroupAds/199530568558~819021913646",
+        "status": "ENABLED"
+      },
+      {
+        "ad_group_id": "199530568558",
+        "ad_id": "820276851577",
+        "descriptions": [
+          {
+            "text": "Compare four Orange County ceramic coating packages from $795 to $3,500+."
+          },
+          {
+            "text": "Every package includes preparation and paint correction matched to your vehicle."
+          },
+          {
+            "text": "Choose GYEON CanCoat, Pure, Mohs, or Syncro EVO with 1.5 to 4 year protection."
+          },
+          {
+            "text": "Call or text paint photos for package guidance, final scope, and scheduling."
+          }
+        ],
+        "final_urls": [
+          "https://www.obsidianautoworksoc.com/ceramic-coating-cost-paint-correction#packages"
+        ],
+        "headlines": [
+          {
+            "pinnedField": "HEADLINE_1",
+            "text": "Ceramic Coating Cost $795+"
+          },
+          {
+            "text": "Packages From $795"
+          },
+          {
+            "text": "Compare Four Coating Packages"
+          },
+          {
+            "text": "Paint Correction Included"
+          },
+          {
+            "text": "GYEON Coating Packages"
+          },
+          {
+            "text": "Refresh Package $795\u2013$995"
+          },
+          {
+            "text": "Premium From $1,295"
+          },
+          {
+            "text": "Signature From $2,495"
+          },
+          {
+            "text": "Concours From $3,500"
+          },
+          {
+            "text": "1.5\u20134 Years of Protection"
+          },
+          {
+            "text": "Orange County Mobile Service"
+          },
+          {
+            "text": "Text Photos for Final Scope"
+          },
+          {
+            "text": "Match Coating to Your Paint"
+          },
+          {
+            "text": "Prep, Correction and Coating"
+          },
+          {
+            "text": "Call Obsidian Autoworks"
+          }
+        ],
+        "path1": "coating-cost",
+        "path2": "from-795",
+        "policy_approval_status": "UNKNOWN",
+        "primary_status": "PENDING",
+        "resource_name": "customers/8591070105/adGroupAds/199530568558~820276851577",
+        "status": "ENABLED"
+      },
+      {
+        "ad_group_id": "199530570158",
+        "ad_id": "818560843381",
+        "descriptions": [
+          {
+            "text": "Mobile ceramic coating from Irvine to Newport Beach and South Orange County."
+          },
+          {
+            "text": "A richer finish and long-lasting gloss, with prep matched to your paint."
+          },
+          {
+            "text": "Call or text vehicle photos for coating options in your Orange County city."
+          },
+          {
+            "text": "Obsidian brings paint preparation and ceramic coating to your location."
+          }
+        ],
+        "final_urls": [
+          "https://www.obsidianautoworksoc.com/ceramic-coating"
+        ],
+        "headlines": [
+          {
+            "text": "Ceramic Coating Irvine"
+          },
+          {
+            "text": "Lake Forest Ceramic Coating"
+          },
+          {
+            "text": "Newport Beach Coating"
+          },
+          {
+            "text": "Tustin Ceramic Coating"
+          },
+          {
+            "text": "South OC Ceramic Coating"
+          },
+          {
+            "text": "Mobile Service To Your Area"
+          },
+          {
+            "text": "Richer Finish. Lasting Gloss"
+          },
+          {
+            "text": "Obsidian Autoworks"
+          },
+          {
+            "text": "Mission Viejo Coating"
+          },
+          {
+            "text": "Aliso Viejo Ceramic Coating"
+          },
+          {
+            "text": "RSM Ceramic Coating"
+          },
+          {
+            "text": "Costa Mesa Ceramic Coating"
+          },
+          {
+            "text": "Coto de Caza Car Coating"
+          },
+          {
+            "text": "Professional Paint Protection"
+          },
+          {
+            "text": "We Come To Your Location"
+          }
+        ],
+        "path1": "ceramic",
+        "path2": "south-oc",
+        "policy_approval_status": "APPROVED",
+        "primary_status": "ELIGIBLE",
+        "resource_name": "customers/8591070105/adGroupAds/199530570158~818560843381",
+        "status": "ENABLED"
+      },
+      {
+        "ad_group_id": "199530647918",
+        "ad_id": "818560843375",
+        "descriptions": [
+          {
+            "text": "Ceramic coating for a richer finish and long-lasting gloss by Obsidian Autoworks."
+          },
+          {
+            "text": "Mobile across OC. Paint inspection and prep are matched to your vehicle."
+          },
+          {
+            "text": "Call or text vehicle photos for a clear coating plan and local availability."
+          },
+          {
+            "text": "Paint correction when needed, followed by durable ceramic paint protection."
+          }
+        ],
+        "final_urls": [
+          "https://www.obsidianautoworksoc.com/ceramic-coating"
+        ],
+        "headlines": [
+          {
+            "text": "Ceramic Coating Near Me"
+          },
+          {
+            "text": "Richer Finish. Lasting Gloss"
+          },
+          {
+            "text": "Long-Lasting Paint Gloss"
+          },
+          {
+            "text": "Mobile Ceramic Coating OC"
+          },
+          {
+            "text": "Obsidian Autoworks"
+          },
+          {
+            "text": "Paint Correction + Coating"
+          },
+          {
+            "text": "We Come To Your Location"
+          },
+          {
+            "text": "Protect Your Vehicle Paint"
+          },
+          {
+            "text": "Professional Paint Protection"
+          },
+          {
+            "text": "Orange County Ceramic Coat"
+          },
+          {
+            "text": "Call For A Coating Plan"
+          },
+          {
+            "text": "Prep Matched To Your Paint"
+          },
+          {
+            "text": "Text Vehicle Photos"
+          },
+          {
+            "text": "A Deeper, Richer Finish"
+          },
+          {
+            "text": "Gloss That Lasts"
+          }
+        ],
+        "path1": "ceramic",
+        "path2": "coating",
+        "policy_approval_status": "APPROVED",
+        "primary_status": "ELIGIBLE",
+        "resource_name": "customers/8591070105/adGroupAds/199530647918~818560843375",
+        "status": "ENABLED"
+      },
+      {
+        "ad_group_id": "199530647918",
+        "ad_id": "820276851574",
+        "descriptions": [
+          {
+            "text": "Mobile Orange County coating packages start at $795 with paint correction included."
+          },
+          {
+            "text": "Choose GYEON protection from 1.5 to 4 years based on your car and paint condition."
+          },
+          {
+            "text": "Text clear vehicle photos or call Obsidian for the right correction and coating plan."
+          },
+          {
+            "text": "Four package levels for newer vehicles, daily drivers, enthusiast cars, and exotics."
+          }
+        ],
+        "final_urls": [
+          "https://www.obsidianautoworksoc.com/ceramic-coating"
+        ],
+        "headlines": [
+          {
+            "pinnedField": "HEADLINE_1",
+            "text": "Ceramic Coating From $795"
+          },
+          {
+            "text": "Mobile Ceramic Coating"
+          },
+          {
+            "text": "Orange County Ceramic Care"
+          },
+          {
+            "text": "Paint Correction Included"
+          },
+          {
+            "text": "GYEON Coating Packages"
+          },
+          {
+            "text": "1.5\u20134 Years of Protection"
+          },
+          {
+            "text": "Packages for Daily Drivers"
+          },
+          {
+            "text": "Protect New Vehicle Paint"
+          },
+          {
+            "text": "Premium Prep and Coating"
+          },
+          {
+            "text": "Text Photos for a Quote"
+          },
+          {
+            "text": "Call Obsidian Autoworks"
+          },
+          {
+            "text": "OC Mobile Coating Service"
+          },
+          {
+            "text": "Deeper Gloss, Easier Care"
+          },
+          {
+            "text": "Four Coating Package Levels"
+          },
+          {
+            "text": "Match Protection to Your Car"
+          }
+        ],
+        "path1": "ceramic-coating",
+        "path2": "packages-795",
+        "policy_approval_status": "UNKNOWN",
+        "primary_status": "PENDING",
+        "resource_name": "customers/8591070105/adGroupAds/199530647918~820276851574",
+        "status": "ENABLED"
+      },
+      {
+        "ad_group_id": "199530652518",
+        "ad_id": "818560843384",
+        "descriptions": [
+          {
+            "text": "Ceramic coating for Tesla, Porsche, BMW, Rivian, Audi, and other OC vehicles."
+          },
+          {
+            "text": "Give your vehicle a richer finish and long-lasting gloss with proper prep."
+          },
+          {
+            "text": "We assess paint first and explain correction only when the finish needs it."
+          },
+          {
+            "text": "Call or text vehicle photos for coating options and local availability."
+          }
+        ],
+        "final_urls": [
+          "https://www.obsidianautoworksoc.com/ceramic-coating"
+        ],
+        "headlines": [
+          {
+            "text": "Tesla Ceramic Coating OC"
+          },
+          {
+            "text": "Porsche Ceramic Coating OC"
+          },
+          {
+            "text": "BMW Ceramic Coating OC"
+          },
+          {
+            "text": "Rivian Ceramic Coating OC"
+          },
+          {
+            "text": "Audi Ceramic Coating OC"
+          },
+          {
+            "text": "Luxury Car Paint Protection"
+          },
+          {
+            "text": "Protect Your New Vehicle"
+          },
+          {
+            "text": "Richer Finish. Lasting Gloss"
+          },
+          {
+            "text": "Paint Correction + Coating"
+          },
+          {
+            "text": "Mobile Service Across OC"
+          },
+          {
+            "text": "Long-Lasting Paint Gloss"
+          },
+          {
+            "text": "Call For Vehicle Guidance"
+          },
+          {
+            "text": "Obsidian Autoworks"
+          },
+          {
+            "text": "One-Step Paint Enhancement"
+          },
+          {
+            "text": "A Deeper, Richer Finish"
+          }
+        ],
+        "path1": "ceramic",
+        "path2": "luxury-cars",
+        "policy_approval_status": "APPROVED",
+        "primary_status": "ELIGIBLE",
+        "resource_name": "customers/8591070105/adGroupAds/199530652518~818560843384",
+        "status": "ENABLED"
+      }
+    ],
+    "campaign": {
+      "bidding": "MANUAL_CPC",
+      "budget_delivery_method": "STANDARD",
+      "budget_micros": 71000000,
+      "display_network": false,
+      "enhanced_cpc_enabled": false,
+      "id": "24054610950",
+      "name": "Search | OC | Ceramic Coating | Obsidian Build",
+      "negative_geo_target_type": "PRESENCE",
+      "positive_geo_target_type": "PRESENCE",
+      "primary_status": "LIMITED",
+      "search_network": true,
+      "search_partners": false,
+      "serving_status": "SERVING",
+      "status": "ENABLED"
+    },
+    "customer_id": "8591070105",
+    "duplicate": {
+      "campaign_id": "24058475904",
+      "customer_id": "8605345590",
+      "status": "PAUSED"
+    },
+    "last_serving_date": "2026-08-05",
+    "location_ids": [
+      "1013532",
+      "1013705",
+      "1013883",
+      "1013921",
+      "1013925",
+      "1014017",
+      "1014058",
+      "1014171",
+      "1014352",
+      "9051776"
+    ],
+    "negative_keywords": [
+      "job",
+      "jobs",
+      "motorcycle",
+      "industrial",
+      "boat",
+      "wholesale",
+      "training",
+      "exhaust",
+      "bike",
+      "do it yourself",
+      "spray",
+      "class",
+      "floor",
+      "tile",
+      "kit",
+      "gun",
+      "roof",
+      "course",
+      "certification",
+      "career",
+      "product",
+      "wax",
+      "powder coating",
+      "walmart",
+      "diy",
+      "salary",
+      "bottle",
+      "rv",
+      "pottery",
+      "cookware",
+      "amazon",
+      "pan",
+      "headers",
+      "how to",
+      "wrap",
+      "sealant",
+      "xpel",
+      "home depot",
+      "autozone",
+      "ppf",
+      "ceramic pro",
+      "paint protection film",
+      "reddit",
+      "paint repair",
+      "xzilon",
+      "youtube",
+      "vinyl wrap",
+      "headlight coating",
+      "wheel polishing",
+      "trim coat",
+      "ceramic coating kit",
+      "ceramic coating spray",
+      "how is ceramic coating applied",
+      "artdeshine",
+      "car pro lite",
+      "ceramic coating removal",
+      "ceramic coating topper",
+      "maxl one",
+      "ayicon pro"
+    ],
+    "paused_waste_phrase": {
+      "criterion_id": "341345628706",
+      "match_type": "PHRASE",
+      "status": "PAUSED",
+      "text": "paint correction and ceramic coating"
+    },
+    "schedule": [
+      {
+        "day": "MONDAY",
+        "end_hour": 21,
+        "end_minute": "ZERO",
+        "start_hour": 7,
+        "start_minute": "ZERO"
+      },
+      {
+        "day": "TUESDAY",
+        "end_hour": 21,
+        "end_minute": "ZERO",
+        "start_hour": 7,
+        "start_minute": "ZERO"
+      },
+      {
+        "day": "WEDNESDAY",
+        "end_hour": 21,
+        "end_minute": "ZERO",
+        "start_hour": 7,
+        "start_minute": "ZERO"
+      },
+      {
+        "day": "THURSDAY",
+        "end_hour": 21,
+        "end_minute": "ZERO",
+        "start_hour": 7,
+        "start_minute": "ZERO"
+      },
+      {
+        "day": "FRIDAY",
+        "end_hour": 21,
+        "end_minute": "ZERO",
+        "start_hour": 7,
+        "start_minute": "ZERO"
+      },
+      {
+        "day": "SATURDAY",
+        "end_hour": 21,
+        "end_minute": "ZERO",
+        "start_hour": 7,
+        "start_minute": "ZERO"
+      },
+      {
+        "day": "SUNDAY",
+        "end_hour": 21,
+        "end_minute": "ZERO",
+        "start_hour": 7,
+        "start_minute": "ZERO"
+      }
+    ],
+    "website_call": {
+      "name": "Qualified Website Call - Obsidian Coating",
+      "phone_call_duration_seconds": 60,
+      "status": "ENABLED",
+      "type": "WEBSITE_CALL"
+    }
+  },
+  "validation": {
+    "delivery_diagnostic": "no metric row after 2026-08-05",
+    "last_serving_date": "2026-08-05"
+  }
+}
