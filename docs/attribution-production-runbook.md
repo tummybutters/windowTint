@@ -136,6 +136,18 @@ dates.
 - The report never accepts a browser-submitted revenue value; every figure
   is derived from persisted provider (Square) entities and server-written
   attribution links.
+- **The report is current-as-of, not a fixed historical record.** Refunds
+  carry no date bound and are always subtracted from their order regardless
+  of when the refund happened, so re-running the exact same `--from`/`--to`
+  range on a later date can restate a smaller net/commission figure than an
+  earlier run of the identical command, with the difference surfacing only
+  as an `order_not_in_report` anomaly in the later run. This code does not
+  persist a payout ledger or snapshot table. Any report run whose output is
+  used to make or justify a real commission payment must have its masked
+  `--format=json` output archived (file name or storage location including
+  the run timestamp and the exact `--from`/`--to` range) before the payment
+  is made, so the figure that was actually paid on can be reproduced later
+  even if a subsequent refund restates the range.
 
 ## Proof-tier truth boundary
 
@@ -186,6 +198,59 @@ rows with `entity_type = 'order'` yet. As a direct consequence:
   provider, or a manually reviewed Tier B match) — none of which is in
   scope here.
 
+## Known limitations: ingestion trust boundary and click-ID reuse
+
+- **`/api/lead-events` is public analytics ingestion, not cryptographic
+  client authentication.** It is protected by a browser same-origin check
+  (`Origin` compared against the request's own `Host`/`x-forwarded-host`)
+  and a per-minute IP-hashed rate limit -- both are effective against a
+  browser but provide no protection against a non-browser caller that can
+  send an arbitrary `Origin`/`Host` pair. Such a caller can write
+  `attribution_touches` and `attribution_lead_intents` rows, which the
+  store converts into `approved`, `proof_tier='A'` `attribution_links`
+  rows exactly as a genuine browser click would. A Tier A lead-intent link
+  is therefore **not sufficient on its own** for a Google Ads upload or a
+  financial attribution decision. It only becomes usable for either once an
+  authenticated, reviewed order-to-touch bridge (see "Known remaining gap"
+  above) resolves it against independently verified Square order data, and
+  that bridge itself is authenticated end to end.
+- **Click-ID bearer limitation.** Same-origin paid-field propagation has
+  been removed (below), but the *original* paid landing URL itself is not a
+  secret: a customer can screenshot, forward, or paste the exact
+  `?gclid=...` URL they landed on, and a second, unrelated browser opening
+  that exact URL will mint a genuine-looking touch carrying the same click
+  ID. Possessing a `gclid`/`gbraid`/`wbraid` value is proof that *someone*
+  saw that URL, not proof that the browser presenting it is the one Google
+  Ads attributed the click to. A click ID that resolves to touches in more
+  than one `session_id` must be treated as an anomaly and investigated
+  before any Ads use of a link built from it -- it must never be read as
+  proof that two people separately clicked the ad.
+- **Same-origin paid-field propagation has been removed (Task 7).**
+  Internal `/booking` and `/vip-booking` links now carry only the opaque
+  session bridge and existing non-paid contact context that is genuinely
+  required (`obsidian_session_id`, CID, phone) -- they no longer carry
+  `gclid`, `gbraid`, `wbraid`, any UTM field, or
+  campaign/ad-group/creative/keyword/match-type/device/network/location/
+  placement/target/extension metadata. `localStorage` already preserves
+  this browser's own touch, so the URL copy bought nothing for first-party
+  attribution and only enabled the click-ID-sharing vector above. External
+  Square booking targets (`squareup.com`, `square.site`,
+  `app.squareup.com`, `book.squareup.com`) are unaffected and continue
+  receiving the full existing decoration, because the external handoff
+  cannot read this browser's `localStorage` and this tranche must not break
+  that existing contract.
+- **Reference-code collision is fail-closed, not recovered.**
+  `attribution_lead_intents.reference_code` is `UNIQUE`. A collision under
+  a *different* `lead_intent_id` aborts the whole persist statement,
+  including the ordinary event write in the same call; the browser retries
+  the identical colliding envelope and that browser's intent stays
+  unpersistable until delivery attempts are exhausted. No collision
+  regeneration is implemented server- or client-side. This is safe
+  (nothing is silently misattributed) but not self-healing, and the
+  probability is negligible (a 31-symbol, 10-character space, roughly
+  8.2x10^14 combinations) -- do not describe this as "handled" beyond
+  fail-closed rejection.
+
 ## Inherited pre-existing behavior (out of scope)
 
 `decorateForms` (`lead-tracking.js`) writes the raw, non-opaque
@@ -226,7 +291,10 @@ specific click until:
    manual guess, not a business-wide total; and
 2. That link has been produced by the finished order-to-touch integration
    from a future tranche, not fabricated or backfilled by hand; and
-3. Separate, explicit human authorization for that specific upload has been
+3. The click ID on that link's touch has been checked for reuse across more
+   than one `session_id` (see "Known limitations: ingestion trust boundary
+   and click-ID reuse" above) and is not flagged as a duplicate; and
+4. Separate, explicit human authorization for that specific upload has been
    given.
 
 Business-wide revenue, Tier B/C candidate revenue, and unattributed revenue

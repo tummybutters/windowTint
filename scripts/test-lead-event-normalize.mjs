@@ -179,15 +179,58 @@ assert.throws(
   /supported click ID/
 );
 
-// Malformed touch_time.
-assert.throws(
-  () => buildLeadEventRecord({
+// Q1: an unparseable touch_time is unusable *optional* evidence, not a reason to reject the
+// whole envelope -- the record persists with touch: null and the lead_intent (if any) is
+// unaffected, so a real lead action is never dropped for carrying bad touch evidence.
+{
+  const badTouchTimeRecord = buildLeadEventRecord({
     ...event,
     event_id: 'obsidian_event_normalize_bad_touch_time_001',
-    touch: { ...paidTouch, touch_time: 'not-a-date' }
-  }, { now, identitySecret: 'secret' }),
-  /Invalid touch_time/
-);
+    touch: { ...paidTouch, touch_time: 'not-a-date' },
+    lead_intent: {
+      lead_intent_id: VALID_INTENT_ID,
+      reference_code: VALID_REFERENCE,
+      touch_id: VALID_TOUCH_ID,
+      first_channel: 'phone'
+    }
+  }, { now, identitySecret: 'secret' });
+  assert.equal(badTouchTimeRecord.touch, null, 'an unparseable touch_time degrades to no touch, not a rejection');
+  assert.equal(badTouchTimeRecord.lead_intent.touch_id, VALID_TOUCH_ID, 'the lead_intent binding is untouched by the degraded touch');
+}
+
+// Q1: a touch_time older than the server's 400-day window is equally unusable evidence.
+{
+  const staleTime = new Date(now.getTime() - 401 * 24 * 60 * 60 * 1000).toISOString();
+  const staleTouchRecord = buildLeadEventRecord({
+    ...event,
+    event_id: 'obsidian_event_normalize_stale_touch_001',
+    touch: { ...paidTouch, touch_time: staleTime }
+  }, { now, identitySecret: 'secret' });
+  assert.equal(staleTouchRecord.touch, null, 'a touch older than 400 days is unusable optional evidence, never a rejection');
+}
+
+// Q1: a touch_time more than 24h in the future (clock skew) is equally unusable evidence.
+{
+  const futureTime = new Date(now.getTime() + 25 * 60 * 60 * 1000).toISOString();
+  const futureTouchRecord = buildLeadEventRecord({
+    ...event,
+    event_id: 'obsidian_event_normalize_future_touch_001',
+    touch: { ...paidTouch, touch_time: futureTime }
+  }, { now, identitySecret: 'secret' });
+  assert.equal(futureTouchRecord.touch, null, 'a touch more than 24h in the future is unusable optional evidence, never a rejection');
+}
+
+// A touch_time exactly at the boundary (within window) remains fully usable.
+{
+  const boundaryTime = new Date(now.getTime() - 400 * 24 * 60 * 60 * 1000 + 1000).toISOString();
+  const boundaryTouchRecord = buildLeadEventRecord({
+    ...event,
+    event_id: 'obsidian_event_normalize_boundary_touch_001',
+    touch: { ...paidTouch, touch_time: boundaryTime }
+  }, { now, identitySecret: 'secret' });
+  assert.ok(boundaryTouchRecord.touch, 'a touch just inside the 400-day window is still usable');
+  assert.equal(boundaryTouchRecord.touch.touch_time, new Date(boundaryTime).toISOString());
+}
 
 // Malformed lead_intent_id.
 assert.throws(

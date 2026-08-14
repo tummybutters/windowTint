@@ -1094,100 +1094,260 @@ const createContext = ({ href, storage, doc, crypto, adsConfig }) => {
 // immutable touch, not sticky getLead() history (r1 review finding #1)
 // ---------------------------------------------------------------------------
 
-// --- Scenario J: a gclid landing followed by a distinct gbraid-only landing must produce a
-// booking link carrying only the gbraid touch's fields; navigating a fresh context to that exact
-// decorated href must dedup against the gbraid touch, with no oscillation across repeat visits ---
+// --- Scenario J: Q2 -- a same-origin booking link never carries paid attribution fields, even
+// though the current touch is genuine and real; localStorage already preserves the touch for
+// this browser's own first-party attribution, so copying gclid/gbraid/wbraid/UTMs/campaign
+// metadata onto a same-origin URL a customer can copy and share would let a stranger's browser
+// mint a false paid touch from someone else's click. An external Square target cannot read this
+// browser's localStorage, so it keeps the full existing decoration untouched. A genuine paid
+// landing URL with a click ID must still mint a real touch regardless. ---
 {
   const storage = createStorage();
 
-  // First: a gclid click with a campaign and keyword.
-  const bookingNode1 = createFakeAnchor('/booking');
   const run1 = createContext({
     href: 'https://www.obsidianautoworksoc.com/landing?gclid=CLICKA&utm_campaign=camp-a&campaignid=111&keyword=tint',
     storage,
-    doc: createFakeDocument({ 'a[href="/booking"]': [bookingNode1] }),
+    doc: createFakeDocument({ 'a[href="/booking"]': [createFakeAnchor('/booking')] }),
     crypto: secureCrypto
   });
   const touch1 = run1.tracker.getCurrentTouch();
   assert.equal(touch1.gclid, 'CLICKA');
-  assert.equal(touch1.campaign_id, '111');
-  assert.equal(touch1.keyword, 'tint');
 
-  // Second: a distinct, gbraid-only click with no campaign or keyword.
-  const bookingNode2 = createFakeAnchor('/booking');
+  const bookingNode = createFakeAnchor('/booking');
+  const squareNode = createFakeAnchor('https://book.squareup.com/appointments/py2a8n8lsuxp5n/location/LWC5SDBDX3R99');
   const run2 = createContext({
-    href: 'https://www.obsidianautoworksoc.com/landing?gbraid=CLICKG',
+    href: 'https://www.obsidianautoworksoc.com/landing?gbraid=CLICKG&utm_campaign=camp-g&campaignid=222&keyword=coating&matchtype=e&device=m',
     storage,
-    doc: createFakeDocument({ 'a[href="/booking"]': [bookingNode2] }),
+    doc: createFakeDocument({
+      'a[href="/booking"]': [bookingNode],
+      'a[href*="book.squareup.com/appointments"]': [squareNode]
+    }),
     crypto: secureCrypto
   });
   const touch2 = run2.tracker.getCurrentTouch();
+  assert.ok(touch2, 'the gbraid landing still mints a genuine paid touch -- Q2s fix never blocks real touch minting');
   assert.notEqual(touch2.touch_id, touch1.touch_id, 'the gbraid-only click mints a distinct touch');
-  assert.equal(touch2.gclid, '', 'touch2 carries no gclid');
-  assert.equal(touch2.campaign_id, '', 'touch2 carries no campaign_id');
-  assert.equal(touch2.keyword, '', 'touch2 carries no keyword');
+  assert.equal(touch2.gbraid, 'CLICKG');
 
-  // decorateBookingTargets already ran once during run2's boot(); this captures the real,
-  // actual output of that production code path (not a hand-written URL).
-  const decoratedHref = bookingNode2.getAttribute('href');
-  assert.ok(decoratedHref, 'the booking link was decorated');
-  assert.ok(!decoratedHref.includes('gclid=CLICKA'), 'the decorated link does not carry the prior gclid click');
-  assert.ok(!decoratedHref.includes('campaignid=111'), 'the decorated link does not carry the prior campaign');
-  assert.ok(!decoratedHref.includes('keyword='), 'the decorated link does not carry the prior keyword');
-  assert.ok(!decoratedHref.includes('utm_campaign='), 'the decorated link does not carry the prior utm_campaign');
-  assert.ok(decoratedHref.includes('gbraid=CLICKG'), 'the decorated link carries the current touchs gbraid');
+  // decorateBookingTargets already ran once during run2's boot(); this captures the real, actual
+  // output of that production code path (not a hand-written URL).
+  const sameOriginHref = bookingNode.getAttribute('href');
+  assert.ok(sameOriginHref, 'the same-origin booking link is still decorated');
+  [
+    'gclid', 'gbraid', 'wbraid', 'utm_source', 'utm_medium', 'utm_campaign', 'utm_term',
+    'utm_content', 'campaignid', 'adgroupid', 'creative', 'keyword', 'matchtype', 'device',
+    'network', 'loc_physical_ms', 'loc_interest_ms', 'placement', 'targetid', 'extensionid'
+  ].forEach((param) => {
+    assert.ok(!sameOriginHref.includes(`${param}=`), `the same-origin booking link never carries ${param}`);
+  });
+  assert.ok(sameOriginHref.includes('obsidian_session_id='), 'the same-origin booking link keeps the opaque session bridge');
+
+  const externalHref = squareNode.getAttribute('href');
+  assert.ok(externalHref.includes('gbraid=CLICKG'), 'the external Square target keeps the current touchs gbraid');
+  assert.ok(externalHref.includes('campaignid=222'), 'the external Square target keeps campaign metadata');
+  assert.ok(externalHref.includes('keyword=coating'), 'the external Square target keeps keyword metadata');
+  assert.ok(externalHref.includes('obsidian_session_id='), 'the external Square target also keeps the session bridge');
 
   const paidTouchEventsAfterDecoration = run2.tracker.getEventLog()
     .filter((event) => event.event_name === 'paid_touch');
-  assert.equal(paidTouchEventsAfterDecoration.length, 2, 'decorating the booking link mints no extra touch');
-
-  // Navigate a fresh page context to the exact decorated href, repeatedly, and prove the gbraid
-  // tuple dedups against touch2 every time -- no oscillation, no extra touch minted.
-  const decoratedUrl = new URL(decoratedHref, 'https://www.obsidianautoworksoc.com').toString();
-  for (let i = 0; i < 3; i += 1) {
-    const bookingNodeNav = createFakeAnchor('/booking');
-    const nav = createContext({
-      href: decoratedUrl,
-      storage,
-      doc: createFakeDocument({ 'a[href="/booking"]': [bookingNodeNav] }),
-      crypto: secureCrypto
-    });
-
-    const navTouch = nav.tracker.getCurrentTouch();
-    assert.equal(navTouch.touch_id, touch2.touch_id, `navigation ${i} reuses touch2, no oscillation`);
-    assert.equal(
-      nav.tracker.getEventLog().filter((event) => event.event_name === 'paid_touch').length,
-      2,
-      `navigation ${i} mints no additional touch`
-    );
-
-    const navDecoratedHref = bookingNodeNav.getAttribute('href');
-    assert.equal(navDecoratedHref, decoratedHref, `navigation ${i} produces the exact same stable decorated href`);
-    assert.ok(!navDecoratedHref.includes('gclid=CLICKA'), `navigation ${i} decorated href stays free of the old gclid`);
-    assert.ok(!navDecoratedHref.includes('campaignid=111'), `navigation ${i} decorated href stays free of the old campaign`);
-  }
+  assert.equal(paidTouchEventsAfterDecoration.length, 2, 'decorating the booking links mints no extra touch');
 }
 
-// --- Scenario K: without a current touch (no Web Crypto, so no touch was ever created),
-// booking-link decoration preserves the legacy UTM/campaign propagation from lead storage but
-// stays conservative on click ids, since sticky lead storage cannot distinguish a stale click id
-// from a genuinely current one without a touch record to compare against ---
+// --- Scenario K: without a current touch (no Web Crypto, so no touch was ever created), a
+// same-origin booking link still carries no paid attribution fields (Q2), while an external
+// Square target keeps the legacy UTM/campaign propagation from lead storage but stays
+// conservative on click ids, since sticky lead storage cannot distinguish a stale click id from
+// a genuinely current one without a touch record to compare against ---
 {
   const storage = createStorage();
   const bookingNode = createFakeAnchor('/booking');
+  const squareNode = createFakeAnchor('https://book.squareup.com/appointments/py2a8n8lsuxp5n/location/LWC5SDBDX3R99');
   const { tracker } = createContext({
     href: 'https://www.obsidianautoworksoc.com/landing?gclid=CLICKL&utm_campaign=camp-l&campaignid=555',
     storage,
-    doc: createFakeDocument({ 'a[href="/booking"]': [bookingNode] }),
+    doc: createFakeDocument({
+      'a[href="/booking"]': [bookingNode],
+      'a[href*="book.squareup.com/appointments"]': [squareNode]
+    }),
     crypto: undefined
   });
 
   assert.equal(tracker.getCurrentTouch(), null, 'no touch is created without Web Crypto');
 
-  const decoratedHref = bookingNode.getAttribute('href');
-  assert.ok(decoratedHref.includes('utm_campaign=camp-l'), 'utm_campaign still propagates via legacy lead storage without a touch');
-  assert.ok(decoratedHref.includes('campaignid=555'), 'campaignid still propagates via legacy lead storage without a touch');
-  assert.ok(!decoratedHref.includes('gclid='), 'gclid is withheld without a touch, conservatively avoiding a stale click id');
+  const sameOriginHref = bookingNode.getAttribute('href');
+  assert.ok(!sameOriginHref.includes('utm_campaign='), 'same-origin link never carries utm_campaign, even without a touch');
+  assert.ok(!sameOriginHref.includes('campaignid='), 'same-origin link never carries campaignid, even without a touch');
+  assert.ok(!sameOriginHref.includes('gclid='), 'same-origin link never carries gclid');
+
+  const externalHref = squareNode.getAttribute('href');
+  assert.ok(externalHref.includes('utm_campaign=camp-l'), 'external target still gets legacy utm_campaign propagation without a touch');
+  assert.ok(externalHref.includes('campaignid=555'), 'external target still gets legacy campaignid propagation without a touch');
+  assert.ok(!externalHref.includes('gclid='), 'external target still withholds gclid conservatively without a touch record to compare against');
+}
+
+// ---------------------------------------------------------------------------
+// Task 7: security hardening -- stale/future intent-bound touch snapshots must never cost a
+// real lead event, and the delivery queue must never deadlock behind one poison envelope (Q1)
+// ---------------------------------------------------------------------------
+
+// --- Scenario L: an intent-bound touch snapshot that ages past the client's conservative window
+// (or was stamped under forward clock skew) is never resent -- the real lead action still
+// records and still carries the unchanged intent, just without the stale/skewed touch ---
+{
+  const storage = createStorage();
+  const { tracker: tracker1 } = createContext({
+    href: 'https://www.obsidianautoworksoc.com/vip-booking?gclid=CLICKSTALE',
+    storage,
+    doc: createFakeDocument(),
+    crypto: secureCrypto
+  });
+
+  tracker1.trackEvent('phone_click', { link_url: 'tel:7146007134' });
+  const intent = tracker1.getCurrentIntent();
+  assert.ok(intent, 'the first phone action creates a lead intent');
+
+  const boundTouchKey = 'lead_track_lead_intent_bound_touch_snapshot';
+  const originalBoundTouch = JSON.parse(storage.getItem(boundTouchKey));
+  assert.ok(originalBoundTouch, 'the intent-bound touch snapshot is stored at creation');
+
+  // Age the stored snapshot past the client's conservative window (380 days) without ever
+  // refreshing it -- exactly the shape that caused Q1's permanent-400 loop server-side.
+  const staleTouch = { ...originalBoundTouch, touch_time: new Date(Date.now() - 390 * 24 * 60 * 60 * 1000).toISOString() };
+  storage.setItem(boundTouchKey, JSON.stringify(staleTouch));
+
+  const { tracker: tracker2 } = createContext({
+    href: 'https://www.obsidianautoworksoc.com/vip-booking',
+    storage,
+    doc: createFakeDocument(),
+    crypto: secureCrypto
+  });
+
+  tracker2.trackEvent('phone_click', { link_url: 'tel:7146007134' });
+  const phoneEventsAfterStale = tracker2.getEventLog().filter((event) => event.event_name === 'phone_click');
+  const staleResendEvent = phoneEventsAfterStale[phoneEventsAfterStale.length - 1];
+  assert.deepEqual(staleResendEvent.lead_intent, intent, 'the real lead action still records with the unchanged intent');
+  assert.equal(staleResendEvent.touch, undefined, 'a stale intent-bound touch snapshot past the client window is never resent');
+
+  // A forward-clock-skewed snapshot (created under >12h future skew) is equally withheld.
+  const skewedTouch = { ...originalBoundTouch, touch_time: new Date(Date.now() + 13 * 60 * 60 * 1000).toISOString() };
+  storage.setItem(boundTouchKey, JSON.stringify(skewedTouch));
+
+  const { tracker: tracker3 } = createContext({
+    href: 'https://www.obsidianautoworksoc.com/vip-booking',
+    storage,
+    doc: createFakeDocument(),
+    crypto: secureCrypto
+  });
+
+  tracker3.trackEvent('phone_click', { link_url: 'tel:7146007134' });
+  const phoneEventsAfterSkew = tracker3.getEventLog().filter((event) => event.event_name === 'phone_click');
+  const skewedResendEvent = phoneEventsAfterSkew[phoneEventsAfterSkew.length - 1];
+  assert.deepEqual(skewedResendEvent.lead_intent, intent, 'the real lead action still records with the unchanged intent under clock skew');
+  assert.equal(skewedResendEvent.touch, undefined, 'a forward-clock-skewed intent-bound touch snapshot is never resent');
+
+  // A snapshot still comfortably inside the window resends normally, unaffected.
+  storage.setItem(boundTouchKey, JSON.stringify(originalBoundTouch));
+  const { tracker: tracker4 } = createContext({
+    href: 'https://www.obsidianautoworksoc.com/vip-booking',
+    storage,
+    doc: createFakeDocument(),
+    crypto: secureCrypto
+  });
+  tracker4.trackEvent('phone_click', { link_url: 'tel:7146007134' });
+  const phoneEventsAfterFresh = tracker4.getEventLog().filter((event) => event.event_name === 'phone_click');
+  const freshResendEvent = phoneEventsAfterFresh[phoneEventsAfterFresh.length - 1];
+  assert.ok(freshResendEvent.touch, 'a snapshot inside the conservative window still resends normally');
+  assert.equal(freshResendEvent.touch.touch_id, originalBoundTouch.touch_id);
+}
+
+// --- Scenario M: the delivery queue never deadlocks behind one poison envelope -- a permanent
+// 4xx (not 408/429) is dropped and flushing continues; a retryable failure (5xx, network error,
+// 408, 429) stops the batch without dropping anything, so a temporarily-unreachable envelope is
+// never silently discarded either ---
+{
+  // A permanent 4xx does not stop the batch: the next envelope is still attempted and delivered.
+  {
+    const { tracker, window: win } = createContext({
+      href: 'https://www.obsidianautoworksoc.com/queue-test-a',
+      storage: createStorage(),
+      doc: createFakeDocument(),
+      crypto: secureCrypto
+    });
+
+    tracker.trackEvent('queue_test_event_a', {});
+    tracker.trackEvent('queue_test_event_b', {});
+    assert.equal(tracker.getPendingEvents().length, 2, 'two events are queued before any fetch is available');
+
+    let callCount = 0;
+    win.fetch = async () => {
+      callCount += 1;
+      return callCount === 1 ? { ok: false, status: 400 } : { ok: true, status: 200 };
+    };
+
+    await tracker.flushPendingEvents();
+
+    assert.equal(callCount, 2, 'a permanent 4xx does not stop the batch -- the next envelope is still attempted');
+    assert.equal(tracker.getPendingEvents().length, 0, 'both the dropped 4xx envelope and the delivered envelope are cleared from the queue');
+  }
+
+  // A retryable 5xx stops the batch and drops nothing.
+  {
+    const { tracker, window: win } = createContext({
+      href: 'https://www.obsidianautoworksoc.com/queue-test-b',
+      storage: createStorage(),
+      doc: createFakeDocument(),
+      crypto: secureCrypto
+    });
+
+    tracker.trackEvent('queue_test_event_c', {});
+    tracker.trackEvent('queue_test_event_d', {});
+
+    let callCount = 0;
+    win.fetch = async () => {
+      callCount += 1;
+      return { ok: false, status: 500 };
+    };
+
+    await tracker.flushPendingEvents();
+
+    assert.equal(callCount, 1, 'a retryable 5xx stops the batch -- later envelopes are not attempted this round');
+    assert.equal(tracker.getPendingEvents().length, 2, 'nothing is dropped on a retryable failure');
+    assert.equal(tracker.getPendingEvents()[0].attempts, 1, 'the retried envelope still records the attempt');
+  }
+
+  // 408 (timeout) and 429 (rate limit) remain retryable, not permanent.
+  for (const status of [408, 429]) {
+    const { tracker, window: win } = createContext({
+      href: `https://www.obsidianautoworksoc.com/queue-test-retry-${status}`,
+      storage: createStorage(),
+      doc: createFakeDocument(),
+      crypto: secureCrypto
+    });
+
+    tracker.trackEvent('queue_test_event_retry', {});
+    win.fetch = async () => ({ ok: false, status });
+
+    await tracker.flushPendingEvents();
+
+    assert.equal(tracker.getPendingEvents().length, 1, `status ${status} remains retryable and is not dropped`);
+  }
+
+  // A network error (fetch rejects) is retryable and drops nothing.
+  {
+    const { tracker, window: win } = createContext({
+      href: 'https://www.obsidianautoworksoc.com/queue-test-net',
+      storage: createStorage(),
+      doc: createFakeDocument(),
+      crypto: secureCrypto
+    });
+
+    tracker.trackEvent('queue_test_event_net', {});
+    win.fetch = async () => { throw new Error('network down'); };
+
+    await tracker.flushPendingEvents();
+
+    assert.equal(tracker.getPendingEvents().length, 1, 'a network error is retryable and does not drop the envelope');
+  }
 }
 
 console.log('lead-tracking smoke test passed');

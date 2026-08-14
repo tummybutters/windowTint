@@ -52,6 +52,12 @@
     const MAX_DELIVERY_ATTEMPTS = 25;
     const DELIVERY_BATCH_SIZE = 20;
     const DELIVERY_RETRY_INTERVAL_MS = 15000;
+    // Conservative margins strictly inside the server's own touch_time window
+    // (lib/lead-event-normalize.js: 400 days / 24h future skew) -- the client withholds the
+    // frozen intent-bound touch snapshot before it would ever reach the server's own degrade
+    // path, so a stale or clock-skewed snapshot is never even sent (Q1).
+    const MAX_CLIENT_TOUCH_AGE_MS = 380 * 24 * 60 * 60 * 1000;
+    const MAX_CLIENT_TOUCH_FUTURE_SKEW_MS = 12 * 60 * 60 * 1000;
     const STORAGE_BY_PARAM = {
         cid: STORAGE_KEYS.cid,
         phone: STORAGE_KEYS.phone,
@@ -299,6 +305,19 @@
         localStorage.setItem(STORAGE_KEYS.leadIntentBoundTouchSnapshot, JSON.stringify(touch));
     };
 
+    // Q1: a touch snapshot stamped once at click time and never refreshed can age past the
+    // server's own window (400 days) or be created under clock skew (>24h future) and then get
+    // resent on every later real lead action forever, permanently 400ing each one. Gate on the
+    // client, strictly inside the server's limits, so an unusable snapshot is never sent at all --
+    // the real event and intent still go out without it.
+    const isTouchSnapshotUsable = (touch) => {
+        if (!touch || !touch.touch_time) return false;
+        const timestamp = Date.parse(touch.touch_time);
+        if (!Number.isFinite(timestamp)) return false;
+        const now = Date.now();
+        return timestamp >= now - MAX_CLIENT_TOUCH_AGE_MS && timestamp <= now + MAX_CLIENT_TOUCH_FUTURE_SKEW_MS;
+    };
+
     // Called once per page load (from boot()), never from the periodic refresh loop --
     // otherwise a static URL left open with a click ID would mint a new touch every tick.
     const createTouchIfNew = () => {
@@ -363,11 +382,13 @@
         const existing = getCurrentIntent();
         if (existing) {
             const boundTouch = existing.touch_id ? getLeadIntentBoundTouchSnapshot() : null;
-            return { intent: existing, touchForEvent: boundTouch, isNew: false };
+            const usableBoundTouch = isTouchSnapshotUsable(boundTouch) ? boundTouch : null;
+            return { intent: existing, touchForEvent: usableBoundTouch, isNew: false };
         }
         if (!hasSecureRandom()) return { intent: null, touchForEvent: null, isNew: false };
 
         const touch = getCurrentTouch();
+        const usableTouch = isTouchSnapshotUsable(touch) ? touch : null;
         const intent = {
             lead_intent_id: generateSecureId('intent'),
             reference_code: generateReferenceCode(),
@@ -375,13 +396,13 @@
             first_channel: channel
         };
         storeIntent(intent);
-        if (touch) storeLeadIntentBoundTouchSnapshot(touch);
-        return { intent, touchForEvent: touch, isNew: true };
+        if (usableTouch) storeLeadIntentBoundTouchSnapshot(usableTouch);
+        return { intent, touchForEvent: usableTouch, isNew: true };
     };
 
     const AD_TOUCH_PARAMS = ['utm_source', 'utm_medium', 'utm_campaign', 'utm_term', 'utm_content', 'campaignid', 'adgroupid', 'creative', 'keyword', 'matchtype', 'device', 'network', 'loc_physical_ms', 'loc_interest_ms', 'placement', 'targetid', 'extensionid'];
 
-    const applyParams = (url, lead, touch) => {
+    const applyParams = (url, lead, touch, options = {}) => {
         if (lead.session_id && !url.searchParams.has('obsidian_session_id')) {
             url.searchParams.set('obsidian_session_id', lead.session_id);
         }
@@ -391,6 +412,16 @@
         if (lead.phone && !url.searchParams.has('phone')) {
             url.searchParams.set('phone', lead.phone);
         }
+
+        // Q2: a same-origin target (an internal /booking or /vip-booking link) is a URL a
+        // customer can copy, paste, and share -- carrying gclid/gbraid/wbraid, UTMs, or
+        // campaign/keyword/device metadata on it lets a stranger's browser mint a genuine paid
+        // touch from a click it never made. localStorage already preserves this browser's touch
+        // for first-party attribution, so the URL copy buys nothing and only creates
+        // cross-visitor false attribution. The opaque session bridge and non-paid contact
+        // context above are still genuinely needed and stay. External Square targets cannot read
+        // this browser's localStorage, so they keep the full decoration below.
+        if (options.sameOrigin) return;
 
         if (touch) {
             // Every ad-touch field (UTMs, click IDs, campaign/ad group/creative/keyword/match/
@@ -435,8 +466,9 @@
 
             try {
                 const url = new URL(raw, window.location.origin);
-                applyParams(url, lead, touch);
-                const nextValue = url.origin === window.location.origin
+                const sameOrigin = url.origin === window.location.origin;
+                applyParams(url, lead, touch, { sameOrigin });
+                const nextValue = sameOrigin
                     ? `${url.pathname}${url.search}${url.hash}`
                     : url.toString();
 
@@ -636,18 +668,39 @@
                     last_attempt_at: new Date().toISOString()
                 });
 
+                let response;
                 try {
-                    const response = await window.fetch(endpoint, {
+                    response = await window.fetch(endpoint, {
                         method: 'POST',
                         headers: { 'Content-Type': 'application/json' },
                         body: JSON.stringify(entry.event),
                         keepalive: true
                     });
-                    if (!response || !response.ok) throw new Error('Lead-event endpoint rejected delivery');
-                    removePendingEvent(entry.event.event_id);
                 } catch (error) {
+                    // Network error: retryable, stop the batch so later envelopes are attempted
+                    // on the next flush rather than out of order.
                     break;
                 }
+
+                if (!response) break;
+
+                if (response.ok) {
+                    removePendingEvent(entry.event.event_id);
+                    continue;
+                }
+
+                // Q1/Q6: a permanent 4xx (malformed payload, validation rejection, etc.) will
+                // never succeed on retry -- drop it and keep flushing so one poison envelope can
+                // never block the rest of the queue. 408 (timeout) and 429 (rate limit) are
+                // retryable, as is any 5xx.
+                const status = response.status;
+                const isPermanentRejection = status >= 400 && status < 500 && status !== 408 && status !== 429;
+                if (isPermanentRejection) {
+                    removePendingEvent(entry.event.event_id);
+                    continue;
+                }
+
+                break;
             }
 
             return getPendingEvents().length === 0;
