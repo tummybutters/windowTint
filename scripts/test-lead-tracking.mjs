@@ -303,33 +303,96 @@ const secureCrypto = {
   getRandomValues: (typedArray) => webcrypto.getRandomValues(typedArray)
 };
 
-const createFakeDocument = (nodesBySelector = {}) => ({
-  readyState: 'complete',
-  referrer: 'https://www.google.com/',
-  documentElement: {},
-  querySelectorAll(selector) {
-    return nodesBySelector[selector] || [];
-  },
-  querySelector() {
-    return null;
-  },
-  addEventListener() {},
-  createElement(tagName) {
-    const node = { tagName: tagName.toUpperCase(), __attrs: {} };
-    node.setAttribute = (name, value) => {
-      node.__attrs[name] = value;
-    };
-    node.getAttribute = (name) => (name in node.__attrs ? node.__attrs[name] : '');
-    return node;
-  }
-});
+// Minimal CSS attribute-selector matcher covering the shapes lead-tracking.js actually uses:
+// bare tag ("a"), exact ([href="/booking"]), prefix ([href^="tel:"]), and substring
+// ([href*="appointments"]) — joined with commas for compound selectors like BOOKING_SELECTORS.
+const SELECTOR_PART_RE = /^([a-zA-Z0-9]+)?(?:\[([a-zA-Z0-9_-]+)([~^$*]?)="([^"]*)"\])?$/;
 
-const createFakeAnchor = (href) => {
-  const node = { tagName: 'A', __attrs: { href } };
+const matchesSingleSelector = (node, selector) => {
+  const match = SELECTOR_PART_RE.exec(selector.trim());
+  if (!match) return false;
+  const [, tag, attr, op, value] = match;
+  if (tag && (node.tagName || '').toLowerCase() !== tag.toLowerCase()) return false;
+  if (attr) {
+    const attrValue = (node.getAttribute && node.getAttribute(attr)) || '';
+    if (op === '^') {
+      if (!attrValue.startsWith(value)) return false;
+    } else if (op === '*') {
+      if (!attrValue.includes(value)) return false;
+    } else if (op === '$') {
+      if (!attrValue.endsWith(value)) return false;
+    } else if (attrValue !== value) {
+      return false;
+    }
+  }
+  return true;
+};
+
+const matchesCompoundSelector = (node, selector) => (
+  selector.split(',').some((part) => matchesSingleSelector(node, part))
+);
+
+// A working listener registry/dispatcher so bindClickTracking's real capture-phase document
+// click/submit listeners are actually exercised (they were previously a no-op, so no test ever
+// ran the real handler code path -- see task-3-review.md's "test strength" finding #1).
+const createFakeDocument = (nodesBySelector = {}) => {
+  const listeners = {};
+  return {
+    readyState: 'complete',
+    referrer: 'https://www.google.com/',
+    documentElement: {},
+    querySelectorAll(selector) {
+      return nodesBySelector[selector] || [];
+    },
+    querySelector() {
+      return null;
+    },
+    addEventListener(type, handler) {
+      if (!listeners[type]) listeners[type] = [];
+      listeners[type].push(handler);
+    },
+    createElement(tagName) {
+      const node = { tagName: tagName.toUpperCase(), __attrs: {} };
+      node.setAttribute = (name, value) => {
+        node.__attrs[name] = value;
+      };
+      node.getAttribute = (name) => (name in node.__attrs ? node.__attrs[name] : '');
+      return node;
+    },
+    // Simulates dispatching a real DOM event to every capture-phase listener registered for
+    // `type`, synchronously, in registration order -- exactly like document-level delegation.
+    dispatch(type, target) {
+      const event = {
+        type,
+        target,
+        defaultPrevented: false,
+        preventDefault() {
+          event.defaultPrevented = true;
+        }
+      };
+      (listeners[type] || []).forEach((handler) => handler(event));
+      return event;
+    }
+  };
+};
+
+const createFakeAnchor = (href, text = '') => {
+  const node = { tagName: 'A', __attrs: { href }, textContent: text };
   node.getAttribute = (name) => (name in node.__attrs ? node.__attrs[name] : '');
   node.setAttribute = (name, value) => {
     node.__attrs[name] = value;
   };
+  node.matches = (selector) => matchesCompoundSelector(node, selector);
+  node.closest = (selector) => (node.matches(selector) ? node : null);
+  Object.defineProperty(node, 'href', {
+    get() {
+      return node.__attrs.href || '';
+    },
+    set(value) {
+      node.__attrs.href = value;
+    },
+    configurable: true
+  });
   return node;
 };
 
@@ -580,7 +643,8 @@ const createContext = ({ href, storage, doc, crypto, adsConfig }) => {
   assert.equal(phoneEvents[1].touch, undefined, 'the repeated action does not resend the already-landed touch snapshot');
 }
 
-// --- Scenario C: SMS bodies get the OA reference without changing the destination ---
+// --- Scenario C: SMS bodies get the OA reference without changing the destination, and only a
+// real tap (not boot-time decoration) creates the intent and rewrites the tapped href ---
 {
   const storage = createStorage();
   const smsNode = createFakeAnchor('sms:7146007134');
@@ -590,24 +654,61 @@ const createContext = ({ href, storage, doc, crypto, adsConfig }) => {
   );
   // Real fixture shape from booking / commercial-window-film-qualifier.js: the cross-platform "?&body=" idiom.
   const ampBodySmsNode = createFakeAnchor('sms:7146007134?&body=Hi%20there');
+  const doc = createFakeDocument({
+    'a[href^="sms:"]': [smsNode, realBodySmsNode, ampBodySmsNode]
+  });
   const { tracker } = createContext({
     href: 'https://www.obsidianautoworksoc.com/vip-booking?gclid=CLICKD',
     storage,
-    doc: createFakeDocument({
-      'a[href^="sms:"]': [smsNode, realBodySmsNode, ampBodySmsNode]
-    }),
+    doc,
     crypto: secureCrypto
   });
 
+  // Critical finding #1: mere render (boot/MutationObserver/periodic decoration) must never
+  // create the intent or decorate any sms link.
+  assert.equal(tracker.getCurrentIntent(), null, 'boot-time render creates no lead intent for the text channel');
+  assert.equal(smsNode.getAttribute('href'), 'sms:7146007134', 'no sms link is decorated before a real tap');
+  assert.equal(
+    tracker.getEventLog().filter((event) => event.event_name === 'text_click').length,
+    0,
+    'no text_click event exists before a real tap'
+  );
+
+  // A real tap on the primary sms link creates the intent and rewrites that link's href
+  // synchronously -- before the simulated default action (the OS reading the href) would run.
+  const clickEvent = doc.dispatch('click', smsNode);
+  assert.equal(clickEvent.defaultPrevented, false, 'the tap is never intercepted with preventDefault');
+
   const intent = tracker.getCurrentIntent();
-  assert.ok(intent, 'boot-time decoration creates the lead intent for the text channel');
+  assert.ok(intent, 'the real tap on the sms link creates the lead intent');
   assert.equal(intent.first_channel, 'text');
+
+  const textClickEvents = tracker.getEventLog().filter((event) => event.event_name === 'text_click');
+  assert.equal(textClickEvents.length, 1, 'the tap records exactly one text_click event');
+  assert.deepEqual(textClickEvents[0].lead_intent, intent, 'the event carries the lead_intent');
+  assert.ok(textClickEvents[0].touch, 'the creating event includes the bound touch snapshot');
+  assert.equal(
+    tracker.getEventLog().filter((event) => event.event_name === 'lead_intent_created').length,
+    0,
+    'no separate lead_intent_created plumbing event is ever emitted'
+  );
 
   const decoratedHref = smsNode.getAttribute('href');
   assert.ok(decoratedHref.startsWith('sms:7146007134?'), 'the destination number is unchanged');
   const [, query] = decoratedHref.split('?');
   const body = new URLSearchParams(query).get('body');
   assert.ok(body.includes(`Ref: ${intent.reference_code}`), 'the sms body carries the OA reference');
+
+  // A different, not-yet-tapped sms link is untouched by the first link's tap.
+  assert.equal(
+    realBodySmsNode.getAttribute('href'),
+    'sms:+17146007134?body=Hi%20Obsidian%20Autoworks%2C%20I%27d%20like%20help%20booking%20mobile%20window%20tint.',
+    'a second sms link is not decorated by tapping the first'
+  );
+
+  // Passive/periodic decoration (the MutationObserver refresh / 2s interval in real boot())
+  // opportunistically catches up any other sms links now that a real action created an intent.
+  tracker.decorateTextLinks();
 
   const realBodyHref = realBodySmsNode.getAttribute('href');
   assert.ok(
@@ -654,33 +755,62 @@ const createContext = ({ href, storage, doc, crypto, adsConfig }) => {
     ampBodyHref,
     'repeated decoration on the ?&body= fixture is idempotent'
   );
+
+  // A second real tap reuses the same intent/reference and does not resend the touch snapshot.
+  doc.dispatch('click', smsNode);
+  assert.deepEqual(tracker.getCurrentIntent(), intent, 'a repeated tap reuses the same intent and reference');
+  const textClickEventsAfterSecondTap = tracker.getEventLog().filter((event) => event.event_name === 'text_click');
+  assert.equal(textClickEventsAfterSecondTap.length, 2);
+  assert.equal(textClickEventsAfterSecondTap[1].touch, undefined, 'the repeated tap does not resend the touch snapshot');
 }
 
-// --- Scenario D: forms receive the four hidden lead-reference fields ---
+// --- Scenario D: forms receive the four hidden lead-reference fields on a real submit, not on
+// boot-time decoration ---
 {
   const storage = createStorage();
   const formNode = createFakeForm();
+  const doc = createFakeDocument({ form: [formNode] });
   const { tracker } = createContext({
     href: 'https://www.obsidianautoworksoc.com/vip-booking?gclid=CLICKE',
     storage,
-    doc: createFakeDocument({ form: [formNode] }),
+    doc,
     crypto: secureCrypto
   });
 
-  const intent = tracker.getCurrentIntent();
+  assert.equal(tracker.getCurrentIntent(), null, 'boot-time render creates no lead intent for the form channel');
+  assert.equal(formNode.inputs.get('lead_intent_id'), undefined, 'no lead_intent_id field before a real submit');
+
   const touch = tracker.getCurrentTouch();
-  assert.ok(intent, 'boot-time decoration creates the lead intent for the form channel');
+  const submitEvent = doc.dispatch('submit', formNode);
+  assert.equal(submitEvent.defaultPrevented, false, 'the submit is never intercepted with preventDefault');
+
+  const intent = tracker.getCurrentIntent();
+  assert.ok(intent, 'the real submit creates the lead intent');
   assert.equal(intent.first_channel, 'form');
 
+  // The four hidden fields exist immediately after dispatch returns -- i.e. before the
+  // simulated default action (the actual form POST) would run.
   assert.equal(formNode.inputs.get('lead_intent_id').value, intent.lead_intent_id);
   assert.equal(formNode.inputs.get('lead_reference').value, intent.reference_code);
   assert.equal(formNode.inputs.get('lead_session_id').value, tracker.getLead().session_id);
   assert.equal(formNode.inputs.get('lead_touch_id').value, touch.touch_id);
 
-  const creationEvent = tracker.getEventLog().find((event) => event.event_name === 'lead_intent_created');
-  assert.ok(creationEvent, 'form-triggered intent creation is durably persisted via an event');
-  assert.deepEqual(creationEvent.lead_intent, intent);
-  assert.equal(creationEvent.touch.touch_id, touch.touch_id);
+  const submitEvents = tracker.getEventLog().filter((event) => event.event_name === 'form_submit');
+  assert.equal(submitEvents.length, 1, 'the submit records exactly one form_submit event');
+  assert.deepEqual(submitEvents[0].lead_intent, intent, 'the event carries the lead_intent');
+  assert.equal(submitEvents[0].touch.touch_id, touch.touch_id, 'the creating event includes the bound touch snapshot');
+  assert.equal(
+    tracker.getEventLog().filter((event) => event.event_name === 'lead_intent_created').length,
+    0,
+    'no separate lead_intent_created plumbing event is ever emitted'
+  );
+
+  // A second real submit reuses the same intent/reference and does not resend the touch.
+  doc.dispatch('submit', formNode);
+  assert.deepEqual(tracker.getCurrentIntent(), intent, 'a repeated submit reuses the same intent and reference');
+  const submitEventsAfterSecond = tracker.getEventLog().filter((event) => event.event_name === 'form_submit');
+  assert.equal(submitEventsAfterSecond.length, 2);
+  assert.equal(submitEventsAfterSecond[1].touch, undefined, 'the repeated submit does not resend the touch snapshot');
 }
 
 // --- Scenario E: phone hrefs are never modified ---
@@ -699,15 +829,17 @@ const createContext = ({ href, storage, doc, crypto, adsConfig }) => {
   assert.equal(telNode.getAttribute('href'), 'tel:7146007134', 'the phone href is never modified');
 }
 
-// --- Scenario F: Web Crypto absence preserves the action and emits no weak reference/intent ---
+// --- Scenario F: Web Crypto absence preserves every real action and emits no weak
+// reference/intent, for clicks and submits alike ---
 {
   const storage = createStorage();
   const smsNode = createFakeAnchor('sms:7146007134');
   const formNode = createFakeForm();
+  const doc = createFakeDocument({ 'a[href^="sms:"]': [smsNode], form: [formNode] });
   const { tracker, gtagCalls } = createContext({
     href: 'https://www.obsidianautoworksoc.com/vip-booking?gclid=CLICKG',
     storage,
-    doc: createFakeDocument({ 'a[href^="sms:"]': [smsNode], form: [formNode] }),
+    doc,
     crypto: undefined
   });
 
@@ -726,6 +858,174 @@ const createContext = ({ href, storage, doc, crypto, adsConfig }) => {
   assert.ok(
     gtagCalls.some((call) => call[0] === 'event' && call[1] === 'conversion'),
     'phone conversion tracking is unaffected by Web Crypto absence'
+  );
+
+  // A real tap and a real submit must still proceed (no preventDefault) and still record their
+  // events, but must create no intent, no reference, and no OA decoration.
+  const clickEvent = doc.dispatch('click', smsNode);
+  assert.equal(clickEvent.defaultPrevented, false, 'the sms tap is never intercepted without Web Crypto');
+  assert.equal(smsNode.getAttribute('href'), 'sms:7146007134', 'the sms href is never decorated without Web Crypto');
+  assert.ok(
+    tracker.getEventLog().some((event) => event.event_name === 'text_click'),
+    'the text_click action is still tracked without Web Crypto'
+  );
+
+  const submitEvent = doc.dispatch('submit', formNode);
+  assert.equal(submitEvent.defaultPrevented, false, 'the form submit is never intercepted without Web Crypto');
+  assert.equal(formNode.inputs.get('lead_intent_id'), undefined, 'submit never adds lead_intent_id without Web Crypto');
+  assert.equal(formNode.inputs.get('lead_reference'), undefined, 'submit never adds lead_reference without Web Crypto');
+  assert.equal(formNode.inputs.get('lead_touch_id'), undefined, 'submit never adds lead_touch_id without Web Crypto');
+  assert.ok(
+    tracker.getEventLog().some((event) => event.event_name === 'form_submit'),
+    'the form_submit action is still tracked without Web Crypto'
+  );
+
+  assert.equal(tracker.getCurrentIntent(), null, 'no weak lead intent is ever created without Web Crypto');
+  assert.equal(
+    tracker.getEventLog().filter((event) => event.event_name === 'lead_intent_created').length,
+    0,
+    'no lead_intent_created plumbing event without Web Crypto'
+  );
+}
+
+// --- Scenario G: mere DOM render (boot only, no user action at all) creates zero intent/OA
+// events, even with a form, an sms link, and a phone link all present on the page ---
+{
+  const storage = createStorage();
+  const smsNode = createFakeAnchor('sms:7146007134');
+  const formNode = createFakeForm();
+  const telNode = createFakeAnchor('tel:7146007134');
+  const doc = createFakeDocument({
+    'a[href^="sms:"]': [smsNode],
+    'a[href^="tel:"]': [telNode],
+    form: [formNode]
+  });
+  const { tracker } = createContext({
+    href: 'https://www.obsidianautoworksoc.com/vip-booking?gclid=CLICKH',
+    storage,
+    doc,
+    crypto: secureCrypto
+  });
+
+  assert.ok(tracker.getCurrentTouch(), 'the paid landing still creates a touch on render');
+  assert.equal(tracker.getCurrentIntent(), null, 'render alone creates no lead intent');
+  assert.equal(smsNode.getAttribute('href'), 'sms:7146007134', 'the sms link is never decorated by render alone');
+  assert.equal(formNode.inputs.get('lead_intent_id'), undefined, 'no lead_intent_id field from render alone');
+  assert.equal(formNode.inputs.get('lead_reference'), undefined, 'no lead_reference field from render alone');
+  assert.equal(formNode.inputs.get('lead_touch_id'), undefined, 'no lead_touch_id field from render alone');
+
+  const actionEventNames = [
+    'phone_click', 'text_click', 'form_submit',
+    'square_booking_click', 'ai_booking_click', 'lead_intent_created'
+  ];
+  const events = tracker.getEventLog();
+  actionEventNames.forEach((name) => {
+    assert.equal(events.filter((event) => event.event_name === name).length, 0, `render alone emits no ${name} event`);
+  });
+
+  // Re-running the periodic/MutationObserver decoration passes directly (simulating repeated
+  // refreshes with no interaction) must still create nothing.
+  tracker.decorateForms();
+  tracker.decorateTextLinks();
+  assert.equal(tracker.getCurrentIntent(), null, 'repeated passive decoration still creates no lead intent');
+  assert.equal(smsNode.getAttribute('href'), 'sms:7146007134', 'repeated passive decoration still leaves the sms href untouched');
+}
+
+// --- Scenario H: phone wins first_channel even with a form and an sms link also present; later
+// mixed actions reuse the exact same intent/reference/touch and never overwrite first_channel ---
+{
+  const storage = createStorage();
+  const smsNode = createFakeAnchor('sms:7146007134');
+  const formNode = createFakeForm();
+  const telNode = createFakeAnchor('tel:7146007134');
+  const doc = createFakeDocument({
+    'a[href^="sms:"]': [smsNode],
+    'a[href^="tel:"]': [telNode],
+    form: [formNode]
+  });
+  const { tracker } = createContext({
+    href: 'https://www.obsidianautoworksoc.com/vip-booking?gclid=CLICKI',
+    storage,
+    doc,
+    crypto: secureCrypto
+  });
+
+  const touch = tracker.getCurrentTouch();
+
+  doc.dispatch('click', telNode);
+
+  const intent = tracker.getCurrentIntent();
+  assert.ok(intent, 'the phone tap creates the lead intent');
+  assert.equal(intent.first_channel, 'phone', 'phone wins first_channel even though a form and sms link are also present');
+
+  const phoneEvents = tracker.getEventLog().filter((event) => event.event_name === 'phone_click');
+  assert.equal(phoneEvents.length, 1);
+  assert.ok(phoneEvents[0].touch, 'the creating phone_click event carries the touch snapshot');
+  assert.equal(phoneEvents[0].touch.touch_id, touch.touch_id);
+
+  // A later text tap and a later form submit must reuse the same intent/reference/touch and
+  // must never overwrite first_channel.
+  doc.dispatch('click', smsNode);
+  doc.dispatch('submit', formNode);
+
+  const intentAfterMixedActions = tracker.getCurrentIntent();
+  assert.deepEqual(intentAfterMixedActions, intent, 'later text and form actions reuse the exact same intent/reference');
+  assert.equal(intentAfterMixedActions.first_channel, 'phone', 'first_channel is still phone after later actions');
+
+  const textEvents = tracker.getEventLog().filter((event) => event.event_name === 'text_click');
+  const formEvents = tracker.getEventLog().filter((event) => event.event_name === 'form_submit');
+  assert.equal(textEvents.length, 1);
+  assert.equal(formEvents.length, 1);
+  assert.deepEqual(textEvents[0].lead_intent, intent);
+  assert.deepEqual(formEvents[0].lead_intent, intent);
+  assert.equal(textEvents[0].touch, undefined, 'the later text_click does not resend the touch snapshot');
+  assert.equal(formEvents[0].touch, undefined, 'the later form_submit does not resend the touch snapshot');
+
+  assert.equal(
+    tracker.getEventLog().filter((event) => event.event_name === 'lead_intent_created').length,
+    0,
+    'no lead_intent_created plumbing event exists across the mixed actions'
+  );
+
+  // The sms link is now decorated (from the text tap) and the form now carries the OA fields
+  // (from the submit), both using the single shared intent/reference.
+  assert.ok(smsNode.getAttribute('href').includes(intent.reference_code));
+  assert.equal(formNode.inputs.get('lead_reference').value, intent.reference_code);
+}
+
+// --- Scenario I: booking wins first_channel when it is the first real action ---
+{
+  const storage = createStorage();
+  const bookingNode = createFakeAnchor('/booking');
+  const telNode = createFakeAnchor('tel:7146007134');
+  const doc = createFakeDocument({
+    'a[href="/booking"]': [bookingNode],
+    'a[href^="tel:"]': [telNode]
+  });
+  const { tracker } = createContext({
+    href: 'https://www.obsidianautoworksoc.com/vip-booking?gclid=CLICKJ',
+    storage,
+    doc,
+    crypto: secureCrypto
+  });
+
+  doc.dispatch('click', bookingNode);
+
+  const intent = tracker.getCurrentIntent();
+  assert.ok(intent, 'the booking tap creates the lead intent');
+  assert.equal(intent.first_channel, 'booking', 'booking wins first_channel when clicked first');
+
+  const bookingEvents = tracker.getEventLog().filter((event) => event.event_name === 'ai_booking_click');
+  assert.equal(bookingEvents.length, 1);
+  assert.deepEqual(bookingEvents[0].lead_intent, intent);
+
+  doc.dispatch('click', telNode);
+  assert.equal(tracker.getCurrentIntent().first_channel, 'booking', 'a later phone tap does not overwrite first_channel');
+
+  assert.equal(
+    tracker.getEventLog().filter((event) => event.event_name === 'lead_intent_created').length,
+    0,
+    'no lead_intent_created plumbing event exists'
   );
 }
 

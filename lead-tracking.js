@@ -142,7 +142,8 @@
         phone_click: 'phone',
         text_click: 'text',
         square_booking_click: 'booking',
-        ai_booking_click: 'booking'
+        ai_booking_click: 'booking',
+        form_submit: 'form'
     };
 
     const readParams = () => new URLSearchParams(window.location.search);
@@ -419,6 +420,9 @@
         input.value = value || '';
     };
 
+    // Never mints a lead intent -- only decorates with one that a real form submit or other
+    // channel action already created (finding #1/critical). Passive/periodic decoration is a
+    // consequence of a real action, never a trigger for one.
     const decorateForms = () => {
         const lead = getLead();
         if (!hasAttribution(lead)) return;
@@ -426,8 +430,7 @@
         const forms = document.querySelectorAll('form');
         if (forms.length === 0) return;
 
-        const leadIntentResult = ensureLeadIntent('form');
-        const intent = leadIntentResult.intent;
+        const intent = getCurrentIntent();
 
         forms.forEach((form) => {
             upsertHidden(form, 'lead_session_id', lead.session_id);
@@ -454,13 +457,6 @@
                 upsertHidden(form, 'lead_touch_id', intent.touch_id);
             }
         });
-
-        if (leadIntentResult.isNew) {
-            recordLeadEvent('lead_intent_created', {}, {
-                leadIntent: intent,
-                touch: leadIntentResult.touchForEvent
-            });
-        }
     };
 
     // Appends "Ref: OA-..." to an sms: href's raw body value via string concatenation rather
@@ -502,8 +498,10 @@
         return `${nextBase}${fragment}`;
     };
 
-    // SMS href content must be correct before the user taps the link (the OS reads the href
-    // at tap time), so this decorates proactively like decorateForms rather than on click.
+    // Never mints a lead intent (finding #1/critical) -- the tapped link itself is decorated
+    // synchronously by the text-click capture handler in bindClickTracking before the OS reads
+    // the href. This pass only opportunistically catches up any *other*, not-yet-tapped sms
+    // links on the page once a real action has already created an intent.
     const decorateTextLinks = () => {
         const lead = getLead();
         if (!hasAttribution(lead)) return;
@@ -511,8 +509,7 @@
         const links = document.querySelectorAll(TEXT_SELECTOR);
         if (links.length === 0) return;
 
-        const leadIntentResult = ensureLeadIntent('text');
-        const intent = leadIntentResult.intent;
+        const intent = getCurrentIntent();
         if (!intent) return;
 
         links.forEach((node) => {
@@ -522,13 +519,6 @@
 
             node.setAttribute('href', appendReferenceToSmsHref(raw, intent.reference_code));
         });
-
-        if (leadIntentResult.isNew) {
-            recordLeadEvent('lead_intent_created', {}, {
-                leadIntent: intent,
-                touch: leadIntentResult.touchForEvent
-            });
-        }
     };
 
     const getEventLog = () => {
@@ -695,7 +685,11 @@
         let eventOptions = options;
         const channel = LEAD_INTENT_CHANNEL_BY_EVENT[eventName];
         if (channel) {
-            const leadIntentResult = ensureLeadIntent(channel);
+            // A capture-phase handler may have already called ensureLeadIntent itself (to
+            // decorate the clicked link/submitted form before this call), in which case it
+            // passes that same result through so the intent isn't created/read twice and the
+            // isNew/touchForEvent bookkeeping stays accurate.
+            const leadIntentResult = options.leadIntentResult || ensureLeadIntent(channel);
             if (leadIntentResult.intent) {
                 eventOptions = { ...options, leadIntent: leadIntentResult.intent };
                 if (leadIntentResult.isNew && leadIntentResult.touchForEvent) {
@@ -821,11 +815,42 @@
             const link = event.target.closest(TEXT_SELECTOR);
             if (!link) return;
 
+            // Create/reuse the intent and rewrite this specific link's href synchronously,
+            // before the default action (the OS reading the href to launch Messages) runs.
+            const leadIntentResult = ensureLeadIntent('text');
+            const intent = leadIntentResult.intent;
+            if (intent) {
+                const raw = link.getAttribute('href');
+                if (raw && raw.startsWith('sms:') && !raw.includes(intent.reference_code)) {
+                    link.setAttribute('href', appendReferenceToSmsHref(raw, intent.reference_code));
+                }
+            }
+
             sendAnalyticsEvent('text_click', {
                 link_url: link.href,
                 link_text: (link.textContent || '').trim().slice(0, 120),
                 ...getLeadContext(link)
-            });
+            }, { leadIntentResult });
+        }, true);
+
+        document.addEventListener('submit', (event) => {
+            const form = event.target;
+            if (!form || form.tagName !== 'FORM') return;
+
+            const lead = getLead();
+            // lead_session_id is a legacy field written unconditionally (even without Web
+            // Crypto); the OA intent fields below are only written once a real intent exists.
+            upsertHidden(form, 'lead_session_id', lead.session_id);
+
+            const leadIntentResult = ensureLeadIntent('form');
+            const intent = leadIntentResult.intent;
+            if (intent) {
+                upsertHidden(form, 'lead_intent_id', intent.lead_intent_id);
+                upsertHidden(form, 'lead_reference', intent.reference_code);
+                upsertHidden(form, 'lead_touch_id', intent.touch_id);
+            }
+
+            sendAnalyticsEvent('form_submit', {}, { leadIntentResult });
         }, true);
     };
 
