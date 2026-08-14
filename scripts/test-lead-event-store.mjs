@@ -118,9 +118,15 @@ assert.match(
   'touch_lookup arm 2 (pre-existing row) must require both the exact touch_id and session ownership'
 );
 
-// --- SQL shape: the lead intent's stored touch_id FK is sourced from the session-scoped
-// touch_lookup, never from the raw $63 param -- an unresolvable or cross-session touch must
-// degrade to organic instead of aborting the statement via a foreign-key violation. ---
+// --- SQL shape (task-2 fix round 2): the lead intent's stored touch_id FK is sourced from the
+// session-scoped touch_lookup, never from the raw $63 param. Per the controller ruling, a
+// NULL-to-touch conflict update was explicitly rejected (it could later convert a genuinely
+// organic first intent into a paid one), so the fix is a conditional INSERT instead: a true
+// organic intent ($63 empty) always inserts with touch_id NULL; an intent declaring a nonempty
+// touch inserts ONLY when that exact touch has already resolved through touch_lookup. A
+// temporarily-missing or cross-session touch produces no row at all this call -- it must not
+// silently persist as organic -- so a later call (once the touch lands) can still create the
+// intent correctly, instead of the binding being permanently frozen wrong. ---
 
 assert.match(
   PERSIST_EVENT_SQL,
@@ -131,6 +137,16 @@ assert.doesNotMatch(
   PERSIST_EVENT_SQL.replace(/SELECT touch_id FROM touch_lookup LIMIT 1/g, ''),
   /NULLIF\(\$63, ''\)\s*,\s*\$30,\s*\$64,\s*NOW\(\)/,
   'lead_intent_upsert must not fall back to writing $63 straight into the touch_id column'
+);
+assert.match(
+  PERSIST_EVENT_SQL,
+  /WHERE \$61 <> ''\s*\n\s*AND \(\$63 = '' OR EXISTS \(SELECT 1 FROM touch_lookup\)\)\s*\n\s*ON CONFLICT \(lead_intent_id\) DO NOTHING/,
+  'lead_intent_upsert must only insert when the intent is organic ($63 empty) or its declared touch actually resolves through touch_lookup -- a nonempty $63 that fails to resolve must produce no row, not an organic row'
+);
+assert.doesNotMatch(
+  PERSIST_EVENT_SQL,
+  /WHERE \$61 <> ''\s*\n\s*ON CONFLICT \(lead_intent_id\)/,
+  'lead_intent_upsert must not insert unconditionally on $61 alone -- a declared nonempty touch that fails to resolve must gate the insert, not silently become organic'
 );
 
 // --- SQL shape: lead_intent_lookup mirrors touch_lookup so a freshly-inserted intent (this
@@ -146,8 +162,8 @@ assert.match(
 );
 assert.match(
   PERSIST_EVENT_SQL,
-  /SELECT lead_intent_id, touch_id FROM attribution_lead_intents\s*\n\s*WHERE lead_intent_id = NULLIF\(\$61, ''\) AND session_id = \$1/,
-  'lead_intent_lookup arm 2 (pre-existing row) must require both the exact lead_intent_id and session ownership'
+  /SELECT lead_intent_id, touch_id FROM attribution_lead_intents\s*\n\s*WHERE lead_intent_id = NULLIF\(\$61, ''\)\s*\n\s*AND session_id = \$1\s*\n\s*AND reference_code = NULLIF\(\$62, ''\)/,
+  'lead_intent_lookup arm 2 (pre-existing row) must require exact session ownership AND the exact stored reference_code, not a guessable/reused lead_intent_id alone'
 );
 assert.match(
   PERSIST_EVENT_SQL,
@@ -166,18 +182,30 @@ assert.match(
   'lead_intent_link_insert must require both the exact touch and the exact intent ownership via an explicit JOIN'
 );
 
-// --- Live-database verification requirement (cannot be proven against a mocked query) ---
+// --- Live-database verification requirements (cannot be proven against a mocked query) ---
 //
-// A duplicate reference_code submitted under a *different* lead_intent_id must fail the whole
-// statement rather than silently reassigning the reference: lead_intent_upsert's ON CONFLICT
-// arbiter is (lead_intent_id) only, so a colliding reference_code is not caught by DO NOTHING --
-// it falls through to the real INSERT and must raise the `attribution_lead_intents_reference_code_key`
-// UNIQUE violation from db/migrations/004_attribution_foundation.sql:55. The mock query in this
-// suite returns a canned row unconditionally and never evaluates constraints, so it cannot
-// distinguish "insert succeeded" from "insert violated a UNIQUE constraint". This must be
-// exercised against a live Postgres database (Task 7/8 verification) before it can be trusted:
-// insert lead_intent_id A with reference_code R, then attempt lead_intent_id B with the same
-// reference_code R in a second statement, and assert the second call rejects.
+// 1. Duplicate reference_code collision. A duplicate reference_code submitted under a
+// *different* lead_intent_id must fail the whole statement rather than silently reassigning the
+// reference: lead_intent_upsert's ON CONFLICT arbiter is (lead_intent_id) only, so a colliding
+// reference_code is not caught by DO NOTHING -- it falls through to the real INSERT and must
+// raise the `attribution_lead_intents_reference_code_key` UNIQUE violation from
+// db/migrations/004_attribution_foundation.sql:55. The mock query in this suite returns a
+// canned row unconditionally and never evaluates constraints, so it cannot distinguish "insert
+// succeeded" from "insert violated a UNIQUE constraint". This must be exercised against a live
+// Postgres database (Task 7/8 verification) before it can be trusted: insert lead_intent_id A
+// with reference_code R, then attempt lead_intent_id B with the same reference_code R in a
+// second statement, and assert the second call rejects.
+//
+// 2. Conditional insert + later repair (task-2 fix round 2). Send call 1: lead_intent_id I,
+// reference_code R, touch_id T, no `touch` object, where T has not yet landed in
+// attribution_touches for this session. Assert: the statement succeeds (event_insert reports
+// inserted), but SELECT * FROM attribution_lead_intents WHERE lead_intent_id = 'I' returns ZERO
+// rows -- no organic intent must have been created. Send call 2 in the same session, once T has
+// landed (either T's own touch_insert call completed, or send it as `touch` alongside this same
+// call): same lead_intent_id I, reference_code R, touch_id T. Assert: the intent now exists with
+// touch_id = T. Send call 3: same lead_intent_id I, reference_code R, but a different resolvable
+// touch_id T2. Assert: the intent's touch_id is STILL T (immutable once genuinely bound), not
+// T2 -- proving the binding cannot be rewritten once set, only filled in from empty exactly once.
 
 // --- buildParams: paid case (touch + matching lead intent) ---
 
@@ -275,13 +303,18 @@ assert.notEqual(
   'touch and lead_intent.touch_id are legitimately different values in this case'
 );
 
-// --- Missing touch not used as a raw FK: a lead_intent.touch_id ($63) that resolves to nothing
-// in touch_lookup (touch never landed, e.g. dropped by a prior rate-limited/failed submit) must
-// not be written into attribution_lead_intents.touch_id verbatim -- see the SQL-shape assertion
-// above proving lead_intent_upsert sources the FK from `(SELECT touch_id FROM touch_lookup
-// LIMIT 1)`, which yields NULL (not a dangling reference) when nothing resolves. At the
-// buildParams level this is the same shape as the paid case: the raw param is still sent as-is
-// (buildParams does no DB-aware filtering), and it is the SQL's job to degrade it safely. ---
+// --- Missing touch not used as a raw FK, and not silently recorded as organic either: a
+// lead_intent.touch_id ($63) that resolves to nothing in touch_lookup (touch never landed, e.g.
+// dropped by a prior rate-limited/failed submit) must not be written into
+// attribution_lead_intents.touch_id verbatim, and per the controller ruling it must also not
+// insert the intent with touch_id NULL -- that would permanently and silently mis-record a
+// genuinely paid lead as organic, with no code path able to repair it later. Instead the
+// SQL-shape assertion above (`WHERE $61 <> '' AND ($63 = '' OR EXISTS (...))`) proves
+// lead_intent_upsert produces NO row at all in this case: the lead-intent and link writes are
+// skipped for this call, and only a later call -- once the exact touch resolves through
+// touch_lookup -- creates the intent. At the buildParams level this is the same shape as the
+// paid case: the raw param is still sent as-is (buildParams does no DB-aware filtering), and it
+// is the SQL's job to gate the insert on that value resolving. ---
 
 const unresolvableTouchLeadIntent = {
   lead_intent_id: 'intent_00000000000000003',
@@ -302,9 +335,10 @@ assert.equal(unresolvableTouchParams[62], unresolvableTouchLeadIntent.touch_id, 
 
 // --- Cross-session touch exclusion: proven at the SQL-shape level above (touch_lookup arm 2
 // requires `session_id = $1`, so a touch_id that exists but belongs to a different session
-// resolves to zero rows, same as a missing touch -- degrades to organic, never a raw FK write
-// and never a link). buildParams itself has no session-awareness to assert on directly; the
-// session scoping is entirely a property of the SQL text asserted above. ---
+// resolves to zero rows, same as a missing touch -- the lead-intent and link writes are skipped
+// for this call rather than inserting organic, never a raw FK write and never a link).
+// buildParams itself has no session-awareness to assert on directly; the session scoping is
+// entirely a property of the SQL text asserted above. ---
 
 // --- store.persist: paid, retry, and repeated-distinct-event cases ---
 
