@@ -341,8 +341,14 @@ const createFakeDocument = (nodesBySelector = {}) => {
     readyState: 'complete',
     referrer: 'https://www.google.com/',
     documentElement: {},
+    // Exact-key lookup covers the existing single-selector registrations used by tests that
+    // dispatch synthetic events. Production code also queries compound selectors directly (e.g.
+    // decorateBookingTargets calls querySelectorAll(BOOKING_SELECTORS)), so unregistered compound
+    // queries fall back to matching every registered node against the queried selector.
     querySelectorAll(selector) {
-      return nodesBySelector[selector] || [];
+      if (nodesBySelector[selector]) return nodesBySelector[selector];
+      const allNodes = Object.values(nodesBySelector).flat();
+      return allNodes.filter((node) => matchesCompoundSelector(node, selector));
     },
     querySelector() {
       return null;
@@ -795,8 +801,8 @@ const createContext = ({ href, storage, doc, crypto, adsConfig }) => {
   assert.equal(formNode.inputs.get('lead_session_id').value, tracker.getLead().session_id);
   assert.equal(formNode.inputs.get('lead_touch_id').value, touch.touch_id);
 
-  const submitEvents = tracker.getEventLog().filter((event) => event.event_name === 'form_submit');
-  assert.equal(submitEvents.length, 1, 'the submit records exactly one form_submit event');
+  const submitEvents = tracker.getEventLog().filter((event) => event.event_name === 'lead_form_submit');
+  assert.equal(submitEvents.length, 1, 'the submit records exactly one lead_form_submit event');
   assert.deepEqual(submitEvents[0].lead_intent, intent, 'the event carries the lead_intent');
   assert.equal(submitEvents[0].touch.touch_id, touch.touch_id, 'the creating event includes the bound touch snapshot');
   assert.equal(
@@ -808,7 +814,7 @@ const createContext = ({ href, storage, doc, crypto, adsConfig }) => {
   // A second real submit reuses the same intent/reference and does not resend the touch.
   doc.dispatch('submit', formNode);
   assert.deepEqual(tracker.getCurrentIntent(), intent, 'a repeated submit reuses the same intent and reference');
-  const submitEventsAfterSecond = tracker.getEventLog().filter((event) => event.event_name === 'form_submit');
+  const submitEventsAfterSecond = tracker.getEventLog().filter((event) => event.event_name === 'lead_form_submit');
   assert.equal(submitEventsAfterSecond.length, 2);
   assert.equal(submitEventsAfterSecond[1].touch, undefined, 'the repeated submit does not resend the touch snapshot');
 }
@@ -876,8 +882,8 @@ const createContext = ({ href, storage, doc, crypto, adsConfig }) => {
   assert.equal(formNode.inputs.get('lead_reference'), undefined, 'submit never adds lead_reference without Web Crypto');
   assert.equal(formNode.inputs.get('lead_touch_id'), undefined, 'submit never adds lead_touch_id without Web Crypto');
   assert.ok(
-    tracker.getEventLog().some((event) => event.event_name === 'form_submit'),
-    'the form_submit action is still tracked without Web Crypto'
+    tracker.getEventLog().some((event) => event.event_name === 'lead_form_submit'),
+    'the lead_form_submit action is still tracked without Web Crypto'
   );
 
   assert.equal(tracker.getCurrentIntent(), null, 'no weak lead intent is ever created without Web Crypto');
@@ -915,7 +921,7 @@ const createContext = ({ href, storage, doc, crypto, adsConfig }) => {
   assert.equal(formNode.inputs.get('lead_touch_id'), undefined, 'no lead_touch_id field from render alone');
 
   const actionEventNames = [
-    'phone_click', 'text_click', 'form_submit',
+    'phone_click', 'text_click', 'lead_form_submit',
     'square_booking_click', 'ai_booking_click', 'lead_intent_created'
   ];
   const events = tracker.getEventLog();
@@ -973,13 +979,13 @@ const createContext = ({ href, storage, doc, crypto, adsConfig }) => {
   assert.equal(intentAfterMixedActions.first_channel, 'phone', 'first_channel is still phone after later actions');
 
   const textEvents = tracker.getEventLog().filter((event) => event.event_name === 'text_click');
-  const formEvents = tracker.getEventLog().filter((event) => event.event_name === 'form_submit');
+  const formEvents = tracker.getEventLog().filter((event) => event.event_name === 'lead_form_submit');
   assert.equal(textEvents.length, 1);
   assert.equal(formEvents.length, 1);
   assert.deepEqual(textEvents[0].lead_intent, intent);
   assert.deepEqual(formEvents[0].lead_intent, intent);
   assert.equal(textEvents[0].touch, undefined, 'the later text_click does not resend the touch snapshot');
-  assert.equal(formEvents[0].touch, undefined, 'the later form_submit does not resend the touch snapshot');
+  assert.equal(formEvents[0].touch, undefined, 'the later lead_form_submit does not resend the touch snapshot');
 
   assert.equal(
     tracker.getEventLog().filter((event) => event.event_name === 'lead_intent_created').length,
@@ -1027,6 +1033,107 @@ const createContext = ({ href, storage, doc, crypto, adsConfig }) => {
     0,
     'no lead_intent_created plumbing event exists'
   );
+}
+
+// ---------------------------------------------------------------------------
+// Task 3 round 2: applyParams must source ad-touch fields from the current
+// immutable touch, not sticky getLead() history (r1 review finding #1)
+// ---------------------------------------------------------------------------
+
+// --- Scenario J: a gclid landing followed by a distinct gbraid-only landing must produce a
+// booking link carrying only the gbraid touch's fields; navigating a fresh context to that exact
+// decorated href must dedup against the gbraid touch, with no oscillation across repeat visits ---
+{
+  const storage = createStorage();
+
+  // First: a gclid click with a campaign and keyword.
+  const bookingNode1 = createFakeAnchor('/booking');
+  const run1 = createContext({
+    href: 'https://www.obsidianautoworksoc.com/landing?gclid=CLICKA&utm_campaign=camp-a&campaignid=111&keyword=tint',
+    storage,
+    doc: createFakeDocument({ 'a[href="/booking"]': [bookingNode1] }),
+    crypto: secureCrypto
+  });
+  const touch1 = run1.tracker.getCurrentTouch();
+  assert.equal(touch1.gclid, 'CLICKA');
+  assert.equal(touch1.campaign_id, '111');
+  assert.equal(touch1.keyword, 'tint');
+
+  // Second: a distinct, gbraid-only click with no campaign or keyword.
+  const bookingNode2 = createFakeAnchor('/booking');
+  const run2 = createContext({
+    href: 'https://www.obsidianautoworksoc.com/landing?gbraid=CLICKG',
+    storage,
+    doc: createFakeDocument({ 'a[href="/booking"]': [bookingNode2] }),
+    crypto: secureCrypto
+  });
+  const touch2 = run2.tracker.getCurrentTouch();
+  assert.notEqual(touch2.touch_id, touch1.touch_id, 'the gbraid-only click mints a distinct touch');
+  assert.equal(touch2.gclid, '', 'touch2 carries no gclid');
+  assert.equal(touch2.campaign_id, '', 'touch2 carries no campaign_id');
+  assert.equal(touch2.keyword, '', 'touch2 carries no keyword');
+
+  // decorateBookingTargets already ran once during run2's boot(); this captures the real,
+  // actual output of that production code path (not a hand-written URL).
+  const decoratedHref = bookingNode2.getAttribute('href');
+  assert.ok(decoratedHref, 'the booking link was decorated');
+  assert.ok(!decoratedHref.includes('gclid=CLICKA'), 'the decorated link does not carry the prior gclid click');
+  assert.ok(!decoratedHref.includes('campaignid=111'), 'the decorated link does not carry the prior campaign');
+  assert.ok(!decoratedHref.includes('keyword='), 'the decorated link does not carry the prior keyword');
+  assert.ok(!decoratedHref.includes('utm_campaign='), 'the decorated link does not carry the prior utm_campaign');
+  assert.ok(decoratedHref.includes('gbraid=CLICKG'), 'the decorated link carries the current touchs gbraid');
+
+  const paidTouchEventsAfterDecoration = run2.tracker.getEventLog()
+    .filter((event) => event.event_name === 'paid_touch');
+  assert.equal(paidTouchEventsAfterDecoration.length, 2, 'decorating the booking link mints no extra touch');
+
+  // Navigate a fresh page context to the exact decorated href, repeatedly, and prove the gbraid
+  // tuple dedups against touch2 every time -- no oscillation, no extra touch minted.
+  const decoratedUrl = new URL(decoratedHref, 'https://www.obsidianautoworksoc.com').toString();
+  for (let i = 0; i < 3; i += 1) {
+    const bookingNodeNav = createFakeAnchor('/booking');
+    const nav = createContext({
+      href: decoratedUrl,
+      storage,
+      doc: createFakeDocument({ 'a[href="/booking"]': [bookingNodeNav] }),
+      crypto: secureCrypto
+    });
+
+    const navTouch = nav.tracker.getCurrentTouch();
+    assert.equal(navTouch.touch_id, touch2.touch_id, `navigation ${i} reuses touch2, no oscillation`);
+    assert.equal(
+      nav.tracker.getEventLog().filter((event) => event.event_name === 'paid_touch').length,
+      2,
+      `navigation ${i} mints no additional touch`
+    );
+
+    const navDecoratedHref = bookingNodeNav.getAttribute('href');
+    assert.equal(navDecoratedHref, decoratedHref, `navigation ${i} produces the exact same stable decorated href`);
+    assert.ok(!navDecoratedHref.includes('gclid=CLICKA'), `navigation ${i} decorated href stays free of the old gclid`);
+    assert.ok(!navDecoratedHref.includes('campaignid=111'), `navigation ${i} decorated href stays free of the old campaign`);
+  }
+}
+
+// --- Scenario K: without a current touch (no Web Crypto, so no touch was ever created),
+// booking-link decoration preserves the legacy UTM/campaign propagation from lead storage but
+// stays conservative on click ids, since sticky lead storage cannot distinguish a stale click id
+// from a genuinely current one without a touch record to compare against ---
+{
+  const storage = createStorage();
+  const bookingNode = createFakeAnchor('/booking');
+  const { tracker } = createContext({
+    href: 'https://www.obsidianautoworksoc.com/landing?gclid=CLICKL&utm_campaign=camp-l&campaignid=555',
+    storage,
+    doc: createFakeDocument({ 'a[href="/booking"]': [bookingNode] }),
+    crypto: undefined
+  });
+
+  assert.equal(tracker.getCurrentTouch(), null, 'no touch is created without Web Crypto');
+
+  const decoratedHref = bookingNode.getAttribute('href');
+  assert.ok(decoratedHref.includes('utm_campaign=camp-l'), 'utm_campaign still propagates via legacy lead storage without a touch');
+  assert.ok(decoratedHref.includes('campaignid=555'), 'campaignid still propagates via legacy lead storage without a touch');
+  assert.ok(!decoratedHref.includes('gclid='), 'gclid is withheld without a touch, conservatively avoiding a stale click id');
 }
 
 console.log('lead-tracking smoke test passed');

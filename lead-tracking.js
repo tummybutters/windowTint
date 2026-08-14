@@ -143,7 +143,7 @@
         text_click: 'text',
         square_booking_click: 'booking',
         ai_booking_click: 'booking',
-        form_submit: 'form'
+        lead_form_submit: 'form'
     };
 
     const readParams = () => new URLSearchParams(window.location.search);
@@ -343,7 +343,9 @@
         return { intent, touchForEvent: touch, isNew: true };
     };
 
-    const applyParams = (url, lead) => {
+    const AD_TOUCH_PARAMS = ['utm_source', 'utm_medium', 'utm_campaign', 'utm_term', 'utm_content', 'campaignid', 'adgroupid', 'creative', 'keyword', 'matchtype', 'device', 'network', 'loc_physical_ms', 'loc_interest_ms', 'placement', 'targetid', 'extensionid'];
+
+    const applyParams = (url, lead, touch) => {
         if (lead.session_id && !url.searchParams.has('obsidian_session_id')) {
             url.searchParams.set('obsidian_session_id', lead.session_id);
         }
@@ -353,31 +355,31 @@
         if (lead.phone && !url.searchParams.has('phone')) {
             url.searchParams.set('phone', lead.phone);
         }
-        if (lead.utm_source && !url.searchParams.has('utm_source')) {
-            url.searchParams.set('utm_source', lead.utm_source);
+
+        if (touch) {
+            // Every ad-touch field (UTMs, click IDs, campaign/ad group/creative/keyword/match/
+            // device/network/location/placement/target/extension) comes exclusively from the
+            // current immutable touch, never from sticky getLead() history -- otherwise a later,
+            // distinct-type click (e.g. a gbraid landing after a stored gclid) would have its
+            // internal links poisoned with the prior click's id, defeating createTouchIfNew's
+            // dedup and minting a duplicate, misattributed touch (r1 review finding #1). A field
+            // missing from the current touch stays absent; it never falls back to a prior click.
+            Object.keys(TOUCH_FIELD_SOURCE).forEach((touchField) => {
+                const param = TOUCH_FIELD_SOURCE[touchField];
+                const value = touch[touchField] || '';
+                if (value && !url.searchParams.has(param)) {
+                    url.searchParams.set(param, value);
+                }
+            });
+            return;
         }
-        if (lead.utm_medium && !url.searchParams.has('utm_medium')) {
-            url.searchParams.set('utm_medium', lead.utm_medium);
-        }
-        if (lead.utm_campaign && !url.searchParams.has('utm_campaign')) {
-            url.searchParams.set('utm_campaign', lead.utm_campaign);
-        }
-        if (lead.utm_term && !url.searchParams.has('utm_term')) {
-            url.searchParams.set('utm_term', lead.utm_term);
-        }
-        if (lead.utm_content && !url.searchParams.has('utm_content')) {
-            url.searchParams.set('utm_content', lead.utm_content);
-        }
-        if (lead.gclid && !url.searchParams.has('gclid')) {
-            url.searchParams.set('gclid', lead.gclid);
-        }
-        if (lead.gbraid && !url.searchParams.has('gbraid')) {
-            url.searchParams.set('gbraid', lead.gbraid);
-        }
-        if (lead.wbraid && !url.searchParams.has('wbraid')) {
-            url.searchParams.set('wbraid', lead.wbraid);
-        }
-        ['campaignid', 'adgroupid', 'creative', 'keyword', 'matchtype', 'device', 'network', 'loc_physical_ms', 'loc_interest_ms', 'placement', 'targetid', 'extensionid'].forEach((param) => {
+
+        // No current touch (Web Crypto unavailable, or an organic session that never had a
+        // paid click): preserve the legacy lead-storage propagation for UTMs and ad-platform
+        // metadata, but stay conservative and withhold click ids -- sticky lead storage can hold
+        // a click id left over from an earlier, different-type click, and without a touch record
+        // to compare against there is no way to tell current from stale.
+        AD_TOUCH_PARAMS.forEach((param) => {
             if (lead[param] && !url.searchParams.has(param)) {
                 url.searchParams.set(param, lead[param]);
             }
@@ -388,6 +390,8 @@
         const lead = getLead();
         if (!hasAttribution(lead)) return;
 
+        const touch = getCurrentTouch();
+
         document.querySelectorAll(BOOKING_SELECTORS).forEach((node) => {
             const attr = node.tagName === 'IFRAME' ? 'src' : 'href';
             const raw = node.getAttribute(attr);
@@ -395,7 +399,7 @@
 
             try {
                 const url = new URL(raw, window.location.origin);
-                applyParams(url, lead);
+                applyParams(url, lead, touch);
                 const nextValue = url.origin === window.location.origin
                     ? `${url.pathname}${url.search}${url.hash}`
                     : url.toString();
@@ -850,7 +854,7 @@
                 upsertHidden(form, 'lead_touch_id', intent.touch_id);
             }
 
-            sendAnalyticsEvent('form_submit', {}, { leadIntentResult });
+            sendAnalyticsEvent('lead_form_submit', {}, { leadIntentResult });
         }, true);
     };
 
