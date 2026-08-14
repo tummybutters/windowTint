@@ -103,6 +103,26 @@ assert.match(PERSIST_EVENT_SQL, /FROM touch_lookup/);
 assert.match(PERSIST_EVENT_SQL, /ON CONFLICT \(entity_type, entity_id, method\) DO NOTHING/);
 assert.match(PERSIST_EVENT_SQL, /ON CONFLICT \(event_id\) DO NOTHING/);
 
+// --- SQL shape (F1 regression): touch_time ($39) must be null-safe cast. buildParams sends ''
+// (not null) for every event with no touch (see the organic/no-touch buildParams cases below),
+// and @neondatabase/serverless resolves a bare `$39::timestamptz` parameter's type from the cast
+// itself, converting '' with timestamptz_in at bind time -- before the `WHERE $38 <> ''` guard
+// is ever evaluated. A direct `$39::timestamptz` cast therefore rejects the entire statement for
+// every touchless event. NULLIF($39, '')::timestamptz resolves $39 to text instead, so '' becomes
+// SQL NULL before the cast, which is always valid regardless of whether the WHERE guard discards
+// the row. ---
+
+assert.match(
+  PERSIST_EVENT_SQL,
+  /NULLIF\(\$39, ''\)::timestamptz/,
+  'touch_time ($39) must use the null-safe NULLIF(...)::timestamptz cast so touchless events (which bind $39 as an empty string) do not fail parameter conversion'
+);
+assert.doesNotMatch(
+  PERSIST_EVENT_SQL,
+  /\$39::timestamptz/,
+  'touch_time must never be cast directly as $39::timestamptz -- that resolves $39\'s parameter type to timestamptz at bind time and rejects the routinely-empty string before the WHERE guard runs'
+);
+
 // --- SQL shape: touch_lookup is keyed off the intent's declared binding ($63), not the
 // event's current touch ($38), on both arms -- an organic intent sharing an event with an
 // unrelated paid touch must never resolve to that touch. ---

@@ -345,6 +345,14 @@ assert.throws(
 // ---------------------------------------------------------------------------
 // buildDetailRow: provenAds requires approved + Tier A + resolved touch_id +
 // an actual click ID. Exact null-touch and null-click failure cases.
+//
+// F5 regression: an approved Tier A link that fails the touch/click check
+// must bucket as `unattributed`, never `candidate` -- printing it as
+// `candidate` while proofTier still read 'A' was a contradiction (candidate
+// totals are reserved for actual Tier B/C link states; see the proof-tier
+// bucket block below). Bucketing it unattributed also correctly nulls out
+// proofTier/campaignId/etc via buildDetailRow's `hasLink` gate, so an
+// unproven Tier A row never prints tier=A anywhere in the report output.
 // ---------------------------------------------------------------------------
 
 {
@@ -362,33 +370,41 @@ assert.throws(
   assert.notEqual(provenAds.clickReference, 'Cj0KCQjwABCDEFGHIJKLMNOP');
 
   // Failure case 1: touch_id is null -- the link never resolved to a touch
-  // at all. Approved + Tier A alone must not be enough.
+  // at all. Approved + Tier A alone must not be enough, and it must not
+  // fall into candidate either -- an unresolved Tier A touch is unattributed.
   const nullTouch = buildDetailRow({
     order_id: 'order-null-touch', provider: 'square', provider_order_id: 'ORDER-NULL-TOUCH', currency: 'USD',
     gross_amount_minor: 50000, refund_amount_minor: 0,
     link_method: 'lead_intent_touch', proof_tier: 'A', link_status: 'approved', touch_id: null,
     gclid: 'Cj0KCQjwABCDEFGHIJKLMNOP'
   });
-  assert.equal(nullTouch.bucket, 'candidate');
+  assert.equal(nullTouch.bucket, 'unattributed');
   assert.notEqual(nullTouch.bucket, 'provenAds');
+  assert.notEqual(nullTouch.bucket, 'candidate');
+  assert.equal(nullTouch.proofTier, null, 'an unattributed row must never report tier=A');
 
   // Failure case 2: touch_id is resolved (the link points at a real touch
   // row id) but no click ID survived the join -- e.g. the referenced touch
-  // was pruned. A resolved touch_id alone must not be enough either.
+  // was pruned. A resolved touch_id alone must not be enough either, and
+  // this must also land in unattributed, not candidate.
   const nullClick = buildDetailRow({
     order_id: 'order-null-click', provider: 'square', provider_order_id: 'ORDER-NULL-CLICK', currency: 'USD',
     gross_amount_minor: 50000, refund_amount_minor: 0,
     link_method: 'lead_intent_touch', proof_tier: 'A', link_status: 'approved', touch_id: 'touch-2',
     gclid: null, gbraid: null, wbraid: null
   });
-  assert.equal(nullClick.bucket, 'candidate');
+  assert.equal(nullClick.bucket, 'unattributed');
   assert.notEqual(nullClick.bucket, 'provenAds');
+  assert.notEqual(nullClick.bucket, 'candidate');
+  assert.equal(nullClick.proofTier, null, 'an unattributed row must never report tier=A');
   assert.equal(nullClick.clickReference, 'unattributed');
 }
 
 // ---------------------------------------------------------------------------
-// buildDetailRow: proof-tier buckets -- approved A (without proof), approved
-// B, candidate B, approved C, candidate C, and no-link rows. Rejected and
+// buildDetailRow: proof-tier buckets -- approved B, candidate B, approved C,
+// candidate C, and no-link rows. (Approved Tier A without a resolved
+// touch/click is covered above and lands in `unattributed`, not here --
+// candidate is reserved for actual Tier B/C link states.) Rejected and
 // candidate-A rows never reach this function because the SQL rank filter
 // excludes them at the source (see the WHERE-clause static assertions
 // above); bucketFor is still exercised directly here as a defensive check.

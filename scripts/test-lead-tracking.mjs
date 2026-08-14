@@ -646,7 +646,13 @@ const createContext = ({ href, storage, doc, crypto, adsConfig }) => {
   const phoneEvents = tracker.getEventLog().filter((event) => event.event_name === 'phone_click');
   assert.equal(phoneEvents.length, 2);
   assert.deepEqual(phoneEvents[1].lead_intent, intent, 'the repeated action still carries the unchanged intent');
-  assert.equal(phoneEvents[1].touch, undefined, 'the repeated action does not resend the already-landed touch snapshot');
+  // F4: the repeated action DOES resend the intent's originally bound touch snapshot -- if the
+  // intent-creating envelope never reaches the server (delivery attempts exhausted), this is the
+  // only way the touch is ever delivered. touch_insert/link writes are idempotent server-side, so
+  // resending an already-landed touch is a harmless no-op there.
+  assert.ok(phoneEvents[1].touch, 'the repeated action resends the intent-bound touch snapshot');
+  assert.equal(phoneEvents[1].touch.touch_id, touch.touch_id, 'the resent touch is the original binding, not a newer current touch');
+  assert.equal(phoneEvents[1].lead_intent.touch_id, phoneEvents[1].touch.touch_id, 'resent touch never mismatches the intent\'s bound touch_id');
 }
 
 // --- Scenario C: SMS bodies get the OA reference without changing the destination, and only a
@@ -762,12 +768,19 @@ const createContext = ({ href, storage, doc, crypto, adsConfig }) => {
     'repeated decoration on the ?&body= fixture is idempotent'
   );
 
-  // A second real tap reuses the same intent/reference and does not resend the touch snapshot.
+  // F4: a second real tap reuses the same intent/reference and DOES resend the intent's bound
+  // touch snapshot (idempotent server-side; the only path that recovers a dropped
+  // intent-creating envelope).
   doc.dispatch('click', smsNode);
   assert.deepEqual(tracker.getCurrentIntent(), intent, 'a repeated tap reuses the same intent and reference');
   const textClickEventsAfterSecondTap = tracker.getEventLog().filter((event) => event.event_name === 'text_click');
   assert.equal(textClickEventsAfterSecondTap.length, 2);
-  assert.equal(textClickEventsAfterSecondTap[1].touch, undefined, 'the repeated tap does not resend the touch snapshot');
+  assert.ok(textClickEventsAfterSecondTap[1].touch, 'the repeated tap resends the intent-bound touch snapshot');
+  assert.equal(
+    textClickEventsAfterSecondTap[1].touch.touch_id,
+    textClickEventsAfterSecondTap[1].lead_intent.touch_id,
+    'the resent touch never mismatches the intent\'s bound touch_id'
+  );
 }
 
 // --- Scenario D: forms receive the four hidden lead-reference fields on a real submit, not on
@@ -811,12 +824,13 @@ const createContext = ({ href, storage, doc, crypto, adsConfig }) => {
     'no separate lead_intent_created plumbing event is ever emitted'
   );
 
-  // A second real submit reuses the same intent/reference and does not resend the touch.
+  // F4: a second real submit reuses the same intent/reference and DOES resend the intent's
+  // bound touch snapshot.
   doc.dispatch('submit', formNode);
   assert.deepEqual(tracker.getCurrentIntent(), intent, 'a repeated submit reuses the same intent and reference');
   const submitEventsAfterSecond = tracker.getEventLog().filter((event) => event.event_name === 'lead_form_submit');
   assert.equal(submitEventsAfterSecond.length, 2);
-  assert.equal(submitEventsAfterSecond[1].touch, undefined, 'the repeated submit does not resend the touch snapshot');
+  assert.equal(submitEventsAfterSecond[1].touch.touch_id, touch.touch_id, 'the repeated submit resends the original bound touch, not a newer one');
 }
 
 // --- Scenario E: phone hrefs are never modified ---
@@ -984,8 +998,13 @@ const createContext = ({ href, storage, doc, crypto, adsConfig }) => {
   assert.equal(formEvents.length, 1);
   assert.deepEqual(textEvents[0].lead_intent, intent);
   assert.deepEqual(formEvents[0].lead_intent, intent);
-  assert.equal(textEvents[0].touch, undefined, 'the later text_click does not resend the touch snapshot');
-  assert.equal(formEvents[0].touch, undefined, 'the later lead_form_submit does not resend the touch snapshot');
+  // F4: the later text_click and lead_form_submit DO resend the intent's originally bound
+  // touch snapshot (idempotent server-side), and it is exactly touch1 -- the same touch the
+  // intent was created against.
+  assert.ok(textEvents[0].touch, 'the later text_click resends the intent-bound touch snapshot');
+  assert.equal(textEvents[0].touch.touch_id, touch.touch_id, 'the resent touch on text_click is the original binding');
+  assert.ok(formEvents[0].touch, 'the later lead_form_submit resends the intent-bound touch snapshot');
+  assert.equal(formEvents[0].touch.touch_id, touch.touch_id, 'the resent touch on lead_form_submit is the original binding');
 
   assert.equal(
     tracker.getEventLog().filter((event) => event.event_name === 'lead_intent_created').length,
@@ -997,6 +1016,41 @@ const createContext = ({ href, storage, doc, crypto, adsConfig }) => {
   // (from the submit), both using the single shared intent/reference.
   assert.ok(smsNode.getAttribute('href').includes(intent.reference_code));
   assert.equal(formNode.inputs.get('lead_reference').value, intent.reference_code);
+
+  // F4 regression: a genuinely new paid click lands in this same browser (a new page load with
+  // a distinct gclid mints a new "current" touch), but the already-bound intent is immutable --
+  // a still-later real action must resend the ORIGINAL bound touch (touch1), never the new
+  // current touch, and must never produce a lead_intent/touch mismatch (which the server
+  // rejects at lib/lead-event-normalize.js:318).
+  const laterClickDoc = createFakeDocument({ form: [formNode] });
+  const laterClickContext = createContext({
+    href: 'https://www.obsidianautoworksoc.com/vip-booking?gclid=CLICKI-LATER',
+    storage,
+    doc: laterClickDoc,
+    crypto: secureCrypto
+  });
+
+  const newCurrentTouch = laterClickContext.tracker.getCurrentTouch();
+  assert.notEqual(newCurrentTouch.touch_id, touch.touch_id, 'the later click mints a genuinely new current touch');
+
+  const intentAfterNewClick = laterClickContext.tracker.getCurrentIntent();
+  assert.deepEqual(intentAfterNewClick, intent, 'the intent (and its touch_id binding) is unchanged by the later click');
+
+  laterClickDoc.dispatch('submit', formNode);
+
+  const submitEventsAfterNewClick = laterClickContext.tracker
+    .getEventLog()
+    .filter((event) => event.event_name === 'lead_form_submit');
+  const lastSubmitEvent = submitEventsAfterNewClick[submitEventsAfterNewClick.length - 1];
+  assert.deepEqual(lastSubmitEvent.lead_intent, intent, 'the post-new-click submit still carries the original intent');
+  assert.ok(lastSubmitEvent.touch, 'the post-new-click submit resends the intent-bound touch snapshot');
+  assert.equal(lastSubmitEvent.touch.touch_id, touch.touch_id, 'the resent touch is the original binding, not the new current touch');
+  assert.notEqual(lastSubmitEvent.touch.touch_id, newCurrentTouch.touch_id, 'the resent touch is never the newer current touch');
+  assert.equal(
+    lastSubmitEvent.lead_intent.touch_id,
+    lastSubmitEvent.touch.touch_id,
+    'lead_intent.touch_id and the resent touch.touch_id always agree -- no mismatch shape is ever sent'
+  );
 }
 
 // --- Scenario I: booking wins first_channel when it is the first real action ---

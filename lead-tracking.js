@@ -19,7 +19,8 @@
         pendingEvents: 'lead_track_pending_events',
         touchId: 'lead_track_touch_id',
         touchSnapshot: 'lead_track_touch_snapshot',
-        leadIntent: 'lead_track_lead_intent'
+        leadIntent: 'lead_track_lead_intent',
+        leadIntentBoundTouchSnapshot: 'lead_track_lead_intent_bound_touch_snapshot'
     };
 
     const TRACKED_PARAMS = [
@@ -279,6 +280,25 @@
         localStorage.setItem(STORAGE_KEYS.leadIntent, JSON.stringify(intent));
     };
 
+    // The exact touch snapshot bound to the current lead intent at creation time, frozen
+    // separately from getCurrentTouch() -- a later paid click can overwrite the "current" touch
+    // (STORAGE_KEYS.touchSnapshot) while the intent's binding stays immutable server-side, so
+    // this must never be re-derived from getCurrentTouch() once the intent exists (F4: doing so
+    // would either attach a newer touch that mismatches the intent's stored touch_id, which the
+    // server rejects at lib/lead-event-normalize.js:318, or silently misattribute the lead).
+    const getLeadIntentBoundTouchSnapshot = () => {
+        try {
+            const raw = localStorage.getItem(STORAGE_KEYS.leadIntentBoundTouchSnapshot);
+            return raw ? JSON.parse(raw) : null;
+        } catch (error) {
+            return null;
+        }
+    };
+
+    const storeLeadIntentBoundTouchSnapshot = (touch) => {
+        localStorage.setItem(STORAGE_KEYS.leadIntentBoundTouchSnapshot, JSON.stringify(touch));
+    };
+
     // Called once per page load (from boot()), never from the periodic refresh loop --
     // otherwise a static URL left open with a click ID would mint a new touch every tick.
     const createTouchIfNew = () => {
@@ -327,9 +347,24 @@
     // The first phone/text/form/booking action creates the session's one lead intent and
     // binds it to whatever touch is current at that moment; every later call (any channel)
     // reuses the stored intent unchanged, per the immutable-binding contract in lib/lead-event-store.js.
+    //
+    // F4: a paid intent's touch snapshot is attached to every real lead action that reuses an
+    // existing intent, not just the one that created it. If the intent-creating envelope (the
+    // one call where isNew was true) exhausts MAX_DELIVERY_ATTEMPTS before the server ever
+    // receives it, the server never has the touch to insert/link and the intent's touch binding
+    // would otherwise be lost forever -- ensureLeadIntent alone never sees that failure, so it
+    // cannot special-case a retry. Instead the originally bound touch snapshot is persisted
+    // alongside the intent and resent on every subsequent real lead action until whichever
+    // envelope eventually lands; touch_insert/lead_intent_upsert/link writes are all idempotent
+    // (ON CONFLICT ... DO NOTHING) so re-sending an already-persisted touch is a harmless no-op.
+    // The resent snapshot always comes from the frozen binding, never from getCurrentTouch() --
+    // a later distinct paid click must never be substituted in here.
     const ensureLeadIntent = (channel) => {
         const existing = getCurrentIntent();
-        if (existing) return { intent: existing, touchForEvent: null, isNew: false };
+        if (existing) {
+            const boundTouch = existing.touch_id ? getLeadIntentBoundTouchSnapshot() : null;
+            return { intent: existing, touchForEvent: boundTouch, isNew: false };
+        }
         if (!hasSecureRandom()) return { intent: null, touchForEvent: null, isNew: false };
 
         const touch = getCurrentTouch();
@@ -340,6 +375,7 @@
             first_channel: channel
         };
         storeIntent(intent);
+        if (touch) storeLeadIntentBoundTouchSnapshot(touch);
         return { intent, touchForEvent: touch, isNew: true };
     };
 
@@ -696,7 +732,12 @@
             const leadIntentResult = options.leadIntentResult || ensureLeadIntent(channel);
             if (leadIntentResult.intent) {
                 eventOptions = { ...options, leadIntent: leadIntentResult.intent };
-                if (leadIntentResult.isNew && leadIntentResult.touchForEvent) {
+                // F4: touchForEvent is attached whenever present, not only when isNew -- a
+                // reused intent's bound touch is resent on every later real lead action so an
+                // intent-creating envelope that never lands still has its touch delivered
+                // (idempotently) by a subsequent action. touchForEvent is always the frozen
+                // binding (see ensureLeadIntent), never a newer current touch.
+                if (leadIntentResult.touchForEvent) {
                     eventOptions.touch = leadIntentResult.touchForEvent;
                 }
             }

@@ -62,10 +62,36 @@ npm run verify:production-target
 - Readback: after any production migration, re-query
   `attribution_schema_migrations` and spot-check the new table/column exists
   with the expected constraints before considering the migration complete.
-- None of this tranche's work applies a migration to production, mutates
-  production data, or reads from a production database connection. All
-  tests in this tranche run against local fixtures or fake in-memory query
-  functions.
+- Implementation (Tasks 1–7) stayed entirely local: no migration was applied
+  to production, no production data was mutated, and no test in those tasks
+  read from a production database connection — every test runs against
+  local fixtures or fake in-memory query functions.
+- Per the 2026-08-14 explicit user authorization recorded in the SDD ledger
+  (`progress.md`), **Task 8 is separately authorized** to apply migration
+  `004_attribution_foundation` to the exact production database, deploy the
+  verified commit to the exact `obsidianautoworks` project
+  (`prj_mGo067aGnOyc2v4HCoPhPPBHXEfI`), and perform read-only production
+  verification (schema readback, endpoint reachability/rejection behavior,
+  deployed-asset markers, and a read-only revenue report run). That
+  authorization is scoped narrowly: Google Ads uploads, Data Manager
+  uploads, customer-facing messages, and Square billing changes remain
+  prohibited regardless of this authorization (see "Prohibited Google Ads
+  uploads" below).
+- Task 8 must never use or relink this worktree's known-wrong local
+  `.vercel/project.json` (`prj_EvuhBoGZhbqjsqjAYugMNnwm50Am`) for any
+  production action. It creates a disposable, isolated deployment context
+  (a separate directory or scoped Vercel config) explicitly linked to the
+  exact production project, and runs the predeploy gate against that
+  isolated context's project file before any migration or deploy:
+  ```bash
+  node scripts/verify-production-target.mjs --project-file=<isolated-path>/.vercel/project.json
+  ```
+  `<isolated-path>` must resolve to a real, nonempty file linked to the
+  exact production project — an empty or omitted `--project-file=` falls
+  back to this worktree's known-wrong binding and must fail closed, not be
+  treated as a pass. The known-wrong worktree binding itself is left
+  untouched: it is never relinked, overwritten, or used as the deploy
+  source.
 
 ## Report and commission definitions
 
@@ -101,11 +127,12 @@ dates.
   order currency; the report throws rather than aggregate mixed-currency
   orders together; a report with zero completed orders and no inferable
   currency renders `n/a`, never a guessed `$`/`USD`.
-- **Buckets**: `provenAds` (business-wide is business-wide; proven Ads is a
-  strict subset — see Proof tiers below), Tier B/C `candidate`, and
-  `unattributed`. An order contributes to at most one bucket. Rejected
-  links, unsupported link-status/tier combinations, and orders with no
-  ranked link are `unattributed`.
+- **Buckets**: `provenAds` (a strict subset of business-wide revenue — see
+  Proof tiers below), Tier B/C `candidate`, and `unattributed`. An order
+  contributes to at most one bucket. Rejected links, unsupported
+  link-status/tier combinations, an approved Tier A link with no resolved
+  touch or no click ID, and orders with no ranked link are all
+  `unattributed`.
 - The report never accepts a browser-submitted revenue value; every figure
   is derived from persisted provider (Square) entities and server-written
   attribution links.
@@ -131,9 +158,10 @@ conversation, in reporting, or in any Google Ads upload:
 5. **Proven Ads revenue** — a completed order that resolves through exactly
    one **approved, Tier A** `attribution_links` row carrying a real
    `touch_id` *and* a surviving click ID (`gclid`, `gbraid`, or `wbraid`) on
-   that touch. An approved link with a touch that has no click ID, or no
-   touch at all, is not proven Ads revenue — it buckets as a Tier B/C
-   candidate or unattributed instead. Only Tier A links are written
+   that touch. An approved Tier A link with no resolved touch, or a touch
+   with no click ID, is not proven Ads revenue — it buckets as
+   `unattributed`, never as a Tier B/C candidate (candidate totals are
+   reserved for actual Tier B/C link states). Only Tier A links are written
    automatically in this tranche; Tier B (reviewed strong match) is
    reserved but not yet generated, and Tier C (directional) is never
    proven revenue.
@@ -157,6 +185,18 @@ rows with `entity_type = 'order'` yet. As a direct consequence:
   integration (Tint Wiz/Zapier lifecycle ingestion, or a reviewed call
   provider, or a manually reviewed Tier B match) — none of which is in
   scope here.
+
+## Inherited pre-existing behavior (out of scope)
+
+`decorateForms` (`lead-tracking.js`) writes the raw, non-opaque
+`lead_phone` and `lead_cid` values into every `<form>` on the page,
+including any third-party-origin form, from before this tranche began. The
+new opaque OA fields it adds alongside them (`lead_intent_id`,
+`lead_reference`, `lead_touch_id`, `lead_session_id`) are unaffected and
+correctly opaque. This tranche does not alter the raw CID/phone behavior —
+it is pre-existing and out of scope here. A one-time confirmation that no
+third-party-origin form exists on the paid landing pages remains a Task 8
+Step 5 follow-up, not a code change owed by this tranche.
 
 ## Secret handling
 
