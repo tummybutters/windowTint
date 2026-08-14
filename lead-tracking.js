@@ -284,17 +284,38 @@
         if (!hasSecureRandom()) return null;
 
         const params = readParams();
-        const hasClickId = Boolean(params.get('gclid') || params.get('gbraid') || params.get('wbraid'));
+        const clickIds = {
+            gclid: params.get('gclid') || '',
+            gbraid: params.get('gbraid') || '',
+            wbraid: params.get('wbraid') || ''
+        };
+        const hasClickId = Boolean(clickIds.gclid || clickIds.gbraid || clickIds.wbraid);
         if (!hasClickId) return null;
 
-        const lead = getLead();
+        // A reload or an internal navigation that merely propagates the same click id
+        // (e.g. applyParams copying gclid onto a booking link) must reuse the current touch,
+        // not mint a duplicate one -- only a URL with a genuinely different click id is a
+        // new paid click.
+        const current = getCurrentTouch();
+        if (
+            current
+            && current.gclid === clickIds.gclid
+            && current.gbraid === clickIds.gbraid
+            && current.wbraid === clickIds.wbraid
+        ) {
+            return current;
+        }
+
+        // Every touch field is read directly from the current landing URL's query params --
+        // never from getLead()/localStorage -- so a new click never inherits stale campaign,
+        // keyword, or click-id values left over from a prior click.
         const touch = {
             touch_id: generateSecureId('touch'),
             touch_time: new Date().toISOString(),
             landing_page: window.location.href
         };
         Object.keys(TOUCH_FIELD_SOURCE).forEach((touchField) => {
-            touch[touchField] = lead[TOUCH_FIELD_SOURCE[touchField]] || '';
+            touch[touchField] = params.get(TOUCH_FIELD_SOURCE[touchField]) || '';
         });
 
         storeTouch(touch);
@@ -442,6 +463,45 @@
         }
     };
 
+    // Appends "Ref: OA-..." to an sms: href's raw body value via string concatenation rather
+    // than round-tripping through URLSearchParams, which would re-encode spaces as "+" (invalid
+    // per RFC 3986/5724 for sms: URIs) and silently drop the site's "?&body=" idiom's leading
+    // "&". Preserves the destination, other params, and any fragment untouched.
+    const appendReferenceToSmsHref = (href, referenceCode) => {
+        const hashIndex = href.indexOf('#');
+        const base = hashIndex === -1 ? href : href.slice(0, hashIndex);
+        const fragment = hashIndex === -1 ? '' : href.slice(hashIndex);
+
+        const queryIndex = base.indexOf('?');
+        const destination = queryIndex === -1 ? base : base.slice(0, queryIndex);
+        const rawQuery = queryIndex === -1 ? '' : base.slice(queryIndex + 1);
+
+        const encodedRef = encodeURIComponent(`Ref: ${referenceCode}`);
+        const bodyMatch = /(^|&)body=([^&]*)/.exec(rawQuery);
+
+        let nextQuery;
+        if (bodyMatch) {
+            const separator = bodyMatch[1];
+            const existingValue = bodyMatch[2];
+            const appendedValue = existingValue ? `${existingValue}%20${encodedRef}` : encodedRef;
+            nextQuery = rawQuery.slice(0, bodyMatch.index + separator.length)
+                + `body=${appendedValue}`
+                + rawQuery.slice(bodyMatch.index + bodyMatch[0].length);
+        } else if (rawQuery) {
+            nextQuery = `${rawQuery}&body=${encodedRef}`;
+        } else if (queryIndex !== -1) {
+            nextQuery = `body=${encodedRef}`;
+        } else {
+            nextQuery = null;
+        }
+
+        const nextBase = nextQuery === null
+            ? `${destination}?body=${encodedRef}`
+            : `${destination}?${nextQuery}`;
+
+        return `${nextBase}${fragment}`;
+    };
+
     // SMS href content must be correct before the user taps the link (the OS reads the href
     // at tap time), so this decorates proactively like decorateForms rather than on click.
     const decorateTextLinks = () => {
@@ -455,18 +515,12 @@
         const intent = leadIntentResult.intent;
         if (!intent) return;
 
-        const refSuffix = `Ref: ${intent.reference_code}`;
-
         links.forEach((node) => {
             const raw = node.getAttribute('href');
             if (!raw || !raw.startsWith('sms:')) return;
             if (raw.includes(intent.reference_code)) return;
 
-            const [target, query = ''] = raw.slice(4).split('?');
-            const params = new URLSearchParams(query);
-            const existingBody = params.get('body') || '';
-            params.set('body', existingBody ? `${existingBody} ${refSuffix}` : refSuffix);
-            node.setAttribute('href', `sms:${target}?${params.toString()}`);
+            node.setAttribute('href', appendReferenceToSmsHref(raw, intent.reference_code));
         });
 
         if (leadIntentResult.isNew) {

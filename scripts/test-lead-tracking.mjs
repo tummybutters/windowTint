@@ -438,11 +438,60 @@ const createContext = ({ href, storage, doc, crypto, adsConfig }) => {
   assert.notEqual(touch2.touch_id, touch1.touch_id);
   assert.equal(touch2.gclid, 'CLICKB');
 
+  // Isolation (finding #5): touch2's URL omits campaignid/adgroupid/keyword/matchtype/device/
+  // gbraid/wbraid, so those fields must be empty on touch2, not stale values carried over from
+  // touch1 via getLead()/localStorage.
+  assert.equal(touch2.campaign_id, '', 'touch2 does not inherit touch1s campaign_id from storage');
+  assert.equal(touch2.ad_group_id, '', 'touch2 does not inherit touch1s ad_group_id from storage');
+  assert.equal(touch2.keyword, '', 'touch2 does not inherit touch1s keyword from storage');
+  assert.equal(touch2.match_type, '', 'touch2 does not inherit touch1s match_type from storage');
+  assert.equal(touch2.device, '', 'touch2 does not inherit touch1s device from storage');
+  assert.equal(touch2.gbraid, '', 'touch2 has no gbraid since the URL carried none');
+  assert.equal(touch2.wbraid, '', 'touch2 has no wbraid since the URL carried none');
+
   const paidTouchEvents2 = run2.tracker.getEventLog().filter((event) => event.event_name === 'paid_touch');
   assert.equal(paidTouchEvents2.length, 2, 'the second landing adds a second touch event, not replacing the first');
   const firstTouchEventStillIntact = paidTouchEvents2.find((event) => event.touch.touch_id === touch1.touch_id);
   assert.ok(firstTouchEventStillIntact, 'the first touch event remains in the log');
   assert.equal(firstTouchEventStillIntact.touch.gclid, 'CLICKA', 'the first touch snapshot is unchanged by the second landing');
+
+  // Dedup (finding #4): reloading the exact same paid URL must reuse the existing touch,
+  // not mint a third one.
+  const run2Reload = createContext({
+    href: 'https://www.obsidianautoworksoc.com/landing?gclid=CLICKB&utm_campaign=camp-b',
+    storage,
+    doc: createFakeDocument(),
+    crypto: secureCrypto
+  });
+
+  const touch2Reload = run2Reload.tracker.getCurrentTouch();
+  assert.equal(touch2Reload.touch_id, touch2.touch_id, 'reloading the same paid URL reuses the existing touch');
+  assert.equal(
+    run2Reload.tracker.getEventLog().filter((event) => event.event_name === 'paid_touch').length,
+    2,
+    'a reload of the same click id does not mint or send another paid_touch event'
+  );
+
+  // Dedup (finding #4): an internal/booking navigation that propagates the same click id
+  // (via applyParams) must also reuse the existing touch, not mint a new one.
+  const bookingNav = createContext({
+    href: 'https://www.obsidianautoworksoc.com/booking?gclid=CLICKB&obsidian_session_id=abc123',
+    storage,
+    doc: createFakeDocument(),
+    crypto: secureCrypto
+  });
+
+  const touchAfterBookingNav = bookingNav.tracker.getCurrentTouch();
+  assert.equal(
+    touchAfterBookingNav.touch_id,
+    touch2.touch_id,
+    'an internal booking navigation carrying the propagated gclid reuses the existing touch'
+  );
+  assert.equal(
+    bookingNav.tracker.getEventLog().filter((event) => event.event_name === 'paid_touch').length,
+    2,
+    'internal navigation with the same click id does not mint another touch'
+  );
 
   const run3 = createContext({
     href: 'https://www.obsidianautoworksoc.com/some-page',
@@ -458,6 +507,38 @@ const createContext = ({ href, storage, doc, crypto, adsConfig }) => {
     2,
     'a non-paid page view does not create another touch'
   );
+}
+
+// --- Scenario A2: a distinct click carrying a different click-id type does not inherit the
+// prior touch's campaign, keyword, or click id (finding #5) ---
+{
+  const storage = createStorage();
+
+  const run1 = createContext({
+    href: 'https://www.obsidianautoworksoc.com/landing?gclid=CLICKX&utm_campaign=camp-x&campaignid=999&keyword=window%20tint',
+    storage,
+    doc: createFakeDocument(),
+    crypto: secureCrypto
+  });
+  const touch1 = run1.tracker.getCurrentTouch();
+  assert.equal(touch1.gclid, 'CLICKX');
+  assert.equal(touch1.campaign_id, '999');
+  assert.equal(touch1.keyword, 'window tint');
+
+  const run2 = createContext({
+    href: 'https://www.obsidianautoworksoc.com/landing?gbraid=CLICKY',
+    storage,
+    doc: createFakeDocument(),
+    crypto: secureCrypto
+  });
+  const touch2 = run2.tracker.getCurrentTouch();
+  assert.notEqual(touch2.touch_id, touch1.touch_id, 'a distinct click-id tuple mints a new touch');
+  assert.equal(touch2.gbraid, 'CLICKY');
+  assert.equal(touch2.gclid, '', 'the new touch does not inherit the prior gclid click id');
+  assert.equal(touch2.wbraid, '', 'the new touch has no wbraid');
+  assert.equal(touch2.campaign_id, '', 'the new touch does not inherit the prior campaign_id');
+  assert.equal(touch2.keyword, '', 'the new touch does not inherit the prior keyword');
+  assert.equal(touch2.utm_campaign, '', 'the new touch does not inherit the prior utm_campaign');
 }
 
 // --- Scenario B: first lead action creates one intent + OA reference; repeats reuse it ---
@@ -503,10 +584,18 @@ const createContext = ({ href, storage, doc, crypto, adsConfig }) => {
 {
   const storage = createStorage();
   const smsNode = createFakeAnchor('sms:7146007134');
+  // Real fixture shape from commercial-window-film: %20-encoded body, no leading "&".
+  const realBodySmsNode = createFakeAnchor(
+    'sms:+17146007134?body=Hi%20Obsidian%20Autoworks%2C%20I%27d%20like%20help%20booking%20mobile%20window%20tint.'
+  );
+  // Real fixture shape from booking / commercial-window-film-qualifier.js: the cross-platform "?&body=" idiom.
+  const ampBodySmsNode = createFakeAnchor('sms:7146007134?&body=Hi%20there');
   const { tracker } = createContext({
     href: 'https://www.obsidianautoworksoc.com/vip-booking?gclid=CLICKD',
     storage,
-    doc: createFakeDocument({ 'a[href^="sms:"]': [smsNode] }),
+    doc: createFakeDocument({
+      'a[href^="sms:"]': [smsNode, realBodySmsNode, ampBodySmsNode]
+    }),
     crypto: secureCrypto
   });
 
@@ -520,12 +609,50 @@ const createContext = ({ href, storage, doc, crypto, adsConfig }) => {
   const body = new URLSearchParams(query).get('body');
   assert.ok(body.includes(`Ref: ${intent.reference_code}`), 'the sms body carries the OA reference');
 
+  const realBodyHref = realBodySmsNode.getAttribute('href');
+  assert.ok(
+    realBodyHref.startsWith(
+      'sms:+17146007134?body=Hi%20Obsidian%20Autoworks%2C%20I%27d%20like%20help%20booking%20mobile%20window%20tint.'
+    ),
+    'the existing %20-encoded body is preserved untouched, not re-serialized'
+  );
+  const realBodyPart = realBodyHref.slice(realBodyHref.indexOf('body=') + 'body='.length);
+  assert.ok(!realBodyPart.includes('+'), 'no literal plus signs corrupt the appended body');
+  assert.equal(
+    decodeURIComponent(realBodyPart),
+    `Hi Obsidian Autoworks, I'd like help booking mobile window tint. Ref: ${intent.reference_code}`,
+    'the sms body decodes to the exact original text plus the reference, with real spaces'
+  );
+
+  const ampBodyHref = ampBodySmsNode.getAttribute('href');
+  assert.ok(
+    ampBodyHref.startsWith('sms:7146007134?&body=Hi%20there'),
+    'the ?&body= idiom (leading &) is preserved'
+  );
+  const ampBodyPart = ampBodyHref.slice(ampBodyHref.indexOf('body=') + 'body='.length);
+  assert.ok(!ampBodyPart.includes('+'), 'no literal plus signs corrupt the appended body in the ?&body= form');
+  assert.equal(
+    decodeURIComponent(ampBodyPart),
+    `Hi there Ref: ${intent.reference_code}`,
+    'the ?&body= form decodes correctly with real spaces'
+  );
+
   tracker.decorateTextLinks();
   const secondPassHref = smsNode.getAttribute('href');
   assert.equal(
     secondPassHref.split(intent.reference_code).length - 1,
     1,
     'repeated decoration does not duplicate the reference'
+  );
+  assert.equal(
+    realBodySmsNode.getAttribute('href'),
+    realBodyHref,
+    'repeated decoration on the real %20-body fixture is idempotent'
+  );
+  assert.equal(
+    ampBodySmsNode.getAttribute('href'),
+    ampBodyHref,
+    'repeated decoration on the ?&body= fixture is idempotent'
   );
 }
 
