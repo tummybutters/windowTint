@@ -23,6 +23,7 @@ const {
   parseReportArgs,
   formatReportTable,
   formatReportJson,
+  formatCliErrorMessage,
   ReportUsageError
 } = reportModule;
 
@@ -144,6 +145,14 @@ assert.equal(maskClickReference({}), 'unattributed');
 // ---------------------------------------------------------------------------
 
 assert.match(ATTRIBUTED_REVENUE_SQL, /state\s*=\s*'COMPLETED'/);
+// The generic assertion above is satisfied by the orders predicate
+// (o.state = 'COMPLETED') alone and proves nothing about refunds -- this one
+// is anchored specifically to the refunds CTE so deleting or widening the
+// refund-side status filter fails the suite.
+assert.match(
+  ATTRIBUTED_REVENUE_SQL,
+  /FROM attribution_refunds r\s*\n\s*WHERE r\.status = 'COMPLETED'/
+);
 assert.match(
   ATTRIBUTED_REVENUE_SQL,
   /COALESCE\(\s*o\.closed_at\s*,\s*o\.provider_updated_at\s*,\s*o\.provider_created_at\s*\)/
@@ -215,19 +224,23 @@ assert.match(
 // that does NOT match an in-range completed order, scoped to the report's
 // own date bounds via the refund's financial timestamp -- never
 // unconditional, unlike anomaly 1, because this refund isn't tied to
-// anything already in the report.
+// anything already in the report. Explicitly excludes a NULL timestamp
+// (rather than relying on NULL's three-valued WHERE semantics to do it
+// implicitly) so it is disjoint from anomaly 4 (missing_timestamp) by
+// construction, not by accident.
 assert.match(ATTRIBUTED_REVENUE_SQL, /'order_not_in_report' AS anomaly_type/);
 assert.match(
   ATTRIBUTED_REVENUE_SQL,
-  /WHERE rc\.resolved_provider_order_id IS NOT NULL\s*\n\s*AND rc\.matched_order_id IS NULL\s*\n\s*AND rc\.refund_financial_at >= b\.range_start\s*\n\s*AND rc\.refund_financial_at < b\.range_end\s*\n\s*GROUP BY rc\.currency/
+  /WHERE rc\.resolved_provider_order_id IS NOT NULL\s*\n\s*AND rc\.matched_order_id IS NULL\s*\n\s*AND rc\.refund_financial_at IS NOT NULL\s*\n\s*AND rc\.refund_financial_at >= b\.range_start\s*\n\s*AND rc\.refund_financial_at < b\.range_end\s*\n\s*GROUP BY rc\.currency/
 );
 
 // Anomaly 3 (unresolved): no resolvable provider order at all, also scoped
-// to the report's own date bounds via the refund's financial timestamp.
+// to the report's own date bounds via the refund's financial timestamp, and
+// likewise explicit about excluding a NULL timestamp.
 assert.match(ATTRIBUTED_REVENUE_SQL, /'unresolved' AS anomaly_type/);
 assert.match(
   ATTRIBUTED_REVENUE_SQL,
-  /WHERE rc\.resolved_provider_order_id IS NULL\s*\n\s*AND rc\.refund_financial_at >= b\.range_start\s*\n\s*AND rc\.refund_financial_at < b\.range_end\s*\n\s*GROUP BY rc\.currency/
+  /WHERE rc\.resolved_provider_order_id IS NULL\s*\n\s*AND rc\.refund_financial_at IS NOT NULL\s*\n\s*AND rc\.refund_financial_at >= b\.range_start\s*\n\s*AND rc\.refund_financial_at < b\.range_end\s*\n\s*GROUP BY rc\.currency/
 );
 
 // The refund's own financial timestamp follows the same
@@ -238,11 +251,32 @@ assert.match(
   /COALESCE\(\s*r\.provider_updated_at\s*,\s*r\.provider_created_at\s*\)\s*AS refund_financial_at/
 );
 
+// Anomaly 4 (missing_timestamp): the refund resolves to no in-range order
+// (matched_order_id IS NULL, same precondition as anomaly 2/3) and its own
+// financial timestamp is NULL, so neither anomaly 2's nor anomaly 3's date
+// bound could ever be satisfied -- without this branch the row would vanish
+// from every report, for every date range, forever. Unconditional on the
+// report's bounds by design (it is a data-quality fact about the refund's
+// source record, not a fact about the selected range), and grouped by
+// currency like every other anomaly.
+assert.match(ATTRIBUTED_REVENUE_SQL, /'missing_timestamp' AS anomaly_type/);
+assert.match(
+  ATTRIBUTED_REVENUE_SQL,
+  /FROM refund_classified rc\s*\n\s*WHERE rc\.matched_order_id IS NULL\s*\n\s*AND rc\.refund_financial_at IS NULL\s*\n\s*GROUP BY rc\.currency/
+);
+// It must never carry a date-bound predicate -- that would defeat the whole
+// point of surfacing timestamp-less refunds unconditionally.
+{
+  const missingTimestampCte = ATTRIBUTED_REVENUE_SQL.split('anomaly_missing_timestamp AS (')[1].split(')')[0];
+  assert.doesNotMatch(missingTimestampCte, /b\.range_start/);
+  assert.doesNotMatch(missingTimestampCte, /b\.range_end/);
+}
+
 // Anomaly rows are a distinct row_type from order rows and are unioned in,
 // never merged into or subtracted from a financial order row.
 assert.match(ATTRIBUTED_REVENUE_SQL, /'anomaly' AS row_type/);
 assert.doesNotMatch(ATTRIBUTED_REVENUE_SQL, /'meta' AS row_type/);
-assert.equal((ATTRIBUTED_REVENUE_SQL.match(/UNION ALL/g) || []).length, 3);
+assert.equal((ATTRIBUTED_REVENUE_SQL.match(/UNION ALL/g) || []).length, 4);
 // Never add payment totals to order totals -- guard against both the
 // aliased and fully-qualified spelling, since the query aliases the table
 // as `p` and a naive regex on the fully-qualified name alone is vacuous.
@@ -468,15 +502,64 @@ assert.throws(
 }
 
 // ---------------------------------------------------------------------------
-// buildDetailRow: currency-scoped join contract -- a mismatched-currency
-// refund cannot reduce a USD order. The canonical SQL enforces the currency
-// scoping via `rt.currency = co.currency` (asserted statically above); this
-// fixture exercises the JS-side contract the SQL is required to uphold: a
-// USD order's refund_amount_minor must come only from same-currency
-// refunds, so a currency-mismatched refund never appears in it and
-// therefore never reduces net revenue. The mismatched refund itself is not
-// silently dropped -- it must resurface as a `currency_mismatch` anomaly,
-// proven end-to-end below via runAttributedRevenueReport, not just here.
+// V9 (round-3 fix): a mixed-order-currency database result must reach the
+// operator through the same secret-safe collapsing path the real CLI uses,
+// proven end-to-end from the orchestrator (runAttributedRevenueReport, not
+// just the aggregateAttributedRevenue unit) through to the exact function
+// scripts/report-attributed-revenue.mjs calls to render its stderr message
+// (formatCliErrorMessage) -- not a re-implementation of that logic in the
+// test, but the real production function.
+//
+// True subprocess-level coverage (spawning the actual CLI against a live
+// mixed-currency dataset) is impractical without either a real Postgres
+// connection or a test-only hook into production code -- both of which are
+// out of scope here (Task 7/8 gate; no test-only production hooks). This is
+// the practical substitute the round-3 fix prompt calls for: it exercises
+// every line of the real code the live CLI would run except the Neon driver
+// call itself, and it is the strongest test available without a live
+// database. Live-CLI-against-Postgres coverage of this exact scenario
+// remains an explicit Task 7/8 gate, same as the rest of this suite's SQL
+// execution disclosure.
+// ---------------------------------------------------------------------------
+
+{
+  const fakeQuery = async () => [
+    {
+      row_type: 'order', order_id: 'order-usd', provider: 'square', provider_order_id: 'ORD-USD',
+      currency: 'USD', gross_amount_minor: 10000, refund_amount_minor: 0
+    },
+    {
+      row_type: 'order', order_id: 'order-eur', provider: 'square', provider_order_id: 'ORD-EUR',
+      currency: 'EUR', gross_amount_minor: 10000, refund_amount_minor: 0
+    }
+  ];
+  await assert.rejects(
+    runAttributedRevenueReport({ query: fakeQuery, from: '2026-08-04', to: '2026-08-12' }),
+    (error) => {
+      assert.match(error.message, /[Mm]ixed-currency/);
+      assert.match(error.message, /EUR/);
+      assert.match(error.message, /USD/);
+      // Not marked safe -- the CLI must collapse it, not echo it verbatim.
+      assert.notEqual(error.safeToDisplay, true);
+      const cliMessage = formatCliErrorMessage(error);
+      assert.equal(cliMessage, 'report-attributed-revenue: failed to generate report');
+      assert.doesNotMatch(cliMessage, /EUR/);
+      assert.doesNotMatch(cliMessage, /USD/);
+      assert.doesNotMatch(cliMessage, /mixed-currency/i);
+      return true;
+    }
+  );
+}
+
+// ---------------------------------------------------------------------------
+// buildDetailRow: a zero refund_amount_minor leaves net revenue equal to
+// gross (V4 -- this fixture used to claim it proved the SQL's currency
+// scoping join; it doesn't, since it hand-feeds refund_amount_minor: 0
+// rather than exercising the join at all). The actual currency-scoping
+// contract -- that a currency-mismatched refund never reduces net revenue
+// and resurfaces instead as a `currency_mismatch` anomaly -- is proven
+// end-to-end via runAttributedRevenueReport below, and the SQL side is
+// covered by the anchored static assertions further up this file.
 // ---------------------------------------------------------------------------
 
 {
@@ -517,7 +600,9 @@ assert.throws(
   assert.equal(report.summary.totals.orderCount, 1);
   assert.equal(report.summary.totals.grossAmountMinor, 10000);
   assert.equal(report.rows.length, 1);
-  assert.deepEqual(report.anomalies, { currencyMismatch: [], orderNotInReport: [], unresolvedRefunds: [] });
+  assert.deepEqual(report.anomalies, {
+    currencyMismatch: [], orderNotInReport: [], unresolvedRefunds: [], missingTimestamp: []
+  });
 
   await assert.rejects(runAttributedRevenueReport({ query: null, from: '2026-08-04', to: '2026-08-12' }), /query function/);
 }
@@ -587,6 +672,40 @@ assert.throws(
 }
 
 // ---------------------------------------------------------------------------
+// V1 (round-3 fix): a completed refund that resolves to no in-range order
+// AND has no usable provider timestamp must never vanish. It surfaces as
+// its own `missing_timestamp` anomaly, grouped by currency like every other
+// anomaly, and it never changes order revenue or commission -- proven here
+// by an order row whose net/commission are unaffected by the presence of
+// the anomaly.
+// ---------------------------------------------------------------------------
+
+{
+  const fakeQuery = async () => [
+    {
+      row_type: 'order', order_id: 'order-1', provider: 'square', provider_order_id: 'ORD-1',
+      currency: 'USD', gross_amount_minor: 10000, refund_amount_minor: 0
+    },
+    {
+      row_type: 'anomaly', anomaly_type: 'missing_timestamp', anomaly_currency: 'USD',
+      anomaly_count: 1, anomaly_amount_minor: 4000
+    }
+  ];
+  const report = await runAttributedRevenueReport({ query: fakeQuery, from: '2026-08-04', to: '2026-08-12' });
+  assert.equal(report.rows[0].netRevenueMinor, 10000);
+  assert.equal(report.rows[0].commissionAmountMinor, 1000);
+  assert.deepEqual(report.anomalies.missingTimestamp, [{ currency: 'USD', count: 1, amountMinor: 4000 }]);
+  assert.deepEqual(report.anomalies.orderNotInReport, []);
+  assert.deepEqual(report.anomalies.unresolvedRefunds, []);
+  assert.deepEqual(report.anomalies.currencyMismatch, []);
+
+  const table = formatReportTable(report);
+  assert.match(table, /Missing refund timestamp/);
+  assert.match(table, /global data quality, not scoped to this date range/);
+  assert.match(table, /1 refunds, \$40\.00/);
+}
+
+// ---------------------------------------------------------------------------
 // Ruling 4: a same-currency completed refund linked to an in-range order is
 // applied to that order's net revenue and commission, independent of any
 // anomaly rows present in the same result set.
@@ -629,8 +748,21 @@ assert.throws(
   ]);
 
   const table = formatReportTable(report);
+  const json = formatReportJson(report);
   assert.match(table, /Currency: n\/a/);
   assert.doesNotMatch(table, /\bUSD\b/);
+  // Strengthened per V3: the report's own USD notation is the `$` sign, not
+  // the letters "USD" -- a guard that only checks for the string USD would
+  // pass even if the null-currency branch of formatMinorAsCurrency were
+  // mutated to prepend `$` to a total whose currency is unknown. Assert the
+  // exact zero-currency lines so no `$` (or any other currency claim) can
+  // sneak into a total the report was never told the currency of.
+  assert.doesNotMatch(table, /\$/);
+  assert.doesNotMatch(json, /\$/);
+  assert.match(table, /^  Gross revenue: 0\.00$/m);
+  assert.match(table, /^  Refunds, raw completed total \(audit\): 0\.00$/m);
+  assert.match(table, /^  Refunds applied \(capped at order gross\): 0\.00$/m);
+  assert.match(table, /^  Net revenue \(gross - applied refunds\): 0\.00$/m);
   assert.match(table, /2 refunds, 99\.99 EUR/);
   assert.match(table, /1 refunds, 5\.00 GBP/);
 }
@@ -661,7 +793,67 @@ assert.throws(
     }
   ];
   const report = await runAttributedRevenueReport({ query: fakeQuery, from: '2026-08-04', to: '2026-08-12' });
-  assert.deepEqual(report.anomalies, { currencyMismatch: [], orderNotInReport: [], unresolvedRefunds: [] });
+  assert.deepEqual(report.anomalies, {
+    currencyMismatch: [], orderNotInReport: [], unresolvedRefunds: [], missingTimestamp: []
+  });
+}
+
+// ---------------------------------------------------------------------------
+// V6 (round-3 fix): an unrecognized row_type or anomaly_type from the
+// database must fail closed, not be silently dropped. Neither discriminator
+// is reachable from today's static SQL, but the next tranche that adds a
+// fourth row_type or fifth anomaly_type without updating this module must
+// not ship a silent revenue/anomaly leak.
+// ---------------------------------------------------------------------------
+
+{
+  const fakeQuery = async () => [
+    {
+      row_type: 'summary_v2', order_id: 'order-unknown-row-type', provider: 'square',
+      provider_order_id: 'ORD-UNKNOWN', currency: 'USD', gross_amount_minor: 50000, refund_amount_minor: 0
+    }
+  ];
+  await assert.rejects(
+    runAttributedRevenueReport({ query: fakeQuery, from: '2026-08-04', to: '2026-08-12' }),
+    /Unrecognized row_type/
+  );
+}
+
+{
+  const fakeQuery = async () => [
+    {
+      row_type: 'anomaly', anomaly_type: 'brand_new_class', anomaly_currency: 'USD',
+      anomaly_count: 9, anomaly_amount_minor: 99999
+    }
+  ];
+  await assert.rejects(
+    runAttributedRevenueReport({ query: fakeQuery, from: '2026-08-04', to: '2026-08-12' }),
+    /Unrecognized anomaly_type/
+  );
+}
+
+// ---------------------------------------------------------------------------
+// V5 (round-3 fix): per-currency anomaly ordering is deterministic
+// regardless of the order rows arrive in. The outer SQL's ORDER BY leaves
+// anomaly rows mutually unordered (row_type/financial_at/order_id are
+// identical or NULL across every anomaly row), so this sort is the only
+// thing keeping report output stable across runs over unchanged data. Feed
+// rows in reverse currency order (GBP, then EUR, then AUD) across two
+// different anomaly types so a fixture whose input already happened to be
+// sorted couldn't accidentally pass without a working comparator.
+// ---------------------------------------------------------------------------
+
+{
+  const fakeQuery = async () => [
+    { row_type: 'anomaly', anomaly_type: 'unresolved', anomaly_currency: 'GBP', anomaly_count: 1, anomaly_amount_minor: 100 },
+    { row_type: 'anomaly', anomaly_type: 'unresolved', anomaly_currency: 'EUR', anomaly_count: 1, anomaly_amount_minor: 200 },
+    { row_type: 'anomaly', anomaly_type: 'unresolved', anomaly_currency: 'AUD', anomaly_count: 1, anomaly_amount_minor: 300 },
+    { row_type: 'anomaly', anomaly_type: 'order_not_in_report', anomaly_currency: 'JPY', anomaly_count: 1, anomaly_amount_minor: 400 },
+    { row_type: 'anomaly', anomaly_type: 'order_not_in_report', anomaly_currency: 'CAD', anomaly_count: 1, anomaly_amount_minor: 500 }
+  ];
+  const report = await runAttributedRevenueReport({ query: fakeQuery, from: '2026-08-04', to: '2026-08-12' });
+  assert.deepEqual(report.anomalies.unresolvedRefunds.map((entry) => entry.currency), ['AUD', 'EUR', 'GBP']);
+  assert.deepEqual(report.anomalies.orderNotInReport.map((entry) => entry.currency), ['CAD', 'JPY']);
 }
 
 // ---------------------------------------------------------------------------
@@ -734,7 +926,8 @@ assert.throws(() => parseReportArgs(['--from=2026-08-04', '--to=2026-08-12', '--
     anomalies: {
       currencyMismatch: [{ currency: 'EUR', count: 1, amountMinor: 4000 }],
       orderNotInReport: [],
-      unresolvedRefunds: [{ currency: 'USD', count: 1, amountMinor: 750 }]
+      unresolvedRefunds: [{ currency: 'USD', count: 1, amountMinor: 750 }],
+      missingTimestamp: [{ currency: 'JPY', count: 2, amountMinor: 300 }]
     },
     rows
   };
@@ -754,6 +947,8 @@ assert.throws(() => parseReportArgs(['--from=2026-08-04', '--to=2026-08-12', '--
   assert.match(table, /Resolved order outside this report/);
   assert.match(table, /Resolved order outside this report: none/);
   assert.match(table, /Unresolved completed refunds/);
+  assert.match(table, /Missing refund timestamp/);
+  assert.match(table, /Missing refund timestamp.*: 2 refunds, 3\.00 JPY/);
   assert.match(table, /Currency: USD/);
 }
 
