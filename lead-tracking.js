@@ -16,7 +16,10 @@
         gbraid: 'lead_track_gbraid',
         wbraid: 'lead_track_wbraid',
         events: 'lead_track_event_log',
-        pendingEvents: 'lead_track_pending_events'
+        pendingEvents: 'lead_track_pending_events',
+        touchId: 'lead_track_touch_id',
+        touchSnapshot: 'lead_track_touch_snapshot',
+        leadIntent: 'lead_track_lead_intent'
     };
 
     const TRACKED_PARAMS = [
@@ -105,6 +108,43 @@
         'square.site'
     ];
 
+    // Maps an immutable touch's migration-style column name to the browser's
+    // TRACKED_PARAMS/lead storage key, matching db/migrations/004_attribution_foundation.sql
+    // and lib/lead-event-normalize.js's TOUCH_FIELDS allow-list.
+    const TOUCH_FIELD_SOURCE = {
+        utm_source: 'utm_source',
+        utm_medium: 'utm_medium',
+        utm_campaign: 'utm_campaign',
+        utm_term: 'utm_term',
+        utm_content: 'utm_content',
+        gclid: 'gclid',
+        gbraid: 'gbraid',
+        wbraid: 'wbraid',
+        campaign_id: 'campaignid',
+        ad_group_id: 'adgroupid',
+        creative_id: 'creative',
+        keyword: 'keyword',
+        match_type: 'matchtype',
+        device: 'device',
+        network: 'network',
+        location_physical_id: 'loc_physical_ms',
+        location_interest_id: 'loc_interest_ms',
+        placement: 'placement',
+        target_id: 'targetid',
+        extension_id: 'extensionid'
+    };
+
+    // Unambiguous uppercase Base32 alphabet (no I, L, O, 0, 1), matching the server's
+    // LEAD_REFERENCE regex in lib/lead-event-normalize.js.
+    const OA_REFERENCE_ALPHABET = 'ABCDEFGHJKMNPQRSTUVWXYZ23456789';
+
+    const LEAD_INTENT_CHANNEL_BY_EVENT = {
+        phone_click: 'phone',
+        text_click: 'text',
+        square_booking_click: 'booking',
+        ai_booking_click: 'booking'
+    };
+
     const readParams = () => new URLSearchParams(window.location.search);
 
     const generateId = (prefix) => {
@@ -113,6 +153,44 @@
         }
 
         return `${prefix}_${Date.now().toString(36)}_${Math.random().toString(36).slice(2, 10)}`;
+    };
+
+    const hasSecureRandom = () => Boolean(
+        window.crypto && typeof window.crypto.getRandomValues === 'function'
+    );
+
+    const HEX_CHARS = '0123456789abcdef';
+
+    // Only ever called after hasSecureRandom() confirms window.crypto.getRandomValues exists --
+    // touch_id, lead_intent_id, and the OA reference are never derived from Math.random.
+    const randomHexString = (length) => {
+        const bytes = new Uint8Array(Math.ceil(length / 2));
+        window.crypto.getRandomValues(bytes);
+        let out = '';
+        for (let i = 0; i < bytes.length; i += 1) {
+            out += HEX_CHARS[bytes[i] >> 4] + HEX_CHARS[bytes[i] & 0x0f];
+        }
+        return out.slice(0, length);
+    };
+
+    const generateSecureId = (prefix) => `${prefix}_${randomHexString(40)}`;
+
+    // Rejection sampling avoids modulo bias: OA_REFERENCE_ALPHABET has 31 symbols, so any
+    // byte >= floor(256/31)*31 is discarded rather than reduced with %.
+    const generateReferenceCode = () => {
+        const alphabetLength = OA_REFERENCE_ALPHABET.length;
+        const acceptableMax = Math.floor(256 / alphabetLength) * alphabetLength;
+        let suffix = '';
+        while (suffix.length < 10) {
+            const bytes = new Uint8Array(10);
+            window.crypto.getRandomValues(bytes);
+            for (let i = 0; i < bytes.length && suffix.length < 10; i += 1) {
+                const byte = bytes[i];
+                if (byte >= acceptableMax) continue;
+                suffix += OA_REFERENCE_ALPHABET[byte % alphabetLength];
+            }
+        }
+        return `OA-${suffix}`;
     };
 
     const firstParam = (params, names) => {
@@ -172,6 +250,76 @@
     };
 
     const hasAttribution = (lead) => TRACKED_PARAMS.some((param) => Boolean(lead[param]));
+
+    const getCurrentTouch = () => {
+        try {
+            const raw = localStorage.getItem(STORAGE_KEYS.touchSnapshot);
+            return raw ? JSON.parse(raw) : null;
+        } catch (error) {
+            return null;
+        }
+    };
+
+    const storeTouch = (touch) => {
+        localStorage.setItem(STORAGE_KEYS.touchId, touch.touch_id);
+        localStorage.setItem(STORAGE_KEYS.touchSnapshot, JSON.stringify(touch));
+    };
+
+    const getCurrentIntent = () => {
+        try {
+            const raw = localStorage.getItem(STORAGE_KEYS.leadIntent);
+            return raw ? JSON.parse(raw) : null;
+        } catch (error) {
+            return null;
+        }
+    };
+
+    const storeIntent = (intent) => {
+        localStorage.setItem(STORAGE_KEYS.leadIntent, JSON.stringify(intent));
+    };
+
+    // Called once per page load (from boot()), never from the periodic refresh loop --
+    // otherwise a static URL left open with a click ID would mint a new touch every tick.
+    const createTouchIfNew = () => {
+        if (!hasSecureRandom()) return null;
+
+        const params = readParams();
+        const hasClickId = Boolean(params.get('gclid') || params.get('gbraid') || params.get('wbraid'));
+        if (!hasClickId) return null;
+
+        const lead = getLead();
+        const touch = {
+            touch_id: generateSecureId('touch'),
+            touch_time: new Date().toISOString(),
+            landing_page: window.location.href
+        };
+        Object.keys(TOUCH_FIELD_SOURCE).forEach((touchField) => {
+            touch[touchField] = lead[TOUCH_FIELD_SOURCE[touchField]] || '';
+        });
+
+        storeTouch(touch);
+        recordLeadEvent('paid_touch', {}, { touch });
+        return touch;
+    };
+
+    // The first phone/text/form/booking action creates the session's one lead intent and
+    // binds it to whatever touch is current at that moment; every later call (any channel)
+    // reuses the stored intent unchanged, per the immutable-binding contract in lib/lead-event-store.js.
+    const ensureLeadIntent = (channel) => {
+        const existing = getCurrentIntent();
+        if (existing) return { intent: existing, touchForEvent: null, isNew: false };
+        if (!hasSecureRandom()) return { intent: null, touchForEvent: null, isNew: false };
+
+        const touch = getCurrentTouch();
+        const intent = {
+            lead_intent_id: generateSecureId('intent'),
+            reference_code: generateReferenceCode(),
+            touch_id: touch ? touch.touch_id : '',
+            first_channel: channel
+        };
+        storeIntent(intent);
+        return { intent, touchForEvent: touch, isNew: true };
+    };
 
     const applyParams = (url, lead) => {
         if (lead.session_id && !url.searchParams.has('obsidian_session_id')) {
@@ -254,7 +402,13 @@
         const lead = getLead();
         if (!hasAttribution(lead)) return;
 
-        document.querySelectorAll('form').forEach((form) => {
+        const forms = document.querySelectorAll('form');
+        if (forms.length === 0) return;
+
+        const leadIntentResult = ensureLeadIntent('form');
+        const intent = leadIntentResult.intent;
+
+        forms.forEach((form) => {
             upsertHidden(form, 'lead_session_id', lead.session_id);
             upsertHidden(form, 'lead_cid', lead.cid);
             upsertHidden(form, 'lead_phone', lead.phone);
@@ -273,7 +427,54 @@
             upsertHidden(form, 'lead_keyword', lead.keyword);
             upsertHidden(form, 'lead_matchtype', lead.matchtype);
             upsertHidden(form, 'lead_device', lead.device);
+            if (intent) {
+                upsertHidden(form, 'lead_intent_id', intent.lead_intent_id);
+                upsertHidden(form, 'lead_reference', intent.reference_code);
+                upsertHidden(form, 'lead_touch_id', intent.touch_id);
+            }
         });
+
+        if (leadIntentResult.isNew) {
+            recordLeadEvent('lead_intent_created', {}, {
+                leadIntent: intent,
+                touch: leadIntentResult.touchForEvent
+            });
+        }
+    };
+
+    // SMS href content must be correct before the user taps the link (the OS reads the href
+    // at tap time), so this decorates proactively like decorateForms rather than on click.
+    const decorateTextLinks = () => {
+        const lead = getLead();
+        if (!hasAttribution(lead)) return;
+
+        const links = document.querySelectorAll(TEXT_SELECTOR);
+        if (links.length === 0) return;
+
+        const leadIntentResult = ensureLeadIntent('text');
+        const intent = leadIntentResult.intent;
+        if (!intent) return;
+
+        const refSuffix = `Ref: ${intent.reference_code}`;
+
+        links.forEach((node) => {
+            const raw = node.getAttribute('href');
+            if (!raw || !raw.startsWith('sms:')) return;
+            if (raw.includes(intent.reference_code)) return;
+
+            const [target, query = ''] = raw.slice(4).split('?');
+            const params = new URLSearchParams(query);
+            const existingBody = params.get('body') || '';
+            params.set('body', existingBody ? `${existingBody} ${refSuffix}` : refSuffix);
+            node.setAttribute('href', `sms:${target}?${params.toString()}`);
+        });
+
+        if (leadIntentResult.isNew) {
+            recordLeadEvent('lead_intent_created', {}, {
+                leadIntent: intent,
+                touch: leadIntentResult.touchForEvent
+            });
+        }
     };
 
     const getEventLog = () => {
@@ -413,6 +614,9 @@
             payload
         };
 
+        if (options.touch) event.touch = options.touch;
+        if (options.leadIntent) event.lead_intent = options.leadIntent;
+
         const events = getEventLog();
         events.push(event);
         setEventLog(events);
@@ -433,7 +637,20 @@
 
     const sendAnalyticsEvent = (eventName, extra = {}, options = {}) => {
         const lead = getLead();
-        const event = recordLeadEvent(eventName, extra, options);
+
+        let eventOptions = options;
+        const channel = LEAD_INTENT_CHANNEL_BY_EVENT[eventName];
+        if (channel) {
+            const leadIntentResult = ensureLeadIntent(channel);
+            if (leadIntentResult.intent) {
+                eventOptions = { ...options, leadIntent: leadIntentResult.intent };
+                if (leadIntentResult.isNew && leadIntentResult.touchForEvent) {
+                    eventOptions.touch = leadIntentResult.touchForEvent;
+                }
+            }
+        }
+
+        const event = recordLeadEvent(eventName, extra, eventOptions);
         if (!event || typeof window.gtag !== 'function') return event;
 
         window.gtag('event', eventName, {
@@ -568,9 +785,11 @@
 
     const boot = () => {
         remember();
+        createTouchIfNew();
         configureWebsiteCallTracking();
         decorateBookingTargets();
         decorateForms();
+        decorateTextLinks();
         titleBookingFrames();
         bindClickTracking();
 
@@ -618,6 +837,7 @@
                 pendingRefresh = false;
                 decorateBookingTargets();
                 decorateForms();
+                decorateTextLinks();
                 titleBookingFrames();
             });
         };
@@ -628,6 +848,7 @@
         window.setInterval(() => {
             decorateBookingTargets();
             decorateForms();
+            decorateTextLinks();
             titleBookingFrames();
         }, 2000);
 
@@ -651,7 +872,10 @@
         trackEvent: sendAnalyticsEvent,
         configureWebsiteCallTracking,
         decorateBookingTargets,
-        decorateForms
+        decorateForms,
+        decorateTextLinks,
+        getCurrentTouch,
+        getCurrentIntent
     };
 
     if (document.readyState === 'loading') {
