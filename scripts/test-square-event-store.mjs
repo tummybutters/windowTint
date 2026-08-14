@@ -56,6 +56,33 @@ for (const sql of [BOOKING_SQL, PAYMENT_SQL, ORDER_SQL, REFUND_SQL]) {
   assert.match(sql, /WHERE EXCLUDED\.last_provider_event_at >= COALESCE\(/);
 }
 
+assert.match(PAYMENT_SQL, /INSERT INTO attribution_payments \(\s*payment_id, provider, provider_payment_id, provider_order_id,/);
+assert.match(
+  PAYMENT_SQL,
+  /provider_order_id = COALESCE\(EXCLUDED\.provider_order_id, attribution_payments\.provider_order_id\)/
+);
+
+inserted = true;
+const paymentRecord = {
+  ...baseRecord,
+  provider_event_id: 'square-event-payment-order-link',
+  event_type: 'payment.updated',
+  entity_type: 'payment',
+  entity: {
+    payment_id: 'square_payment_payment-001',
+    provider_payment_id: 'payment-001',
+    provider_order_id: 'order-001',
+    status: 'COMPLETED',
+    amount_minor: 48000,
+    currency: 'USD',
+    metadata: { provider_order_id: 'order-001' }
+  }
+};
+await store.persist(paymentRecord);
+const paymentCall = calls.at(-1);
+assert.match(paymentCall.queryText, /attribution_payments/);
+assert.equal(paymentCall.params.includes('order-001'), true);
+
 inserted = false;
 assert.deepEqual(await store.persist(baseRecord), {
   inserted: false,

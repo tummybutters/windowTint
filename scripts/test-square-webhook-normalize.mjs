@@ -103,6 +103,7 @@ assert.equal(payment.entity.provider_payment_id, 'payment-001');
 assert.equal(payment.entity.amount_minor, 48000);
 assert.equal(payment.entity.currency, 'USD');
 assert.equal(payment.entity.provider_order_id, 'order-001');
+assert.equal(payment.entity.metadata.provider_order_id, 'order-001');
 assert.doesNotMatch(JSON.stringify(payment), /private@example.com|Private Person|1234/);
 
 const order = normalizeSquareWebhook(envelope('order.fulfillment.updated', {
