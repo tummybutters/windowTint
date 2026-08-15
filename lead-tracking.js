@@ -392,7 +392,11 @@
         const intent = {
             lead_intent_id: generateSecureId('intent'),
             reference_code: generateReferenceCode(),
-            touch_id: touch ? touch.touch_id : '',
+            // MED-2: bind from usableTouch, not the raw current touch -- a touch outside the
+            // conservative client window will never be sent to the server, so binding to its
+            // touch_id would leave the intent's touch_lookup permanently unresolvable and the
+            // intent/reference/Tier A link never persisted. Degrade to unattributed instead.
+            touch_id: usableTouch ? usableTouch.touch_id : '',
             first_channel: channel
         };
         storeIntent(intent);
@@ -401,6 +405,13 @@
     };
 
     const AD_TOUCH_PARAMS = ['utm_source', 'utm_medium', 'utm_campaign', 'utm_term', 'utm_content', 'campaignid', 'adgroupid', 'creative', 'keyword', 'matchtype', 'device', 'network', 'loc_physical_ms', 'loc_interest_ms', 'placement', 'targetid', 'extensionid'];
+
+    // Union of every paid attribution field name that can ever reach a URL, deduplicated --
+    // the set stripped from same-origin targets in applyParams below (MED-1).
+    const PAID_ATTRIBUTION_PARAMS = Array.from(new Set([
+        ...Object.values(TOUCH_FIELD_SOURCE),
+        ...AD_TOUCH_PARAMS
+    ]));
 
     const applyParams = (url, lead, touch, options = {}) => {
         if (lead.session_id && !url.searchParams.has('obsidian_session_id')) {
@@ -413,15 +424,20 @@
             url.searchParams.set('phone', lead.phone);
         }
 
-        // Q2: a same-origin target (an internal /booking or /vip-booking link) is a URL a
+        // Q2/MED-1: a same-origin target (an internal /booking or /vip-booking link) is a URL a
         // customer can copy, paste, and share -- carrying gclid/gbraid/wbraid, UTMs, or
         // campaign/keyword/device metadata on it lets a stranger's browser mint a genuine paid
         // touch from a click it never made. localStorage already preserves this browser's touch
         // for first-party attribution, so the URL copy buys nothing and only creates
-        // cross-visitor false attribution. The opaque session bridge and non-paid contact
+        // cross-visitor false attribution. Strip every paid field from the final URL, even if the
+        // raw href already carried one (markup outside this repo could ship one) -- declining to
+        // add new paid fields is not enough. The opaque session bridge and non-paid contact
         // context above are still genuinely needed and stay. External Square targets cannot read
         // this browser's localStorage, so they keep the full decoration below.
-        if (options.sameOrigin) return;
+        if (options.sameOrigin) {
+            PAID_ATTRIBUTION_PARAMS.forEach((param) => url.searchParams.delete(param));
+            return;
+        }
 
         if (touch) {
             // Every ad-touch field (UTMs, click IDs, campaign/ad group/creative/keyword/match/
@@ -689,12 +705,16 @@
                     continue;
                 }
 
-                // Q1/Q6: a permanent 4xx (malformed payload, validation rejection, etc.) will
-                // never succeed on retry -- drop it and keep flushing so one poison envelope can
-                // never block the rest of the queue. 408 (timeout) and 429 (rate limit) are
-                // retryable, as is any 5xx.
+                // Q1/Q6/MED-3: only a payload-level rejection (400 malformed, 413 too large, 422
+                // semantically invalid) will never succeed on retry -- drop it and keep flushing
+                // so one poison envelope can never block the rest of the queue. Every other
+                // status, including 401/403/404/405/408/429/451 and any 5xx, describes the
+                // request environment rather than an unfixable payload (an edge/WAF header
+                // rewrite, a routing regression, a rate limit, a timeout) and must stay retryable
+                // -- otherwise a recoverable outage would silently and permanently discard real
+                // lead-action data on its first attempt.
                 const status = response.status;
-                const isPermanentRejection = status >= 400 && status < 500 && status !== 408 && status !== 429;
+                const isPermanentRejection = status === 400 || status === 413 || status === 422;
                 if (isPermanentRejection) {
                     removePendingEvent(entry.event.event_id);
                     continue;

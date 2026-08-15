@@ -21,7 +21,14 @@ const handler = createHandler({
     async prune(options) {
       pruneCalls += 1;
       assert.deepEqual(options, { eventRetentionDays: 400, failureRetentionDays: 30 });
-      return { deletedEvents: 12, deletedFailures: 3, deletedRateLimitBuckets: 4 };
+      return {
+        deletedEvents: 12,
+        deletedFailures: 3,
+        deletedRateLimitBuckets: 4,
+        deletedLeadIntentLinks: 5,
+        deletedLeadIntents: 6,
+        deletedTouches: 7
+      };
     }
   }
 });
@@ -38,6 +45,9 @@ const handler = createHandler({
     deleted_events: 12,
     deleted_failures: 3,
     deleted_rate_limit_buckets: 4,
+    deleted_lead_intent_links: 5,
+    deleted_lead_intents: 6,
+    deleted_touches: 7,
     event_retention_days: 400,
     failure_retention_days: 30
   });

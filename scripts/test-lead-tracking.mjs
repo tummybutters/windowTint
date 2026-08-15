@@ -1115,11 +1115,18 @@ const createContext = ({ href, storage, doc, crypto, adsConfig }) => {
 
   const bookingNode = createFakeAnchor('/booking');
   const squareNode = createFakeAnchor('https://book.squareup.com/appointments/py2a8n8lsuxp5n/location/LWC5SDBDX3R99');
+  // MED-1: a raw same-origin href that already carries paid fields (as markup authored outside
+  // this repo could ship) must have them stripped, not merely left un-added -- otherwise a
+  // customer can copy/share this exact URL and mint a false touch in a stranger's browser.
+  const rawParamsNode = createFakeAnchor(
+    '/booking?gclid=RAWCLICK&utm_campaign=raw-camp&campaignid=999&device=t&foo=bar&cid=RAWCID#section'
+  );
   const run2 = createContext({
     href: 'https://www.obsidianautoworksoc.com/landing?gbraid=CLICKG&utm_campaign=camp-g&campaignid=222&keyword=coating&matchtype=e&device=m',
     storage,
     doc: createFakeDocument({
       'a[href="/booking"]': [bookingNode],
+      'a[href^="/booking?"]': [rawParamsNode],
       'a[href*="book.squareup.com/appointments"]': [squareNode]
     }),
     crypto: secureCrypto
@@ -1142,11 +1149,31 @@ const createContext = ({ href, storage, doc, crypto, adsConfig }) => {
   });
   assert.ok(sameOriginHref.includes('obsidian_session_id='), 'the same-origin booking link keeps the opaque session bridge');
 
+  // MED-1: a raw same-origin href that already carried paid fields before decoration must have
+  // them stripped from the final URL, not merely left un-added.
+  const rawParamsHref = rawParamsNode.getAttribute('href');
+  [
+    'gclid', 'gbraid', 'wbraid', 'utm_source', 'utm_medium', 'utm_campaign', 'utm_term',
+    'utm_content', 'campaignid', 'adgroupid', 'creative', 'keyword', 'matchtype', 'device',
+    'network', 'loc_physical_ms', 'loc_interest_ms', 'placement', 'targetid', 'extensionid'
+  ].forEach((param) => {
+    assert.ok(!rawParamsHref.includes(`${param}=`), `a raw same-origin href already carrying ${param} has it stripped`);
+  });
+  assert.ok(rawParamsHref.includes('cid=RAWCID'), 'a raw same-origin href keeps its own pre-existing non-paid cid');
+  assert.ok(rawParamsHref.includes('foo=bar'), 'a raw same-origin href keeps an unrelated param');
+  assert.ok(rawParamsHref.includes('#section'), 'a raw same-origin href keeps its hash');
+  assert.ok(rawParamsHref.includes('obsidian_session_id='), 'a raw same-origin href still gets the opaque session bridge');
+
   const externalHref = squareNode.getAttribute('href');
   assert.ok(externalHref.includes('gbraid=CLICKG'), 'the external Square target keeps the current touchs gbraid');
   assert.ok(externalHref.includes('campaignid=222'), 'the external Square target keeps campaign metadata');
   assert.ok(externalHref.includes('keyword=coating'), 'the external Square target keeps keyword metadata');
   assert.ok(externalHref.includes('obsidian_session_id='), 'the external Square target also keeps the session bridge');
+  // LOW-2: the external target must decorate from the current touch only, never from prior
+  // sticky click/campaign/keyword values still sitting in lead storage from run1's click.
+  assert.ok(!externalHref.includes('gclid=CLICKA'), 'the external Square target excludes the prior clicks gclid');
+  assert.ok(!externalHref.includes('campaignid=111'), 'the external Square target excludes the prior clicks campaignid');
+  assert.ok(!externalHref.includes('keyword=tint'), 'the external Square target excludes the prior clicks keyword');
 
   const paidTouchEventsAfterDecoration = run2.tracker.getEventLog()
     .filter((event) => event.event_name === 'paid_touch');
@@ -1260,6 +1287,91 @@ const createContext = ({ href, storage, doc, crypto, adsConfig }) => {
   assert.equal(freshResendEvent.touch.touch_id, originalBoundTouch.touch_id);
 }
 
+// --- Scenario L2 (MED-2): when the *current* touch is already unusable at the moment a new
+// intent is first created (not just aged after the fact), the new intent must bind touch_id from
+// usableTouch, not the raw current touch -- otherwise it is bound to a touch_id the client will
+// never send, so the server-side lead_intent_upsert's touch_lookup never resolves it and the
+// intent, its reference code, and its Tier A link are never persisted. ---
+{
+  // A stale current touch (already past the 380-day client window) present before the first
+  // real lead action ever happens.
+  {
+    const storage = createStorage();
+    const staleTouch = {
+      touch_id: 'touch_stale_precreate',
+      touch_time: new Date(Date.now() - 390 * 24 * 60 * 60 * 1000).toISOString(),
+      landing_page: 'https://www.obsidianautoworksoc.com/landing?gclid=OLD'
+    };
+    storage.setItem('lead_track_touch_id', staleTouch.touch_id);
+    storage.setItem('lead_track_touch_snapshot', JSON.stringify(staleTouch));
+
+    const { tracker } = createContext({
+      href: 'https://www.obsidianautoworksoc.com/vip-booking',
+      storage,
+      doc: createFakeDocument(),
+      crypto: secureCrypto
+    });
+
+    assert.deepEqual(tracker.getCurrentTouch(), staleTouch, 'the stale touch is indeed the current touch at intent-creation time');
+
+    tracker.trackEvent('phone_click', { link_url: 'tel:7146007134' });
+    const intent = tracker.getCurrentIntent();
+    assert.ok(intent, 'the first phone action still creates a lead intent');
+    assert.equal(intent.touch_id, '', 'a new intent created while the current touch is stale degrades to unattributed, not bound to a touch the server will never see');
+
+    assert.equal(storage.getItem('lead_track_lead_intent_bound_touch_snapshot'), null, 'no bound-touch snapshot is stored for a degraded intent');
+
+    const phoneEvents = tracker.getEventLog().filter((event) => event.event_name === 'phone_click');
+    const phoneEvent = phoneEvents[phoneEvents.length - 1];
+    assert.equal(phoneEvent.touch, undefined, 'the real event is not sent with the unusable touch');
+    assert.equal(phoneEvent.lead_intent.touch_id, '', 'the persisted intent reference is the degraded (unattributed) one');
+  }
+
+  // A future-skewed current touch (more than the 12h client margin ahead) present before the
+  // first real lead action ever happens.
+  {
+    const storage = createStorage();
+    const futureTouch = {
+      touch_id: 'touch_future_precreate',
+      touch_time: new Date(Date.now() + 13 * 60 * 60 * 1000).toISOString(),
+      landing_page: 'https://www.obsidianautoworksoc.com/landing?gclid=SKEWED'
+    };
+    storage.setItem('lead_track_touch_id', futureTouch.touch_id);
+    storage.setItem('lead_track_touch_snapshot', JSON.stringify(futureTouch));
+
+    const { tracker } = createContext({
+      href: 'https://www.obsidianautoworksoc.com/vip-booking',
+      storage,
+      doc: createFakeDocument(),
+      crypto: secureCrypto
+    });
+
+    tracker.trackEvent('phone_click', { link_url: 'tel:7146007134' });
+    const intent = tracker.getCurrentIntent();
+    assert.ok(intent, 'the first phone action still creates a lead intent');
+    assert.equal(intent.touch_id, '', 'a new intent created while the current touch is future-skewed degrades to unattributed');
+    assert.equal(storage.getItem('lead_track_lead_intent_bound_touch_snapshot'), null, 'no bound-touch snapshot is stored for a degraded intent');
+  }
+
+  // Control: a usable current touch is still bound normally.
+  {
+    const storage = createStorage();
+    const { tracker } = createContext({
+      href: 'https://www.obsidianautoworksoc.com/vip-booking?gclid=FRESH',
+      storage,
+      doc: createFakeDocument(),
+      crypto: secureCrypto
+    });
+    const touch = tracker.getCurrentTouch();
+    assert.ok(touch, 'a fresh click mints a usable touch');
+
+    tracker.trackEvent('phone_click', { link_url: 'tel:7146007134' });
+    const intent = tracker.getCurrentIntent();
+    assert.equal(intent.touch_id, touch.touch_id, 'a usable current touch is still bound to the new intent as before');
+    assert.ok(storage.getItem('lead_track_lead_intent_bound_touch_snapshot'), 'a usable touch is still snapshotted for resend');
+  }
+}
+
 // --- Scenario M: the delivery queue never deadlocks behind one poison envelope -- a permanent
 // 4xx (not 408/429) is dropped and flushing continues; a retryable failure (5xx, network error,
 // 408, 429) stops the batch without dropping anything, so a temporarily-unreachable envelope is
@@ -1290,6 +1402,24 @@ const createContext = ({ href, storage, doc, crypto, adsConfig }) => {
     assert.equal(tracker.getPendingEvents().length, 0, 'both the dropped 4xx envelope and the delivered envelope are cleared from the queue');
   }
 
+  // MED-3: the permanent-drop set is exactly the payload-level rejections (400, 413, 422) --
+  // 413 (payload too large) and 422 (semantically invalid payload) are also dropped, not just 400.
+  for (const status of [413, 422]) {
+    const { tracker, window: win } = createContext({
+      href: `https://www.obsidianautoworksoc.com/queue-test-permanent-${status}`,
+      storage: createStorage(),
+      doc: createFakeDocument(),
+      crypto: secureCrypto
+    });
+
+    tracker.trackEvent('queue_test_event_permanent', {});
+    win.fetch = async () => ({ ok: false, status });
+
+    await tracker.flushPendingEvents();
+
+    assert.equal(tracker.getPendingEvents().length, 0, `status ${status} is a permanent payload-level rejection and is dropped`);
+  }
+
   // A retryable 5xx stops the batch and drops nothing.
   {
     const { tracker, window: win } = createContext({
@@ -1315,8 +1445,12 @@ const createContext = ({ href, storage, doc, crypto, adsConfig }) => {
     assert.equal(tracker.getPendingEvents()[0].attempts, 1, 'the retried envelope still records the attempt');
   }
 
-  // 408 (timeout) and 429 (rate limit) remain retryable, not permanent.
-  for (const status of [408, 429]) {
+  // 408 (timeout), 429 (rate limit), and environment/config 4xx statuses (401 unauthenticated,
+  // 403 same-origin/CSRF rejection, 404 unrouted endpoint, 405 misconfigured method, 451 legal)
+  // all remain retryable, not permanent -- these describe the request environment, not an
+  // unfixable payload, so dropping them on a routing/deploy misconfiguration would silently and
+  // irrecoverably discard real lead-action data (MED-3).
+  for (const status of [401, 403, 404, 405, 408, 429, 451]) {
     const { tracker, window: win } = createContext({
       href: `https://www.obsidianautoworksoc.com/queue-test-retry-${status}`,
       storage: createStorage(),

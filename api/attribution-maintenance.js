@@ -58,6 +58,9 @@ const createHandler = (options = {}) => async function handler(req, res) {
       deleted_events: result.deletedEvents,
       deleted_failures: result.deletedFailures,
       deleted_rate_limit_buckets: result.deletedRateLimitBuckets,
+      deleted_lead_intent_links: result.deletedLeadIntentLinks,
+      deleted_lead_intents: result.deletedLeadIntents,
+      deleted_touches: result.deletedTouches,
       event_retention_days: eventRetentionDays,
       failure_retention_days: failureRetentionDays
     });
