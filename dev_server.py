@@ -19,6 +19,7 @@ REWRITE_PATHS = {
     "/tesla-model-3-window-tint": "/tesla-model-3-window-tint/index.html",
     "/tesla-cybertruck-window-tint": "/tesla-cybertruck-window-tint/index.html",
     "/mobile-window-tinting-near-me": "/mobile-window-tinting-near-me",
+    "/mobile-window-tinting-summer-offer": "/mobile-window-tinting-summer-offer",
     "/mobile-ceramic-window-tint-near-me": "/mobile-ceramic-window-tint-near-me/index.html",
     "/windshield-ceramic-tint": "/windshield-ceramic-tint",
     "/ceramic-window-tint-pricing": "/ceramic-window-tint-pricing",

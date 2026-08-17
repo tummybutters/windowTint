@@ -17,6 +17,69 @@ body.paid-page {
     color: var(--paid-white);
 }
 
+.paid-offer-banner {
+    position: relative;
+    z-index: 30;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: clamp(0.55rem, 2vw, 1.5rem);
+    min-height: 46px;
+    padding: 0.65rem 1rem;
+    color: #15120d;
+    background: linear-gradient(90deg, #f5b942 0%, #ffe39a 48%, #f2a927 100%);
+    border-bottom: 1px solid rgba(21, 18, 13, 0.3);
+    font-size: clamp(0.72rem, 1.8vw, 0.9rem);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+.paid-offer-banner strong { font-weight: 800; }
+.paid-offer-banner span { padding-left: 1rem; border-left: 1px solid rgba(21, 18, 13, 0.35); font-weight: 700; }
+.paid-offer-banner a { color: inherit; font-weight: 700; text-underline-offset: 0.2em; }
+
+.paid-page--offer .paid-hero--vip {
+    background: radial-gradient(circle at 50% 0%, rgba(245, 185, 66, 0.14), transparent 36rem), linear-gradient(180deg, #0f1113 0%, #090a0c 100%);
+}
+
+.paid-hero__offer {
+    max-width: 850px;
+    margin: 1.2rem auto 0;
+    color: #f7cc70;
+    font-size: clamp(1.15rem, 2.7vw, 1.8rem);
+    line-height: 1.25;
+}
+
+.paid-offer__layout {
+    display: grid;
+    grid-template-columns: minmax(0, 1.35fr) minmax(260px, 0.65fr);
+    gap: clamp(2rem, 6vw, 5rem);
+    align-items: center;
+}
+
+.paid-offer__layout .paid-section-heading { margin: 0; }
+
+.paid-offer-card {
+    padding: clamp(1.6rem, 4vw, 2.7rem);
+    color: #f8f4ea;
+    background: #111315;
+    border: 1px solid rgba(245, 185, 66, 0.65);
+    box-shadow: 14px 14px 0 #f5b942;
+}
+
+.paid-offer-card__label { color: #f5b942; font-weight: 800; letter-spacing: 0.13em; text-transform: uppercase; }
+.paid-offer-card > strong { display: block; margin: 0.3rem 0; color: #fff; font-size: clamp(4.5rem, 10vw, 7.5rem); line-height: 0.95; }
+.paid-offer-card > strong small { color: #f5b942; font-size: 0.42em; vertical-align: top; }
+.paid-offer-card > p:not(.paid-offer-card__label) { margin: 0 0 1.5rem; color: #d8d4ca; font-size: 1.1rem; }
+
+@media (max-width: 760px) {
+    .paid-offer-banner { flex-wrap: wrap; gap: 0.3rem 0.7rem; text-align: center; }
+    .paid-offer-banner span { padding-left: 0.7rem; }
+    .paid-offer-banner a { width: 100%; }
+    .paid-offer__layout { grid-template-columns: 1fr; }
+    .paid-offer-card { box-shadow: 8px 8px 0 #f5b942; }
+}
+
 .paid-page main {
     overflow: hidden;
 }

@@ -24,6 +24,7 @@ const teslaModel3 = await readOptional('tesla-model-3-window-tint/index.html');
 const cybertruck = await readOptional('tesla-cybertruck-window-tint/index.html');
 const mobileCeramicNearMe = await readOptional('mobile-ceramic-window-tint-near-me/index.html');
 const nanoCeramic = await readOptional('nano-ceramic-window-tint/index.html');
+const summerOffer = await readOptional('mobile-window-tinting-summer-offer');
 const css = await readOptional('paid-landing.css');
 const devServer = await readFile(new URL('dev_server.py', root), 'utf8');
 const vercel = JSON.parse(await readFile(new URL('vercel.json', root), 'utf8'));
@@ -41,6 +42,7 @@ assert.ok(teslaModel3, 'The paid Model 3 tint variant must exist.');
 assert.ok(cybertruck, 'The paid Cybertruck tint variant must exist.');
 assert.ok(mobileCeramicNearMe, 'The mobile ceramic near-me variant must exist.');
 assert.ok(nanoCeramic, 'The nano ceramic tint variant must exist.');
+assert.ok(summerOffer, 'The summer heat-defense offer variant must exist.');
 assert.ok(css, 'The paid-search variants need a shared stylesheet.');
 
 const squarePattern = /(?:app\.squareup\.com|book\.squareup\.com|squareup\.com\/appointments|square\.site\/appointments)/i;
@@ -64,6 +66,7 @@ const paidVariants = [
   ['Cybertruck', cybertruck, 'tesla_tint', 'tesla_cybertruck_v1', 'tesla-cybertruck-window-tint'],
   ['mobile ceramic near-me', mobileCeramicNearMe, 'ceramic_tint', 'ceramic_near_me_v1', 'mobile-ceramic-window-tint-near-me'],
   ['nano ceramic', nanoCeramic, 'ceramic_tint', 'nano_ceramic_v1', 'nano-ceramic-window-tint'],
+  ['summer heat defense', summerOffer, 'mobile_tint', 'summer_heat_defense_v1', 'mobile-window-tinting-summer-offer'],
   ['coating cost', coatingCost, 'ceramic_coating', 'coating_cost_correction_v1', 'ceramic-coating-cost-paint-correction'],
   ['luxury and EV coating', coatingLuxury, 'ceramic_coating', 'coating_luxury_ev_v1', 'luxury-ev-ceramic-coating']
 ];
@@ -131,7 +134,8 @@ for (const [name, page] of [
   ['Tesla Model 3', teslaModel3],
   ['Cybertruck', cybertruck],
   ['mobile ceramic near-me', mobileCeramicNearMe],
-  ['nano ceramic', nanoCeramic]
+  ['nano ceramic', nanoCeramic],
+  ['summer heat defense', summerOffer]
 ]) {
   assert.match(page, /AW-17846304809/, `${name} must initialize the mobile-tint Ads account.`);
   assert.doesNotMatch(page, /AW-18301955625/, `${name} must not initialize the coating Ads account.`);
@@ -246,6 +250,24 @@ assert.match(nanoCeramic, /<h1>Nano Ceramic <span>Window Tint<\/span><\/h1>/, 'N
 assert.match(nanoCeramic, /heat rejection/i, 'Nano ceramic must explain heat-rejection intent.');
 assert.match(nanoCeramic, /UV protection/i, 'Nano ceramic must explain UV protection.');
 assert.doesNotMatch(nanoCeramic, /\b(?:99|100)%\b/, 'Nano ceramic must not invent a numerical performance rating.');
+
+assert.match(summerOffer, /class="paid-offer-banner"/, 'Summer offer must lead with a dedicated offer banner.');
+assert.match(summerOffer, /<title>\$100 Toward Eligible Tint Upgrades \| Obsidian Autoworks<\/title>/, 'Summer offer title must bound the credit to eligible upgrades.');
+assert.match(summerOffer, /SUMMER HEAT DEFENSE/i, 'Summer offer must name the campaign consistently.');
+assert.match(summerOffer, /15 VEHICLES ONLY/i, 'Summer offer must disclose the fixed allocation.');
+assert.match(summerOffer, /\$100(?:\s|&nbsp;)+toward eligible upgrades/i, 'Summer offer must state the upgrade-credit value and boundary.');
+assert.doesNotMatch(summerOffer, /claim(?: my)? \$100 (?:upgrade|in upgrades)/i, 'Summer offer must not imply an entire upgrade is included.');
+assert.match(summerOffer, /qualifying \$500\+ ceramic tint/i, 'Summer offer must disclose the minimum qualifying booking.');
+assert.match(summerOffer, /paid deposit/i, 'Summer offer must explain how the allocation is secured.');
+assert.match(summerOffer, /August 31/i, 'Summer offer must disclose its calendar deadline.');
+assert.match(summerOffer, /through August 31/i, 'Summer offer must include August 31 consistently.');
+assert.doesNotMatch(summerOffer, /before August 31/i, 'Summer offer must not contradict its inclusive August 31 deadline.');
+assert.match(summerOffer, /no cash value/i, 'Summer offer must prohibit cash redemption.');
+assert.match(summerOffer, /not combinable/i, 'Summer offer must disclose combination restrictions.');
+assert.match(summerOffer, /existing appointments (?:are )?excluded/i, 'Summer offer must exclude existing appointments.');
+assert.match(summerOffer, /HEAT15/, 'Summer offer text actions must carry the offer reference.');
+assert.doesNotMatch(summerOffer, /(?:spots|vehicles) remaining/i, 'Summer offer must not invent a live remaining count.');
+assert.doesNotMatch(summerOffer, /data-(?:spots|claims)-remaining/i, 'Summer offer must not ship an unsupported dynamic scarcity counter.');
 
 assert.match(coatingCost, /Paint Correction/i, 'Coating cost page must match correction intent.');
 assert.match(
