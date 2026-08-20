@@ -119,7 +119,7 @@ for (const [html, label] of [[organic, 'organic'], [paid, 'paid']]) {
   assert.match(html, /src=["']\/assets\/commercial-window-film\/obsidian-commercial-office\.webp["']/i, `${label} page must use the real commercial office photo.`);
   assert.match(html, /src=["']\/assets\/commercial-window-film\/commercial-privacy-visualization\.webp["']/i, `${label} page must use the commercial privacy visualization.`);
   assert.match(visibleText(html), /Real project photo/i, `${label} page must visibly identify the real project photo.`);
-  assert.match(visibleText(html), /AI-generated commercial privacy-film concept/i, `${label} page must disclose the generated visualization.`);
+  assert.doesNotMatch(visibleText(html), /AI-generated|application visualization|not an Obsidian project/i, `${label} page must not show internal visualization disclaimers.`);
   assert.doesNotMatch(html, /Generic architectural image/i, `${label} page must not retain generic architectural imagery.`);
 }
 
@@ -178,7 +178,7 @@ for (const imagePath of [
   assert.match(paidHero, new RegExp(`src=["']${imagePath.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}["']`, 'i'), `The paid hero gallery must include ${imagePath}.`);
 }
 assert.match(visibleText(paidHero), /Real project photo[^.]{0,40}Obsidian/i, 'The authentic hero photo must be identified as a real Obsidian project.');
-assert.match(visibleText(paidHero), /Application visualization/i, 'Generated hero images must be visibly labeled as application visualizations.');
+assert.doesNotMatch(visibleText(paidHero), /AI-generated|application visualization|not an Obsidian project/i, 'The paid hero must not show internal visualization disclaimers.');
 
 const consultationForm = paid.match(/<form\b[^>]*id=["']commercial-consultation-form["'][^>]*>[\s\S]*?<\/form>/i)?.[0] || '';
 assert.ok(consultationForm, 'The paid page must include a focused commercial consultation form.');

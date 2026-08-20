@@ -80,13 +80,11 @@
                         <img src="/assets/commercial-window-film/ads/generated-storefront-landscape.jpg"
                             alt="Storefront glass with a neutral commercial window-film appearance" width="1200"
                             height="628" fetchpriority="high">
-                        <figcaption><strong>Application visualization</strong><span>Storefront solar film</span></figcaption>
                     </figure>
                     <figure class="commercial-paid-hero__figure">
                         <img src="/assets/commercial-window-film/commercial-installation-visualization.webp"
                             alt="Professional installation of commercial window film on office glass" width="1440"
                             height="960" fetchpriority="high">
-                        <figcaption><strong>Application visualization</strong><span>Precision installation</span></figcaption>
                     </figure>
                 </div>
             </div>
@@ -132,8 +130,6 @@
                     <img src="/assets/commercial-window-film/commercial-privacy-visualization.webp"
                         alt="Commercial conference room glass with frosted privacy film bands" width="1400" height="933"
                         loading="lazy">
-                    <figcaption><strong>Application visualization</strong> AI-generated commercial privacy-film
-                        concept — not an Obsidian project.</figcaption>
                 </figure>
                 <div>
                     <p class="commercial-overline">Privacy + decorative film</p>
