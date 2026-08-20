@@ -9,7 +9,12 @@ const store = createCommercialLeadStore({
   async query(sql, params) {
     calls.push({ sql, params });
     if (/attribution_ingest_rate_limits/i.test(sql)) return [{ request_count: 1 }];
-    return [{ lead_id: 'commercial_lead_abc', inserted: true }];
+    return [{
+      lead_id: 'commercial_lead_abc', inserted: true,
+      name: 'Tommy Test', phone: '7145550123', property_city: 'Irvine',
+      additional_notes: 'South-facing conference room.',
+      answers: { property: 'office', goal: 'privacy_decorative', scope: 'small_building', timing: 'within_30_days' }
+    }];
   }
 });
 
@@ -37,5 +42,27 @@ assert.ok(insert, 'The store must insert into the dedicated commercial lead tabl
 for (const value of ['Tommy Test', '7145550123', 'Irvine', 'South-facing conference room.', 'click-123']) {
   assert.ok(insert.params.some((param) => String(param).includes(value)), `The durable insert must retain ${value}.`);
 }
+
+const conflictStore = createCommercialLeadStore({
+  async query() {
+    return [{
+      lead_id: 'commercial_lead_abc', inserted: false,
+      name: 'Original Name', phone: '7145559999', property_city: 'Irvine',
+      additional_notes: '',
+      answers: { property: 'office', goal: 'privacy_decorative', scope: 'small_building', timing: 'within_30_days' }
+    }];
+  }
+});
+await assert.rejects(
+  conflictStore.persist({
+    lead_id: 'commercial_lead_abc', submission_id: 'commercial_submission_0123456789abcdef',
+    session_id: '', lead_intent_id: '', reference_code: '', name: 'Changed Name', phone: '7145550123',
+    property_city: 'Irvine', additional_notes: '',
+    answers: { property: 'office', goal: 'privacy_decorative', scope: 'small_building', timing: 'within_30_days' },
+    attribution: {}, touch: {}, created_at: '2026-08-20T20:00:00.000Z'
+  }),
+  (error) => error && error.code === 'commercial_lead_conflict',
+  'A reused submission ID with changed contact data must fail instead of opening SMS with unsaved values.'
+);
 
 console.log('commercial lead store contracts passed');

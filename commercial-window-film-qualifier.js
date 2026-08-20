@@ -12,12 +12,6 @@
 
     const clean = (value) => String(value || '').trim().replace(/\s+/g, ' ');
 
-    const secureSubmissionId = () => {
-        const bytes = new Uint8Array(16);
-        window.crypto.getRandomValues(bytes);
-        return `commercial_submission_${Array.from(bytes, (value) => value.toString(16).padStart(2, '0')).join('')}`;
-    };
-
     const boot = () => {
         const root = document.getElementById('commercial-qualifier');
         const model = window.ObsidianCommercialQualifier;
@@ -61,7 +55,7 @@
 
         const renderResult = () => {
             setProgress(true);
-            submissionId = submissionId || secureSubmissionId();
+            submissionId = submissionId || window.ObsidianCommercialLeadClient.createSubmissionId(window.crypto);
             liveRegion.textContent = 'Your project brief is ready. Add your contact information to save it and open Messages.';
             body.innerHTML = `
                 <div class="commercial-qualifier__result">
@@ -134,7 +128,17 @@
                         payload,
                         smsHref,
                         fetchImpl: window.fetch.bind(window),
-                        navigate: (href) => window.location.assign(href)
+                        navigate: (href) => window.location.assign(href),
+                        beforeSave: async () => {
+                            if (!tracking || typeof tracking.recordEvent !== 'function') return;
+                            tracking.recordEvent('commercial_lead_submit', {
+                                service: 'commercial_window_film',
+                                landing_variant: 'commercial_socal_v1'
+                            }, { leadIntent: intent, touch: prepared.touchForEvent });
+                            if (typeof tracking.flushPendingEvents === 'function') {
+                                await tracking.flushPendingEvents();
+                            }
+                        }
                     });
                     if (tracking && typeof tracking.recordEvent === 'function') {
                         tracking.recordEvent('commercial_lead_saved', {

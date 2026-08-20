@@ -41,6 +41,7 @@ assert.equal(record.additional_notes, 'South-facing conference room.');
 assert.deepEqual(record.answers, payload.answers);
 assert.equal(record.attribution.gclid, 'click-123');
 assert.equal(record.attribution.campaignid, '24117892229');
+assert.equal(record.attribution.evidence_status, 'client_snapshot_unverified');
 assert.equal(record.touch.touch_id, 'touch_0123456789abcdef');
 assert.equal(record.created_at, '2026-08-20T20:00:00.000Z');
 

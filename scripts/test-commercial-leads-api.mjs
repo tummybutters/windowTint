@@ -70,6 +70,12 @@ const handler = createHandler({
 }
 
 {
+  const res = response();
+  await handler(request({ ...validLead, additional_notes: 'x'.repeat(40 * 1024) }), res);
+  assert.equal(res.statusCode, 413, 'Pre-parsed serverless request bodies must still honor the byte limit.');
+}
+
+{
   let opened = false;
   const unavailable = createHandler({
     identitySecret: 'test-secret',
@@ -83,6 +89,21 @@ const handler = createHandler({
   assert.equal(opened, true);
   assert.equal(res.statusCode, 503);
   assert.equal(JSON.parse(res.body).ok, false);
+}
+
+{
+  const conflict = new Error('submission changed');
+  conflict.code = 'commercial_lead_conflict';
+  const conflictHandler = createHandler({
+    identitySecret: 'test-secret',
+    store: {
+      async checkRateLimit() { return { allowed: true, requestCount: 1, limit: 20 }; },
+      async persist() { throw conflict; }
+    }
+  });
+  const res = response();
+  await conflictHandler(request(), res);
+  assert.equal(res.statusCode, 409);
 }
 
 console.log('commercial leads api contracts passed');

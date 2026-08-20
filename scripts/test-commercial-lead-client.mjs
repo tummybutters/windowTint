@@ -2,7 +2,13 @@ import assert from 'node:assert/strict';
 import { createRequire } from 'node:module';
 
 const require = createRequire(import.meta.url);
-const { saveThenOpenText } = require('../lib/commercial-lead-client.js');
+const { createSubmissionId, saveThenOpenText } = require('../lib/commercial-lead-client.js');
+
+assert.match(
+  createSubmissionId(null, { now: () => 123456789, random: () => 0.5 }),
+  /^commercial_submission_[A-Za-z0-9_-]{16,120}$/,
+  'The intake must still render with a valid stable submission ID when Web Crypto is unavailable.'
+);
 
 const order = [];
 let request;
@@ -10,6 +16,7 @@ await saveThenOpenText({
   endpoint: '/api/commercial-leads',
   payload: { submission_id: 'commercial_submission_0123456789abcdef', name: 'Tommy' },
   smsHref: 'sms:+17146007134?body=hello',
+  beforeSave: async () => order.push('attribution'),
   fetchImpl: async (url, options) => {
     order.push('saved');
     request = { url, options };
@@ -18,7 +25,7 @@ await saveThenOpenText({
   navigate: (href) => order.push(`opened:${href}`)
 });
 
-assert.deepEqual(order, ['saved', 'opened:sms:+17146007134?body=hello'], 'Messages must open only after storage succeeds.');
+assert.deepEqual(order, ['attribution', 'saved', 'opened:sms:+17146007134?body=hello'], 'Canonical attribution and lead storage must finish before Messages opens.');
 assert.equal(request.url, '/api/commercial-leads');
 assert.equal(request.options.method, 'POST');
 assert.equal(request.options.headers['Content-Type'], 'application/json');

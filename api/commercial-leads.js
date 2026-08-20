@@ -21,8 +21,22 @@ const sameOrigin = (req) => {
 };
 
 const readBody = async (req) => {
-  if (req.body && typeof req.body === 'object') return req.body;
-  if (typeof req.body === 'string') return JSON.parse(req.body);
+  if (req.body && typeof req.body === 'object') {
+    if (Buffer.byteLength(JSON.stringify(req.body), 'utf8') > MAX_BODY_BYTES) {
+      const error = new CommercialLeadValidationError('Request body too large');
+      error.statusCode = 413;
+      throw error;
+    }
+    return req.body;
+  }
+  if (typeof req.body === 'string') {
+    if (Buffer.byteLength(req.body, 'utf8') > MAX_BODY_BYTES) {
+      const error = new CommercialLeadValidationError('Request body too large');
+      error.statusCode = 413;
+      throw error;
+    }
+    return JSON.parse(req.body);
+  }
   const chunks = [];
   let size = 0;
   for await (const chunk of req) {
@@ -76,7 +90,7 @@ const createHandler = (options = {}) => async (req, res) => {
     record = buildCommercialLeadRecord(await readBody(req));
   } catch (error) {
     if (error instanceof CommercialLeadValidationError || error instanceof SyntaxError) {
-      return res.status(400).json({ ok: false, error: 'Invalid commercial lead' });
+      return res.status(error.statusCode || 400).json({ ok: false, error: 'Invalid commercial lead' });
     }
     return res.status(503).json({ ok: false, error: 'Lead storage unavailable' });
   }
@@ -90,6 +104,9 @@ const createHandler = (options = {}) => async (req, res) => {
     }));
     return res.status(result.inserted ? 201 : 200).json({ ok: true, duplicate: !result.inserted, lead_id: result.leadId });
   } catch (error) {
+    if (error.code === 'commercial_lead_conflict') {
+      return res.status(409).json({ ok: false, error: 'Submission changed; please restart the project brief' });
+    }
     console.error('[obsidian-commercial-lead-storage-error]', JSON.stringify({ code: error.code || 'persist_failed' }));
     return res.status(503).json({ ok: false, error: 'Lead storage unavailable' });
   }
