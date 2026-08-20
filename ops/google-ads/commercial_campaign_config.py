@@ -9,13 +9,13 @@ API_VERSION = "v24"
 CUSTOMER_ID = "8605345590"
 CAMPAIGN_NAME = "Search | OC | Commercial Window Film | Obsidian Build"
 FINAL_URL = "https://www.obsidianautoworksoc.com/commercial-window-film-socal"
-DAILY_BUDGET_MICROS = 25_000_000
+DAILY_BUDGET_MICROS = 40_000_000
 LANGUAGE_CONSTANT = "languageConstants/1000"  # English
 CPC_BID_BASIS = "national_keyword_planner_ui_export_low_range_conservative_cap"
 CPC_STATUS = "commercial_bid_evidence_national_scope_not_19_city_demand"
 CPC_LIMITATION = (
     "A user-provided United States Keyword Planner export supplies commercial bid evidence, but national volume is not "
-    "19-city demand. These $25/day operational Manual CPC caps stay at or below relevant aggregate low-range bids "
+    "19-city demand. The live campaign's approved $40/day budget remains unchanged; Manual CPC caps stay at or below relevant aggregate low-range bids "
     "(Solar $2.25 versus $2.33 maximum; Safety $2.50 versus $2.65 observed) until 19-city commercial estimates are available."
 )
 

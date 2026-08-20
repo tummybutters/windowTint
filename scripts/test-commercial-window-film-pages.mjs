@@ -103,12 +103,14 @@ const sitemap = await readFile(new URL('sitemap.xml', root), 'utf8');
 const vercel = JSON.parse(await readFile(new URL('vercel.json', root), 'utf8'));
 const commercialPhoto = await readOptional('assets/commercial-window-film/obsidian-commercial-office.webp');
 const privacyVisualization = await readOptional('assets/commercial-window-film/commercial-privacy-visualization.webp');
+const installationVisualization = await readOptional('assets/commercial-window-film/commercial-installation-visualization.webp');
 
 assert.ok(organic, 'The /commercial-window-film organic page must exist.');
 assert.ok(paid, 'The /commercial-window-film-socal paid page must exist.');
 assert.ok(qualifierController, 'The paid page qualifier controller must exist.');
 assert.ok(commercialPhoto, 'The commercial pages must ship the real office project photo.');
 assert.ok(privacyVisualization, 'The commercial pages must ship the privacy-film application visualization.');
+assert.ok(installationVisualization, 'The paid commercial page must ship the installation-detail visualization.');
 
 requireCommercialAdsConfig(organic, 'The organic page');
 requireCommercialAdsConfig(paid, 'The paid page');
@@ -155,6 +157,37 @@ assert.equal(
 const htmlTag = tags(paid, 'html')[0] || '';
 assert.equal(tagAttribute(htmlTag, 'data-lead-service'), 'commercial_window_film', 'The paid page must identify the commercial service.');
 assert.equal(tagAttribute(htmlTag, 'data-lead-variant'), 'commercial_socal_v1', 'The paid page must identify the approved paid variant.');
+
+const paidHero = paid.match(/<header\b[^>]*class=["'][^"']*commercial-paid-hero[^"']*["'][^>]*>[\s\S]*?<\/header>/i)?.[0] || '';
+assert.ok(paidHero, 'The paid page must expose its commercial hero.');
+assert.match(paidHero, /commercial-paid-hero__content--centered/i, 'The paid hero copy must use the centered layout.');
+assert.match(
+  paidHero,
+  /<h1\b[^>]*>\s*Commercial Window Film Installation\s*<span>in Orange County<\/span>\s*<\/h1>/i,
+  'The paid hero H1 must directly match commercial installation intent and Orange County.'
+);
+assert.match(paidHero, /commercial-paid-hero__gallery/i, 'The paid hero must place an image gallery below the centered headline and CTAs.');
+const heroContentEnd = paidHero.search(/<\/div>\s*<div\b[^>]*class=["'][^"']*commercial-paid-hero__gallery/i);
+const heroH1Start = paidHero.search(/<h1\b/i);
+assert.ok(heroContentEnd > heroH1Start, 'The hero image gallery must follow, not split beside, the headline content.');
+for (const imagePath of [
+  '/assets/commercial-window-film/obsidian-commercial-office.webp',
+  '/assets/commercial-window-film/ads/generated-storefront-landscape.jpg',
+  '/assets/commercial-window-film/commercial-installation-visualization.webp'
+]) {
+  assert.match(paidHero, new RegExp(`src=["']${imagePath.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}["']`, 'i'), `The paid hero gallery must include ${imagePath}.`);
+}
+assert.match(visibleText(paidHero), /Real project photo[^.]{0,40}Obsidian/i, 'The authentic hero photo must be identified as a real Obsidian project.');
+assert.match(visibleText(paidHero), /Application visualization/i, 'Generated hero images must be visibly labeled as application visualizations.');
+
+const consultationForm = paid.match(/<form\b[^>]*id=["']commercial-consultation-form["'][^>]*>[\s\S]*?<\/form>/i)?.[0] || '';
+assert.ok(consultationForm, 'The paid page must include a focused commercial consultation form.');
+for (const fieldName of ['name', 'phone', 'property_city', 'project_goal', 'project_details']) {
+  assert.match(consultationForm, new RegExp(`name=["']${fieldName}["']`, 'i'), `The consultation form must collect ${fieldName}.`);
+}
+assert.match(consultationForm, /type=["']submit["']/i, 'The consultation form must provide a submit action.');
+assert.match(visibleText(consultationForm), /Review project text/i, 'The form must accurately describe its SMS-review outcome.');
+assert.match(paid, /src=["']\/commercial-consultation-form\.js["']/i, 'The paid page must load the consultation form controller.');
 
 const firstCall = paid.search(/<a\b[^>]*href=["']tel:\+17146007134["']/i);
 const firstText = paid.search(/<a\b[^>]*href=["']sms:\+17146007134(?:\?[^"']*)?["']/i);

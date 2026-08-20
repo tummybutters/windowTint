@@ -137,7 +137,7 @@ class CommercialPlanTests(unittest.TestCase):
 
     def test_campaign_is_paused_standard_manual_cpc_search_only_presence_only(self):
         self.assertEqual(self.plan["customer_id"], "8605345590")
-        self.assertEqual(self.plan["budget"]["amount_micros"], 25_000_000)
+        self.assertEqual(self.plan["budget"]["amount_micros"], 40_000_000)
         self.assertEqual(self.plan["budget"]["delivery_method"], "STANDARD")
         campaign = self.plan["campaign"]
         self.assertEqual(campaign["status"], "PAUSED")

@@ -567,25 +567,31 @@ body.commercial-page {
     background-size: 68px 68px;
 }
 
-.commercial-paid-hero__grid {
-    min-height: 690px;
-    display: grid;
-    grid-template-columns: minmax(0, 1.15fr) minmax(350px, 0.65fr);
-    gap: clamp(2rem, 5vw, 5rem);
-    align-items: stretch;
-    padding-top: clamp(3.5rem, 7vw, 7rem);
+.commercial-paid-hero__stack {
+    padding-top: clamp(4.5rem, 8vw, 7.5rem);
+    padding-bottom: clamp(3rem, 6vw, 5.5rem);
 }
 
 .commercial-paid-hero__content {
-    align-self: center;
-    padding-bottom: 5rem;
+    position: relative;
+    z-index: 2;
+}
+
+.commercial-paid-hero__content--centered {
+    max-width: 1040px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.commercial-paid-hero__content--centered .commercial-overline {
+    justify-content: center;
 }
 
 .commercial-paid-hero h1 {
-    max-width: 850px;
+    max-width: 1040px;
     margin-bottom: 1.25rem;
-    font-size: clamp(4rem, 7.7vw, 7.8rem);
-    line-height: 0.8;
+    font-size: clamp(3.8rem, 7.2vw, 7.2rem);
+    line-height: 0.84;
 }
 
 .commercial-paid-hero h1 span {
@@ -595,30 +601,46 @@ body.commercial-page {
 
 .commercial-paid-hero__content > p:not(.commercial-overline):not(.commercial-paid-hero__note) {
     max-width: 680px;
+    margin-right: auto;
+    margin-left: auto;
     color: rgba(255, 255, 255, 0.78);
     font-size: clamp(1rem, 1.5vw, 1.16rem);
     line-height: 1.65;
 }
 
 .commercial-paid-hero__actions {
+    justify-content: center;
     margin-top: 1.6rem;
 }
 
 .commercial-paid-hero__note {
     max-width: 680px;
-    margin: 1rem 0 0;
+    margin: 1rem auto 0;
     color: rgba(255, 255, 255, 0.52);
     font-size: 0.75rem;
     line-height: 1.55;
 }
 
+.commercial-paid-hero__gallery {
+    display: grid;
+    grid-template-columns: 0.92fr 1.4fr 1fr;
+    gap: clamp(0.65rem, 1.3vw, 1rem);
+    align-items: end;
+    margin-top: clamp(3rem, 6vw, 5rem);
+}
+
 .commercial-paid-hero__figure {
     position: relative;
-    min-height: 620px;
+    min-height: 320px;
+    height: clamp(320px, 34vw, 470px);
     margin: 0;
     overflow: hidden;
-    border-left: 1px solid var(--commercial-line);
-    border-right: 1px solid var(--commercial-line);
+    border: 1px solid var(--commercial-line);
+    background: #15191b;
+}
+
+.commercial-paid-hero__figure--real {
+    height: clamp(350px, 38vw, 520px);
 }
 
 .commercial-paid-hero__figure::before {
@@ -637,14 +659,18 @@ body.commercial-page {
     filter: grayscale(0.28) contrast(1.08);
 }
 
+.commercial-paid-hero__figure--real img {
+    object-position: center 42%;
+}
+
 .commercial-paid-hero__figure figcaption {
     position: absolute;
     z-index: 3;
-    right: 1.25rem;
-    bottom: 1.25rem;
-    left: 1.25rem;
-    padding-top: 0.8rem;
-    border-top: 1px solid var(--commercial-line);
+    right: 0;
+    bottom: 0;
+    left: 0;
+    padding: 1rem;
+    background: linear-gradient(180deg, transparent, rgba(8, 10, 11, 0.94));
     color: rgba(255, 255, 255, 0.68);
     font-size: 0.65rem;
     line-height: 1.4;
@@ -725,6 +751,167 @@ body.commercial-page {
 
 .commercial-site-review-actions {
     margin-top: 2rem;
+}
+
+.commercial-consultation-form {
+    display: grid;
+    grid-template-columns: minmax(260px, 0.72fr) minmax(0, 1.28fr);
+    gap: clamp(2rem, 5vw, 5rem);
+    margin-top: 2.75rem;
+    padding: clamp(1.5rem, 4vw, 3rem);
+    border: 1px solid rgba(255, 255, 255, 0.32);
+    background: #0f1214;
+    box-shadow: 16px 16px 0 rgba(255, 112, 72, 0.16);
+}
+
+.commercial-consultation-form__heading h3,
+.commercial-consultation-preview h3 {
+    margin-bottom: 1rem;
+    font-size: clamp(2.5rem, 4.5vw, 4.5rem);
+    line-height: 0.9;
+}
+
+.commercial-consultation-form__heading > p:last-child,
+.commercial-consultation-form__footer p,
+.commercial-consultation-preview__panel > p:last-child {
+    color: rgba(255, 255, 255, 0.58);
+    font-size: 0.78rem;
+    line-height: 1.6;
+}
+
+.commercial-consultation-form__fields {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1rem;
+}
+
+.commercial-consultation-form label {
+    display: grid;
+    gap: 0.45rem;
+    color: rgba(255, 255, 255, 0.72);
+    font-size: 0.68rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+.commercial-consultation-form input,
+.commercial-consultation-form select,
+.commercial-consultation-form textarea {
+    width: 100%;
+    min-height: 52px;
+    box-sizing: border-box;
+    padding: 0.8rem 0.9rem;
+    border: 1px solid rgba(255, 255, 255, 0.28);
+    border-radius: 0;
+    background: rgba(255, 255, 255, 0.05);
+    color: var(--commercial-white);
+    font: 500 0.88rem/1.45 var(--commercial-body);
+}
+
+.commercial-consultation-form select option {
+    color: var(--commercial-ink);
+}
+
+.commercial-consultation-form input:focus,
+.commercial-consultation-form select:focus,
+.commercial-consultation-form textarea:focus {
+    outline: 2px solid var(--commercial-signal);
+    outline-offset: 2px;
+}
+
+.commercial-consultation-form__details {
+    grid-column: 1 / -1;
+}
+
+.commercial-consultation-form textarea {
+    min-height: 118px;
+    resize: vertical;
+}
+
+.commercial-consultation-form__footer {
+    grid-column: 2;
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
+
+.commercial-consultation-form__footer p,
+.commercial-consultation-form__status {
+    margin: 0;
+}
+
+.commercial-consultation-form__status {
+    grid-column: 2;
+    color: var(--commercial-signal);
+    font-size: 0.8rem;
+}
+
+.commercial-consultation-preview {
+    position: fixed;
+    z-index: 100;
+    inset: 0;
+    display: grid;
+    place-items: center;
+    padding: 1rem;
+    background: rgba(2, 3, 4, 0.82);
+    backdrop-filter: blur(12px);
+}
+
+.commercial-consultation-preview[hidden] {
+    display: none;
+}
+
+.commercial-consultation-preview__panel {
+    position: relative;
+    width: min(680px, 100%);
+    max-height: calc(100vh - 2rem);
+    overflow: auto;
+    box-sizing: border-box;
+    padding: clamp(1.5rem, 4vw, 3rem);
+    border: 1px solid var(--commercial-line);
+    background: var(--commercial-panel);
+    box-shadow: 12px 12px 0 rgba(255, 112, 72, 0.25);
+}
+
+.commercial-consultation-preview__close {
+    position: absolute;
+    top: 0.7rem;
+    right: 0.85rem;
+    border: 0;
+    background: transparent;
+    color: var(--commercial-white);
+    font-size: 2rem;
+    cursor: pointer;
+}
+
+.commercial-consultation-preview pre {
+    margin: 1.5rem 0;
+    padding: 1rem;
+    border-left: 4px solid var(--commercial-signal);
+    background: rgba(255, 255, 255, 0.06);
+    color: var(--commercial-white);
+    font: 600 0.88rem/1.7 var(--commercial-body);
+    white-space: pre-wrap;
+}
+
+.commercial-brief-divider {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-top: 3.5rem;
+    color: rgba(255, 255, 255, 0.48);
+    font-size: 0.68rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+}
+
+.commercial-brief-divider::before,
+.commercial-brief-divider::after {
+    flex: 1;
+    height: 1px;
+    background: var(--commercial-line);
+    content: "";
 }
 
 .commercial-qualifier {
@@ -905,10 +1092,10 @@ body.commercial-page {
 
 @media (max-width: 1024px) {
     .commercial-hero__grid,
-    .commercial-paid-hero__grid,
     .commercial-heading--split,
     .commercial-image-callout,
-    .commercial-site-review-intro {
+    .commercial-site-review-intro,
+    .commercial-consultation-form {
         grid-template-columns: 1fr;
     }
 
@@ -932,13 +1119,22 @@ body.commercial-page {
         grid-template-columns: 1fr auto;
     }
 
-    .commercial-paid-hero__content {
-        padding-bottom: 0;
+    .commercial-paid-hero__gallery {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
     }
 
     .commercial-paid-hero__figure {
-        min-height: 520px;
-        border-top: 1px solid var(--commercial-line);
+        min-height: 280px;
+        height: 380px;
+    }
+
+    .commercial-paid-hero__figure--real {
+        height: 430px;
+    }
+
+    .commercial-consultation-form__footer,
+    .commercial-consultation-form__status {
+        grid-column: 1;
     }
 }
 
@@ -978,8 +1174,8 @@ body.commercial-page {
 
     .commercial-hero__copy h1,
     .commercial-paid-hero h1 {
-        font-size: clamp(3.4rem, 16vw, 5rem);
-        line-height: 0.82;
+        font-size: clamp(2.8rem, 11.5vw, 4rem);
+        line-height: 0.86;
     }
 
     .commercial-actions,
@@ -1065,18 +1261,56 @@ body.commercial-page {
 
     .commercial-paid-nav__call {
         min-height: 40px;
-        padding: 0.5rem 0.6rem;
+        min-width: 74px;
+        padding: 0.5rem;
         font-size: 0.65rem;
     }
 
-    .commercial-paid-hero__grid {
-        min-height: 0;
-        gap: 2.75rem;
+    .commercial-paid-hero__content--centered .commercial-overline {
+        font-size: 0.62rem;
+        letter-spacing: 0.1em;
+    }
+
+    .commercial-paid-hero__stack {
         padding-top: 4rem;
+        padding-bottom: 3rem;
+    }
+
+    .commercial-paid-hero__gallery {
+        grid-template-columns: 1fr 1fr;
+        align-items: stretch;
+        margin-top: 2.5rem;
     }
 
     .commercial-paid-hero__figure {
-        min-height: 500px;
+        min-height: 0;
+        height: 260px;
+    }
+
+    .commercial-paid-hero__figure--real {
+        grid-column: 1 / -1;
+        height: 330px;
+    }
+
+    .commercial-consultation-form {
+        box-shadow: 8px 8px 0 rgba(255, 112, 72, 0.16);
+    }
+
+    .commercial-consultation-form__fields {
+        grid-template-columns: 1fr;
+    }
+
+    .commercial-consultation-form__details {
+        grid-column: 1;
+    }
+
+    .commercial-consultation-form__footer {
+        display: grid;
+    }
+
+    .commercial-brief-divider span {
+        max-width: 150px;
+        text-align: center;
     }
 
     .commercial-paid-hero__index a {

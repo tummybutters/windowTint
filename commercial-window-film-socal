@@ -15,7 +15,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800;900&amp;family=Space+Grotesk:wght@400;500;600;700&amp;display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="/style.css?v=20260108-1">
-    <link rel="stylesheet" href="/commercial-window-film.css?v=20260808-1">
+    <link rel="stylesheet" href="/commercial-window-film.css?v=20260820-1">
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-TR9ET60HX3"></script>
     <script>
         window.OBSIDIAN_GOOGLE_ADS_CONFIG = {
@@ -45,37 +45,50 @@
                 <a href="#site-review">Site review</a>
             </div>
             <a href="tel:+17146007134" class="commercial-button commercial-button--line commercial-paid-nav__call"
-                data-lead-action="commercial_window_film_call">Call (714) 600-7134</a>
+                data-lead-action="commercial_window_film_call" aria-label="Call Obsidian Autoworks at (714) 600-7134">Call</a>
         </div>
     </nav>
 
     <main>
         <header class="commercial-paid-hero">
-            <div class="commercial-shell commercial-paid-hero__grid">
-                <div class="commercial-paid-hero__content">
-                    <p class="commercial-overline">Orange County / Southern California</p>
-                    <h1>Commercial Window Film <span>Starts With the Site.</span></h1>
-                    <p>Tell us what the glass needs to accomplish. We review the property, project area, access, and
-                        intended outcome before defining a film direction or estimate path.</p>
+            <div class="commercial-shell commercial-paid-hero__stack">
+                <div class="commercial-paid-hero__content commercial-paid-hero__content--centered">
+                    <p class="commercial-overline">Orange County commercial glass</p>
+                    <h1>Commercial Window Film Installation <span>in Orange County</span></h1>
+                    <p>Plan for heat and glare, privacy, glass-retention goals, or sun-exposed interiors. We review the
+                        building, glass, access, and project goal before recommending a film system.</p>
                     <div class="commercial-paid-hero__actions">
-                        <a href="tel:+17146007134" class="commercial-button commercial-button--signal"
-                            data-lead-action="commercial_window_film_call">Call for a site review</a>
+                        <a href="#site-review" class="commercial-button commercial-button--signal">Request a site
+                            review</a>
+                        <a href="tel:+17146007134" class="commercial-button commercial-button--line"
+                            data-lead-action="commercial_window_film_call">Call (714) 600-7134</a>
                         <a href="sms:+17146007134?body=Hi%20Obsidian%20Autoworks%2C%20I%27d%20like%20a%20commercial%20window%20film%20site%20review.%20Property%20city%3A%20%0AProperty%20type%3A%20%0AProject%20goal%3A%20%0AI%20can%20send%20photos%20and%20rough%20measurements%3A%20"
-                            class="commercial-button commercial-button--line"
+                            class="commercial-button commercial-button--quiet"
                             data-lead-action="commercial_window_film_text">Text project details</a>
-                        <a href="#commercial-qualifier" class="commercial-button commercial-button--quiet">Build a
-                            project brief</a>
                     </div>
-                    <p class="commercial-paid-hero__note">Call first for a direct conversation. Text if photos and
-                        rough measurements are ready. Use the brief below if the scope is still taking shape.</p>
+                    <p class="commercial-paid-hero__note">Offices, storefronts, interior glass, hospitality,
+                        healthcare, and commercial properties throughout Orange County.</p>
                 </div>
-                <figure class="commercial-paid-hero__figure">
-                    <img src="/assets/commercial-window-film/obsidian-commercial-office.webp"
-                        alt="Commercial office glazing photographed from inside a real project" width="1400" height="2100"
-                        fetchpriority="high">
-                    <figcaption><strong>Real project photo</strong><span>Commercial office glazing photographed on
-                            site.</span></figcaption>
-                </figure>
+                <div class="commercial-paid-hero__gallery" aria-label="Commercial window film applications">
+                    <figure class="commercial-paid-hero__figure commercial-paid-hero__figure--real">
+                        <img src="/assets/commercial-window-film/obsidian-commercial-office.webp"
+                            alt="Solar-control window film on office glazing from an Obsidian Autoworks project"
+                            width="1400" height="2100" fetchpriority="high">
+                        <figcaption><strong>Real project photo — Obsidian</strong><span>Office solar-control film</span></figcaption>
+                    </figure>
+                    <figure class="commercial-paid-hero__figure">
+                        <img src="/assets/commercial-window-film/ads/generated-storefront-landscape.jpg"
+                            alt="Storefront glass with a neutral commercial window-film appearance" width="1200"
+                            height="628" fetchpriority="high">
+                        <figcaption><strong>Application visualization</strong><span>Storefront solar film</span></figcaption>
+                    </figure>
+                    <figure class="commercial-paid-hero__figure">
+                        <img src="/assets/commercial-window-film/commercial-installation-visualization.webp"
+                            alt="Professional installation of commercial window film on office glass" width="1440"
+                            height="960" fetchpriority="high">
+                        <figcaption><strong>Application visualization</strong><span>Precision installation</span></figcaption>
+                    </figure>
+                </div>
             </div>
             <div class="commercial-paid-hero__index" aria-label="Page index">
                 <a href="#solutions"><span>01</span> Film solutions</a>
@@ -93,9 +106,9 @@
                         sun exposure, and access all shape the project conversation.</p>
                 </div>
                 <div class="commercial-paid-solutions">
-                    <article><span>Solar / glare</span><h3>Work with the sun-facing glass.</h3><p>Review film options intended to manage solar load and glare in occupied or display-facing areas.</p></article>
+                    <article id="solar-glare"><span>Solar / glare</span><h3>Work with the sun-facing glass.</h3><p>Review film options intended to manage solar load and glare in occupied or display-facing areas.</p></article>
                     <article><span>Privacy / design</span><h3>Control views and define space.</h3><p>Consider frosted, patterned, or visibility-control film for exterior and interior glass.</p></article>
-                    <article><span>Safety / security</span><h3>Start with the system intent.</h3><p>Discuss the glass, attachment approach, access, and intended retention goal before choosing a direction.</p></article>
+                    <article id="safety-security"><span>Safety / security</span><h3>Start with the system intent.</h3><p>Discuss the glass, attachment approach, access, and intended retention goal before choosing a direction.</p></article>
                     <article><span>UV / fade</span><h3>Review what is exposed.</h3><p>Map sunlight around furnishings, finishes, products, and work areas without promising elimination of fading.</p></article>
                 </div>
             </div>
@@ -139,10 +152,10 @@
             <div class="commercial-shell commercial-site-review-intro">
                 <div>
                     <p class="commercial-overline">Commercial consultation / site review</p>
-                    <h2>Choose the fastest path to a useful conversation.</h2>
+                    <h2>Tell us enough to plan the first conversation.</h2>
                 </div>
-                <p>Call now, text the property details, or answer four short questions to compose a project brief.
-                    The qualifier does not send a message, determine fit, or create an estimate.</p>
+                <p>Share the city, main goal, and a short description. We will prepare a concise project text you can
+                    review before sending—nothing is sent without you.</p>
             </div>
             <div class="commercial-shell commercial-site-review-actions">
                 <a href="tel:+17146007134" class="commercial-button commercial-button--signal"
@@ -152,6 +165,55 @@
                     data-lead-action="commercial_window_film_text">Text project details</a>
             </div>
             <div class="commercial-shell">
+                <form class="commercial-consultation-form" id="commercial-consultation-form" novalidate>
+                    <div class="commercial-consultation-form__heading">
+                        <p class="commercial-overline">Project details</p>
+                        <h3>Request a commercial site review.</h3>
+                        <p>Complete the essentials, review the prepared text, then send it directly to Obsidian.</p>
+                    </div>
+                    <div class="commercial-consultation-form__fields">
+                        <label><span>Name</span><input type="text" name="name" autocomplete="name" required></label>
+                        <label><span>Phone</span><input type="tel" name="phone" autocomplete="tel" inputmode="tel"
+                                required></label>
+                        <label><span>Property city</span><input type="text" name="property_city"
+                                autocomplete="address-level2" required></label>
+                        <label><span>Primary goal</span><select name="project_goal" required>
+                                <option value="">Choose one</option>
+                                <option>Heat / glare reduction</option>
+                                <option>Privacy / decorative film</option>
+                                <option>Safety / security film</option>
+                                <option>UV / fade protection</option>
+                                <option>Not sure yet</option>
+                            </select></label>
+                        <label class="commercial-consultation-form__details"><span>Property and project details</span>
+                            <textarea name="project_details" rows="4" required
+                                placeholder="Property type, affected glass, rough scope, timing, and anything we should know."></textarea></label>
+                    </div>
+                    <div class="commercial-consultation-form__footer">
+                        <button type="submit" class="commercial-button commercial-button--signal">Review project
+                            text</button>
+                        <p>Photos and rough measurements can be attached after Messages opens.</p>
+                    </div>
+                    <p class="commercial-consultation-form__status" data-commercial-form-status aria-live="polite"></p>
+                </form>
+                <div class="commercial-consultation-preview" data-commercial-preview hidden>
+                    <div class="commercial-consultation-preview__panel" role="dialog" aria-modal="true"
+                        aria-labelledby="commercial-preview-title">
+                        <button type="button" class="commercial-consultation-preview__close"
+                            data-commercial-preview-close aria-label="Close project text preview">&times;</button>
+                        <p class="commercial-overline">Project text</p>
+                        <h3 id="commercial-preview-title">Review before you send.</h3>
+                        <pre data-commercial-preview-text></pre>
+                        <div class="commercial-qualifier__result-actions">
+                            <a class="commercial-button commercial-button--signal" data-commercial-preview-send
+                                data-lead-action="commercial_window_film_text">Open Messages</a>
+                            <button type="button" class="commercial-button commercial-button--line"
+                                data-commercial-preview-close>Keep editing</button>
+                        </div>
+                        <p>No message is sent until you tap send in Messages.</p>
+                    </div>
+                </div>
+                <div class="commercial-brief-divider"><span>Optional: build a fuller project brief</span></div>
                 <div class="commercial-qualifier" id="commercial-qualifier">
                     <div class="commercial-qualifier__meta">
                         <span data-commercial-step>Step 1 of 4</span>
@@ -201,6 +263,7 @@
     <script src="/lead-tracking.js" defer></script>
     <script src="/lib/commercial-qualifier.js" defer></script>
     <script src="/commercial-window-film-qualifier.js" defer></script>
+    <script src="/commercial-consultation-form.js" defer></script>
 </body>
 
 </html>

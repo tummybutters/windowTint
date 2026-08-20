@@ -186,8 +186,14 @@ class GoogleAdsRestClient:
         payload = response.json() if response.text.strip() else []
         return [row for chunk in payload for row in chunk.get("results", [])]
 
-    def mutate(self, service: str, operations: list[dict[str, Any]]) -> dict[str, Any]:
-        """Mutate one service only when explicit mutation capability was granted."""
+    def mutate(
+        self,
+        service: str,
+        operations: list[dict[str, Any]],
+        *,
+        validate_only: bool = False,
+    ) -> dict[str, Any]:
+        """Mutate or API-validate one service after explicit capability was granted."""
         if not self.allow_mutation:
             raise MutationBlocked("Google Ads client is read-only; mutation permission was not granted")
         if not operations:
@@ -197,12 +203,14 @@ class GoogleAdsRestClient:
                 "mutateOperations": operations,
                 "partialFailure": False,
                 "responseContentType": "RESOURCE_NAME_ONLY",
+                "validateOnly": validate_only,
             }
         else:
             payload = {
                 "operations": operations,
                 "partialFailure": False,
                 "responseContentType": "RESOURCE_NAME_ONLY",
+                "validateOnly": validate_only,
             }
         response = self.session.post(
             f"{self.base_url}/{service}:mutate",
@@ -234,6 +242,7 @@ class GoogleAdsRestClient:
             "http_status": response.status_code,
             "request_id": response.headers.get("request-id"),
             "results": normalized_results,
+            "validate_only": validate_only,
         }
 
 

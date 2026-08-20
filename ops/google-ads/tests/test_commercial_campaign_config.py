@@ -47,7 +47,7 @@ class CommercialCampaignConfigTests(unittest.TestCase):
             self.config.FINAL_URL,
             "https://www.obsidianautoworksoc.com/commercial-window-film-socal",
         )
-        self.assertEqual(self.config.DAILY_BUDGET_MICROS, 25_000_000)
+        self.assertEqual(self.config.DAILY_BUDGET_MICROS, 40_000_000)
 
     def test_four_ad_groups_have_positive_manual_cpc_caps(self):
         self.assertEqual(
