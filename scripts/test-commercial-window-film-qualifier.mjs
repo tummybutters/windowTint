@@ -91,12 +91,22 @@ assert.match(summary, /Goal:\s*Privacy \/ decorative/i);
 assert.match(summary, /Scope:\s*Small building/i);
 assert.match(summary, /Timing:\s*Within 30 days/i);
 
-const message = qualifier.buildTextMessage(completeState);
+const message = qualifier.buildTextMessage(completeState, {
+  name: 'Tommy Test',
+  phone: '7145550123',
+  property_city: 'Irvine',
+  additional_notes: 'South-facing conference room.',
+  reference_code: 'OA-ABCDEFGH23'
+});
 assert.equal(typeof message, 'string', 'buildTextMessage must return a text-message body.');
 for (const answer of ['Storefront / restaurant', 'Privacy / decorative', 'Small building', 'Within 30 days']) {
   assert.match(message, new RegExp(answer.replace('/', '\\/'), 'i'), `The text message must include ${answer}.`);
 }
-assert.match(message, /property city/i, 'The text message must request the property city.');
+assert.match(message, /Tommy Test/i, 'The text message must include the saved lead name.');
+assert.match(message, /7145550123/i, 'The text message must include the saved callback number.');
+assert.match(message, /Irvine/i, 'The text message must include the property city.');
+assert.match(message, /South-facing conference room/i, 'The text message must include optional additional notes.');
+assert.match(message, /OA-ABCDEFGH23/i, 'The text message must include the immutable lead reference.');
 assert.match(message, /photos/i, 'The text message must request photos.');
 assert.match(message, /rough measurements/i, 'The text message must request rough measurements.');
 

@@ -1030,6 +1030,76 @@ body.commercial-page {
     white-space: pre-wrap;
 }
 
+.commercial-qualifier__intake {
+    margin-top: 1.5rem;
+}
+
+.commercial-qualifier__intake-fields {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.85rem;
+    max-width: 850px;
+}
+
+.commercial-qualifier__intake label {
+    display: grid;
+    gap: 0.45rem;
+    color: rgba(255, 255, 255, 0.72);
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+}
+
+.commercial-qualifier__intake label small {
+    color: rgba(255, 255, 255, 0.4);
+    font: inherit;
+}
+
+.commercial-qualifier__intake input,
+.commercial-qualifier__intake textarea {
+    width: 100%;
+    box-sizing: border-box;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 0;
+    background: rgba(255, 255, 255, 0.06);
+    color: var(--commercial-white);
+    font: 500 1rem/1.4 var(--commercial-body);
+    padding: 0.9rem 1rem;
+}
+
+.commercial-qualifier__intake input:focus,
+.commercial-qualifier__intake textarea:focus {
+    border-color: var(--commercial-signal);
+    outline: 2px solid rgba(255, 112, 72, 0.2);
+    outline-offset: 2px;
+}
+
+.commercial-qualifier__notes {
+    grid-column: 1 / -1;
+}
+
+.commercial-qualifier__result-actions {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    margin-top: 1.2rem;
+}
+
+.commercial-qualifier__save-note,
+.commercial-qualifier__status {
+    max-width: 720px;
+    margin: 0.9rem 0 0 !important;
+    font-size: 0.82rem;
+}
+
+.commercial-qualifier__status {
+    min-height: 1.4em;
+    color: var(--commercial-signal) !important;
+    font-weight: 700;
+}
+
 .commercial-text-button {
     min-height: 50px;
     padding: 0.8rem 1.15rem;
@@ -1135,6 +1205,16 @@ body.commercial-page {
     .commercial-consultation-form__footer,
     .commercial-consultation-form__status {
         grid-column: 1;
+    }
+}
+
+@media (max-width: 640px) {
+    .commercial-qualifier__intake-fields {
+        grid-template-columns: 1fr;
+    }
+
+    .commercial-qualifier__notes {
+        grid-column: auto;
     }
 }
 

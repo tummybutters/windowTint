@@ -1072,7 +1072,8 @@
         decorateForms,
         decorateTextLinks,
         getCurrentTouch,
-        getCurrentIntent
+        getCurrentIntent,
+        prepareLeadIntent: ensureLeadIntent
     };
 
     if (document.readyState === 'loading') {

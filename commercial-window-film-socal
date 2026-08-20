@@ -150,8 +150,8 @@
                     <p class="commercial-overline">Commercial consultation / site review</p>
                     <h2>Tell us enough to plan the first conversation.</h2>
                 </div>
-                <p>Share the city, main goal, and a short description. We will prepare a concise project text you can
-                    review before sending—nothing is sent without you.</p>
+                <p>Answer four quick project questions. Your contact details come last, then we save the complete brief
+                    and open a prepared text for you to send.</p>
             </div>
             <div class="commercial-shell commercial-site-review-actions">
                 <a href="tel:+17146007134" class="commercial-button commercial-button--signal"
@@ -161,55 +161,6 @@
                     data-lead-action="commercial_window_film_text">Text project details</a>
             </div>
             <div class="commercial-shell">
-                <form class="commercial-consultation-form" id="commercial-consultation-form" novalidate>
-                    <div class="commercial-consultation-form__heading">
-                        <p class="commercial-overline">Project details</p>
-                        <h3>Request a commercial site review.</h3>
-                        <p>Complete the essentials, review the prepared text, then send it directly to Obsidian.</p>
-                    </div>
-                    <div class="commercial-consultation-form__fields">
-                        <label><span>Name</span><input type="text" name="name" autocomplete="name" required></label>
-                        <label><span>Phone</span><input type="tel" name="phone" autocomplete="tel" inputmode="tel"
-                                required></label>
-                        <label><span>Property city</span><input type="text" name="property_city"
-                                autocomplete="address-level2" required></label>
-                        <label><span>Primary goal</span><select name="project_goal" required>
-                                <option value="">Choose one</option>
-                                <option>Heat / glare reduction</option>
-                                <option>Privacy / decorative film</option>
-                                <option>Safety / security film</option>
-                                <option>UV / fade protection</option>
-                                <option>Not sure yet</option>
-                            </select></label>
-                        <label class="commercial-consultation-form__details"><span>Property and project details</span>
-                            <textarea name="project_details" rows="4" required
-                                placeholder="Property type, affected glass, rough scope, timing, and anything we should know."></textarea></label>
-                    </div>
-                    <div class="commercial-consultation-form__footer">
-                        <button type="submit" class="commercial-button commercial-button--signal">Review project
-                            text</button>
-                        <p>Photos and rough measurements can be attached after Messages opens.</p>
-                    </div>
-                    <p class="commercial-consultation-form__status" data-commercial-form-status aria-live="polite"></p>
-                </form>
-                <div class="commercial-consultation-preview" data-commercial-preview hidden>
-                    <div class="commercial-consultation-preview__panel" role="dialog" aria-modal="true"
-                        aria-labelledby="commercial-preview-title">
-                        <button type="button" class="commercial-consultation-preview__close"
-                            data-commercial-preview-close aria-label="Close project text preview">&times;</button>
-                        <p class="commercial-overline">Project text</p>
-                        <h3 id="commercial-preview-title">Review before you send.</h3>
-                        <pre data-commercial-preview-text></pre>
-                        <div class="commercial-qualifier__result-actions">
-                            <a class="commercial-button commercial-button--signal" data-commercial-preview-send
-                                data-lead-action="commercial_window_film_text">Open Messages</a>
-                            <button type="button" class="commercial-button commercial-button--line"
-                                data-commercial-preview-close>Keep editing</button>
-                        </div>
-                        <p>No message is sent until you tap send in Messages.</p>
-                    </div>
-                </div>
-                <div class="commercial-brief-divider"><span>Optional: build a fuller project brief</span></div>
                 <div class="commercial-qualifier" id="commercial-qualifier">
                     <div class="commercial-qualifier__meta">
                         <span data-commercial-step>Step 1 of 4</span>
@@ -258,8 +209,8 @@
 
     <script src="/lead-tracking.js" defer></script>
     <script src="/lib/commercial-qualifier.js" defer></script>
+    <script src="/lib/commercial-lead-client.js" defer></script>
     <script src="/commercial-window-film-qualifier.js" defer></script>
-    <script src="/commercial-consultation-form.js" defer></script>
 </body>
 
 </html>

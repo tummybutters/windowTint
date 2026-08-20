@@ -10,6 +10,14 @@
 
     const PHONE = '+17146007134';
 
+    const clean = (value) => String(value || '').trim().replace(/\s+/g, ' ');
+
+    const secureSubmissionId = () => {
+        const bytes = new Uint8Array(16);
+        window.crypto.getRandomValues(bytes);
+        return `commercial_submission_${Array.from(bytes, (value) => value.toString(16).padStart(2, '0')).join('')}`;
+    };
+
     const boot = () => {
         const root = document.getElementById('commercial-qualifier');
         const model = window.ObsidianCommercialQualifier;
@@ -22,6 +30,7 @@
         let state = Object.freeze({});
         let stepIndex = 0;
         let started = false;
+        let submissionId = '';
 
         const track = (eventName, payload) => {
             const tracking = window.obsidianLeadTracking;
@@ -50,33 +59,101 @@
             progress.parentElement.setAttribute('aria-valuenow', String(Math.round(percentage)));
         };
 
-        const textHref = () => `sms:${PHONE}?body=${encodeURIComponent(model.buildTextMessage(state))}`;
-
         const renderResult = () => {
             setProgress(true);
-            liveRegion.textContent = 'Your project brief is ready to send.';
+            submissionId = submissionId || secureSubmissionId();
+            liveRegion.textContent = 'Your project brief is ready. Add your contact information to save it and open Messages.';
             body.innerHTML = `
                 <div class="commercial-qualifier__result">
                     <p class="commercial-overline">Project brief</p>
-                    <h3 tabindex="-1">Bring the right details to the first conversation.</h3>
+                    <h3 tabindex="-1">One last step: where should we reach you?</h3>
                     <pre data-commercial-summary></pre>
-                    <p>No message has been sent. Add the property city, photos, and rough measurements when you text.</p>
-                    <div class="commercial-qualifier__result-actions">
-                        <a class="commercial-button commercial-button--signal" href="tel:${PHONE}"
-                            data-lead-action="commercial_window_film_call">Call (714) 600-7134</a>
-                        <a class="commercial-button commercial-button--line" data-commercial-result-text
-                            data-lead-action="commercial_window_film_text">Text this brief</a>
-                        <button class="commercial-text-button" type="button" data-commercial-restart>Start over</button>
-                    </div>
+                    <form class="commercial-qualifier__intake" data-commercial-result-form novalidate>
+                        <div class="commercial-qualifier__intake-fields">
+                            <label><span>Name</span><input type="text" name="name" autocomplete="name" required></label>
+                            <label><span>Phone</span><input type="tel" name="phone" autocomplete="tel" inputmode="tel" required></label>
+                            <label><span>Property city</span><input type="text" name="property_city" autocomplete="address-level2" required></label>
+                            <label class="commercial-qualifier__notes"><span>Additional notes <small>Optional</small></span>
+                                <textarea name="additional_notes" rows="3" placeholder="Anything else that would help us understand the property or glass."></textarea>
+                            </label>
+                        </div>
+                        <div class="commercial-qualifier__result-actions">
+                            <button class="commercial-button commercial-button--signal" type="submit">Text us your info</button>
+                            <a class="commercial-button commercial-button--line" href="tel:${PHONE}"
+                                data-lead-action="commercial_window_film_call">Call instead</a>
+                            <button class="commercial-text-button" type="button" data-commercial-restart>Start over</button>
+                        </div>
+                        <p class="commercial-qualifier__save-note">Your information is saved first. Then Messages opens with the complete brief ready for you to send.</p>
+                        <p class="commercial-qualifier__status" data-commercial-result-status aria-live="polite"></p>
+                    </form>
                 </div>
             `;
             body.querySelector('[data-commercial-summary]').textContent = model.buildSummary(state);
-            body.querySelector('[data-commercial-result-text]').href = textHref();
+            const form = body.querySelector('[data-commercial-result-form]');
+            const status = body.querySelector('[data-commercial-result-status]');
+            const submit = form.querySelector('[type="submit"]');
+
+            form.addEventListener('submit', async (event) => {
+                event.preventDefault();
+                if (!form.reportValidity()) {
+                    status.textContent = 'Please add your name, phone number, and property city.';
+                    return;
+                }
+
+                const tracking = window.obsidianLeadTracking;
+                const prepared = tracking && typeof tracking.prepareLeadIntent === 'function'
+                    ? tracking.prepareLeadIntent('form')
+                    : { intent: null, touchForEvent: null };
+                const lead = tracking && typeof tracking.getLead === 'function' ? tracking.getLead() : {};
+                const contact = Object.fromEntries(new FormData(form).entries());
+                const intent = prepared.intent || {};
+                const payload = {
+                    submission_id: submissionId,
+                    session_id: clean(lead.session_id),
+                    lead_intent_id: clean(intent.lead_intent_id),
+                    reference_code: clean(intent.reference_code),
+                    name: clean(contact.name),
+                    phone: clean(contact.phone),
+                    property_city: clean(contact.property_city),
+                    additional_notes: clean(contact.additional_notes),
+                    answers: { ...state },
+                    attribution: { ...lead },
+                    touch: prepared.touchForEvent ? { ...prepared.touchForEvent } : {}
+                };
+                const message = model.buildTextMessage(state, {
+                    ...contact,
+                    reference_code: payload.reference_code
+                });
+                const smsHref = `sms:${PHONE}?body=${encodeURIComponent(message)}`;
+
+                submit.disabled = true;
+                status.textContent = 'Saving your project information…';
+                try {
+                    await window.ObsidianCommercialLeadClient.saveThenOpenText({
+                        endpoint: '/api/commercial-leads',
+                        payload,
+                        smsHref,
+                        fetchImpl: window.fetch.bind(window),
+                        navigate: (href) => window.location.assign(href)
+                    });
+                    if (tracking && typeof tracking.recordEvent === 'function') {
+                        tracking.recordEvent('commercial_lead_saved', {
+                            service: 'commercial_window_film',
+                            landing_variant: 'commercial_socal_v1'
+                        }, { leadIntent: intent, touch: prepared.touchForEvent });
+                    }
+                    status.textContent = 'Saved. Opening Messages…';
+                } catch (error) {
+                    submit.disabled = false;
+                    status.textContent = 'We could not save your information yet. Please try again, or call us directly.';
+                }
+            });
             body.querySelector('[data-commercial-restart]').addEventListener('click', () => {
                 track(EVENTS.restarted, { answered_questions: Object.keys(state).length });
                 state = Object.freeze({});
                 stepIndex = 0;
                 started = false;
+                submissionId = '';
                 liveRegion.textContent = 'Commercial project qualifier restarted.';
                 renderQuestion({ focusChoice: true });
             });

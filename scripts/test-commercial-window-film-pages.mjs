@@ -180,14 +180,13 @@ for (const imagePath of [
 assert.match(visibleText(paidHero), /Real project photo[^.]{0,40}Obsidian/i, 'The authentic hero photo must be identified as a real Obsidian project.');
 assert.doesNotMatch(visibleText(paidHero), /AI-generated|application visualization|not an Obsidian project/i, 'The paid hero must not show internal visualization disclaimers.');
 
-const consultationForm = paid.match(/<form\b[^>]*id=["']commercial-consultation-form["'][^>]*>[\s\S]*?<\/form>/i)?.[0] || '';
-assert.ok(consultationForm, 'The paid page must include a focused commercial consultation form.');
-for (const fieldName of ['name', 'phone', 'property_city', 'project_goal', 'project_details']) {
-  assert.match(consultationForm, new RegExp(`name=["']${fieldName}["']`, 'i'), `The consultation form must collect ${fieldName}.`);
+assert.doesNotMatch(paid, /id=["']commercial-consultation-form["']/i, 'The paid page must not put a separate intake form before the quiz.');
+assert.doesNotMatch(paid, /src=["']\/commercial-consultation-form\.js["']/i, 'The retired separate intake controller must not load.');
+for (const fieldName of ['name', 'phone', 'property_city', 'additional_notes']) {
+  assert.match(qualifierController, new RegExp(`name=["']${fieldName}["']`, 'i'), `The quiz result must collect ${fieldName}.`);
 }
-assert.match(consultationForm, /type=["']submit["']/i, 'The consultation form must provide a submit action.');
-assert.match(visibleText(consultationForm), /Review project text/i, 'The form must accurately describe its SMS-review outcome.');
-assert.match(paid, /src=["']\/commercial-consultation-form\.js["']/i, 'The paid page must load the consultation form controller.');
+assert.match(qualifierController, /\/api\/commercial-leads/i, 'The quiz result must persist to the dedicated Neon endpoint.');
+assert.match(qualifierController, /Save[^<]*open text|Text us your info/i, 'The quiz result must present the save-and-text action.');
 
 const firstCall = paid.search(/<a\b[^>]*href=["']tel:\+17146007134["']/i);
 const firstText = paid.search(/<a\b[^>]*href=["']sms:\+17146007134(?:\?[^"']*)?["']/i);
