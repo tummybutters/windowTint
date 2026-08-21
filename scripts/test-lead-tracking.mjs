@@ -335,12 +335,16 @@ const matchesCompoundSelector = (node, selector) => (
 // A working listener registry/dispatcher so bindClickTracking's real capture-phase document
 // click/submit listeners are actually exercised (they were previously a no-op, so no test ever
 // ran the real handler code path -- see task-3-review.md's "test strength" finding #1).
-const createFakeDocument = (nodesBySelector = {}) => {
+const createFakeDocument = (nodesBySelector = {}, documentAttributes = {}) => {
   const listeners = {};
   return {
     readyState: 'complete',
     referrer: 'https://www.google.com/',
-    documentElement: {},
+    documentElement: {
+      getAttribute(name) {
+        return documentAttributes[name] || '';
+      }
+    },
     // Exact-key lookup covers the existing single-selector registrations used by tests that
     // dispatch synthetic events. Production code also queries compound selectors directly (e.g.
     // decorateBookingTargets calls querySelectorAll(BOOKING_SELECTORS)), so unregistered compound
@@ -788,8 +792,11 @@ const createContext = ({ href, storage, doc, crypto, adsConfig }) => {
 {
   const storage = createStorage();
   const formNode = createFakeForm();
-  const doc = createFakeDocument({ form: [formNode] });
-  const { tracker } = createContext({
+  const doc = createFakeDocument({ form: [formNode] }, {
+    'data-lead-service': 'commercial_window_film',
+    'data-lead-variant': 'commercial_tint_oc_v1'
+  });
+  const { tracker, gtagCalls } = createContext({
     href: 'https://www.obsidianautoworksoc.com/vip-booking?gclid=CLICKE',
     storage,
     doc,
@@ -818,6 +825,10 @@ const createContext = ({ href, storage, doc, crypto, adsConfig }) => {
   assert.equal(submitEvents.length, 1, 'the submit records exactly one lead_form_submit event');
   assert.deepEqual(submitEvents[0].lead_intent, intent, 'the event carries the lead_intent');
   assert.equal(submitEvents[0].touch.touch_id, touch.touch_id, 'the creating event includes the bound touch snapshot');
+  assert.equal(submitEvents[0].payload.service, 'commercial_window_film', 'the form event inherits the paid page service context');
+  assert.equal(submitEvents[0].payload.landing_variant, 'commercial_tint_oc_v1', 'the form event inherits the paid page landing variant');
+  const analyticsSubmit = gtagCalls.find((call) => call[0] === 'event' && call[1] === 'lead_form_submit');
+  assert.equal(analyticsSubmit[2].landing_variant, 'commercial_tint_oc_v1', 'the emitted analytics form event retains the landing variant');
   assert.equal(
     tracker.getEventLog().filter((event) => event.event_name === 'lead_intent_created').length,
     0,

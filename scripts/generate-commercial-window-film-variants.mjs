@@ -55,7 +55,7 @@ const variants = Object.freeze([
     description: 'Commercial window tinting for Orange County offices, storefronts, and building glass. Request a site review for heat, glare, privacy, UV, or safety goals.',
     hero: {
       overline: 'Orange County commercial tinting',
-      heading: 'Commercial Window Tinting <span>in Orange County</span>',
+      heading: { text: 'Commercial Window Tinting', highlight: 'in Orange County' },
       body: 'For offices, storefronts, and building glass, start with the problem the film needs to solve. We review sun exposure, glass, access, sightlines, and project goals before recommending a direction.',
       note: 'Commercial tinting for offices, storefronts, and building glass throughout Orange County.',
       galleryAlts: [
@@ -76,7 +76,7 @@ const variants = Object.freeze([
       ]
     },
     process: {
-      heading: 'Review the glass before defining scope.',
+      heading: 'A site review is where scope becomes clear.',
       steps: [
         ['Describe the property', 'Share the city, property type, affected glass, and the primary reason for commercial tinting.'],
         ['Send photos or measurements', 'Photos and rough measurements help us understand the glass and access before a site review.'],
@@ -89,7 +89,7 @@ const variants = Object.freeze([
       overline: 'Privacy + appearance',
       heading: 'Use film to address both view and appearance.',
       body: 'Commercial window tinting can involve exterior glass, interior glass, or both. A site review helps separate the privacy, daylight, appearance, and operational questions before a film direction is selected.',
-      linkText: 'Text commercial tinting details &rarr;'
+      linkText: 'Text commercial tinting details →'
     },
     siteReview: {
       overline: 'Commercial tinting site review',
@@ -110,7 +110,7 @@ const variants = Object.freeze([
     description: 'Office privacy and frosted window film for Orange County conference rooms, partitions, entries, and glass walls. Request a site review tailored to your space.',
     hero: {
       overline: 'Office privacy / frosted glass',
-      heading: 'Office Privacy Window Film <span>in Orange County</span>',
+      heading: { text: 'Office Privacy Window Film', highlight: 'in Orange County' },
       body: 'Privacy film can define rooms, soften direct sightlines, and preserve a more open feel. We review the glass, viewing angles, daylight, finish, and access before selecting a film direction.',
       note: 'Conference rooms, partitions, entries, and glass walls throughout Orange County.',
       galleryAlts: [
@@ -144,7 +144,7 @@ const variants = Object.freeze([
       overline: 'Privacy / frosted glass',
       heading: 'Make the privacy decision room by room.',
       body: 'A conference room, entry, interior partition, and glass wall can each call for a different approach. A site review helps identify the views that matter before a finish is selected.',
-      linkText: 'Text office privacy details &rarr;'
+      linkText: 'Text office privacy details →'
     },
     siteReview: {
       overline: 'Office privacy site review',
@@ -165,7 +165,7 @@ const variants = Object.freeze([
     description: 'Commercial heat and glare window film for Orange County offices and storefronts. Review sun-exposed glass, comfort, screen glare, and fade concerns.',
     hero: {
       overline: 'Solar control for commercial glass',
-      heading: 'Commercial Heat &amp; Glare Window Film <span>in Orange County</span>',
+      heading: { text: 'Commercial Heat & Glare Window Film', highlight: 'in Orange County' },
       body: 'When sun-facing glass makes rooms uncomfortable or screens hard to use, the right starting point is the affected elevation. We review exposure, glazing, use of the space, and desired appearance before discussing film options.',
       note: 'Sun-facing office and storefront glass throughout Orange County.',
       galleryAlts: [
@@ -199,7 +199,7 @@ const variants = Object.freeze([
       overline: 'Exposure + interiors',
       heading: 'The affected elevation tells the story.',
       body: 'Heat and glare conversations work best when the sun-facing glass, room use, screen locations, and exposure pattern are visible. A site review helps collect the right details before a film direction is selected.',
-      linkText: 'Text heat and glare details &rarr;'
+      linkText: 'Text heat and glare details →'
     },
     siteReview: {
       overline: 'Heat + glare site review',
@@ -220,7 +220,7 @@ const variants = Object.freeze([
     description: 'Storefront safety and security window film for Orange County retail and commercial glass. Request a site review for entry, display, and ground-level glass.',
     hero: {
       overline: 'Storefront safety / security film',
-      heading: 'Storefront Security Window Film <span>in Orange County</span>',
+      heading: { text: 'Storefront Security Window Film', highlight: 'in Orange County' },
       body: 'For entry, display, and ground-level storefront glass, the conversation starts with the glass, frame, access, and protection goal. We review the site before recommending a safety or security-film direction.',
       note: 'Entry, display, and ground-level storefront glass throughout Orange County.',
       galleryAlts: [
@@ -254,7 +254,7 @@ const variants = Object.freeze([
       overline: 'Glass + access',
       heading: 'Review the entry and frame together.',
       body: 'Storefront safety and security film is site-specific. A review of the glass, frame, access, and protection goal helps establish the right questions before a direction is recommended.',
-      linkText: 'Text storefront security details &rarr;'
+      linkText: 'Text storefront security details →'
     },
     siteReview: {
       overline: 'Storefront security site review',
@@ -279,60 +279,74 @@ const replaceExactly = (source, search, replacement, label) => {
   return `${source.slice(0, first)}${replacement}${source.slice(first + search.length)}`;
 };
 
+const HTML_ESCAPES = Object.freeze({
+  '&': '&amp;',
+  '<': '&lt;',
+  '>': '&gt;',
+  '"': '&quot;',
+  "'": '&#39;'
+});
+
+const escapeHtml = (value) => String(value ?? '').replace(/[&<>"']/g, (character) => HTML_ESCAPES[character]);
+
+const renderHeroHeading = ({ text, highlight }) => (
+  `<h1>${escapeHtml(text)} <span>${escapeHtml(highlight)}</span></h1>`
+);
+
 const smsHref = (message) => `sms:+17146007134?body=${encodeURIComponent(message).replace(/[!'()*]/g, (character) => (
   `%${character.charCodeAt(0).toString(16).toUpperCase()}`
 ))}`;
 
 const renderCards = (cards) => cards.map((card) => {
-  const id = card.id ? ` id="${card.id}"` : '';
-  return `                    <article${id}><span>${card.label}</span><h3>${card.heading}</h3><p>${card.body}</p></article>`;
+  const id = card.id ? ` id="${escapeHtml(card.id)}"` : '';
+  return `                    <article${id}><span>${escapeHtml(card.label)}</span><h3>${escapeHtml(card.heading)}</h3><p>${escapeHtml(card.body)}</p></article>`;
 }).join('\n');
 
 const renderSteps = (steps) => steps.map(([heading, body], index) => (
-  `                    <li><span>${String(index + 1).padStart(2, '0')}</span><div><h3>${heading}</h3><p>${body}</p></div></li>`
+  `                    <li><span>${String(index + 1).padStart(2, '0')}</span><div><h3>${escapeHtml(heading)}</h3><p>${escapeHtml(body)}</p></div></li>`
 )).join('\n');
 
 const renderVariant = (control, page) => {
   let html = control;
-  html = replaceExactly(html, CONTROL.htmlTag, `<html lang="en" data-lead-service="commercial_window_film" data-lead-variant="${page.variant}">`, 'html tag');
-  html = replaceExactly(html, CONTROL.title, `<title>${page.title}</title>`, 'title');
-  html = replaceExactly(html, CONTROL.description, `<meta name="description"\n        content="${page.description}">`, 'description');
-  html = replaceExactly(html, CONTROL.heroOverline, `<p class="commercial-overline">${page.hero.overline}</p>`, 'hero overline');
-  html = replaceExactly(html, CONTROL.heroHeading, `<h1>${page.hero.heading}</h1>`, 'hero heading');
-  html = replaceExactly(html, CONTROL.heroBody, `                    <p>${page.hero.body}</p>`, 'hero body');
-  html = replaceExactly(html, CONTROL.heroNote, `                    <p class="commercial-paid-hero__note">${page.hero.note}</p>`, 'hero note');
+  html = replaceExactly(html, CONTROL.htmlTag, `<html lang="en" data-lead-service="commercial_window_film" data-lead-variant="${escapeHtml(page.variant)}">`, 'html tag');
+  html = replaceExactly(html, CONTROL.title, `<title>${escapeHtml(page.title)}</title>`, 'title');
+  html = replaceExactly(html, CONTROL.description, `<meta name="description"\n        content="${escapeHtml(page.description)}">`, 'description');
+  html = replaceExactly(html, CONTROL.heroOverline, `<p class="commercial-overline">${escapeHtml(page.hero.overline)}</p>`, 'hero overline');
+  html = replaceExactly(html, CONTROL.heroHeading, renderHeroHeading(page.hero.heading), 'hero heading');
+  html = replaceExactly(html, CONTROL.heroBody, `                    <p>${escapeHtml(page.hero.body)}</p>`, 'hero body');
+  html = replaceExactly(html, CONTROL.heroNote, `                    <p class="commercial-paid-hero__note">${escapeHtml(page.hero.note)}</p>`, 'hero note');
   CONTROL.galleryAlts.forEach((alt, index) => {
-    html = replaceExactly(html, `alt="${alt}"`, `alt="${page.hero.galleryAlts[index]}"`, `gallery alt ${index + 1}`);
+    html = replaceExactly(html, `alt="${alt}"`, `alt="${escapeHtml(page.hero.galleryAlts[index])}"`, `gallery alt ${index + 1}`);
   });
   html = replaceExactly(
     html,
     CONTROL.solutionHeading,
-    `                    <div><p class="commercial-overline">${page.solutions.overline}</p><h2>${page.solutions.heading}</h2></div>\n                    <p>${page.solutions.body}</p>`,
+    `                    <div><p class="commercial-overline">${escapeHtml(page.solutions.overline)}</p><h2>${escapeHtml(page.solutions.heading)}</h2></div>\n                    <p>${escapeHtml(page.solutions.body)}</p>`,
     'solution heading'
   );
   html = replaceExactly(html, CONTROL.solutionCards, renderCards(page.solutions.cards), 'solution cards');
   html = replaceExactly(
     html,
     CONTROL.processHeading,
-    `<div class="commercial-heading"><p class="commercial-overline">Commercial project process</p><h2>${page.process.heading}</h2></div>`,
+    `<div class="commercial-heading"><p class="commercial-overline">Commercial project process</p><h2>${escapeHtml(page.process.heading)}</h2></div>`,
     'process heading'
   );
   html = replaceExactly(html, CONTROL.processSteps, renderSteps(page.process.steps), 'process steps');
-  html = replaceExactly(html, `alt="${CONTROL.imageAlt}"`, `alt="${page.image.alt}"`, 'image callout alt');
-  html = replaceExactly(html, CONTROL.imageOverline, `<p class="commercial-overline">${page.image.overline}</p>`, 'image callout overline');
-  html = replaceExactly(html, CONTROL.imageHeading, `<h2>${page.image.heading}</h2>`, 'image callout heading');
-  html = replaceExactly(html, CONTROL.imageBody, `                    <p>${page.image.body}</p>`, 'image callout body');
-  html = replaceExactly(html, CONTROL.imageLinkText, page.image.linkText, 'image callout link text');
-  html = replaceExactly(html, CONTROL.siteReviewOverline, `<p class="commercial-overline">${page.siteReview.overline}</p>`, 'site-review overline');
-  html = replaceExactly(html, CONTROL.siteReviewHeading, `<h2>${page.siteReview.heading}</h2>`, 'site-review heading');
-  html = replaceExactly(html, CONTROL.siteReviewBody, `                <p>${page.siteReview.body}</p>`, 'site-review body');
+  html = replaceExactly(html, `alt="${CONTROL.imageAlt}"`, `alt="${escapeHtml(page.image.alt)}"`, 'image callout alt');
+  html = replaceExactly(html, CONTROL.imageOverline, `<p class="commercial-overline">${escapeHtml(page.image.overline)}</p>`, 'image callout overline');
+  html = replaceExactly(html, CONTROL.imageHeading, `<h2>${escapeHtml(page.image.heading)}</h2>`, 'image callout heading');
+  html = replaceExactly(html, CONTROL.imageBody, `                    <p>${escapeHtml(page.image.body)}</p>`, 'image callout body');
+  html = replaceExactly(html, CONTROL.imageLinkText, escapeHtml(page.image.linkText), 'image callout link text');
+  html = replaceExactly(html, CONTROL.siteReviewOverline, `<p class="commercial-overline">${escapeHtml(page.siteReview.overline)}</p>`, 'site-review overline');
+  html = replaceExactly(html, CONTROL.siteReviewHeading, `<h2>${escapeHtml(page.siteReview.heading)}</h2>`, 'site-review heading');
+  html = replaceExactly(html, CONTROL.siteReviewBody, `                <p>${escapeHtml(page.siteReview.body)}</p>`, 'site-review body');
   html = replaceExactly(
     html,
     CONTROL.finalCopy,
-    `<div><p class="commercial-overline">${page.final.overline}</p><h2>${page.final.heading}</h2><p>${page.final.body}</p></div>`,
+    `<div><p class="commercial-overline">${escapeHtml(page.final.overline)}</p><h2>${escapeHtml(page.final.heading)}</h2><p>${escapeHtml(page.final.body)}</p></div>`,
     'final CTA copy'
   );
-  html = html.replaceAll(/href="sms:\+17146007134\?body=[^"]*"/g, `href="${smsHref(page.sms)}"`);
+  html = html.replaceAll(/href="sms:\+17146007134\?body=[^"]*"/g, `href="${escapeHtml(smsHref(page.sms))}"`);
   return html;
 };
 

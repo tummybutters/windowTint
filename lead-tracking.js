@@ -894,16 +894,22 @@
         && document.documentElement.getAttribute(name)
     ) || '';
 
+    const nodeLeadAttribute = (node, name) => (
+        node
+        && typeof node.getAttribute === 'function'
+        && node.getAttribute(name)
+    ) || '';
+
     const getLeadContext = (link) => ({
         service: (
-            (link && link.getAttribute('data-lead-service'))
+            nodeLeadAttribute(link, 'data-lead-service')
             || documentLeadAttribute('data-lead-service')
         ),
         landing_variant: (
-            (link && link.getAttribute('data-lead-variant'))
+            nodeLeadAttribute(link, 'data-lead-variant')
             || documentLeadAttribute('data-lead-variant')
         ),
-        lead_action: (link && link.getAttribute('data-lead-action')) || ''
+        lead_action: nodeLeadAttribute(link, 'data-lead-action')
     });
 
     const bindClickTracking = () => {
@@ -968,7 +974,7 @@
                 upsertHidden(form, 'lead_touch_id', intent.touch_id);
             }
 
-            sendAnalyticsEvent('lead_form_submit', {}, { leadIntentResult });
+            sendAnalyticsEvent('lead_form_submit', getLeadContext(form), { leadIntentResult });
         }, true);
     };
 

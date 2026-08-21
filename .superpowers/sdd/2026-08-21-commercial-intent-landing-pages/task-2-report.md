@@ -31,3 +31,22 @@
 ## Scope preserved
 
 No routing files, deployment configuration, production deployment, Google Ads settings, or external systems were changed.
+
+## Review follow-up
+
+- Replaced the general commercial variant's process callout with the exact approved copy: `A site review is where scope becomes clear.` and regenerated all four artifacts.
+- Updated the shared capture-phase `lead_form_submit` path to pass the form through the established `getLeadContext` resolver. Qualifier-page document metadata now reaches both the first-party event payload and the emitted analytics event as `service` and `landing_variant`; existing click tracking continues to use the same resolver.
+- Added a defensive node-attribute accessor so the shared tracker preserves its existing behavior for normal links while safely accepting form nodes.
+- Added an HTML-escaping boundary for generator-driven config fields. The hero is now a deliberate `{ text, highlight }` structure rendered with an intentionally scoped `<span>`; all text values are escaped before insertion.
+- Added focused regressions for the exact callout, escaped generated title, safe hero structure, and the global form-event `landing_variant` propagation.
+
+### Review follow-up verification
+
+- `node --check lead-tracking.js` passed.
+- `node --check scripts/generate-commercial-window-film-variants.mjs` passed.
+- `node scripts/test-lead-tracking.mjs` passed.
+- `node scripts/test-commercial-window-film-qualifier.mjs` passed.
+- `node scripts/test-commercial-lead-normalize.mjs` passed.
+- `node scripts/test-commercial-lead-store.mjs` passed.
+- Ran the generator twice after the review fix; SHA-256 hashes matched for all four page artifacts.
+- `node scripts/test-commercial-window-film-pages.mjs` validates the new page-generator assertions and then remains blocked only at the pre-existing Task 3 local-route assertion for `/commercial-window-tinting-orange-county`.

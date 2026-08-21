@@ -97,6 +97,7 @@ const requireCommercialAdsConfig = (html, pageLabel) => {
 const organic = await readOptional('commercial-window-film');
 const paid = await readOptional('commercial-window-film-socal');
 const qualifierController = await readOptional('commercial-window-film-qualifier.js');
+const variantGenerator = await readOptional('scripts/generate-commercial-window-film-variants.mjs');
 const commercialCss = await readOptional('commercial-window-film.css');
 const devServer = await readFile(new URL('dev_server.py', root), 'utf8');
 const sitemap = await readFile(new URL('sitemap.xml', root), 'utf8');
@@ -111,7 +112,8 @@ const paidVariantMatrix = [
     variant: 'commercial_tint_oc_v1',
     title: 'Commercial Window Tinting Orange County | Obsidian',
     h1: 'Commercial Window Tinting in Orange County',
-    descriptionTerms: ['commercial window tinting', 'orange county']
+    descriptionTerms: ['commercial window tinting', 'orange county'],
+    requiredCallout: 'A site review is where scope becomes clear.'
   },
   {
     route: '/office-privacy-window-film',
@@ -143,9 +145,27 @@ const paidVariantPages = await Promise.all(paidVariantMatrix.map(async (page) =>
 assert.ok(organic, 'The /commercial-window-film organic page must exist.');
 assert.ok(paid, 'The /commercial-window-film-socal paid page must exist.');
 assert.ok(qualifierController, 'The paid page qualifier controller must exist.');
+assert.ok(variantGenerator, 'The commercial intent-page generator must exist.');
 assert.ok(commercialPhoto, 'The commercial pages must ship the real office project photo.');
 assert.ok(privacyVisualization, 'The commercial pages must ship the privacy-film application visualization.');
 assert.ok(installationVisualization, 'The paid commercial page must ship the installation-detail visualization.');
+
+assert.match(variantGenerator, /const\s+escapeHtml\s*=\s*\(value\)\s*=>/, 'The generator must HTML-escape generic config fields.');
+assert.match(
+  variantGenerator,
+  /const\s+renderHeroHeading\s*=\s*\(\{\s*text\s*,\s*highlight\s*\}\)\s*=>/,
+  'The generator must model the hero highlight as an explicit safe structure.'
+);
+assert.match(
+  variantGenerator,
+  /<h1>\$\{escapeHtml\(text\)\}\s*<span>\$\{escapeHtml\(highlight\)\}<\/span><\/h1>/,
+  'The generator must escape both hero-heading text fields before adding the deliberate span.'
+);
+assert.doesNotMatch(
+  variantGenerator,
+  /<h1>\$\{page\.hero\.heading\}<\/h1>/,
+  'The generator must not render a generic hero-heading string as raw HTML.'
+);
 
 requireCommercialAdsConfig(organic, 'The organic page');
 requireCommercialAdsConfig(paid, 'The paid page');
@@ -372,15 +392,26 @@ for (const page of paidVariantPages) {
   const pageHtmlTag = tags(html, 'html')[0] || '';
   const pageHero = html.match(/<header\b[^>]*class=["'][^"']*commercial-paid-hero[^"']*["'][^>]*>[\s\S]*?<\/header>/i)?.[0] || '';
   const pageH1 = pageHero.match(/<h1\b[^>]*>([\s\S]*?)<\/h1>/i)?.[1] || '';
+  const pageTitle = html.match(/<title\b[^>]*>([\s\S]*?)<\/title>/i)?.[1] || '';
   const pageDescription = metaContent(html, 'description').toLowerCase();
 
   assert.ok(html, `${pageLabel} must exist as an extensionless static page artifact.`);
   assert.equal(tagAttribute(pageHtmlTag, 'data-lead-service'), 'commercial_window_film', `${pageLabel} must identify the commercial service.`);
   assert.equal(tagAttribute(pageHtmlTag, 'data-lead-variant'), page.variant, `${pageLabel} must expose its approved lead variant.`);
-  assert.match(html, new RegExp(`<title>\\s*${page.title.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}\\s*<\\/title>`, 'i'), `${pageLabel} must use its search-intent title.`);
+  assert.equal(visibleText(pageTitle), page.title, `${pageLabel} must use its search-intent title.`);
   assert.equal(visibleText(pageH1), page.h1, `${pageLabel} must use its search-intent H1.`);
   for (const term of page.descriptionTerms) {
     assert.match(pageDescription, new RegExp(term.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'), 'i'), `${pageLabel} description must address ${term} intent.`);
+  }
+  if (page.requiredCallout) {
+    assert.match(
+      visibleText(html),
+      new RegExp(page.requiredCallout.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')),
+      `${pageLabel} must use its exact approved intent callout.`
+    );
+  }
+  if (page.title.includes('&')) {
+    assert.match(html, /<title>Commercial Heat &amp; Glare Film Orange County \| Obsidian<\/title>/, `${pageLabel} must escape title text in the static artifact.`);
   }
 
   requireCommercialAdsConfig(html, pageLabel);

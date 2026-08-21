@@ -111,7 +111,7 @@
 
         <section class="commercial-section commercial-section--ink" id="process">
             <div class="commercial-shell">
-                <div class="commercial-heading"><p class="commercial-overline">Commercial project process</p><h2>Review the glass before defining scope.</h2></div>
+                <div class="commercial-heading"><p class="commercial-overline">Commercial project process</p><h2>A site review is where scope becomes clear.</h2></div>
                 <ol class="commercial-process commercial-process--dark">
                     <li><span>01</span><div><h3>Describe the property</h3><p>Share the city, property type, affected glass, and the primary reason for commercial tinting.</p></div></li>
                     <li><span>02</span><div><h3>Send photos or measurements</h3><p>Photos and rough measurements help us understand the glass and access before a site review.</p></div></li>
@@ -133,7 +133,7 @@
                     <h2>Use film to address both view and appearance.</h2>
                     <p>Commercial window tinting can involve exterior glass, interior glass, or both. A site review helps separate the privacy, daylight, appearance, and operational questions before a film direction is selected.</p>
                     <a href="sms:+17146007134?body=Hi%20Obsidian%20Autoworks%2C%20I%27d%20like%20a%20commercial%20window%20tinting%20site%20review%20in%20Orange%20County.%0AProperty%20city%3A%0AProperty%20type%3A%0APrimary%20issue%20%28heat%2C%20glare%2C%20privacy%2C%20UV%2C%20safety%29%3A%0APhotos%20%2F%20rough%20measurements%3A"
-                        class="commercial-inline-link" data-lead-action="commercial_window_film_text">Text commercial tinting details &rarr;</a>
+                        class="commercial-inline-link" data-lead-action="commercial_window_film_text">Text commercial tinting details →</a>
                 </div>
             </div>
         </section>
