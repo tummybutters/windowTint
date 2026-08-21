@@ -21,3 +21,11 @@ Result: expected failure (`ERR_ASSERTION`) with these missing implementation con
 - Qualifier tracking does not use the landing-page variant and still hard-codes `commercial_socal_v1`.
 
 `git diff --check -- scripts/test-commercial-window-film-pages.mjs` passed. No production code was changed.
+
+## Review fix
+
+- Tightened the dynamic-attribution contract so the shared qualifier helper and both direct lead events (`commercial_lead_submit` and `commercial_lead_saved`) must each use the document-derived variant.
+- Added per-page assertions for commercial call/text tracking labels, retired intake/controller removal, booking/Square exclusions, and loading the shared persistence-capable qualifier.
+- Bound the real-project caption to the authentic office-photo figure and prohibited that caption on every other gallery figure.
+
+Focused RED verification was rerun. It remains expectedly red for the same missing routes and dynamic attribution implementation; no production code was changed.

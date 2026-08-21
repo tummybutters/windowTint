@@ -333,6 +333,9 @@ const dynamicVariantRead = qualifierController.match(
   /const\s+(\w+)\s*=\s*clean\(\s*document\.documentElement\.dataset\.leadVariant\s*\)\s*\|\|\s*["']commercial_socal_v1["']/
 );
 const landingVariantVariable = dynamicVariantRead ? dynamicVariantRead[1] : 'landingVariant';
+const trackingPayloadUsesLandingVariant = (eventPattern) => new RegExp(
+  `tracking\\.recordEvent\\(\\s*${eventPattern}\\s*,\\s*\\{[\\s\\S]{0,320}?landing_variant\\s*:\\s*${landingVariantVariable}\\b`
+);
 const newVariantContractFailures = [
   ...paidVariantPages
     .filter((page) => !page.html)
@@ -350,6 +353,18 @@ assert.deepEqual(
   [],
   `New paid variant contracts are incomplete:\n${newVariantContractFailures.map((failure) => `- ${failure}`).join('\n')}`
 );
+assert.match(
+  qualifierController,
+  trackingPayloadUsesLandingVariant('eventName'),
+  'The shared qualifier tracking helper must attach the document-derived landing variant to every qualifier event.'
+);
+for (const eventName of ['commercial_lead_submit', 'commercial_lead_saved']) {
+  assert.match(
+    qualifierController,
+    trackingPayloadUsesLandingVariant(`["']${eventName}["']`),
+    `${eventName} must attach the document-derived landing variant.`
+  );
+}
 
 for (const page of paidVariantPages) {
   const html = page.html;
@@ -379,9 +394,18 @@ for (const page of paidVariantPages) {
   ]) {
     assert.match(pageHero, new RegExp(`src=["']${imagePath.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}["']`, 'i'), `${pageLabel} gallery must retain ${imagePath}.`);
   }
-  assert.match(visibleText(pageHero), /Real project photo[^.]{0,40}Obsidian/i, `${pageLabel} must label only the real Obsidian project photo.`);
+  const galleryFigures = [...pageHero.matchAll(/<figure\b[^>]*>[\s\S]*?<\/figure>/gi)].map((match) => match[0]);
+  const officePhotoFigure = galleryFigures.find((figure) => /src=["']\/assets\/commercial-window-film\/obsidian-commercial-office\.webp["']/i.test(figure)) || '';
+  assert.match(visibleText(officePhotoFigure), /Real project photo[^.]{0,40}Obsidian/i, `${pageLabel} must label the authentic office photo as a real Obsidian project.`);
+  for (const figure of galleryFigures.filter((candidate) => candidate !== officePhotoFigure)) {
+    assert.doesNotMatch(visibleText(figure), /Real project photo[^.]{0,40}Obsidian/i, `${pageLabel} must not label generated or illustrative gallery figures as real Obsidian projects.`);
+  }
   assert.match(html, /<script\b[^>]*src=["']\/lead-tracking\.js["'][^>]*><\/script>/i, `${pageLabel} must load lead-tracking.js.`);
   assert.match(html, /<script\b[^>]*src=["']\/commercial-window-film-qualifier\.js["'][^>]*><\/script>/i, `${pageLabel} must load the shared qualifier controller.`);
+  assert.match(qualifierController, /\/api\/commercial-leads/i, `${pageLabel} qualifier must persist leads through the commercial lead endpoint.`);
+  assert.match(qualifierController, /saveThenOpenText/i, `${pageLabel} qualifier must save the lead before opening SMS.`);
+  assert.doesNotMatch(html, /id=["']commercial-consultation-form["']/i, `${pageLabel} must not restore a separate intake form before the qualifier.`);
+  assert.doesNotMatch(html, /src=["']\/commercial-consultation-form\.js["']/i, `${pageLabel} must not load the retired separate intake controller.`);
 
   const variantCall = html.search(/<a\b[^>]*href=["']tel:\+17146007134["']/i);
   const variantText = html.search(/<a\b[^>]*href=["']sms:\+17146007134(?:\?[^"']*)?["']/i);
@@ -389,6 +413,10 @@ for (const page of paidVariantPages) {
   assert.ok(variantCall >= 0, `${pageLabel} must lead with a call CTA.`);
   assert.ok(variantText > variantCall, `${pageLabel} text CTA must follow the call CTA.`);
   assert.ok(variantQualifier > variantText, `${pageLabel} qualifier must follow call and text CTAs.`);
+  const variantLeadActions = [...html.matchAll(/data-lead-action=["']([^"']+)["']/gi)].map((match) => match[1]);
+  assert.ok(variantLeadActions.includes('commercial_window_film_call'), `${pageLabel} call CTAs must retain the commercial call tracking label.`);
+  assert.ok(variantLeadActions.includes('commercial_window_film_text'), `${pageLabel} text CTAs must retain the commercial text tracking label.`);
+  assert.ok(variantLeadActions.every((action) => action.startsWith('commercial_')), `${pageLabel} CTAs must use commercial-only tracking labels.`);
 
   for (const anchor of ['solutions', 'process', 'privacy-decorative', 'site-review']) {
     assert.match(html, new RegExp(`\\bid=["']${anchor}["']`, 'i'), `${pageLabel} must retain #${anchor}.`);
