@@ -105,6 +105,41 @@ const commercialPhoto = await readOptional('assets/commercial-window-film/obsidi
 const privacyVisualization = await readOptional('assets/commercial-window-film/commercial-privacy-visualization.webp');
 const installationVisualization = await readOptional('assets/commercial-window-film/commercial-installation-visualization.webp');
 
+const paidVariantMatrix = [
+  {
+    route: '/commercial-window-tinting-orange-county',
+    variant: 'commercial_tint_oc_v1',
+    title: 'Commercial Window Tinting in Orange County | Obsidian Autoworks',
+    h1: 'Commercial Window Tinting in Orange County',
+    descriptionTerms: ['commercial window tinting', 'orange county']
+  },
+  {
+    route: '/office-privacy-window-film',
+    variant: 'office_privacy_frost_v1',
+    title: 'Office Privacy Window Film | Obsidian Autoworks',
+    h1: 'Office Privacy Window Film in Orange County',
+    descriptionTerms: ['office privacy', 'frosted', 'window film']
+  },
+  {
+    route: '/commercial-heat-glare-window-film',
+    variant: 'commercial_solar_glare_v1',
+    title: 'Commercial Heat & Glare Window Film | Obsidian Autoworks',
+    h1: 'Commercial Heat & Glare Window Film in Orange County',
+    descriptionTerms: ['commercial', 'heat', 'glare', 'window film']
+  },
+  {
+    route: '/storefront-security-window-film',
+    variant: 'storefront_security_v1',
+    title: 'Storefront Security Window Film | Obsidian Autoworks',
+    h1: 'Storefront Security Window Film in Orange County',
+    descriptionTerms: ['storefront', 'security', 'window film']
+  }
+];
+const paidVariantPages = await Promise.all(paidVariantMatrix.map(async (page) => ({
+  ...page,
+  html: await readOptional(page.route.slice(1))
+})));
+
 assert.ok(organic, 'The /commercial-window-film organic page must exist.');
 assert.ok(paid, 'The /commercial-window-film-socal paid page must exist.');
 assert.ok(qualifierController, 'The paid page qualifier controller must exist.');
@@ -293,5 +328,96 @@ assert.ok(
   ))),
   'The paid route must be covered by an X-Robots-Tag: noindex, follow header.'
 );
+
+const dynamicVariantRead = qualifierController.match(
+  /const\s+(\w+)\s*=\s*clean\(\s*document\.documentElement\.dataset\.leadVariant\s*\)\s*\|\|\s*["']commercial_socal_v1["']/
+);
+const landingVariantVariable = dynamicVariantRead ? dynamicVariantRead[1] : 'landingVariant';
+const newVariantContractFailures = [
+  ...paidVariantPages
+    .filter((page) => !page.html)
+    .map((page) => `${page.route} static page artifact is missing`),
+  ...(!dynamicVariantRead ? ['qualifier does not read document.documentElement.dataset.leadVariant'] : []),
+  ...(new RegExp(`landing_variant\\s*:\\s*${landingVariantVariable}\\b`).test(qualifierController)
+    ? []
+    : ['qualifier tracking does not use the landing-page variant']),
+  ...(/landing_variant\s*:\s*["']commercial_socal_v1["']/.test(qualifierController)
+    ? ['qualifier tracking hard-codes commercial_socal_v1']
+    : [])
+];
+assert.deepEqual(
+  newVariantContractFailures,
+  [],
+  `New paid variant contracts are incomplete:\n${newVariantContractFailures.map((failure) => `- ${failure}`).join('\n')}`
+);
+
+for (const page of paidVariantPages) {
+  const html = page.html;
+  const pageLabel = `${page.route} paid variant`;
+  const pageHtmlTag = tags(html, 'html')[0] || '';
+  const pageHero = html.match(/<header\b[^>]*class=["'][^"']*commercial-paid-hero[^"']*["'][^>]*>[\s\S]*?<\/header>/i)?.[0] || '';
+  const pageH1 = pageHero.match(/<h1\b[^>]*>([\s\S]*?)<\/h1>/i)?.[1] || '';
+  const pageDescription = metaContent(html, 'description').toLowerCase();
+
+  assert.ok(html, `${pageLabel} must exist as an extensionless static page artifact.`);
+  assert.equal(tagAttribute(pageHtmlTag, 'data-lead-service'), 'commercial_window_film', `${pageLabel} must identify the commercial service.`);
+  assert.equal(tagAttribute(pageHtmlTag, 'data-lead-variant'), page.variant, `${pageLabel} must expose its approved lead variant.`);
+  assert.match(html, new RegExp(`<title>\\s*${page.title.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}\\s*<\\/title>`, 'i'), `${pageLabel} must use its search-intent title.`);
+  assert.equal(visibleText(pageH1), page.h1, `${pageLabel} must use its search-intent H1.`);
+  for (const term of page.descriptionTerms) {
+    assert.match(pageDescription, new RegExp(term.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'), 'i'), `${pageLabel} description must address ${term} intent.`);
+  }
+
+  requireCommercialAdsConfig(html, pageLabel);
+  assert.match(html, /href=["']\/commercial-window-film\.css(?:\?[^"']*)?["']/i, `${pageLabel} must reuse the shared commercial page stylesheet.`);
+  assert.match(pageHero, /commercial-paid-hero__content--centered/i, `${pageLabel} must retain the centered paid hero layout.`);
+  assert.match(pageHero, /commercial-paid-hero__gallery/i, `${pageLabel} must retain the paid hero gallery.`);
+  for (const imagePath of [
+    '/assets/commercial-window-film/obsidian-commercial-office.webp',
+    '/assets/commercial-window-film/ads/generated-storefront-landscape.jpg',
+    '/assets/commercial-window-film/commercial-installation-visualization.webp'
+  ]) {
+    assert.match(pageHero, new RegExp(`src=["']${imagePath.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}["']`, 'i'), `${pageLabel} gallery must retain ${imagePath}.`);
+  }
+  assert.match(visibleText(pageHero), /Real project photo[^.]{0,40}Obsidian/i, `${pageLabel} must label only the real Obsidian project photo.`);
+  assert.match(html, /<script\b[^>]*src=["']\/lead-tracking\.js["'][^>]*><\/script>/i, `${pageLabel} must load lead-tracking.js.`);
+  assert.match(html, /<script\b[^>]*src=["']\/commercial-window-film-qualifier\.js["'][^>]*><\/script>/i, `${pageLabel} must load the shared qualifier controller.`);
+
+  const variantCall = html.search(/<a\b[^>]*href=["']tel:\+17146007134["']/i);
+  const variantText = html.search(/<a\b[^>]*href=["']sms:\+17146007134(?:\?[^"']*)?["']/i);
+  const variantQualifier = html.search(/\bid=["']commercial-qualifier["']/i);
+  assert.ok(variantCall >= 0, `${pageLabel} must lead with a call CTA.`);
+  assert.ok(variantText > variantCall, `${pageLabel} text CTA must follow the call CTA.`);
+  assert.ok(variantQualifier > variantText, `${pageLabel} qualifier must follow call and text CTAs.`);
+
+  for (const anchor of ['solutions', 'process', 'privacy-decorative', 'site-review']) {
+    assert.match(html, new RegExp(`\\bid=["']${anchor}["']`, 'i'), `${pageLabel} must retain #${anchor}.`);
+  }
+
+  assert.match(metaContent(html, 'robots'), /^noindex\s*,\s*follow$/i, `${pageLabel} must be noindex,follow.`);
+  assert.equal(canonicalHref(html), 'https://www.obsidianautoworksoc.com/commercial-window-film', `${pageLabel} must canonicalize to the organic commercial page.`);
+  assert.doesNotMatch(visibleText(html), /AI-generated|application visualization|not an Obsidian project|automotive|residential|vehicle|tesla|mobile tint|ceramic tint|square|booking/i, `${pageLabel} must exclude prohibited language.`);
+  assert.doesNotMatch(html, squareUrl, `${pageLabel} must not contain a Square URL.`);
+  assert.doesNotMatch(html, bookingUrl, `${pageLabel} must not contain a booking URL.`);
+
+  assert.match(devServer, new RegExp(`["']${page.route}["']\\s*:\\s*["']${page.route}["']`), `${pageLabel} local route must resolve.`);
+  assert.ok(
+    vercel.rewrites.some((rewrite) => rewrite.source === page.route && rewrite.destination === page.route),
+    `${pageLabel} must have a production self-rewrite.`
+  );
+  assert.ok(
+    vercel.headers.some((header) => headerCovers(header, page.route) && header.headers.some((item) => (
+      item.key.toLowerCase() === 'content-type' && /text\/html/i.test(item.value)
+    ))),
+    `${pageLabel} must be covered by the production HTML header rule.`
+  );
+  assert.ok(
+    vercel.headers.some((header) => headerCovers(header, page.route) && header.headers.some((item) => (
+      item.key.toLowerCase() === 'x-robots-tag' && /^noindex\s*,\s*follow$/i.test(item.value)
+    ))),
+    `${pageLabel} must be protected by an X-Robots-Tag: noindex, follow header.`
+  );
+  assert.doesNotMatch(sitemap, new RegExp(`<loc>https:\\/\\/www\\.obsidianautoworksoc\\.com${page.route}<\\/loc>`, 'i'), `${pageLabel} must stay out of the sitemap.`);
+}
 
 console.log('commercial window film page contracts passed');
