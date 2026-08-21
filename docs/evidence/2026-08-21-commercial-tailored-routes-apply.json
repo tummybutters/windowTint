@@ -1,0 +1,1896 @@
+{
+  "after": {
+    "ad_groups": {
+      "196849750257": {
+        "cpc_bid_micros": 5250000,
+        "name": "Commercial Window Film",
+        "resource": "customers/8605345590/adGroups/196849750257",
+        "status": "ENABLED"
+      },
+      "196849750297": {
+        "cpc_bid_micros": 2250000,
+        "name": "Solar Heat Glare Film",
+        "resource": "customers/8605345590/adGroups/196849750297",
+        "status": "ENABLED"
+      },
+      "196849750457": {
+        "cpc_bid_micros": 5250000,
+        "name": "Privacy Decorative Film",
+        "resource": "customers/8605345590/adGroups/196849750457",
+        "status": "ENABLED"
+      },
+      "196849750497": {
+        "cpc_bid_micros": 2500000,
+        "name": "Safety Security Film",
+        "resource": "customers/8605345590/adGroups/196849750497",
+        "status": "ENABLED"
+      }
+    },
+    "ads": [
+      {
+        "ad_group_id": "196849750257",
+        "approval_status": "APPROVED",
+        "descriptions": [
+          "Commercial film for offices, storefronts and buildings.",
+          "Talk through your site and window-film options.",
+          "Review heat, glare and privacy needs for your glass.",
+          "Request a commercial window-film site review."
+        ],
+        "final_urls": [
+          "https://www.obsidianautoworksoc.com/commercial-window-film-socal"
+        ],
+        "headlines": [
+          "Commercial Window Film",
+          "Office & Storefront Film",
+          "Request a Site Review",
+          "Window Film For Buildings",
+          "Commercial Glass Film",
+          "Discuss Film Options",
+          "Office Window Film",
+          "Storefront Window Film",
+          "Plan Your Site Review",
+          "Commercial Film Install"
+        ],
+        "primary_status": "ELIGIBLE",
+        "resource": "customers/8605345590/adGroupAds/196849750257~820325919497",
+        "status": "ENABLED"
+      },
+      {
+        "ad_group_id": "196849750297",
+        "approval_status": "APPROVED",
+        "descriptions": [
+          "Explore solar-control film for commercial glass.",
+          "Discuss glare, heat and privacy needs for your space.",
+          "Review window-film options for your commercial site.",
+          "Request a site review for your building glass."
+        ],
+        "final_urls": [
+          "https://www.obsidianautoworksoc.com/commercial-window-film-socal"
+        ],
+        "headlines": [
+          "Solar Control Window Film",
+          "Cut Heat & Window Glare",
+          "Film For Offices",
+          "Request a Site Review",
+          "Commercial Solar Film",
+          "Manage Window Glare",
+          "Film For Storefronts",
+          "Building Window Film",
+          "Discuss Your Glass",
+          "Solar Film Options"
+        ],
+        "primary_status": "ELIGIBLE",
+        "resource": "customers/8605345590/adGroupAds/196849750297~820325919500",
+        "status": "ENABLED"
+      },
+      {
+        "ad_group_id": "196849750457",
+        "approval_status": "APPROVED",
+        "descriptions": [
+          "Privacy and decorative film options for office glass.",
+          "Review coverage, finish and installation needs.",
+          "Discuss film options for conference rooms and offices.",
+          "Request a site review for commercial glass."
+        ],
+        "final_urls": [
+          "https://www.obsidianautoworksoc.com/commercial-window-film-socal"
+        ],
+        "headlines": [
+          "Office Privacy Window Film",
+          "Decorative Glass Film",
+          "Frosted Office Film",
+          "Request a Site Review",
+          "Commercial Privacy Film",
+          "Office Glass Film",
+          "Privacy Film Options",
+          "Decorative Window Film",
+          "Discuss Your Finish",
+          "Film For Office Glass"
+        ],
+        "primary_status": "ELIGIBLE",
+        "resource": "customers/8605345590/adGroupAds/196849750457~820325919503",
+        "status": "ENABLED"
+      },
+      {
+        "ad_group_id": "196849750497",
+        "approval_status": "APPROVED",
+        "descriptions": [
+          "Discuss safety and security window-film options.",
+          "Plan coverage for commercial windows and glass.",
+          "Review commercial film options for your glass.",
+          "Request a site review for your building."
+        ],
+        "final_urls": [
+          "https://www.obsidianautoworksoc.com/commercial-window-film-socal"
+        ],
+        "headlines": [
+          "Commercial Security Film",
+          "Safety Window Film",
+          "Security Film Installation",
+          "Request a Site Review",
+          "Commercial Safety Film",
+          "Security Window Film",
+          "Film For Building Glass",
+          "Discuss Your Coverage",
+          "Commercial Glass Film",
+          "Safety Film Options"
+        ],
+        "primary_status": "ELIGIBLE",
+        "resource": "customers/8605345590/adGroupAds/196849750497~820325919506",
+        "status": "ENABLED"
+      },
+      {
+        "ad_group_id": "196849750257",
+        "approval_status": "APPROVED",
+        "descriptions": [
+          "Commercial window film for offices, storefronts, and shared spaces.",
+          "Discuss the glass, access, and project goal before choosing a film direction.",
+          "Request a site review for solar, privacy, decorative, or safety needs.",
+          "Call or text property details, photos, and rough measurements to start."
+        ],
+        "final_urls": [
+          "https://www.obsidianautoworksoc.com/commercial-window-film-socal#site-review"
+        ],
+        "headlines": [
+          "Commercial Window Film",
+          "Office & Storefront Film",
+          "Window Film Site Review",
+          "Film For Commercial Glass",
+          "Plan Your Glass Project",
+          "Building Window Film",
+          "Office Window Film",
+          "Storefront Window Film",
+          "Discuss Film Options",
+          "Orange County Site Review"
+        ],
+        "primary_status": "PAUSED",
+        "resource": "customers/8605345590/adGroupAds/196849750257~821491112097",
+        "status": "PAUSED"
+      },
+      {
+        "ad_group_id": "196849750297",
+        "approval_status": "APPROVED",
+        "descriptions": [
+          "Review commercial film options for sun-exposed glass, heat, and glare.",
+          "Discuss the space, glazing, and access before choosing a solar-control direction.",
+          "Site-specific planning for office, storefront, and building glass.",
+          "Call or text photos and rough measurements for a commercial site review."
+        ],
+        "final_urls": [
+          "https://www.obsidianautoworksoc.com/commercial-window-film-socal#solar-glare"
+        ],
+        "headlines": [
+          "Solar Control Window Film",
+          "Commercial Heat & Glare Film",
+          "Office Solar Film Options",
+          "Manage Window Glare",
+          "Film For Sun-Facing Glass",
+          "Commercial Glass Site Review",
+          "Discuss Solar Control",
+          "Office Window Film",
+          "Building Window Film",
+          "Plan Your Site Review"
+        ],
+        "primary_status": "PAUSED",
+        "resource": "customers/8605345590/adGroupAds/196849750297~821491112100",
+        "status": "PAUSED"
+      },
+      {
+        "ad_group_id": "196849750457",
+        "approval_status": "APPROVED",
+        "descriptions": [
+          "Privacy and decorative film options for offices, partitions, and storefront glass.",
+          "Review sightlines, light, finish, and access before selecting a film direction.",
+          "Discuss conference-room, entry, and customer-facing glass with Obsidian.",
+          "Request a site review with property details, photos, and rough measurements."
+        ],
+        "final_urls": [
+          "https://www.obsidianautoworksoc.com/commercial-window-film-socal#privacy-decorative"
+        ],
+        "headlines": [
+          "Office Privacy Window Film",
+          "Commercial Privacy Film",
+          "Frosted Office Glass Film",
+          "Decorative Glass Film",
+          "Privacy For Conference Rooms",
+          "Shape Glass Sightlines",
+          "Privacy Film Site Review",
+          "Office Glass Film Options",
+          "Plan Your Privacy Finish",
+          "Discuss Decorative Film"
+        ],
+        "primary_status": "PAUSED",
+        "resource": "customers/8605345590/adGroupAds/196849750457~821491112103",
+        "status": "PAUSED"
+      },
+      {
+        "ad_group_id": "196849750497",
+        "approval_status": "APPROVED",
+        "descriptions": [
+          "Discuss safety and security film options for commercial building glass.",
+          "Review glass, attachment approach, access, and project intent before selection.",
+          "Plan coverage for offices, storefronts, and shared commercial spaces.",
+          "Call or text property details, photos, and rough measurements to begin."
+        ],
+        "final_urls": [
+          "https://www.obsidianautoworksoc.com/commercial-window-film-socal#safety-security"
+        ],
+        "headlines": [
+          "Commercial Security Film",
+          "Safety Window Film Options",
+          "Security Film Site Review",
+          "Film For Building Glass",
+          "Commercial Glass Protection",
+          "Discuss Glass Retention",
+          "Safety Film Installation",
+          "Plan Your Coverage",
+          "Security Window Film",
+          "Site-Specific Film Review"
+        ],
+        "primary_status": "PAUSED",
+        "resource": "customers/8605345590/adGroupAds/196849750497~821491112106",
+        "status": "PAUSED"
+      },
+      {
+        "ad_group_id": "196849750257",
+        "approval_status": "UNKNOWN",
+        "descriptions": [
+          "Commercial window film for offices, storefronts, and shared spaces.",
+          "Discuss the glass, access, and project goal before choosing a film direction.",
+          "Request a site review for solar, privacy, decorative, or safety needs.",
+          "Call or text property details, photos, and rough measurements to start."
+        ],
+        "final_urls": [
+          "https://www.obsidianautoworksoc.com/commercial-window-tinting-orange-county"
+        ],
+        "headlines": [
+          "Commercial Window Film",
+          "Office & Storefront Film",
+          "Window Film Site Review",
+          "Film For Commercial Glass",
+          "Plan Your Glass Project",
+          "Building Window Film",
+          "Office Window Film",
+          "Storefront Window Film",
+          "Discuss Film Options",
+          "Orange County Site Review"
+        ],
+        "primary_status": "PENDING",
+        "resource": "customers/8605345590/adGroupAds/196849750257~821677027656",
+        "status": "ENABLED"
+      },
+      {
+        "ad_group_id": "196849750297",
+        "approval_status": "UNKNOWN",
+        "descriptions": [
+          "Review commercial film options for sun-exposed glass, heat, and glare.",
+          "Discuss the space, glazing, and access before choosing a solar-control direction.",
+          "Site-specific planning for office, storefront, and building glass.",
+          "Call or text photos and rough measurements for a commercial site review."
+        ],
+        "final_urls": [
+          "https://www.obsidianautoworksoc.com/commercial-heat-glare-window-film"
+        ],
+        "headlines": [
+          "Solar Control Window Film",
+          "Commercial Heat & Glare Film",
+          "Office Solar Film Options",
+          "Manage Window Glare",
+          "Film For Sun-Facing Glass",
+          "Commercial Glass Site Review",
+          "Discuss Solar Control",
+          "Office Window Film",
+          "Building Window Film",
+          "Plan Your Site Review"
+        ],
+        "primary_status": "PENDING",
+        "resource": "customers/8605345590/adGroupAds/196849750297~821677027659",
+        "status": "ENABLED"
+      },
+      {
+        "ad_group_id": "196849750457",
+        "approval_status": "UNKNOWN",
+        "descriptions": [
+          "Privacy and decorative film options for offices, partitions, and storefront glass.",
+          "Review sightlines, light, finish, and access before selecting a film direction.",
+          "Discuss conference-room, entry, and customer-facing glass with Obsidian.",
+          "Request a site review with property details, photos, and rough measurements."
+        ],
+        "final_urls": [
+          "https://www.obsidianautoworksoc.com/office-privacy-window-film"
+        ],
+        "headlines": [
+          "Office Privacy Window Film",
+          "Commercial Privacy Film",
+          "Frosted Office Glass Film",
+          "Decorative Glass Film",
+          "Privacy For Conference Rooms",
+          "Shape Glass Sightlines",
+          "Privacy Film Site Review",
+          "Office Glass Film Options",
+          "Plan Your Privacy Finish",
+          "Discuss Decorative Film"
+        ],
+        "primary_status": "PENDING",
+        "resource": "customers/8605345590/adGroupAds/196849750457~821677027662",
+        "status": "ENABLED"
+      },
+      {
+        "ad_group_id": "196849750497",
+        "approval_status": "UNKNOWN",
+        "descriptions": [
+          "Discuss safety and security film options for commercial building glass.",
+          "Review glass, attachment approach, access, and project intent before selection.",
+          "Plan coverage for offices, storefronts, and shared commercial spaces.",
+          "Call or text property details, photos, and rough measurements to begin."
+        ],
+        "final_urls": [
+          "https://www.obsidianautoworksoc.com/storefront-security-window-film"
+        ],
+        "headlines": [
+          "Commercial Security Film",
+          "Safety Window Film Options",
+          "Security Film Site Review",
+          "Film For Building Glass",
+          "Commercial Glass Protection",
+          "Discuss Glass Retention",
+          "Safety Film Installation",
+          "Plan Your Coverage",
+          "Security Window Film",
+          "Site-Specific Film Review"
+        ],
+        "primary_status": "PENDING",
+        "resource": "customers/8605345590/adGroupAds/196849750497~821677027665",
+        "status": "ENABLED"
+      }
+    ],
+    "campaign": {
+      "budget_micros": 40000000,
+      "id": "24117892229",
+      "name": "Search | OC | Commercial Window Film | Obsidian Build",
+      "primary_status": "ELIGIBLE",
+      "serving_status": "SERVING",
+      "status": "ENABLED"
+    },
+    "keywords": {
+      "1230569500275": {
+        "ad_group_id": "196849750497",
+        "cpc_bid_micros": 5000000,
+        "match_type": "PHRASE",
+        "resource": "customers/8605345590/adGroupCriteria/196849750497~1230569500275",
+        "status": "ENABLED",
+        "text": "security window film installation near me"
+      },
+      "1423803719682": {
+        "ad_group_id": "196849750257",
+        "cpc_bid_micros": 5000000,
+        "match_type": "EXACT",
+        "resource": "customers/8605345590/adGroupCriteria/196849750257~1423803719682",
+        "status": "ENABLED",
+        "text": "commercial window film installers near me"
+      },
+      "160111593": {
+        "ad_group_id": "196849750297",
+        "cpc_bid_micros": 5000000,
+        "match_type": "PHRASE",
+        "resource": "customers/8605345590/adGroupCriteria/196849750297~160111593",
+        "status": "ENABLED",
+        "text": "office window film"
+      },
+      "1611576524094": {
+        "ad_group_id": "196849750257",
+        "cpc_bid_micros": 5000000,
+        "match_type": "PHRASE",
+        "resource": "customers/8605345590/adGroupCriteria/196849750257~1611576524094",
+        "status": "ENABLED",
+        "text": "commercial window film installers near me"
+      },
+      "1728418797521": {
+        "ad_group_id": "196849750497",
+        "cpc_bid_micros": 4000000,
+        "match_type": "EXACT",
+        "resource": "customers/8605345590/adGroupCriteria/196849750497~1728418797521",
+        "status": "ENABLED",
+        "text": "commercial security film installation"
+      },
+      "2079816503": {
+        "ad_group_id": "196849750257",
+        "cpc_bid_micros": 5000000,
+        "match_type": "EXACT",
+        "resource": "customers/8605345590/adGroupCriteria/196849750257~2079816503",
+        "status": "ENABLED",
+        "text": "office window tinting"
+      },
+      "2245934831968": {
+        "ad_group_id": "196849750497",
+        "cpc_bid_micros": 4000000,
+        "match_type": "PHRASE",
+        "resource": "customers/8605345590/adGroupCriteria/196849750497~2245934831968",
+        "status": "ENABLED",
+        "text": "commercial security film installation"
+      },
+      "246327397": {
+        "ad_group_id": "196849750257",
+        "cpc_bid_micros": 12000000,
+        "match_type": "PHRASE",
+        "resource": "customers/8605345590/adGroupCriteria/196849750257~246327397",
+        "status": "ENABLED",
+        "text": "commercial window tinting"
+      },
+      "26031524785": {
+        "ad_group_id": "196849750457",
+        "cpc_bid_micros": 5000000,
+        "match_type": "EXACT",
+        "resource": "customers/8605345590/adGroupCriteria/196849750457~26031524785",
+        "status": "ENABLED",
+        "text": "office glass frosting"
+      },
+      "2813993854": {
+        "ad_group_id": "196849750257",
+        "cpc_bid_micros": 5000000,
+        "match_type": "PHRASE",
+        "resource": "customers/8605345590/adGroupCriteria/196849750257~2813993854",
+        "status": "ENABLED",
+        "text": "commercial window film"
+      },
+      "2813994754": {
+        "ad_group_id": "196849750257",
+        "cpc_bid_micros": 5000000,
+        "match_type": "EXACT",
+        "resource": "customers/8605345590/adGroupCriteria/196849750257~2813994754",
+        "status": "ENABLED",
+        "text": "commercial window film"
+      },
+      "296302993843": {
+        "ad_group_id": "196849750497",
+        "cpc_bid_micros": 3000000,
+        "match_type": "PHRASE",
+        "resource": "customers/8605345590/adGroupCriteria/196849750497~296302993843",
+        "status": "ENABLED",
+        "text": "commercial safety window film"
+      },
+      "296302994043": {
+        "ad_group_id": "196849750497",
+        "cpc_bid_micros": 6000000,
+        "match_type": "PHRASE",
+        "resource": "customers/8605345590/adGroupCriteria/196849750497~296302994043",
+        "status": "ENABLED",
+        "text": "commercial security window film"
+      },
+      "299464755240": {
+        "ad_group_id": "196849750257",
+        "cpc_bid_micros": 4750000,
+        "match_type": "PHRASE",
+        "resource": "customers/8605345590/adGroupCriteria/196849750257~299464755240",
+        "status": "ENABLED",
+        "text": "commercial window film installation"
+      },
+      "301089352536": {
+        "ad_group_id": "196849750257",
+        "cpc_bid_micros": 5000000,
+        "match_type": "EXACT",
+        "resource": "customers/8605345590/adGroupCriteria/196849750257~301089352536",
+        "status": "ENABLED",
+        "text": "commercial window tinting near me"
+      },
+      "307807826615": {
+        "ad_group_id": "196849750257",
+        "cpc_bid_micros": 4750000,
+        "match_type": "EXACT",
+        "resource": "customers/8605345590/adGroupCriteria/196849750257~307807826615",
+        "status": "ENABLED",
+        "text": "commercial window film installation"
+      },
+      "307959152101": {
+        "ad_group_id": "196849750297",
+        "cpc_bid_micros": 2750000,
+        "match_type": "PHRASE",
+        "resource": "customers/8605345590/adGroupCriteria/196849750297~307959152101",
+        "status": "ENABLED",
+        "text": "commercial solar window film"
+      },
+      "307959152141": {
+        "ad_group_id": "196849750297",
+        "cpc_bid_micros": 2750000,
+        "match_type": "EXACT",
+        "resource": "customers/8605345590/adGroupCriteria/196849750297~307959152141",
+        "status": "ENABLED",
+        "text": "commercial solar window film"
+      },
+      "308138951497": {
+        "ad_group_id": "196849750297",
+        "cpc_bid_micros": 5000000,
+        "match_type": "PHRASE",
+        "resource": "customers/8605345590/adGroupCriteria/196849750297~308138951497",
+        "status": "ENABLED",
+        "text": "commercial uv window film"
+      },
+      "308138951657": {
+        "ad_group_id": "196849750297",
+        "cpc_bid_micros": 5000000,
+        "match_type": "EXACT",
+        "resource": "customers/8605345590/adGroupCriteria/196849750297~308138951657",
+        "status": "ENABLED",
+        "text": "commercial uv window film"
+      },
+      "308847254873": {
+        "ad_group_id": "196849750257",
+        "cpc_bid_micros": 5000000,
+        "match_type": "PHRASE",
+        "resource": "customers/8605345590/adGroupCriteria/196849750257~308847254873",
+        "status": "ENABLED",
+        "text": "storefront window tinting"
+      },
+      "308847255993": {
+        "ad_group_id": "196849750257",
+        "cpc_bid_micros": 5000000,
+        "match_type": "EXACT",
+        "resource": "customers/8605345590/adGroupCriteria/196849750257~308847255993",
+        "status": "ENABLED",
+        "text": "storefront window tinting"
+      },
+      "310494715": {
+        "ad_group_id": "196849750257",
+        "cpc_bid_micros": 15000000,
+        "match_type": "EXACT",
+        "resource": "customers/8605345590/adGroupCriteria/196849750257~310494715",
+        "status": "ENABLED",
+        "text": "commercial window tinting"
+      },
+      "313169031599": {
+        "ad_group_id": "196849750457",
+        "cpc_bid_micros": 3250000,
+        "match_type": "PHRASE",
+        "resource": "customers/8605345590/adGroupCriteria/196849750457~313169031599",
+        "status": "ENABLED",
+        "text": "commercial window privacy film"
+      },
+      "315093929023": {
+        "ad_group_id": "196849750257",
+        "cpc_bid_micros": 5000000,
+        "match_type": "PHRASE",
+        "resource": "customers/8605345590/adGroupCriteria/196849750257~315093929023",
+        "status": "ENABLED",
+        "text": "commercial window film near me"
+      },
+      "3189729318": {
+        "ad_group_id": "196849750257",
+        "cpc_bid_micros": 9250000,
+        "match_type": "PHRASE",
+        "resource": "customers/8605345590/adGroupCriteria/196849750257~3189729318",
+        "status": "ENABLED",
+        "text": "building window tinting"
+      },
+      "321744093271": {
+        "ad_group_id": "196849750457",
+        "cpc_bid_micros": 5000000,
+        "match_type": "PHRASE",
+        "resource": "customers/8605345590/adGroupCriteria/196849750457~321744093271",
+        "status": "ENABLED",
+        "text": "office glass frosting"
+      },
+      "323778031913": {
+        "ad_group_id": "196849750457",
+        "cpc_bid_micros": 1000000,
+        "match_type": "PHRASE",
+        "resource": "customers/8605345590/adGroupCriteria/196849750457~323778031913",
+        "status": "ENABLED",
+        "text": "commercial decorative window film"
+      },
+      "327197988706": {
+        "ad_group_id": "196849750457",
+        "cpc_bid_micros": 7000000,
+        "match_type": "EXACT",
+        "resource": "customers/8605345590/adGroupCriteria/196849750457~327197988706",
+        "status": "ENABLED",
+        "text": "office privacy window film"
+      },
+      "343124815801": {
+        "ad_group_id": "196849750497",
+        "cpc_bid_micros": 6000000,
+        "match_type": "EXACT",
+        "resource": "customers/8605345590/adGroupCriteria/196849750497~343124815801",
+        "status": "ENABLED",
+        "text": "commercial security window film"
+      },
+      "366885847127": {
+        "ad_group_id": "196849750257",
+        "cpc_bid_micros": 2750000,
+        "match_type": "EXACT",
+        "resource": "customers/8605345590/adGroupCriteria/196849750257~366885847127",
+        "status": "ENABLED",
+        "text": "architectural window film"
+      },
+      "378435513317": {
+        "ad_group_id": "196849750497",
+        "cpc_bid_micros": 3750000,
+        "match_type": "PHRASE",
+        "resource": "customers/8605345590/adGroupCriteria/196849750497~378435513317",
+        "status": "ENABLED",
+        "text": "commercial window security film"
+      },
+      "392626502157": {
+        "ad_group_id": "196849750457",
+        "cpc_bid_micros": 7000000,
+        "match_type": "PHRASE",
+        "resource": "customers/8605345590/adGroupCriteria/196849750457~392626502157",
+        "status": "ENABLED",
+        "text": "office privacy window film"
+      },
+      "408860172125": {
+        "ad_group_id": "196849750257",
+        "cpc_bid_micros": 5000000,
+        "match_type": "EXACT",
+        "resource": "customers/8605345590/adGroupCriteria/196849750257~408860172125",
+        "status": "ENABLED",
+        "text": "commercial window film near me"
+      },
+      "4282678991": {
+        "ad_group_id": "196849750457",
+        "cpc_bid_micros": 5000000,
+        "match_type": "EXACT",
+        "resource": "customers/8605345590/adGroupCriteria/196849750457~4282678991",
+        "status": "ENABLED",
+        "text": "office window frosting"
+      },
+      "4282811471": {
+        "ad_group_id": "196849750457",
+        "cpc_bid_micros": 5000000,
+        "match_type": "PHRASE",
+        "resource": "customers/8605345590/adGroupCriteria/196849750457~4282811471",
+        "status": "ENABLED",
+        "text": "office window frosting"
+      },
+      "498405620112": {
+        "ad_group_id": "196849750297",
+        "cpc_bid_micros": 5000000,
+        "match_type": "PHRASE",
+        "resource": "customers/8605345590/adGroupCriteria/196849750297~498405620112",
+        "status": "ENABLED",
+        "text": "office window film installation"
+      },
+      "498405620152": {
+        "ad_group_id": "196849750297",
+        "cpc_bid_micros": 5000000,
+        "match_type": "EXACT",
+        "resource": "customers/8605345590/adGroupCriteria/196849750297~498405620152",
+        "status": "ENABLED",
+        "text": "office window film installation"
+      },
+      "596966412905": {
+        "ad_group_id": "196849750457",
+        "cpc_bid_micros": 3250000,
+        "match_type": "EXACT",
+        "resource": "customers/8605345590/adGroupCriteria/196849750457~596966412905",
+        "status": "ENABLED",
+        "text": "commercial window privacy film"
+      },
+      "616984036": {
+        "ad_group_id": "196849750257",
+        "cpc_bid_micros": 5000000,
+        "match_type": "PHRASE",
+        "resource": "customers/8605345590/adGroupCriteria/196849750257~616984036",
+        "status": "ENABLED",
+        "text": "office window tinting"
+      },
+      "7601490371": {
+        "ad_group_id": "196849750257",
+        "cpc_bid_micros": 5000000,
+        "match_type": "EXACT",
+        "resource": "customers/8605345590/adGroupCriteria/196849750257~7601490371",
+        "status": "ENABLED",
+        "text": "building window tinting"
+      },
+      "840154184826": {
+        "ad_group_id": "196849750497",
+        "cpc_bid_micros": 3750000,
+        "match_type": "EXACT",
+        "resource": "customers/8605345590/adGroupCriteria/196849750497~840154184826",
+        "status": "ENABLED",
+        "text": "commercial window security film"
+      },
+      "923456671609": {
+        "ad_group_id": "196849750497",
+        "cpc_bid_micros": 5000000,
+        "match_type": "EXACT",
+        "resource": "customers/8605345590/adGroupCriteria/196849750497~923456671609",
+        "status": "ENABLED",
+        "text": "security window film installation near me"
+      }
+    },
+    "negative_keywords": [
+      [
+        "amazon",
+        "PHRASE"
+      ],
+      [
+        "auto",
+        "PHRASE"
+      ],
+      [
+        "blinds",
+        "PHRASE"
+      ],
+      [
+        "camera",
+        "PHRASE"
+      ],
+      [
+        "car",
+        "PHRASE"
+      ],
+      [
+        "career",
+        "PHRASE"
+      ],
+      [
+        "curtains",
+        "PHRASE"
+      ],
+      [
+        "definition",
+        "PHRASE"
+      ],
+      [
+        "diy",
+        "PHRASE"
+      ],
+      [
+        "for sale",
+        "PHRASE"
+      ],
+      [
+        "fresno",
+        "PHRASE"
+      ],
+      [
+        "glass repair",
+        "PHRASE"
+      ],
+      [
+        "home",
+        "PHRASE"
+      ],
+      [
+        "home depot",
+        "PHRASE"
+      ],
+      [
+        "house",
+        "PHRASE"
+      ],
+      [
+        "how to install",
+        "PHRASE"
+      ],
+      [
+        "job",
+        "PHRASE"
+      ],
+      [
+        "jobs",
+        "PHRASE"
+      ],
+      [
+        "kit",
+        "PHRASE"
+      ],
+      [
+        "movie",
+        "PHRASE"
+      ],
+      [
+        "phone screen",
+        "PHRASE"
+      ],
+      [
+        "residential",
+        "PHRASE"
+      ],
+      [
+        "reviews",
+        "PHRASE"
+      ],
+      [
+        "roll",
+        "PHRASE"
+      ],
+      [
+        "salary",
+        "PHRASE"
+      ],
+      [
+        "school",
+        "PHRASE"
+      ],
+      [
+        "supplier",
+        "PHRASE"
+      ],
+      [
+        "tesla",
+        "PHRASE"
+      ],
+      [
+        "training",
+        "PHRASE"
+      ],
+      [
+        "truck",
+        "PHRASE"
+      ],
+      [
+        "vehicle",
+        "PHRASE"
+      ],
+      [
+        "walmart",
+        "PHRASE"
+      ],
+      [
+        "wholesale",
+        "PHRASE"
+      ],
+      [
+        "window replacement",
+        "PHRASE"
+      ],
+      [
+        "windshield",
+        "PHRASE"
+      ]
+    ]
+  },
+  "before": {
+    "ad_groups": {
+      "196849750257": {
+        "cpc_bid_micros": 5250000,
+        "name": "Commercial Window Film",
+        "resource": "customers/8605345590/adGroups/196849750257",
+        "status": "ENABLED"
+      },
+      "196849750297": {
+        "cpc_bid_micros": 2250000,
+        "name": "Solar Heat Glare Film",
+        "resource": "customers/8605345590/adGroups/196849750297",
+        "status": "ENABLED"
+      },
+      "196849750457": {
+        "cpc_bid_micros": 5250000,
+        "name": "Privacy Decorative Film",
+        "resource": "customers/8605345590/adGroups/196849750457",
+        "status": "ENABLED"
+      },
+      "196849750497": {
+        "cpc_bid_micros": 2500000,
+        "name": "Safety Security Film",
+        "resource": "customers/8605345590/adGroups/196849750497",
+        "status": "ENABLED"
+      }
+    },
+    "ads": [
+      {
+        "ad_group_id": "196849750257",
+        "approval_status": "APPROVED",
+        "descriptions": [
+          "Commercial film for offices, storefronts and buildings.",
+          "Talk through your site and window-film options.",
+          "Review heat, glare and privacy needs for your glass.",
+          "Request a commercial window-film site review."
+        ],
+        "final_urls": [
+          "https://www.obsidianautoworksoc.com/commercial-window-film-socal"
+        ],
+        "headlines": [
+          "Commercial Window Film",
+          "Office & Storefront Film",
+          "Request a Site Review",
+          "Window Film For Buildings",
+          "Commercial Glass Film",
+          "Discuss Film Options",
+          "Office Window Film",
+          "Storefront Window Film",
+          "Plan Your Site Review",
+          "Commercial Film Install"
+        ],
+        "primary_status": "ELIGIBLE",
+        "resource": "customers/8605345590/adGroupAds/196849750257~820325919497",
+        "status": "ENABLED"
+      },
+      {
+        "ad_group_id": "196849750257",
+        "approval_status": "APPROVED",
+        "descriptions": [
+          "Commercial window film for offices, storefronts, and shared spaces.",
+          "Discuss the glass, access, and project goal before choosing a film direction.",
+          "Request a site review for solar, privacy, decorative, or safety needs.",
+          "Call or text property details, photos, and rough measurements to start."
+        ],
+        "final_urls": [
+          "https://www.obsidianautoworksoc.com/commercial-window-film-socal#site-review"
+        ],
+        "headlines": [
+          "Commercial Window Film",
+          "Office & Storefront Film",
+          "Window Film Site Review",
+          "Film For Commercial Glass",
+          "Plan Your Glass Project",
+          "Building Window Film",
+          "Office Window Film",
+          "Storefront Window Film",
+          "Discuss Film Options",
+          "Orange County Site Review"
+        ],
+        "primary_status": "PAUSED",
+        "resource": "customers/8605345590/adGroupAds/196849750257~821491112097",
+        "status": "PAUSED"
+      },
+      {
+        "ad_group_id": "196849750297",
+        "approval_status": "APPROVED",
+        "descriptions": [
+          "Explore solar-control film for commercial glass.",
+          "Discuss glare, heat and privacy needs for your space.",
+          "Review window-film options for your commercial site.",
+          "Request a site review for your building glass."
+        ],
+        "final_urls": [
+          "https://www.obsidianautoworksoc.com/commercial-window-film-socal"
+        ],
+        "headlines": [
+          "Solar Control Window Film",
+          "Cut Heat & Window Glare",
+          "Film For Offices",
+          "Request a Site Review",
+          "Commercial Solar Film",
+          "Manage Window Glare",
+          "Film For Storefronts",
+          "Building Window Film",
+          "Discuss Your Glass",
+          "Solar Film Options"
+        ],
+        "primary_status": "ELIGIBLE",
+        "resource": "customers/8605345590/adGroupAds/196849750297~820325919500",
+        "status": "ENABLED"
+      },
+      {
+        "ad_group_id": "196849750297",
+        "approval_status": "APPROVED",
+        "descriptions": [
+          "Review commercial film options for sun-exposed glass, heat, and glare.",
+          "Discuss the space, glazing, and access before choosing a solar-control direction.",
+          "Site-specific planning for office, storefront, and building glass.",
+          "Call or text photos and rough measurements for a commercial site review."
+        ],
+        "final_urls": [
+          "https://www.obsidianautoworksoc.com/commercial-window-film-socal#solar-glare"
+        ],
+        "headlines": [
+          "Solar Control Window Film",
+          "Commercial Heat & Glare Film",
+          "Office Solar Film Options",
+          "Manage Window Glare",
+          "Film For Sun-Facing Glass",
+          "Commercial Glass Site Review",
+          "Discuss Solar Control",
+          "Office Window Film",
+          "Building Window Film",
+          "Plan Your Site Review"
+        ],
+        "primary_status": "PAUSED",
+        "resource": "customers/8605345590/adGroupAds/196849750297~821491112100",
+        "status": "PAUSED"
+      },
+      {
+        "ad_group_id": "196849750457",
+        "approval_status": "APPROVED",
+        "descriptions": [
+          "Privacy and decorative film options for office glass.",
+          "Review coverage, finish and installation needs.",
+          "Discuss film options for conference rooms and offices.",
+          "Request a site review for commercial glass."
+        ],
+        "final_urls": [
+          "https://www.obsidianautoworksoc.com/commercial-window-film-socal"
+        ],
+        "headlines": [
+          "Office Privacy Window Film",
+          "Decorative Glass Film",
+          "Frosted Office Film",
+          "Request a Site Review",
+          "Commercial Privacy Film",
+          "Office Glass Film",
+          "Privacy Film Options",
+          "Decorative Window Film",
+          "Discuss Your Finish",
+          "Film For Office Glass"
+        ],
+        "primary_status": "ELIGIBLE",
+        "resource": "customers/8605345590/adGroupAds/196849750457~820325919503",
+        "status": "ENABLED"
+      },
+      {
+        "ad_group_id": "196849750457",
+        "approval_status": "APPROVED",
+        "descriptions": [
+          "Privacy and decorative film options for offices, partitions, and storefront glass.",
+          "Review sightlines, light, finish, and access before selecting a film direction.",
+          "Discuss conference-room, entry, and customer-facing glass with Obsidian.",
+          "Request a site review with property details, photos, and rough measurements."
+        ],
+        "final_urls": [
+          "https://www.obsidianautoworksoc.com/commercial-window-film-socal#privacy-decorative"
+        ],
+        "headlines": [
+          "Office Privacy Window Film",
+          "Commercial Privacy Film",
+          "Frosted Office Glass Film",
+          "Decorative Glass Film",
+          "Privacy For Conference Rooms",
+          "Shape Glass Sightlines",
+          "Privacy Film Site Review",
+          "Office Glass Film Options",
+          "Plan Your Privacy Finish",
+          "Discuss Decorative Film"
+        ],
+        "primary_status": "PAUSED",
+        "resource": "customers/8605345590/adGroupAds/196849750457~821491112103",
+        "status": "PAUSED"
+      },
+      {
+        "ad_group_id": "196849750497",
+        "approval_status": "APPROVED",
+        "descriptions": [
+          "Discuss safety and security window-film options.",
+          "Plan coverage for commercial windows and glass.",
+          "Review commercial film options for your glass.",
+          "Request a site review for your building."
+        ],
+        "final_urls": [
+          "https://www.obsidianautoworksoc.com/commercial-window-film-socal"
+        ],
+        "headlines": [
+          "Commercial Security Film",
+          "Safety Window Film",
+          "Security Film Installation",
+          "Request a Site Review",
+          "Commercial Safety Film",
+          "Security Window Film",
+          "Film For Building Glass",
+          "Discuss Your Coverage",
+          "Commercial Glass Film",
+          "Safety Film Options"
+        ],
+        "primary_status": "ELIGIBLE",
+        "resource": "customers/8605345590/adGroupAds/196849750497~820325919506",
+        "status": "ENABLED"
+      },
+      {
+        "ad_group_id": "196849750497",
+        "approval_status": "APPROVED",
+        "descriptions": [
+          "Discuss safety and security film options for commercial building glass.",
+          "Review glass, attachment approach, access, and project intent before selection.",
+          "Plan coverage for offices, storefronts, and shared commercial spaces.",
+          "Call or text property details, photos, and rough measurements to begin."
+        ],
+        "final_urls": [
+          "https://www.obsidianautoworksoc.com/commercial-window-film-socal#safety-security"
+        ],
+        "headlines": [
+          "Commercial Security Film",
+          "Safety Window Film Options",
+          "Security Film Site Review",
+          "Film For Building Glass",
+          "Commercial Glass Protection",
+          "Discuss Glass Retention",
+          "Safety Film Installation",
+          "Plan Your Coverage",
+          "Security Window Film",
+          "Site-Specific Film Review"
+        ],
+        "primary_status": "PAUSED",
+        "resource": "customers/8605345590/adGroupAds/196849750497~821491112106",
+        "status": "PAUSED"
+      }
+    ],
+    "campaign": {
+      "budget_micros": 40000000,
+      "id": "24117892229",
+      "name": "Search | OC | Commercial Window Film | Obsidian Build",
+      "primary_status": "ELIGIBLE",
+      "serving_status": "SERVING",
+      "status": "ENABLED"
+    },
+    "keywords": {
+      "1230569500275": {
+        "ad_group_id": "196849750497",
+        "cpc_bid_micros": 5000000,
+        "match_type": "PHRASE",
+        "resource": "customers/8605345590/adGroupCriteria/196849750497~1230569500275",
+        "status": "ENABLED",
+        "text": "security window film installation near me"
+      },
+      "1423803719682": {
+        "ad_group_id": "196849750257",
+        "cpc_bid_micros": 5000000,
+        "match_type": "EXACT",
+        "resource": "customers/8605345590/adGroupCriteria/196849750257~1423803719682",
+        "status": "ENABLED",
+        "text": "commercial window film installers near me"
+      },
+      "160111593": {
+        "ad_group_id": "196849750297",
+        "cpc_bid_micros": 5000000,
+        "match_type": "PHRASE",
+        "resource": "customers/8605345590/adGroupCriteria/196849750297~160111593",
+        "status": "ENABLED",
+        "text": "office window film"
+      },
+      "1611576524094": {
+        "ad_group_id": "196849750257",
+        "cpc_bid_micros": 5000000,
+        "match_type": "PHRASE",
+        "resource": "customers/8605345590/adGroupCriteria/196849750257~1611576524094",
+        "status": "ENABLED",
+        "text": "commercial window film installers near me"
+      },
+      "1728418797521": {
+        "ad_group_id": "196849750497",
+        "cpc_bid_micros": 4000000,
+        "match_type": "EXACT",
+        "resource": "customers/8605345590/adGroupCriteria/196849750497~1728418797521",
+        "status": "ENABLED",
+        "text": "commercial security film installation"
+      },
+      "2079816503": {
+        "ad_group_id": "196849750257",
+        "cpc_bid_micros": 5000000,
+        "match_type": "EXACT",
+        "resource": "customers/8605345590/adGroupCriteria/196849750257~2079816503",
+        "status": "ENABLED",
+        "text": "office window tinting"
+      },
+      "2245934831968": {
+        "ad_group_id": "196849750497",
+        "cpc_bid_micros": 4000000,
+        "match_type": "PHRASE",
+        "resource": "customers/8605345590/adGroupCriteria/196849750497~2245934831968",
+        "status": "ENABLED",
+        "text": "commercial security film installation"
+      },
+      "246327397": {
+        "ad_group_id": "196849750257",
+        "cpc_bid_micros": 12000000,
+        "match_type": "PHRASE",
+        "resource": "customers/8605345590/adGroupCriteria/196849750257~246327397",
+        "status": "ENABLED",
+        "text": "commercial window tinting"
+      },
+      "26031524785": {
+        "ad_group_id": "196849750457",
+        "cpc_bid_micros": 5000000,
+        "match_type": "EXACT",
+        "resource": "customers/8605345590/adGroupCriteria/196849750457~26031524785",
+        "status": "ENABLED",
+        "text": "office glass frosting"
+      },
+      "2813993854": {
+        "ad_group_id": "196849750257",
+        "cpc_bid_micros": 5000000,
+        "match_type": "PHRASE",
+        "resource": "customers/8605345590/adGroupCriteria/196849750257~2813993854",
+        "status": "ENABLED",
+        "text": "commercial window film"
+      },
+      "2813994754": {
+        "ad_group_id": "196849750257",
+        "cpc_bid_micros": 5000000,
+        "match_type": "EXACT",
+        "resource": "customers/8605345590/adGroupCriteria/196849750257~2813994754",
+        "status": "ENABLED",
+        "text": "commercial window film"
+      },
+      "296302993843": {
+        "ad_group_id": "196849750497",
+        "cpc_bid_micros": 3000000,
+        "match_type": "PHRASE",
+        "resource": "customers/8605345590/adGroupCriteria/196849750497~296302993843",
+        "status": "ENABLED",
+        "text": "commercial safety window film"
+      },
+      "296302994043": {
+        "ad_group_id": "196849750497",
+        "cpc_bid_micros": 6000000,
+        "match_type": "PHRASE",
+        "resource": "customers/8605345590/adGroupCriteria/196849750497~296302994043",
+        "status": "ENABLED",
+        "text": "commercial security window film"
+      },
+      "299464755240": {
+        "ad_group_id": "196849750257",
+        "cpc_bid_micros": 4750000,
+        "match_type": "PHRASE",
+        "resource": "customers/8605345590/adGroupCriteria/196849750257~299464755240",
+        "status": "ENABLED",
+        "text": "commercial window film installation"
+      },
+      "301089352536": {
+        "ad_group_id": "196849750257",
+        "cpc_bid_micros": 5000000,
+        "match_type": "EXACT",
+        "resource": "customers/8605345590/adGroupCriteria/196849750257~301089352536",
+        "status": "ENABLED",
+        "text": "commercial window tinting near me"
+      },
+      "307807826615": {
+        "ad_group_id": "196849750257",
+        "cpc_bid_micros": 4750000,
+        "match_type": "EXACT",
+        "resource": "customers/8605345590/adGroupCriteria/196849750257~307807826615",
+        "status": "ENABLED",
+        "text": "commercial window film installation"
+      },
+      "307959152101": {
+        "ad_group_id": "196849750297",
+        "cpc_bid_micros": 2750000,
+        "match_type": "PHRASE",
+        "resource": "customers/8605345590/adGroupCriteria/196849750297~307959152101",
+        "status": "ENABLED",
+        "text": "commercial solar window film"
+      },
+      "307959152141": {
+        "ad_group_id": "196849750297",
+        "cpc_bid_micros": 2750000,
+        "match_type": "EXACT",
+        "resource": "customers/8605345590/adGroupCriteria/196849750297~307959152141",
+        "status": "ENABLED",
+        "text": "commercial solar window film"
+      },
+      "308138951497": {
+        "ad_group_id": "196849750297",
+        "cpc_bid_micros": 5000000,
+        "match_type": "PHRASE",
+        "resource": "customers/8605345590/adGroupCriteria/196849750297~308138951497",
+        "status": "ENABLED",
+        "text": "commercial uv window film"
+      },
+      "308138951657": {
+        "ad_group_id": "196849750297",
+        "cpc_bid_micros": 5000000,
+        "match_type": "EXACT",
+        "resource": "customers/8605345590/adGroupCriteria/196849750297~308138951657",
+        "status": "ENABLED",
+        "text": "commercial uv window film"
+      },
+      "308847254873": {
+        "ad_group_id": "196849750257",
+        "cpc_bid_micros": 5000000,
+        "match_type": "PHRASE",
+        "resource": "customers/8605345590/adGroupCriteria/196849750257~308847254873",
+        "status": "ENABLED",
+        "text": "storefront window tinting"
+      },
+      "308847255993": {
+        "ad_group_id": "196849750257",
+        "cpc_bid_micros": 5000000,
+        "match_type": "EXACT",
+        "resource": "customers/8605345590/adGroupCriteria/196849750257~308847255993",
+        "status": "ENABLED",
+        "text": "storefront window tinting"
+      },
+      "310494715": {
+        "ad_group_id": "196849750257",
+        "cpc_bid_micros": 15000000,
+        "match_type": "EXACT",
+        "resource": "customers/8605345590/adGroupCriteria/196849750257~310494715",
+        "status": "ENABLED",
+        "text": "commercial window tinting"
+      },
+      "313169031599": {
+        "ad_group_id": "196849750457",
+        "cpc_bid_micros": 3250000,
+        "match_type": "PHRASE",
+        "resource": "customers/8605345590/adGroupCriteria/196849750457~313169031599",
+        "status": "ENABLED",
+        "text": "commercial window privacy film"
+      },
+      "315093929023": {
+        "ad_group_id": "196849750257",
+        "cpc_bid_micros": 5000000,
+        "match_type": "PHRASE",
+        "resource": "customers/8605345590/adGroupCriteria/196849750257~315093929023",
+        "status": "ENABLED",
+        "text": "commercial window film near me"
+      },
+      "3189729318": {
+        "ad_group_id": "196849750257",
+        "cpc_bid_micros": 9250000,
+        "match_type": "PHRASE",
+        "resource": "customers/8605345590/adGroupCriteria/196849750257~3189729318",
+        "status": "ENABLED",
+        "text": "building window tinting"
+      },
+      "321744093271": {
+        "ad_group_id": "196849750457",
+        "cpc_bid_micros": 5000000,
+        "match_type": "PHRASE",
+        "resource": "customers/8605345590/adGroupCriteria/196849750457~321744093271",
+        "status": "ENABLED",
+        "text": "office glass frosting"
+      },
+      "323778031913": {
+        "ad_group_id": "196849750457",
+        "cpc_bid_micros": 1000000,
+        "match_type": "PHRASE",
+        "resource": "customers/8605345590/adGroupCriteria/196849750457~323778031913",
+        "status": "ENABLED",
+        "text": "commercial decorative window film"
+      },
+      "327197988706": {
+        "ad_group_id": "196849750457",
+        "cpc_bid_micros": 7000000,
+        "match_type": "EXACT",
+        "resource": "customers/8605345590/adGroupCriteria/196849750457~327197988706",
+        "status": "ENABLED",
+        "text": "office privacy window film"
+      },
+      "343124815801": {
+        "ad_group_id": "196849750497",
+        "cpc_bid_micros": 6000000,
+        "match_type": "EXACT",
+        "resource": "customers/8605345590/adGroupCriteria/196849750497~343124815801",
+        "status": "ENABLED",
+        "text": "commercial security window film"
+      },
+      "366885847127": {
+        "ad_group_id": "196849750257",
+        "cpc_bid_micros": 2750000,
+        "match_type": "EXACT",
+        "resource": "customers/8605345590/adGroupCriteria/196849750257~366885847127",
+        "status": "ENABLED",
+        "text": "architectural window film"
+      },
+      "378435513317": {
+        "ad_group_id": "196849750497",
+        "cpc_bid_micros": 3750000,
+        "match_type": "PHRASE",
+        "resource": "customers/8605345590/adGroupCriteria/196849750497~378435513317",
+        "status": "ENABLED",
+        "text": "commercial window security film"
+      },
+      "392626502157": {
+        "ad_group_id": "196849750457",
+        "cpc_bid_micros": 7000000,
+        "match_type": "PHRASE",
+        "resource": "customers/8605345590/adGroupCriteria/196849750457~392626502157",
+        "status": "ENABLED",
+        "text": "office privacy window film"
+      },
+      "408860172125": {
+        "ad_group_id": "196849750257",
+        "cpc_bid_micros": 5000000,
+        "match_type": "EXACT",
+        "resource": "customers/8605345590/adGroupCriteria/196849750257~408860172125",
+        "status": "ENABLED",
+        "text": "commercial window film near me"
+      },
+      "4282678991": {
+        "ad_group_id": "196849750457",
+        "cpc_bid_micros": 5000000,
+        "match_type": "EXACT",
+        "resource": "customers/8605345590/adGroupCriteria/196849750457~4282678991",
+        "status": "ENABLED",
+        "text": "office window frosting"
+      },
+      "4282811471": {
+        "ad_group_id": "196849750457",
+        "cpc_bid_micros": 5000000,
+        "match_type": "PHRASE",
+        "resource": "customers/8605345590/adGroupCriteria/196849750457~4282811471",
+        "status": "ENABLED",
+        "text": "office window frosting"
+      },
+      "498405620112": {
+        "ad_group_id": "196849750297",
+        "cpc_bid_micros": 5000000,
+        "match_type": "PHRASE",
+        "resource": "customers/8605345590/adGroupCriteria/196849750297~498405620112",
+        "status": "ENABLED",
+        "text": "office window film installation"
+      },
+      "498405620152": {
+        "ad_group_id": "196849750297",
+        "cpc_bid_micros": 5000000,
+        "match_type": "EXACT",
+        "resource": "customers/8605345590/adGroupCriteria/196849750297~498405620152",
+        "status": "ENABLED",
+        "text": "office window film installation"
+      },
+      "596966412905": {
+        "ad_group_id": "196849750457",
+        "cpc_bid_micros": 3250000,
+        "match_type": "EXACT",
+        "resource": "customers/8605345590/adGroupCriteria/196849750457~596966412905",
+        "status": "ENABLED",
+        "text": "commercial window privacy film"
+      },
+      "616984036": {
+        "ad_group_id": "196849750257",
+        "cpc_bid_micros": 5000000,
+        "match_type": "PHRASE",
+        "resource": "customers/8605345590/adGroupCriteria/196849750257~616984036",
+        "status": "ENABLED",
+        "text": "office window tinting"
+      },
+      "7601490371": {
+        "ad_group_id": "196849750257",
+        "cpc_bid_micros": 5000000,
+        "match_type": "EXACT",
+        "resource": "customers/8605345590/adGroupCriteria/196849750257~7601490371",
+        "status": "ENABLED",
+        "text": "building window tinting"
+      },
+      "840154184826": {
+        "ad_group_id": "196849750497",
+        "cpc_bid_micros": 3750000,
+        "match_type": "EXACT",
+        "resource": "customers/8605345590/adGroupCriteria/196849750497~840154184826",
+        "status": "ENABLED",
+        "text": "commercial window security film"
+      },
+      "923456671609": {
+        "ad_group_id": "196849750497",
+        "cpc_bid_micros": 5000000,
+        "match_type": "EXACT",
+        "resource": "customers/8605345590/adGroupCriteria/196849750497~923456671609",
+        "status": "ENABLED",
+        "text": "security window film installation near me"
+      }
+    },
+    "negative_keywords": [
+      [
+        "amazon",
+        "PHRASE"
+      ],
+      [
+        "auto",
+        "PHRASE"
+      ],
+      [
+        "blinds",
+        "PHRASE"
+      ],
+      [
+        "camera",
+        "PHRASE"
+      ],
+      [
+        "car",
+        "PHRASE"
+      ],
+      [
+        "career",
+        "PHRASE"
+      ],
+      [
+        "curtains",
+        "PHRASE"
+      ],
+      [
+        "definition",
+        "PHRASE"
+      ],
+      [
+        "diy",
+        "PHRASE"
+      ],
+      [
+        "for sale",
+        "PHRASE"
+      ],
+      [
+        "fresno",
+        "PHRASE"
+      ],
+      [
+        "glass repair",
+        "PHRASE"
+      ],
+      [
+        "home",
+        "PHRASE"
+      ],
+      [
+        "home depot",
+        "PHRASE"
+      ],
+      [
+        "house",
+        "PHRASE"
+      ],
+      [
+        "how to install",
+        "PHRASE"
+      ],
+      [
+        "job",
+        "PHRASE"
+      ],
+      [
+        "jobs",
+        "PHRASE"
+      ],
+      [
+        "kit",
+        "PHRASE"
+      ],
+      [
+        "movie",
+        "PHRASE"
+      ],
+      [
+        "phone screen",
+        "PHRASE"
+      ],
+      [
+        "residential",
+        "PHRASE"
+      ],
+      [
+        "reviews",
+        "PHRASE"
+      ],
+      [
+        "roll",
+        "PHRASE"
+      ],
+      [
+        "salary",
+        "PHRASE"
+      ],
+      [
+        "school",
+        "PHRASE"
+      ],
+      [
+        "supplier",
+        "PHRASE"
+      ],
+      [
+        "tesla",
+        "PHRASE"
+      ],
+      [
+        "training",
+        "PHRASE"
+      ],
+      [
+        "truck",
+        "PHRASE"
+      ],
+      [
+        "vehicle",
+        "PHRASE"
+      ],
+      [
+        "walmart",
+        "PHRASE"
+      ],
+      [
+        "wholesale",
+        "PHRASE"
+      ],
+      [
+        "window replacement",
+        "PHRASE"
+      ],
+      [
+        "windshield",
+        "PHRASE"
+      ]
+    ]
+  },
+  "campaign_id": "24117892229",
+  "created_at": "2026-08-21T16:37:39.918406+00:00",
+  "customer_id": "8605345590",
+  "landing_status": 200,
+  "mode": "apply",
+  "operation_count": 4,
+  "operations": [
+    {
+      "adGroupAdOperation": {
+        "create": {
+          "ad": {
+            "finalUrls": [
+              "https://www.obsidianautoworksoc.com/commercial-window-tinting-orange-county"
+            ],
+            "responsiveSearchAd": {
+              "descriptions": [
+                {
+                  "text": "Commercial window film for offices, storefronts, and shared spaces."
+                },
+                {
+                  "text": "Discuss the glass, access, and project goal before choosing a film direction."
+                },
+                {
+                  "text": "Request a site review for solar, privacy, decorative, or safety needs."
+                },
+                {
+                  "text": "Call or text property details, photos, and rough measurements to start."
+                }
+              ],
+              "headlines": [
+                {
+                  "text": "Commercial Window Film"
+                },
+                {
+                  "text": "Office & Storefront Film"
+                },
+                {
+                  "text": "Window Film Site Review"
+                },
+                {
+                  "text": "Film For Commercial Glass"
+                },
+                {
+                  "text": "Plan Your Glass Project"
+                },
+                {
+                  "text": "Building Window Film"
+                },
+                {
+                  "text": "Office Window Film"
+                },
+                {
+                  "text": "Storefront Window Film"
+                },
+                {
+                  "text": "Discuss Film Options"
+                },
+                {
+                  "text": "Orange County Site Review"
+                }
+              ]
+            }
+          },
+          "adGroup": "customers/8605345590/adGroups/196849750257",
+          "status": "ENABLED"
+        }
+      }
+    },
+    {
+      "adGroupAdOperation": {
+        "create": {
+          "ad": {
+            "finalUrls": [
+              "https://www.obsidianautoworksoc.com/commercial-heat-glare-window-film"
+            ],
+            "responsiveSearchAd": {
+              "descriptions": [
+                {
+                  "text": "Review commercial film options for sun-exposed glass, heat, and glare."
+                },
+                {
+                  "text": "Discuss the space, glazing, and access before choosing a solar-control direction."
+                },
+                {
+                  "text": "Site-specific planning for office, storefront, and building glass."
+                },
+                {
+                  "text": "Call or text photos and rough measurements for a commercial site review."
+                }
+              ],
+              "headlines": [
+                {
+                  "text": "Solar Control Window Film"
+                },
+                {
+                  "text": "Commercial Heat & Glare Film"
+                },
+                {
+                  "text": "Office Solar Film Options"
+                },
+                {
+                  "text": "Manage Window Glare"
+                },
+                {
+                  "text": "Film For Sun-Facing Glass"
+                },
+                {
+                  "text": "Commercial Glass Site Review"
+                },
+                {
+                  "text": "Discuss Solar Control"
+                },
+                {
+                  "text": "Office Window Film"
+                },
+                {
+                  "text": "Building Window Film"
+                },
+                {
+                  "text": "Plan Your Site Review"
+                }
+              ]
+            }
+          },
+          "adGroup": "customers/8605345590/adGroups/196849750297",
+          "status": "ENABLED"
+        }
+      }
+    },
+    {
+      "adGroupAdOperation": {
+        "create": {
+          "ad": {
+            "finalUrls": [
+              "https://www.obsidianautoworksoc.com/office-privacy-window-film"
+            ],
+            "responsiveSearchAd": {
+              "descriptions": [
+                {
+                  "text": "Privacy and decorative film options for offices, partitions, and storefront glass."
+                },
+                {
+                  "text": "Review sightlines, light, finish, and access before selecting a film direction."
+                },
+                {
+                  "text": "Discuss conference-room, entry, and customer-facing glass with Obsidian."
+                },
+                {
+                  "text": "Request a site review with property details, photos, and rough measurements."
+                }
+              ],
+              "headlines": [
+                {
+                  "text": "Office Privacy Window Film"
+                },
+                {
+                  "text": "Commercial Privacy Film"
+                },
+                {
+                  "text": "Frosted Office Glass Film"
+                },
+                {
+                  "text": "Decorative Glass Film"
+                },
+                {
+                  "text": "Privacy For Conference Rooms"
+                },
+                {
+                  "text": "Shape Glass Sightlines"
+                },
+                {
+                  "text": "Privacy Film Site Review"
+                },
+                {
+                  "text": "Office Glass Film Options"
+                },
+                {
+                  "text": "Plan Your Privacy Finish"
+                },
+                {
+                  "text": "Discuss Decorative Film"
+                }
+              ]
+            }
+          },
+          "adGroup": "customers/8605345590/adGroups/196849750457",
+          "status": "ENABLED"
+        }
+      }
+    },
+    {
+      "adGroupAdOperation": {
+        "create": {
+          "ad": {
+            "finalUrls": [
+              "https://www.obsidianautoworksoc.com/storefront-security-window-film"
+            ],
+            "responsiveSearchAd": {
+              "descriptions": [
+                {
+                  "text": "Discuss safety and security film options for commercial building glass."
+                },
+                {
+                  "text": "Review glass, attachment approach, access, and project intent before selection."
+                },
+                {
+                  "text": "Plan coverage for offices, storefronts, and shared commercial spaces."
+                },
+                {
+                  "text": "Call or text property details, photos, and rough measurements to begin."
+                }
+              ],
+              "headlines": [
+                {
+                  "text": "Commercial Security Film"
+                },
+                {
+                  "text": "Safety Window Film Options"
+                },
+                {
+                  "text": "Security Film Site Review"
+                },
+                {
+                  "text": "Film For Building Glass"
+                },
+                {
+                  "text": "Commercial Glass Protection"
+                },
+                {
+                  "text": "Discuss Glass Retention"
+                },
+                {
+                  "text": "Safety Film Installation"
+                },
+                {
+                  "text": "Plan Your Coverage"
+                },
+                {
+                  "text": "Security Window Film"
+                },
+                {
+                  "text": "Site-Specific Film Review"
+                }
+              ]
+            }
+          },
+          "adGroup": "customers/8605345590/adGroups/196849750497",
+          "status": "ENABLED"
+        }
+      }
+    }
+  ],
+  "request_id_sha256": [
+    "09795bdcf48e27f998b5aad288e567c125fe594b53d5b134ac03bc0d4f4f5f64",
+    "232b0345e76dcdefa024ae3a25fef048c14f1aa16d9f4239a5d6e3ccf0d1503c"
+  ],
+  "result": {
+    "apply": {
+      "http_status": 200,
+      "results": [
+        {
+          "resourceName": "customers/8605345590/adGroupAds/196849750257~821677027656"
+        },
+        {
+          "resourceName": "customers/8605345590/adGroupAds/196849750297~821677027659"
+        },
+        {
+          "resourceName": "customers/8605345590/adGroupAds/196849750457~821677027662"
+        },
+        {
+          "resourceName": "customers/8605345590/adGroupAds/196849750497~821677027665"
+        }
+      ],
+      "validate_only": false
+    },
+    "validation": {
+      "http_status": 200,
+      "results": [],
+      "validate_only": true
+    }
+  },
+  "schema_version": 1
+}

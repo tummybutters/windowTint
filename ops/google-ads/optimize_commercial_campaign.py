@@ -39,7 +39,7 @@ CAMPAIGN_ID = "24117892229"
 CAMPAIGN_NAME = "Search | OC | Commercial Window Film | Obsidian Build"
 CAMPAIGN_RESOURCE = f"customers/{CUSTOMER_ID}/campaigns/{CAMPAIGN_ID}"
 DAILY_BUDGET_MICROS = 40_000_000
-FINAL_ROOT = "https://www.obsidianautoworksoc.com/commercial-window-film-socal"
+FINAL_ROOT = "https://www.obsidianautoworksoc.com"
 CONFIRMATION_TOKEN = "APPLY_COMMERCIAL_OPTIMIZATION_20260820"
 
 TARGET_BIDS = {
@@ -67,11 +67,11 @@ AD_GROUPS = {
 }
 
 
-def _rsa(group_id: str, anchor: str, headlines: list[str], descriptions: list[str]) -> dict[str, Any]:
+def _rsa(group_id: str, path: str, headlines: list[str], descriptions: list[str]) -> dict[str, Any]:
     return {
         "ad_group": f"customers/{CUSTOMER_ID}/adGroups/{group_id}",
-        "status": "PAUSED",
-        "final_urls": [f"{FINAL_ROOT}{anchor}"],
+        "status": "ENABLED",
+        "final_urls": [f"{FINAL_ROOT}{path}"],
         "headlines": headlines,
         "descriptions": descriptions,
     }
@@ -79,22 +79,22 @@ def _rsa(group_id: str, anchor: str, headlines: list[str], descriptions: list[st
 
 RSA_VARIANTS = {
     "196849750257": _rsa(
-        "196849750257", "#site-review",
+        "196849750257", "/commercial-window-tinting-orange-county",
         ["Commercial Window Film", "Office & Storefront Film", "Window Film Site Review", "Film For Commercial Glass", "Plan Your Glass Project", "Building Window Film", "Office Window Film", "Storefront Window Film", "Discuss Film Options", "Orange County Site Review"],
         ["Commercial window film for offices, storefronts, and shared spaces.", "Discuss the glass, access, and project goal before choosing a film direction.", "Request a site review for solar, privacy, decorative, or safety needs.", "Call or text property details, photos, and rough measurements to start."],
     ),
     "196849750297": _rsa(
-        "196849750297", "#solar-glare",
+        "196849750297", "/commercial-heat-glare-window-film",
         ["Solar Control Window Film", "Commercial Heat & Glare Film", "Office Solar Film Options", "Manage Window Glare", "Film For Sun-Facing Glass", "Commercial Glass Site Review", "Discuss Solar Control", "Office Window Film", "Building Window Film", "Plan Your Site Review"],
         ["Review commercial film options for sun-exposed glass, heat, and glare.", "Discuss the space, glazing, and access before choosing a solar-control direction.", "Site-specific planning for office, storefront, and building glass.", "Call or text photos and rough measurements for a commercial site review."],
     ),
     "196849750457": _rsa(
-        "196849750457", "#privacy-decorative",
+        "196849750457", "/office-privacy-window-film",
         ["Office Privacy Window Film", "Commercial Privacy Film", "Frosted Office Glass Film", "Decorative Glass Film", "Privacy For Conference Rooms", "Shape Glass Sightlines", "Privacy Film Site Review", "Office Glass Film Options", "Plan Your Privacy Finish", "Discuss Decorative Film"],
         ["Privacy and decorative film options for offices, partitions, and storefront glass.", "Review sightlines, light, finish, and access before selecting a film direction.", "Discuss conference-room, entry, and customer-facing glass with Obsidian.", "Request a site review with property details, photos, and rough measurements."],
     ),
     "196849750497": _rsa(
-        "196849750497", "#safety-security",
+        "196849750497", "/storefront-security-window-film",
         ["Commercial Security Film", "Safety Window Film Options", "Security Film Site Review", "Film For Building Glass", "Commercial Glass Protection", "Discuss Glass Retention", "Safety Film Installation", "Plan Your Coverage", "Security Window Film", "Site-Specific Film Review"],
         ["Discuss safety and security film options for commercial building glass.", "Review glass, attachment approach, access, and project intent before selection.", "Plan coverage for offices, storefronts, and shared commercial spaces.", "Call or text property details, photos, and rough measurements to begin."],
     ),
@@ -241,7 +241,7 @@ def normalize_snapshot(raw: dict[str, list[dict[str, Any]]]) -> dict[str, Any]:
 def _same_rsa(ad: dict[str, Any], expected: dict[str, Any]) -> bool:
     return (
         ad["ad_group_id"] == expected["ad_group"].rsplit("/", 1)[-1]
-        and ad.get("status") == "PAUSED"
+        and ad.get("status") == expected["status"]
         and ad["final_urls"] == tuple(expected["final_urls"])
         and set(ad["headlines"]) == set(expected["headlines"])
         and set(ad["descriptions"]) == set(expected["descriptions"])
@@ -270,7 +270,7 @@ def build_operations(snapshot: dict[str, Any]) -> list[dict[str, Any]]:
             continue
         operations.append({"adGroupAdOperation": {"create": {
             "adGroup": expected["ad_group"],
-            "status": "PAUSED",
+            "status": expected["status"],
             "ad": {
                 "finalUrls": expected["final_urls"],
                 "responsiveSearchAd": {
@@ -287,22 +287,17 @@ def verify_copy_contract() -> None:
         _expect(len(ad["headlines"]) >= 3 and len(ad["descriptions"]) >= 2, f"RSA asset count invalid: {group_id}")
         _expect(all(len(text) <= 30 for text in ad["headlines"]), f"RSA headline too long: {group_id}")
         _expect(all(len(text) <= 90 for text in ad["descriptions"]), f"RSA description too long: {group_id}")
-        _expect(ad["final_urls"][0].startswith(FINAL_ROOT + "#"), f"RSA destination drift: {group_id}")
+        _expect(ad["final_urls"][0].startswith(FINAL_ROOT + "/"), f"RSA destination drift: {group_id}")
 
 
 def validate_landing_page(session=requests) -> int:
-    response = session.get(FINAL_ROOT, timeout=30)
-    _expect(response.status_code == 200, f"commercial landing page is not live ({response.status_code})")
-    for marker in (
-        "Commercial Window Film Installation",
-        "commercial-paid-hero__content--centered",
-        "commercial-installation-visualization.webp",
-        'id="solar-glare"',
-        'id="safety-security"',
-        'id="site-review"',
-    ):
-        _expect(marker in response.text, f"commercial landing page contract missing: {marker}")
-    return response.status_code
+    for ad in RSA_VARIANTS.values():
+        url = ad["final_urls"][0]
+        response = session.get(url, timeout=30)
+        _expect(response.status_code == 200, f"commercial landing page is not live: {url} ({response.status_code})")
+        for marker in ("commercial-paid-hero__content--centered", "commercial-installation-visualization.webp"):
+            _expect(marker in response.text, f"commercial landing page contract missing: {url} / {marker}")
+    return 200
 
 
 def execute_operations(client, mode: str, operations: list[dict[str, Any]]) -> dict[str, Any] | None:

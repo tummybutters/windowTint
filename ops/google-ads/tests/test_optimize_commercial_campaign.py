@@ -49,14 +49,26 @@ class CommercialOptimizationTest(unittest.TestCase):
         self.assertTrue(result["validation"]["validate_only"])
         self.assertFalse(result["apply"]["validate_only"])
 
-    def test_exact_batch_is_two_bids_one_negative_four_paused_rsas(self):
+    def test_exact_batch_is_two_bids_one_negative_four_enabled_rsas(self):
         operations = mod.build_operations(snapshot())
         self.assertEqual(sum("adGroupCriterionOperation" in item for item in operations), 2)
         self.assertEqual(sum("campaignCriterionOperation" in item for item in operations), 1)
         self.assertEqual(sum("adGroupAdOperation" in item for item in operations), 4)
         for item in operations:
             if "adGroupAdOperation" in item:
-                self.assertEqual(item["adGroupAdOperation"]["create"]["status"], "PAUSED")
+                self.assertEqual(item["adGroupAdOperation"]["create"]["status"], "ENABLED")
+
+    def test_each_ad_group_uses_its_tailored_landing_page(self):
+        expected = {
+            "196849750257": "https://www.obsidianautoworksoc.com/commercial-window-tinting-orange-county",
+            "196849750297": "https://www.obsidianautoworksoc.com/commercial-heat-glare-window-film",
+            "196849750457": "https://www.obsidianautoworksoc.com/office-privacy-window-film",
+            "196849750497": "https://www.obsidianautoworksoc.com/storefront-security-window-film",
+        }
+        self.assertEqual(
+            {group_id: ad["final_urls"][0] for group_id, ad in mod.RSA_VARIANTS.items()},
+            expected,
+        )
 
     def test_readback_at_target_is_idempotent(self):
         state = snapshot()
@@ -66,7 +78,7 @@ class CommercialOptimizationTest(unittest.TestCase):
         state["ads"] = [
             {
                 "ad_group_id": group_id,
-                "status": "PAUSED",
+                "status": "ENABLED",
                 "final_urls": tuple(ad["final_urls"]),
                 "headlines": tuple(ad["headlines"]),
                 "descriptions": tuple(ad["descriptions"]),
@@ -75,7 +87,7 @@ class CommercialOptimizationTest(unittest.TestCase):
         ]
         self.assertEqual(mod.build_operations(state), [])
 
-    def test_enabled_matching_ad_does_not_satisfy_paused_replacement(self):
+    def test_paused_matching_ad_does_not_satisfy_enabled_replacement(self):
         state = snapshot()
         for criterion_id, target in mod.TARGET_BIDS.items():
             state["keywords"][criterion_id]["cpc_bid_micros"] = target["target_micros"]
@@ -83,7 +95,7 @@ class CommercialOptimizationTest(unittest.TestCase):
         group_id, ad = next(iter(mod.RSA_VARIANTS.items()))
         state["ads"] = [{
             "ad_group_id": group_id,
-            "status": "ENABLED",
+            "status": "PAUSED",
             "final_urls": tuple(ad["final_urls"]),
             "headlines": tuple(ad["headlines"]),
             "descriptions": tuple(ad["descriptions"]),
