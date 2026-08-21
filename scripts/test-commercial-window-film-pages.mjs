@@ -109,28 +109,28 @@ const paidVariantMatrix = [
   {
     route: '/commercial-window-tinting-orange-county',
     variant: 'commercial_tint_oc_v1',
-    title: 'Commercial Window Tinting in Orange County | Obsidian Autoworks',
+    title: 'Commercial Window Tinting Orange County | Obsidian',
     h1: 'Commercial Window Tinting in Orange County',
     descriptionTerms: ['commercial window tinting', 'orange county']
   },
   {
     route: '/office-privacy-window-film',
     variant: 'office_privacy_frost_v1',
-    title: 'Office Privacy Window Film | Obsidian Autoworks',
+    title: 'Office Privacy Window Film Orange County | Obsidian',
     h1: 'Office Privacy Window Film in Orange County',
     descriptionTerms: ['office privacy', 'frosted', 'window film']
   },
   {
     route: '/commercial-heat-glare-window-film',
     variant: 'commercial_solar_glare_v1',
-    title: 'Commercial Heat & Glare Window Film | Obsidian Autoworks',
+    title: 'Commercial Heat & Glare Film Orange County | Obsidian',
     h1: 'Commercial Heat & Glare Window Film in Orange County',
     descriptionTerms: ['commercial', 'heat', 'glare', 'window film']
   },
   {
     route: '/storefront-security-window-film',
     variant: 'storefront_security_v1',
-    title: 'Storefront Security Window Film | Obsidian Autoworks',
+    title: 'Storefront Security Film Orange County | Obsidian',
     h1: 'Storefront Security Window Film in Orange County',
     descriptionTerms: ['storefront', 'security', 'window film']
   }

@@ -21,6 +21,7 @@
         const stepLabel = root.querySelector('[data-commercial-step]');
         const progress = root.querySelector('[data-commercial-progress]');
         const liveRegion = root.querySelector('[data-commercial-live]');
+        const landingVariant = clean(document.documentElement.dataset.leadVariant) || 'commercial_socal_v1';
         let state = Object.freeze({});
         let stepIndex = 0;
         let started = false;
@@ -31,8 +32,8 @@
             if (!tracking || typeof tracking.recordEvent !== 'function') return;
             tracking.recordEvent(eventName, {
                 service: 'commercial_window_film',
-                landing_variant: 'commercial_socal_v1',
-                ...payload
+                ...payload,
+                landing_variant: landingVariant
             });
         };
 
@@ -111,7 +112,7 @@
                     property_city: clean(contact.property_city),
                     additional_notes: clean(contact.additional_notes),
                     answers: { ...state },
-                    attribution: { ...lead },
+                    attribution: { ...lead, landing_variant: landingVariant },
                     touch: prepared.touchForEvent ? { ...prepared.touchForEvent } : {}
                 };
                 const message = model.buildTextMessage(state, {
@@ -133,7 +134,7 @@
                             if (!tracking || typeof tracking.recordEvent !== 'function') return;
                             tracking.recordEvent('commercial_lead_submit', {
                                 service: 'commercial_window_film',
-                                landing_variant: 'commercial_socal_v1'
+                                landing_variant: landingVariant
                             }, { leadIntent: intent, touch: prepared.touchForEvent });
                             if (typeof tracking.flushPendingEvents === 'function') {
                                 await tracking.flushPendingEvents();
@@ -143,7 +144,7 @@
                     if (tracking && typeof tracking.recordEvent === 'function') {
                         tracking.recordEvent('commercial_lead_saved', {
                             service: 'commercial_window_film',
-                            landing_variant: 'commercial_socal_v1'
+                            landing_variant: landingVariant
                         }, { leadIntent: intent, touch: prepared.touchForEvent });
                     }
                     status.textContent = 'Saved. Opening Messages…';
