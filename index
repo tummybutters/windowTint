@@ -87,7 +87,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap"
         rel="stylesheet">
-    <link rel="stylesheet" href="style.css?v=20260108-1">
+    <link rel="stylesheet" href="style.css?v=20260824-1">
     <link rel="stylesheet" href="seo-pages.css?v=20260617-1">
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-TR9ET60HX3"></script>
@@ -140,176 +140,160 @@
         </div>
     </header>
 
-    <section class="reviews" id="reviews">
-        <div class="container">
-            <div class="reviews__header">
-                <span class="tag">REVIEWS</span>
-                <h2>Our Most Recent Reviews</h2>
-                <div class="reviews__rating-line">
-                    <span class="reviews__stars" aria-label="5 out of 5 stars">★★★★★</span>
-                    <span>5.0 Customer Rating</span>
-                </div>
+    <section class="work-proof" aria-labelledby="work-proof-title">
+        <div class="container work-proof__header">
+            <div>
+                <span class="tag">RECENT WORK</span>
+                <h2 id="work-proof-title">Orange County, Tinted.</h2>
             </div>
-            <div class="reviews__carousel">
-                <div class="reviews__viewport" data-carousel="reviews">
-                    <div class="reviews__row" data-carousel-row="reviews" data-direction="right">
-                        <ul class="reviews__track">
-                            <li class="review-card">
-                                <div class="review-card__top">
-                                    <span class="review-card__stars" aria-label="5 out of 5 stars">★★★★★</span>
-                                    <span class="review-card__service">Service: Sides + Rear</span>
-                                </div>
-                                <h3 class="review-card__name">Mark Cruz</h3>
-                                <blockquote class="review-card__quote">Such a big difference bro. Thanks again for the
-                                    work. Definitely gives it a new look. I'll be hitting you up for other
-                                    vehicles.</blockquote>
-                                <div class="review-card__footer">
-                                    <span class="review-card__source">Posted on Google</span>
-                                    <a class="brutalist-btn brutalist-btn--primary review-card__cta"
-                                        href="/window-tinting-gallery">See Pictures</a>
-                                </div>
-                            </li>
-                            <li class="review-card">
-                                <div class="review-card__top">
-                                    <span class="review-card__stars" aria-label="5 out of 5 stars">★★★★★</span>
-                                    <span class="review-card__service">Service: Full truck tint</span>
-                                </div>
-                                <h3 class="review-card__name">Ahmad Bond</h3>
-                                <blockquote class="review-card__quote">Bro thank you for your work... the truck looks
-                                    very nice... thank you... I'm going to recommend you with friends and
-                                    family.</blockquote>
-                                <div class="review-card__footer">
-                                    <span class="review-card__source">Posted on Google</span>
-                                    <a class="brutalist-btn brutalist-btn--primary review-card__cta"
-                                        href="/window-tinting-gallery">See Pictures</a>
-                                </div>
-                            </li>
-                            <li class="review-card">
-                                <div class="review-card__top">
-                                    <span class="review-card__stars" aria-label="5 out of 5 stars">★★★★★</span>
-                                    <span class="review-card__service">Service: Full tint + Sunstrip</span>
-                                </div>
-                                <h3 class="review-card__name">Corinna Townsend</h3>
-                                <blockquote class="review-card__quote">Thanks again. I love the results.</blockquote>
-                                <div class="review-card__footer">
-                                    <span class="review-card__source">Posted on Google</span>
-                                    <a class="brutalist-btn brutalist-btn--primary review-card__cta"
-                                        href="/window-tinting-gallery">See Pictures</a>
-                                </div>
-                            </li>
-                            <li class="review-card">
-                                <div class="review-card__top">
-                                    <span class="review-card__stars" aria-label="5 out of 5 stars">★★★★★</span>
-                                    <span class="review-card__service">Service: Full tint</span>
-                                </div>
-                                <h3 class="review-card__name">Joe Le</h3>
-                                <blockquote class="review-card__quote">Dude I appreciate your work.. it's solid. I'll
-                                    make sure to pass you around. I appreciate your commitment to the detail.
-                                </blockquote>
-                                <div class="review-card__footer">
-                                    <span class="review-card__source">Posted on Google</span>
-                                    <a class="brutalist-btn brutalist-btn--primary review-card__cta"
-                                        href="/window-tinting-gallery">See Pictures</a>
-                                </div>
-                            </li>
-                            <li class="review-card">
-                                <div class="review-card__top">
-                                    <span class="review-card__stars" aria-label="5 out of 5 stars">★★★★★</span>
-                                    <span class="review-card__service">Service: Sides + Rear</span>
-                                </div>
-                                <h3 class="review-card__name">Bryan Rodriguez</h3>
-                                <blockquote class="review-card__quote">Best in the game! Did my Sentra and came out
-                                    10/10.</blockquote>
-                                <div class="review-card__footer">
-                                    <span class="review-card__source">Posted on Google</span>
-                                    <a class="brutalist-btn brutalist-btn--primary review-card__cta"
-                                        href="/window-tinting-gallery">See Pictures</a>
-                                </div>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="reviews__row" data-carousel-row="reviews" data-direction="left">
-                        <ul class="reviews__track">
-                            <li class="review-card">
-                                <div class="review-card__top">
-                                    <span class="review-card__stars" aria-label="5 out of 5 stars">★★★★★</span>
-                                    <span class="review-card__service">Service: Full tint</span>
-                                </div>
-                                <h3 class="review-card__name">Jadelyn Belle</h3>
-                                <blockquote class="review-card__quote">Car came out so good! My car was originally a
-                                    fishbowl, so I was looking to get ceramic tint. Something noticeably different, but
-                                    not too dark. Kislev from Obsidian Autoworks was able to do just that, and did a
-                                    spectacular job on my car!</blockquote>
-                                <div class="review-card__footer">
-                                    <span class="review-card__source">Posted on Google</span>
-                                    <a class="brutalist-btn brutalist-btn--primary review-card__cta"
-                                        href="/window-tinting-gallery">See Pictures</a>
-                                </div>
-                            </li>
-                            <li class="review-card">
-                                <div class="review-card__top">
-                                    <span class="review-card__stars" aria-label="5 out of 5 stars">★★★★★</span>
-                                    <span class="review-card__service">Service: Full tint</span>
-                                </div>
-                                <h3 class="review-card__name">Alex Brockman</h3>
-                                <blockquote class="review-card__quote">Best tinting service in OC! Whole car looks
-                                    sleek now. Will be back for my wife's car!</blockquote>
-                                <div class="review-card__footer">
-                                    <span class="review-card__source">Posted on Google</span>
-                                    <a class="brutalist-btn brutalist-btn--primary review-card__cta"
-                                        href="/window-tinting-gallery">See Pictures</a>
-                                </div>
-                            </li>
-                            <li class="review-card">
-                                <div class="review-card__top">
-                                    <span class="review-card__stars" aria-label="5 out of 5 stars">★★★★★</span>
-                                    <span class="review-card__service">Service: Windshield</span>
-                                </div>
-                                <h3 class="review-card__name">Bryan Santiago</h3>
-                                <blockquote class="review-card__quote">Amazing service! Kislev took his time with my
-                                    Tesla Model Y, and even came all the way to my house which was very convenient. I
-                                    got my windshield tinted by Kislev, and will have him back to replace the old tint
-                                    on the rest of my car.</blockquote>
-                                <div class="review-card__footer">
-                                    <span class="review-card__source">Posted on Google</span>
-                                    <a class="brutalist-btn brutalist-btn--primary review-card__cta"
-                                        href="/window-tinting-gallery">See Pictures</a>
-                                </div>
-                            </li>
-                            <li class="review-card">
-                                <div class="review-card__top">
-                                    <span class="review-card__stars" aria-label="5 out of 5 stars">★★★★★</span>
-                                    <span class="review-card__service">Service: Sides + Rear</span>
-                                </div>
-                                <h3 class="review-card__name">Nesha Bowman</h3>
-                                <blockquote class="review-card__quote">Oh my gosh!!! Called here to get my windows
-                                    tinted and was referred to their person, Kislev, who either comes to your house or
-                                    your place of work to do the tinting. I've had all of my cars tinted back home in KY
-                                    and thought I'd never find a place as good as that one out here in CA. My standards
-                                    and expectations are very high and I have to say, I am blown away at how well they
-                                    came out on my Bronco. The attention to detail is insane. Kislev is a perfectionist.
-                                    Normally when I leave the tinting place I'm always slightly worried about what it'll
-                                    look like in several days because of the bubbles. Nope. Not this time. I loved it
-                                    from the get go and I can't imagine how good it's going to look in a week from now.
-                                    I can't imagine how good their car detailing and waxing services are if they have
-                                    someone this good doing windows.</blockquote>
-                                <div class="review-card__footer">
-                                    <span class="review-card__source">Posted on Google</span>
-                                    <a class="brutalist-btn brutalist-btn--primary review-card__cta"
-                                        href="/window-tinting-gallery">See Pictures</a>
-                                </div>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="reviews__hint">Drag to browse. Release to resume auto-scroll.</div>
-                <div class="reviews__cta">
-                    <a href="https://www.google.com/search?q=Obsidian+Mobile+Window-Tinting+OC+Reviews" target="_blank"
-                        rel="noopener" class="brutalist-btn brutalist-btn--primary brutalist-btn--large">
-                        ⭐ See All Google Reviews
-                    </a>
-                </div>
+            <p>Real installs, real driveways, and a lot of finished glass.</p>
+        </div>
+        <div class="work-proof__wall">
+            <span class="work-proof__row">
+                <img src="gallery/optimized/home-proof/recent-work-02.jpg" alt="" width="300" height="300">
+                <img src="gallery/optimized/home-proof/recent-work-03.jpg" alt="" width="300" height="300">
+                <img src="gallery/optimized/home-proof/recent-work-04.jpg" alt="" width="300" height="300" loading="lazy">
+                <img src="gallery/optimized/home-proof/recent-work-06.jpg" alt="" width="300" height="300" loading="lazy">
+                <img src="gallery/optimized/home-proof/recent-work-09.jpg" alt="" width="300" height="300" loading="lazy">
+                <img src="gallery/optimized/home-proof/recent-work-10.jpg" alt="" width="300" height="300" loading="lazy">
+            </span>
+            <a class="work-proof__review-band" href="https://www.google.com/search?q=Obsidian+Mobile+Window-Tinting+OC+Reviews"
+                target="_blank" rel="noopener" aria-label="Read Obsidian Autoworks reviews on Google">
+                <span class="work-proof__review-track">
+                    <span class="work-proof__review-group">
+                        <span class="work-proof__review"><span aria-hidden="true">★★★★★</span> “Such a big difference. It gives it a whole new look.” <strong>Mark Cruz</strong></span>
+                        <span class="work-proof__review"><span aria-hidden="true">★★★★★</span> “The truck looks very nice. I’m going to recommend you.” <strong>Ahmad Bond</strong></span>
+                        <span class="work-proof__review"><span aria-hidden="true">★★★★★</span> “Best in the game. Came out 10/10.” <strong>Bryan Rodriguez</strong></span>
+                        <span class="work-proof__review"><span aria-hidden="true">★★★★★</span> “The attention to detail is insane.” <strong>Nesha Bowman</strong></span>
+                        <span class="work-proof__review"><span aria-hidden="true">★★★★★</span> “Best tinting service in OC.” <strong>Alex Brockman</strong></span>
+                        <span class="work-proof__review"><span aria-hidden="true">★★★★★</span> “Amazing service and incredibly convenient.” <strong>Bryan Santiago</strong></span>
+                    </span>
+                    <span class="work-proof__review-group" aria-hidden="true">
+                        <span class="work-proof__review"><span>★★★★★</span> “Such a big difference. It gives it a whole new look.” <strong>Mark Cruz</strong></span>
+                        <span class="work-proof__review"><span>★★★★★</span> “The truck looks very nice. I’m going to recommend you.” <strong>Ahmad Bond</strong></span>
+                        <span class="work-proof__review"><span>★★★★★</span> “Best in the game. Came out 10/10.” <strong>Bryan Rodriguez</strong></span>
+                        <span class="work-proof__review"><span>★★★★★</span> “The attention to detail is insane.” <strong>Nesha Bowman</strong></span>
+                        <span class="work-proof__review"><span>★★★★★</span> “Best tinting service in OC.” <strong>Alex Brockman</strong></span>
+                        <span class="work-proof__review"><span>★★★★★</span> “Amazing service and incredibly convenient.” <strong>Bryan Santiago</strong></span>
+                    </span>
+                </span>
+            </a>
+            <span class="work-proof__row">
+                <img src="gallery/optimized/home-proof/recent-work-11.jpg" alt="" width="300" height="300" loading="lazy">
+                <img src="gallery/optimized/home-proof/recent-work-13.jpg" alt="" width="300" height="300" loading="lazy">
+                <img src="gallery/optimized/home-proof/recent-work-15.jpg" alt="" width="300" height="300" loading="lazy">
+                <img src="gallery/optimized/home-proof/recent-work-17.jpg" alt="" width="300" height="300" loading="lazy">
+                <img src="gallery/optimized/home-proof/recent-work-19.jpg" alt="" width="300" height="300" loading="lazy">
+                <img src="gallery/optimized/home-proof/recent-work-21.jpg" alt="" width="300" height="300" loading="lazy">
+            </span>
+            <a class="work-proof__review-band work-proof__review-band--reverse"
+                href="https://www.google.com/search?q=Obsidian+Mobile+Window-Tinting+OC+Reviews" target="_blank"
+                rel="noopener" aria-label="Read more Obsidian Autoworks reviews on Google">
+                <span class="work-proof__review-track">
+                    <span class="work-proof__review-group">
+                        <span class="work-proof__review"><span aria-hidden="true">★★★★★</span> “Car came out so good. The result is spectacular.” <strong>Jadelyn Belle</strong></span>
+                        <span class="work-proof__review"><span aria-hidden="true">★★★★★</span> “Solid work and real commitment to detail.” <strong>Joe Le</strong></span>
+                        <span class="work-proof__review"><span aria-hidden="true">★★★★★</span> “I love the results.” <strong>Corinna Townsend</strong></span>
+                        <span class="work-proof__review"><span aria-hidden="true">★★★★★</span> “He came all the way to my house. Very convenient.” <strong>Bryan Santiago</strong></span>
+                        <span class="work-proof__review"><span aria-hidden="true">★★★★★</span> “Whole car looks sleek now.” <strong>Alex Brockman</strong></span>
+                        <span class="work-proof__review"><span aria-hidden="true">★★★★★</span> “Kislev is a perfectionist.” <strong>Nesha Bowman</strong></span>
+                    </span>
+                    <span class="work-proof__review-group" aria-hidden="true">
+                        <span class="work-proof__review"><span>★★★★★</span> “Car came out so good. The result is spectacular.” <strong>Jadelyn Belle</strong></span>
+                        <span class="work-proof__review"><span>★★★★★</span> “Solid work and real commitment to detail.” <strong>Joe Le</strong></span>
+                        <span class="work-proof__review"><span>★★★★★</span> “I love the results.” <strong>Corinna Townsend</strong></span>
+                        <span class="work-proof__review"><span>★★★★★</span> “He came all the way to my house. Very convenient.” <strong>Bryan Santiago</strong></span>
+                        <span class="work-proof__review"><span>★★★★★</span> “Whole car looks sleek now.” <strong>Alex Brockman</strong></span>
+                        <span class="work-proof__review"><span>★★★★★</span> “Kislev is a perfectionist.” <strong>Nesha Bowman</strong></span>
+                    </span>
+                </span>
+            </a>
+            <span class="work-proof__row">
+                <img src="gallery/optimized/home-proof/recent-work-01.jpg" alt="" width="300" height="300" loading="lazy">
+                <img src="gallery/optimized/home-proof/recent-work-22.jpg" alt="" width="300" height="300" loading="lazy">
+                <img src="gallery/optimized/home-proof/recent-work-23.jpg" alt="" width="300" height="300" loading="lazy">
+                <img src="gallery/optimized/home-proof/recent-work-24.jpg" alt="" width="300" height="300" loading="lazy">
+                <img src="gallery/optimized/home-proof/recent-work-25.jpg" alt="" width="300" height="300" loading="lazy">
+                <img src="gallery/optimized/home-proof/recent-work-27.jpg" alt="" width="300" height="300" loading="lazy">
+            </span>
+            <a class="work-proof__cta" href="/window-tinting-gallery">View Full Gallery <span aria-hidden="true">↗</span></a>
+        </div>
+    </section>
+
+    <section class="reviews" id="reviews" aria-labelledby="reviews-title" hidden>
+        <div class="container reviews__header">
+            <div>
+                <span class="tag">GOOGLE REVIEWS</span>
+                <h2 id="reviews-title">The Results Keep Talking.</h2>
             </div>
+            <div class="reviews__rating-line">
+                <span class="reviews__stars" aria-label="5 out of 5 stars">★★★★★</span>
+                <span>5.0 Customer Rating</span>
+            </div>
+        </div>
+        <div class="reviews__viewport" data-carousel="reviews">
+            <div class="reviews__row" data-carousel-row="reviews" data-direction="right">
+                <ul class="reviews__track">
+                    <li class="review-card">
+                        <div class="review-card__top"><span class="review-card__stars" aria-label="5 out of 5 stars">★★★★★</span><span class="review-card__service">Sides + Rear</span></div>
+                        <h3 class="review-card__name">Mark Cruz</h3>
+                        <blockquote class="review-card__quote">Such a big difference bro. Thanks again for the work. Definitely gives it a new look. I'll be hitting you up for other vehicles.</blockquote>
+                        <span class="review-card__source">Posted on Google</span>
+                    </li>
+                    <li class="review-card">
+                        <div class="review-card__top"><span class="review-card__stars" aria-label="5 out of 5 stars">★★★★★</span><span class="review-card__service">Full Truck Tint</span></div>
+                        <h3 class="review-card__name">Ahmad Bond</h3>
+                        <blockquote class="review-card__quote">Bro thank you for your work. The truck looks very nice. I'm going to recommend you with friends and family.</blockquote>
+                        <span class="review-card__source">Posted on Google</span>
+                    </li>
+                    <li class="review-card">
+                        <div class="review-card__top"><span class="review-card__stars" aria-label="5 out of 5 stars">★★★★★</span><span class="review-card__service">Full Tint + Sunstrip</span></div>
+                        <h3 class="review-card__name">Corinna Townsend</h3>
+                        <blockquote class="review-card__quote">Thanks again. I love the results.</blockquote>
+                        <span class="review-card__source">Posted on Google</span>
+                    </li>
+                    <li class="review-card">
+                        <div class="review-card__top"><span class="review-card__stars" aria-label="5 out of 5 stars">★★★★★</span><span class="review-card__service">Full Tint</span></div>
+                        <h3 class="review-card__name">Joe Le</h3>
+                        <blockquote class="review-card__quote">Dude I appreciate your work. It's solid. I'll make sure to pass you around. I appreciate your commitment to the detail.</blockquote>
+                        <span class="review-card__source">Posted on Google</span>
+                    </li>
+                    <li class="review-card">
+                        <div class="review-card__top"><span class="review-card__stars" aria-label="5 out of 5 stars">★★★★★</span><span class="review-card__service">Sides + Rear</span></div>
+                        <h3 class="review-card__name">Bryan Rodriguez</h3>
+                        <blockquote class="review-card__quote">Best in the game! Did my Sentra and came out 10/10.</blockquote>
+                        <span class="review-card__source">Posted on Google</span>
+                    </li>
+                    <li class="review-card">
+                        <div class="review-card__top"><span class="review-card__stars" aria-label="5 out of 5 stars">★★★★★</span><span class="review-card__service">Full Tint</span></div>
+                        <h3 class="review-card__name">Jadelyn Belle</h3>
+                        <blockquote class="review-card__quote">Car came out so good! Originally a fishbowl, now spectacular!</blockquote>
+                        <span class="review-card__source">Posted on Google</span>
+                    </li>
+                    <li class="review-card">
+                        <div class="review-card__top"><span class="review-card__stars" aria-label="5 out of 5 stars">★★★★★</span><span class="review-card__service">Full Tint</span></div>
+                        <h3 class="review-card__name">Alex Brockman</h3>
+                        <blockquote class="review-card__quote">Best tinting service in OC! Whole car looks sleek now. Will be back for my wife's car!</blockquote>
+                        <span class="review-card__source">Posted on Google</span>
+                    </li>
+                    <li class="review-card">
+                        <div class="review-card__top"><span class="review-card__stars" aria-label="5 out of 5 stars">★★★★★</span><span class="review-card__service">Windshield</span></div>
+                        <h3 class="review-card__name">Bryan Santiago</h3>
+                        <blockquote class="review-card__quote">Amazing service! Kislev took his time with my Tesla Model Y and came all the way to my house, which was very convenient.</blockquote>
+                        <span class="review-card__source">Posted on Google</span>
+                    </li>
+                    <li class="review-card">
+                        <div class="review-card__top"><span class="review-card__stars" aria-label="5 out of 5 stars">★★★★★</span><span class="review-card__service">Sides + Rear</span></div>
+                        <h3 class="review-card__name">Nesha Bowman</h3>
+                        <blockquote class="review-card__quote">I am blown away at how well they came out on my Bronco. The attention to detail is insane. Kislev is a perfectionist.</blockquote>
+                        <span class="review-card__source">Posted on Google</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="container reviews__cta">
+            <a href="https://www.google.com/search?q=Obsidian+Mobile+Window-Tinting+OC+Reviews" target="_blank"
+                rel="noopener" class="brutalist-btn brutalist-btn--primary brutalist-btn--large">See All Google Reviews</a>
         </div>
     </section>
 
