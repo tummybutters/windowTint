@@ -68,7 +68,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="style.css?v=20260108-1">
-    <link rel="stylesheet" href="services.css?v=20260106-5">
+    <link rel="stylesheet" href="services.css?v=20260824-1">
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-TR9ET60HX3"></script>
     <script>
@@ -154,19 +154,19 @@
                         <div class="car-card__images car-card__images--triple">
                             <div class="car-card__image">
                                 <a class="car-card__image-link" href="gallery/toyota-tacoma-01.jpg">
-                                    <img src="gallery/toyota-tacoma-01.jpg"
+                                    <img src="gallery/optimized/gallery-cards/toyota-tacoma-01.webp" fetchpriority="high" decoding="async"
                                         alt="Toyota Tacoma with ceramic window tint, front-side detail">
                                 </a>
                             </div>
                             <div class="car-card__image">
                                 <a class="car-card__image-link" href="gallery/toyota-tacoma-02.jpg">
-                                    <img src="gallery/toyota-tacoma-02.jpg"
+                                    <img src="gallery/optimized/gallery-cards/toyota-tacoma-02.webp" loading="lazy" decoding="async"
                                         alt="Toyota Tacoma with ceramic window tint, front three-quarter view">
                                 </a>
                             </div>
                             <div class="car-card__image">
                                 <a class="car-card__image-link" href="gallery/toyota-tacoma-03.jpg">
-                                    <img src="gallery/toyota-tacoma-03.jpg"
+                                    <img src="gallery/optimized/gallery-cards/toyota-tacoma-03.webp" loading="lazy" decoding="async"
                                         alt="Toyota Tacoma with ceramic window tint, full side profile">
                                 </a>
                             </div>
@@ -186,13 +186,13 @@
                         <div class="car-card__images">
                             <div class="car-card__image">
                                 <a class="car-card__image-link" href="gallery/bmw-m4-01.jpg">
-                                    <img src="gallery/bmw-m4-01.jpg"
+                                    <img src="gallery/optimized/gallery-cards/bmw-m4-01.webp" loading="lazy" decoding="async"
                                         alt="BMW M4 with ceramic window tint, rear three-quarter view">
                                 </a>
                             </div>
                             <div class="car-card__image">
                                 <a class="car-card__image-link" href="gallery/bmw-m4-02.jpg">
-                                    <img src="gallery/bmw-m4-02.jpg"
+                                    <img src="gallery/optimized/gallery-cards/bmw-m4-02.webp" loading="lazy" decoding="async"
                                         alt="BMW M4 interior view showing tinted glass and windshield">
                                 </a>
                             </div>
@@ -212,13 +212,13 @@
                         <div class="car-card__images">
                             <div class="car-card__image">
                                 <a class="car-card__image-link" href="gallery/mercedes-benz-gls-01.jpg">
-                                    <img src="gallery/mercedes-benz-gls-01.jpg"
+                                    <img src="gallery/optimized/gallery-cards/mercedes-benz-gls-01.webp" loading="lazy" decoding="async"
                                         alt="Mercedes-Benz GLS with ceramic window tint, front-side view">
                                 </a>
                             </div>
                             <div class="car-card__image">
                                 <a class="car-card__image-link" href="gallery/mercedes-benz-gls-02.jpg">
-                                    <img src="gallery/mercedes-benz-gls-02.jpg"
+                                    <img src="gallery/optimized/gallery-cards/mercedes-benz-gls-02.webp" loading="lazy" decoding="async"
                                         alt="Mercedes-Benz GLS with ceramic window tint, side view">
                                 </a>
                             </div>
@@ -239,13 +239,13 @@
                         <div class="car-card__images">
                             <div class="car-card__image">
                                 <a class="car-card__image-link" href="gallery/cadillac-lyriq-01.jpg">
-                                    <img src="gallery/cadillac-lyriq-01.jpg"
+                                    <img src="gallery/optimized/gallery-cards/cadillac-lyriq-01.webp" loading="lazy" decoding="async"
                                         alt="Cadillac Lyriq with ceramic window tint, front three-quarter view">
                                 </a>
                             </div>
                             <div class="car-card__image">
                                 <a class="car-card__image-link" href="gallery/cadillac-lyriq-02.jpg">
-                                    <img src="gallery/cadillac-lyriq-02.jpg"
+                                    <img src="gallery/optimized/gallery-cards/cadillac-lyriq-02.webp" loading="lazy" decoding="async"
                                         alt="Cadillac Lyriq with ceramic window tint, rear view">
                                 </a>
                             </div>
@@ -265,13 +265,13 @@
                         <div class="car-card__images">
                             <div class="car-card__image">
                                 <a class="car-card__image-link" href="gallery/lexus-gx-01.jpg">
-                                    <img src="gallery/lexus-gx-01.jpg"
+                                    <img src="gallery/optimized/gallery-cards/lexus-gx-01.webp" loading="lazy" decoding="async"
                                         alt="Lexus GX with ceramic window tint, front three-quarter view">
                                 </a>
                             </div>
                             <div class="car-card__image">
                                 <a class="car-card__image-link" href="gallery/lexus-gx-02.jpg">
-                                    <img src="gallery/lexus-gx-02.jpg"
+                                    <img src="gallery/optimized/gallery-cards/lexus-gx-02.webp" loading="lazy" decoding="async"
                                         alt="Lexus GX with ceramic window tint, rear three-quarter view">
                                 </a>
                             </div>
@@ -291,13 +291,13 @@
                         <div class="car-card__images">
                             <div class="car-card__image">
                                 <a class="car-card__image-link" href="gallery/toyota-4runner-01.jpg">
-                                    <img src="gallery/toyota-4runner-01.jpg"
+                                    <img src="gallery/optimized/gallery-cards/toyota-4runner-01.webp" loading="lazy" decoding="async"
                                         alt="Toyota 4Runner with ceramic window tint, side detail">
                                 </a>
                             </div>
                             <div class="car-card__image">
                                 <a class="car-card__image-link" href="gallery/toyota-4runner-02.jpg">
-                                    <img src="gallery/toyota-4runner-02.jpg"
+                                    <img src="gallery/optimized/gallery-cards/toyota-4runner-02.webp" loading="lazy" decoding="async"
                                         alt="Toyota 4Runner with ceramic window tint, front three-quarter view">
                                 </a>
                             </div>
@@ -317,13 +317,13 @@
                         <div class="car-card__images">
                             <div class="car-card__image">
                                 <a class="car-card__image-link" href="gallery/bmw-x3-01.jpg">
-                                    <img src="gallery/bmw-x3-01.jpg"
+                                    <img src="gallery/optimized/gallery-cards/bmw-x3-01.webp" loading="lazy" decoding="async"
                                         alt="BMW X3 with ceramic window tint, front three-quarter view">
                                 </a>
                             </div>
                             <div class="car-card__image">
                                 <a class="car-card__image-link" href="gallery/bmw-x3-02.jpg">
-                                    <img src="gallery/bmw-x3-02.jpg"
+                                    <img src="gallery/optimized/gallery-cards/bmw-x3-02.webp" loading="lazy" decoding="async"
                                         alt="BMW X3 with ceramic window tint, full side profile">
                                 </a>
                             </div>
@@ -343,19 +343,19 @@
                         <div class="car-card__images car-card__images--triple">
                             <div class="car-card__image">
                                 <a class="car-card__image-link" href="gallery/porsche-cayenne-coupe-01.jpg">
-                                    <img src="gallery/porsche-cayenne-coupe-01.jpg"
+                                    <img src="gallery/optimized/gallery-cards/porsche-cayenne-coupe-01.webp" loading="lazy" decoding="async"
                                         alt="Porsche Cayenne Coupe with ceramic window tint, front three-quarter view">
                                 </a>
                             </div>
                             <div class="car-card__image">
                                 <a class="car-card__image-link" href="gallery/porsche-cayenne-coupe-02.jpg">
-                                    <img src="gallery/porsche-cayenne-coupe-02.jpg"
+                                    <img src="gallery/optimized/gallery-cards/porsche-cayenne-coupe-02.webp" loading="lazy" decoding="async"
                                         alt="Porsche Cayenne Coupe with ceramic window tint, full side profile">
                                 </a>
                             </div>
                             <div class="car-card__image">
                                 <a class="car-card__image-link" href="gallery/porsche-cayenne-coupe-03.jpg">
-                                    <img src="gallery/porsche-cayenne-coupe-03.jpg"
+                                    <img src="gallery/optimized/gallery-cards/porsche-cayenne-coupe-03.webp" loading="lazy" decoding="async"
                                         alt="Porsche Cayenne Coupe with ceramic window tint, rear three-quarter view">
                                 </a>
                             </div>
@@ -370,6 +370,116 @@
                             </div>
                             <div class="car-card__links"><a href="/ceramic-window-tinting">Ceramic Tint</a><a href="/window-tint-pricing">Pricing</a></div>
                         </div>
+                    </div>
+                    <div class="car-card car-card--portfolio car-card--recent" id="recent-mobile-installs">
+                        <div class="car-card__images car-card__images--gallery">
+                            <div class="car-card__image"><a class="car-card__image-link" href="gallery/optimized/home-proof/recent-work-02.jpg"><img src="data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=" data-gallery-src="gallery/optimized/home-proof/recent-work-02.jpg" loading="lazy" decoding="async" width="300" height="300" alt="Gray Tesla Model Y ceramic window tint, rear three-quarter view"></a></div>
+                            <div class="car-card__image"><a class="car-card__image-link" href="gallery/optimized/home-proof/recent-work-07.jpg"><img src="data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=" data-gallery-src="gallery/optimized/home-proof/recent-work-07.jpg" loading="lazy" decoding="async" width="300" height="300" alt="Gray Tesla Model Y ceramic window tint, side profile"></a></div>
+                            <div class="car-card__image"><a class="car-card__image-link" href="gallery/optimized/home-proof/recent-work-13.jpg"><img src="data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=" data-gallery-src="gallery/optimized/home-proof/recent-work-13.jpg" loading="lazy" decoding="async" width="300" height="300" alt="Tesla white interior beneath panoramic glass"></a></div>
+                            <div class="car-card__image"><a class="car-card__image-link" href="gallery/optimized/home-proof/recent-work-14.jpg"><img src="data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=" data-gallery-src="gallery/optimized/home-proof/recent-work-14.jpg" loading="lazy" decoding="async" width="300" height="300" alt="Tesla Model Y ceramic tint installation in Orange County"></a></div>
+                            <div class="car-card__image"><a class="car-card__image-link" href="gallery/optimized/home-proof/recent-work-18.jpg"><img src="data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=" data-gallery-src="gallery/optimized/home-proof/recent-work-18.jpg" loading="lazy" decoding="async" width="300" height="300" alt="Tesla panoramic glass and white interior after tint installation"></a></div>
+                            <div class="car-card__image"><a class="car-card__image-link" href="gallery/optimized/home-proof/recent-work-22.jpg"><img src="data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=" data-gallery-src="gallery/optimized/home-proof/recent-work-22.jpg" loading="lazy" decoding="async" width="300" height="300" alt="Gray Tesla Model Y side glass after ceramic tint"></a></div>
+                        </div>
+                        <div class="car-card__info">
+                            <h3 class="car-card__title">Tesla Model Y</h3>
+                            <p class="car-card__desc">A full set of exterior and interior views from a clean mobile ceramic tint finish.</p>
+                            <div class="car-card__tags"><span class="service-tag service-tag--primary">Ceramic Tint</span><span class="service-tag">Tesla</span><span class="service-tag service-tag--addon">Panoramic Glass</span></div>
+                            <div class="car-card__links"><a href="/tesla-model-y-window-tinting">Model Y Tint</a><a href="/window-tint-pricing">Pricing</a></div>
+                        </div>
+                    </div>
+
+                    <div class="car-card car-card--portfolio car-card--recent">
+                        <div class="car-card__images car-card__images--gallery car-card__images--gallery-four">
+                            <div class="car-card__image"><a class="car-card__image-link" href="gallery/optimized/home-proof/recent-work-06.jpg"><img src="data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=" data-gallery-src="gallery/optimized/home-proof/recent-work-06.jpg" loading="lazy" decoding="async" width="300" height="300" alt="White Ford F-150 Raptor with tinted windows in a driveway"></a></div>
+                            <div class="car-card__image"><a class="car-card__image-link" href="gallery/optimized/home-proof/recent-work-17.jpg"><img src="data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=" data-gallery-src="gallery/optimized/home-proof/recent-work-17.jpg" loading="lazy" decoding="async" width="300" height="300" alt="White Ford F-150 Raptor side profile after tint installation"></a></div>
+                            <div class="car-card__image"><a class="car-card__image-link" href="gallery/optimized/home-proof/recent-work-23.jpg"><img src="data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=" data-gallery-src="gallery/optimized/home-proof/recent-work-23.jpg" loading="lazy" decoding="async" width="300" height="300" alt="White Ford F-150 Raptor ceramic tint, front three-quarter view"></a></div>
+                            <div class="car-card__image"><a class="car-card__image-link" href="gallery/optimized/home-proof/recent-work-27.jpg"><img src="data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=" data-gallery-src="gallery/optimized/home-proof/recent-work-27.jpg" loading="lazy" decoding="async" width="300" height="300" alt="White Ford F-150 Raptor ceramic tint, rear three-quarter view"></a></div>
+                        </div>
+                        <div class="car-card__info">
+                            <h3 class="car-card__title">Ford F-150 Raptor</h3>
+                            <p class="car-card__desc">Consistent privacy and a sharper profile across the truck's side and rear glass.</p>
+                            <div class="car-card__tags"><span class="service-tag service-tag--primary">Ceramic Tint</span><span class="service-tag">Pickup Truck</span><span class="service-tag service-tag--addon">Privacy Focus</span></div>
+                            <div class="car-card__links"><a href="/ceramic-window-tinting">Ceramic Tint</a><a href="/window-tint-pricing">Pricing</a></div>
+                        </div>
+                    </div>
+
+                    <div class="car-card car-card--portfolio car-card--recent">
+                        <div class="car-card__images car-card__images--gallery car-card__images--gallery-four">
+                            <div class="car-card__image"><a class="car-card__image-link" href="gallery/optimized/home-proof/recent-work-03.jpg"><img src="data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=" data-gallery-src="gallery/optimized/home-proof/recent-work-03.jpg" loading="lazy" decoding="async" width="300" height="300" alt="White Chevrolet Corvette ceramic tint under shop lighting"></a></div>
+                            <div class="car-card__image"><a class="car-card__image-link" href="gallery/optimized/home-proof/recent-work-12.jpg"><img src="data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=" data-gallery-src="gallery/optimized/home-proof/recent-work-12.jpg" loading="lazy" decoding="async" width="300" height="300" alt="White Chevrolet Corvette after window tint installation"></a></div>
+                            <div class="car-card__image"><a class="car-card__image-link" href="gallery/optimized/home-proof/recent-work-24.jpg"><img src="data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=" data-gallery-src="gallery/optimized/home-proof/recent-work-24.jpg" loading="lazy" decoding="async" width="300" height="300" alt="Chevrolet Corvette glass during a professional tint installation"></a></div>
+                            <div class="car-card__image"><a class="car-card__image-link" href="gallery/optimized/home-proof/recent-work-26.jpg"><img src="data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=" data-gallery-src="gallery/optimized/home-proof/recent-work-26.jpg" loading="lazy" decoding="async" width="300" height="300" alt="White Chevrolet Corvette front view after ceramic tint"></a></div>
+                        </div>
+                        <div class="car-card__info">
+                            <h3 class="car-card__title">Chevrolet Corvette</h3>
+                            <p class="car-card__desc">A precise performance-car install with clean edges and a uniform dark finish.</p>
+                            <div class="car-card__tags"><span class="service-tag service-tag--primary">Ceramic Tint</span><span class="service-tag">Sports Car</span><span class="service-tag service-tag--addon">Clean Finish</span></div>
+                            <div class="car-card__links"><a href="/ceramic-window-tinting">Ceramic Tint</a><a href="/window-tint-pricing">Pricing</a></div>
+                        </div>
+                    </div>
+
+                    <div class="car-card car-card--portfolio car-card--recent">
+                        <div class="car-card__images car-card__images--gallery car-card__images--gallery-four">
+                            <div class="car-card__image"><a class="car-card__image-link" href="gallery/optimized/home-proof/recent-work-04.jpg"><img src="data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=" data-gallery-src="gallery/optimized/home-proof/recent-work-04.jpg" loading="lazy" decoding="async" width="300" height="300" alt="Gray Tesla Model 3 ceramic tint, front three-quarter view"></a></div>
+                            <div class="car-card__image"><a class="car-card__image-link" href="gallery/optimized/home-proof/recent-work-05.jpg"><img src="data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=" data-gallery-src="gallery/optimized/home-proof/recent-work-05.jpg" loading="lazy" decoding="async" width="300" height="300" alt="Dark Tesla Model 3 ceramic tint, side profile"></a></div>
+                            <div class="car-card__image"><a class="car-card__image-link" href="gallery/optimized/home-proof/recent-work-15.jpg"><img src="data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=" data-gallery-src="gallery/optimized/home-proof/recent-work-15.jpg" loading="lazy" decoding="async" width="300" height="300" alt="Tesla Model 3 after a mobile ceramic tint installation"></a></div>
+                            <div class="car-card__image"><a class="car-card__image-link" href="gallery/optimized/home-proof/recent-work-25.jpg"><img src="data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=" data-gallery-src="gallery/optimized/home-proof/recent-work-25.jpg" loading="lazy" decoding="async" width="300" height="300" alt="Gray Tesla Model 3 with finished ceramic window tint"></a></div>
+                        </div>
+                        <div class="car-card__info">
+                            <h3 class="car-card__title">Tesla Model 3</h3>
+                            <p class="car-card__desc">Balanced ceramic tint that complements the glass-heavy Tesla profile.</p>
+                            <div class="car-card__tags"><span class="service-tag service-tag--primary">Ceramic Tint</span><span class="service-tag">Tesla</span><span class="service-tag service-tag--addon">Heat Rejection</span></div>
+                            <div class="car-card__links"><a href="/tesla-model-3-window-tinting">Model 3 Tint</a><a href="/window-tint-pricing">Pricing</a></div>
+                        </div>
+                    </div>
+
+                    <div class="car-card car-card--recent">
+                        <div class="car-card__images">
+                            <div class="car-card__image"><a class="car-card__image-link" href="gallery/optimized/home-proof/recent-work-09.jpg"><img src="data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=" data-gallery-src="gallery/optimized/home-proof/recent-work-09.jpg" loading="lazy" decoding="async" width="300" height="300" alt="Red Ferrari during a mobile tint appointment"></a></div>
+                            <div class="car-card__image"><a class="car-card__image-link" href="gallery/optimized/home-proof/recent-work-11.jpg"><img src="data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=" data-gallery-src="gallery/optimized/home-proof/recent-work-11.jpg" loading="lazy" decoding="async" width="300" height="300" alt="Red Ferrari after a professional ceramic tint installation"></a></div>
+                        </div>
+                        <div class="car-card__info">
+                            <h3 class="car-card__title">Ferrari</h3>
+                            <p class="car-card__desc">Careful ceramic tint work for a low-profile exotic.</p>
+                            <div class="car-card__tags"><span class="service-tag service-tag--primary">Ceramic Tint</span><span class="service-tag">Exotic</span></div>
+                        </div>
+                    </div>
+
+                    <div class="car-card car-card--recent">
+                        <div class="car-card__images">
+                            <div class="car-card__image"><a class="car-card__image-link" href="gallery/optimized/home-proof/recent-work-01.jpg"><img src="data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=" data-gallery-src="gallery/optimized/home-proof/recent-work-01.jpg" loading="lazy" decoding="async" width="300" height="300" alt="Black Ford F-150 with finished ceramic window tint"></a></div>
+                            <div class="car-card__image"><a class="car-card__image-link" href="gallery/optimized/home-proof/recent-work-08.jpg"><img src="data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=" data-gallery-src="gallery/optimized/home-proof/recent-work-08.jpg" loading="lazy" decoding="async" width="300" height="300" alt="Black Ford F-150 mobile tint installation, side view"></a></div>
+                        </div>
+                        <div class="car-card__info">
+                            <h3 class="car-card__title">Ford F-150</h3>
+                            <p class="car-card__desc">A dark, even finish across the truck's side glass.</p>
+                            <div class="car-card__tags"><span class="service-tag service-tag--primary">Ceramic Tint</span><span class="service-tag">Pickup Truck</span></div>
+                        </div>
+                    </div>
+
+                    <div class="car-card car-card--recent">
+                        <div class="car-card__images car-card__images--single"><div class="car-card__image"><a class="car-card__image-link" href="gallery/optimized/home-proof/recent-work-10.jpg"><img src="data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=" data-gallery-src="gallery/optimized/home-proof/recent-work-10.jpg" loading="lazy" decoding="async" width="300" height="300" alt="Orange classic Porsche at a mobile tint appointment"></a></div></div>
+                        <div class="car-card__info"><h3 class="car-card__title">Classic Porsche</h3><p class="car-card__desc">Careful glass work for a classic silhouette.</p><div class="car-card__tags"><span class="service-tag service-tag--primary">Window Tint</span><span class="service-tag">Classic</span></div></div>
+                    </div>
+
+                    <div class="car-card car-card--recent">
+                        <div class="car-card__images car-card__images--single"><div class="car-card__image"><a class="car-card__image-link" href="gallery/optimized/home-proof/recent-work-16.jpg"><img src="data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=" data-gallery-src="gallery/optimized/home-proof/recent-work-16.jpg" loading="lazy" decoding="async" width="300" height="300" alt="Dark compact SUV after mobile ceramic window tint"></a></div></div>
+                        <div class="car-card__info"><h3 class="car-card__title">Compact SUV</h3><p class="car-card__desc">Privacy-focused ceramic tint with a clean factory-style finish.</p><div class="car-card__tags"><span class="service-tag service-tag--primary">Ceramic Tint</span><span class="service-tag">SUV</span></div></div>
+                    </div>
+
+                    <div class="car-card car-card--recent">
+                        <div class="car-card__images car-card__images--single"><div class="car-card__image"><a class="car-card__image-link" href="gallery/optimized/home-proof/recent-work-19.jpg"><img src="data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=" data-gallery-src="gallery/optimized/home-proof/recent-work-19.jpg" loading="lazy" decoding="async" width="300" height="300" alt="Black performance sedan with finished ceramic window tint"></a></div></div>
+                        <div class="car-card__info"><h3 class="car-card__title">Performance Sedan</h3><p class="car-card__desc">A sleek, uniform tint finish for a dark daily driver.</p><div class="car-card__tags"><span class="service-tag service-tag--primary">Ceramic Tint</span><span class="service-tag">Sedan</span></div></div>
+                    </div>
+
+                    <div class="car-card car-card--recent">
+                        <div class="car-card__images car-card__images--single"><div class="car-card__image"><a class="car-card__image-link" href="gallery/optimized/home-proof/recent-work-20.jpg"><img src="data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=" data-gallery-src="gallery/optimized/home-proof/recent-work-20.jpg" loading="lazy" decoding="async" width="300" height="300" alt="Black luxury SUV with ceramic window tint"></a></div></div>
+                        <div class="car-card__info"><h3 class="car-card__title">Luxury SUV</h3><p class="car-card__desc">Dark ceramic tint for privacy and a more finished exterior.</p><div class="car-card__tags"><span class="service-tag service-tag--primary">Ceramic Tint</span><span class="service-tag">SUV</span></div></div>
+                    </div>
+
+                    <div class="car-card car-card--recent">
+                        <div class="car-card__images car-card__images--single"><div class="car-card__image"><a class="car-card__image-link" href="gallery/optimized/home-proof/recent-work-21.jpg"><img src="data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=" data-gallery-src="gallery/optimized/home-proof/recent-work-21.jpg" loading="lazy" decoding="async" width="300" height="300" alt="White luxury SUV after a professional mobile tint installation"></a></div></div>
+                        <div class="car-card__info"><h3 class="car-card__title">White Luxury SUV</h3><p class="car-card__desc">A crisp privacy finish that keeps the light exterior looking clean.</p><div class="car-card__tags"><span class="service-tag service-tag--primary">Ceramic Tint</span><span class="service-tag">Luxury</span></div></div>
                     </div>
                 </div>
             </div>
@@ -534,6 +644,27 @@
     </div>
 
     <script>
+        const deferredGalleryImages = document.querySelectorAll('img[data-gallery-src]');
+
+        const loadGalleryImage = (image) => {
+            image.src = image.dataset.gallerySrc;
+            image.removeAttribute('data-gallery-src');
+        };
+
+        if ('IntersectionObserver' in window) {
+            const galleryImageObserver = new IntersectionObserver((entries, observer) => {
+                entries.forEach((entry) => {
+                    if (!entry.isIntersecting) return;
+                    loadGalleryImage(entry.target);
+                    observer.unobserve(entry.target);
+                });
+            }, { rootMargin: '500px 0px' });
+
+            deferredGalleryImages.forEach((image) => galleryImageObserver.observe(image));
+        } else {
+            deferredGalleryImages.forEach(loadGalleryImage);
+        }
+
         const lightbox = document.getElementById('lightbox');
         const lightboxImage = lightbox.querySelector('.lightbox__image');
         const lightboxClose = lightbox.querySelector('.lightbox__close');
