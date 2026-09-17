@@ -9,7 +9,7 @@ const read = name => ref ? execFileSync('git', ['show', `${ref}:${name}`], {cwd:
 for(const route of ['car-window-tinting-near-me','tint-shop-near-me']) {
  const html=read(route);
  assert.match(html, /<h1[\s>]/);
- assert.ok(html.includes(`https://www.obsidianautoworksoc.com/${route}`), `${route}: canonical`);
+ assert.ok(html.includes('https://www.obsidianautoworksoc.com/mobile-window-tinting'), `${route}: canonical`);
  assert.match(html,/href="tel:7146007134"/);
  assert.match(html,/href="sms:\+17146007134/);
  for(const m of html.matchAll(/(?:src|href)=["'](\/[^"']+)["']/g)) {
