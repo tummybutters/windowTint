@@ -8,6 +8,8 @@ const ref = process.argv.find(x => x.startsWith('--ref='))?.slice(6);
 const read = name => ref ? execFileSync('git', ['show', `${ref}:${name}`], {cwd:root, encoding:'utf8',stdio:['ignore','pipe','pipe']}) : fs.readFileSync(path.join(root,name),'utf8');
 for(const route of ['car-window-tinting-near-me','tint-shop-near-me']) {
  const html=read(route);
+ const config=JSON.parse(read('vercel.json'));
+ assert.ok(config.headers.some(rule => new RegExp(`^${rule.source}$`).test('/'+route) && rule.headers.some(h => h.key.toLowerCase()==='content-type' && h.value.startsWith('text/html'))), `${route}: HTML response header`);
  assert.match(html, /<h1[\s>]/);
  assert.ok(html.includes('https://www.obsidianautoworksoc.com/mobile-window-tinting'), `${route}: canonical`);
  assert.match(html,/href="tel:7146007134"/);
