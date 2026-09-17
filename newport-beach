@@ -177,25 +177,28 @@
         </div>
     </section>
 
-    <section class="city-testimonials">
+    <section class="seo-section seo-section--light" aria-label="Newport Beach appointment planning">
         <div class="container">
-            <div class="city-section-header">
-                <h2>What Newport Beach Drivers Mention</h2>
-                <p>Local proof points for the common ways mobile tint helps around Newport Beach.</p>
+            <div class="seo-section__header">
+                <h2>Choose Tint for Your Newport Beach Routine</h2>
+                <p>Compare the finish you want with the glass coverage and installation conditions your vehicle needs.</p>
             </div>
-            <div class="city-testimonials__grid">
-                <div class="testimonial-card">
-                    <p class="testimonial-card__quote">The finish looks right on the car without making it feel overdone.</p>
-                    <div class="testimonial-card__meta">Local driver, Newport Beach</div>
-                </div>
-                <div class="testimonial-card">
-                    <p class="testimonial-card__quote">Mobile install was easy around a busy Newport schedule.</p>
-                    <div class="testimonial-card__meta">Mobile tint client, Newport Beach</div>
-                </div>
-                <div class="testimonial-card">
-                    <p class="testimonial-card__quote">Glare is noticeably better on PCH and the cabin stays more comfortable.</p>
-                    <div class="testimonial-card__meta">Orange County vehicle owner, Newport Beach</div>
-                </div>
+            <div class="seo-grid">
+                <article>
+                    <h3>Appearance and visibility</h3>
+                    <p>For a subtle finish, compare shade choices on similar vehicles and consider how you use the car after dark. Gallery photos show appearance, not proof that a shade is suitable or legal for every window.</p>
+                    <p><a href="/window-tinting-gallery">Browse vehicle photos</a></p>
+                </article>
+                <article>
+                    <h3>A suitable coastal workspace</h3>
+                    <p>Before arranging mobile installation, send a photo of the garage or parking area and confirm access and permission. Ask whether the space offers adequate shelter from wind and airborne debris.</p>
+                    <p><a href="/mobile-window-tinting">Plan a mobile installation</a></p>
+                </article>
+                <article>
+                    <h3>Glass comfort or paint care?</h3>
+                    <p>Window tint and ceramic paint coating address different parts of the vehicle. For exterior finish preparation and maintenance planning, use the Newport Beach coating page instead of a tint package.</p>
+                    <p><a href="/ceramic-coating-newport-beach">Newport Beach ceramic coating</a></p>
+                </article>
             </div>
         </div>
     </section>

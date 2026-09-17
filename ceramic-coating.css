@@ -446,6 +446,17 @@
     color: #ddd;
 }
 
+.coating-area a {
+    color: inherit;
+    text-decoration: underline;
+    text-underline-offset: 0.2em;
+}
+
+.coating-area a:hover,
+.coating-area a:focus-visible {
+    color: var(--sunset-coral);
+}
+
 .coating-area span {
     color: var(--sunset-coral);
     padding: 0 0.4rem;

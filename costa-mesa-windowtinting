@@ -177,25 +177,28 @@
         </div>
     </section>
 
-    <section class="city-testimonials">
+    <section class="seo-section seo-section--light" aria-label="Costa Mesa appointment planning">
         <div class="container">
-            <div class="city-section-header">
-                <h2>What Costa Mesa Drivers Mention</h2>
-                <p>Local proof points for the common ways mobile tint helps around Costa Mesa.</p>
+            <div class="seo-section__header">
+                <h2>Make Your Costa Mesa Tint Quote Specific</h2>
+                <p>A clear glass list and a realistic appointment setup make packages easier to compare.</p>
             </div>
-            <div class="city-testimonials__grid">
-                <div class="testimonial-card">
-                    <p class="testimonial-card__quote">I booked around a workday near South Coast and did not have to move my schedule.</p>
-                    <div class="testimonial-card__meta">Local driver, Costa Mesa</div>
-                </div>
-                <div class="testimonial-card">
-                    <p class="testimonial-card__quote">The shade fits the car without being too dark at night.</p>
-                    <div class="testimonial-card__meta">Mobile tint client, Costa Mesa</div>
-                </div>
-                <div class="testimonial-card">
-                    <p class="testimonial-card__quote">Clean install and no shop wait.</p>
-                    <div class="testimonial-card__meta">Orange County vehicle owner, Costa Mesa</div>
-                </div>
+            <div class="seo-grid">
+                <article>
+                    <h3>Compare the same coverage</h3>
+                    <p>Front doors, sides and rear, and full-car packages are different scopes. Include your year, make, model, and requested windows so you are comparing like-for-like quotes.</p>
+                    <p><a href="/window-tint-pricing">Compare tint packages</a></p>
+                </article>
+                <article>
+                    <h3>A workday appointment</h3>
+                    <p>For shared parking around South Coast Metro or another workplace, check property permission before choosing an appointment. Send the space and access details, and leave time for the agreed installation.</p>
+                    <p><a href="/how-long-does-window-tinting-take">Installation timing</a></p>
+                </article>
+                <article>
+                    <h3>Existing film changes the plan</h3>
+                    <p>Mention peeling, bubbles, discoloration, or old film when you request a quote. Removal needs to be assessed separately from the replacement film and coverage.</p>
+                    <p><a href="/tint-removal">Existing tint removal</a></p>
+                </article>
             </div>
         </div>
     </section>

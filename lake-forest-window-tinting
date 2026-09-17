@@ -177,25 +177,28 @@
         </div>
     </section>
 
-    <section class="city-testimonials">
+    <section class="seo-section seo-section--light" aria-label="Lake Forest appointment planning">
         <div class="container">
-            <div class="city-section-header">
-                <h2>What Lake Forest Drivers Mention</h2>
-                <p>Local proof points for the common ways mobile tint helps around Lake Forest.</p>
+            <div class="seo-section__header">
+                <h2>Plan Tint Around Your Lake Forest Vehicle</h2>
+                <p>Separate shade, glass coverage, and appointment conditions before booking.</p>
             </div>
-            <div class="city-testimonials__grid">
-                <div class="testimonial-card">
-                    <p class="testimonial-card__quote">The car is noticeably cooler leaving work in Foothill Ranch.</p>
-                    <div class="testimonial-card__meta">Local driver, Lake Forest</div>
-                </div>
-                <div class="testimonial-card">
-                    <p class="testimonial-card__quote">Mobile install fit around our home schedule.</p>
-                    <div class="testimonial-card__meta">Mobile tint client, Lake Forest</div>
-                </div>
-                <div class="testimonial-card">
-                    <p class="testimonial-card__quote">The front window match looks like it came that way.</p>
-                    <div class="testimonial-card__meta">Orange County vehicle owner, Lake Forest</div>
-                </div>
+            <div class="seo-grid">
+                <article>
+                    <h3>SUV privacy glass</h3>
+                    <p>If the rear glass is already dark, tell us whether that is factory glass or an applied film. Appearance alone does not identify the installed product or its performance. Review the front-door scope separately.</p>
+                    <p><a href="/front-two-window-tinting">Front two window options</a></p>
+                </article>
+                <article>
+                    <h3>Home or Foothill Ranch workplace</h3>
+                    <p>Share a photo of the driveway, garage, or workplace parking area, with access and permission details. Confirm the available working space before planning your day around the installation.</p>
+                    <p><a href="/mobile-window-tinting">Mobile tint setup</a></p>
+                </article>
+                <article>
+                    <h3>Plan for aftercare</h3>
+                    <p>Read the care instructions before booking so you can plan window use and cleaning around the installation. Follow the installer instructions for the actual film and curing conditions.</p>
+                    <p><a href="/window-tint-aftercare">Window tint aftercare</a></p>
+                </article>
             </div>
         </div>
     </section>

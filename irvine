@@ -177,25 +177,28 @@
         </div>
     </section>
 
-    <section class="city-testimonials">
+    <section class="seo-section seo-section--light" aria-label="Irvine appointment planning">
         <div class="container">
-            <div class="city-section-header">
-                <h2>What Irvine Drivers Mention</h2>
-                <p>Local proof points for the common ways mobile tint helps around Irvine.</p>
+            <div class="seo-section__header">
+                <h2>Plan Your Irvine Tint Appointment</h2>
+                <p>Choose the glass coverage first, then confirm a suitable home or workplace setup.</p>
             </div>
-            <div class="city-testimonials__grid">
-                <div class="testimonial-card">
-                    <p class="testimonial-card__quote">Booked at my office near the Spectrum and the install was tidy and on time.</p>
-                    <div class="testimonial-card__meta">Local driver, Irvine</div>
-                </div>
-                <div class="testimonial-card">
-                    <p class="testimonial-card__quote">Our family SUV stays cooler after school pickup runs around Woodbridge.</p>
-                    <div class="testimonial-card__meta">Mobile tint client, Irvine</div>
-                </div>
-                <div class="testimonial-card">
-                    <p class="testimonial-card__quote">Front windows kept visibility clean while matching the rear privacy glass.</p>
-                    <div class="testimonial-card__meta">Orange County vehicle owner, Irvine</div>
-                </div>
+            <div class="seo-grid">
+                <article>
+                    <h3>Tesla glass coverage</h3>
+                    <p>Comparing a Model Y with a Model 3? Use the model-specific coverage pages before requesting a quote. Identify the doors, rear glass, windshield, and any roof glass separately so the appointment scope is clear.</p>
+                    <p><a href="/tesla-model-y-window-tinting">Model Y tint coverage</a></p>
+                </article>
+                <article>
+                    <h3>Office or shared parking</h3>
+                    <p>For an appointment near the Spectrum or another Irvine workplace, confirm property permission and send a photo of the parking space. A location name alone does not establish that an installation can be completed there.</p>
+                    <p><a href="/mobile-window-tinting">Mobile appointment requirements</a></p>
+                </article>
+                <article>
+                    <h3>Shade and front-side glass</h3>
+                    <p>A visual match to darker rear glass is not a legal check. Review visibility, film selection, and California requirements before choosing the front-side shade.</p>
+                    <p><a href="/california-window-tint-law">California tint requirements</a></p>
+                </article>
             </div>
         </div>
     </section>

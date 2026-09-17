@@ -481,6 +481,12 @@
   ],
   "headers": [
     {
+      "source": "/(toyota-tacoma-window-tinting|bmw-m4-window-tinting|toyota-4runner-window-tinting|bmw-x3-window-tinting)",
+      "headers": [
+        { "key": "Content-Type", "value": "text/html; charset=utf-8" }
+      ]
+    },
+    {
       "source": "/",
       "headers": [
         {

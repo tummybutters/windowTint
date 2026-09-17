@@ -291,4 +291,36 @@ assert.equal(
   'coating pages leave mobile-tint website call replacement disabled'
 );
 
-console.log('lead-tracking smoke test passed');
+localStorage.setItem('lead_track_phone', '5551234567');
+localStorage.setItem('lead_track_cid', 'private-customer-id');
+const beforePrivacyTest = gtagCalls.length;
+tracker.trackEvent('text_click', {
+  phone: '5551234567',
+  conversation_id: 'private-customer-id',
+  answer: 'private@example.com',
+  link_text: 'Private Customer',
+  link_url: 'sms:+17146007134?body=Private%20Customer%205551234567',
+  service: 'mobile_tint',
+  lead_action: 'vehicle_sticky_text',
+  page_location: 'https://example.com/?phone=5551234567'
+});
+const privacyCalls = gtagCalls.slice(beforePrivacyTest);
+assert.equal(privacyCalls.length, 2, 'one Google event and one existing Ads conversion');
+for (const call of privacyCalls) {
+  assert.equal(call[2].link_url, 'sms:');
+  assert.equal(call[2].service, 'mobile_tint');
+  assert.equal(call[2].lead_action, 'vehicle_sticky_text');
+  assert.equal(call[2].page_location, 'https://www.obsidianautoworksoc.com/vip-booking');
+  assert.ok(!JSON.stringify(call).includes('5551234567'));
+  assert.ok(!JSON.stringify(call).includes('private'));
+  assert.ok(!JSON.stringify(call).includes('Private Customer'));
+  for (const key of ['phone', 'conversation_id', 'answer', 'link_text', 'lead_session_id']) {
+    assert.ok(!(key in call[2]), `${key} must not be sent to Google`);
+  }
+}
+assert.equal(tracker.getEventLog().at(-1).lead.phone, '5551234567', 'first-party attribution remains intact');
+assert.ok(tracker.getEventLog().at(-1).payload.link_url.includes('body='));
+tracker.trackEvent('square_booking_click', {link_url: 'https://book.squareup.com/appointments/test?phone=5551234567#private'});
+assert.equal(gtagCalls.at(-1)[2].link_url, 'https://book.squareup.com/appointments/test');
+
+console.log('lead-tracking smoke and Google payload privacy tests passed');

@@ -2,6 +2,8 @@
   "name": "obsidian-autoworks-site",
   "private": true,
   "scripts": {
+    "generate:vehicles": "node scripts/generate-vehicle-pages.mjs",
+    "test:seo": "node scripts/test-vehicle-pages.mjs && node scripts/test-vehicle-analytics.mjs && node --check vehicle-pages.js && python3 scripts/test-seo-foundation.py",
     "dev": "python3 dev_server.py",
     "db:migrate": "node scripts/migrate-attribution-db.mjs",
     "db:prune": "node scripts/prune-attribution-data.mjs",

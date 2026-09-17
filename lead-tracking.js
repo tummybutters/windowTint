@@ -432,31 +432,36 @@
     };
 
     const sendAnalyticsEvent = (eventName, extra = {}, options = {}) => {
-        const lead = getLead();
         const event = recordLeadEvent(eventName, extra, options);
         if (!event || typeof window.gtag !== 'function') return event;
 
+        // Keep customer identifiers and free text in first-party storage, not Google events.
+        const safeExtra = {};
+        for (const key of ['service', 'landing_variant', 'lead_action', 'quiz_step']) {
+            if (typeof extra[key] === 'string' && /^[a-z0-9_-]{1,80}$/i.test(extra[key])) {
+                safeExtra[key] = extra[key];
+            }
+        }
+        if (Number.isFinite(extra.event_count)) safeExtra.event_count = extra.event_count;
+        safeExtra.page_location = `${window.location.origin}${window.location.pathname}`;
+        try { safeExtra.page_referrer = new URL(document.referrer).origin + '/'; } catch (_) { safeExtra.page_referrer = ''; }
+        if (extra.link_url) {
+            try {
+                const url = new URL(extra.link_url, window.location.origin);
+                if (['tel:', 'sms:', 'mailto:'].includes(url.protocol)) {
+                    safeExtra.link_url = url.protocol;
+                } else if (['https:', 'http:'].includes(url.protocol)) {
+                    safeExtra.link_url = `${url.origin}${url.pathname}`;
+                }
+            } catch (error) {
+                // Do not forward malformed or unrecognized destinations.
+            }
+        }
+
         window.gtag('event', eventName, {
             event_category: 'lead_attribution',
-            lead_session_id: lead.session_id,
-            conversation_id: lead.cid,
-            phone: lead.phone,
-            utm_source: lead.utm_source,
-            utm_medium: lead.utm_medium,
-            utm_campaign: lead.utm_campaign,
-            utm_term: lead.utm_term,
-            utm_content: lead.utm_content,
-            gclid: lead.gclid,
-            gbraid: lead.gbraid,
-            wbraid: lead.wbraid,
-            campaignid: lead.campaignid,
-            adgroupid: lead.adgroupid,
-            keyword: lead.keyword,
-            matchtype: lead.matchtype,
-            device: lead.device,
-            network: lead.network,
             page_path: window.location.pathname,
-            ...extra
+            ...safeExtra
         });
 
         const adsConversions = {
@@ -468,12 +473,8 @@
             window.gtag('event', 'conversion', {
                 send_to: `${GOOGLE_ADS_ID}/${conversionLabel}`,
                 event_category: 'lead_attribution',
-                lead_session_id: lead.session_id,
-                gclid: lead.gclid,
-                gbraid: lead.gbraid,
-                wbraid: lead.wbraid,
                 page_path: window.location.pathname,
-                ...extra
+                ...safeExtra
             });
         }
 
