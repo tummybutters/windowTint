@@ -243,15 +243,15 @@ assert.match(teslaModel3, /Sides &amp; Rear[\s\S]*\$950/, 'Model 3 must publish 
 assert.match(teslaModel3, /Full Car[\s\S]*\$1,150/, 'Model 3 must publish the approved full-car price.');
 assert.doesNotMatch(teslaModel3, /alt="[^"]*Model 3[^"]*"[\s\S]{0,180}tesla-model-y/i, 'Model 3 must not label Model Y proof as Model 3.');
 
-assert.match(cybertruck, /<h1>Tint for your Cybertruck\./, 'Cybertruck must use a short search-matching H1.');
+assert.match(cybertruck, /<h1>Premium tint\.<br class="mobile-break"> <em>Installed in your driveway\.<\/em><\/h1>/, 'Approved installation hero copy must be retained.');
 assert.doesNotMatch(cybertruck, /\$[0-9]/, 'Cybertruck must not publish unconfirmed pricing.');
 assert.match(cybertruck, /exact quote/i, 'Cybertruck must use a quote-first offer.');
 
-assert.match(mobileCeramicNearMe, /<h1>Mobile ceramic window tint\./, 'Mobile ceramic must use a short search-matching H1.');
+assert.match(mobileCeramicNearMe, /<h1>Premium tint\.<br class="mobile-break"> <em>Installed in your driveway\.<\/em><\/h1>/, 'Approved installation hero copy must be retained.');
 assert.match(mobileCeramicNearMe, /home or workplace/i, 'Mobile ceramic must explain the qualified mobile service area.');
 assert.match(mobileCeramicNearMe, /mobile-porsche-front\.webp/, 'Mobile ceramic must use real mobile-install proof.');
 
-assert.match(nanoCeramic, /<h1>Nano ceramic window tint\./, 'Nano ceramic must use a short search-matching H1.');
+assert.match(nanoCeramic, /<h1>Premium tint\.<br class="mobile-break"> <em>Installed in your driveway\.<\/em><\/h1>/, 'Approved installation hero copy must be retained.');
 assert.match(nanoCeramic, /heat rejection/i, 'Nano ceramic must explain heat-rejection intent.');
 assert.match(nanoCeramic, /UV protection/i, 'Nano ceramic must explain UV protection.');
 assert.doesNotMatch(nanoCeramic, /\b(?:99|100)%\b/, 'Nano ceramic must not invent a numerical performance rating.');
