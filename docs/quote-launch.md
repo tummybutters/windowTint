@@ -10,7 +10,7 @@ Server-only variables: TWILIO_ACCOUNT_SID, TWILIO_AUTH_TOKEN, TWILIO_PHONE_NUMBE
 
 ## Persistence and operations
 
-Vercel's build command runs scripts/migrate-automotive-quotes.mjs when the feature is enabled. It executes the additive automotive quote schema in a transaction; failure stops the build. Existing attribution/Square tables are unchanged.
+The additive automotive quote schema was applied transactionally in an authenticated staged deployment. The release preserves the original zero-configuration static build. Do not set the database migration script as the site's sole build command: the staged attempt omitted static output and was rolled back immediately. Run scripts/migrate-automotive-quotes.mjs only in an authorized environment with DATABASE_URL before future schema-dependent releases. Existing attribution/Square tables are unchanged.
 
 .github/workflows/quote-notifications.yml invokes the authenticated retry/status endpoint every five minutes and supports manual dispatch. GitHub schedules can be delayed; initial SMS sends happen synchronously with form submission and do not wait for the scheduler. Each run processes up to three pending sends and three delivery lookups. Explicit rate-limit rejection can retry; ambiguous timeout/server failures become unknown for manual review rather than sending duplicates. Delivered, failed and undelivered statuses are persisted separately from provider acceptance. Failed, unknown, stale-pending or lookup-error results fail the workflow for operational attention. Check GitHub Actions after a failure; review the saved lead before resending. There is no automatic secondary SMS/email provider.
 
