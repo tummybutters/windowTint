@@ -1,0 +1,30 @@
+{
+  "generator": "Built-in image_gen",
+  "assets": [
+    {
+      "key": "model-3",
+      "path": "/Users/tommybutcher/.codex/generated_images/01a0abb9-fd85-73f2-9655-908b3644725c/exec-e22e1017-12e5-4404-b7bd-eb7530b82f45.png",
+      "prompt": "Use case: product-mockup. Generate one website vehicle-selection illustration: Tesla Model 3 compact low sedan with slim headlights. A polished, charming miniature-style automotive studio render with accurate recognizable model silhouette and realistic silver metallic body, dark tinted glass, dark tires. Front three-quarter view, nose pointing left, entire vehicle and all wheels visible. Wide 3:2 composition, vehicle centered, fills 85 percent width, consistent moderately elevated camera. Actual transparent background with alpha, no scene, no floor, no rectangular background or halo. Clean isolated cutout for a dark charcoal UI with coral-orange accents. No text, labels, typography, people, extra cars or props. Do not invent a sports car silhouette; show the specified Tesla model. Similar visual weight to refined silver vehicle selector graphics."
+    },
+    {
+      "key": "model-y",
+      "path": "/Users/tommybutcher/.codex/generated_images/01a0abb9-fd85-73f2-9655-908b3644725c/exec-28e58fd2-720a-45dd-8936-c7a21561a667.png",
+      "prompt": "Use case: product-mockup. Generate one website vehicle-selection illustration: Tesla Model Y taller compact crossover with curved roof. A polished, charming miniature-style automotive studio render with accurate recognizable model silhouette and realistic silver metallic body, dark tinted glass, dark tires. Front three-quarter view, nose pointing left, entire vehicle and all wheels visible. Wide 3:2 composition, vehicle centered, fills 85 percent width, consistent moderately elevated camera. Actual transparent background with alpha, no scene, no floor, no rectangular background or halo. Clean isolated cutout for a dark charcoal UI with coral-orange accents. No text, labels, typography, people, extra cars or props. Do not invent a sports car silhouette; show the specified Tesla model. Similar visual weight to refined silver vehicle selector graphics."
+    },
+    {
+      "key": "model-s",
+      "path": "/Users/tommybutcher/.codex/generated_images/01a0abb9-fd85-73f2-9655-908b3644725c/exec-c44a6b93-d8f6-4da3-922d-186070ae3700.png",
+      "prompt": "Use case: product-mockup. Generate one website vehicle-selection illustration: Tesla Model S long low luxury liftback sedan. A polished, charming miniature-style automotive studio render with accurate recognizable model silhouette and realistic silver metallic body, dark tinted glass, dark tires. Front three-quarter view, nose pointing left, entire vehicle and all wheels visible. Wide 3:2 composition, vehicle centered, fills 85 percent width, consistent moderately elevated camera. Actual transparent background with alpha, no scene, no floor, no rectangular background or halo. Clean isolated cutout for a dark charcoal UI with coral-orange accents. No text, labels, typography, people, extra cars or props. Do not invent a sports car silhouette; show the specified Tesla model. Similar visual weight to refined silver vehicle selector graphics."
+    },
+    {
+      "key": "model-x",
+      "path": "/Users/tommybutcher/.codex/generated_images/01a0abb9-fd85-73f2-9655-908b3644725c/exec-e3c2ebde-b7f3-4787-bd55-3064288f612b.png",
+      "prompt": "Use case: product-mockup. Generate one website vehicle-selection illustration: Tesla Model X large rounded SUV, all doors closed. A polished, charming miniature-style automotive studio render with accurate recognizable model silhouette and realistic silver metallic body, dark tinted glass, dark tires. Front three-quarter view, nose pointing left, entire vehicle and all wheels visible. Wide 3:2 composition, vehicle centered, fills 85 percent width, consistent moderately elevated camera. Actual transparent background with alpha, no scene, no floor, no rectangular background or halo. Clean isolated cutout for a dark charcoal UI with coral-orange accents. No text, labels, typography, people, extra cars or props. Do not invent a sports car silhouette; show the specified Tesla model. Similar visual weight to refined silver vehicle selector graphics."
+    },
+    {
+      "key": "cybertruck",
+      "path": "/Users/tommybutcher/.codex/generated_images/01a0abb9-fd85-73f2-9655-908b3644725c/exec-ea61880a-ea4e-4d22-bc31-ff6f3fef3a50.png",
+      "prompt": "Use case: product-mockup. Generate one website vehicle-selection illustration: Tesla Cybertruck angular stainless steel pickup. A polished, charming miniature-style automotive studio render with accurate recognizable model silhouette and realistic silver metallic body, dark tinted glass, dark tires. Front three-quarter view, nose pointing left, entire vehicle and all wheels visible. Wide 3:2 composition, vehicle centered, fills 85 percent width, consistent moderately elevated camera. Actual transparent background with alpha, no scene, no floor, no rectangular background or halo. Clean isolated cutout for a dark charcoal UI with coral-orange accents. No text, labels, typography, people, extra cars or props. Do not invent a sports car silhouette; show the specified Tesla model. Similar visual weight to refined silver vehicle selector graphics."
+    }
+  ]
+}

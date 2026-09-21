@@ -1,7 +1,7 @@
 // Existing website's Google review excerpts; photos are separate recent work, not identified reviewer vehicles.
 (()=>{
 // Curated rows mix vehicles and settings. Advance a full row so no photo carries over.
-const photos=[
+let photos=[
  ['/gallery/optimized/home-proof/recent-work-11.jpg','Red Ferrari at a mobile tint appointment'],
  ['/gallery/optimized/home-proof/recent-work-23.jpg','White Ford Raptor with finished window tint'],
  ['/assets/quote/work-bmw.jpg','BMW window tint by Obsidian'],
@@ -20,6 +20,14 @@ const photos=[
  ['/assets/quote/work-porsche.jpg','Porsche window tint by Obsidian'],
  ['/gallery/optimized/home-proof/recent-work-13.jpg','Tesla white interior and panoramic glass'],
  ['/gallery/optimized/home-proof/recent-work-21.jpg','White luxury SUV with finished window tint']
+];
+// Lead with authentic Tesla work on Tesla entry pages; retain other shop work for variety.
+let proofPath=location.pathname;try{if(window.parent!==window&&window.parent.location.origin===location.origin)proofPath=window.parent.location.pathname}catch{}
+if(proofPath.startsWith('/tesla-'))photos=[
+ ['/gallery/optimized/home-proof/recent-work-02.jpg','Tesla Model Y tint, rear view'],
+ ['/gallery/optimized/home-proof/recent-work-04.jpg','Tesla Model 3 window tint'],
+ ['/assets/paid-landing/tesla-glass-roof.webp','Tesla panoramic glass'],
+ ...photos.filter(([src])=>!['recent-work-04.jpg','recent-work-02.jpg','recent-work-13.jpg'].some(name=>src.endsWith(name)))
 ];
 const rowSize=3,rowCount=Math.ceil(photos.length/rowSize);
 function rowPhotos(row){return photos.slice(row*rowSize,(row+1)*rowSize)}

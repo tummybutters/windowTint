@@ -23,27 +23,22 @@ const bookingSecondaryIndex = booking.indexOf('data-booking-secondary');
 const bookingQuizIndex = booking.indexOf('data-booking-quiz');
 assert.ok(bookingPrimaryIndex < bookingSecondaryIndex && bookingSecondaryIndex < bookingQuizIndex, 'The /booking actions must be ordered call, text, then quiz.');
 
-assert.match(vipBooking, /data-hero-primary[^>]*href="tel:7146007134"|href="tel:7146007134"[^>]*data-hero-primary/, 'The paid landing hero needs a primary call action.');
-assert.match(vipBooking, /data-hero-secondary[^>]*href="sms:\+17146007134|href="sms:\+17146007134[^>]*data-hero-secondary/, 'The paid landing hero needs a secondary text action.');
-assert.match(vipBooking, /data-hero-quiz[^>]*href="#vip-booking"|href="#vip-booking"[^>]*data-hero-quiz/, 'The paid landing hero needs a quiz route.');
-
-assert.match(vipBooking, /data-router-call/, 'Every quiz recommendation needs an explicit call action.');
-assert.match(vipBooking, /data-router-text/, 'Every quiz recommendation needs an explicit text action.');
-assert.doesNotMatch(vipBooking, /data-router-book|vip_quiz_square_click|square_booking_url|square_booking_available/, 'Quiz results must not expose stale Square behavior or payload fields.');
+assert.match(vipBooking, /href="tel:\+17146007134"/, 'VIP keeps the approved call number.');
+assert.match(vipBooking, /assets\/quote\/quote.js/, 'VIP uses the saved callback intake.');
+assert.match(vipBooking, /id="vip-booking"/, 'Existing deep links still resolve.');
+assert.doesNotMatch(vipBooking, /data-booking-router/, 'VIP must not expose the obsolete second quiz.');
 
 for (const [name, page, service] of [
   ['mobile tint', mobileTint, 'mobile_tint'],
   ['ceramic tint', ceramicTint, 'ceramic_tint']
 ]) {
   assert.match(page, new RegExp(`<html[^>]+data-lead-service="${service}"`), `The ${name} page must identify its lead service.`);
-  assert.match(page, /data-hero-primary[^>]*href="tel:7146007134"|href="tel:7146007134"[^>]*data-hero-primary/, `The ${name} hero needs a primary call action.`);
-  assert.match(page, /data-hero-secondary[^>]*href="sms:\+17146007134|href="sms:\+17146007134[^>]*data-hero-secondary/, `The ${name} hero needs a secondary text action.`);
-  assert.match(page, /data-cta-primary[^>]*href="tel:7146007134"|href="tel:7146007134"[^>]*data-cta-primary/, `The ${name} final CTA needs a primary call action.`);
-  assert.match(page, /data-cta-secondary[^>]*href="sms:\+17146007134|href="sms:\+17146007134[^>]*data-cta-secondary/, `The ${name} final CTA needs a secondary text action.`);
+  assert.match(page, /data-hero-primary/, `The ${name} header needs a call action.`);
+  assert.match(page, /href="tel:\+17146007134"/, `The ${name} header uses the approved callback number.`);
+  assert.match(page, /id="quote"/, `The ${name} page needs its saved callback quiz.`);
+  assert.match(page, /assets\/quote\/quote.js/, `The ${name} page uses the shared intake.`);
+  assert.match(page, /id="resume"/, `The ${name} final CTA returns to its quiz.`);
 
-  const heroPrimaryIndex = page.indexOf('data-hero-primary');
-  const heroSecondaryIndex = page.indexOf('data-hero-secondary');
-  assert.ok(heroPrimaryIndex < heroSecondaryIndex, `The ${name} hero actions must be ordered call, then text.`);
 }
 
 assert.match(tracking, /const TEXT_SELECTOR = 'a\[href\^="sms:"\]'/, 'Shared tracking needs an SMS selector.');

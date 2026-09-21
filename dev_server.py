@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 from http.server import SimpleHTTPRequestHandler, ThreadingHTTPServer
 from pathlib import Path
+from urllib.parse import urlsplit
 
 
 REWRITE_PATHS = {
@@ -72,8 +73,9 @@ REWRITE_PATHS = {
 class ExtensionlessHTMLHandler(SimpleHTTPRequestHandler):
     # Serve the extensionless index file and treat extensionless files as HTML.
     def _rewrite_path(self):
-        if self.path in REWRITE_PATHS:
-            self.path = REWRITE_PATHS[self.path]
+        path = urlsplit(self.path).path
+        if path in REWRITE_PATHS:
+            self.path = REWRITE_PATHS[path]
 
     def do_GET(self):
         self._rewrite_path()

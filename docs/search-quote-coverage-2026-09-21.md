@@ -1,0 +1,17 @@
+# Automotive Search quote coverage — September 21, 2026
+
+Customer 8605345590, automotive Search campaign 23899221542. Read live enabled ads, enabled keywords and account/campaign/ad-group sitelinks; checked landing-page traffic for September 14–21. Raw evidence is in the task workspace's workbenches/obsidian-search-page-coverage-2026-09-21 directory. User explicitly limited this release to automotive pages.
+
+The active ad/keyword destinations are car-window-tinting-near-me, ceramic-window-tint-pricing, ceramic-window-tinting, mobile-ceramic-window-tint-near-me, mobile-window-tinting, mobile-window-tinting-near-me, nano-ceramic-window-tint, tesla-cybertruck-window-tint, tesla-model-3-window-tinting, tesla-model-y-window-tinting, tesla-window-tinting and tint-shop-near-me.
+
+Additional on-site sitelink destinations covered: window-tint-pricing, tint-removal, vip-booking, services, window-tinting-gallery and the homepage contact section. Fifteen pages use the compact standalone intake; services, gallery and homepage retain their existing content with the same intake embedded. The existing external Square Book Online sitelink remains a separate booking destination. No Ads URLs, budgets, bids, assets or conversion settings were changed. Commercial landing pages and their intake were not changed.
+
+All on-site intake uses the same automotive-quotes API, durable storage and Twilio callback alert. Tesla selector offers Model 3, Y, S, X and Cybertruck. Model-specific destinations prefill the model and start at glass selection; tint removal skips the glass-selection step. The form retains entered data while navigating back and forward. No customer details enter analytics. Callback alerts remain plain-language name, phone, vehicle, request and service address.
+
+Existing canonical tags, indexing directives, structured data and exact price tables are preserved. Rebuilt pages retain service details and organic footer navigation in an expandable section. The old VIP recommendation-only quiz is replaced, with its existing #vip-booking deep link retained. Work-photo rotations use real business photos; the Tesla-specific first row is followed by varied work. Generated graphics are illustrative vehicle selectors only.
+
+Tesla graphics: built-in image_gen; prompts and source references in tesla-quiz-assets.json. Deployed transparent WebP files: assets/quote/tesla-model-3.webp, tesla-model-y.webp, tesla-model-s.webp, tesla-model-x.webp, tesla-cybertruck.webp. The source images remain in the generated-images directory; these optimized assets are checked into the site repository.
+
+Validation: quote API/notification/delivery/retry tests; Tesla context and removal/roof payload tests; all 18 route canonical/schema/pricing/ID contracts; full tracking/Square/commercial regression suite; generated vehicle and analytics tests. Browser checks cover Tesla Model X → glass roof → prefilled contact, Model Y skipping to coverage on mobile, empty-field validation, generic removal → contact, accessible price tables, and embedded intake with work photos. Original historical SEO-foundation script retains its prior no-added-script/no-paid-page-change assertions; the new coverage test checks the intentional replacement contracts.
+
+Deployment procedure: upload a clean source bundle to the existing Kislev-owned Vercel project with --prod --skip-domain, inspect staged route/asset checks before promotion, then verify production content. Do not add a buildCommand merely to run migrations.
