@@ -26,6 +26,6 @@ Desktop/mobile visual checks cover vehicle selection, coverage selection, final 
 
 ## Measurement and rollback
 
-Google Analytics only. quote_start, quote_step_complete, quote_submit_success and quote_submit_error contain no customer details. Saved-form events remain distinct from call/text clicks. No Google Ads campaign, bid, budget or conversion configuration changes are included in this release. Do not count a successful API response as an attributed booked job.
+Google Analytics records the quiz steps. Google Ads also records a saved automotive quote after a successful server response, deduplicated by the request UUID. quote_start, quote_step_complete, quote_submit_success and quote_submit_error contain no customer details. Saved-form events remain distinct from call/text clicks. The September 21 measurement update adds Saved Automotive Quote - Obsidian to the automotive campaign custom goal and removes phone/text button clicks from that goal. The call conversion actions remain included; Manual CPC and budgets are unchanged. Do not count a successful API response as an attributed booked job.
 
 Production promotion and workflow execution must be recorded in the launch evidence after verification. Keep dpl_6krbUhc4E4bU7ZYmgANAT1ShEafn available as the prior deployment for rollback. Rolling back must preserve saved inquiries; do not drop the added database tables.
