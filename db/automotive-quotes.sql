@@ -20,3 +20,6 @@ CREATE TABLE IF NOT EXISTS automotive_quote_rate_limits (
  bucket text NOT NULL, window_at timestamptz NOT NULL DEFAULT date_trunc('minute',now()),
  count integer NOT NULL DEFAULT 1, PRIMARY KEY(bucket,window_at)
 );
+
+ALTER TABLE automotive_quotes ADD COLUMN IF NOT EXISTS priority text;
+ALTER TABLE automotive_quotes ADD COLUMN IF NOT EXISTS timing text;

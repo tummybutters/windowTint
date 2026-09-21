@@ -15,3 +15,16 @@ res=response();await createHandler({store:{...store,persist:async()=>{throw Erro
 res=response();await createHandler({store,enabled:false})(req,res);assert.equal(res.code,503);
 res=response();await createHandler({store:{...store,checkRateLimit:async()=>false},enabled:true})(req,res);assert.equal(res.code,429);
 console.log('Automotive quote validation, origin, rate limit, persistence failure, delivery failure, and release gate tests passed.');
+
+const enhanced=normalizeQuote({...input,priority:'Cooler cabin',timing:'Sometime this week'});
+assert.equal(enhanced.priority,'Cooler cabin');assert.equal(enhanced.timing,'Sometime this week');
+assert.notEqual(enhanced.payload_hash,record.payload_hash);
+assert.notEqual(normalizeQuote({...input,priority:'More privacy',timing:'Sometime this week'}).payload_hash,enhanced.payload_hash);
+assert.equal(normalizeQuote(input).payload_hash,record.payload_hash,'Older cached submissions remain idempotent');
+for(const key of ['priority','timing'])for(const value of ['',null,{},'made up'])assert.throws(()=>normalizeQuote({...input,[key]:value}));
+const {createStore}=require('../lib/automotive-quote-store');
+let persisted;
+await createStore({query:async(sql,params)=>{persisted={sql,params};return[{id:input.id}]}}).persist(enhanced);
+assert(persisted.sql.includes('priority,timing'));
+assert.deepEqual(persisted.params.slice(-2),['Cooler cabin','Sometime this week']);
+console.log('New preference validation, backward compatibility, hashing and storage passed.');

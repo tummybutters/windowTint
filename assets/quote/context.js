@@ -4,7 +4,7 @@
  const presets={'/tesla-model-3-window-tinting':'Model 3','/tesla-model-y-window-tinting':'Model Y','/tesla-cybertruck-window-tint':'Cybertruck'};
  function contextFor(path){
   path=path.replace(/\/$/,'');const tesla=path.startsWith('/tesla-'),model=presets[path],removal=path==='/tint-removal';
-  const context={tesla,vehicles:tesla?teslas:generic,steps:model?[1,2]:removal?[0,2]:[0,1,2],answers:{contact:'call'}};
+  const context={tesla,removal,vehicles:tesla?teslas:generic,steps:model?[3,1,4,2]:removal?[0,3,4,2]:[0,3,1,4,2],answers:{contact:'call'}};
   if(model)Object.assign(context.answers,selectVehicle(context,model));
   if(removal)context.answers.coverage='Tint removal';return context;
  }

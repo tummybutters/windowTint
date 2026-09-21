@@ -1,7 +1,7 @@
 import assert from 'node:assert/strict';import {createRequire} from 'node:module';const require=createRequire(import.meta.url);const {sendAlert}=require('../lib/quote-notifications');const {createStore}=require('../lib/automotive-quote-store');
 Object.assign(process.env,{TWILIO_ACCOUNT_SID:'AC'+'1'.repeat(32),TWILIO_AUTH_TOKEN:'unit-test-key',TWILIO_PHONE_NUMBER:'+17145550111',QUOTE_ALERT_TO:'+17145550112'});
 const lead={id:'test-id',name:'Test',phone:'+17145550123',vehicle:'2023 Toyota Tacoma',vehicle_type:'Truck',coverage:'Sides + rear',service_address:'Test address'};
-let body;const success=await sendAlert({...lead,to:'+17145550999'},async(url,opts)=>{assert.equal(url,'https://api.twilio.com/2010-04-01/Accounts/AC'+'1'.repeat(32)+'/Messages.json');assert.equal(opts.headers.Authorization,'Basic '+Buffer.from('AC'+'1'.repeat(32)+':unit-test-key').toString('base64'));body=new URLSearchParams(opts.body);return{ok:true,json:async()=>({sid:'SM'+'2'.repeat(32),status:'queued'})}});assert.equal(success.id,'SM'+'2'.repeat(32));assert.equal(body.get('To'),process.env.QUOTE_ALERT_TO);assert.notEqual(body.get('To'),lead.phone);assert.equal(body.get('From'),'+17145550111');assert.equal(body.get('Body'), 'New tint quote - please call\n\nName: Test\nPhone: (714) 555-0123\nVehicle: 2023 Toyota Tacoma (Truck)\nWants: Side and rear window tint\nService address: Test address');
+let body;const success=await sendAlert({...lead,to:'+17145550999'},async(url,opts)=>{assert.equal(url,'https://api.twilio.com/2010-04-01/Accounts/AC'+'1'.repeat(32)+'/Messages.json');assert.equal(opts.headers.Authorization,'Basic '+Buffer.from('AC'+'1'.repeat(32)+':unit-test-key').toString('base64'));body=new URLSearchParams(opts.body);return{ok:true,json:async()=>({sid:'SM'+'2'.repeat(32),status:'queued'})}});assert.equal(success.id,'SM'+'2'.repeat(32));assert.equal(body.get('To'),process.env.QUOTE_ALERT_TO);assert.notEqual(body.get('To'),lead.phone);assert.equal(body.get('From'),'+17145550111');assert.equal(body.get('Body'), 'New tint quote - please call\n\nName: Test\nPhone: (714) 555-0123\n\nVehicle: 2023 Toyota Tacoma (Truck)\n\nWants: Side and rear window tint\n\nService address:\nTest address');
 assert(!body.get('Body').includes(lead.id));
 await assert.rejects(sendAlert(lead,async()=>{throw Error('timeout')}),e=>e.uncertain===true);
 await assert.rejects(sendAlert(lead,async()=>({ok:false,status:429})),e=>e.retryable===true);
@@ -11,3 +11,12 @@ await assert.rejects(sendAlert(lead,async()=>({ok:true,json:async()=>({status:'q
 await assert.rejects(sendAlert(lead,async()=>({ok:false,status:503})),e=>e.uncertain===true);
 let updates=[],claimed=false,sends=0;const store=createStore({query:async(q,p)=>{updates.push([q,p]);if(q.includes("SET notification_state='sending'")){if(claimed)return[];claimed=true;return[{...lead,notification_attempts:1}]}return[]},send:async()=>{sends++;return{id:'msg_test'}}});await Promise.all([store.dispatch('test-id'),store.dispatch('test-id')]);assert.equal(sends,1);assert(updates.some(([q])=>q.includes("notification_state='accepted'")));
 console.log('Twilio payload, recipient isolation, timeout ambiguity, rate-limit retry, rejection, and concurrent claim tests passed.');
+
+await sendAlert({...lead,priority:'Cooler cabin',timing:'Sometime this week'},async(url,opts)=>{
+ const text=new URLSearchParams(opts.body).get('Body');
+ assert(text.includes('Main priority: Cooler cabin'));
+ assert(text.includes('\n\nPreferred timing: Sometime this week\n\nService address:\n'));
+ assert(text.includes('Name: Test')&&text.includes('Vehicle: 2023 Toyota Tacoma'));
+ return{ok:true,json:async()=>({sid:'SM'+'2'.repeat(32),status:'queued'})};
+});
+console.log('Callback alert includes priority and timing in plain language.');
