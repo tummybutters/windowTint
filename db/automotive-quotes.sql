@@ -13,6 +13,9 @@ CREATE TABLE IF NOT EXISTS automotive_quotes (
  notification_error text, notified_at timestamptz
 );
 CREATE INDEX IF NOT EXISTS automotive_quotes_notifications ON automotive_quotes(notification_state,notification_next_at);
+ALTER TABLE automotive_quotes ADD COLUMN IF NOT EXISTS notification_delivery_state text;
+ALTER TABLE automotive_quotes ADD COLUMN IF NOT EXISTS notification_delivery_error text;
+ALTER TABLE automotive_quotes ADD COLUMN IF NOT EXISTS notification_delivery_checked_at timestamptz;
 CREATE TABLE IF NOT EXISTS automotive_quote_rate_limits (
  bucket text NOT NULL, window_at timestamptz NOT NULL DEFAULT date_trunc('minute',now()),
  count integer NOT NULL DEFAULT 1, PRIMARY KEY(bucket,window_at)

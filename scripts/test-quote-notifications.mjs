@@ -1,10 +1,12 @@
 import assert from 'node:assert/strict';import {createRequire} from 'node:module';const require=createRequire(import.meta.url);const {sendAlert}=require('../lib/quote-notifications');const {createStore}=require('../lib/automotive-quote-store');
-Object.assign(process.env,{AGENTPHONE_API_KEY:'unit-test-key',AGENTPHONE_FROM_NUMBER:'+17145550111',QUOTE_ALERT_TO:'+17145550112'});
+Object.assign(process.env,{TWILIO_ACCOUNT_SID:'AC'+'1'.repeat(32),TWILIO_AUTH_TOKEN:'unit-test-key',TWILIO_PHONE_NUMBER:'+17145550111',QUOTE_ALERT_TO:'+17145550112'});
 const lead={id:'test-id',name:'Test',phone:'+17145550123',vehicle:'Test Sedan',coverage:'Sides + rear',service_address:'Test address'};
-let body;const success=await sendAlert(lead,async(url,opts)=>{assert.equal(url,'https://api.agentphone.ai/v1/messages');body=JSON.parse(opts.body);return{ok:true,json:async()=>({id:'msg_test'})}});assert.equal(success.id,'msg_test');assert.equal(body.to_number,process.env.QUOTE_ALERT_TO);assert.notEqual(body.to_number,lead.phone);assert.match(body.body,/CALL REQUESTED/);
+let body;const success=await sendAlert({...lead,to:'+17145550999'},async(url,opts)=>{assert.equal(url,'https://api.twilio.com/2010-04-01/Accounts/AC'+'1'.repeat(32)+'/Messages.json');assert.equal(opts.headers.Authorization,'Basic '+Buffer.from('AC'+'1'.repeat(32)+':unit-test-key').toString('base64'));body=new URLSearchParams(opts.body);return{ok:true,json:async()=>({sid:'SM'+'2'.repeat(32),status:'queued'})}});assert.equal(success.id,'SM'+'2'.repeat(32));assert.equal(body.get('To'),process.env.QUOTE_ALERT_TO);assert.notEqual(body.get('To'),lead.phone);assert.equal(body.get('From'),'+17145550111');assert.match(body.get('Body'),/CALL REQUESTED/);
 await assert.rejects(sendAlert(lead,async()=>{throw Error('timeout')}),e=>e.uncertain===true);
 await assert.rejects(sendAlert(lead,async()=>({ok:false,status:429})),e=>e.retryable===true);
 await assert.rejects(sendAlert(lead,async()=>({ok:false,status:401})),e=>e.retryable!==true&&!e.uncertain);
-await assert.rejects(sendAlert(lead,async()=>({ok:true,json:async()=>({id:'msg_failed',status:'failed'})})),e=>e.code==='provider_reported_failure');
+await assert.rejects(sendAlert(lead,async()=>({ok:true,json:async()=>({sid:'SM'+'2'.repeat(32),status:'failed'})})),e=>e.code==='provider_reported_failure');
+await assert.rejects(sendAlert(lead,async()=>({ok:true,json:async()=>({status:'queued'})})),e=>e.uncertain===true);
+await assert.rejects(sendAlert(lead,async()=>({ok:false,status:503})),e=>e.uncertain===true);
 let updates=[],claimed=false,sends=0;const store=createStore({query:async(q,p)=>{updates.push([q,p]);if(q.includes("SET notification_state='sending'")){if(claimed)return[];claimed=true;return[{...lead,notification_attempts:1}]}return[]},send:async()=>{sends++;return{id:'msg_test'}}});await Promise.all([store.dispatch('test-id'),store.dispatch('test-id')]);assert.equal(sends,1);assert(updates.some(([q])=>q.includes("notification_state='accepted'")));
-console.log('AgentPhone payload, recipient isolation, timeout ambiguity, rate-limit retry, rejection, and concurrent claim tests passed.');
+console.log('Twilio payload, recipient isolation, timeout ambiguity, rate-limit retry, rejection, and concurrent claim tests passed.');

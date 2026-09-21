@@ -56,7 +56,6 @@ const newIntentRoutes = new Set([
 
 const paidVariants = [
   ['Tesla', tesla, 'tesla_tint', 'tesla_action_v1', 'tesla-tint-quote'],
-  ['near-me mobile', nearMe, 'mobile_tint', 'near_me_mobile_v1', 'mobile-window-tinting-near-me'],
   ['windshield', windshield, 'windshield_tint', 'windshield_action_v1', 'windshield-ceramic-tint'],
   ['ceramic-tint pricing', ceramicTintPricing, 'ceramic_tint', 'ceramic_pricing_v1', 'ceramic-window-tint-pricing'],
   ['Tesla Model Y', teslaModelY, 'tesla_tint', 'tesla_model_y_v1', 'tesla-model-y-window-tint'],
@@ -193,14 +192,14 @@ for (const asset of [
   await access(new URL(asset, root));
 }
 
-for (const asset of [
-  'assets/paid-landing/mobile-porsche-front.webp',
-  'assets/paid-landing/mobile-porsche-rear.webp',
-  'assets/paid-landing/mobile-porsche-side.webp'
-]) {
-  assert.match(nearMe, new RegExp(asset.replaceAll('/', '\\/')), `Near-me mobile must reference ${asset}.`);
-  await access(new URL(asset, root));
-}
+// The near-me page now uses the approved three-step callback flow.
+assert.match(nearMe, /data-lead-service="mobile_tint"/);
+assert.match(nearMe, /data-lead-variant="mobile_quote_v2"/);
+assert.match(nearMe, /noindex,\s*nofollow/);
+assert.match(nearMe, /assets\/quote\/quote.js/);
+assert.match(nearMe, /href="tel:\+17146007134"/);
+assert.doesNotMatch(nearMe, squarePattern);
+assert.doesNotMatch(nearMe, bookingPattern);
 
 assert.match(tesla, /Model Y Sides &amp; Rear[\s\S]*\$700/, 'Tesla must expose the current Model Y sides-and-rear price.');
 assert.match(tesla, /Model 3 Sides &amp; Rear[\s\S]*\$950/, 'Tesla must expose the current Model 3 sides-and-rear price.');
@@ -208,9 +207,6 @@ assert.match(tesla, /Model S Sides &amp; Rear[\s\S]*\$600/, 'Tesla must expose t
 assert.match(tesla, /Panoramic Roof Add-On[\s\S]*\$550/, 'Tesla must expose the current panoramic-roof add-on price.');
 
 assert.match(nearMe, /Orange County/i, 'Near-me mobile must set the local service area.');
-assert.match(nearMe, /driveway|garage/i, 'Near-me mobile must qualify the install location.');
-assert.match(nearMe, /weather/i, 'Near-me mobile must explain weather qualification.');
-assert.match(nearMe, /vehicle, city, and shade/i, 'Near-me mobile text CTA must request useful quote details.');
 
 assert.match(windshield, /Windshield/i, 'Windshield page must match windshield intent.');
 assert.match(windshield, /\$220/, 'Windshield page must expose the current sedan/coupe price.');

@@ -1,4 +1,5 @@
 {
+  "buildCommand": "node scripts/migrate-automotive-quotes.mjs",
   "cleanUrls": true,
   "redirects": [
     {
@@ -525,5 +526,13 @@
         }
       ]
     }
-  ]
+  ],
+  "functions": {
+    "api/automotive-quotes.js": {
+      "maxDuration": 30
+    },
+    "api/quote-notification-retry.js": {
+      "maxDuration": 60
+    }
+  }
 }

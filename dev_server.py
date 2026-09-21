@@ -4,6 +4,7 @@ from pathlib import Path
 
 
 REWRITE_PATHS = {
+    "/quote-widget": "/quote-widget.html",
     "/": "/index",
     "/services": "/services",
     "/window-tint-pricing": "/window-tint-pricing",

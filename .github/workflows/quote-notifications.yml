@@ -1,0 +1,38 @@
+name: Quote alert delivery
+on:
+  schedule:
+    - cron: '*/5 * * * *'
+  workflow_dispatch:
+permissions: {}
+concurrency:
+  group: quote-alert-delivery
+  cancel-in-progress: false
+jobs:
+  reconcile:
+    runs-on: ubuntu-latest
+    timeout-minutes: 2
+    steps:
+      - name: Retry pending alerts and check delivery
+        env:
+          QUOTE_RETRY_SECRET: ${{ secrets.QUOTE_RETRY_SECRET }}
+        run: |
+          python3 - <<'PY'
+          import json, os, urllib.request
+          secret = os.environ.get('QUOTE_RETRY_SECRET')
+          if not secret:
+              raise SystemExit('Quote alert worker secret is missing')
+          request = urllib.request.Request(
+              'https://www.obsidianautoworksoc.com/api/quote-notification-retry',
+              headers={'Authorization': 'Bearer ' + secret})
+          try:
+              with urllib.request.urlopen(request, timeout=75) as response:
+                  result = json.load(response)
+          except Exception:
+              raise SystemExit('Quote delivery worker unavailable; inspect the saved lead queue')
+          fields = ['checked', 'reconciled', 'lookup_errors', 'failed', 'unknown', 'pending']
+          if any(not isinstance(result.get(key), int) for key in fields):
+              raise SystemExit('Unexpected quote delivery worker response')
+          print(json.dumps({key: result[key] for key in fields}))
+          if any(result[key] for key in ['lookup_errors', 'failed', 'unknown', 'pending']):
+              raise SystemExit('Quote alert needs attention; inspect delivery before resending')
+          PY
