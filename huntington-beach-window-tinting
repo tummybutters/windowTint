@@ -81,9 +81,10 @@
         gtag('config', 'G-TR9ET60HX3');
         gtag('config', 'AW-17846304809');
     </script>
+    <link rel="stylesheet" href="/city-organic.css?v=20260921">
 </head>
 
-<body>
+<body class="city-growth">
     <nav class="nav">
         <div class="nav__container">
             <a href="/" class="nav__logo">
@@ -97,7 +98,7 @@
                 <a href="/#contact">Contact</a>
             </div>
             <div class="nav__actions">
-                <a href="/booking" class="brutalist-btn brutalist-btn--accent">Book Online</a>
+                <a href="#quote" class="brutalist-btn brutalist-btn--accent">Get My Quote</a>
                 <a href="tel:7146007134" class="brutalist-btn brutalist-btn--outline">(714) 600-7134</a>
             </div>
         </div>
@@ -105,13 +106,17 @@
 
     <header class="city-hero">
         <div class="city-hero__container">
-            <h1 class="city-hero__title">Huntington Beach Window Tinting | <span>Mobile Coastal Tint</span></h1>
-            <p class="city-hero__subtitle">Premium mobile ceramic window tinting delivered to suitable homes, offices, garages, and approved install spots around Huntington Beach.</p>
+            <h1 class="city-hero__title">Mobile Window Tinting <span>in Huntington Beach</span></h1>
+            <p class="city-hero__subtitle">Ceramic window tint brought to a suitable Huntington Beach home or workplace. Compare glare, privacy, and heat-control options for your car, truck, or SUV.</p>
             <div class="city-hero__cta">
-                <a href="/booking" class="brutalist-btn">Book Your Huntington Beach Tint</a>
+                <a href="#quote" class="brutalist-btn">Get My Tint Quote</a>
+                <a href="/window-tint-pricing" class="brutalist-btn brutalist-btn--outline">Compare Prices</a>
             </div>
         </div>
     </header>
+    <section class="city-work" aria-labelledby="city-work-title"><div class="container"><div class="city-work__heading"><h2 id="city-work-title">See the finish for yourself.</h2><a href="/window-tinting-gallery">All recent work ↗</a></div><p>Recent Obsidian installations from our vehicle gallery.</p><div class="city-work__grid"><figure><a href="/sides-rear-window-tinting"><img src="/gallery/optimized/gallery-cards/mercedes-benz-gls-01.webp" alt="Mercedes-Benz GLS window tint by Obsidian Autoworks" width="900" height="960" loading="lazy" decoding="async"><figcaption>Mercedes-Benz GLS <span aria-hidden="true">↗</span></figcaption></a></figure><figure><a href="/ceramic-window-tinting"><img src="/gallery/optimized/gallery-cards/cadillac-lyriq-01.webp" alt="Cadillac Lyriq window tint by Obsidian Autoworks" width="900" height="960" loading="lazy" decoding="async"><figcaption>Cadillac Lyriq <span aria-hidden="true">↗</span></figcaption></a></figure><figure><a href="/toyota-tacoma-window-tinting"><img src="/gallery/optimized/gallery-cards/toyota-tacoma-01.webp" alt="Toyota Tacoma window tint by Obsidian Autoworks" width="900" height="960" loading="lazy" decoding="async"><figcaption>Toyota Tacoma <span aria-hidden="true">↗</span></figcaption></a></figure></div><a class="city-review-link" href="https://www.google.com/search?q=Obsidian+Mobile+Window-Tinting+OC+Reviews" target="_blank" rel="noopener">Read our customer reviews on Google ↗</a></div></section>
+    <section class="city-quote" id="quote" aria-labelledby="city-quote-title"><div class="container"><div class="city-quote__heading"><h2 id="city-quote-title">Your Huntington Beach tint quote.</h2><p>Choose your vehicle and coverage. We’ll call to confirm the details.</p></div><iframe title="Request your Huntington Beach window tint quote" src="/quote-widget?v=20260921-organic" data-quote-frame style="width:100%;height:740px;border:0;display:block" scrolling="no" loading="lazy"></iframe><p class="city-quote__contact">Prefer to talk? <a href="tel:7146007134">Call (714) 600-7134</a></p></div></section><script src="/assets/quote/embed.js" defer></script>
+
 
     <section class="city-info">
         <div class="container">
@@ -148,57 +153,7 @@
         </div>
     </section>
 
-    <section class="city-local">
-        <div class="container">
-            <div class="city-section-header">
-                <h2>Huntington Beach Tinting Notes</h2>
-                <p>Use this page as the local planning hub for ceramic tint, mobile service, pricing, and nearby Orange County route coverage.</p>
-            </div>
-            <div class="city-local__grid">
-                <div class="brutalist-card city-local__card">
-                    <h3>Common Appointment Spots</h3>
-                    <ul class="city-local__list">
-                        <li>Huntington Harbour homes</li>
-                        <li>Seacliff and Goldenwest garages</li>
-                        <li>Beach Boulevard work locations</li>
-                        <li>Downtown-adjacent approved install spots</li>
-                    </ul>
-                </div>
-                <div class="brutalist-card city-local__card">
-                    <h3>Frequent Huntington Beach Requests</h3>
-                    <ul class="city-local__list">
-                        <li>Truck and SUV privacy packages</li>
-                        <li>Ceramic heat rejection for beach parking</li>
-                        <li>Front two window matching</li>
-                        <li>Windshield glare control planning</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="city-testimonials">
-        <div class="container">
-            <div class="city-section-header">
-                <h2>What Huntington Beach Drivers Mention</h2>
-                <p>Local proof points for the common ways mobile tint helps around Huntington Beach.</p>
-            </div>
-            <div class="city-testimonials__grid">
-                <div class="testimonial-card">
-                    <p class="testimonial-card__quote">Perfect shade for the truck and much better beach-day heat control.</p>
-                    <div class="testimonial-card__meta">Local driver, Huntington Beach</div>
-                </div>
-                <div class="testimonial-card">
-                    <p class="testimonial-card__quote">Mobile service was easier than trying to schedule a shop drop-off.</p>
-                    <div class="testimonial-card__meta">Mobile tint client, Huntington Beach</div>
-                </div>
-                <div class="testimonial-card">
-                    <p class="testimonial-card__quote">The rear privacy match looks clean.</p>
-                    <div class="testimonial-card__meta">Orange County vehicle owner, Huntington Beach</div>
-                </div>
-            </div>
-        </div>
-    </section>
+    <section class="city-local"><div class="container"><div class="city-section-header"><h2>Plan Your Huntington Beach Tint Appointment</h2><p>A few details help us recommend the right coverage and confirm your setup.</p></div><div class="city-plan-grid"><article><h3>Coastal installation conditions</h3><p>An exposed parking spot can be affected by wind and weather. Tell us about a garage or sheltered workspace at your home or workplace so we can confirm a suitable installation location.</p><a href="/mobile-window-tinting">Plan the installation space ↗</a></article><article><h3>Choose coverage for how you drive</h3><p>For a truck or SUV, separate front windows from the rear privacy glass. For glare concerns, ask about windshield coverage separately; darker side windows alone do not address every source of glare.</p><a href="/windshield-window-tinting">Compare windshield coverage ↗</a></article><article><h3>Privacy with useful visibility</h3><p>Tell us whether you drive frequently after dark and how much privacy you want. Use the shade guide to compare appearances, then confirm film choice and applicable requirements with us.</p><a href="/window-tint-shades">Explore tint shades ↗</a></article></div></div></section>
 
     <section class="city-services">
         <div class="container">
@@ -271,9 +226,9 @@
         <div class="container">
             <div class="city-cta__container">
                 <h2>Ready to Tint in <span>Huntington Beach</span>?</h2>
-                <p>Book online or call with your vehicle year, make, model, preferred shade, and appointment location.</p>
+                <p>Request a quote for your vehicle and service address. We’ll call to confirm coverage, price, and availability.</p>
                 <div class="city-cta__actions">
-                    <a href="/booking" class="brutalist-btn brutalist-btn--primary brutalist-btn--large">Book Online</a>
+                    <a href="#quote" class="brutalist-btn brutalist-btn--primary brutalist-btn--large">Get My Tint Quote</a>
                     <a href="tel:7146007134" class="brutalist-btn brutalist-btn--large">Call (714) 600-7134</a>
                 </div>
             </div>
@@ -321,6 +276,7 @@
         </div>
     </footer>
     <script src="/lead-tracking.js" defer></script>
+<nav class="city-contact-bar" aria-label="Quick contact"><a href="#quote">Get My Tint Quote ↗</a><a href="tel:7146007134">Call</a></nav>
 </body>
 
 </html>

@@ -81,9 +81,10 @@
         gtag('config', 'G-TR9ET60HX3');
         gtag('config', 'AW-17846304809');
     </script>
+    <link rel="stylesheet" href="/city-organic.css?v=20260921">
 </head>
 
-<body>
+<body class="city-growth">
     <nav class="nav">
         <div class="nav__container">
             <a href="/" class="nav__logo">
@@ -97,7 +98,7 @@
                 <a href="/#contact">Contact</a>
             </div>
             <div class="nav__actions">
-                <a href="/booking" class="brutalist-btn brutalist-btn--accent">Book Online</a>
+                <a href="#quote" class="brutalist-btn brutalist-btn--accent">Get My Quote</a>
                 <a href="tel:7146007134" class="brutalist-btn brutalist-btn--outline">(714) 600-7134</a>
             </div>
         </div>
@@ -105,13 +106,17 @@
 
     <header class="city-hero">
         <div class="city-hero__container">
-            <h1 class="city-hero__title">Window Tinting Irvine CA | <span>Mobile Ceramic Tint</span></h1>
-            <p class="city-hero__subtitle">Premium mobile ceramic window tinting delivered to suitable homes, offices, garages, and approved install spots around Irvine.</p>
+            <h1 class="city-hero__title">Mobile Window Tinting <span>in Irvine</span></h1>
+            <p class="city-hero__subtitle">Ceramic window tint installed at your Irvine home or workplace. Compare coverage, see our work, and request a quote for your vehicle.</p>
             <div class="city-hero__cta">
-                <a href="/booking" class="brutalist-btn">Book Your Irvine Tint</a>
+                <a href="#quote" class="brutalist-btn">Get My Tint Quote</a>
+                <a href="/window-tint-pricing" class="brutalist-btn brutalist-btn--outline">Compare Prices</a>
             </div>
         </div>
     </header>
+    <section class="city-work" aria-labelledby="city-work-title"><div class="container"><div class="city-work__heading"><h2 id="city-work-title">See the finish for yourself.</h2><a href="/window-tinting-gallery">All recent work ↗</a></div><p>Recent Obsidian installations from our vehicle gallery.</p><div class="city-work__grid"><figure><a href="/bmw-m4-window-tinting"><img src="/gallery/optimized/gallery-cards/bmw-m4-01.webp" alt="BMW M4 window tint by Obsidian Autoworks" width="900" height="960" loading="lazy" decoding="async"><figcaption>BMW M4 <span aria-hidden="true">↗</span></figcaption></a></figure><figure><a href="/bmw-x3-window-tinting"><img src="/gallery/optimized/gallery-cards/bmw-x3-01.webp" alt="BMW X3 window tint by Obsidian Autoworks" width="900" height="960" loading="lazy" decoding="async"><figcaption>BMW X3 <span aria-hidden="true">↗</span></figcaption></a></figure><figure><a href="/sides-rear-window-tinting"><img src="/gallery/optimized/gallery-cards/lexus-gx-01.webp" alt="Lexus GX window tint by Obsidian Autoworks" width="900" height="960" loading="lazy" decoding="async"><figcaption>Lexus GX <span aria-hidden="true">↗</span></figcaption></a></figure></div><a class="city-review-link" href="https://www.google.com/search?q=Obsidian+Mobile+Window-Tinting+OC+Reviews" target="_blank" rel="noopener">Read our customer reviews on Google ↗</a></div></section>
+    <section class="city-quote" id="quote" aria-labelledby="city-quote-title"><div class="container"><div class="city-quote__heading"><h2 id="city-quote-title">Your Irvine tint quote.</h2><p>Choose your vehicle and coverage. We’ll call to confirm the details.</p></div><iframe title="Request your Irvine window tint quote" src="/quote-widget?v=20260921-organic" data-quote-frame style="width:100%;height:740px;border:0;display:block" scrolling="no" loading="lazy"></iframe><p class="city-quote__contact">Prefer to talk? <a href="tel:7146007134">Call (714) 600-7134</a></p></div></section><script src="/assets/quote/embed.js" defer></script>
+
 
     <section class="city-info">
         <div class="container">
@@ -274,9 +279,9 @@
         <div class="container">
             <div class="city-cta__container">
                 <h2>Ready to Tint in <span>Irvine</span>?</h2>
-                <p>Book online or call with your vehicle year, make, model, preferred shade, and appointment location.</p>
+                <p>Request a quote for your vehicle and service address. We’ll call to confirm coverage, price, and availability.</p>
                 <div class="city-cta__actions">
-                    <a href="/booking" class="brutalist-btn brutalist-btn--primary brutalist-btn--large">Book Online</a>
+                    <a href="#quote" class="brutalist-btn brutalist-btn--primary brutalist-btn--large">Get My Tint Quote</a>
                     <a href="tel:7146007134" class="brutalist-btn brutalist-btn--large">Call (714) 600-7134</a>
                 </div>
             </div>
@@ -324,6 +329,7 @@
         </div>
     </footer>
     <script src="/lead-tracking.js" defer></script>
+<nav class="city-contact-bar" aria-label="Quick contact"><a href="#quote">Get My Tint Quote ↗</a><a href="tel:7146007134">Call</a></nav>
 </body>
 
 </html>

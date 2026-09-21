@@ -81,9 +81,10 @@
         gtag('config', 'G-TR9ET60HX3');
         gtag('config', 'AW-17846304809');
     </script>
+    <link rel="stylesheet" href="/city-organic.css?v=20260921">
 </head>
 
-<body>
+<body class="city-growth">
     <nav class="nav">
         <div class="nav__container">
             <a href="/" class="nav__logo">
@@ -97,7 +98,7 @@
                 <a href="/#contact">Contact</a>
             </div>
             <div class="nav__actions">
-                <a href="/booking" class="brutalist-btn brutalist-btn--accent">Book Online</a>
+                <a href="#quote" class="brutalist-btn brutalist-btn--accent">Get My Quote</a>
                 <a href="tel:7146007134" class="brutalist-btn brutalist-btn--outline">(714) 600-7134</a>
             </div>
         </div>
@@ -105,13 +106,17 @@
 
     <header class="city-hero">
         <div class="city-hero__container">
-            <h1 class="city-hero__title">Window Tinting Tustin | <span>Mobile Auto Tint</span></h1>
-            <p class="city-hero__subtitle">Premium mobile ceramic window tinting delivered to suitable homes, offices, garages, and approved install spots around Tustin.</p>
+            <h1 class="city-hero__title">Mobile Window Tinting <span>in Tustin</span></h1>
+            <p class="city-hero__subtitle">Mobile ceramic tint for your daily driver, family SUV, or truck in Tustin. Choose the windows you want tinted; we’ll confirm the price and installation space.</p>
             <div class="city-hero__cta">
-                <a href="/booking" class="brutalist-btn">Book Your Tustin Tint</a>
+                <a href="#quote" class="brutalist-btn">Get My Tint Quote</a>
+                <a href="/window-tint-pricing" class="brutalist-btn brutalist-btn--outline">Compare Prices</a>
             </div>
         </div>
     </header>
+    <section class="city-work" aria-labelledby="city-work-title"><div class="container"><div class="city-work__heading"><h2 id="city-work-title">See the finish for yourself.</h2><a href="/window-tinting-gallery">All recent work ↗</a></div><p>Recent Obsidian installations from our vehicle gallery.</p><div class="city-work__grid"><figure><a href="/toyota-tacoma-window-tinting"><img src="/gallery/optimized/gallery-cards/toyota-tacoma-01.webp" alt="Toyota Tacoma window tint by Obsidian Autoworks" width="900" height="960" loading="lazy" decoding="async"><figcaption>Toyota Tacoma <span aria-hidden="true">↗</span></figcaption></a></figure><figure><a href="/toyota-4runner-window-tinting"><img src="/gallery/optimized/gallery-cards/toyota-4runner-01.webp" alt="Toyota 4Runner window tint by Obsidian Autoworks" width="900" height="960" loading="lazy" decoding="async"><figcaption>Toyota 4Runner <span aria-hidden="true">↗</span></figcaption></a></figure><figure><a href="/bmw-x3-window-tinting"><img src="/gallery/optimized/gallery-cards/bmw-x3-01.webp" alt="BMW X3 window tint by Obsidian Autoworks" width="900" height="960" loading="lazy" decoding="async"><figcaption>BMW X3 <span aria-hidden="true">↗</span></figcaption></a></figure></div><a class="city-review-link" href="https://www.google.com/search?q=Obsidian+Mobile+Window-Tinting+OC+Reviews" target="_blank" rel="noopener">Read our customer reviews on Google ↗</a></div></section>
+    <section class="city-quote" id="quote" aria-labelledby="city-quote-title"><div class="container"><div class="city-quote__heading"><h2 id="city-quote-title">Your Tustin tint quote.</h2><p>Choose your vehicle and coverage. We’ll call to confirm the details.</p></div><iframe title="Request your Tustin window tint quote" src="/quote-widget?v=20260921-organic" data-quote-frame style="width:100%;height:740px;border:0;display:block" scrolling="no" loading="lazy"></iframe><p class="city-quote__contact">Prefer to talk? <a href="tel:7146007134">Call (714) 600-7134</a></p></div></section><script src="/assets/quote/embed.js" defer></script>
+
 
     <section class="city-info">
         <div class="container">
@@ -148,57 +153,7 @@
         </div>
     </section>
 
-    <section class="city-local">
-        <div class="container">
-            <div class="city-section-header">
-                <h2>Tustin Tinting Notes</h2>
-                <p>Use this page as the local planning hub for ceramic tint, mobile service, pricing, and nearby Orange County route coverage.</p>
-            </div>
-            <div class="city-local__grid">
-                <div class="brutalist-card city-local__card">
-                    <h3>Common Appointment Spots</h3>
-                    <ul class="city-local__list">
-                        <li>Old Town Tustin homes</li>
-                        <li>Tustin Ranch driveways</li>
-                        <li>The District-area workday appointments</li>
-                        <li>Tustin Legacy and Columbus Grove garages</li>
-                    </ul>
-                </div>
-                <div class="brutalist-card city-local__card">
-                    <h3>Frequent Tustin Requests</h3>
-                    <ul class="city-local__list">
-                        <li>Tint removal before new ceramic film</li>
-                        <li>Front two window matches for SUVs and trucks</li>
-                        <li>Heat control for 5 and 55 freeway driving</li>
-                        <li>Balanced privacy for family vehicles</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="city-testimonials">
-        <div class="container">
-            <div class="city-section-header">
-                <h2>What Tustin Drivers Mention</h2>
-                <p>Local proof points for the common ways mobile tint helps around Tustin.</p>
-            </div>
-            <div class="city-testimonials__grid">
-                <div class="testimonial-card">
-                    <p class="testimonial-card__quote">Old tint came off clean and the new film looks factory.</p>
-                    <div class="testimonial-card__meta">Local driver, Tustin</div>
-                </div>
-                <div class="testimonial-card">
-                    <p class="testimonial-card__quote">Booked before work and was back on the road by lunch.</p>
-                    <div class="testimonial-card__meta">Mobile tint client, Tustin</div>
-                </div>
-                <div class="testimonial-card">
-                    <p class="testimonial-card__quote">Rear privacy is perfect for the family SUV.</p>
-                    <div class="testimonial-card__meta">Orange County vehicle owner, Tustin</div>
-                </div>
-            </div>
-        </div>
-    </section>
+    <section class="city-local"><div class="container"><div class="city-section-header"><h2>Plan Your Tustin Tint Appointment</h2><p>A few details help us recommend the right coverage and confirm your setup.</p></div><div class="city-plan-grid"><article><h3>Existing tint or peeling film?</h3><p>Tell us which windows have old film and whether it is bubbling or lifting. Removal changes the preparation and appointment time, so include it in your request.</p><a href="/tint-removal">Plan tint removal ↗</a></article><article><h3>Matching an SUV or truck</h3><p>Factory privacy glass and applied window film are different. Choose front two windows if that is your goal, or sides and rear if you want broader coverage. We’ll discuss the shade and film before booking.</p><a href="/front-two-window-tinting">Compare front-window coverage ↗</a></article><article><h3>Home, workplace, or shared parking</h3><p>For a Tustin Ranch driveway, Old Town property, or workplace near the District, confirm permission and working space around the vehicle. Send a location photo if the setup is uncertain.</p><a href="/mobile-window-tinting">Check mobile installation requirements ↗</a></article></div></div></section>
 
     <section class="city-services">
         <div class="container">
@@ -271,9 +226,9 @@
         <div class="container">
             <div class="city-cta__container">
                 <h2>Ready to Tint in <span>Tustin</span>?</h2>
-                <p>Book online or call with your vehicle year, make, model, preferred shade, and appointment location.</p>
+                <p>Request a quote for your vehicle and service address. We’ll call to confirm coverage, price, and availability.</p>
                 <div class="city-cta__actions">
-                    <a href="/booking" class="brutalist-btn brutalist-btn--primary brutalist-btn--large">Book Online</a>
+                    <a href="#quote" class="brutalist-btn brutalist-btn--primary brutalist-btn--large">Get My Tint Quote</a>
                     <a href="tel:7146007134" class="brutalist-btn brutalist-btn--large">Call (714) 600-7134</a>
                 </div>
             </div>
@@ -321,6 +276,7 @@
         </div>
     </footer>
     <script src="/lead-tracking.js" defer></script>
+<nav class="city-contact-bar" aria-label="Quick contact"><a href="#quote">Get My Tint Quote ↗</a><a href="tel:7146007134">Call</a></nav>
 </body>
 
 </html>
