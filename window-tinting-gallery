@@ -96,7 +96,7 @@
                 <a href="/#contact">Contact</a>
             </div>
             <div class="nav__actions">
-                <a href="#quote" class="brutalist-btn brutalist-btn--accent">Get My Quote</a>
+                <a href="/car-window-tinting-near-me" class="brutalist-btn brutalist-btn--accent">Get My Quote</a>
                 <a href="tel:7146007134" class="brutalist-btn brutalist-btn--outline">(714) 600-7134</a>
             </div>
         </div>
@@ -107,8 +107,8 @@
         <header class="gallery-hero">
             <div class="container">
                 <span class="section-header__tag brutalist-card brutalist-card--tiny">OUR WORK</span>
-                <h1>Window tint. <span>Up close.</span></h1>
-                <p>Real installations on cars, trucks, SUVs and Teslas around Orange County.</p>
+                <h1>Window Tint <span>Gallery</span></h1>
+                <p>Browse real Obsidian installations by vehicle. Tap any photo for a closer look.</p>
             </div>
         </header>
 
@@ -453,110 +453,13 @@
             </div>
         </section>
 
-<section class="container gallery-quote" id="quote"><h2>Let’s find your tint.</h2><iframe loading="lazy" title="Get your tint quote" src="/quote-widget?v=20260921-gallery" data-quote-frame style="width:100%;height:740px;border:0;display:block" scrolling="no"></iframe></section><script src="/assets/quote/embed.js" defer></script>
-
-        <!-- Shades Section -->
-        <section class="service-section service-section--alt">
-            <div class="container">
-                <div class="service-header">
-                    <div class="service-header__icon">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <circle cx="12" cy="12" r="5" />
-                            <path
-                                d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42" />
-                        </svg>
-                    </div>
-                    <div class="service-header__content">
-                        <h2>Available Shades</h2>
-                        <p>Choose from multiple tint levels to match your style and needs. Custom shades can be sourced
-                            upon request.</p>
-                    </div>
-                </div>
-                <div class="shades-showcase">
-                    <div class="shade-card">
-                        <div class="shade-preview shade-preview--clear"></div>
-                        <div class="shade-info">
-                            <h3>Shield IR 80% (Clear)</h3>
-                            <p>Premium clear-look film with higher performance, available at an additional cost.</p>
-                        </div>
-                    </div>
-                    <div class="shade-card">
-                        <div class="shade-preview shade-preview--light"></div>
-                        <div class="shade-info">
-                            <h3>Light - 45%</h3>
-                            <p>Light smoke with strong everyday visibility and a subtle finished look.</p>
-                        </div>
-                    </div>
-                    <div class="shade-card">
-                        <div class="shade-preview shade-preview--medium"></div>
-                        <div class="shade-info">
-                            <h3>Medium - 30%</h3>
-                            <p>Balanced privacy, style, and daytime comfort for daily drivers.</p>
-                        </div>
-                    </div>
-                    <div class="shade-card">
-                        <div class="shade-preview shade-preview--dark"></div>
-                        <div class="shade-info">
-                            <h3>Dark - 15%</h3>
-                            <p>Privacy-forward shade for side and rear glass when a darker look makes sense.</p>
-                        </div>
-                    </div>
-                    <div class="shade-card">
-                        <div class="shade-preview shade-preview--limo"></div>
-                        <div class="shade-info">
-                            <h3>Limo - 5%</h3>
-                            <p>Maximum privacy and heat rejection. Premium look for rear windows.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Tint Removal Section -->
-        <section class="service-section">
-            <div class="container">
-                <div class="service-header">
-                    <div class="service-header__icon">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M3 6h18" />
-                            <path d="M19 6v14a2 2 0 01-2 2H7a2 2 0 01-2-2V6" />
-                            <path d="M8 6V4a2 2 0 012-2h4a2 2 0 012 2v2" />
-                        </svg>
-                    </div>
-                    <div class="service-header__content">
-                        <h2>Tint Removal</h2>
-                        <p>Professional removal of old, bubbled, or faded tint. Clean removal with no residue or damage
-                            to your glass.</p>
-                    </div>
-                </div>
-                <div class="service-features">
-                    <div class="service-feature">
-                        <span class="feature-arrow">›</span>
-                        <span>Partial removal available</span>
-                    </div>
-                    <div class="service-feature">
-                        <span class="feature-arrow">›</span>
-                        <span>Full vehicle removal</span>
-                    </div>
-                    <div class="service-feature">
-                        <span class="feature-arrow">›</span>
-                        <span>No adhesive residue</span>
-                    </div>
-                    <div class="service-feature">
-                        <span class="feature-arrow">›</span>
-                        <span>Ready for new tint</span>
-                    </div>
-                </div>
-            </div>
-        </section>
-
         <!-- CTA Section -->
         <section class="gallery-cta">
             <div class="container">
-                <h2>Like what you see?</h2>
-                <p>Tell us about your vehicle. We’ll call to go over your options.</p>
+                <h2>Get a quote for your vehicle.</h2>
+                <p>Tell us what you drive and which windows you’d like tinted.</p>
                 <div class="gallery-cta__actions">
-                    <a href="#quote" class="brutalist-btn brutalist-btn--primary brutalist-btn--large">
+                    <a href="/car-window-tinting-near-me" class="brutalist-btn brutalist-btn--primary brutalist-btn--large">
                         Get My Tint Quote
                     </a>
                     <a href="tel:7146007134" class="brutalist-btn brutalist-btn--large">

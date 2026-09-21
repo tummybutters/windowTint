@@ -8,6 +8,7 @@ for(const file of [...direct,...embedded]){
  assert.deepEqual(s.match(/<table\b[\s\S]*?<\/table>/g),old.match(/<table\b[\s\S]*?<\/table>/g),file+' pricing');
  assert.deepEqual(s.match(/<script[^>]*type="application\/ld\+json"[^>]*>[\s\S]*?<\/script>/g),old.match(/<script[^>]*type="application\/ld\+json"[^>]*>[\s\S]*?<\/script>/g),file+' schema');
  if(direct.includes(file)){assert(s.includes('/assets/quote/context.js'),file);assert(s.includes('/assets/quote/quote.js'),file);assert(s.includes('/assets/quote/reviews.js'),file);assert(s.includes('/lead-tracking.js'),file)}
+ else if(file==='window-tinting-gallery')assert(s.includes('href="/car-window-tinting-near-me"')&&!s.includes('data-quote-frame'),file+' dedicated gallery');
  else assert(s.includes('data-quote-frame')&&s.includes('/assets/quote/embed.js'),file);
  const ids=[...s.matchAll(/\bid="([^"]+)"/g)].map(x=>x[1]);assert.equal(new Set(ids).size,ids.length,file+' duplicate IDs');
 }
