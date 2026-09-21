@@ -1,0 +1,17 @@
+import assert from 'node:assert/strict';
+import {createRequire} from 'node:module';
+const require=createRequire(import.meta.url);
+const {normalizeQuote}=require('../lib/automotive-quote.js');
+const {createHandler}=require('../api/automotive-quotes.js');
+const input={id:'9c2f8d24-d2d1-49fb-aefe-9a9ec2702b47',type:'Car',coverage:'Sides + rear',vehicle:'2023 Example sedan',address:'123 Test Lane, Irvine CA 92618',name:'Test',phone:'(714) 555-0123',contact:'call',attribution:{gclid:'test_click',name:'DO NOT STORE HERE'}};
+const record=normalizeQuote(input);assert.equal(record.phone,'+17145550123');assert.equal(record.contact,'call');assert.equal(record.attribution.name,undefined);
+assert.throws(()=>normalizeQuote({...input,phone:'123'}));assert.throws(()=>normalizeQuote({...input,contact:'text'}));assert.throws(()=>normalizeQuote({...input,website:'spam'}));
+const response=()=>({code:0,body:null,setHeader(){},status(n){this.code=n;return this},json(d){this.body=d;return this}});
+const req={method:'POST',headers:{host:'example.test',origin:'https://example.test'},body:input};let saved=0,notified=0;
+const store={checkRateLimit:async()=>true,persist:async()=>{saved++;return{inserted:true}},dispatch:async()=>{notified++;throw Error('provider down')}};
+let res=response();await createHandler({store,enabled:true})(req,res);assert.equal(res.code,200);assert.equal(saved,1);assert.equal(notified,1);assert.equal(res.body.ok,true);assert.equal(res.body.phone,undefined);
+res=response();await createHandler({store,enabled:true})({...req,headers:{...req.headers,origin:'https://wrong.test'}},res);assert.equal(res.code,403);
+res=response();await createHandler({store:{...store,persist:async()=>{throw Error('db down')}},enabled:true})(req,res);assert.equal(res.code,503);assert.equal(res.body.ok,undefined);
+res=response();await createHandler({store,enabled:false})(req,res);assert.equal(res.code,503);
+res=response();await createHandler({store:{...store,checkRateLimit:async()=>false},enabled:true})(req,res);assert.equal(res.code,429);
+console.log('Automotive quote validation, origin, rate limit, persistence failure, delivery failure, and release gate tests passed.');

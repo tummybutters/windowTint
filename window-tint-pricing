@@ -81,8 +81,8 @@
                     <p class="seo-hero__copy">Use this as the first-pass pricing menu for ceramic tint packages. Final
                         pricing is confirmed before service based on the vehicle, glass, shade, and add-ons.</p>
                     <div class="seo-hero__actions">
-                        <a href="/booking" class="brutalist-btn brutalist-btn--primary">Book Online</a>
-                        <a href="/services" class="brutalist-btn">Compare Services</a>
+                        <a href="#quote" class="brutalist-btn brutalist-btn--primary">Get My Tint Quote</a>
+                        <a href="#packages" class="brutalist-btn">See Prices</a>
                     </div>
                 </div>
                 <aside class="seo-hero__panel">
@@ -97,9 +97,9 @@
                     </div>
                 </aside>
             </div>
-        </header>
+        </header><section class="container" id="quote" style="padding-top:24px;padding-bottom:24px"><iframe title="Get your tint quote" src="/quote-widget" data-quote-frame style="width:100%;height:470px;border:0;display:block" scrolling="no"></iframe></section><script src="/assets/quote/embed.js" defer></script>
 
-        <section class="seo-section seo-section--light">
+        <section class="seo-section seo-section--light" id="packages">
             <div class="container">
                 <div class="seo-section__header">
                     <h2>Standard Mobile Ceramic Tint</h2>

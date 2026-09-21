@@ -1,0 +1,1 @@
+window.addEventListener('message',event=>{if(event.origin!==location.origin||event.data?.type!=='obsidian-quote-height')return;for(const frame of document.querySelectorAll('[data-quote-frame]')){if(event.source===frame.contentWindow&&Number.isFinite(event.data.height))frame.style.height=Math.max(300,Math.min(1800,event.data.height))+'px'}});
