@@ -29,10 +29,10 @@ jobs:
                   result = json.load(response)
           except Exception:
               raise SystemExit('Quote delivery worker unavailable; inspect the saved lead queue')
-          fields = ['checked', 'reconciled', 'lookup_errors', 'failed', 'unknown', 'pending']
+          fields = ['checked', 'crm_checked', 'reconciled', 'lookup_errors', 'failed', 'unknown', 'pending', 'crm_failed', 'crm_unknown', 'crm_pending']
           if any(not isinstance(result.get(key), int) for key in fields):
               raise SystemExit('Unexpected quote delivery worker response')
           print(json.dumps({key: result[key] for key in fields}))
-          if any(result[key] for key in ['lookup_errors', 'failed', 'unknown', 'pending']):
-              raise SystemExit('Quote alert needs attention; inspect delivery before resending')
+          if any(result[key] for key in ['lookup_errors', 'failed', 'unknown', 'pending', 'crm_failed', 'crm_unknown', 'crm_pending']):
+              raise SystemExit('Quote delivery needs attention; inspect SMS and Tint Wiz before resending')
           PY

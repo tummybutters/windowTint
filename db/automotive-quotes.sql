@@ -23,3 +23,11 @@ CREATE TABLE IF NOT EXISTS automotive_quote_rate_limits (
 
 ALTER TABLE automotive_quotes ADD COLUMN IF NOT EXISTS priority text;
 ALTER TABLE automotive_quotes ADD COLUMN IF NOT EXISTS timing text;
+-- Existing quotes are excluded; new saved quotes explicitly start pending.
+ALTER TABLE automotive_quotes ADD COLUMN IF NOT EXISTS crm_state text NOT NULL DEFAULT 'ignored';
+ALTER TABLE automotive_quotes ADD COLUMN IF NOT EXISTS crm_attempts integer NOT NULL DEFAULT 0;
+ALTER TABLE automotive_quotes ADD COLUMN IF NOT EXISTS crm_next_at timestamptz NOT NULL DEFAULT now();
+ALTER TABLE automotive_quotes ADD COLUMN IF NOT EXISTS crm_locked_at timestamptz;
+ALTER TABLE automotive_quotes ADD COLUMN IF NOT EXISTS crm_error text;
+ALTER TABLE automotive_quotes ADD COLUMN IF NOT EXISTS crm_accepted_at timestamptz;
+CREATE INDEX IF NOT EXISTS automotive_quotes_crm ON automotive_quotes(crm_state,crm_next_at);
