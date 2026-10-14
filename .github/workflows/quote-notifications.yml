@@ -1,38 +1,35 @@
-name: Quote alert delivery
+name: Read-only October 14 lead delivery audit
 on:
-  schedule:
-    - cron: '*/5 * * * *'
   workflow_dispatch:
-permissions: {}
-concurrency:
-  group: quote-alert-delivery
-  cancel-in-progress: false
+permissions:
+  contents: read
 jobs:
-  reconcile:
+  audit:
     runs-on: ubuntu-latest
-    timeout-minutes: 2
+    timeout-minutes: 3
     steps:
-      - name: Retry pending alerts and check delivery
+      - name: Read individual saved lead delivery states
         env:
           QUOTE_RETRY_SECRET: ${{ secrets.QUOTE_RETRY_SECRET }}
         run: |
           python3 - <<'PY'
           import json, os, urllib.request
-          secret = os.environ.get('QUOTE_RETRY_SECRET')
-          if not secret:
-              raise SystemExit('Quote alert worker secret is missing')
-          request = urllib.request.Request(
-              'https://www.obsidianautoworksoc.com/api/quote-notification-retry',
-              headers={'Authorization': 'Bearer ' + secret})
-          try:
-              with urllib.request.urlopen(request, timeout=75) as response:
-                  result = json.load(response)
-          except Exception:
-              raise SystemExit('Quote delivery worker unavailable; inspect the saved lead queue')
-          fields = ['checked', 'crm_checked', 'reconciled', 'lookup_errors', 'failed', 'unknown', 'pending', 'crm_failed', 'crm_unknown', 'crm_pending']
-          if any(not isinstance(result.get(key), int) for key in fields):
-              raise SystemExit('Unexpected quote delivery worker response')
-          print(json.dumps({key: result[key] for key in fields}))
-          if any(result[key] for key in ['lookup_errors', 'failed', 'unknown', 'pending', 'crm_failed', 'crm_unknown', 'crm_pending']):
-              raise SystemExit('Quote delivery needs attention; inspect SMS and Tint Wiz before resending')
+          leads = {
+              'Jay': '22404137-41de-4b10-bbe9-dd5abfec4bd9',
+              'Caleb': '2306cea9-8e39-4506-ba09-4a93d0b63ee9',
+          }
+          failed = False
+          for name, lead_id in leads.items():
+              request = urllib.request.Request(
+                  'https://www.obsidianautoworksoc.com/api/quote-notification-retry?lead_id=' + lead_id,
+                  headers={'Authorization': 'Bearer ' + os.environ['QUOTE_RETRY_SECRET']})
+              with urllib.request.urlopen(request, timeout=45) as response:
+                  lead = json.load(response)['lead']
+              keys = ['id','received_at','notification_state','notification_attempts','notification_provider_id','notification_delivery_state','notification_error','notification_delivery_error','crm_state']
+              result = {'name':name, **{key:lead.get(key) for key in keys}}
+              print('LEAD_AUDIT ' + json.dumps(result))
+              if lead.get('notification_delivery_state') not in ['delivered','read']:
+                  failed = True
+          if failed:
+              raise SystemExit('One or more individual alerts require delivery review')
           PY
