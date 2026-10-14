@@ -17,6 +17,8 @@ jobs:
           leads = {
               'Jay': '22404137-41de-4b10-bbe9-dd5abfec4bd9',
               'Caleb': '2306cea9-8e39-4506-ba09-4a93d0b63ee9',
+              'Internal Driveway': '996bd2be-e904-4cb2-915b-a492671e6e8a',
+              'Internal Original': '908620b4-09de-4309-84f4-d5d8d6bacdd9',
           }
           failed = False
           for name, lead_id in leads.items():
@@ -25,7 +27,7 @@ jobs:
                   headers={'Authorization': 'Bearer ' + os.environ['QUOTE_RETRY_SECRET']})
               with urllib.request.urlopen(request, timeout=45) as response:
                   lead = json.load(response)['lead']
-              keys = ['id','received_at','notification_state','notification_attempts','notification_provider_id','notification_delivery_state','notification_error','notification_delivery_error','crm_state']
+              keys = ['id','received_at','experiment_id','experiment_variant','notification_state','notification_attempts','notification_provider_id','notification_delivery_state','notification_error','notification_delivery_error','crm_state']
               result = {'name':name, **{key:lead.get(key) for key in keys}}
               print('LEAD_AUDIT ' + json.dumps(result))
               if lead.get('notification_delivery_state') not in ['delivered','read']:
