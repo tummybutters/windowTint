@@ -18,7 +18,7 @@ jobs:
           def get(q):
               req=urllib.request.Request(base+q,headers={'Authorization':'Bearer '+os.environ['QUOTE_RETRY_SECRET']})
               with urllib.request.urlopen(req,timeout=45) as r:return json.load(r)
-          report=get('?report=commercial&start=2026-10-01&end=2026-10-15')
+          report=get('?report=commercial&start=2026-10-15&end=2026-10-15')
           for x in report['leads']:
               a=x.get('attribution') or {}
               out={k:x.get(k) for k in ['id','received_at','page_path','notification_state','notification_delivery_state','crm_state','is_internal']}
@@ -27,5 +27,11 @@ jobs:
               if a.get('utm_campaign')=='commercial-attribution-20261015':
                   lead=get('?lead_id='+x['id'])['lead']
                   print('DELIVERY_AUDIT '+json.dumps({k:lead.get(k) for k in ['id','notification_state','notification_delivery_state','notification_error','notification_delivery_error','crm_state']}))
+          lead=get('?lead_id=81f74e61-ba50-44d1-a797-4238df094ea3')['lead']
+          a=lead.get('attribution') or {}
+          out={k:lead.get(k) for k in ['id','received_at','page_path','experiment_id','experiment_variant','notification_state','notification_delivery_state','notification_error','notification_delivery_error','crm_state']}
+          out['attribution']={k:a.get(k) for k in ['utm_source','utm_medium','utm_campaign','campaignid','adgroupid','device','experience','experiment_id','experiment_variant','landing_page','session_id']}
+          out['has_gclid']=bool(a.get('gclid'))
+          print('EMILY_AUDIT '+json.dumps(out))
           print('REPORT_META '+json.dumps({k:v for k,v in report.items() if k!='leads'}))
           PYCODE
