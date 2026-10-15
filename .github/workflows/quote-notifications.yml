@@ -1,4 +1,4 @@
-name: Read-only October 15 commercial lead delivery audit
+name: Read-only commercial attribution audit
 on:
   workflow_dispatch:
 permissions:
@@ -8,25 +8,24 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 3
     steps:
-      - name: Read individual saved lead delivery states
+      - name: Inspect saved commercial attribution and delivery
         env:
           QUOTE_RETRY_SECRET: ${{ secrets.QUOTE_RETRY_SECRET }}
         run: |
-          python3 - <<'PY'
-          import json, os, urllib.request
-          leads = {'Internal commercial launch': 'cc7f2d3b-7278-428c-9ced-4dc78145ae2d'}
-          failed = False
-          for name, lead_id in leads.items():
-              request = urllib.request.Request(
-                  'https://www.obsidianautoworksoc.com/api/quote-notification-retry?lead_id=' + lead_id,
-                  headers={'Authorization': 'Bearer ' + os.environ['QUOTE_RETRY_SECRET']})
-              with urllib.request.urlopen(request, timeout=45) as response:
-                  lead = json.load(response)['lead']
-              keys = ['id','received_at','experiment_id','experiment_variant','notification_state','notification_attempts','notification_provider_id','notification_delivery_state','notification_error','notification_delivery_error','crm_state']
-              result = {'name':name, **{key:lead.get(key) for key in keys}}
-              print('LEAD_AUDIT ' + json.dumps(result))
-              if lead.get('notification_delivery_state') not in ['delivered','read']:
-                  failed = True
-          if failed:
-              raise SystemExit('One or more individual alerts require delivery review')
-          PY
+          python3 - <<'PYCODE'
+          import json,os,urllib.request
+          base='https://www.obsidianautoworksoc.com/api/quote-notification-retry'
+          def get(q):
+              req=urllib.request.Request(base+q,headers={'Authorization':'Bearer '+os.environ['QUOTE_RETRY_SECRET']})
+              with urllib.request.urlopen(req,timeout=45) as r:return json.load(r)
+          report=get('?report=commercial&start=2026-10-01&end=2026-10-15')
+          for x in report['leads']:
+              a=x.get('attribution') or {}
+              out={k:x.get(k) for k in ['id','received_at','page_path','notification_state','notification_delivery_state','crm_state','is_internal']}
+              out['attribution']={k:a.get(k) for k in ['source_label','utm_source','utm_medium','utm_campaign','device_category','ad_click_device','device_basis','campaignid','adgroupid','landing_page','attribution_model']}
+              print('ATTRIBUTION_AUDIT '+json.dumps(out))
+              if a.get('utm_campaign')=='commercial-attribution-20261015':
+                  lead=get('?lead_id='+x['id'])['lead']
+                  print('DELIVERY_AUDIT '+json.dumps({k:lead.get(k) for k in ['id','notification_state','notification_delivery_state','notification_error','notification_delivery_error','crm_state']}))
+          print('REPORT_META '+json.dumps({k:v for k,v in report.items() if k!='leads'}))
+          PYCODE
