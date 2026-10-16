@@ -1,38 +1,25 @@
-name: Quote alert delivery
+name: Read-only landing speed delivery audit
 on:
-  schedule:
-    - cron: '*/5 * * * *'
   workflow_dispatch:
-permissions: {}
-concurrency:
-  group: quote-alert-delivery
-  cancel-in-progress: false
+permissions:
+  contents: read
 jobs:
-  reconcile:
+  audit:
     runs-on: ubuntu-latest
-    timeout-minutes: 2
+    timeout-minutes: 3
     steps:
-      - name: Retry pending alerts and check delivery
+      - name: Inspect saved commercial attribution and delivery
         env:
           QUOTE_RETRY_SECRET: ${{ secrets.QUOTE_RETRY_SECRET }}
         run: |
-          python3 - <<'PY'
-          import json, os, urllib.request
-          secret = os.environ.get('QUOTE_RETRY_SECRET')
-          if not secret:
-              raise SystemExit('Quote alert worker secret is missing')
-          request = urllib.request.Request(
-              'https://www.obsidianautoworksoc.com/api/quote-notification-retry',
-              headers={'Authorization': 'Bearer ' + secret})
-          try:
-              with urllib.request.urlopen(request, timeout=75) as response:
-                  result = json.load(response)
-          except Exception:
-              raise SystemExit('Quote delivery worker unavailable; inspect the saved lead queue')
-          fields = ['checked', 'crm_checked', 'reconciled', 'lookup_errors', 'failed', 'unknown', 'pending', 'crm_failed', 'crm_unknown', 'crm_pending']
-          if any(not isinstance(result.get(key), int) for key in fields):
-              raise SystemExit('Unexpected quote delivery worker response')
-          print(json.dumps({key: result[key] for key in fields}))
-          if any(result[key] for key in ['lookup_errors', 'failed', 'unknown', 'pending', 'crm_failed', 'crm_unknown', 'crm_pending']):
-              raise SystemExit('Quote delivery needs attention; inspect SMS and Tint Wiz before resending')
-          PY
+          python3 - <<'PYCODE'
+          import json,os,urllib.request
+          base='https://www.obsidianautoworksoc.com/api/quote-notification-retry'
+          def get(q):
+              req=urllib.request.Request(base+q,headers={'Authorization':'Bearer '+os.environ['QUOTE_RETRY_SECRET']})
+              with urllib.request.urlopen(req,timeout=45) as r:return json.load(r)
+          for lead_id in ['287e48bf-4946-4092-8e16-3604774ffd21', '0a933233-c70e-4ec0-929c-b1035120346c', 'e511266a-3a26-418f-9887-cfa9997358ac']:
+              lead=get('?lead_id='+lead_id)['lead']
+              print('DELIVERY_AUDIT '+json.dumps({k:lead.get(k) for k in ['id','notification_state','notification_delivery_state','notification_error','notification_delivery_error','crm_state','experiment_id','experiment_variant']}))
+              if lead.get('notification_delivery_state') not in ['delivered','read']:raise SystemExit('Delivery not confirmed; investigate without resending')
+          PYCODE
