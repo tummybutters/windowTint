@@ -1,38 +1,88 @@
 name: Quote alert delivery
 on:
-  schedule:
-    - cron: '*/5 * * * *'
   workflow_dispatch:
 permissions: {}
 concurrency:
-  group: quote-alert-delivery
+  group: obsidian-scheduler-provision
   cancel-in-progress: false
 jobs:
-  reconcile:
+  provision:
     runs-on: ubuntu-latest
-    timeout-minutes: 2
+    timeout-minutes: 5
     steps:
-      - name: Retry pending alerts and check delivery
+      - name: Provision and verify dedicated five-minute scheduler
         env:
           QUOTE_RETRY_SECRET: ${{ secrets.QUOTE_RETRY_SECRET }}
+          GCP_SCHEDULER_SETUP_TOKEN: ${{ secrets.OBSIDIAN_SCHEDULER_SETUP_20261019 }}
         run: |
           python3 - <<'PY'
-          import json, os, urllib.request
-          secret = os.environ.get('QUOTE_RETRY_SECRET')
-          if not secret:
-              raise SystemExit('Quote alert worker secret is missing')
-          request = urllib.request.Request(
-              'https://www.obsidianautoworksoc.com/api/quote-notification-retry',
-              headers={'Authorization': 'Bearer ' + secret})
-          try:
-              with urllib.request.urlopen(request, timeout=75) as response:
-                  result = json.load(response)
-          except Exception:
-              raise SystemExit('Quote delivery worker unavailable; inspect the saved lead queue')
-          fields = ['checked', 'crm_checked', 'reconciled', 'lookup_errors', 'failed', 'unknown', 'pending', 'crm_failed', 'crm_unknown', 'crm_pending']
-          if any(not isinstance(result.get(key), int) for key in fields):
-              raise SystemExit('Unexpected quote delivery worker response')
-          print(json.dumps({key: result[key] for key in fields}))
-          if any(result[key] for key in ['lookup_errors', 'failed', 'unknown', 'pending', 'crm_failed', 'crm_unknown', 'crm_pending']):
-              raise SystemExit('Quote delivery needs attention; inspect SMS and Tint Wiz before resending')
+          """Run only in the isolated provisioning workflow; never log credentials."""
+          import json
+          import os
+          import urllib.error
+          import urllib.request
+          
+          NAME = 'projects/our-card-468405-f3/locations/us-central1/jobs/obsidian-quote-delivery-5m'
+          TARGET = 'https://www.obsidianautoworksoc.com/api/quote-notification-retry'
+          BASE = 'https://cloudscheduler.googleapis.com/v1/'
+          FIELDS = ['checked', 'crm_checked', 'reconciled', 'lookup_errors', 'failed', 'unknown', 'pending', 'crm_failed', 'crm_unknown', 'crm_pending']
+          ISSUES = FIELDS[3:]
+          
+          
+          def request(url, token, method='GET', body=None, allow_404=False):
+              req = urllib.request.Request(url, method=method,
+                  headers={'Authorization': 'Bearer ' + token, 'Content-Type': 'application/json'},
+                  data=None if body is None else json.dumps(body).encode())
+              try:
+                  with urllib.request.urlopen(req, timeout=90) as response:
+                      return json.load(response)
+              except urllib.error.HTTPError as error:
+                  if error.code == 404 and allow_404:
+                      return None
+                  raise SystemExit('Request failed: HTTP ' + str(error.code)) from None
+              except Exception:
+                  raise SystemExit('Request unavailable; inspect status before retrying provisioning') from None
+          
+          
+          def main():
+              secret = os.environ.get('QUOTE_RETRY_SECRET')
+              token = os.environ.get('GCP_SCHEDULER_SETUP_TOKEN')
+              if not secret or not token:
+                  raise SystemExit('Missing required provisioning secret')
+              health = request(TARGET, secret)
+              if any(type(health.get(key)) is not int for key in FIELDS):
+                  raise SystemExit('Unexpected worker health schema')
+              print(json.dumps({'worker_counts': {key: health[key] for key in FIELDS}}))
+              if any(health[key] for key in ISSUES):
+                  raise SystemExit('Delivery needs investigation before scheduler provisioning')
+              expected = {
+                  'name': NAME,
+                  'description': 'Obsidian website quote SMS and TintWiz safe retries every five minutes',
+                  'schedule': '*/5 * * * *', 'timeZone': 'Etc/UTC', 'attemptDeadline': '90s',
+                  'retryConfig': {'retryCount': 0, 'maxRetryDuration': '0s'},
+                  'httpTarget': {'uri': TARGET, 'httpMethod': 'GET', 'headers': {
+                      'Authorization': 'Bearer ' + secret,
+                      'User-Agent': 'obsidian-quote-delivery-scheduler'}}}
+              existing = request(BASE + NAME, token, allow_404=True)
+              if existing is None:
+                  request(BASE + NAME.rsplit('/', 1)[0], token, 'POST', expected)
+              result = request(BASE + NAME, token)
+              target = result.get('httpTarget', {})
+              headers = {k.lower(): v for k, v in target.get('headers', {}).items()}
+              valid = (result.get('schedule') == expected['schedule']
+                  and result.get('timeZone') == expected['timeZone']
+                  and result.get('attemptDeadline') == '90s'
+                  and result.get('state') == 'ENABLED'
+                  and target.get('uri') == TARGET and target.get('httpMethod') == 'GET'
+                  and headers.get('authorization') == 'Bearer ' + secret
+                  and result.get('retryConfig', {}).get('retryCount', 0) == 0
+                  and result.get('retryConfig', {}).get('maxRetryDuration', '0s') == '0s')
+              if not valid:
+                  raise SystemExit('Job differs from expected configuration; no existing job was overwritten')
+              print(json.dumps({'name': NAME, 'schedule': result['schedule'], 'state': result['state'],
+                  'authentication_verified': True, 'target_verified': True}))
+          
+          
+          if __name__ == '__main__':
+              main()
           PY
