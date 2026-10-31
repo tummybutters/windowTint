@@ -1,38 +1,49 @@
-name: Quote alert delivery
+name: Read-only October 31 internal-test delivery audit
 on:
-  schedule:
-    - cron: '*/5 * * * *'
   workflow_dispatch:
 permissions: {}
-concurrency:
-  group: quote-alert-delivery
-  cancel-in-progress: false
 jobs:
-  reconcile:
+  audit:
     runs-on: ubuntu-latest
-    timeout-minutes: 2
+    timeout-minutes: 3
     steps:
-      - name: Retry pending alerts and check delivery
+      - name: Read only the two authorized internal test leads
         env:
           QUOTE_RETRY_SECRET: ${{ secrets.QUOTE_RETRY_SECRET }}
         run: |
-          python3 - <<'PY'
-          import json, os, urllib.request
+          python3 - <<'PYCODE'
+          import datetime,json,os,urllib.error,urllib.request,uuid
+          ids = ['a1f6e80f-44ef-4c56-ab66-23c1eea0e16c', '93fb3b34-44f6-4d5b-9d53-2ce433c1dd69']
+          if len(ids) != 2 or len(set(ids)) != 2:
+              raise SystemExit('Exactly two distinct test IDs required')
+          ids = [str(uuid.UUID(value)) for value in ids]
           secret = os.environ.get('QUOTE_RETRY_SECRET')
           if not secret:
-              raise SystemExit('Quote alert worker secret is missing')
-          request = urllib.request.Request(
-              'https://www.obsidianautoworksoc.com/api/quote-notification-retry',
-              headers={'Authorization': 'Bearer ' + secret})
-          try:
-              with urllib.request.urlopen(request, timeout=75) as response:
-                  result = json.load(response)
-          except Exception:
-              raise SystemExit('Quote delivery worker unavailable; inspect the saved lead queue')
-          fields = ['checked', 'crm_checked', 'reconciled', 'lookup_errors', 'failed', 'unknown', 'pending', 'crm_failed', 'crm_unknown', 'crm_pending']
-          if any(not isinstance(result.get(key), int) for key in fields):
-              raise SystemExit('Unexpected quote delivery worker response')
-          print(json.dumps({key: result[key] for key in fields}))
-          if any(result[key] for key in ['lookup_errors', 'failed', 'unknown', 'pending', 'crm_failed', 'crm_unknown', 'crm_pending']):
-              raise SystemExit('Quote delivery needs attention; inspect SMS and Tint Wiz before resending')
-          PY
+              raise SystemExit('Existing quote verification credential unavailable')
+          fields = ['id','received_at','lead_kind','page_path','experiment_id','experiment_variant','notification_state','notification_attempts','notification_provider_id','notification_delivery_state','notification_error','notification_delivery_error','crm_state','crm_attempts','crm_error','crm_accepted_at']
+          complete = True
+          for lead_id in ids:
+              request = urllib.request.Request('https://www.obsidianautoworksoc.com/api/quote-notification-retry?lead_id=' + lead_id, headers={'Authorization':'Bearer ' + secret}, method='GET')
+              try:
+                  with urllib.request.urlopen(request, timeout=45) as response:
+                      lead = json.load(response).get('lead')
+              except urllib.error.HTTPError as error:
+                  print('DELIVERY_AUDIT ' + json.dumps({'id':lead_id,'http_status':error.code,'read_failed':True}))
+                  complete = False
+                  continue
+              except Exception:
+                  print('DELIVERY_AUDIT ' + json.dumps({'id':lead_id,'read_failed':True}))
+                  complete = False
+                  continue
+              if not lead or lead.get('id') != lead_id:
+                  print('DELIVERY_AUDIT ' + json.dumps({'id':lead_id,'response_mismatch':True}))
+                  complete = False
+                  continue
+              result = {key:lead.get(key) for key in fields}
+              result['checked_at'] = datetime.datetime.now(datetime.timezone.utc).isoformat()
+              result['sms_delivery_confirmed'] = bool(lead.get('notification_provider_id')) and lead.get('notification_delivery_state') in ['delivered','read']
+              print('DELIVERY_AUDIT ' + json.dumps(result))
+              complete = complete and result['sms_delivery_confirmed']
+          if not complete:
+              raise SystemExit('Provider delivery is not confirmed for both tests; investigate without resending')
+          PYCODE
