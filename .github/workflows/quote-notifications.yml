@@ -4,16 +4,31 @@ permissions: {}
 jobs:
   audit:
     runs-on: ubuntu-latest
+    timeout-minutes: 6
     steps:
-      - name: Read existing lead delivery states only
+      - name: Verify real delivery and link existing CRM evidence
         env:
           QUOTE_RETRY_SECRET: ${{ secrets.QUOTE_RETRY_SECRET }}
         run: |
           python3 - <<'PY'
           import os,json,urllib.request
-          ids=['f0235e20-8fac-465b-8bf3-1fcb7c0a4f60', '15c1e002-6a66-4277-bea3-651df476a75b', '3ec5e480-b7ad-45c1-b1f2-a764559eb8eb', '7a71f603-b4da-4dca-8344-8e81f5405946', '6e3e4e00-8f28-4f85-9b31-7ea4638fbef9', 'f4ffb302-da1f-4620-a265-1cb574ca89dc', 'f9e0e55e-76ab-47e3-87d7-946fe9e7ef39', '8ae4218f-faab-4ff3-8582-66cd5e84f438', '2e18eefc-bfa4-4f40-8416-e95e3be014c0', '235747a1-0fc8-4a82-8c28-0b5e31b660e5', '824414e3-acf4-43e5-95a1-4748a8567c9c', '94e47dd9-4c5a-4f75-a0bb-a5fc136c0242', '4b971264-0280-43df-aded-7133ff60c11f', '138c8fce-d1eb-4751-8a45-bc5b5f4e8c79', '22c92e3d-49af-4af8-89c7-7177fe1b8754']
-          for lead_id in ids:
-           request=urllib.request.Request('https://www.obsidianautoworksoc.com/api/quote-notification-retry?lead_id='+lead_id,headers={'Authorization':'Bearer '+os.environ['QUOTE_RETRY_SECRET']})
-           with urllib.request.urlopen(request,timeout=45) as response: lead=json.load(response)['lead']
-           print(json.dumps({k:lead.get(k) for k in ['id','received_at','notification_state','notification_delivery_state','crm_state']}))
+          BASE='https://www.obsidianautoworksoc.com/api/'
+          headers={'Authorization':'Bearer '+os.environ['QUOTE_RETRY_SECRET'],'Content-Type':'application/json'}
+          def request(path,body=None):
+           req=urllib.request.Request(BASE+path,headers=headers,data=json.dumps(body).encode() if body is not None else None)
+           with urllib.request.urlopen(req,timeout=55) as r:return json.load(r)
+          records=[{'kind': 'contact', 'record_id': '1619938536', 'contact_id': '1619938536', 'quote_id': 'f0235e20-8fac-465b-8bf3-1fcb7c0a4f60', 'occurred_at': '2026-11-08T18:45:00Z', 'status': 'verified'}, {'kind': 'contact', 'record_id': '428049561', 'contact_id': '428049561', 'quote_id': '15c1e002-6a66-4277-bea3-651df476a75b', 'occurred_at': '2026-11-08T18:45:00Z', 'status': 'verified'}, {'kind': 'contact', 'record_id': '1388655549', 'contact_id': '1388655549', 'quote_id': '3ec5e480-b7ad-45c1-b1f2-a764559eb8eb', 'occurred_at': '2026-11-08T18:45:00Z', 'status': 'verified'}, {'kind': 'contact', 'record_id': '47325152', 'contact_id': '47325152', 'quote_id': 'f4ffb302-da1f-4620-a265-1cb574ca89dc', 'occurred_at': '2026-11-08T18:45:00Z', 'status': 'verified'}, {'kind': 'contact', 'record_id': '194811383', 'contact_id': '194811383', 'quote_id': 'f9e0e55e-76ab-47e3-87d7-946fe9e7ef39', 'occurred_at': '2026-11-08T18:45:00Z', 'status': 'verified'}, {'kind': 'contact', 'record_id': '1290458131', 'contact_id': '1290458131', 'quote_id': '8ae4218f-faab-4ff3-8582-66cd5e84f438', 'occurred_at': '2026-11-08T18:45:00Z', 'status': 'verified'}, {'kind': 'contact', 'record_id': '1568215466', 'contact_id': '1568215466', 'quote_id': '2e18eefc-bfa4-4f40-8416-e95e3be014c0', 'occurred_at': '2026-11-08T18:45:00Z', 'status': 'verified'}, {'kind': 'contact', 'record_id': '1086175536', 'contact_id': '1086175536', 'quote_id': '235747a1-0fc8-4a82-8c28-0b5e31b660e5', 'occurred_at': '2026-11-08T18:45:00Z', 'status': 'verified'}, {'kind': 'contact', 'record_id': '2015082635', 'contact_id': '2015082635', 'quote_id': '824414e3-acf4-43e5-95a1-4748a8567c9c', 'occurred_at': '2026-11-08T18:45:00Z', 'status': 'verified'}, {'kind': 'contact', 'record_id': '2052980088', 'contact_id': '2052980088', 'quote_id': '94e47dd9-4c5a-4f75-a0bb-a5fc136c0242', 'occurred_at': '2026-11-08T18:45:00Z', 'status': 'verified'}, {'kind': 'contact', 'record_id': '484846378', 'contact_id': '484846378', 'quote_id': '4b971264-0280-43df-aded-7133ff60c11f', 'occurred_at': '2026-11-08T18:45:00Z', 'status': 'verified'}, {'kind': 'contact', 'record_id': '859748885', 'contact_id': '859748885', 'quote_id': '138c8fce-d1eb-4751-8a45-bc5b5f4e8c79', 'occurred_at': '2026-11-08T18:45:00Z', 'status': 'verified'}, {'kind': 'contact', 'record_id': '1467918232', 'contact_id': '1467918232', 'quote_id': '22c92e3d-49af-4af8-89c7-7177fe1b8754', 'occurred_at': '2026-11-08T18:45:00Z', 'status': 'verified'}]
+          result=request('crm-attribution',{'records':records})
+          print(json.dumps({'verified_contacts_linked':len(result['accepted'])}))
+          delivery=[];offset=0
+          while True:
+           d=request('quote-notification-retry?report=delivery&start=2026-10-26&end=2026-11-08&offset='+str(offset));delivery+=d['leads']
+           if d['next_offset'] is None:break
+           offset=d['next_offset']
+          print(json.dumps({'delivery_count':len(delivery),'delivered':sum(x['sms_status'] in ['delivered','read'] for x in delivery),'recipient_matches_elle':d['recipient_matches_elle'],'delivery_issues':[{'quote_id':x['quote_id'],'status':x['sms_status']} for x in delivery if x['sms_status'] not in ['delivered','read']]}))
+          f=request('quote-notification-retry?report=funnel&start=2026-11-02&end=2026-11-08')
+          linked={x['quote_id'] for x in f['crm_evidence'] if x['kind']=='contact'}
+          print(json.dumps({'server_saved_quotes':len(f['leads']),'verified_contacts_in_cohort':len(linked),'unmatched_quotes':[q['quote_id'] for q in f['leads'] if q['quote_id'] not in linked],'event_count':len(f['events']),'event_names':sorted(set(x['event_name'] for x in f['events'])),'truncated':f['leads_truncated'] or f['events_truncated']}))
+          # Existing safe atomic worker health, no new form or message test.
+          h=request('quote-notification-retry');print(json.dumps({'worker':h}))
           PY
