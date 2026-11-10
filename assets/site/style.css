@@ -78,7 +78,7 @@ em { font-style: normal; color: var(--accent); }
 .brand-endorsement { display: block; margin-top: 8px; font-size: 8px; line-height: 1.2; color: var(--muted); letter-spacing: .01em; }
 .site-nav { display: flex; align-items: center; justify-content: flex-end; gap: 5px; }
 .site-nav > a { padding: 12px 13px; font-size: 13px; white-space: nowrap; border-radius: 6px; transition: color .2s, background .2s; }
-.site-nav > a:hover, .site-nav > a[aria-current='page'] { background: #ffffff08; color: var(--accent); }
+.site-nav > a:not(.button):hover, .site-nav > a:not(.button)[aria-current='page'] { background: #ffffff08; color: var(--accent); }
 .site-nav > a.button { margin-left: 14px; padding: 13px 19px; color: var(--ink); }
 .nav-toggle { display: none; min-width: 44px; min-height: 44px; padding: 10px; border: 1px solid var(--line); background: transparent; color: var(--paper); border-radius: 7px; }
 .button, .button-secondary { display: inline-flex; justify-content: center; align-items: center; gap: 20px; padding: 17px 23px; min-height: 54px; border: 1px solid var(--accent); border-radius: 7px; background: var(--accent); color: var(--ink); font-size: 14px; font-weight: 600; line-height: 1.3; transition: background .2s, transform .2s; }
