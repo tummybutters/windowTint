@@ -288,3 +288,6 @@ a.card:hover { background: #242a20; border-color: #69715e; }
   html { scroll-behavior: auto; }
   *, *::before, *::after { animation-duration: .01ms !important; transition-duration: .01ms !important; }
 }
+
+/* Keep keyboard focus visible against the orange quote panel. */
+.quote-panel :is(a,button,input,select,textarea,summary):focus-visible{outline-color:var(--ink)}

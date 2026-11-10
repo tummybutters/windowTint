@@ -156,3 +156,6 @@ footer{width:calc(100% - var(--gutter)*2);max-width:1400px;border-top-color:var(
   .free-banner span{font-size:31px}
   .free-banner small{font-size:13px}
 }
+
+/* Placeholder hints must remain readable on both the auto and commercial field backgrounds. */
+.quiz input::placeholder,.quiz textarea::placeholder{color:#a2a69c;opacity:1}

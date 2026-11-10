@@ -94,3 +94,9 @@ footer{padding:25px 0}
  .last-cta p{margin:0;font-size:clamp(28px,7.8vw,38px);line-height:1.08}
  .last-cta .primary{white-space:normal;gap:16px}
 }
+
+/* A secondary action on an accent panel needs an explicit foreground in every dark state. */
+.last-cta .direct-actions .direct-text:hover,
+.last-cta .direct-actions .direct-text:focus-visible,
+.last-cta .direct-actions .direct-text:active{background:var(--ink);border-color:var(--ink);color:var(--paper)}
+.last-cta :is(a,button,input,select,textarea,summary):focus-visible{outline-color:var(--ink)}
