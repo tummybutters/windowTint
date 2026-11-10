@@ -1,0 +1,94 @@
+/* Keep the layout width stable when the mobile menu locks scrolling. */
+html { scrollbar-gutter: stable; }
+/* Keep the header stationary while animating only the navigation surface. */
+.site-header {
+  isolation: isolate;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+.site-nav > a {
+  transition: color 160ms ease, background-color 160ms ease;
+}
+.site-nav > a.button,
+.site-nav > a.button:hover {
+  transform: none;
+}
+.nav-toggle {
+  gap: 9px;
+  transition: background-color 160ms ease, border-color 160ms ease;
+}
+.nav-toggle:hover,
+.nav-toggle[aria-expanded='true'] {
+  background: #ffffff0b;
+  border-color: #68705e;
+}
+.nav-toggle span {
+  display: inline-block;
+  transition: transform 200ms ease;
+}
+.nav-toggle[aria-expanded='true'] span { transform: rotate(90deg); }
+.nav-backdrop {
+  display: none;
+}
+@media (max-width: 900px) {
+  body.menu-open {
+    overflow: hidden;
+    overscroll-behavior: none;
+  }
+  .site-header {
+    z-index: 60;
+  }
+  .js .site-nav,
+  .js .site-nav:not(.is-open) {
+    display: flex;
+    visibility: hidden;
+    opacity: 0;
+    transform: translateY(-9px);
+    transform-origin: center top;
+    pointer-events: none;
+    transition: opacity 180ms ease, transform 220ms cubic-bezier(.2, .7, .2, 1), visibility 0s linear 220ms;
+    background: #1b1e19;
+    max-height: calc(100dvh - 120px);
+    overscroll-behavior: contain;
+    -webkit-overflow-scrolling: touch;
+  }
+  .js .site-nav.is-open {
+    visibility: visible;
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+    transition-delay: 0s;
+  }
+  .nav-backdrop {
+    display: block;
+    position: fixed;
+    inset: 0;
+    z-index: 55;
+    background: #080b08a6;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition: opacity 180ms ease, visibility 0s linear 220ms;
+    touch-action: none;
+  }
+  .nav-backdrop.is-visible {
+    visibility: visible;
+    opacity: 1;
+    pointer-events: auto;
+    transition-delay: 0s;
+  }
+  .site-nav > a {
+    min-height: 52px;
+    display: flex;
+    align-items: center;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .site-nav,
+  .nav-backdrop,
+  .nav-toggle,
+  .nav-toggle span,
+  .site-nav > a {
+    transition: none !important;
+  }
+}

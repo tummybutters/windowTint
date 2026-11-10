@@ -1,0 +1,242 @@
+{
+  "/assets/paid-landing/mobile-porsche-front.webp": {
+    "thumbnail": "/assets/site/optimized/mobile-porsche-front-6e45862f-thumbnail.webp",
+    "display": "/assets/site/optimized/mobile-porsche-front-6e45862f-display.webp",
+    "width": 1012,
+    "height": 1800
+  },
+  "/assets/paid-landing/mobile-porsche-rear.webp": {
+    "thumbnail": "/assets/site/optimized/mobile-porsche-rear-f3fc10e5-thumbnail.webp",
+    "display": "/assets/site/optimized/mobile-porsche-rear-f3fc10e5-display.webp",
+    "width": 1012,
+    "height": 1800
+  },
+  "/assets/paid-landing/mobile-porsche-side.webp": {
+    "thumbnail": "/assets/site/optimized/mobile-porsche-side-21d7928d-thumbnail.webp",
+    "display": "/assets/site/optimized/mobile-porsche-side-21d7928d-display.webp",
+    "width": 1012,
+    "height": 1800
+  },
+  "/assets/paid-landing/tesla-glass-roof.webp": {
+    "thumbnail": "/assets/site/optimized/tesla-glass-roof-7545c2a2-thumbnail.webp",
+    "display": "/assets/site/optimized/tesla-glass-roof-7545c2a2-display.webp",
+    "width": 1012,
+    "height": 1800
+  },
+  "/assets/paid-landing/tesla-model-y-front.webp": {
+    "thumbnail": "/assets/site/optimized/tesla-model-y-front-e9742998-thumbnail.webp",
+    "display": "/assets/site/optimized/tesla-model-y-front-e9742998-display.webp",
+    "width": 1012,
+    "height": 1800
+  },
+  "/assets/paid-landing/tesla-model-y-rear.webp": {
+    "thumbnail": "/assets/site/optimized/tesla-model-y-rear-24608c78-thumbnail.webp",
+    "display": "/assets/site/optimized/tesla-model-y-rear-24608c78-display.webp",
+    "width": 1012,
+    "height": 1800
+  },
+  "/assets/site/commercial.webp": {
+    "thumbnail": "/assets/site/optimized/commercial-ebb95193-thumbnail.webp",
+    "display": "/assets/site/optimized/commercial-ebb95193-display.webp",
+    "width": 1012,
+    "height": 1800
+  },
+  "/assets/site/home.webp": {
+    "thumbnail": "/assets/site/optimized/home-5ad2d243-thumbnail.webp",
+    "display": "/assets/site/optimized/home-5ad2d243-display.webp",
+    "width": 1200,
+    "height": 1600
+  },
+  "/assets/site/work-commercial.webp": {
+    "thumbnail": "/assets/site/optimized/work-commercial-3ca9e21f-thumbnail.webp",
+    "display": "/assets/site/optimized/work-commercial-3ca9e21f-display.webp",
+    "width": 1200,
+    "height": 900
+  },
+  "/assets/site/work-home.webp": {
+    "thumbnail": "/assets/site/optimized/work-home-ae606d82-thumbnail.webp",
+    "display": "/assets/site/optimized/work-home-ae606d82-display.webp",
+    "width": 1012,
+    "height": 1800
+  },
+  "/gallery/bmw-m4-01.jpg": {
+    "thumbnail": "/assets/site/optimized/bmw-m4-01-653a45e0-thumbnail.webp",
+    "display": "/assets/site/optimized/bmw-m4-01-653a45e0-display.webp",
+    "width": 1179,
+    "height": 1256
+  },
+  "/gallery/bmw-m4-02.jpg": {
+    "thumbnail": "/assets/site/optimized/bmw-m4-02-624fc146-thumbnail.webp",
+    "display": "/assets/site/optimized/bmw-m4-02-624fc146-display.webp",
+    "width": 1179,
+    "height": 1111
+  },
+  "/gallery/bmw-x3-01.jpg": {
+    "thumbnail": "/assets/site/optimized/bmw-x3-01-1a2a196a-thumbnail.webp",
+    "display": "/assets/site/optimized/bmw-x3-01-1a2a196a-display.webp",
+    "width": 1179,
+    "height": 1126
+  },
+  "/gallery/bmw-x3-02.jpg": {
+    "thumbnail": "/assets/site/optimized/bmw-x3-02-c7ed188e-thumbnail.webp",
+    "display": "/assets/site/optimized/bmw-x3-02-c7ed188e-display.webp",
+    "width": 1179,
+    "height": 990
+  },
+  "/gallery/cadillac-lyriq-01.jpg": {
+    "thumbnail": "/assets/site/optimized/cadillac-lyriq-01-3b13e5b1-thumbnail.webp",
+    "display": "/assets/site/optimized/cadillac-lyriq-01-3b13e5b1-display.webp",
+    "width": 1179,
+    "height": 1089
+  },
+  "/gallery/cadillac-lyriq-02.jpg": {
+    "thumbnail": "/assets/site/optimized/cadillac-lyriq-02-1bfc230f-thumbnail.webp",
+    "display": "/assets/site/optimized/cadillac-lyriq-02-1bfc230f-display.webp",
+    "width": 1179,
+    "height": 1228
+  },
+  "/gallery/lexus-gx-01.jpg": {
+    "thumbnail": "/assets/site/optimized/lexus-gx-01-39a4e78c-thumbnail.webp",
+    "display": "/assets/site/optimized/lexus-gx-01-39a4e78c-display.webp",
+    "width": 1179,
+    "height": 1105
+  },
+  "/gallery/lexus-gx-02.jpg": {
+    "thumbnail": "/assets/site/optimized/lexus-gx-02-5bc094c4-thumbnail.webp",
+    "display": "/assets/site/optimized/lexus-gx-02-5bc094c4-display.webp",
+    "width": 1179,
+    "height": 1130
+  },
+  "/gallery/mercedes-benz-gls-01.jpg": {
+    "thumbnail": "/assets/site/optimized/mercedes-benz-gls-01-7a8956fc-thumbnail.webp",
+    "display": "/assets/site/optimized/mercedes-benz-gls-01-7a8956fc-display.webp",
+    "width": 1200,
+    "height": 2133
+  },
+  "/gallery/mercedes-benz-gls-02.jpg": {
+    "thumbnail": "/assets/site/optimized/mercedes-benz-gls-02-4fc687e3-thumbnail.webp",
+    "display": "/assets/site/optimized/mercedes-benz-gls-02-4fc687e3-display.webp",
+    "width": 1200,
+    "height": 2133
+  },
+  "/gallery/porsche-cayenne-coupe-01.jpg": {
+    "thumbnail": "/assets/site/optimized/porsche-cayenne-coupe-01-fa267d77-thumbnail.webp",
+    "display": "/assets/site/optimized/porsche-cayenne-coupe-01-fa267d77-display.webp",
+    "width": 1200,
+    "height": 2133
+  },
+  "/gallery/porsche-cayenne-coupe-02.jpg": {
+    "thumbnail": "/assets/site/optimized/porsche-cayenne-coupe-02-7b73a6bd-thumbnail.webp",
+    "display": "/assets/site/optimized/porsche-cayenne-coupe-02-7b73a6bd-display.webp",
+    "width": 1200,
+    "height": 2133
+  },
+  "/gallery/porsche-cayenne-coupe-03.jpg": {
+    "thumbnail": "/assets/site/optimized/porsche-cayenne-coupe-03-9fcddaf4-thumbnail.webp",
+    "display": "/assets/site/optimized/porsche-cayenne-coupe-03-9fcddaf4-display.webp",
+    "width": 1200,
+    "height": 2133
+  },
+  "/gallery/tintwiz-20261025/chevrolet-corvette-01.webp": {
+    "thumbnail": "/assets/site/optimized/chevrolet-corvette-01-2c81ae56-thumbnail.webp",
+    "display": "/assets/site/optimized/chevrolet-corvette-01-2c81ae56-display.webp",
+    "width": 1152,
+    "height": 2048
+  },
+  "/gallery/tintwiz-20261025/chevrolet-corvette-02.webp": {
+    "thumbnail": "/assets/site/optimized/chevrolet-corvette-02-a3a77352-thumbnail.webp",
+    "display": "/assets/site/optimized/chevrolet-corvette-02-a3a77352-display.webp",
+    "width": 1152,
+    "height": 2048
+  },
+  "/gallery/tintwiz-20261025/ford-f150-raptor-01.webp": {
+    "thumbnail": "/assets/site/optimized/ford-f150-raptor-01-ca25971c-thumbnail.webp",
+    "display": "/assets/site/optimized/ford-f150-raptor-01-ca25971c-display.webp",
+    "width": 1152,
+    "height": 2048
+  },
+  "/gallery/tintwiz-20261025/ford-f150-raptor-02.webp": {
+    "thumbnail": "/assets/site/optimized/ford-f150-raptor-02-cb98bffc-thumbnail.webp",
+    "display": "/assets/site/optimized/ford-f150-raptor-02-cb98bffc-display.webp",
+    "width": 1152,
+    "height": 2048
+  },
+  "/gallery/tintwiz-20261025/ford-f150-raptor-03.webp": {
+    "thumbnail": "/assets/site/optimized/ford-f150-raptor-03-63544ccb-thumbnail.webp",
+    "display": "/assets/site/optimized/ford-f150-raptor-03-63544ccb-display.webp",
+    "width": 1152,
+    "height": 2048
+  },
+  "/gallery/tintwiz-20261025/mercedes-amg-gt-01.webp": {
+    "thumbnail": "/assets/site/optimized/mercedes-amg-gt-01-810e9aba-thumbnail.webp",
+    "display": "/assets/site/optimized/mercedes-amg-gt-01-810e9aba-display.webp",
+    "width": 1152,
+    "height": 2048
+  },
+  "/gallery/tintwiz-20261025/mercedes-amg-gt-02.webp": {
+    "thumbnail": "/assets/site/optimized/mercedes-amg-gt-02-96874028-thumbnail.webp",
+    "display": "/assets/site/optimized/mercedes-amg-gt-02-96874028-display.webp",
+    "width": 1152,
+    "height": 2048
+  },
+  "/gallery/tintwiz-20261025/mercedes-amg-gt-03.webp": {
+    "thumbnail": "/assets/site/optimized/mercedes-amg-gt-03-6cdb2a3b-thumbnail.webp",
+    "display": "/assets/site/optimized/mercedes-amg-gt-03-6cdb2a3b-display.webp",
+    "width": 1152,
+    "height": 2048
+  },
+  "/gallery/tintwiz-20261025/tesla-model-y-juniper-01.webp": {
+    "thumbnail": "/assets/site/optimized/tesla-model-y-juniper-01-67bd763c-thumbnail.webp",
+    "display": "/assets/site/optimized/tesla-model-y-juniper-01-67bd763c-display.webp",
+    "width": 1152,
+    "height": 2048
+  },
+  "/gallery/tintwiz-20261025/tesla-model-y-juniper-02.webp": {
+    "thumbnail": "/assets/site/optimized/tesla-model-y-juniper-02-5a6c5401-thumbnail.webp",
+    "display": "/assets/site/optimized/tesla-model-y-juniper-02-5a6c5401-display.webp",
+    "width": 1152,
+    "height": 2048
+  },
+  "/gallery/tintwiz-20261025/volkswagen-karmann-ghia-01.webp": {
+    "thumbnail": "/assets/site/optimized/volkswagen-karmann-ghia-01-1ec497fc-thumbnail.webp",
+    "display": "/assets/site/optimized/volkswagen-karmann-ghia-01-1ec497fc-display.webp",
+    "width": 1152,
+    "height": 2048
+  },
+  "/gallery/tintwiz-20261025/volkswagen-karmann-ghia-02.webp": {
+    "thumbnail": "/assets/site/optimized/volkswagen-karmann-ghia-02-3ad4c1ee-thumbnail.webp",
+    "display": "/assets/site/optimized/volkswagen-karmann-ghia-02-3ad4c1ee-display.webp",
+    "width": 1152,
+    "height": 2048
+  },
+  "/gallery/toyota-4runner-01.jpg": {
+    "thumbnail": "/assets/site/optimized/toyota-4runner-01-4cea6d2e-thumbnail.webp",
+    "display": "/assets/site/optimized/toyota-4runner-01-4cea6d2e-display.webp",
+    "width": 1179,
+    "height": 1002
+  },
+  "/gallery/toyota-4runner-02.jpg": {
+    "thumbnail": "/assets/site/optimized/toyota-4runner-02-9a637920-thumbnail.webp",
+    "display": "/assets/site/optimized/toyota-4runner-02-9a637920-display.webp",
+    "width": 1179,
+    "height": 1199
+  },
+  "/gallery/toyota-tacoma-01.jpg": {
+    "thumbnail": "/assets/site/optimized/toyota-tacoma-01-59235b36-thumbnail.webp",
+    "display": "/assets/site/optimized/toyota-tacoma-01-59235b36-display.webp",
+    "width": 1179,
+    "height": 1136
+  },
+  "/gallery/toyota-tacoma-02.jpg": {
+    "thumbnail": "/assets/site/optimized/toyota-tacoma-02-b9b71989-thumbnail.webp",
+    "display": "/assets/site/optimized/toyota-tacoma-02-b9b71989-display.webp",
+    "width": 1179,
+    "height": 1041
+  },
+  "/gallery/toyota-tacoma-03.jpg": {
+    "thumbnail": "/assets/site/optimized/toyota-tacoma-03-c8e123d6-thumbnail.webp",
+    "display": "/assets/site/optimized/toyota-tacoma-03-c8e123d6-display.webp",
+    "width": 1179,
+    "height": 1069
+  }
+}

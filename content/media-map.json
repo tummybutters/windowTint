@@ -1,0 +1,676 @@
+{
+  "version": 1,
+  "usage": "Choose by exact subject and page intent. Use a text-led or diagram-led layout when the library lacks a relevant verified photograph. City pages may show a clearly labeled regional portfolio example without implying the installation took place in that city.",
+  "assets": [
+    {
+      "id": "mercedes-amg-gt-1",
+      "src": "/gallery/tintwiz-20261025/mercedes-amg-gt-01.webp",
+      "imageAlt": "Mercedes-AMG GT window tint \u2014 front three-quarter view",
+      "division": "auto",
+      "subject": "Mercedes-AMG GT",
+      "suitableTopics": [
+        "Mercedes-AMG GT window tint",
+        "vehicle glass coverage"
+      ],
+      "provenance": "Existing Obsidian portfolio, source mapping in content/gallery.json; no city, shade, product or reviewer attribution inferred."
+    },
+    {
+      "id": "mercedes-amg-gt-2",
+      "src": "/gallery/tintwiz-20261025/mercedes-amg-gt-02.webp",
+      "imageAlt": "Mercedes-AMG GT window tint \u2014 side profile",
+      "division": "auto",
+      "subject": "Mercedes-AMG GT",
+      "suitableTopics": [
+        "Mercedes-AMG GT window tint",
+        "vehicle glass coverage"
+      ],
+      "provenance": "Existing Obsidian portfolio, source mapping in content/gallery.json; no city, shade, product or reviewer attribution inferred."
+    },
+    {
+      "id": "mercedes-amg-gt-3",
+      "src": "/gallery/tintwiz-20261025/mercedes-amg-gt-03.webp",
+      "imageAlt": "Mercedes-AMG GT window tint \u2014 front view",
+      "division": "auto",
+      "subject": "Mercedes-AMG GT",
+      "suitableTopics": [
+        "Mercedes-AMG GT window tint",
+        "vehicle glass coverage"
+      ],
+      "provenance": "Existing Obsidian portfolio, source mapping in content/gallery.json; no city, shade, product or reviewer attribution inferred."
+    },
+    {
+      "id": "chevrolet-corvette-1",
+      "src": "/gallery/tintwiz-20261025/chevrolet-corvette-01.webp",
+      "imageAlt": "Chevrolet Corvette window tint \u2014 side glass and windshield",
+      "division": "auto",
+      "subject": "Chevrolet Corvette",
+      "suitableTopics": [
+        "Chevrolet Corvette window tint",
+        "vehicle glass coverage"
+      ],
+      "provenance": "Existing Obsidian portfolio, source mapping in content/gallery.json; no city, shade, product or reviewer attribution inferred."
+    },
+    {
+      "id": "chevrolet-corvette-2",
+      "src": "/gallery/tintwiz-20261025/chevrolet-corvette-02.webp",
+      "imageAlt": "Chevrolet Corvette window tint \u2014 front view",
+      "division": "auto",
+      "subject": "Chevrolet Corvette",
+      "suitableTopics": [
+        "Chevrolet Corvette window tint",
+        "vehicle glass coverage"
+      ],
+      "provenance": "Existing Obsidian portfolio, source mapping in content/gallery.json; no city, shade, product or reviewer attribution inferred."
+    },
+    {
+      "id": "ford-f-150-raptor-1",
+      "src": "/gallery/tintwiz-20261025/ford-f150-raptor-01.webp",
+      "imageAlt": "Ford F-150 Raptor window tint \u2014 front three-quarter view",
+      "division": "auto",
+      "subject": "Ford F-150 Raptor",
+      "suitableTopics": [
+        "Ford F-150 Raptor window tint",
+        "vehicle glass coverage"
+      ],
+      "provenance": "Existing Obsidian portfolio, source mapping in content/gallery.json; no city, shade, product or reviewer attribution inferred."
+    },
+    {
+      "id": "ford-f-150-raptor-2",
+      "src": "/gallery/tintwiz-20261025/ford-f150-raptor-02.webp",
+      "imageAlt": "Ford F-150 Raptor window tint \u2014 side profile",
+      "division": "auto",
+      "subject": "Ford F-150 Raptor",
+      "suitableTopics": [
+        "Ford F-150 Raptor window tint",
+        "vehicle glass coverage"
+      ],
+      "provenance": "Existing Obsidian portfolio, source mapping in content/gallery.json; no city, shade, product or reviewer attribution inferred."
+    },
+    {
+      "id": "ford-f-150-raptor-3",
+      "src": "/gallery/tintwiz-20261025/ford-f150-raptor-03.webp",
+      "imageAlt": "Ford F-150 Raptor window tint \u2014 rear three-quarter view",
+      "division": "auto",
+      "subject": "Ford F-150 Raptor",
+      "suitableTopics": [
+        "Ford F-150 Raptor window tint",
+        "vehicle glass coverage"
+      ],
+      "provenance": "Existing Obsidian portfolio, source mapping in content/gallery.json; no city, shade, product or reviewer attribution inferred."
+    },
+    {
+      "id": "tesla-model-y-1",
+      "src": "/gallery/tintwiz-20261025/tesla-model-y-juniper-01.webp",
+      "imageAlt": "Tesla Model Y window tint \u2014 front three-quarter view",
+      "division": "auto",
+      "subject": "Tesla Model Y",
+      "suitableTopics": [
+        "Tesla Model Y window tint",
+        "vehicle glass coverage"
+      ],
+      "provenance": "Existing Obsidian portfolio, source mapping in content/gallery.json; no city, shade, product or reviewer attribution inferred."
+    },
+    {
+      "id": "tesla-model-y-2",
+      "src": "/gallery/tintwiz-20261025/tesla-model-y-juniper-02.webp",
+      "imageAlt": "Tesla Model Y window tint \u2014 rear three-quarter view",
+      "division": "auto",
+      "subject": "Tesla Model Y",
+      "suitableTopics": [
+        "Tesla Model Y window tint",
+        "vehicle glass coverage"
+      ],
+      "provenance": "Existing Obsidian portfolio, source mapping in content/gallery.json; no city, shade, product or reviewer attribution inferred."
+    },
+    {
+      "id": "tesla-model-y-3",
+      "src": "/assets/paid-landing/tesla-model-y-front.webp",
+      "imageAlt": "Tesla Model Y, front view",
+      "division": "auto",
+      "subject": "Tesla Model Y",
+      "suitableTopics": [
+        "Tesla Model Y window tint",
+        "vehicle glass coverage"
+      ],
+      "provenance": "Existing Obsidian portfolio, source mapping in content/gallery.json; no city, shade, product or reviewer attribution inferred."
+    },
+    {
+      "id": "tesla-model-y-4",
+      "src": "/assets/paid-landing/tesla-model-y-rear.webp",
+      "imageAlt": "Tesla Model Y, rear view",
+      "division": "auto",
+      "subject": "Tesla Model Y",
+      "suitableTopics": [
+        "Tesla Model Y window tint",
+        "vehicle glass coverage"
+      ],
+      "provenance": "Existing Obsidian portfolio, source mapping in content/gallery.json; no city, shade, product or reviewer attribution inferred."
+    },
+    {
+      "id": "tesla-model-y-5",
+      "src": "/assets/paid-landing/tesla-glass-roof.webp",
+      "imageAlt": "Tesla panoramic glass",
+      "division": "auto",
+      "subject": "Tesla Model Y",
+      "suitableTopics": [
+        "Tesla Model Y window tint",
+        "vehicle glass coverage"
+      ],
+      "provenance": "Existing Obsidian portfolio, source mapping in content/gallery.json; no city, shade, product or reviewer attribution inferred."
+    },
+    {
+      "id": "volkswagen-karmann-ghia-1",
+      "src": "/gallery/tintwiz-20261025/volkswagen-karmann-ghia-01.webp",
+      "imageAlt": "Volkswagen Karmann Ghia window tint \u2014 rear three-quarter view",
+      "division": "auto",
+      "subject": "Volkswagen Karmann Ghia",
+      "suitableTopics": [
+        "Volkswagen Karmann Ghia window tint",
+        "vehicle glass coverage"
+      ],
+      "provenance": "Existing Obsidian portfolio, source mapping in content/gallery.json; no city, shade, product or reviewer attribution inferred."
+    },
+    {
+      "id": "volkswagen-karmann-ghia-2",
+      "src": "/gallery/tintwiz-20261025/volkswagen-karmann-ghia-02.webp",
+      "imageAlt": "Volkswagen Karmann Ghia window tint \u2014 rear glass detail",
+      "division": "auto",
+      "subject": "Volkswagen Karmann Ghia",
+      "suitableTopics": [
+        "Volkswagen Karmann Ghia window tint",
+        "vehicle glass coverage"
+      ],
+      "provenance": "Existing Obsidian portfolio, source mapping in content/gallery.json; no city, shade, product or reviewer attribution inferred."
+    },
+    {
+      "id": "toyota-tacoma-1",
+      "src": "/gallery/toyota-tacoma-01.jpg",
+      "imageAlt": "Toyota Tacoma with ceramic window tint, front-side detail",
+      "division": "auto",
+      "subject": "Toyota Tacoma",
+      "suitableTopics": [
+        "Toyota Tacoma window tint",
+        "vehicle glass coverage"
+      ],
+      "provenance": "Existing Obsidian portfolio, source mapping in content/gallery.json; no city, shade, product or reviewer attribution inferred."
+    },
+    {
+      "id": "toyota-tacoma-2",
+      "src": "/gallery/toyota-tacoma-02.jpg",
+      "imageAlt": "Toyota Tacoma with ceramic window tint, front three-quarter view",
+      "division": "auto",
+      "subject": "Toyota Tacoma",
+      "suitableTopics": [
+        "Toyota Tacoma window tint",
+        "vehicle glass coverage"
+      ],
+      "provenance": "Existing Obsidian portfolio, source mapping in content/gallery.json; no city, shade, product or reviewer attribution inferred."
+    },
+    {
+      "id": "toyota-tacoma-3",
+      "src": "/gallery/toyota-tacoma-03.jpg",
+      "imageAlt": "Toyota Tacoma with ceramic window tint, full side profile",
+      "division": "auto",
+      "subject": "Toyota Tacoma",
+      "suitableTopics": [
+        "Toyota Tacoma window tint",
+        "vehicle glass coverage"
+      ],
+      "provenance": "Existing Obsidian portfolio, source mapping in content/gallery.json; no city, shade, product or reviewer attribution inferred."
+    },
+    {
+      "id": "bmw-m4-1",
+      "src": "/gallery/bmw-m4-01.jpg",
+      "imageAlt": "BMW M4 with ceramic window tint, rear three-quarter view",
+      "division": "auto",
+      "subject": "BMW M4",
+      "suitableTopics": [
+        "BMW M4 window tint",
+        "vehicle glass coverage"
+      ],
+      "provenance": "Existing Obsidian portfolio, source mapping in content/gallery.json; no city, shade, product or reviewer attribution inferred."
+    },
+    {
+      "id": "bmw-m4-2",
+      "src": "/gallery/bmw-m4-02.jpg",
+      "imageAlt": "BMW M4 interior view showing tinted glass and windshield",
+      "division": "auto",
+      "subject": "BMW M4",
+      "suitableTopics": [
+        "BMW M4 window tint",
+        "vehicle glass coverage"
+      ],
+      "provenance": "Existing Obsidian portfolio, source mapping in content/gallery.json; no city, shade, product or reviewer attribution inferred."
+    },
+    {
+      "id": "mercedes-benz-gls-1",
+      "src": "/gallery/mercedes-benz-gls-01.jpg",
+      "imageAlt": "Mercedes-Benz GLS with ceramic window tint, front-side view",
+      "division": "auto",
+      "subject": "Mercedes-Benz GLS",
+      "suitableTopics": [
+        "Mercedes-Benz GLS window tint",
+        "vehicle glass coverage"
+      ],
+      "provenance": "Existing Obsidian portfolio, source mapping in content/gallery.json; no city, shade, product or reviewer attribution inferred."
+    },
+    {
+      "id": "mercedes-benz-gls-2",
+      "src": "/gallery/mercedes-benz-gls-02.jpg",
+      "imageAlt": "Mercedes-Benz GLS with ceramic window tint, side view",
+      "division": "auto",
+      "subject": "Mercedes-Benz GLS",
+      "suitableTopics": [
+        "Mercedes-Benz GLS window tint",
+        "vehicle glass coverage"
+      ],
+      "provenance": "Existing Obsidian portfolio, source mapping in content/gallery.json; no city, shade, product or reviewer attribution inferred."
+    },
+    {
+      "id": "cadillac-lyriq-1",
+      "src": "/gallery/cadillac-lyriq-01.jpg",
+      "imageAlt": "Cadillac Lyriq with ceramic window tint, front three-quarter view",
+      "division": "auto",
+      "subject": "Cadillac Lyriq",
+      "suitableTopics": [
+        "Cadillac Lyriq window tint",
+        "vehicle glass coverage"
+      ],
+      "provenance": "Existing Obsidian portfolio, source mapping in content/gallery.json; no city, shade, product or reviewer attribution inferred."
+    },
+    {
+      "id": "cadillac-lyriq-2",
+      "src": "/gallery/cadillac-lyriq-02.jpg",
+      "imageAlt": "Cadillac Lyriq with ceramic window tint, rear view",
+      "division": "auto",
+      "subject": "Cadillac Lyriq",
+      "suitableTopics": [
+        "Cadillac Lyriq window tint",
+        "vehicle glass coverage"
+      ],
+      "provenance": "Existing Obsidian portfolio, source mapping in content/gallery.json; no city, shade, product or reviewer attribution inferred."
+    },
+    {
+      "id": "lexus-gx-1",
+      "src": "/gallery/lexus-gx-01.jpg",
+      "imageAlt": "Lexus GX with ceramic window tint, front three-quarter view",
+      "division": "auto",
+      "subject": "Lexus GX",
+      "suitableTopics": [
+        "Lexus GX window tint",
+        "vehicle glass coverage"
+      ],
+      "provenance": "Existing Obsidian portfolio, source mapping in content/gallery.json; no city, shade, product or reviewer attribution inferred."
+    },
+    {
+      "id": "lexus-gx-2",
+      "src": "/gallery/lexus-gx-02.jpg",
+      "imageAlt": "Lexus GX with ceramic window tint, rear three-quarter view",
+      "division": "auto",
+      "subject": "Lexus GX",
+      "suitableTopics": [
+        "Lexus GX window tint",
+        "vehicle glass coverage"
+      ],
+      "provenance": "Existing Obsidian portfolio, source mapping in content/gallery.json; no city, shade, product or reviewer attribution inferred."
+    },
+    {
+      "id": "toyota-4runner-1",
+      "src": "/gallery/toyota-4runner-01.jpg",
+      "imageAlt": "Toyota 4Runner with ceramic window tint, side detail",
+      "division": "auto",
+      "subject": "Toyota 4Runner",
+      "suitableTopics": [
+        "Toyota 4Runner window tint",
+        "vehicle glass coverage"
+      ],
+      "provenance": "Existing Obsidian portfolio, source mapping in content/gallery.json; no city, shade, product or reviewer attribution inferred."
+    },
+    {
+      "id": "toyota-4runner-2",
+      "src": "/gallery/toyota-4runner-02.jpg",
+      "imageAlt": "Toyota 4Runner with ceramic window tint, front three-quarter view",
+      "division": "auto",
+      "subject": "Toyota 4Runner",
+      "suitableTopics": [
+        "Toyota 4Runner window tint",
+        "vehicle glass coverage"
+      ],
+      "provenance": "Existing Obsidian portfolio, source mapping in content/gallery.json; no city, shade, product or reviewer attribution inferred."
+    },
+    {
+      "id": "bmw-x3-1",
+      "src": "/gallery/bmw-x3-01.jpg",
+      "imageAlt": "BMW X3 with ceramic window tint, front three-quarter view",
+      "division": "auto",
+      "subject": "BMW X3",
+      "suitableTopics": [
+        "BMW X3 window tint",
+        "vehicle glass coverage"
+      ],
+      "provenance": "Existing Obsidian portfolio, source mapping in content/gallery.json; no city, shade, product or reviewer attribution inferred."
+    },
+    {
+      "id": "bmw-x3-2",
+      "src": "/gallery/bmw-x3-02.jpg",
+      "imageAlt": "BMW X3 with ceramic window tint, full side profile",
+      "division": "auto",
+      "subject": "BMW X3",
+      "suitableTopics": [
+        "BMW X3 window tint",
+        "vehicle glass coverage"
+      ],
+      "provenance": "Existing Obsidian portfolio, source mapping in content/gallery.json; no city, shade, product or reviewer attribution inferred."
+    },
+    {
+      "id": "porsche-cayenne-coupe-1",
+      "src": "/gallery/porsche-cayenne-coupe-01.jpg",
+      "imageAlt": "Porsche Cayenne Coupe with ceramic window tint, front three-quarter view",
+      "division": "auto",
+      "subject": "Porsche Cayenne Coupe",
+      "suitableTopics": [
+        "Porsche Cayenne Coupe window tint",
+        "vehicle glass coverage"
+      ],
+      "provenance": "Existing Obsidian portfolio, source mapping in content/gallery.json; no city, shade, product or reviewer attribution inferred."
+    },
+    {
+      "id": "porsche-cayenne-coupe-2",
+      "src": "/gallery/porsche-cayenne-coupe-02.jpg",
+      "imageAlt": "Porsche Cayenne Coupe with ceramic window tint, full side profile",
+      "division": "auto",
+      "subject": "Porsche Cayenne Coupe",
+      "suitableTopics": [
+        "Porsche Cayenne Coupe window tint",
+        "vehicle glass coverage"
+      ],
+      "provenance": "Existing Obsidian portfolio, source mapping in content/gallery.json; no city, shade, product or reviewer attribution inferred."
+    },
+    {
+      "id": "porsche-cayenne-coupe-3",
+      "src": "/gallery/porsche-cayenne-coupe-03.jpg",
+      "imageAlt": "Porsche Cayenne Coupe with ceramic window tint, rear three-quarter view",
+      "division": "auto",
+      "subject": "Porsche Cayenne Coupe",
+      "suitableTopics": [
+        "Porsche Cayenne Coupe window tint",
+        "vehicle glass coverage"
+      ],
+      "provenance": "Existing Obsidian portfolio, source mapping in content/gallery.json; no city, shade, product or reviewer attribution inferred."
+    },
+    {
+      "id": "porsche-911-1",
+      "src": "/assets/paid-landing/mobile-porsche-side.webp",
+      "imageAlt": "Porsche 911 window tint, side view",
+      "division": "auto",
+      "subject": "Porsche 911",
+      "suitableTopics": [
+        "Porsche 911 window tint",
+        "vehicle glass coverage"
+      ],
+      "provenance": "Existing Obsidian portfolio, source mapping in content/gallery.json; no city, shade, product or reviewer attribution inferred."
+    },
+    {
+      "id": "porsche-911-2",
+      "src": "/assets/paid-landing/mobile-porsche-front.webp",
+      "imageAlt": "Porsche 911 window tint, front view",
+      "division": "auto",
+      "subject": "Porsche 911",
+      "suitableTopics": [
+        "Porsche 911 window tint",
+        "vehicle glass coverage"
+      ],
+      "provenance": "Existing Obsidian portfolio, source mapping in content/gallery.json; no city, shade, product or reviewer attribution inferred."
+    },
+    {
+      "id": "porsche-911-3",
+      "src": "/assets/paid-landing/mobile-porsche-rear.webp",
+      "imageAlt": "Porsche 911 window tint, rear view",
+      "division": "auto",
+      "subject": "Porsche 911",
+      "suitableTopics": [
+        "Porsche 911 window tint",
+        "vehicle glass coverage"
+      ],
+      "provenance": "Existing Obsidian portfolio, source mapping in content/gallery.json; no city, shade, product or reviewer attribution inferred."
+    },
+    {
+      "id": "residential-window-film-1",
+      "src": "/assets/site/home.webp",
+      "imageAlt": "Residential windows overlooking a garden",
+      "division": "home",
+      "subject": "Residential window film",
+      "suitableTopics": [
+        "Residential window film",
+        "glare and view assessment"
+      ],
+      "provenance": "Existing Obsidian portfolio, source mapping in content/gallery.json; no city, shade, product or reviewer attribution inferred."
+    },
+    {
+      "id": "residential-window-film-2",
+      "src": "/assets/site/work-home.webp",
+      "imageAlt": "Residential window film from the Obsidian portfolio",
+      "division": "home",
+      "subject": "Residential window film",
+      "suitableTopics": [
+        "Residential window film",
+        "glare and view assessment"
+      ],
+      "provenance": "Existing Obsidian portfolio, source mapping in content/gallery.json; no city, shade, product or reviewer attribution inferred."
+    },
+    {
+      "id": "commercial-window-film-1",
+      "src": "/assets/site/commercial.webp",
+      "imageAlt": "Commercial windows overlooking greenery",
+      "division": "commercial",
+      "subject": "Commercial window film",
+      "suitableTopics": [
+        "Commercial window film",
+        "glare and view assessment"
+      ],
+      "provenance": "Existing Obsidian portfolio, source mapping in content/gallery.json; no city, shade, product or reviewer attribution inferred."
+    },
+    {
+      "id": "commercial-window-film-2",
+      "src": "/assets/site/work-commercial.webp",
+      "imageAlt": "Commercial window film from the Obsidian portfolio",
+      "division": "commercial",
+      "subject": "Commercial window film",
+      "suitableTopics": [
+        "Commercial window film",
+        "glare and view assessment"
+      ],
+      "provenance": "Existing Obsidian portfolio, source mapping in content/gallery.json; no city, shade, product or reviewer attribution inferred."
+    }
+  ],
+  "byPath": {
+    "/bmw-m4-window-tinting": {
+      "image": "/gallery/bmw-m4-01.jpg",
+      "imageAlt": "BMW M4 with ceramic window tint, rear three-quarter view",
+      "galleryIds": [
+        "bmw-m4-1",
+        "bmw-m4-2"
+      ],
+      "reason": "Exact observed vehicle model in the current portfolio."
+    },
+    "/bmw-x3-window-tinting": {
+      "image": "/gallery/bmw-x3-01.jpg",
+      "imageAlt": "BMW X3 with ceramic window tint, front three-quarter view",
+      "galleryIds": [
+        "bmw-x3-1",
+        "bmw-x3-2"
+      ],
+      "reason": "Exact observed vehicle model in the current portfolio."
+    },
+    "/toyota-tacoma-window-tinting": {
+      "image": "/gallery/toyota-tacoma-01.jpg",
+      "imageAlt": "Toyota Tacoma with ceramic window tint, front-side detail",
+      "galleryIds": [
+        "toyota-tacoma-1",
+        "toyota-tacoma-2",
+        "toyota-tacoma-3"
+      ],
+      "reason": "Exact observed vehicle model in the current portfolio."
+    },
+    "/toyota-4runner-window-tinting": {
+      "image": "/gallery/toyota-4runner-01.jpg",
+      "imageAlt": "Toyota 4Runner with ceramic window tint, side detail",
+      "galleryIds": [
+        "toyota-4runner-1",
+        "toyota-4runner-2"
+      ],
+      "reason": "Exact observed vehicle model in the current portfolio."
+    },
+    "/porsche-911-window-tinting": {
+      "image": "/assets/paid-landing/mobile-porsche-side.webp",
+      "imageAlt": "Porsche 911 window tint, side view",
+      "galleryIds": [
+        "porsche-911-1",
+        "porsche-911-2",
+        "porsche-911-3"
+      ],
+      "reason": "Exact observed vehicle model in the current portfolio."
+    },
+    "/tesla-model-y-window-tinting": {
+      "image": "/gallery/tintwiz-20261025/tesla-model-y-juniper-01.webp",
+      "imageAlt": "Tesla Model Y window tint \u2014 front three-quarter view",
+      "galleryIds": [
+        "tesla-model-y-1",
+        "tesla-model-y-2",
+        "tesla-model-y-3",
+        "tesla-model-y-4",
+        "tesla-model-y-5"
+      ],
+      "reason": "Exact observed vehicle model in the current portfolio."
+    },
+    "/luxury-car-window-tinting": {
+      "image": "/gallery/tintwiz-20261025/mercedes-amg-gt-02.webp",
+      "imageAlt": "Mercedes-AMG GT window tint \u2014 side profile",
+      "galleryIds": [
+        "mercedes-amg-gt-1",
+        "mercedes-amg-gt-2",
+        "mercedes-amg-gt-3"
+      ],
+      "reason": "Luxury automotive service illustrated with a verified AMG GT portfolio image."
+    },
+    "/front-two-window-tinting": {
+      "image": "/gallery/mercedes-benz-gls-01.jpg",
+      "imageAlt": "Mercedes-Benz GLS with ceramic window tint, front-side view",
+      "galleryIds": [
+        "mercedes-benz-gls-1",
+        "mercedes-benz-gls-2"
+      ],
+      "reason": "SUV side-glass view illustrates front and rear glass comparison, without claiming a matching shade."
+    },
+    "/sides-rear-window-tinting": {
+      "image": "/gallery/toyota-4runner-02.jpg",
+      "imageAlt": "Toyota 4Runner with ceramic window tint, front three-quarter view",
+      "galleryIds": [
+        "toyota-4runner-1",
+        "toyota-4runner-2"
+      ],
+      "reason": "SUV portfolio image shows side and rear glass."
+    },
+    "/windshield-window-tinting": {
+      "image": "/gallery/tintwiz-20261025/chevrolet-corvette-02.webp",
+      "imageAlt": "Chevrolet Corvette window tint \u2014 front view",
+      "galleryIds": [
+        "chevrolet-corvette-1",
+        "chevrolet-corvette-2"
+      ],
+      "reason": "Front portfolio view shows windshield position; no transmission or installation specification inferred."
+    },
+    "/mobile-window-tinting": {
+      "image": "/assets/paid-landing/mobile-porsche-side.webp",
+      "imageAlt": "Porsche 911 window tint, side view",
+      "galleryIds": [
+        "porsche-911-1",
+        "porsche-911-2",
+        "porsche-911-3"
+      ],
+      "reason": "Existing mobile-install portfolio photography."
+    },
+    "/tesla-window-tinting": {
+      "image": "/gallery/tintwiz-20261025/tesla-model-y-juniper-01.webp",
+      "imageAlt": "Tesla Model Y window tint \u2014 front three-quarter view",
+      "galleryIds": [
+        "tesla-model-y-1",
+        "tesla-model-y-2",
+        "tesla-model-y-3",
+        "tesla-model-y-4",
+        "tesla-model-y-5"
+      ],
+      "reason": "Verified Model Y image for the broad Tesla service. Caption must identify this model."
+    },
+    "/home-glare-reduction-film": {
+      "image": "/assets/site/work-home.webp",
+      "imageAlt": "Residential window film from the Obsidian portfolio",
+      "galleryIds": [
+        "residential-window-film-1",
+        "residential-window-film-2"
+      ],
+      "reason": "Actual residential portfolio image illustrates light and window orientation."
+    },
+    "/home-solar-window-film": {
+      "image": "/assets/site/home.webp",
+      "imageAlt": "Residential windows overlooking a garden",
+      "galleryIds": [
+        "residential-window-film-1",
+        "residential-window-film-2"
+      ],
+      "reason": "Actual residential window image; exact product and heat-rejection measurements unverified."
+    },
+    "/office-window-film": {
+      "image": "/assets/site/commercial.webp",
+      "imageAlt": "Commercial windows overlooking greenery",
+      "galleryIds": [
+        "commercial-window-film-1",
+        "commercial-window-film-2"
+      ],
+      "reason": "Actual office-window portfolio photograph."
+    },
+    "/commercial-solar-window-film": {
+      "image": "/assets/site/work-commercial.webp",
+      "imageAlt": "Commercial window film from the Obsidian portfolio",
+      "galleryIds": [
+        "commercial-window-film-1",
+        "commercial-window-film-2"
+      ],
+      "reason": "Commercial windows shown as a portfolio example; no product-specific claims."
+    },
+    "/architectural-window-film": {
+      "image": "/assets/site/home.webp",
+      "imageAlt": "Residential windows overlooking a garden",
+      "galleryIds": [
+        "residential-window-film-1",
+        "residential-window-film-2"
+      ],
+      "reason": "Residential hub uses a home-window portfolio example."
+    },
+    "/commercial-window-film": {
+      "image": "/assets/site/work-commercial.webp",
+      "imageAlt": "Glazed commercial storefront entrance from the Obsidian portfolio",
+      "galleryIds": [
+        "commercial-window-film-1",
+        "commercial-window-film-2"
+      ],
+      "reason": "Commercial hub uses a commercial-window portfolio example."
+    }
+  },
+  "unmatchedModels": [
+    "Tesla Model 3",
+    "Tesla Model S",
+    "Tesla Model X",
+    "Tesla Cybertruck",
+    "Mercedes C-Class",
+    "Range Rover Sport"
+  ],
+  "unverifiedTopics": [
+    "Tint removal in progress",
+    "Film replacement in progress",
+    "Installed safety/security film system",
+    "Installed frosted/decorative film specification",
+    "Named city/project match",
+    "Reviewer-to-vehicle match"
+  ]
+}

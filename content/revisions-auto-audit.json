@@ -1,0 +1,194 @@
+{
+  "page_count": 77,
+  "word_count_method": "Intro plus section bodies; FAQ and structured module copy reported separately where noted. Hyphenated tokens count as one.",
+  "intro_and_sections_words": {
+    "min": 216,
+    "max": 246,
+    "median": 233,
+    "total": 17946
+  },
+  "including_faq_words": {
+    "min": 268,
+    "max": 313,
+    "median": 288
+  },
+  "under_170_body_words": [],
+  "under_250_words_including_faq": [],
+  "over_450_words_including_faq": [],
+  "exact_duplicates": {
+    "intros": [],
+    "descriptions": [],
+    "section_bodies": [],
+    "faq_answers": [],
+    "quote_prompts": [],
+    "long_sentences": []
+  },
+  "near_duplicate_method": "Five-word normalized token shingle Jaccard over intro and section bodies; all 2,926 page pairs checked. Threshold 0.20 flags potential duplicated passage structure, not a claim of SEO rank or total semantic originality.",
+  "near_duplicate_threshold": 0.2,
+  "near_duplicate_flags": [],
+  "highest_similarity_pairs": [
+    {
+      "pages": [
+        "/lake-forest-window-tinting",
+        "/toyota-tacoma-window-tinting"
+      ],
+      "five_word_shingle_jaccard": 0.0312
+    },
+    {
+      "pages": [
+        "/ceramic-window-tinting",
+        "/sides-rear-window-tinting"
+      ],
+      "five_word_shingle_jaccard": 0.0254
+    },
+    {
+      "pages": [
+        "/windshield-window-tinting",
+        "/windshield-film-visibility"
+      ],
+      "five_word_shingle_jaccard": 0.0216
+    },
+    {
+      "pages": [
+        "/ceramic-coating-aliso-viejo",
+        "/ceramic-coating-newport-beach"
+      ],
+      "five_word_shingle_jaccard": 0.0192
+    },
+    {
+      "pages": [
+        "/ceramic-coating-irvine",
+        "/ceramic-coating-aliso-viejo"
+      ],
+      "five_word_shingle_jaccard": 0.0174
+    },
+    {
+      "pages": [
+        "/ceramic-coating",
+        "/ceramic-coating-irvine"
+      ],
+      "five_word_shingle_jaccard": 0.0173
+    },
+    {
+      "pages": [
+        "/ceramic-coating",
+        "/ceramic-coating-costa-mesa"
+      ],
+      "five_word_shingle_jaccard": 0.0173
+    },
+    {
+      "pages": [
+        "/ceramic-coating",
+        "/ceramic-coating-mission-viejo"
+      ],
+      "five_word_shingle_jaccard": 0.0172
+    },
+    {
+      "pages": [
+        "/ceramic-coating-irvine",
+        "/ceramic-coating-mission-viejo"
+      ],
+      "five_word_shingle_jaccard": 0.0169
+    },
+    {
+      "pages": [
+        "/ceramic-coating-newport-beach",
+        "/ceramic-coating-costa-mesa"
+      ],
+      "five_word_shingle_jaccard": 0.0168
+    }
+  ],
+  "quote_prompt_count": 77,
+  "structured_modules": {
+    "comparison": 22,
+    "steps": 20,
+    "checklist": 25,
+    "highlights": 10
+  },
+  "image_count": 19,
+  "notes": [
+    "All project pages explicitly framed as planning examples, not completed local jobs.",
+    "City differentiation includes stated visitor intent and planning examples, not unsupported neighborhood claims. Root owns sourced local context modules.",
+    "Film technical and legal guide source URLs provided; coating prices and product scopes preserved from current source menu.",
+    "No guarantee of heat reduction in degrees, legal compliance, coating defect removal or durability added."
+  ],
+  "page_word_counts": {
+    "/ceramic-coating": 230,
+    "/ceramic-coating-irvine": 236,
+    "/ceramic-coating-lake-forest": 237,
+    "/ceramic-coating-aliso-viejo": 231,
+    "/ceramic-coating-newport-beach": 245,
+    "/ceramic-coating-costa-mesa": 241,
+    "/ceramic-coating-tustin": 240,
+    "/ceramic-coating-mission-viejo": 243,
+    "/ceramic-coating-laguna-hills": 234,
+    "/window-tint-pricing": 242,
+    "/ceramic-window-tinting": 246,
+    "/mobile-window-tinting": 237,
+    "/full-car-window-tinting": 234,
+    "/sides-rear-window-tinting": 234,
+    "/front-two-window-tinting": 237,
+    "/windshield-window-tinting": 234,
+    "/tesla-window-tinting": 239,
+    "/tint-removal": 244,
+    "/irvine-window-tinting": 230,
+    "/newport-beach-window-tinting": 226,
+    "/tustin-window-tinting": 223,
+    "/costa-mesa-window-tinting": 225,
+    "/laguna-beach-window-tinting": 222,
+    "/aliso-viejo-window-tinting": 228,
+    "/santa-ana-window-tinting": 220,
+    "/anaheim-window-tinting": 231,
+    "/huntington-beach-window-tinting": 224,
+    "/orange-window-tinting": 222,
+    "/mission-viejo-window-tinting": 225,
+    "/lake-forest-window-tinting": 227,
+    "/dana-point-window-tinting": 236,
+    "/san-clemente-window-tinting": 227,
+    "/window-tint-shades": 225,
+    "/california-window-tint-law": 233,
+    "/tesla-model-y-window-tinting": 242,
+    "/tesla-model-3-window-tinting": 242,
+    "/chrome-delete": 233,
+    "/ceramic-vs-carbon-window-tint": 228,
+    "/how-long-does-window-tinting-take": 243,
+    "/is-mobile-window-tinting-worth-it": 239,
+    "/how-to-choose-window-tint-percentage": 229,
+    "/does-window-tint-reduce-heat": 235,
+    "/window-tint-aftercare": 232,
+    "/toyota-tacoma-window-tinting": 229,
+    "/bmw-m4-window-tinting": 239,
+    "/toyota-4runner-window-tinting": 238,
+    "/bmw-x3-window-tinting": 232,
+    "/sunroof-window-tinting": 231,
+    "/luxury-car-window-tinting": 239,
+    "/window-tint-replacement": 236,
+    "/window-tint-consultation": 237,
+    "/laguna-hills-window-tinting": 236,
+    "/fountain-valley-window-tinting": 220,
+    "/westminster-window-tinting": 216,
+    "/garden-grove-window-tinting": 218,
+    "/mercedes-c-class-window-tinting": 244,
+    "/porsche-911-window-tinting": 243,
+    "/range-rover-sport-window-tinting": 229,
+    "/tesla-model-x-window-tinting": 237,
+    "/projects/irvine-luxury-sedan-ceramic-tint": 228,
+    "/projects/newport-beach-luxury-suv-front-window-match": 230,
+    "/projects/costa-mesa-sports-car-sides-and-rear-tint": 236,
+    "/projects/huntington-beach-tesla-model-y-tint": 231,
+    "/projects/tustin-bmw-m4-ceramic-tint": 231,
+    "/projects/mission-viejo-family-suv-tint": 229,
+    "/projects/lake-forest-toyota-tacoma-tint": 231,
+    "/projects/aliso-viejo-old-tint-removal-and-replacement": 228,
+    "/photos-for-window-tint-quote": 237,
+    "/front-two-vs-full-car-tint": 233,
+    "/apartment-office-mobile-tint": 233,
+    "/buying-used-car-with-old-tint": 228,
+    "/factory-privacy-glass-vs-window-film": 244,
+    "/matching-front-window-tint": 236,
+    "/sunroof-tint-compatibility": 237,
+    "/windshield-film-visibility": 234,
+    "/what-affects-window-tint-price": 230,
+    "/window-tint-warranty-questions": 235
+  }
+}

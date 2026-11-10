@@ -1,0 +1,343 @@
+[
+  {
+    "city": "Irvine",
+    "slug": "irvine",
+    "localFacts": [
+      {
+        "text": "The Irvine Business Complex, in the northwest of the city, contains offices, industrial properties, homes and mixed-use developments.",
+        "sourceUrl": "https://www.cityofirvine.gov/community-development/irvine-business-complex"
+      }
+    ],
+    "nearbyCities": [
+      "Tustin",
+      "Newport Beach",
+      "Lake Forest"
+    ],
+    "verifiedAt": "2026-11-10"
+  },
+  {
+    "city": "Newport Beach",
+    "slug": "newport-beach",
+    "localFacts": [
+      {
+        "text": "Newport Beach includes distinct villages such as Balboa, Lido Marina Village and Corona del Mar.",
+        "sourceUrl": "https://www.newportbeachca.gov/i-am-a/visitor/about-newport-beach/about-the-community"
+      }
+    ],
+    "nearbyCities": [
+      "Costa Mesa",
+      "Irvine",
+      "Huntington Beach"
+    ],
+    "verifiedAt": "2026-11-10"
+  },
+  {
+    "city": "Tustin",
+    "slug": "tustin",
+    "localFacts": [
+      {
+        "text": "Old Town Tustin centers on historic buildings along Main Street and El Camino Real, with buildings dating to the 1880s.",
+        "sourceUrl": "https://www.tustinca.org/835/Old-Town-Tustin"
+      },
+      {
+        "text": "Tustin Legacy is the city's mixed-use redevelopment of the former military base.",
+        "sourceUrl": "https://www.tustinca.org/1322/Tustin-Legacy"
+      }
+    ],
+    "nearbyCities": [
+      "Irvine",
+      "Santa Ana",
+      "Orange"
+    ],
+    "verifiedAt": "2026-11-10"
+  },
+  {
+    "city": "Costa Mesa",
+    "slug": "costa-mesa",
+    "localFacts": [
+      {
+        "text": "Costa Mesa is home to South Coast Plaza, Segerstrom Center for the Arts and South Coast Repertory.",
+        "sourceUrl": "https://www.costamesaca.gov/community/about"
+      },
+      {
+        "text": "The LAB and The CAMP helped establish the SoBECA district around Bristol Street.",
+        "sourceUrl": "https://www.costamesaca.gov/Home/Components/News/News/588/40?arch=1&npage=18&seldept=13"
+      }
+    ],
+    "nearbyCities": [
+      "Newport Beach",
+      "Santa Ana",
+      "Huntington Beach"
+    ],
+    "verifiedAt": "2026-11-10"
+  },
+  {
+    "city": "Laguna Beach",
+    "slug": "laguna-beach",
+    "localFacts": [
+      {
+        "text": "Laguna Beach has coastal, hillside and canyon settings around its downtown; the city trail system overlooks the Pacific and surrounding canyons.",
+        "sourceUrl": "https://www.lagunabeachcity.net/government/departments/parks-recreation/parks-and-open-space/trails-open-space"
+      },
+      {
+        "text": "The city identifies Bluebird Canyon, Downtown and Temple Hills as distinct neighborhood areas.",
+        "sourceUrl": "https://www.lagunabeachcity.net/live-here/emergency-management/evacuation-planning"
+      }
+    ],
+    "nearbyCities": [
+      "Newport Beach",
+      "Aliso Viejo",
+      "Dana Point"
+    ],
+    "verifiedAt": "2026-11-10"
+  },
+  {
+    "city": "Aliso Viejo",
+    "slug": "aliso-viejo",
+    "localFacts": [
+      {
+        "text": "Aliso Viejo was master-planned to combine residential neighborhoods with parks, schools, offices, businesses and retail.",
+        "sourceUrl": "https://www.avcity.org/303/About-Aliso-Viejo"
+      },
+      {
+        "text": "Aliso Viejo has rolling hills and valley terrain, with views toward mountains, parks and city lights.",
+        "sourceUrl": "https://www.avcity.org/303/About-Aliso-Viejo"
+      }
+    ],
+    "nearbyCities": [
+      "Laguna Hills",
+      "Laguna Beach",
+      "Mission Viejo"
+    ],
+    "verifiedAt": "2026-11-10"
+  },
+  {
+    "city": "Santa Ana",
+    "slug": "santa-ana",
+    "localFacts": [
+      {
+        "text": "The downtown planning area combines pedestrian-oriented shopping with office, residential and live-work building types.",
+        "sourceUrl": "https://cc-publicdocs.santa-ana.org/WebLink/DocView.aspx?dbid=1&id=501280&repo=Clerk"
+      },
+      {
+        "text": "The city identifies Logan and Lacy as established historic residential neighborhoods within the transit zoning area.",
+        "sourceUrl": "https://cc-publicdocs.santa-ana.org/WebLink/DocView.aspx?dbid=1&id=501280&repo=Clerk"
+      }
+    ],
+    "nearbyCities": [
+      "Tustin",
+      "Orange",
+      "Costa Mesa"
+    ],
+    "verifiedAt": "2026-11-10"
+  },
+  {
+    "city": "Anaheim",
+    "slug": "anaheim",
+    "localFacts": [
+      {
+        "text": "The Platinum Triangle includes mixed-use, office, restaurant and residential development in an area historically occupied by industry.",
+        "sourceUrl": "https://www.anaheim.net/1072/Platinum-Triangle"
+      },
+      {
+        "text": "The Platinum Triangle connects with I-5, SR-57 and SR-22 and includes ARTIC, the regional transportation center.",
+        "sourceUrl": "https://www.anaheim.net/1072/Platinum-Triangle"
+      }
+    ],
+    "nearbyCities": [
+      "Orange",
+      "Garden Grove",
+      "Santa Ana"
+    ],
+    "verifiedAt": "2026-11-10"
+  },
+  {
+    "city": "Huntington Beach",
+    "slug": "huntington-beach",
+    "localFacts": [
+      {
+        "text": "Downtown Huntington Beach is a beachside, pedestrian-oriented district; its plan includes commercial areas around Main Street, the Waterfront and Pacific City.",
+        "sourceUrl": "https://cms3.revize.com/revize/huntingtonbeachca/Documents/Departments/Community%20Development/Planning%20Zonning/Coastal%20Element/Coastal_Elem_Tech_Synop.pdf"
+      }
+    ],
+    "nearbyCities": [
+      "Fountain Valley",
+      "Westminster",
+      "Costa Mesa"
+    ],
+    "verifiedAt": "2026-11-10"
+  },
+  {
+    "city": "Orange",
+    "slug": "orange",
+    "localFacts": [
+      {
+        "text": "Old Towne centers on Plaza Park, with shops, galleries and restaurants; Chapman University and the Orange Metrolink Station are also part of the area.",
+        "sourceUrl": "https://www.cityoforange.org/our-city/visitor-information/old-towne-orange"
+      },
+      {
+        "text": "Orange recognizes Old Towne and the Fairhaven, Fairhills and Fairmeadow Eichler neighborhoods as historic districts.",
+        "sourceUrl": "https://www.cityoforange.org/our-city/departments/community-development/planning-division/historic-districts"
+      }
+    ],
+    "nearbyCities": [
+      "Santa Ana",
+      "Tustin",
+      "Anaheim"
+    ],
+    "verifiedAt": "2026-11-10"
+  },
+  {
+    "city": "Mission Viejo",
+    "slug": "mission-viejo",
+    "localFacts": [
+      {
+        "text": "Oso Creek and Lake Mission Viejo are distinct local landscape features connected with the city trail network.",
+        "sourceUrl": "https://www.missionviejo.gov/departments/recreation/parks-city-sites/walk-hike-bike-mv"
+      },
+      {
+        "text": "Mission Viejo has multiple separate shopping and business centers, including Alicia Towne Plaza, Jeronimo Business Center and La Paz Plaza.",
+        "sourceUrl": "https://www.missionviejo.gov/departments/economic-development/retail-center-leasing-information"
+      }
+    ],
+    "nearbyCities": [
+      "Lake Forest",
+      "Laguna Hills",
+      "Aliso Viejo"
+    ],
+    "verifiedAt": "2026-11-10"
+  },
+  {
+    "city": "Lake Forest",
+    "slug": "lake-forest",
+    "localFacts": [
+      {
+        "text": "Foothill Ranch and Portola Hills are neighborhoods within Lake Forest, added as the city expanded northeast.",
+        "sourceUrl": "https://www.lakeforestca.gov/sites/default/files/lake-forest/departments/Community%20Development/LHMP/Lake-Forest-LHMP%20Public%20Review%20Draft-Watermark.pdf"
+      },
+      {
+        "text": "Foothill Ranch combines residential, commercial and business-park uses.",
+        "sourceUrl": "https://www.lakeforestca.gov/sites/default/files/lake-forest/departments/Meadows%20Approved%20Area%20Plan.pdf"
+      }
+    ],
+    "nearbyCities": [
+      "Irvine",
+      "Mission Viejo",
+      "Laguna Hills"
+    ],
+    "verifiedAt": "2026-11-10"
+  },
+  {
+    "city": "Dana Point",
+    "slug": "dana-point",
+    "localFacts": [
+      {
+        "text": "Dana Point distinguishes its Lantern District / Town Center from the harbor in its long-range planning.",
+        "sourceUrl": "https://www.danapoint.org/City-Government/Community-Development/Planning/Long-Range-Planning"
+      },
+      {
+        "text": "The city has a coastal setting with harbor areas, beaches and trails near ocean bluffs.",
+        "sourceUrl": "https://www.danapoint.org/Community"
+      }
+    ],
+    "nearbyCities": [
+      "San Clemente",
+      "Laguna Beach"
+    ],
+    "verifiedAt": "2026-11-10"
+  },
+  {
+    "city": "San Clemente",
+    "slug": "san-clemente",
+    "localFacts": [
+      {
+        "text": "San Clemente identifies North Beach, the Pier Bowl, the Downtown Core and El Camino Real west of I-5 within its architectural overlay area.",
+        "sourceUrl": "https://www.sanclemente.gov/294/Design-Guidelines"
+      },
+      {
+        "text": "The coastal Beach Trail links North Beach and Calafia Beach, passing the pier and T-Street.",
+        "sourceUrl": "https://www.sanclemente.gov/facilities/facility/details/Beach-Trail-75"
+      }
+    ],
+    "nearbyCities": [
+      "Dana Point"
+    ],
+    "verifiedAt": "2026-11-10"
+  },
+  {
+    "city": "Laguna Hills",
+    "slug": "laguna-hills",
+    "localFacts": [
+      {
+        "text": "The Urban Village area combines retail, office, medical, residential and transportation uses near I-5 and Paseo de Valencia.",
+        "sourceUrl": "https://www.lagunahillsca.gov/DocumentCenter/View/133/Laguna-Hills-General-Plan"
+      },
+      {
+        "text": "The former Laguna Hills Mall site is the subject of the Village at Laguna Hills redevelopment plans; it should not be described as a completed new district.",
+        "sourceUrl": "https://lagunahillsca.gov/176/Village-at-Laguna-Hills-Project-Document"
+      }
+    ],
+    "nearbyCities": [
+      "Lake Forest",
+      "Mission Viejo",
+      "Aliso Viejo"
+    ],
+    "verifiedAt": "2026-11-10"
+  },
+  {
+    "city": "Fountain Valley",
+    "slug": "fountain-valley",
+    "localFacts": [
+      {
+        "text": "Mile Square Regional Park is a major urban park within Fountain Valley.",
+        "sourceUrl": "https://www.fountainvalley.gov/640/About-Fountain-Valley"
+      },
+      {
+        "text": "Fountain Valley lies north of Huntington Beach and Costa Mesa and south of Santa Ana, placing it between coastal and inland Orange County communities.",
+        "sourceUrl": "https://www.fountainvalley.gov/640/About-Fountain-Valley"
+      }
+    ],
+    "nearbyCities": [
+      "Huntington Beach",
+      "Westminster",
+      "Santa Ana"
+    ],
+    "verifiedAt": "2026-11-10"
+  },
+  {
+    "city": "Westminster",
+    "slug": "westminster",
+    "localFacts": [
+      {
+        "text": "Bolsa Avenue near Moran Street and the Asian Garden Mall forms the heart of Westminster's Little Saigon commercial and cultural district.",
+        "sourceUrl": "https://www.westminster-ca.gov/home/showpublisheddocument/1532/637422784245800000"
+      }
+    ],
+    "nearbyCities": [
+      "Garden Grove",
+      "Fountain Valley",
+      "Huntington Beach"
+    ],
+    "verifiedAt": "2026-11-10"
+  },
+  {
+    "city": "Garden Grove",
+    "slug": "garden-grove",
+    "localFacts": [
+      {
+        "text": "Garden Grove's Historic Main Street is a brick-lined downtown district beside the Village Green and the Gem Theatre.",
+        "sourceUrl": "https://ggcity.org/districts/district-4"
+      },
+      {
+        "text": "The city identifies OC Koreatown, Little Saigon and Historic Main Street as distinct local destinations.",
+        "sourceUrl": "https://ggcity.org/districts/citywide"
+      }
+    ],
+    "nearbyCities": [
+      "Westminster",
+      "Anaheim",
+      "Santa Ana"
+    ],
+    "verifiedAt": "2026-11-10"
+  }
+]

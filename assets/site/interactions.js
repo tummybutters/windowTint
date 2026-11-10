@@ -4,34 +4,76 @@
 
   const toggle = document.querySelector('.nav-toggle');
   const nav = document.querySelector('.site-nav');
+  const header = document.querySelector('.site-header');
   const mobileViewport = window.matchMedia('(max-width: 900px)');
 
-  if (toggle && nav) {
+  if (toggle && nav && header) {
     if (!nav.id) nav.id = 'site-navigation';
     toggle.setAttribute('aria-controls', nav.id);
     toggle.setAttribute('aria-expanded', 'false');
     toggle.setAttribute('aria-label', 'Open navigation');
 
-    function setMenu(open, returnFocus = false) {
+    const backdrop = document.createElement('div');
+    backdrop.className = 'nav-backdrop';
+    backdrop.setAttribute('aria-hidden', 'true');
+    header.insertAdjacentElement('afterend', backdrop);
+    const background = [...document.querySelectorAll('main, .site-footer, .sticky-quote')];
+    const previousInert = new Map();
+    let menuOpen = false;
+
+    function setMenu(requestedOpen, returnFocus = false) {
+      const open = requestedOpen && mobileViewport.matches;
+      menuOpen = open;
       nav.classList.toggle('is-open', open);
-      document.body.classList.toggle('menu-open', open && mobileViewport.matches);
+      header.classList.toggle('menu-is-open', open);
+      backdrop.classList.toggle('is-visible', open);
+      document.body.classList.toggle('menu-open', open);
       toggle.setAttribute('aria-expanded', String(open));
       toggle.setAttribute('aria-label', open ? 'Close navigation' : 'Open navigation');
       nav.inert = mobileViewport.matches && !open;
-      if (returnFocus) toggle.focus();
+
+      background.forEach(element => {
+        if (open) {
+          if (!previousInert.has(element)) previousInert.set(element, element.inert);
+          element.inert = true;
+        } else if (previousInert.has(element)) {
+          element.inert = previousInert.get(element);
+          previousInert.delete(element);
+        }
+      });
+      if (returnFocus) toggle.focus({ preventScroll: true });
     }
 
-    toggle.addEventListener('click', () => setMenu(toggle.getAttribute('aria-expanded') !== 'true'));
+    toggle.addEventListener('click', () => {
+      setMenu(!menuOpen);
+      if (menuOpen) nav.querySelector('a[href]')?.focus({ preventScroll: true });
+    });
     nav.addEventListener('click', event => {
       if (event.target.closest('a')) setMenu(false);
     });
+    backdrop.addEventListener('click', () => setMenu(false, true));
     document.addEventListener('keydown', event => {
-      if (event.key === 'Escape' && toggle.getAttribute('aria-expanded') === 'true') setMenu(false, true);
-    });
-    document.addEventListener('click', event => {
-      if (!event.target.closest('.site-header')) setMenu(false);
+      if (!menuOpen) return;
+      if (event.key === 'Escape') {
+        event.preventDefault();
+        setMenu(false, true);
+        return;
+      }
+      if (event.key !== 'Tab') return;
+      const focusable = [...header.querySelectorAll('a[href], button:not([disabled])')]
+        .filter(element => element.getClientRects().length && !element.closest('[inert]'));
+      const first = focusable[0];
+      const last = focusable[focusable.length - 1];
+      if (event.shiftKey && (document.activeElement === first || !header.contains(document.activeElement))) {
+        event.preventDefault();
+        last?.focus({ preventScroll: true });
+      } else if (!event.shiftKey && (document.activeElement === last || !header.contains(document.activeElement))) {
+        event.preventDefault();
+        first?.focus({ preventScroll: true });
+      }
     });
     mobileViewport.addEventListener('change', () => setMenu(false));
+    window.addEventListener('pageshow', () => setMenu(false));
     setMenu(false);
   }
 
