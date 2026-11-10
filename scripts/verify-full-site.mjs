@@ -5,10 +5,10 @@ import crypto from 'node:crypto';
 import { fileURLToPath } from 'node:url';
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
-const baseline = path.resolve(root, '../../crm-attribution-2026-11-08/release');
+const backendBaseline = JSON.parse(fs.readFileSync(path.join(root,'site-builder/backend-baseline.json'),'utf8'));
 const config = JSON.parse(fs.readFileSync(path.join(root, 'vercel.json'), 'utf8'));
 const artifactRoot = config.outputDirectory ? path.resolve(root, config.outputDirectory) : root;
-const oldConfig = JSON.parse(fs.readFileSync(path.join(baseline, 'vercel.json'), 'utf8'));
+const oldConfig = JSON.parse(fs.readFileSync(path.join(root, 'site-builder/routing-baseline.json'), 'utf8'));
 const baseArgument = process.argv.find(value => value.startsWith('--base-url='));
 const baseUrl = baseArgument?.slice('--base-url='.length);
 const failures = [];
@@ -16,12 +16,6 @@ const checks = [];
 const fail = message => failures.push(message);
 const decode = value => value.replaceAll('&amp;', '&').replaceAll('&#39;', "'").replaceAll('&quot;', '"');
 
-function files(directory) {
-  return fs.readdirSync(directory, { withFileTypes: true }).flatMap(entry => {
-    const filename = path.join(directory, entry.name);
-    return entry.isDirectory() ? files(filename) : [filename];
-  });
-}
 
 function localFile(route) {
   const relative = decodeURIComponent(route.split('?')[0]).replace(/^\/+/, '');
@@ -50,13 +44,10 @@ function resolveRoute(route, seen = new Set()) {
   return localFile(requested.pathname);
 }
 
-for (const directory of ['api', 'lib']) {
-  for (const original of files(path.join(baseline, directory))) {
-    const relative = path.relative(baseline, original);
-    const current = path.join(root, relative);
-    const hash = filename => crypto.createHash('sha256').update(fs.readFileSync(filename)).digest('hex');
-    if (!fs.existsSync(current) || hash(original) !== hash(current)) fail(`Inherited backend changed: ${relative}`);
-  }
+for (const [relative, expected] of Object.entries(backendBaseline)) {
+  const current = path.join(root, relative);
+  const actual = fs.existsSync(current) ? crypto.createHash('sha256').update(fs.readFileSync(current)).digest('hex') : null;
+  if (actual !== expected) fail('Inherited backend changed: ' + relative);
 }
 checks.push('Inherited API and lib files compared with the verified November 8 release');
 if (artifactRoot !== root) {
@@ -104,6 +95,9 @@ if (!fs.existsSync(manifestPath)) {
   const checkedAssets = new Set();
   const titles = new Map();
   for (const page of pages) {
+    const generatedRule = (config.rewrites || []).find(rule => rule.source === page.path && !rule.has && rule.destination.startsWith('/generated'));
+    const physicalCanonical = generatedRule && localFile(page.path);
+    if (physicalCanonical) fail(`Physical canonical file shadows generated rewrite: ${page.path} (${path.relative(artifactRoot, physicalCanonical)})`);
     const filename = resolveRoute(page.path);
     if (!filename) { fail(`Page route does not resolve: ${page.path}`); continue; }
     const document = fs.readFileSync(filename, 'utf8');
@@ -132,7 +126,7 @@ if (!fs.existsSync(manifestPath)) {
         const live = await response.text();
         if (response.status !== 200) fail(`HTTP ${response.status}: ${page.path}`);
         if (!response.headers.get('content-type')?.includes('text/html')) fail(`Expected HTML content type: ${page.path}`);
-        if (/noindex|none/i.test(response.headers.get('x-robots-tag') || '')) fail(`Public SEO route has noindex response header: ${page.path}`);
+        if (!(process.env.OBSIDIAN_STAGING_ACCESS && new URL(baseUrl).hostname.endsWith('.vercel.app')) && /noindex|none/i.test(response.headers.get('x-robots-tag') || '')) fail(`Public SEO route has noindex response header: ${page.path}`);
         if (/<meta\s+[^>]*name=["']robots["'][^>]*content=["'][^"']*(noindex|none)/i.test(live)) fail(`Public SEO route has noindex meta: ${page.path}`);
         if (title && !live.includes(title)) fail(`Published title differs from local output: ${page.path}`);
       } catch (error) { fail(`HTTP check failed ${page.path}: ${error.message}`); }

@@ -18,14 +18,14 @@ const explicit=config.rewrites.filter(rule=>rule.has);
 const assignedDriveway=explicit.filter(rule=>rule.destination.startsWith('/experiments/driveway/')).map(rule=>({...rule,has:[{type:'query',key:'experiment_variant',value:'driveway_offer'}]}));
 const generated=pages.map(page=>({
   source:page.path,
-  destination:'/generated/'+(page.path==='/'?'index':page.path.slice(1))+'.html'
+  destination:page.path==='/'?'/generated':'/generated'+page.path
 }));
 config.framework=null;
 config.buildCommand='npm run build';
 config.outputDirectory='public';
 config.rewrites=[
   ...explicit,...assignedDriveway,...overrides,...generated,
-  {source:'/quote/home',destination:'/quote/home.html'},
+  {source:'/quote/home',destination:'/quote/home'},
   ...config.rewrites.filter(rule=>!rule.has)
 ];
 config.headers.push({source:'/quote/:path*',headers:[{key:'X-Robots-Tag',value:'noindex, follow'}]});

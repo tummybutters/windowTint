@@ -1583,607 +1583,607 @@
     },
     {
       "source": "/",
-      "destination": "/generated/index.html"
+      "destination": "/generated"
     },
     {
       "source": "/window-tinting-gallery",
-      "destination": "/generated/window-tinting-gallery.html"
+      "destination": "/generated/window-tinting-gallery"
     },
     {
       "source": "/booking",
-      "destination": "/generated/booking.html"
+      "destination": "/generated/booking"
     },
     {
       "source": "/services",
-      "destination": "/generated/services.html"
+      "destination": "/generated/services"
     },
     {
       "source": "/ceramic-coating",
-      "destination": "/generated/ceramic-coating.html"
+      "destination": "/generated/ceramic-coating"
     },
     {
       "source": "/ceramic-coating-irvine",
-      "destination": "/generated/ceramic-coating-irvine.html"
+      "destination": "/generated/ceramic-coating-irvine"
     },
     {
       "source": "/ceramic-coating-lake-forest",
-      "destination": "/generated/ceramic-coating-lake-forest.html"
+      "destination": "/generated/ceramic-coating-lake-forest"
     },
     {
       "source": "/ceramic-coating-aliso-viejo",
-      "destination": "/generated/ceramic-coating-aliso-viejo.html"
+      "destination": "/generated/ceramic-coating-aliso-viejo"
     },
     {
       "source": "/ceramic-coating-newport-beach",
-      "destination": "/generated/ceramic-coating-newport-beach.html"
+      "destination": "/generated/ceramic-coating-newport-beach"
     },
     {
       "source": "/ceramic-coating-costa-mesa",
-      "destination": "/generated/ceramic-coating-costa-mesa.html"
+      "destination": "/generated/ceramic-coating-costa-mesa"
     },
     {
       "source": "/ceramic-coating-tustin",
-      "destination": "/generated/ceramic-coating-tustin.html"
+      "destination": "/generated/ceramic-coating-tustin"
     },
     {
       "source": "/ceramic-coating-mission-viejo",
-      "destination": "/generated/ceramic-coating-mission-viejo.html"
+      "destination": "/generated/ceramic-coating-mission-viejo"
     },
     {
       "source": "/ceramic-coating-laguna-hills",
-      "destination": "/generated/ceramic-coating-laguna-hills.html"
+      "destination": "/generated/ceramic-coating-laguna-hills"
     },
     {
       "source": "/window-tint-pricing",
-      "destination": "/generated/window-tint-pricing.html"
+      "destination": "/generated/window-tint-pricing"
     },
     {
       "source": "/ceramic-window-tinting",
-      "destination": "/generated/ceramic-window-tinting.html"
+      "destination": "/generated/ceramic-window-tinting"
     },
     {
       "source": "/mobile-window-tinting",
-      "destination": "/generated/mobile-window-tinting.html"
+      "destination": "/generated/mobile-window-tinting"
     },
     {
       "source": "/full-car-window-tinting",
-      "destination": "/generated/full-car-window-tinting.html"
+      "destination": "/generated/full-car-window-tinting"
     },
     {
       "source": "/sides-rear-window-tinting",
-      "destination": "/generated/sides-rear-window-tinting.html"
+      "destination": "/generated/sides-rear-window-tinting"
     },
     {
       "source": "/front-two-window-tinting",
-      "destination": "/generated/front-two-window-tinting.html"
+      "destination": "/generated/front-two-window-tinting"
     },
     {
       "source": "/windshield-window-tinting",
-      "destination": "/generated/windshield-window-tinting.html"
+      "destination": "/generated/windshield-window-tinting"
     },
     {
       "source": "/tesla-window-tinting",
-      "destination": "/generated/tesla-window-tinting.html"
+      "destination": "/generated/tesla-window-tinting"
     },
     {
       "source": "/tint-removal",
-      "destination": "/generated/tint-removal.html"
+      "destination": "/generated/tint-removal"
     },
     {
       "source": "/irvine-window-tinting",
-      "destination": "/generated/irvine-window-tinting.html"
+      "destination": "/generated/irvine-window-tinting"
     },
     {
       "source": "/newport-beach-window-tinting",
-      "destination": "/generated/newport-beach-window-tinting.html"
+      "destination": "/generated/newport-beach-window-tinting"
     },
     {
       "source": "/tustin-window-tinting",
-      "destination": "/generated/tustin-window-tinting.html"
+      "destination": "/generated/tustin-window-tinting"
     },
     {
       "source": "/costa-mesa-window-tinting",
-      "destination": "/generated/costa-mesa-window-tinting.html"
+      "destination": "/generated/costa-mesa-window-tinting"
     },
     {
       "source": "/laguna-beach-window-tinting",
-      "destination": "/generated/laguna-beach-window-tinting.html"
+      "destination": "/generated/laguna-beach-window-tinting"
     },
     {
       "source": "/aliso-viejo-window-tinting",
-      "destination": "/generated/aliso-viejo-window-tinting.html"
+      "destination": "/generated/aliso-viejo-window-tinting"
     },
     {
       "source": "/santa-ana-window-tinting",
-      "destination": "/generated/santa-ana-window-tinting.html"
+      "destination": "/generated/santa-ana-window-tinting"
     },
     {
       "source": "/anaheim-window-tinting",
-      "destination": "/generated/anaheim-window-tinting.html"
+      "destination": "/generated/anaheim-window-tinting"
     },
     {
       "source": "/huntington-beach-window-tinting",
-      "destination": "/generated/huntington-beach-window-tinting.html"
+      "destination": "/generated/huntington-beach-window-tinting"
     },
     {
       "source": "/orange-window-tinting",
-      "destination": "/generated/orange-window-tinting.html"
+      "destination": "/generated/orange-window-tinting"
     },
     {
       "source": "/mission-viejo-window-tinting",
-      "destination": "/generated/mission-viejo-window-tinting.html"
+      "destination": "/generated/mission-viejo-window-tinting"
     },
     {
       "source": "/lake-forest-window-tinting",
-      "destination": "/generated/lake-forest-window-tinting.html"
+      "destination": "/generated/lake-forest-window-tinting"
     },
     {
       "source": "/dana-point-window-tinting",
-      "destination": "/generated/dana-point-window-tinting.html"
+      "destination": "/generated/dana-point-window-tinting"
     },
     {
       "source": "/san-clemente-window-tinting",
-      "destination": "/generated/san-clemente-window-tinting.html"
+      "destination": "/generated/san-clemente-window-tinting"
     },
     {
       "source": "/window-tint-shades",
-      "destination": "/generated/window-tint-shades.html"
+      "destination": "/generated/window-tint-shades"
     },
     {
       "source": "/california-window-tint-law",
-      "destination": "/generated/california-window-tint-law.html"
+      "destination": "/generated/california-window-tint-law"
     },
     {
       "source": "/tesla-model-y-window-tinting",
-      "destination": "/generated/tesla-model-y-window-tinting.html"
+      "destination": "/generated/tesla-model-y-window-tinting"
     },
     {
       "source": "/tesla-model-3-window-tinting",
-      "destination": "/generated/tesla-model-3-window-tinting.html"
+      "destination": "/generated/tesla-model-3-window-tinting"
     },
     {
       "source": "/architectural-window-film",
-      "destination": "/generated/architectural-window-film.html"
+      "destination": "/generated/architectural-window-film"
     },
     {
       "source": "/commercial-window-film",
-      "destination": "/generated/commercial-window-film.html"
+      "destination": "/generated/commercial-window-film"
     },
     {
       "source": "/chrome-delete",
-      "destination": "/generated/chrome-delete.html"
+      "destination": "/generated/chrome-delete"
     },
     {
       "source": "/ceramic-vs-carbon-window-tint",
-      "destination": "/generated/ceramic-vs-carbon-window-tint.html"
+      "destination": "/generated/ceramic-vs-carbon-window-tint"
     },
     {
       "source": "/how-long-does-window-tinting-take",
-      "destination": "/generated/how-long-does-window-tinting-take.html"
+      "destination": "/generated/how-long-does-window-tinting-take"
     },
     {
       "source": "/is-mobile-window-tinting-worth-it",
-      "destination": "/generated/is-mobile-window-tinting-worth-it.html"
+      "destination": "/generated/is-mobile-window-tinting-worth-it"
     },
     {
       "source": "/how-to-choose-window-tint-percentage",
-      "destination": "/generated/how-to-choose-window-tint-percentage.html"
+      "destination": "/generated/how-to-choose-window-tint-percentage"
     },
     {
       "source": "/does-window-tint-reduce-heat",
-      "destination": "/generated/does-window-tint-reduce-heat.html"
+      "destination": "/generated/does-window-tint-reduce-heat"
     },
     {
       "source": "/window-tint-aftercare",
-      "destination": "/generated/window-tint-aftercare.html"
+      "destination": "/generated/window-tint-aftercare"
     },
     {
       "source": "/toyota-tacoma-window-tinting",
-      "destination": "/generated/toyota-tacoma-window-tinting.html"
+      "destination": "/generated/toyota-tacoma-window-tinting"
     },
     {
       "source": "/bmw-m4-window-tinting",
-      "destination": "/generated/bmw-m4-window-tinting.html"
+      "destination": "/generated/bmw-m4-window-tinting"
     },
     {
       "source": "/toyota-4runner-window-tinting",
-      "destination": "/generated/toyota-4runner-window-tinting.html"
+      "destination": "/generated/toyota-4runner-window-tinting"
     },
     {
       "source": "/bmw-x3-window-tinting",
-      "destination": "/generated/bmw-x3-window-tinting.html"
+      "destination": "/generated/bmw-x3-window-tinting"
     },
     {
       "source": "/about",
-      "destination": "/generated/about.html"
+      "destination": "/generated/about"
     },
     {
       "source": "/service-areas",
-      "destination": "/generated/service-areas.html"
+      "destination": "/generated/service-areas"
     },
     {
       "source": "/guides",
-      "destination": "/generated/guides.html"
+      "destination": "/generated/guides"
     },
     {
       "source": "/sunroof-window-tinting",
-      "destination": "/generated/sunroof-window-tinting.html"
+      "destination": "/generated/sunroof-window-tinting"
     },
     {
       "source": "/luxury-car-window-tinting",
-      "destination": "/generated/luxury-car-window-tinting.html"
+      "destination": "/generated/luxury-car-window-tinting"
     },
     {
       "source": "/window-tint-replacement",
-      "destination": "/generated/window-tint-replacement.html"
+      "destination": "/generated/window-tint-replacement"
     },
     {
       "source": "/window-tint-consultation",
-      "destination": "/generated/window-tint-consultation.html"
+      "destination": "/generated/window-tint-consultation"
     },
     {
       "source": "/laguna-hills-window-tinting",
-      "destination": "/generated/laguna-hills-window-tinting.html"
+      "destination": "/generated/laguna-hills-window-tinting"
     },
     {
       "source": "/fountain-valley-window-tinting",
-      "destination": "/generated/fountain-valley-window-tinting.html"
+      "destination": "/generated/fountain-valley-window-tinting"
     },
     {
       "source": "/westminster-window-tinting",
-      "destination": "/generated/westminster-window-tinting.html"
+      "destination": "/generated/westminster-window-tinting"
     },
     {
       "source": "/garden-grove-window-tinting",
-      "destination": "/generated/garden-grove-window-tinting.html"
+      "destination": "/generated/garden-grove-window-tinting"
     },
     {
       "source": "/mercedes-c-class-window-tinting",
-      "destination": "/generated/mercedes-c-class-window-tinting.html"
+      "destination": "/generated/mercedes-c-class-window-tinting"
     },
     {
       "source": "/porsche-911-window-tinting",
-      "destination": "/generated/porsche-911-window-tinting.html"
+      "destination": "/generated/porsche-911-window-tinting"
     },
     {
       "source": "/range-rover-sport-window-tinting",
-      "destination": "/generated/range-rover-sport-window-tinting.html"
+      "destination": "/generated/range-rover-sport-window-tinting"
     },
     {
       "source": "/tesla-model-x-window-tinting",
-      "destination": "/generated/tesla-model-x-window-tinting.html"
+      "destination": "/generated/tesla-model-x-window-tinting"
     },
     {
       "source": "/home-solar-window-film",
-      "destination": "/generated/home-solar-window-film.html"
+      "destination": "/generated/home-solar-window-film"
     },
     {
       "source": "/home-privacy-window-film",
-      "destination": "/generated/home-privacy-window-film.html"
+      "destination": "/generated/home-privacy-window-film"
     },
     {
       "source": "/home-glare-reduction-film",
-      "destination": "/generated/home-glare-reduction-film.html"
+      "destination": "/generated/home-glare-reduction-film"
     },
     {
       "source": "/home-decorative-window-film",
-      "destination": "/generated/home-decorative-window-film.html"
+      "destination": "/generated/home-decorative-window-film"
     },
     {
       "source": "/home-uv-window-film",
-      "destination": "/generated/home-uv-window-film.html"
+      "destination": "/generated/home-uv-window-film"
     },
     {
       "source": "/office-window-film",
-      "destination": "/generated/office-window-film.html"
+      "destination": "/generated/office-window-film"
     },
     {
       "source": "/storefront-window-film",
-      "destination": "/generated/storefront-window-film.html"
+      "destination": "/generated/storefront-window-film"
     },
     {
       "source": "/commercial-privacy-film",
-      "destination": "/generated/commercial-privacy-film.html"
+      "destination": "/generated/commercial-privacy-film"
     },
     {
       "source": "/commercial-solar-window-film",
-      "destination": "/generated/commercial-solar-window-film.html"
+      "destination": "/generated/commercial-solar-window-film"
     },
     {
       "source": "/commercial-safety-security-film",
-      "destination": "/generated/commercial-safety-security-film.html"
+      "destination": "/generated/commercial-safety-security-film"
     },
     {
       "source": "/irvine-residential-window-film",
-      "destination": "/generated/irvine-residential-window-film.html"
+      "destination": "/generated/irvine-residential-window-film"
     },
     {
       "source": "/newport-beach-residential-window-film",
-      "destination": "/generated/newport-beach-residential-window-film.html"
+      "destination": "/generated/newport-beach-residential-window-film"
     },
     {
       "source": "/costa-mesa-residential-window-film",
-      "destination": "/generated/costa-mesa-residential-window-film.html"
+      "destination": "/generated/costa-mesa-residential-window-film"
     },
     {
       "source": "/huntington-beach-residential-window-film",
-      "destination": "/generated/huntington-beach-residential-window-film.html"
+      "destination": "/generated/huntington-beach-residential-window-film"
     },
     {
       "source": "/tustin-residential-window-film",
-      "destination": "/generated/tustin-residential-window-film.html"
+      "destination": "/generated/tustin-residential-window-film"
     },
     {
       "source": "/mission-viejo-residential-window-film",
-      "destination": "/generated/mission-viejo-residential-window-film.html"
+      "destination": "/generated/mission-viejo-residential-window-film"
     },
     {
       "source": "/lake-forest-residential-window-film",
-      "destination": "/generated/lake-forest-residential-window-film.html"
+      "destination": "/generated/lake-forest-residential-window-film"
     },
     {
       "source": "/aliso-viejo-residential-window-film",
-      "destination": "/generated/aliso-viejo-residential-window-film.html"
+      "destination": "/generated/aliso-viejo-residential-window-film"
     },
     {
       "source": "/laguna-beach-residential-window-film",
-      "destination": "/generated/laguna-beach-residential-window-film.html"
+      "destination": "/generated/laguna-beach-residential-window-film"
     },
     {
       "source": "/dana-point-residential-window-film",
-      "destination": "/generated/dana-point-residential-window-film.html"
+      "destination": "/generated/dana-point-residential-window-film"
     },
     {
       "source": "/san-clemente-residential-window-film",
-      "destination": "/generated/san-clemente-residential-window-film.html"
+      "destination": "/generated/san-clemente-residential-window-film"
     },
     {
       "source": "/laguna-hills-residential-window-film",
-      "destination": "/generated/laguna-hills-residential-window-film.html"
+      "destination": "/generated/laguna-hills-residential-window-film"
     },
     {
       "source": "/irvine-commercial-window-film",
-      "destination": "/generated/irvine-commercial-window-film.html"
+      "destination": "/generated/irvine-commercial-window-film"
     },
     {
       "source": "/newport-beach-commercial-window-film",
-      "destination": "/generated/newport-beach-commercial-window-film.html"
+      "destination": "/generated/newport-beach-commercial-window-film"
     },
     {
       "source": "/costa-mesa-commercial-window-film",
-      "destination": "/generated/costa-mesa-commercial-window-film.html"
+      "destination": "/generated/costa-mesa-commercial-window-film"
     },
     {
       "source": "/huntington-beach-commercial-window-film",
-      "destination": "/generated/huntington-beach-commercial-window-film.html"
+      "destination": "/generated/huntington-beach-commercial-window-film"
     },
     {
       "source": "/tustin-commercial-window-film",
-      "destination": "/generated/tustin-commercial-window-film.html"
+      "destination": "/generated/tustin-commercial-window-film"
     },
     {
       "source": "/santa-ana-commercial-window-film",
-      "destination": "/generated/santa-ana-commercial-window-film.html"
+      "destination": "/generated/santa-ana-commercial-window-film"
     },
     {
       "source": "/anaheim-commercial-window-film",
-      "destination": "/generated/anaheim-commercial-window-film.html"
+      "destination": "/generated/anaheim-commercial-window-film"
     },
     {
       "source": "/orange-commercial-window-film",
-      "destination": "/generated/orange-commercial-window-film.html"
+      "destination": "/generated/orange-commercial-window-film"
     },
     {
       "source": "/lake-forest-commercial-window-film",
-      "destination": "/generated/lake-forest-commercial-window-film.html"
+      "destination": "/generated/lake-forest-commercial-window-film"
     },
     {
       "source": "/mission-viejo-commercial-window-film",
-      "destination": "/generated/mission-viejo-commercial-window-film.html"
+      "destination": "/generated/mission-viejo-commercial-window-film"
     },
     {
       "source": "/aliso-viejo-commercial-window-film",
-      "destination": "/generated/aliso-viejo-commercial-window-film.html"
+      "destination": "/generated/aliso-viejo-commercial-window-film"
     },
     {
       "source": "/laguna-hills-commercial-window-film",
-      "destination": "/generated/laguna-hills-commercial-window-film.html"
+      "destination": "/generated/laguna-hills-commercial-window-film"
     },
     {
       "source": "/fountain-valley-commercial-window-film",
-      "destination": "/generated/fountain-valley-commercial-window-film.html"
+      "destination": "/generated/fountain-valley-commercial-window-film"
     },
     {
       "source": "/westminster-commercial-window-film",
-      "destination": "/generated/westminster-commercial-window-film.html"
+      "destination": "/generated/westminster-commercial-window-film"
     },
     {
       "source": "/garden-grove-commercial-window-film",
-      "destination": "/generated/garden-grove-commercial-window-film.html"
+      "destination": "/generated/garden-grove-commercial-window-film"
     },
     {
       "source": "/laguna-beach-commercial-window-film",
-      "destination": "/generated/laguna-beach-commercial-window-film.html"
+      "destination": "/generated/laguna-beach-commercial-window-film"
     },
     {
       "source": "/projects/irvine-luxury-sedan-ceramic-tint",
-      "destination": "/generated/projects/irvine-luxury-sedan-ceramic-tint.html"
+      "destination": "/generated/projects/irvine-luxury-sedan-ceramic-tint"
     },
     {
       "source": "/projects/newport-beach-luxury-suv-front-window-match",
-      "destination": "/generated/projects/newport-beach-luxury-suv-front-window-match.html"
+      "destination": "/generated/projects/newport-beach-luxury-suv-front-window-match"
     },
     {
       "source": "/projects/costa-mesa-sports-car-sides-and-rear-tint",
-      "destination": "/generated/projects/costa-mesa-sports-car-sides-and-rear-tint.html"
+      "destination": "/generated/projects/costa-mesa-sports-car-sides-and-rear-tint"
     },
     {
       "source": "/projects/huntington-beach-tesla-model-y-tint",
-      "destination": "/generated/projects/huntington-beach-tesla-model-y-tint.html"
+      "destination": "/generated/projects/huntington-beach-tesla-model-y-tint"
     },
     {
       "source": "/projects/tustin-bmw-m4-ceramic-tint",
-      "destination": "/generated/projects/tustin-bmw-m4-ceramic-tint.html"
+      "destination": "/generated/projects/tustin-bmw-m4-ceramic-tint"
     },
     {
       "source": "/projects/mission-viejo-family-suv-tint",
-      "destination": "/generated/projects/mission-viejo-family-suv-tint.html"
+      "destination": "/generated/projects/mission-viejo-family-suv-tint"
     },
     {
       "source": "/projects/lake-forest-toyota-tacoma-tint",
-      "destination": "/generated/projects/lake-forest-toyota-tacoma-tint.html"
+      "destination": "/generated/projects/lake-forest-toyota-tacoma-tint"
     },
     {
       "source": "/projects/aliso-viejo-old-tint-removal-and-replacement",
-      "destination": "/generated/projects/aliso-viejo-old-tint-removal-and-replacement.html"
+      "destination": "/generated/projects/aliso-viejo-old-tint-removal-and-replacement"
     },
     {
       "source": "/projects/irvine-home-afternoon-glare",
-      "destination": "/generated/projects/irvine-home-afternoon-glare.html"
+      "destination": "/generated/projects/irvine-home-afternoon-glare"
     },
     {
       "source": "/projects/newport-beach-home-privacy-samples",
-      "destination": "/generated/projects/newport-beach-home-privacy-samples.html"
+      "destination": "/generated/projects/newport-beach-home-privacy-samples"
     },
     {
       "source": "/projects/costa-mesa-living-room-solar-film",
-      "destination": "/generated/projects/costa-mesa-living-room-solar-film.html"
+      "destination": "/generated/projects/costa-mesa-living-room-solar-film"
     },
     {
       "source": "/projects/huntington-beach-home-view-and-glare-comparison",
-      "destination": "/generated/projects/huntington-beach-home-view-and-glare-comparison.html"
+      "destination": "/generated/projects/huntington-beach-home-view-and-glare-comparison"
     },
     {
       "source": "/projects/laguna-beach-home-decorative-glass",
-      "destination": "/generated/projects/laguna-beach-home-decorative-glass.html"
+      "destination": "/generated/projects/laguna-beach-home-decorative-glass"
     },
     {
       "source": "/projects/mission-viejo-home-fade-reduction-film",
-      "destination": "/generated/projects/mission-viejo-home-fade-reduction-film.html"
+      "destination": "/generated/projects/mission-viejo-home-fade-reduction-film"
     },
     {
       "source": "/projects/irvine-office-glare-control-film",
-      "destination": "/generated/projects/irvine-office-glare-control-film.html"
+      "destination": "/generated/projects/irvine-office-glare-control-film"
     },
     {
       "source": "/projects/newport-beach-conference-room-privacy-film",
-      "destination": "/generated/projects/newport-beach-conference-room-privacy-film.html"
+      "destination": "/generated/projects/newport-beach-conference-room-privacy-film"
     },
     {
       "source": "/projects/costa-mesa-storefront-solar-film",
-      "destination": "/generated/projects/costa-mesa-storefront-solar-film.html"
+      "destination": "/generated/projects/costa-mesa-storefront-solar-film"
     },
     {
       "source": "/projects/santa-ana-office-installation-scheduling",
-      "destination": "/generated/projects/santa-ana-office-installation-scheduling.html"
+      "destination": "/generated/projects/santa-ana-office-installation-scheduling"
     },
     {
       "source": "/projects/anaheim-commercial-decorative-film",
-      "destination": "/generated/projects/anaheim-commercial-decorative-film.html"
+      "destination": "/generated/projects/anaheim-commercial-decorative-film"
     },
     {
       "source": "/projects/lake-forest-commercial-solar-control-project",
-      "destination": "/generated/projects/lake-forest-commercial-solar-control-project.html"
+      "destination": "/generated/projects/lake-forest-commercial-solar-control-project"
     },
     {
       "source": "/photos-for-window-tint-quote",
-      "destination": "/generated/photos-for-window-tint-quote.html"
+      "destination": "/generated/photos-for-window-tint-quote"
     },
     {
       "source": "/front-two-vs-full-car-tint",
-      "destination": "/generated/front-two-vs-full-car-tint.html"
+      "destination": "/generated/front-two-vs-full-car-tint"
     },
     {
       "source": "/apartment-office-mobile-tint",
-      "destination": "/generated/apartment-office-mobile-tint.html"
+      "destination": "/generated/apartment-office-mobile-tint"
     },
     {
       "source": "/buying-used-car-with-old-tint",
-      "destination": "/generated/buying-used-car-with-old-tint.html"
+      "destination": "/generated/buying-used-car-with-old-tint"
     },
     {
       "source": "/factory-privacy-glass-vs-window-film",
-      "destination": "/generated/factory-privacy-glass-vs-window-film.html"
+      "destination": "/generated/factory-privacy-glass-vs-window-film"
     },
     {
       "source": "/matching-front-window-tint",
-      "destination": "/generated/matching-front-window-tint.html"
+      "destination": "/generated/matching-front-window-tint"
     },
     {
       "source": "/sunroof-tint-compatibility",
-      "destination": "/generated/sunroof-tint-compatibility.html"
+      "destination": "/generated/sunroof-tint-compatibility"
     },
     {
       "source": "/windshield-film-visibility",
-      "destination": "/generated/windshield-film-visibility.html"
+      "destination": "/generated/windshield-film-visibility"
     },
     {
       "source": "/what-affects-window-tint-price",
-      "destination": "/generated/what-affects-window-tint-price.html"
+      "destination": "/generated/what-affects-window-tint-price"
     },
     {
       "source": "/window-tint-warranty-questions",
-      "destination": "/generated/window-tint-warranty-questions.html"
+      "destination": "/generated/window-tint-warranty-questions"
     },
     {
       "source": "/home-window-film-cost",
-      "destination": "/generated/home-window-film-cost.html"
+      "destination": "/generated/home-window-film-cost"
     },
     {
       "source": "/home-film-sample-comparison",
-      "destination": "/generated/home-film-sample-comparison.html"
+      "destination": "/generated/home-film-sample-comparison"
     },
     {
       "source": "/home-window-film-night-privacy",
-      "destination": "/generated/home-window-film-night-privacy.html"
+      "destination": "/generated/home-window-film-night-privacy"
     },
     {
       "source": "/window-film-vs-blinds",
-      "destination": "/generated/window-film-vs-blinds.html"
+      "destination": "/generated/window-film-vs-blinds"
     },
     {
       "source": "/double-pane-window-film-compatibility",
-      "destination": "/generated/double-pane-window-film-compatibility.html"
+      "destination": "/generated/double-pane-window-film-compatibility"
     },
     {
       "source": "/home-window-film-installation-preparation",
-      "destination": "/generated/home-window-film-installation-preparation.html"
+      "destination": "/generated/home-window-film-installation-preparation"
     },
     {
       "source": "/window-film-furniture-fading",
-      "destination": "/generated/window-film-furniture-fading.html"
+      "destination": "/generated/window-film-furniture-fading"
     },
     {
       "source": "/home-window-film-appearance",
-      "destination": "/generated/home-window-film-appearance.html"
+      "destination": "/generated/home-window-film-appearance"
     },
     {
       "source": "/commercial-window-film-cost",
-      "destination": "/generated/commercial-window-film-cost.html"
+      "destination": "/generated/commercial-window-film-cost"
     },
     {
       "source": "/office-glare-window-film",
-      "destination": "/generated/office-glare-window-film.html"
+      "destination": "/generated/office-glare-window-film"
     },
     {
       "source": "/conference-room-frosted-film-design",
-      "destination": "/generated/conference-room-frosted-film-design.html"
+      "destination": "/generated/conference-room-frosted-film-design"
     },
     {
       "source": "/commercial-film-installation-scheduling",
-      "destination": "/generated/commercial-film-installation-scheduling.html"
+      "destination": "/generated/commercial-film-installation-scheduling"
     },
     {
       "source": "/commercial-film-site-survey",
-      "destination": "/generated/commercial-film-site-survey.html"
+      "destination": "/generated/commercial-film-site-survey"
     },
     {
       "source": "/commercial-film-landlord-permission",
-      "destination": "/generated/commercial-film-landlord-permission.html"
+      "destination": "/generated/commercial-film-landlord-permission"
     },
     {
       "source": "/quote/home",
-      "destination": "/quote/home.html"
+      "destination": "/quote/home"
     },
     {
       "source": "/tint-shop-in-your-driveway",
