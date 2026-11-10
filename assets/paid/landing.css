@@ -11,7 +11,9 @@
 .first-work{height:clamp(220px,22vw,330px);gap:12px}
 .first-work figure{border-radius:var(--radius-card)}
 
-.quiz{scroll-margin-top:112px}
+.quiz{scroll-margin-top:0}
+/* A quote CTA opens the task view; unanchored ad visits retain their full introduction. */
+body:has(#quote:target) main > :has(~ #quote){display:none}
 .quiz-top{padding:22px clamp(18px,2.4vw,34px) 16px;color:var(--muted)}
 .progress{margin:0 clamp(18px,2.4vw,34px);background:var(--line)}
 .screen{padding:clamp(22px,2.4vw,34px)}
@@ -57,7 +59,7 @@ footer{padding:25px 0}
   .intro,.near-me-intro,.intro-proof{padding:0 0 16px}
   .first-work{height:132px;margin-top:14px;gap:7px}
   .first-work figure{border-radius:10px}
-  .quiz{scroll-margin-top:88px}
+  .quiz{scroll-margin-top:0}
   .question-head h2{font-size:24px}
   .choice{border-radius:9px}
   .package-offer{padding:14px}
