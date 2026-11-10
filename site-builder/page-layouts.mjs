@@ -1,19 +1,10 @@
 import {imageTag} from './media.mjs';
-import {escape as e, divisions, button, reviews, card} from './components.mjs';
+import {escape as e, divisions, button, reviews, card, quoteHref} from './components.mjs';
 
 const paragraph = body => String(body||'').split(/\n\n/).map(text=>`<p>${e(text)}</p>`).join('');
 const label = page => divisions[page.division]?.label || 'Obsidian';
 const topic = page => page.title.replace(/\s+(in|across) Orange County$/i,'');
 const specialty=page=>page.path.includes('ceramic-coating')||page.path==='/chrome-delete';
-export function quoteHref(page) {
-  if(specialty(page))return 'sms:+17146007134';
-  if(page.path==='/tint-removal')return '/car-window-tinting-near-me?quote_coverage=Tint%20removal#quote';
-  const presets={'/front-two-window-tinting':'front_two','/sides-rear-window-tinting':'sides_rear','/full-car-window-tinting':'full_car','/windshield-window-tinting':'windshield'};
-  if(presets[page.path])return '/car-window-tinting-near-me?quote_coverage='+presets[page.path]+'#quote';
-  if(page.path==='/tesla-model-y-window-tinting')return '/tesla-model-y-window-tint#quote';
-  if(page.path==='/tesla-model-3-window-tinting')return '/tesla-model-3-window-tint#quote';
-  return divisions[page.division]?.quote||'/booking';
-}
 function crumbs(page) {
   const parent=divisions[page.division];
   return `<nav class="page-breadcrumbs" aria-label="Breadcrumb"><a href="/">Home</a>${parent&&parent.path!==page.path?`<span aria-hidden="true">/</span><a href="${parent.path}">${parent.label}</a>`:''}<span aria-hidden="true">/</span><span>${e(page.type==='project'?'Planning guide':page.type==='guide'?'Guide':page.type==='city'?'Service area':topic(page))}</span></nav>`;
@@ -26,7 +17,7 @@ function eyebrow(page) {
   return page.type==='guide'?`${label(page)} / Field notes`:page.type==='project'?`${label(page)} / Project planner`:page.type==='city'?`${label(page)} / At your location`:page.type==='vehicle'?'Your vehicle. Your glass.':`${label(page)} / Obsidian Film Solutions`;
 }
 function intro(page,kind,{photo=true,action=true}={}) {
-  return `<section class="container page-intro page-intro--${kind}${photo&&page.image?' has-photo':''}" data-layout="${kind}">${crumbs(page)}<div class="page-intro-grid"><div><p class="eyebrow">${e(eyebrow(page))}</p><h1>${e(page.title)}</h1><p class="page-deck">${e(page.intro)}</p>${action?`<div class="actions">${button(specialty(page)?'Text us about your vehicle':page.division==='auto'?'Get my quote':page.division==='home'?'Explore my options':'Request a site review',quoteHref(page),page.type==='city')}${specialty(page)?button('Call (714) 600-7134','tel:+17146007134',true):''}</div>`:''}</div>${photo?image(page):''}</div></section>`;
+  return `<section class="container page-intro page-intro--${kind}${photo&&page.image?' has-photo':''}" data-layout="${kind}">${crumbs(page)}<div class="page-intro-grid"><div><p class="eyebrow">${e(eyebrow(page))}</p><h1>${e(page.title)}</h1><p class="page-deck">${e(page.intro)}</p>${action?`<div class="actions">${button(specialty(page)?'Text us about your vehicle':page.division==='auto'?'Get my quote':page.division==='home'?'Get my home quote':'Request a site review',quoteHref(page),page.type==='city')}${specialty(page)?button('Call (714) 600-7134','tel:+17146007134',true):''}</div>`:''}</div>${photo?image(page):''}</div></section>`;
 }
 function highlights(page) {
   if(!page.highlights?.length)return '';

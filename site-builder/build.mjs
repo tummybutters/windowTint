@@ -32,8 +32,10 @@ function gallery() {
   return `<section class="section container" data-gallery><div class="gallery-filters" role="group" aria-label="Filter gallery">${[['all','All work'],['auto','Auto'],['home','Homes'],['commercial','Commercial']].map(([value,label])=>`<button data-gallery-filter="${value}" aria-pressed="${value==='all'}">${label}</button>`).join('')}</div><p data-gallery-count aria-live="polite">${entries.length} projects</p><div class="gallery-grid">${entries.map(entry=>`<figure class="gallery-item" data-gallery-category="${entry.division}"><a href="${entry.images[0].src}" data-lightbox data-caption="${e(entry.title)}">${imageTag(entry.images[0].src,entry.images[0].alt,{sizes:'(max-width: 650px) calc(100vw - 40px), 30vw'})}</a><figcaption>${e(entry.title)}</figcaption><div class="gallery-thumbnails">${entry.images.slice(1).map(image=>`<a href="${image.src}" data-lightbox data-caption="${e(entry.title)}">${imageTag(image.src,image.alt,{thumbnail:true})}</a>`).join('')}</div></figure>`).join('')}</div></section>`;
 }
 function booking(page) {
-  return `<section class="hero hero--home container"><p class="eyebrow">Let's make it yours</p><h1>What are we<br><em>working on?</em></h1><p>Choose your project to start your quote.</p><div class="service-grid">${Object.values(divisions).map(d=>`<a class="service-card" href="${d.quote}"><img src="${d.image}" alt="" width="800" height="900"><div class="service-card-content"><span class="eyebrow">${d.label}</span><h2>${d.subtitle}</h2><span>Start my project ↗</span></div></a>`).join('')}</div></section>${offer()}`;
+  const names={auto:'My vehicle',home:'My home',commercial:'My business'};
+  return `<section class="container project-picker"><h1>What are we working on?</h1><p>Choose your project to start.</p><div class="project-options">${Object.entries(divisions).map(([key,d])=>`<a class="project-option" href="${d.quote}"><img src="${d.image}" alt="" width="800" height="900"><span>${names[key]}</span><span aria-hidden="true">↗</span></a>`).join('')}</div></section>`;
 }
+
 for(const page of pages) {
   page.sections??=[];page.relatedPaths??=[];
   let body;

@@ -1,0 +1,17 @@
+/* Dedicated package entry: show the next choice before additional sales content. */
+.package-journey{max-width:1120px;padding-top:0}
+.package-journey .journey-back{display:inline-flex;font-size:12px;min-height:34px;align-items:center;margin:0 0 10px;color:var(--muted)}
+.package-journey .journey-intro{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:8px 24px;text-align:left;padding:0 0 18px;margin:0}
+.package-journey .journey-intro h1{font-size:clamp(28px,3vw,42px);line-height:1.08;letter-spacing:-.035em;margin:0 0 7px}
+.package-journey .journey-intro p{font-size:14px;line-height:1.5;margin:0;max-width:none}
+.package-journey .journey-price{display:flex;flex-direction:column;align-items:flex-end;gap:5px;margin:0;align-self:start}
+.package-journey .journey-price strong{font-size:28px;line-height:1.1;font-weight:500;white-space:nowrap}
+.package-journey .vehicle-size-note{font-size:11px;color:var(--muted)}
+.package-journey .journey-exception{grid-column:1/-1;color:var(--muted);font-size:12px!important}
+.package-journey .journey-exception .package-link{display:inline-block;background:none;border:0;border-radius:0;min-height:0;padding:0;margin:0;color:var(--paper);font-size:inherit;text-transform:none;text-decoration:underline;text-underline-offset:3px;white-space:nowrap}
+.package-journey .journey-price-details{font-size:13px;color:var(--muted);line-height:1.6;margin:16px 0 28px;max-width:900px}
+.package-journey .journey-price-details summary{min-height:44px;display:list-item;padding:10px 0;cursor:pointer;color:var(--paper)}
+.package-journey .journey-price-details p{margin:0 0 12px}
+.package-journey .quiz{margin:0}
+.package-journey .vehicle-photo-note{margin-bottom:12px}
+@media(max-width:700px){.package-journey{padding-top:0}.package-journey .journey-intro{gap:8px 12px}.package-journey .journey-intro h1{font-size:26px}.package-journey .journey-price strong{font-size:22px}.package-journey .journey-price{max-width:106px;text-align:right}.package-journey .vehicle-size-note{font-size:10px}.package-journey .journey-intro p{font-size:12px}.package-journey .quiz-top{padding-top:14px;padding-bottom:12px}.package-journey .screen{padding-top:18px}.package-journey .question-head{margin-bottom:18px}.package-journey .choice img{height:90px}.package-journey .choice{padding:12px}.package-journey .choices{gap:10px}.package-journey .choice-label{font-size:12px}}
