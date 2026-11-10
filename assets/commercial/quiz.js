@@ -22,16 +22,8 @@
   quarter:svg(`<rect x="36" y="22" width="58" height="56" rx="6" fill="${D}" stroke="${S}" stroke-width="1.5"/><path d="M36 38h58" stroke="${S}" stroke-width="2"/><path d="M104 50h26m-8-8 8 8-8 8" stroke="${A}" stroke-width="3"/>`),
   later:svg(`<rect x="50" y="16" width="60" height="72" rx="5" fill="${D}" stroke="${S}" stroke-width="1.5"/><path d="M62 34h36M62 46h36M62 58h20" stroke="${S}" stroke-width="2"/><path d="M92 76h16m-8-8v16" stroke="${A}" stroke-width="3"/>`)
  };
- const propertyPhotos = {
-  office: ['/assets/site/commercial.webp', 'Office windows from the Obsidian portfolio'],
-  other: ['/assets/site/work-commercial.webp', 'Commercial glass from the Obsidian portfolio']
- };
- const img = name => {
-  const photo = propertyPhotos[name];
-  const source = photo ? photo[0] : `/assets/commercial/${name}.webp`;
-  const alt = photo ? photo[1] : `${name} property illustration`;
-  return `<img src="${source}" alt="${alt}" width="600" height="400" loading="eager" decoding="async">`;
- };
+ // Use one consistent illustration style until every property type has a real project photo.
+ const img = name => `<img src="/assets/commercial/${name}.webp" alt="${name} property illustration" width="600" height="400" loading="eager" decoding="async">`;
  const STEPS=[
   {key:'property',title:'What kind of property is it?',choices:[['Office',img('office')],['Storefront / retail',img('storefront')],['Medical / healthcare',img('medical')],['Multi-family / HOA',img('multifamily')],['Industrial / warehouse',img('industrial')],['Something else',img('other')]]},
   {key:'problem',title:'What do you want to fix?',choices:[['Heat / hot offices',icons.heat],['Glare on screens',icons.glare],['Privacy / frosting',icons.privacy],['Security / break-ins',icons.security],['Sun fading (UV)',icons.uv],['Not sure yet',icons.unsure]]},
