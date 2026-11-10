@@ -21,6 +21,10 @@
 .page-intro--pricing{padding-top:28px;padding-bottom:28px}.page-intro--pricing h1{font-size:clamp(38px,4.3vw,64px);max-width:950px}.page-intro--pricing .page-breadcrumbs{margin-bottom:28px}.page-intro--pricing .page-deck{font-size:19px;margin-top:20px;max-width:820px}
 
 /* Prices remain readable without sideways scrolling on a small phone. */
-@media(max-width:760px){.comparison-module--pricing table{min-width:0;table-layout:fixed}.comparison-module--pricing th,.comparison-module--pricing td{min-width:0;padding:16px 10px;font-size:13px;overflow-wrap:break-word}.comparison-module--pricing thead th:first-child{width:29%}.comparison-module--pricing thead th:nth-child(2){width:42%}.comparison-module--pricing thead th:nth-child(3){width:29%}}
+@media(max-width:760px){.comparison-module--pricing table{min-width:0;table-layout:fixed}.comparison-module--pricing th,.comparison-module--pricing td{min-width:0;padding:16px 10px;font-size:13px;overflow-wrap:break-word}.comparison-module--pricing thead th:first-child{width:34%}.comparison-module--pricing thead th:nth-child(2){width:40%}.comparison-module--pricing thead th:nth-child(3){width:26%}}
 
 @media(max-width:760px){.comparison-module--pricing[data-columns="2"] thead th:first-child{width:60%}.comparison-module--pricing[data-columns="2"] thead th:nth-child(2){width:40%}}
+/* A wide comparison table may scroll inside its article, never widen the page. */
+.editorial-layout>*,.worksheet-layout>*,.local-layout>*,.detail-columns>*{min-width:0}
+.comparison-module,.comparison-scroll{max-width:100%;min-width:0}
+@media(max-width:760px){.editorial-layout,.worksheet-layout,.local-layout,.page-faq,.hub-story .content-sections--feature{grid-template-columns:minmax(0,1fr)}}
