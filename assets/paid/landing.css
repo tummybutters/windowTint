@@ -73,7 +73,22 @@ footer{padding:25px 0}
 .package-details .offer-terms{margin:10px 0 0;font-size:11px}
 .package-details .offer-terms p{margin:6px 0}
 
-.package-offer{--offer-pad:clamp(20px,3vw,44px);padding-top:0;overflow:hidden}
+.package-offer{--offer-pad:clamp(20px,3vw,44px);padding-top:var(--offer-pad);overflow:hidden}
 .package-offer .free-banner{margin:0 calc(var(--offer-pad)*-1);padding-inline:var(--offer-pad)}
 .bonus-label strong{font-size:clamp(26px,2.6vw,36px);font-weight:700}
 @media(max-width:760px){.package-offer{--offer-pad:14px}}
+
+/* Give closing copy and its actions independent room at every width. */
+.last-cta{display:flex;flex-wrap:wrap;align-items:center;gap:28px 40px}
+.last-cta>div:first-child{flex:1 1 420px;min-width:0}
+.last-cta p{color:var(--ink);max-width:920px;overflow-wrap:break-word}
+.last-cta>p{flex:1 1 420px;min-width:0;margin:0}
+.last-cta .closing-actions{flex:0 1 290px;min-width:0;max-width:100%}
+.last-cta .direct-actions{display:flex;flex-wrap:wrap;gap:12px 22px;margin-top:16px}
+.last-cta .direct-actions a{color:var(--ink);min-height:44px;display:inline-flex;align-items:center}
+@media(max-width:760px){
+ .last-cta{display:flex;flex-direction:column;align-items:stretch;gap:24px;padding:28px 22px}
+ .last-cta>div:first-child,.last-cta>p,.last-cta .closing-actions{flex:auto;width:100%}
+ .last-cta p{margin:0;font-size:clamp(28px,7.8vw,38px);line-height:1.08}
+ .last-cta .primary{white-space:normal;gap:16px}
+}

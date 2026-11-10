@@ -92,6 +92,8 @@ if (!fs.existsSync(manifestPath)) {
   assert(Array.isArray(pages), 'content/pages.json must contain an array or {pages: []}');
   if (pages.length !== 150) fail(`Expected 150 planned pages, found ${pages.length}`);
   if (new Set(pages.map(page => page.path)).size !== pages.length) fail('Duplicate manifest paths');
+  const plannedPaths = new Set(pages.map(page => page.path));
+  const pageLinks = new Map();
   const checkedAssets = new Set();
   const titles = new Map();
   for (const page of pages) {
@@ -112,6 +114,15 @@ if (!fs.existsSync(manifestPath)) {
       titles.set(title, page.path);
     }
     const markup = document.replace(/(<script\b[^>]*>)[\s\S]*?<\/script>/gi, '$1</script>').replace(/<style\b[^>]*>[\s\S]*?<\/style>/gi, '');
+    const links = new Set();
+    for (const anchor of markup.matchAll(/<a\b[^>]*\bhref=["']([^"']+)["']/gi)) {
+      try {
+        const linked = new URL(decode(anchor[1]), 'https://www.obsidianautoworksoc.com' + page.path);
+        const linkedPath = linked.pathname === '/' ? '/' : linked.pathname.replace(/\/$/, '');
+        if (linked.origin === 'https://www.obsidianautoworksoc.com' && plannedPaths.has(linkedPath)) links.add(linkedPath);
+      } catch { /* Other link protocols do not create site-navigation edges. */ }
+    }
+    pageLinks.set(page.path, links);
     for (const match of markup.matchAll(/(?:href|src)=["'](\/[^"']*)["']/g)) {
       const target = decode(match[1]);
       if (target.startsWith('//') || target.startsWith('/api/')) continue;
@@ -132,6 +143,20 @@ if (!fs.existsSync(manifestPath)) {
       } catch (error) { fail(`HTTP check failed ${page.path}: ${error.message}`); }
     }
   }
+  const reachable = new Set();
+  const queue = ['/'];
+  for (let index = 0; index < queue.length; index++) {
+    const current = queue[index];
+    if (reachable.has(current)) continue;
+    reachable.add(current);
+    for (const linked of pageLinks.get(current) || []) {
+      if (!reachable.has(linked)) queue.push(linked);
+    }
+  }
+  for (const pathname of plannedPaths) {
+    if (!reachable.has(pathname)) fail(`Page is unreachable through navigation links from the homepage: ${pathname}`);
+  }
+  checks.push(`${reachable.size} planned pages reachable through real anchor links from the homepage`);
   checks.push(`${pages.length} manifest routes, headings, metadata, titles and local targets checked`);
   if (baseUrl) checks.push(`Read-only HTTP checks against ${new URL(baseUrl).origin}`);
 }

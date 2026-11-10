@@ -53,3 +53,28 @@
 .gallery-thumbnails { display: flex; gap: 8px; margin-top: 14px; flex-wrap: wrap; }
 .gallery-thumbnails a { width: 70px; }
 .gallery-thumbnails img { aspect-ratio: 1; width: 100%; }
+
+/* A lightweight editorial doorway to Instagram, with real project photography. */
+.instagram-heading { display: grid; grid-template-columns: 1.25fr 1fr; gap: 40px; align-items: end; margin-bottom: 36px; }
+.instagram-intro { max-width: 390px; justify-self: end; }
+.instagram-intro > p { color: var(--muted); }
+.instagram-follow { display: flex; align-items: center; gap: 13px; margin-top: 24px; padding-block: 12px; border-bottom: 1px solid var(--line); font-size: 17px; overflow-wrap: anywhere; }
+.instagram-follow svg { width: 23px; height: 23px; flex: 0 0 auto; color: var(--accent); }
+.instagram-follow > span:last-child { margin-left: auto; color: var(--accent); }
+.instagram-gallery { display: grid; grid-template-columns: 1.2fr 1fr 1fr; gap: 14px; align-items: start; }
+.instagram-photo { position: relative; display: block; overflow: hidden; border-radius: 10px; border: 1px solid var(--line); }
+.instagram-photo img { width: 100%; aspect-ratio: 4 / 5; object-fit: cover; transition: transform 450ms ease; }
+.instagram-photo--2 { margin-top: 38px; }
+.instagram-photo--3 { margin-top: 76px; }
+.instagram-gallery:hover img { transform: scale(1.025); }
+.instagram-photo-label { position: absolute; left: 14px; right: 14px; bottom: 14px; display: flex; justify-content: space-between; gap: 10px; padding: 15px; background: var(--accent); color: var(--ink); border-radius: 5px; font-size: 14px; font-weight: 600; }
+.instagram-caption { margin-top: 18px; color: var(--muted); font-size: 12px; }
+@media (max-width: 760px) {
+ .instagram-heading { grid-template-columns: 1fr; gap: 24px; }
+ .instagram-intro { max-width: none; justify-self: stretch; }
+ .instagram-gallery { grid-template-columns: 1fr 1fr; gap: 10px; }
+ .instagram-photo--2 { margin-top: 30px; }
+ .instagram-photo--3 { display: none; }
+ .instagram-photo img { aspect-ratio: 3 / 4; }
+}
+@media (prefers-reduced-motion: reduce) { .instagram-photo img { transition: none; } }

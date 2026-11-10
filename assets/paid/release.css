@@ -29,3 +29,30 @@
 }
 
 .package-copy>.paid-offer-banner{grid-column:1/-1;width:100%;box-sizing:border-box}.package-copy>.package-summary{min-width:0}@media(max-width:760px){.package-offer .package-copy{display:flex;flex-direction:column;gap:16px}.package-copy .package-upgrades{width:100%;display:grid;grid-template-columns:1fr auto 1fr}.package-copy .price-main{flex-wrap:wrap}.package-copy .price-main strong{font-size:36px}.package-copy .paid-offer-banner{margin:0}.package-copy .bonus-label span{overflow-wrap:normal}.package-copy .package-link{width:100%}}
+
+/* Inset the offer, then give each decision its own clear rhythm. */
+.package-offer .package-copy{display:flex;flex-direction:column;gap:20px}
+.package-copy .paid-offer-banner{margin:0;line-height:1.25}
+.package-copy .package-summary{column-gap:24px;row-gap:8px}
+.package-summary h2{margin:0}
+.package-copy .package-upgrades{padding:0;max-width:560px;width:100%;align-items:start}
+.package-copy .bonus-label{align-items:flex-start;line-height:1.35;text-align:left}
+.package-copy .bonus-label strong{line-height:1.05}
+.package-copy .offer-terms p{margin:0 0 6px}
+.package-copy .offer-terms p:last-child{margin-bottom:0}
+.package-copy .package-link{align-self:flex-start;max-width:100%;white-space:normal;gap:24px}
+.package-copy .package-details{margin:0}
+@media(max-width:1100px){
+ .package-copy .package-summary{display:flex;flex-direction:column;align-items:flex-start;gap:8px}
+ .package-copy .price-main{align-items:baseline;flex-direction:row;gap:8px;flex-wrap:wrap;margin-top:4px}
+}
+@media(max-width:760px){
+ .package-offer{padding:18px}
+ .package-offer .package-copy{gap:18px}
+ .package-copy .package-upgrades{grid-template-columns:minmax(0,1fr) 18px minmax(0,1fr);gap:8px}
+ .package-copy .bonus-label{flex-direction:column;align-items:flex-start;gap:6px}
+ .package-copy .bonus-label strong{font-size:26px}
+ .package-copy .bonus-label span{font-size:12px;line-height:1.4}
+ .package-copy .price-main strong{font-size:34px;white-space:nowrap}
+ .package-copy .package-summary p{margin:0}
+}

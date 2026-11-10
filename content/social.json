@@ -1,0 +1,22 @@
+{
+  "instagram": {
+    "url": "https://www.instagram.com/obsidianautoworksoc/",
+    "handle": "@obsidianautoworksoc",
+    "verifiedAt": "2026-11-10",
+    "sourceNote": "Verified business profile; selected by Tommy in latest account link."
+  },
+  "images": [
+    {
+      "src": "/gallery/tintwiz-20261025/mercedes-amg-gt-02.webp",
+      "alt": "Mercedes-AMG GT side profile from the Obsidian gallery"
+    },
+    {
+      "src": "/gallery/tintwiz-20261025/chevrolet-corvette-01.webp",
+      "alt": "Chevrolet Corvette with finished window tint"
+    },
+    {
+      "src": "/gallery/tintwiz-20261025/volkswagen-karmann-ghia-01.webp",
+      "alt": "Classic Volkswagen Karmann Ghia from the Obsidian gallery"
+    }
+  ]
+}

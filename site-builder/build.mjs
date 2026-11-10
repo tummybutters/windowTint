@@ -1,3 +1,4 @@
+import {instagramSection} from './social.mjs';
 import fs from 'node:fs';
 import path from 'node:path';
 import {fileURLToPath} from 'node:url';
@@ -30,17 +31,19 @@ function linkedPages(title,selected) {
   return `<section class="section container"><div class="section-heading"><h2>${e(title)}</h2></div><div class="card-grid">${selected.map(card).join('')}</div></section>`;
 }
 function directory(page) {
-  if(page.path==='/services')return linkedPages('Choose your service',pages.filter(p=>['service','hub'].includes(p.type)&&p.division!=='shared'&&p.path!==page.path));
+  if(page.path==='/services')return linkedPages('Choose your service',pages.filter(p=>['service','hub'].includes(p.type)&&p.division!=='shared'&&p.path!==page.path))+
+    linkedPages('Find your vehicle',pages.filter(p=>p.division==='auto'&&p.type==='vehicle'));
   if(page.path==='/guides')return ['auto','home','commercial'].map(d=>linkedPages(divisions[d].label+' guides',pages.filter(p=>p.division===d&&['guide','project'].includes(p.type)))).join('');
   if(page.path==='/service-areas')return ['auto','home','commercial'].map(d=>linkedPages(divisions[d].label+' service areas',pages.filter(p=>p.division===d&&p.type==='city'))).join('');
   if(Object.values(divisions).some(d=>d.path===page.path)){
     return linkedPages('Find the right film',pages.filter(p=>p.division===page.division&&p.type==='service'&&p.path!==page.path))+
+      linkedPages('Find your vehicle',pages.filter(p=>p.division===page.division&&p.type==='vehicle'))+
       linkedPages('We come to your area',pages.filter(p=>p.division===page.division&&p.type==='city'));
   }
   return '';
 }
 function home(page) {
-  return `<section class="hero hero--home container"><div class="hero-heading"><div><p class="eyebrow">Obsidian Autoworks · We come to you</p><h1>Mobile Window Tinting<br><em>Orange County.</em></h1></div><div><p>Ceramic tint in your driveway.<br>Window film for homes and businesses.</p>${button('Explore the free upgrade','/driveway-package')}</div></div>${servicePanels()}</section>${offer()}${reviews(reviewData)}<section class="section container split"><div><p class="eyebrow">Made for life in the sun</p><h2>Keep the light.<br>Make it yours.</h2><p>From the morning commute to the afternoon sun in your living room, choose film around the way you use your space.</p>${button('Explore home film','/architectural-window-film',true)}</div><img src="/assets/site/work-home.webp" width="1000" height="900" alt="Window film in a bright residential space" loading="lazy"></section>${linkedPages('A little guidance goes a long way',pages.filter(p=>p.type==='guide').slice(0,3))}${quotePanel('auto')}`;
+  return `<section class="hero hero--home container"><div class="hero-heading"><div><p class="eyebrow">Obsidian Autoworks · We come to you</p><h1>Mobile Window Tinting<br><em>Orange County.</em></h1></div><div><p>Ceramic tint in your driveway.<br>Window film for homes and businesses.</p>${button('Explore the free upgrade','/driveway-package')}</div></div>${servicePanels()}</section>${offer()}${reviews(reviewData)}<section class="section container split"><div><p class="eyebrow">Made for life in the sun</p><h2>Keep the light.<br>Make it yours.</h2><p>From the morning commute to the afternoon sun in your living room, choose film around the way you use your space.</p>${button('Explore home film','/architectural-window-film',true)}</div><img src="/assets/site/work-home.webp" width="1000" height="900" alt="Window film in a bright residential space" loading="lazy"></section>${linkedPages('A little guidance goes a long way',pages.filter(p=>p.type==='guide').slice(0,3))}${instagramSection()}${quotePanel('auto')}`;
 }
 function gallery() {
   const entries=JSON.parse(read('content/gallery.json'));
