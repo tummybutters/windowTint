@@ -1,0 +1,846 @@
+[
+  {
+    "path": "/commercial-window-film",
+    "links": [
+      {
+        "section": 0,
+        "anchor": "Exterior office glazing",
+        "href": "/office-window-film"
+      },
+      {
+        "section": 1,
+        "anchor": "Safety and security film",
+        "href": "/commercial-safety-security-film"
+      },
+      {
+        "section": 3,
+        "anchor": "site review",
+        "href": "/commercial-film-site-survey"
+      }
+    ],
+    "quoteLabel": "Request my project quote",
+    "secondary": {
+      "label": "Understand commercial film costs",
+      "href": "/commercial-window-film-cost"
+    },
+    "note": "Hub already lists every service and city. Body links add the relevant service and survey context without duplicating the entire directory."
+  },
+  {
+    "path": "/office-window-film",
+    "links": [
+      {
+        "section": 0,
+        "anchor": "screen reflection",
+        "href": "/office-glare-window-film"
+      },
+      {
+        "section": 2,
+        "anchor": "interior frosted applications",
+        "href": "/commercial-privacy-film"
+      },
+      {
+        "section": 3,
+        "anchor": "operating hours",
+        "href": "/commercial-film-installation-scheduling"
+      }
+    ],
+    "quoteLabel": "Request an office quote",
+    "secondary": {
+      "label": "Compare office privacy options",
+      "href": "/commercial-privacy-film"
+    },
+    "note": "Connect office concerns to glare assessment, frosted film and occupied-workplace planning."
+  },
+  {
+    "path": "/storefront-window-film",
+    "links": [
+      {
+        "section": 1,
+        "anchor": "solar-control request",
+        "href": "/commercial-solar-window-film"
+      },
+      {
+        "section": 3,
+        "anchor": "Property approval",
+        "href": "/commercial-film-landlord-permission"
+      }
+    ],
+    "quoteLabel": "Request a storefront quote",
+    "secondary": {
+      "label": "Understand project costs",
+      "href": "/commercial-window-film-cost"
+    },
+    "note": "Clarify solar and approval choices within the storefront scope; offer cost guidance as the next planning step."
+  },
+  {
+    "path": "/commercial-privacy-film",
+    "links": [
+      {
+        "section": 1,
+        "anchor": "Full-pane coverage, bands and patterns",
+        "href": "/conference-room-frosted-film-design"
+      },
+      {
+        "section": 3,
+        "anchor": "occupied hours",
+        "href": "/commercial-film-installation-scheduling"
+      }
+    ],
+    "quoteLabel": "Request a privacy-film quote",
+    "secondary": {
+      "label": "Plan a conference-room layout",
+      "href": "/conference-room-frosted-film-design"
+    },
+    "note": "Connect coverage decisions to design guidance and installation planning."
+  },
+  {
+    "path": "/commercial-solar-window-film",
+    "links": [
+      {
+        "section": 2,
+        "anchor": "interior privacy or decorative requests",
+        "href": "/commercial-privacy-film"
+      },
+      {
+        "section": 3,
+        "anchor": "site review",
+        "href": "/commercial-film-site-survey"
+      }
+    ],
+    "quoteLabel": "Request a solar-film quote",
+    "secondary": {
+      "label": "Understand commercial film costs",
+      "href": "/commercial-window-film-cost"
+    },
+    "note": "Move from the solar concern to assessment, distinct privacy work and a scoped estimate."
+  },
+  {
+    "path": "/commercial-safety-security-film",
+    "links": [
+      {
+        "section": 1,
+        "anchor": "known glazing information",
+        "href": "/commercial-film-site-survey"
+      },
+      {
+        "section": 2,
+        "anchor": "property’s decision-maker",
+        "href": "/commercial-film-landlord-permission"
+      }
+    ],
+    "quoteLabel": "Discuss safety-film requirements",
+    "secondary": {
+      "label": "Prepare for a site survey",
+      "href": "/commercial-film-site-survey"
+    },
+    "note": "Use consultation-oriented wording without implying a security performance guarantee; link the existing technical and approval discussion."
+  },
+  {
+    "path": "/irvine-commercial-window-film",
+    "links": [
+      {
+        "section": 1,
+        "anchor": "office glare request",
+        "href": "/office-glare-window-film"
+      },
+      {
+        "section": 2,
+        "anchor": "conference-room privacy",
+        "href": "/commercial-privacy-film"
+      },
+      {
+        "section": 3,
+        "anchor": "estimate and schedule",
+        "href": "/commercial-film-installation-scheduling"
+      }
+    ],
+    "quoteLabel": "Request an Irvine project quote",
+    "secondary": {
+      "label": "Explore office film options",
+      "href": "/office-window-film"
+    },
+    "note": "Irvine copy centers on workplaces, so link the exact glare, privacy and occupied-space decisions."
+  },
+  {
+    "path": "/newport-beach-commercial-window-film",
+    "links": [
+      {
+        "section": 0,
+        "anchor": "Frosted or decorative coverage",
+        "href": "/commercial-privacy-film"
+      },
+      {
+        "section": 2,
+        "anchor": "Patterns or bands",
+        "href": "/conference-room-frosted-film-design"
+      },
+      {
+        "section": 3,
+        "anchor": "property requirements that affect appearance",
+        "href": "/commercial-film-landlord-permission"
+      }
+    ],
+    "quoteLabel": "Request a Newport Beach quote",
+    "secondary": {
+      "label": "Plan conference-room privacy",
+      "href": "/projects/newport-beach-conference-room-privacy-film"
+    },
+    "note": "Use the existing privacy/design emphasis and the same-city planning guide."
+  },
+  {
+    "path": "/costa-mesa-commercial-window-film",
+    "links": [
+      {
+        "section": 1,
+        "anchor": "customer-facing glass",
+        "href": "/storefront-window-film"
+      },
+      {
+        "section": 2,
+        "anchor": "Solar-control",
+        "href": "/commercial-solar-window-film"
+      },
+      {
+        "section": 3,
+        "anchor": "opening hours, busy periods",
+        "href": "/commercial-film-installation-scheduling"
+      }
+    ],
+    "quoteLabel": "Request a Costa Mesa quote",
+    "secondary": {
+      "label": "Plan storefront solar film",
+      "href": "/projects/costa-mesa-storefront-solar-film"
+    },
+    "note": "Tie customer-facing glazing to storefront scope, solar direction and scheduling; keep the city-specific planner as the next step."
+  },
+  {
+    "path": "/huntington-beach-commercial-window-film",
+    "links": [
+      {
+        "section": 1,
+        "anchor": "sunlight or glare becomes disruptive",
+        "href": "/office-glare-window-film"
+      },
+      {
+        "section": 2,
+        "anchor": "solar-film direction",
+        "href": "/commercial-solar-window-film"
+      },
+      {
+        "section": 3,
+        "anchor": "glass specifications",
+        "href": "/commercial-film-site-survey"
+      }
+    ],
+    "quoteLabel": "Request a Huntington Beach quote",
+    "secondary": {
+      "label": "Explore solar-control film",
+      "href": "/commercial-solar-window-film"
+    },
+    "note": "The page emphasizes occupied sun-facing areas, with assessment links leading to the relevant service."
+  },
+  {
+    "path": "/tustin-commercial-window-film",
+    "links": [
+      {
+        "section": 0,
+        "anchor": "An office window",
+        "href": "/office-window-film"
+      },
+      {
+        "section": 2,
+        "anchor": "A site review",
+        "href": "/commercial-film-site-survey"
+      },
+      {
+        "section": 3,
+        "anchor": "interior privacy",
+        "href": "/commercial-privacy-film"
+      }
+    ],
+    "quoteLabel": "Request a Tustin project quote",
+    "secondary": {
+      "label": "Prepare for the site survey",
+      "href": "/commercial-film-site-survey"
+    },
+    "note": "Follow the survey-led brief and route distinct office/privacy work to its service pages."
+  },
+  {
+    "path": "/santa-ana-commercial-window-film",
+    "links": [
+      {
+        "section": 0,
+        "anchor": "more private meeting area",
+        "href": "/commercial-privacy-film"
+      },
+      {
+        "section": 3,
+        "anchor": "phased work",
+        "href": "/commercial-film-installation-scheduling"
+      }
+    ],
+    "quoteLabel": "Request a Santa Ana quote",
+    "secondary": {
+      "label": "Plan installation around your office",
+      "href": "/projects/santa-ana-office-installation-scheduling"
+    },
+    "note": "Respect the page’s operational focus and link to the same-city scheduling planner."
+  },
+  {
+    "path": "/anaheim-commercial-window-film",
+    "links": [
+      {
+        "section": 1,
+        "anchor": "decorative or privacy work",
+        "href": "/commercial-privacy-film"
+      },
+      {
+        "section": 2,
+        "anchor": "bands, full coverage or clear zones",
+        "href": "/conference-room-frosted-film-design"
+      },
+      {
+        "section": 4,
+        "anchor": "property approval requirements",
+        "href": "/commercial-film-landlord-permission"
+      }
+    ],
+    "quoteLabel": "Request an Anaheim project quote",
+    "secondary": {
+      "label": "Plan decorative film coverage",
+      "href": "/projects/anaheim-commercial-decorative-film"
+    },
+    "note": "Connect the existing design terms to privacy/design guidance and its same-city planner."
+  },
+  {
+    "path": "/orange-commercial-window-film",
+    "links": [
+      {
+        "section": 1,
+        "anchor": "authorize the proposed work",
+        "href": "/commercial-film-landlord-permission"
+      },
+      {
+        "section": 2,
+        "anchor": "interior privacy",
+        "href": "/commercial-privacy-film"
+      },
+      {
+        "section": 3,
+        "anchor": "glazing specifications",
+        "href": "/commercial-film-site-survey"
+      }
+    ],
+    "quoteLabel": "Request an Orange project quote",
+    "secondary": {
+      "label": "Prepare your property approval",
+      "href": "/commercial-film-landlord-permission"
+    },
+    "note": "Approval-focused content benefits from clear landlord, privacy and survey references."
+  },
+  {
+    "path": "/lake-forest-commercial-window-film",
+    "links": [
+      {
+        "section": 0,
+        "anchor": "where the sun affects people or displays",
+        "href": "/commercial-solar-window-film"
+      },
+      {
+        "section": 2,
+        "anchor": "pane sizes, counts and available specifications",
+        "href": "/commercial-film-site-survey"
+      },
+      {
+        "section": 4,
+        "anchor": "an estimate can be finalized",
+        "href": "/commercial-window-film-cost"
+      }
+    ],
+    "quoteLabel": "Request a Lake Forest quote",
+    "secondary": {
+      "label": "Plan a solar-control project",
+      "href": "/projects/lake-forest-commercial-solar-control-project"
+    },
+    "note": "Connect the solar assessment to survey and estimate requirements, then the same-city planner."
+  },
+  {
+    "path": "/mission-viejo-commercial-window-film",
+    "links": [
+      {
+        "section": 1,
+        "anchor": "office windows",
+        "href": "/office-window-film"
+      },
+      {
+        "section": 3,
+        "anchor": "glass area, preparation and access assumptions",
+        "href": "/commercial-window-film-cost"
+      },
+      {
+        "section": 0,
+        "anchor": "phase boundary",
+        "href": "/commercial-film-installation-scheduling"
+      }
+    ],
+    "quoteLabel": "Request a Mission Viejo quote",
+    "secondary": {
+      "label": "Plan installation in phases",
+      "href": "/commercial-film-installation-scheduling"
+    },
+    "note": "The page concerns phased coverage; link the cost explanation and phased installation guidance."
+  },
+  {
+    "path": "/aliso-viejo-commercial-window-film",
+    "links": [
+      {
+        "section": 1,
+        "anchor": "meeting privacy",
+        "href": "/commercial-privacy-film"
+      },
+      {
+        "section": 2,
+        "anchor": "band, pattern or full-pane finish",
+        "href": "/conference-room-frosted-film-design"
+      },
+      {
+        "section": 4,
+        "anchor": "installation conditions",
+        "href": "/commercial-film-installation-scheduling"
+      }
+    ],
+    "quoteLabel": "Request an Aliso Viejo quote",
+    "secondary": {
+      "label": "Compare frosted-film layouts",
+      "href": "/conference-room-frosted-film-design"
+    },
+    "note": "Link privacy sightlines to the design guide and installation planning."
+  },
+  {
+    "path": "/laguna-hills-commercial-window-film",
+    "links": [
+      {
+        "section": 0,
+        "anchor": "product, coverage and installation conditions",
+        "href": "/commercial-window-film-cost"
+      },
+      {
+        "section": 1,
+        "anchor": "number of panes and their rough sizes",
+        "href": "/commercial-film-site-survey"
+      },
+      {
+        "section": 2,
+        "anchor": "interior privacy",
+        "href": "/commercial-privacy-film"
+      }
+    ],
+    "quoteLabel": "Request a Laguna Hills quote",
+    "secondary": {
+      "label": "Understand the estimate",
+      "href": "/commercial-window-film-cost"
+    },
+    "note": "The page is estimate-oriented; provide the cost guide and concrete scope information."
+  },
+  {
+    "path": "/fountain-valley-commercial-window-film",
+    "links": [
+      {
+        "section": 0,
+        "anchor": "calmer screen view",
+        "href": "/office-glare-window-film"
+      },
+      {
+        "section": 2,
+        "anchor": "when people use the space",
+        "href": "/commercial-film-installation-scheduling"
+      },
+      {
+        "section": 4,
+        "anchor": "glazing review",
+        "href": "/commercial-film-site-survey"
+      }
+    ],
+    "quoteLabel": "Request a Fountain Valley quote",
+    "secondary": {
+      "label": "Plan access for installation",
+      "href": "/commercial-film-installation-scheduling"
+    },
+    "note": "Direct access and occupancy questions to scheduling, with glare and survey references where the existing copy introduces them."
+  },
+  {
+    "path": "/westminster-commercial-window-film",
+    "links": [
+      {
+        "section": 2,
+        "anchor": "privacy or a decorative change",
+        "href": "/commercial-privacy-film"
+      },
+      {
+        "section": 3,
+        "anchor": "frontage",
+        "href": "/storefront-window-film"
+      },
+      {
+        "section": 4,
+        "anchor": "property approval requirements",
+        "href": "/commercial-film-landlord-permission"
+      }
+    ],
+    "quoteLabel": "Request a Westminster quote",
+    "secondary": {
+      "label": "Review storefront film options",
+      "href": "/storefront-window-film"
+    },
+    "note": "Support the existing treatment/replacement discussion without linking automotive tint removal from a building page."
+  },
+  {
+    "path": "/garden-grove-commercial-window-film",
+    "links": [
+      {
+        "section": 0,
+        "anchor": "clear view of an entrance or display",
+        "href": "/storefront-window-film"
+      },
+      {
+        "section": 2,
+        "anchor": "privacy glass",
+        "href": "/commercial-privacy-film"
+      },
+      {
+        "section": 3,
+        "anchor": "operating hours, entry procedures",
+        "href": "/commercial-film-installation-scheduling"
+      }
+    ],
+    "quoteLabel": "Request a Garden Grove quote",
+    "secondary": {
+      "label": "Explore storefront film",
+      "href": "/storefront-window-film"
+    },
+    "note": "Connect public-facing glass and privacy requirements to the proper services and occupied-business planning."
+  },
+  {
+    "path": "/laguna-beach-commercial-window-film",
+    "links": [
+      {
+        "section": 1,
+        "anchor": "frontage",
+        "href": "/storefront-window-film"
+      },
+      {
+        "section": 2,
+        "anchor": "privacy or decorative options",
+        "href": "/commercial-privacy-film"
+      },
+      {
+        "section": 3,
+        "anchor": "who approves appearance changes",
+        "href": "/commercial-film-landlord-permission"
+      }
+    ],
+    "quoteLabel": "Request a Laguna Beach quote",
+    "secondary": {
+      "label": "Review privacy and frosted film",
+      "href": "/commercial-privacy-film"
+    },
+    "note": "Link appearance-led decisions to storefront/privacy services and property approval guidance."
+  },
+  {
+    "path": "/projects/irvine-office-glare-control-film",
+    "links": [
+      {
+        "section": 1,
+        "anchor": "experience of glare",
+        "href": "/office-glare-window-film"
+      },
+      {
+        "section": 2,
+        "anchor": "glazing specifications",
+        "href": "/commercial-film-site-survey"
+      },
+      {
+        "section": 3,
+        "anchor": "Irvine location",
+        "href": "/irvine-commercial-window-film"
+      }
+    ],
+    "quoteLabel": "Discuss my office-glare project",
+    "secondary": {
+      "label": "Explore office window film",
+      "href": "/office-window-film"
+    },
+    "note": "Connect this planning worksheet to the local commercial page, technical survey and office service without presenting it as a completed job."
+  },
+  {
+    "path": "/projects/newport-beach-conference-room-privacy-film",
+    "links": [
+      {
+        "section": 1,
+        "anchor": "treatment continues across panes",
+        "href": "/conference-room-frosted-film-design"
+      },
+      {
+        "section": 2,
+        "anchor": "frosted or decorative materials",
+        "href": "/commercial-privacy-film"
+      },
+      {
+        "section": 3,
+        "anchor": "Newport Beach location",
+        "href": "/newport-beach-commercial-window-film"
+      }
+    ],
+    "quoteLabel": "Discuss my privacy-film project",
+    "secondary": {
+      "label": "Explore privacy-film options",
+      "href": "/commercial-privacy-film"
+    },
+    "note": "Tie the same-city planner to its actual service and layout guide."
+  },
+  {
+    "path": "/projects/costa-mesa-storefront-solar-film",
+    "links": [
+      {
+        "section": 1,
+        "anchor": "solar-control preference",
+        "href": "/commercial-solar-window-film"
+      },
+      {
+        "section": 2,
+        "anchor": "property approval requirements",
+        "href": "/commercial-film-landlord-permission"
+      },
+      {
+        "section": 3,
+        "anchor": "Costa Mesa location",
+        "href": "/costa-mesa-commercial-window-film"
+      }
+    ],
+    "quoteLabel": "Discuss my storefront project",
+    "secondary": {
+      "label": "Explore storefront window film",
+      "href": "/storefront-window-film"
+    },
+    "note": "Connect the planner to solar film, property approval and the same-city commercial service."
+  },
+  {
+    "path": "/projects/santa-ana-office-installation-scheduling",
+    "links": [
+      {
+        "section": 0,
+        "anchor": "hours it is occupied",
+        "href": "/commercial-film-installation-scheduling"
+      },
+      {
+        "section": 1,
+        "anchor": "Access assumptions",
+        "href": "/commercial-film-site-survey"
+      },
+      {
+        "section": 3,
+        "anchor": "Santa Ana location",
+        "href": "/santa-ana-commercial-window-film"
+      }
+    ],
+    "quoteLabel": "Discuss my office installation",
+    "secondary": {
+      "label": "Explore office window film",
+      "href": "/office-window-film"
+    },
+    "note": "Link occupied-office planning to scheduling and survey detail, with the same-city service page."
+  },
+  {
+    "path": "/projects/anaheim-commercial-decorative-film",
+    "links": [
+      {
+        "section": 0,
+        "anchor": "treatment creates privacy",
+        "href": "/commercial-privacy-film"
+      },
+      {
+        "section": 1,
+        "anchor": "patterns should align",
+        "href": "/conference-room-frosted-film-design"
+      },
+      {
+        "section": 3,
+        "anchor": "Anaheim location",
+        "href": "/anaheim-commercial-window-film"
+      }
+    ],
+    "quoteLabel": "Discuss my decorative-film project",
+    "secondary": {
+      "label": "Explore privacy and decorative film",
+      "href": "/commercial-privacy-film"
+    },
+    "note": "Provide direct routes from a design worksheet to privacy services, layout guidance and the same-city service."
+  },
+  {
+    "path": "/projects/lake-forest-commercial-solar-control-project",
+    "links": [
+      {
+        "section": 0,
+        "anchor": "glare request",
+        "href": "/office-glare-window-film"
+      },
+      {
+        "section": 1,
+        "anchor": "available specifications or coating information",
+        "href": "/commercial-film-site-survey"
+      },
+      {
+        "section": 3,
+        "anchor": "Lake Forest location",
+        "href": "/lake-forest-commercial-window-film"
+      }
+    ],
+    "quoteLabel": "Discuss my solar-film project",
+    "secondary": {
+      "label": "Explore commercial solar film",
+      "href": "/commercial-solar-window-film"
+    },
+    "note": "Connect the worksheet to glare assessment, survey preparation and the same-city service, with solar film as the next service step."
+  },
+  {
+    "path": "/commercial-window-film-cost",
+    "links": [
+      {
+        "section": 0,
+        "anchor": "exterior solar-control needs",
+        "href": "/commercial-solar-window-film"
+      },
+      {
+        "section": 1,
+        "anchor": "landlord requirements",
+        "href": "/commercial-film-landlord-permission"
+      },
+      {
+        "section": 2,
+        "anchor": "review of the glass, measurements",
+        "href": "/commercial-film-site-survey"
+      }
+    ],
+    "quoteLabel": "Request a project-specific quote",
+    "secondary": {
+      "label": "Prepare for a site survey",
+      "href": "/commercial-film-site-survey"
+    },
+    "note": "Cost depends on defined scope; link actual service and approval/survey prerequisites instead of implying a universal price."
+  },
+  {
+    "path": "/office-glare-window-film",
+    "links": [
+      {
+        "section": 1,
+        "anchor": "screen use, daylight and the desired exterior appearance",
+        "href": "/commercial-solar-window-film"
+      },
+      {
+        "section": 2,
+        "anchor": "commercial site review",
+        "href": "/commercial-film-site-survey"
+      }
+    ],
+    "quoteLabel": "Discuss my office glare",
+    "secondary": {
+      "label": "Explore office film options",
+      "href": "/office-window-film"
+    },
+    "note": "The assessment guide leads naturally to solar-film information and the office service."
+  },
+  {
+    "path": "/conference-room-frosted-film-design",
+    "links": [
+      {
+        "section": 0,
+        "anchor": "Full-pane coverage, bands and patterns",
+        "href": "/commercial-privacy-film"
+      },
+      {
+        "section": 2,
+        "anchor": "building permissions",
+        "href": "/commercial-film-landlord-permission"
+      }
+    ],
+    "quoteLabel": "Discuss my conference-room layout",
+    "secondary": {
+      "label": "Explore privacy and frosted film",
+      "href": "/commercial-privacy-film"
+    },
+    "note": "Design readers can move to the service or review the approval requirements."
+  },
+  {
+    "path": "/commercial-film-installation-scheduling",
+    "links": [
+      {
+        "section": 1,
+        "anchor": "project review",
+        "href": "/commercial-film-site-survey"
+      },
+      {
+        "section": 2,
+        "anchor": "landlord approvals",
+        "href": "/commercial-film-landlord-permission"
+      }
+    ],
+    "quoteLabel": "Discuss my installation scope",
+    "secondary": {
+      "label": "Explore office window film",
+      "href": "/office-window-film"
+    },
+    "note": "Link the scheduling dependencies and retain a quote action that does not promise an appointment."
+  },
+  {
+    "path": "/commercial-film-site-survey",
+    "links": [
+      {
+        "section": 1,
+        "anchor": "interior privacy",
+        "href": "/commercial-privacy-film"
+      },
+      {
+        "section": 2,
+        "anchor": "ready to estimate",
+        "href": "/commercial-window-film-cost"
+      },
+      {
+        "section": 3,
+        "anchor": "property approvals",
+        "href": "/commercial-film-landlord-permission"
+      }
+    ],
+    "quoteLabel": "Request my project review",
+    "secondary": {
+      "label": "Understand commercial film costs",
+      "href": "/commercial-window-film-cost"
+    },
+    "note": "Connect survey outcomes to relevant services, estimate context and property approval."
+  },
+  {
+    "path": "/commercial-film-landlord-permission",
+    "links": [
+      {
+        "section": 0,
+        "anchor": "adds interior privacy",
+        "href": "/commercial-privacy-film"
+      },
+      {
+        "section": 1,
+        "anchor": "installation arrangements",
+        "href": "/commercial-film-installation-scheduling"
+      },
+      {
+        "section": 2,
+        "anchor": "Technical suitability",
+        "href": "/commercial-film-site-survey"
+      }
+    ],
+    "quoteLabel": "Discuss my proposed film project",
+    "secondary": {
+      "label": "Prepare for a site survey",
+      "href": "/commercial-film-site-survey"
+    },
+    "note": "Keep permission and technical suitability distinct, with links to the corresponding planning information."
+  }
+]

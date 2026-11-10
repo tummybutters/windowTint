@@ -1,0 +1,9 @@
+[
+  {"path":"/","links":[],"note":"Keep the approved homepage panels and direct package builder. Add a balanced guide selection across all three divisions and a compact footer pricing shortcut."},
+  {"path":"/window-tinting-gallery","links":[],"note":"Keep photo interactions intact; add a clear project chooser action and an all-services alternative after the gallery."},
+  {"path":"/booking","links":[],"note":"Keep the focused three-option quote chooser. No new competing actions in the booking task."},
+  {"path":"/services","links":[],"note":"Existing service directory already links every service and vehicle page. Add a concise end-of-directory action to choose a project or confirm the service area."},
+  {"path":"/about","links":[{"section":1,"anchor":"Automotive projects","href":"/mobile-window-tinting"},{"section":2,"anchor":"portfolio","href":"/window-tinting-gallery"},{"section":3,"anchor":"installation city","href":"/service-areas"}],"quoteLabel":"Choose my project","secondary":{"label":"Explore all services","href":"/services"},"note":"Link the approach to actual services, portfolio evidence and service areas. Use the project chooser for this shared page rather than a commercial-specific label."},
+  {"path":"/service-areas","links":[],"note":"All city pages already have descriptive directory links. Add an end-of-directory project chooser and all-services alternative."},
+  {"path":"/guides","links":[],"note":"Keep all guides and planners in their existing division groups. Add a services or quote choice after the directory for readers ready to act."}
+]

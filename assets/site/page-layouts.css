@@ -25,6 +25,15 @@
 
 @media(max-width:760px){.comparison-module--pricing[data-columns="2"] thead th:first-child{width:60%}.comparison-module--pricing[data-columns="2"] thead th:nth-child(2){width:40%}}
 /* A wide comparison table may scroll inside its article, never widen the page. */
+.content-sections .context-link{color:var(--paper);text-decoration:underline;text-decoration-color:var(--accent);text-decoration-thickness:1px;text-underline-offset:4px;transition:color .18s,text-decoration-color .18s}
+.content-sections .context-link:hover,.content-sections .context-link:focus-visible{color:var(--accent);text-decoration-color:currentColor}
+.page-next-actions{display:flex;flex-direction:column;align-items:flex-start;gap:14px;flex-shrink:0;max-width:360px;min-width:0}
+.page-next-actions .button{max-width:100%;white-space:normal;line-height:1.4;text-align:left}
+.next-step-link{display:inline-block;max-width:100%;padding-block:8px;color:var(--paper);font-size:14px;line-height:1.6;text-decoration:underline;text-underline-offset:4px;text-decoration-color:#89927d}
+.next-step-link span{color:var(--accent);display:inline-block;margin-left:5px}
+.next-step-link:hover,.next-step-link:focus-visible{color:var(--accent);text-decoration-color:currentColor}
+@media(max-width:760px){.page-next-actions{width:100%;max-width:none}.page-next-actions .button{width:100%}}
+@media(prefers-reduced-motion:reduce){.content-sections .context-link{transition:none}}
 .editorial-layout>*,.worksheet-layout>*,.local-layout>*,.detail-columns>*{min-width:0}
 .comparison-module,.comparison-scroll{max-width:100%;min-width:0}
 @media(max-width:760px){.editorial-layout,.worksheet-layout,.local-layout,.page-faq,.hub-story .content-sections--feature{grid-template-columns:minmax(0,1fr)}}

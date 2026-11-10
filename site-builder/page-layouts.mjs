@@ -1,7 +1,7 @@
 import {imageTag} from './media.mjs';
-import {escape as e, divisions, button, reviews, card, quoteHref} from './components.mjs';
+import {escape as e, divisions, button, reviews, card, quoteHref, quoteLabel} from './components.mjs';
+import {linkedParagraphs} from './internal-links.mjs';
 
-const paragraph = body => String(body||'').split(/\n\n/).map(text=>`<p>${e(text)}</p>`).join('');
 const label = page => divisions[page.division]?.label || 'Obsidian';
 const topic = page => page.title.replace(/\s+(in|across) Orange County$/i,'');
 const specialty=page=>page.path.includes('ceramic-coating')||page.path==='/chrome-delete';
@@ -17,7 +17,7 @@ function eyebrow(page) {
   return page.type==='guide'?`${label(page)} / Field notes`:page.type==='project'?`${label(page)} / Project planner`:page.type==='city'?`${label(page)} / At your location`:page.type==='vehicle'?'Your vehicle. Your glass.':`${label(page)} / Obsidian Film Solutions`;
 }
 function intro(page,kind,{photo=true,action=true}={}) {
-  return `<section class="container page-intro page-intro--${kind}${photo&&page.image?' has-photo':''}" data-layout="${kind}">${crumbs(page)}<div class="page-intro-grid"><div><p class="eyebrow">${e(eyebrow(page))}</p><h1>${e(page.title)}</h1><p class="page-deck">${e(page.intro)}</p>${action?`<div class="actions">${button(specialty(page)?'Text us about your vehicle':page.division==='auto'?'Get my quote':page.division==='home'?'Get my home quote':'Request a site review',quoteHref(page),page.type==='city')}${specialty(page)?button('Call (714) 600-7134','tel:+17146007134',true):''}</div>`:''}</div>${photo?image(page):''}</div></section>`;
+  return `<section class="container page-intro page-intro--${kind}${photo&&page.image?' has-photo':''}" data-layout="${kind}">${crumbs(page)}<div class="page-intro-grid"><div><p class="eyebrow">${e(eyebrow(page))}</p><h1>${e(page.title)}</h1><p class="page-deck">${e(page.intro)}</p>${action?`<div class="actions">${button(quoteLabel(page),quoteHref(page),page.type==='city')}${specialty(page)?button('Call (714) 600-7134','tel:+17146007134',true):''}</div>`:''}</div>${photo?image(page):''}</div></section>`;
 }
 function highlights(page) {
   if(!page.highlights?.length)return '';
@@ -38,7 +38,7 @@ function steps(page) {
   return `<section class="steps-module" aria-label="Project steps">${page.steps.map((s,i)=>`<div><span class="step-number">${String(i+1).padStart(2,'0')}</span><h3>${e(s.title)}</h3><p>${e(s.body)}</p></div>`).join('')}</section>`;
 }
 function contentSections(page,kind='article') {
-  return `<div class="content-sections content-sections--${kind}">${page.sections.map((s,i)=>`<section id="detail-${i}"><span class="section-number" aria-hidden="true">${String(i+1).padStart(2,'0')}</span><div><h2>${e(s.heading)}</h2>${paragraph(s.body)}</div></section>`).join('')}</div>`;
+  return `<div class="content-sections content-sections--${kind}">${page.sections.map((s,i)=>`<section id="detail-${i}"><span class="section-number" aria-hidden="true">${String(i+1).padStart(2,'0')}</span><div><h2>${e(s.heading)}</h2>${linkedParagraphs(s.body,page.linkPlan?.links.filter(link=>link.section===i)||[])}</div></section>`).join('')}</div>`;
 }
 function faq(page) {
   return page.faqs?.length?`<section class="container section page-faq"><div><p class="eyebrow">A little clarity</p><h2>${page.type==='vehicle'?'Before you tint.':page.type==='city'?'Before we come to you.':'Questions worth asking.'}</h2></div><div class="faq">${page.faqs.map(f=>`<details><summary>${e(f.question)}</summary><p>${e(f.answer)}</p></details>`).join('')}</div></section>`:'';
@@ -49,8 +49,25 @@ function related(page,index) {
   return `<section class="section container related-reading"><p class="eyebrow">A useful next step</p><div class="related-list">${selected.map(p=>`<a href="${e(p.path)}"><span>${e(label(p))}</span><h3>${e(p.title)}</h3><span aria-hidden="true">↗</span></a>`).join('')}</div></section>`;
 }
 function close(page) {
-  return `<section class="container section"><div class="page-close"><div><p class="eyebrow">${e(topic(page))}</p><h2>${e(page.quotePrompt||'Tell us what you want to change, and we’ll help define the right scope.')}</h2></div>${button(specialty(page)?'Text us about your project':page.division==='commercial'?'Request a site review':page.division==='home'?'Discuss my windows':'Start my quote',quoteHref(page))}</div></section>`;
+  return `<section class="container section"><div class="page-close"><div><p class="eyebrow">${e(topic(page))}</p><h2>${e(page.quotePrompt||'Tell us what you want to change, and we’ll help define the right scope.')}</h2></div>${nextActions(page)}</div></section>`;
 }
+
+function nextActions(page) {
+  const secondary=page.linkPlan?.secondary;
+  return `<div class="page-next-actions">${button(quoteLabel(page),quoteHref(page))}${secondary?`<a class="next-step-link" href="${e(secondary.href)}">${e(secondary.label)} <span aria-hidden="true">↗</span></a>`:''}</div>`;
+}
+export function sharedNextStep(page) {
+  const choices={
+    '/window-tinting-gallery':{title:'Have a project in mind?',label:'Explore all services',href:'/services'},
+    '/services':{title:'Found the right service?',label:'Check your service area',href:'/service-areas'},
+    '/service-areas':{title:'Let’s plan the visit.',label:'Explore all services',href:'/services'},
+    '/guides':{title:'Ready to put the advice to work?',label:'Explore all services',href:'/services'}
+  };
+  const next=choices[page.path];
+  if(!next)return '';
+  return `<section class="container section"><div class="page-close"><div><p class="eyebrow">Your next step</p><h2>${e(next.title)}</h2></div><div class="page-next-actions">${button('Choose my project','/booking')}<a class="next-step-link" href="${next.href}">${e(next.label)} <span aria-hidden="true">↗</span></a></div></div></section>`;
+}
+
 function contents(page) {
   return `<aside class="reading-nav"><p class="eyebrow">In this guide</p><ol>${page.sections.map((s,i)=>`<li><a href="#detail-${i}">${e(s.heading)}</a></li>`).join('')}</ol></aside>`;
 }
@@ -113,5 +130,5 @@ export function renderDirectory(page,pages) {
   if(page.path==='/services')out+=directoryGroup('Vehicle-specific tinting',pages.filter(p=>p.type==='vehicle'));
   if(page.path==='/guides')for(const [key,division]of Object.entries(divisions))out+=directoryGroup(division.label+' guides',pages.filter(p=>p.division===key&&p.type==='guide'),{photos:true})+directoryGroup(division.label+' project planners',pages.filter(p=>p.division===key&&p.type==='project'));
   if(page.path==='/service-areas')for(const [key,division]of Object.entries(divisions))out+=directoryGroup(division.label+' — service areas',pages.filter(p=>p.division===key&&p.type==='city'));
-  return out;
+  return out+sharedNextStep(page);
 }

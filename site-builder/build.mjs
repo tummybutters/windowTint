@@ -1,7 +1,8 @@
 import {attachCityContext} from './city-context.mjs';
 import {imageTag} from './media.mjs';
-import {renderInner,renderDirectory} from './page-layouts.mjs';
+import {renderInner,renderDirectory,sharedNextStep} from './page-layouts.mjs';
 import {instagramSection} from './social.mjs';
+import {attachInternalLinks} from './internal-links.mjs';
 import fs from 'node:fs';
 import path from 'node:path';
 import {fileURLToPath} from 'node:url';
@@ -10,6 +11,7 @@ import {origin, escape as e, divisions, button, shell, offer, reviews, servicePa
 const root=path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const read=file=>fs.readFileSync(path.join(root,file),'utf8');
 const pages=JSON.parse(read(process.env.OBSIDIAN_LAYOUT_DATA || 'content/pages.json'));
+attachInternalLinks(pages,['shared','auto','home','commercial'].flatMap(division=>JSON.parse(read(`content/internal-links-${division}.json`))));
 attachCityContext(pages,JSON.parse(read('content/city-context.json')));
 const reviewData=JSON.parse(read('content/reviews.json'));
 const byPath=new Map(pages.map(page=>[page.path,page]));
@@ -25,7 +27,7 @@ function linkedPages(title,selected) {
   return `<section class="section container"><div class="section-heading"><h2>${e(title)}</h2></div><div class="card-grid">${selected.map(card).join('')}</div></section>`;
 }
 function home(page) {
-  return `<section class="hero hero--home container"><div class="hero-heading"><div><p class="eyebrow">Obsidian Film Solutions · We come to you</p><h1>Mobile Window Tinting<br><em>Orange County.</em></h1></div><div><p>Ceramic tint in your driveway.<br>Window film for homes and businesses.</p>${button('Explore the free upgrade','/driveway-package')}</div></div>${servicePanels()}</section>${offer()}${reviews(reviewData)}<section class="section container split"><div><p class="eyebrow">Made for life in the sun</p><h2>Keep the light.<br>Make it yours.</h2><p>From the morning commute to the afternoon sun in your living room, choose film around the way you use your space.</p>${button('Explore home film','/architectural-window-film',true)}</div><img src="/assets/site/work-home.webp" width="1000" height="900" alt="Window film in a bright residential space" loading="lazy"></section>${linkedPages('A little guidance goes a long way',pages.filter(p=>p.type==='guide').slice(0,3))}${instagramSection()}${quotePanel('auto')}`;
+  return `<section class="hero hero--home container"><div class="hero-heading"><div><p class="eyebrow">Obsidian Film Solutions · We come to you</p><h1>Mobile Window Tinting<br><em>Orange County.</em></h1></div><div><p>Ceramic tint in your driveway.<br>Window film for homes and businesses.</p>${button('Explore the free upgrade','/driveway-package')}</div></div>${servicePanels()}</section>${offer()}${reviews(reviewData)}<section class="section container split"><div><p class="eyebrow">Made for life in the sun</p><h2>Keep the light.<br>Make it yours.</h2><p>From the morning commute to the afternoon sun in your living room, choose film around the way you use your space.</p>${button('Explore home film','/architectural-window-film',true)}</div><img src="/assets/site/work-home.webp" width="1000" height="900" alt="Window film in a bright residential space" loading="lazy"></section>${linkedPages('A little guidance goes a long way',Object.keys(divisions).map(division=>pages.find(p=>p.type==='guide'&&p.division===division)).filter(Boolean))}${instagramSection()}${quotePanel('auto')}`;
 }
 function gallery() {
   const entries=JSON.parse(read('content/gallery.json'));
@@ -42,7 +44,7 @@ for(const page of pages) {
   if(page.path==='/')body=home(page);
   else if(page.path==='/booking')body=booking(page);
   else if(['/services','/guides','/service-areas'].includes(page.path))body=renderDirectory(page,pages);
-  else if(page.path==='/window-tinting-gallery')body=`<section class="hero hero--home container"><p class="eyebrow">The Obsidian portfolio</p><h1>${e(page.title)}</h1><p>${e(page.intro)}</p></section>`+gallery();
+  else if(page.path==='/window-tinting-gallery')body=`<section class="hero hero--home container"><p class="eyebrow">The Obsidian portfolio</p><h1>${e(page.title)}</h1><p>${e(page.intro)}</p></section>`+gallery()+sharedNextStep(page);
   else body=renderInner(page,pages,reviewData);
 
   write(destination(page.path).slice(1),shell(page,body));

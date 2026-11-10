@@ -1,0 +1,1859 @@
+[
+  {
+    "path": "/ceramic-coating",
+    "links": [],
+    "quoteLabel": "Text us about coating",
+    "note": "Kept this focused coating overview free of forced inline links; existing related city pages already supply relevant routes."
+  },
+  {
+    "path": "/ceramic-coating-irvine",
+    "links": [
+      {
+        "section": 2,
+        "anchor": "Ceramic Refresh",
+        "href": "/ceramic-coating"
+      }
+    ],
+    "quoteLabel": "Text us about coating",
+    "secondary": {
+      "label": "Compare coating packages",
+      "href": "/ceramic-coating"
+    },
+    "note": "Linked the page’s specific coating package decision to the full service menu."
+  },
+  {
+    "path": "/ceramic-coating-lake-forest",
+    "links": [
+      {
+        "section": 2,
+        "anchor": "one-step paint correction",
+        "href": "/ceramic-coating"
+      }
+    ],
+    "quoteLabel": "Text us about coating",
+    "secondary": {
+      "label": "Compare coating packages",
+      "href": "/ceramic-coating"
+    },
+    "note": "Linked the page’s specific coating package decision to the full service menu."
+  },
+  {
+    "path": "/ceramic-coating-aliso-viejo",
+    "links": [
+      {
+        "section": 2,
+        "anchor": "Premium Protection",
+        "href": "/ceramic-coating"
+      }
+    ],
+    "quoteLabel": "Text us about coating",
+    "secondary": {
+      "label": "Compare coating packages",
+      "href": "/ceramic-coating"
+    },
+    "note": "Linked the page’s specific coating package decision to the full service menu."
+  },
+  {
+    "path": "/ceramic-coating-newport-beach",
+    "links": [
+      {
+        "section": 2,
+        "anchor": "Signature Correction & Coating",
+        "href": "/ceramic-coating"
+      }
+    ],
+    "quoteLabel": "Text us about coating",
+    "secondary": {
+      "label": "Compare coating packages",
+      "href": "/ceramic-coating"
+    },
+    "note": "Linked the page’s specific coating package decision to the full service menu."
+  },
+  {
+    "path": "/ceramic-coating-costa-mesa",
+    "links": [
+      {
+        "section": 0,
+        "anchor": "chrome delete",
+        "href": "/chrome-delete"
+      },
+      {
+        "section": 1,
+        "anchor": "The Concours package",
+        "href": "/ceramic-coating"
+      }
+    ],
+    "quoteLabel": "Text us about coating",
+    "secondary": {
+      "label": "Compare coating packages",
+      "href": "/ceramic-coating"
+    },
+    "note": "Linked the page’s specific coating package decision to the full service menu."
+  },
+  {
+    "path": "/ceramic-coating-tustin",
+    "links": [
+      {
+        "section": 1,
+        "anchor": "the full menu",
+        "href": "/ceramic-coating"
+      }
+    ],
+    "quoteLabel": "Text us about coating",
+    "secondary": {
+      "label": "Compare coating packages",
+      "href": "/ceramic-coating"
+    },
+    "note": "Linked the page’s specific coating package decision to the full service menu."
+  },
+  {
+    "path": "/ceramic-coating-mission-viejo",
+    "links": [
+      {
+        "section": 2,
+        "anchor": "Ceramic Refresh",
+        "href": "/ceramic-coating"
+      }
+    ],
+    "quoteLabel": "Text us about coating",
+    "secondary": {
+      "label": "Compare coating packages",
+      "href": "/ceramic-coating"
+    },
+    "note": "Linked the page’s specific coating package decision to the full service menu."
+  },
+  {
+    "path": "/ceramic-coating-laguna-hills",
+    "links": [
+      {
+        "section": 2,
+        "anchor": "The current menu",
+        "href": "/ceramic-coating"
+      }
+    ],
+    "quoteLabel": "Text us about coating",
+    "secondary": {
+      "label": "Compare coating packages",
+      "href": "/ceramic-coating"
+    },
+    "note": "Linked the page’s specific coating package decision to the full service menu."
+  },
+  {
+    "path": "/window-tint-pricing",
+    "links": [
+      {
+        "section": 0,
+        "anchor": "Front-two",
+        "href": "/front-two-window-tinting"
+      },
+      {
+        "section": 1,
+        "anchor": "Tesla",
+        "href": "/tesla-window-tinting"
+      },
+      {
+        "section": 2,
+        "anchor": "old-film removal",
+        "href": "/tint-removal"
+      }
+    ],
+    "quoteLabel": "Get my vehicle quote",
+    "secondary": {
+      "label": "Compare front-two and full-car tint",
+      "href": "/front-two-vs-full-car-tint"
+    },
+    "note": "Connected explicit coverage, Tesla and removal decisions without obscuring the pricing table."
+  },
+  {
+    "path": "/ceramic-window-tinting",
+    "links": [
+      {
+        "section": 1,
+        "anchor": "the shade describes how much visible light passes through",
+        "href": "/window-tint-shades"
+      },
+      {
+        "section": 2,
+        "anchor": "sides-and-rear ceramic pricing",
+        "href": "/window-tint-pricing"
+      },
+      {
+        "section": 3,
+        "anchor": "factory privacy glass",
+        "href": "/factory-privacy-glass-vs-window-film"
+      }
+    ],
+    "quoteLabel": "Get my tint quote",
+    "secondary": {
+      "label": "Compare coverage and pricing",
+      "href": "/window-tint-pricing"
+    },
+    "note": "Linked the page’s specific coverage, preparation or ownership questions to the most relevant existing pages; kept the quote destination unchanged."
+  },
+  {
+    "path": "/mobile-window-tinting",
+    "links": [
+      {
+        "section": 1,
+        "anchor": "sides-and-rear tint",
+        "href": "/sides-rear-window-tinting"
+      },
+      {
+        "section": 2,
+        "anchor": "workplace parking space",
+        "href": "/apartment-office-mobile-tint"
+      },
+      {
+        "section": 3,
+        "anchor": "window operation, cleaning",
+        "href": "/window-tint-aftercare"
+      }
+    ],
+    "quoteLabel": "Get my tint quote",
+    "secondary": {
+      "label": "Compare tint coverage and pricing",
+      "href": "/window-tint-pricing"
+    },
+    "note": "Linked the page’s specific coverage, preparation or ownership questions to the most relevant existing pages; kept the quote destination unchanged."
+  },
+  {
+    "path": "/full-car-window-tinting",
+    "links": [
+      {
+        "section": 0,
+        "anchor": "photo of each side and the rear",
+        "href": "/photos-for-window-tint-quote"
+      },
+      {
+        "section": 1,
+        "anchor": "factory privacy glass",
+        "href": "/factory-privacy-glass-vs-window-film"
+      },
+      {
+        "section": 2,
+        "anchor": "sides-and-rear package",
+        "href": "/sides-rear-window-tinting"
+      }
+    ],
+    "quoteLabel": "Quote my full-car coverage",
+    "secondary": {
+      "label": "Compare coverage and pricing",
+      "href": "/window-tint-pricing"
+    },
+    "note": "Linked the page’s specific coverage, preparation or ownership questions to the most relevant existing pages; kept the quote destination unchanged."
+  },
+  {
+    "path": "/sides-rear-window-tinting",
+    "links": [
+      {
+        "section": 1,
+        "anchor": "darker rear factory glass",
+        "href": "/factory-privacy-glass-vs-window-film"
+      },
+      {
+        "section": 2,
+        "anchor": "Standard sides-and-rear pricing",
+        "href": "/window-tint-pricing"
+      },
+      {
+        "section": 3,
+        "anchor": "separate windshield request",
+        "href": "/windshield-window-tinting"
+      }
+    ],
+    "quoteLabel": "Quote my sides and rear",
+    "secondary": {
+      "label": "Compare coverage and pricing",
+      "href": "/window-tint-pricing"
+    },
+    "note": "Linked the page’s specific coverage, preparation or ownership questions to the most relevant existing pages; kept the quote destination unchanged."
+  },
+  {
+    "path": "/front-two-window-tinting",
+    "links": [
+      {
+        "section": 0,
+        "anchor": "practical visual match",
+        "href": "/matching-front-window-tint"
+      },
+      {
+        "section": 1,
+        "anchor": "Windshield film",
+        "href": "/windshield-window-tinting"
+      },
+      {
+        "section": 3,
+        "anchor": "legal material and configuration review",
+        "href": "/california-window-tint-law"
+      }
+    ],
+    "quoteLabel": "Quote my front two windows",
+    "secondary": {
+      "label": "Compare coverage and pricing",
+      "href": "/window-tint-pricing"
+    },
+    "note": "Linked the page’s specific coverage, preparation or ownership questions to the most relevant existing pages; kept the quote destination unchanged."
+  },
+  {
+    "path": "/windshield-window-tinting",
+    "links": [
+      {
+        "section": 0,
+        "anchor": "daytime glare",
+        "href": "/windshield-film-visibility"
+      },
+      {
+        "section": 2,
+        "anchor": "wide photograph and a close-up",
+        "href": "/photos-for-window-tint-quote"
+      },
+      {
+        "section": 3,
+        "anchor": "California windshield rules",
+        "href": "/california-window-tint-law"
+      }
+    ],
+    "quoteLabel": "Discuss my windshield",
+    "secondary": {
+      "label": "Compare coverage and pricing",
+      "href": "/window-tint-pricing"
+    },
+    "note": "Linked the page’s specific coverage, preparation or ownership questions to the most relevant existing pages; kept the quote destination unchanged. Review: use the specific visibility concern as anchor text."
+  },
+  {
+    "path": "/tesla-window-tinting",
+    "links": [
+      {
+        "section": 0,
+        "anchor": "Model Y",
+        "href": "/tesla-model-y-window-tinting"
+      },
+      {
+        "section": 1,
+        "anchor": "Roof work",
+        "href": "/sunroof-tint-compatibility"
+      },
+      {
+        "section": 3,
+        "anchor": "warranty questions",
+        "href": "/window-tint-warranty-questions"
+      }
+    ],
+    "quoteLabel": "Get my Tesla quote",
+    "secondary": {
+      "label": "Compare Model 3 coverage",
+      "href": "/tesla-model-3-window-tinting"
+    },
+    "note": "Connected Model Y, roof compatibility and warranty questions; Model 3 receives the closing informational shortcut."
+  },
+  {
+    "path": "/tint-removal",
+    "links": [
+      {
+        "section": 0,
+        "anchor": "Photograph the affected window",
+        "href": "/photos-for-window-tint-quote"
+      },
+      {
+        "section": 2,
+        "anchor": "a replacement",
+        "href": "/window-tint-replacement"
+      }
+    ],
+    "quoteLabel": "Request a removal quote",
+    "secondary": {
+      "label": "Plan replacement tint",
+      "href": "/window-tint-replacement"
+    },
+    "note": "Linked the page’s specific coverage, preparation or ownership questions to the most relevant existing pages; kept the quote destination unchanged."
+  },
+  {
+    "path": "/irvine-window-tinting",
+    "links": [
+      {
+        "section": 0,
+        "anchor": "sides-and-rear coverage",
+        "href": "/sides-rear-window-tinting"
+      },
+      {
+        "section": 1,
+        "anchor": "Compare samples with the existing glass",
+        "href": "/how-to-choose-window-tint-percentage"
+      },
+      {
+        "section": 2,
+        "anchor": "an office appointment",
+        "href": "/apartment-office-mobile-tint"
+      }
+    ],
+    "quoteLabel": "Get my tint quote",
+    "secondary": {
+      "label": "Compare coverage and pricing",
+      "href": "/window-tint-pricing"
+    },
+    "note": "Linked the page’s specific coverage, preparation or ownership questions to the most relevant existing pages; kept the quote destination unchanged."
+  },
+  {
+    "path": "/newport-beach-window-tinting",
+    "links": [
+      {
+        "section": 0,
+        "anchor": "A luxury sedan, coupe and SUV",
+        "href": "/luxury-car-window-tinting"
+      },
+      {
+        "section": 1,
+        "anchor": "a front-two assessment",
+        "href": "/front-two-window-tinting"
+      },
+      {
+        "section": 2,
+        "anchor": "panoramic roofs",
+        "href": "/sunroof-tint-compatibility"
+      }
+    ],
+    "quoteLabel": "Get my tint quote",
+    "secondary": {
+      "label": "Compare coverage and pricing",
+      "href": "/window-tint-pricing"
+    },
+    "note": "Linked the page’s specific coverage, preparation or ownership questions to the most relevant existing pages; kept the quote destination unchanged."
+  },
+  {
+    "path": "/tustin-window-tinting",
+    "links": [
+      {
+        "section": 0,
+        "anchor": "front windows",
+        "href": "/front-two-window-tinting"
+      },
+      {
+        "section": 1,
+        "anchor": "BMW M4",
+        "href": "/bmw-m4-window-tinting"
+      },
+      {
+        "section": 3,
+        "anchor": "timing",
+        "href": "/how-long-does-window-tinting-take"
+      }
+    ],
+    "quoteLabel": "Get my tint quote",
+    "secondary": {
+      "label": "Compare coverage and pricing",
+      "href": "/window-tint-pricing"
+    },
+    "note": "Linked the page’s specific coverage, preparation or ownership questions to the most relevant existing pages; kept the quote destination unchanged."
+  },
+  {
+    "path": "/costa-mesa-window-tinting",
+    "links": [
+      {
+        "section": 1,
+        "anchor": "Sides-and-rear coverage",
+        "href": "/sides-rear-window-tinting"
+      },
+      {
+        "section": 2,
+        "anchor": "chrome delete",
+        "href": "/chrome-delete"
+      },
+      {
+        "section": 3,
+        "anchor": "intended work area",
+        "href": "/photos-for-window-tint-quote"
+      }
+    ],
+    "quoteLabel": "Get my tint quote",
+    "secondary": {
+      "label": "Compare coverage and pricing",
+      "href": "/window-tint-pricing"
+    },
+    "note": "Linked the page’s specific coverage, preparation or ownership questions to the most relevant existing pages; kept the quote destination unchanged."
+  },
+  {
+    "path": "/laguna-beach-window-tinting",
+    "links": [
+      {
+        "section": 0,
+        "anchor": "Compare the film from inside the car",
+        "href": "/how-to-choose-window-tint-percentage"
+      },
+      {
+        "section": 1,
+        "anchor": "wide photograph",
+        "href": "/photos-for-window-tint-quote"
+      },
+      {
+        "section": 3,
+        "anchor": "supplied care instructions",
+        "href": "/window-tint-aftercare"
+      }
+    ],
+    "quoteLabel": "Get my tint quote",
+    "secondary": {
+      "label": "Compare coverage and pricing",
+      "href": "/window-tint-pricing"
+    },
+    "note": "Linked the page’s specific coverage, preparation or ownership questions to the most relevant existing pages; kept the quote destination unchanged."
+  },
+  {
+    "path": "/aliso-viejo-window-tinting",
+    "links": [
+      {
+        "section": 0,
+        "anchor": "targeted work alongside a broader replacement",
+        "href": "/window-tint-replacement"
+      },
+      {
+        "section": 1,
+        "anchor": "how removal will be assessed",
+        "href": "/tint-removal"
+      },
+      {
+        "section": 3,
+        "anchor": "shared garage or managed property",
+        "href": "/apartment-office-mobile-tint"
+      }
+    ],
+    "quoteLabel": "Get my tint quote",
+    "secondary": {
+      "label": "Compare coverage and pricing",
+      "href": "/window-tint-pricing"
+    },
+    "note": "Linked the page’s specific coverage, preparation or ownership questions to the most relevant existing pages; kept the quote destination unchanged."
+  },
+  {
+    "path": "/santa-ana-window-tinting",
+    "links": [
+      {
+        "section": 0,
+        "anchor": "front-two request",
+        "href": "/front-two-window-tinting"
+      },
+      {
+        "section": 1,
+        "anchor": "compare the included glass",
+        "href": "/window-tint-pricing"
+      },
+      {
+        "section": 2,
+        "anchor": "workplace location",
+        "href": "/apartment-office-mobile-tint"
+      }
+    ],
+    "quoteLabel": "Get my tint quote",
+    "secondary": {
+      "label": "Compare coverage and pricing",
+      "href": "/window-tint-pricing"
+    },
+    "note": "Linked the page’s specific coverage, preparation or ownership questions to the most relevant existing pages; kept the quote destination unchanged."
+  },
+  {
+    "path": "/anaheim-window-tinting",
+    "links": [
+      {
+        "section": 0,
+        "anchor": "sides-and-rear coverage",
+        "href": "/sides-rear-window-tinting"
+      },
+      {
+        "section": 2,
+        "anchor": "Additional removal or roof work may change the schedule",
+        "href": "/how-long-does-window-tinting-take"
+      },
+      {
+        "section": 3,
+        "anchor": "window-operation and cleaning instructions",
+        "href": "/window-tint-aftercare"
+      }
+    ],
+    "quoteLabel": "Get my tint quote",
+    "secondary": {
+      "label": "Compare coverage and pricing",
+      "href": "/window-tint-pricing"
+    },
+    "note": "Linked the page’s specific coverage, preparation or ownership questions to the most relevant existing pages; kept the quote destination unchanged."
+  },
+  {
+    "path": "/huntington-beach-window-tinting",
+    "links": [
+      {
+        "section": 0,
+        "anchor": "Model Y",
+        "href": "/tesla-model-y-window-tinting"
+      },
+      {
+        "section": 1,
+        "anchor": "roof glazing and proposed material",
+        "href": "/sunroof-tint-compatibility"
+      },
+      {
+        "section": 2,
+        "anchor": "model-matched gallery image",
+        "href": "/window-tinting-gallery"
+      }
+    ],
+    "quoteLabel": "Get my tint quote",
+    "secondary": {
+      "label": "Compare coverage and pricing",
+      "href": "/window-tint-pricing"
+    },
+    "note": "Linked the page’s specific coverage, preparation or ownership questions to the most relevant existing pages; kept the quote destination unchanged."
+  },
+  {
+    "path": "/orange-window-tinting",
+    "links": [
+      {
+        "section": 1,
+        "anchor": "a new-to-you vehicle",
+        "href": "/buying-used-car-with-old-tint"
+      },
+      {
+        "section": 2,
+        "anchor": "full car",
+        "href": "/full-car-window-tinting"
+      },
+      {
+        "section": 3,
+        "anchor": "front-glass requirements",
+        "href": "/california-window-tint-law"
+      }
+    ],
+    "quoteLabel": "Get my tint quote",
+    "secondary": {
+      "label": "Compare coverage and pricing",
+      "href": "/window-tint-pricing"
+    },
+    "note": "Linked the page’s specific coverage, preparation or ownership questions to the most relevant existing pages; kept the quote destination unchanged."
+  },
+  {
+    "path": "/mission-viejo-window-tinting",
+    "links": [
+      {
+        "section": 1,
+        "anchor": "factory glazing or an applied film",
+        "href": "/factory-privacy-glass-vs-window-film"
+      },
+      {
+        "section": 2,
+        "anchor": "overhead-glass review",
+        "href": "/sunroof-tint-compatibility"
+      },
+      {
+        "section": 3,
+        "anchor": "care instructions",
+        "href": "/window-tint-aftercare"
+      }
+    ],
+    "quoteLabel": "Get my tint quote",
+    "secondary": {
+      "label": "Compare coverage and pricing",
+      "href": "/window-tint-pricing"
+    },
+    "note": "Linked the page’s specific coverage, preparation or ownership questions to the most relevant existing pages; kept the quote destination unchanged."
+  },
+  {
+    "path": "/lake-forest-window-tinting",
+    "links": [
+      {
+        "section": 0,
+        "anchor": "balance the front with darker rear glass",
+        "href": "/matching-front-window-tint"
+      },
+      {
+        "section": 2,
+        "anchor": "wide photo of the work area and cabin",
+        "href": "/photos-for-window-tint-quote"
+      },
+      {
+        "section": 3,
+        "anchor": "old-film removal",
+        "href": "/tint-removal"
+      }
+    ],
+    "quoteLabel": "Get my tint quote",
+    "secondary": {
+      "label": "Compare coverage and pricing",
+      "href": "/window-tint-pricing"
+    },
+    "note": "Linked the page’s specific coverage, preparation or ownership questions to the most relevant existing pages; kept the quote destination unchanged."
+  },
+  {
+    "path": "/dana-point-window-tinting",
+    "links": [
+      {
+        "section": 0,
+        "anchor": "shared location",
+        "href": "/apartment-office-mobile-tint"
+      },
+      {
+        "section": 1,
+        "anchor": "windshield requests",
+        "href": "/windshield-film-visibility"
+      },
+      {
+        "section": 2,
+        "anchor": "front-two coverage",
+        "href": "/front-two-window-tinting"
+      }
+    ],
+    "quoteLabel": "Get my tint quote",
+    "secondary": {
+      "label": "Compare coverage and pricing",
+      "href": "/window-tint-pricing"
+    },
+    "note": "Linked the page’s specific coverage, preparation or ownership questions to the most relevant existing pages; kept the quote destination unchanged."
+  },
+  {
+    "path": "/san-clemente-window-tinting",
+    "links": [
+      {
+        "section": 1,
+        "anchor": "removal of old film",
+        "href": "/tint-removal"
+      },
+      {
+        "section": 2,
+        "anchor": "Compare samples inside the car",
+        "href": "/how-to-choose-window-tint-percentage"
+      },
+      {
+        "section": 3,
+        "anchor": "warranty question",
+        "href": "/window-tint-warranty-questions"
+      }
+    ],
+    "quoteLabel": "Get my tint quote",
+    "secondary": {
+      "label": "Compare coverage and pricing",
+      "href": "/window-tint-pricing"
+    },
+    "note": "Linked the page’s specific coverage, preparation or ownership questions to the most relevant existing pages; kept the quote destination unchanged."
+  },
+  {
+    "path": "/window-tint-shades",
+    "links": [
+      {
+        "section": 0,
+        "anchor": "heat performance",
+        "href": "/does-window-tint-reduce-heat"
+      },
+      {
+        "section": 2,
+        "anchor": "California requirements",
+        "href": "/california-window-tint-law"
+      },
+      {
+        "section": 3,
+        "anchor": "proposed shade for each glass group",
+        "href": "/how-to-choose-window-tint-percentage"
+      }
+    ],
+    "quoteLabel": "Discuss my tint options",
+    "secondary": {
+      "label": "Discuss shade options",
+      "href": "/window-tint-consultation"
+    },
+    "note": "Linked the page’s specific coverage, preparation or ownership questions to the most relevant existing pages; kept the quote destination unchanged."
+  },
+  {
+    "path": "/california-window-tint-law",
+    "links": [
+      {
+        "section": 0,
+        "anchor": "windshield",
+        "href": "/windshield-film-visibility"
+      },
+      {
+        "section": 1,
+        "anchor": "front-window work",
+        "href": "/front-two-window-tinting"
+      },
+      {
+        "section": 3,
+        "anchor": "discuss the proposed glass coverage",
+        "href": "/window-tint-consultation"
+      }
+    ],
+    "quoteLabel": "Discuss my tint options",
+    "secondary": {
+      "label": "Plan your glass coverage",
+      "href": "/window-tint-consultation"
+    },
+    "note": "Linked the page’s specific coverage, preparation or ownership questions to the most relevant existing pages; kept the quote destination unchanged."
+  },
+  {
+    "path": "/tesla-model-y-window-tinting",
+    "links": [
+      {
+        "section": 0,
+        "anchor": "gallery photograph",
+        "href": "/window-tinting-gallery"
+      },
+      {
+        "section": 1,
+        "anchor": "removal",
+        "href": "/tint-removal"
+      },
+      {
+        "section": 2,
+        "anchor": "product compatibility",
+        "href": "/sunroof-tint-compatibility"
+      }
+    ],
+    "quoteLabel": "Build my Model Y quote",
+    "secondary": {
+      "label": "Compare coverage and pricing",
+      "href": "/window-tint-pricing"
+    },
+    "note": "Linked the page’s specific coverage, preparation or ownership questions to the most relevant existing pages; kept the quote destination unchanged."
+  },
+  {
+    "path": "/tesla-model-3-window-tinting",
+    "links": [
+      {
+        "section": 1,
+        "anchor": "Existing-film removal",
+        "href": "/tint-removal"
+      },
+      {
+        "section": 2,
+        "anchor": "legal and visibility review",
+        "href": "/windshield-film-visibility"
+      },
+      {
+        "section": 3,
+        "anchor": "initial curing",
+        "href": "/window-tint-aftercare"
+      }
+    ],
+    "quoteLabel": "Build my Model 3 quote",
+    "secondary": {
+      "label": "Compare coverage and pricing",
+      "href": "/window-tint-pricing"
+    },
+    "note": "Linked the page’s specific coverage, preparation or ownership questions to the most relevant existing pages; kept the quote destination unchanged."
+  },
+  {
+    "path": "/chrome-delete",
+    "links": [
+      {
+        "section": 3,
+        "anchor": "window tint",
+        "href": "/ceramic-window-tinting"
+      }
+    ],
+    "quoteLabel": "Text us about trim work",
+    "secondary": {
+      "label": "Explore ceramic window tint",
+      "href": "/ceramic-window-tinting"
+    },
+    "note": "Linked glass-service planning only where the copy explicitly introduces window tint; retained the trim-specific SMS action."
+  },
+  {
+    "path": "/ceramic-vs-carbon-window-tint",
+    "links": [
+      {
+        "section": 0,
+        "anchor": "warranty terms",
+        "href": "/window-tint-warranty-questions"
+      },
+      {
+        "section": 2,
+        "anchor": "Total solar energy rejected and infrared rejection",
+        "href": "/does-window-tint-reduce-heat"
+      },
+      {
+        "section": 3,
+        "anchor": "Price includes more than the film category",
+        "href": "/what-affects-window-tint-price"
+      }
+    ],
+    "quoteLabel": "Discuss my tint options",
+    "secondary": {
+      "label": "Explore our ceramic tint service",
+      "href": "/ceramic-window-tinting"
+    },
+    "note": "Linked the page’s specific coverage, preparation or ownership questions to the most relevant existing pages; kept the quote destination unchanged."
+  },
+  {
+    "path": "/how-long-does-window-tinting-take",
+    "links": [
+      {
+        "section": 0,
+        "anchor": "front-two installation",
+        "href": "/front-two-window-tinting"
+      },
+      {
+        "section": 1,
+        "anchor": "Removal",
+        "href": "/tint-removal"
+      },
+      {
+        "section": 3,
+        "anchor": "instructions on window use and cleaning",
+        "href": "/window-tint-aftercare"
+      }
+    ],
+    "quoteLabel": "Discuss my tint options",
+    "secondary": {
+      "label": "Plan a mobile appointment",
+      "href": "/mobile-window-tinting"
+    },
+    "note": "Linked the page’s specific coverage, preparation or ownership questions to the most relevant existing pages; kept the quote destination unchanged."
+  },
+  {
+    "path": "/is-mobile-window-tinting-worth-it",
+    "links": [
+      {
+        "section": 1,
+        "anchor": "wide photograph",
+        "href": "/photos-for-window-tint-quote"
+      },
+      {
+        "section": 2,
+        "anchor": "At an apartment or office",
+        "href": "/apartment-office-mobile-tint"
+      }
+    ],
+    "quoteLabel": "Discuss my tint options",
+    "secondary": {
+      "label": "Explore mobile tinting",
+      "href": "/mobile-window-tinting"
+    },
+    "note": "Linked the page’s specific coverage, preparation or ownership questions to the most relevant existing pages; kept the quote destination unchanged."
+  },
+  {
+    "path": "/how-to-choose-window-tint-percentage",
+    "links": [
+      {
+        "section": 0,
+        "anchor": "front to look more balanced beside existing rear glass",
+        "href": "/matching-front-window-tint"
+      },
+      {
+        "section": 2,
+        "anchor": "Factory privacy glass",
+        "href": "/factory-privacy-glass-vs-window-film"
+      },
+      {
+        "section": 3,
+        "anchor": "California front-glass requirements",
+        "href": "/california-window-tint-law"
+      }
+    ],
+    "quoteLabel": "Discuss my tint options",
+    "secondary": {
+      "label": "Compare tint shades",
+      "href": "/window-tint-shades"
+    },
+    "note": "Linked the page’s specific coverage, preparation or ownership questions to the most relevant existing pages; kept the quote destination unchanged."
+  },
+  {
+    "path": "/does-window-tint-reduce-heat",
+    "links": [
+      {
+        "section": 0,
+        "anchor": "overhead sunlight through a roof",
+        "href": "/sunroof-window-tinting"
+      },
+      {
+        "section": 1,
+        "anchor": "Visible light transmission",
+        "href": "/window-tint-shades"
+      },
+      {
+        "section": 2,
+        "anchor": "Total solar energy rejected and infrared rejection",
+        "href": "/ceramic-vs-carbon-window-tint"
+      }
+    ],
+    "quoteLabel": "Discuss my tint options",
+    "secondary": {
+      "label": "Explore ceramic tint options",
+      "href": "/ceramic-window-tinting"
+    },
+    "note": "Linked the page’s specific coverage, preparation or ownership questions to the most relevant existing pages; kept the quote destination unchanged."
+  },
+  {
+    "path": "/window-tint-aftercare",
+    "links": [
+      {
+        "section": 3,
+        "anchor": "warranty registration",
+        "href": "/window-tint-warranty-questions"
+      }
+    ],
+    "quoteLabel": "Plan my next tint project",
+    "secondary": {
+      "label": "Review warranty questions",
+      "href": "/window-tint-warranty-questions"
+    },
+    "note": "Kept this ownership guide light: one contextual warranty link and a useful aftercare-to-warranty next step. Review: primary still opens a new-quote flow, so label it as a future project rather than aftercare support."
+  },
+  {
+    "path": "/toyota-tacoma-window-tinting",
+    "links": [
+      {
+        "section": 0,
+        "anchor": "door and quarter glass",
+        "href": "/sides-rear-window-tinting"
+      },
+      {
+        "section": 1,
+        "anchor": "front-two request",
+        "href": "/front-two-window-tinting"
+      },
+      {
+        "section": 3,
+        "anchor": "SUV/truck rates",
+        "href": "/window-tint-pricing"
+      }
+    ],
+    "quoteLabel": "Get my Toyota Tacoma quote",
+    "secondary": {
+      "label": "Compare coverage and pricing",
+      "href": "/window-tint-pricing"
+    },
+    "note": "Linked the page’s specific coverage, preparation or ownership questions to the most relevant existing pages; kept the quote destination unchanged."
+  },
+  {
+    "path": "/bmw-m4-window-tinting",
+    "links": [
+      {
+        "section": 0,
+        "anchor": "existing film",
+        "href": "/tint-removal"
+      },
+      {
+        "section": 1,
+        "anchor": "real gallery image",
+        "href": "/window-tinting-gallery"
+      },
+      {
+        "section": 3,
+        "anchor": "use of the windows and doors during curing",
+        "href": "/window-tint-aftercare"
+      }
+    ],
+    "quoteLabel": "Get my BMW M4 quote",
+    "secondary": {
+      "label": "Compare coverage and pricing",
+      "href": "/window-tint-pricing"
+    },
+    "note": "Linked the page’s specific coverage, preparation or ownership questions to the most relevant existing pages; kept the quote destination unchanged."
+  },
+  {
+    "path": "/toyota-4runner-window-tinting",
+    "links": [
+      {
+        "section": 0,
+        "anchor": "Existing privacy glass and aftermarket film",
+        "href": "/factory-privacy-glass-vs-window-film"
+      },
+      {
+        "section": 3,
+        "anchor": "sides-and-rear options",
+        "href": "/sides-rear-window-tinting"
+      }
+    ],
+    "quoteLabel": "Get my Toyota 4Runner quote",
+    "secondary": {
+      "label": "Compare coverage and pricing",
+      "href": "/window-tint-pricing"
+    },
+    "note": "Linked the page’s specific coverage, preparation or ownership questions to the most relevant existing pages; kept the quote destination unchanged."
+  },
+  {
+    "path": "/bmw-x3-window-tinting",
+    "links": [
+      {
+        "section": 0,
+        "anchor": "front match",
+        "href": "/matching-front-window-tint"
+      },
+      {
+        "section": 1,
+        "anchor": "sides-and-rear coverage",
+        "href": "/sides-rear-window-tinting"
+      },
+      {
+        "section": 2,
+        "anchor": "glass compatibility",
+        "href": "/sunroof-tint-compatibility"
+      }
+    ],
+    "quoteLabel": "Get my BMW X3 quote",
+    "secondary": {
+      "label": "Compare coverage and pricing",
+      "href": "/window-tint-pricing"
+    },
+    "note": "Linked the page’s specific coverage, preparation or ownership questions to the most relevant existing pages; kept the quote destination unchanged."
+  },
+  {
+    "path": "/sunroof-window-tinting",
+    "links": [
+      {
+        "section": 1,
+        "anchor": "compatibility reviewed for the model",
+        "href": "/sunroof-tint-compatibility"
+      },
+      {
+        "section": 2,
+        "anchor": "Tesla glass roofs",
+        "href": "/tesla-window-tinting"
+      },
+      {
+        "section": 3,
+        "anchor": "initial curing period",
+        "href": "/window-tint-aftercare"
+      }
+    ],
+    "quoteLabel": "Discuss my roof glass",
+    "secondary": {
+      "label": "Review sunroof compatibility",
+      "href": "/sunroof-tint-compatibility"
+    },
+    "note": "Linked the page’s specific coverage, preparation or ownership questions to the most relevant existing pages; kept the quote destination unchanged."
+  },
+  {
+    "path": "/luxury-car-window-tinting",
+    "links": [
+      {
+        "section": 0,
+        "anchor": "existing rear privacy glass",
+        "href": "/factory-privacy-glass-vs-window-film"
+      },
+      {
+        "section": 2,
+        "anchor": "removal",
+        "href": "/tint-removal"
+      },
+      {
+        "section": 3,
+        "anchor": "photographs of actual work",
+        "href": "/window-tinting-gallery"
+      }
+    ],
+    "quoteLabel": "Get my tint quote",
+    "secondary": {
+      "label": "Compare coverage and pricing",
+      "href": "/window-tint-pricing"
+    },
+    "note": "Linked the page’s specific coverage, preparation or ownership questions to the most relevant existing pages; kept the quote destination unchanged."
+  },
+  {
+    "path": "/window-tint-replacement",
+    "links": [
+      {
+        "section": 0,
+        "anchor": "mismatched window",
+        "href": "/matching-front-window-tint"
+      },
+      {
+        "section": 1,
+        "anchor": "Removal and adhesive cleanup",
+        "href": "/tint-removal"
+      },
+      {
+        "section": 3,
+        "anchor": "warranty question",
+        "href": "/window-tint-warranty-questions"
+      }
+    ],
+    "quoteLabel": "Request a replacement quote",
+    "secondary": {
+      "label": "Review removal and preparation",
+      "href": "/tint-removal"
+    },
+    "note": "Linked the page’s specific coverage, preparation or ownership questions to the most relevant existing pages; kept the quote destination unchanged."
+  },
+  {
+    "path": "/window-tint-consultation",
+    "links": [
+      {
+        "section": 2,
+        "anchor": "old film",
+        "href": "/tint-removal"
+      },
+      {
+        "section": 1,
+        "anchor": "night driving",
+        "href": "/how-to-choose-window-tint-percentage"
+      },
+      {
+        "section": 3,
+        "anchor": "price",
+        "href": "/what-affects-window-tint-price"
+      }
+    ],
+    "quoteLabel": "Start my tint consultation",
+    "secondary": {
+      "label": "Compare coverage and pricing",
+      "href": "/window-tint-pricing"
+    },
+    "note": "Linked the page’s specific coverage, preparation or ownership questions to the most relevant existing pages; kept the quote destination unchanged. Review: link old film to removal instead of treating glare as heat; price link no longer suggests the destination explains timing."
+  },
+  {
+    "path": "/laguna-hills-window-tinting",
+    "links": [
+      {
+        "section": 0,
+        "anchor": "targeted replacement",
+        "href": "/window-tint-replacement"
+      },
+      {
+        "section": 1,
+        "anchor": "warranty paperwork",
+        "href": "/window-tint-warranty-questions"
+      },
+      {
+        "section": 3,
+        "anchor": "Removal",
+        "href": "/tint-removal"
+      }
+    ],
+    "quoteLabel": "Get my tint quote",
+    "secondary": {
+      "label": "Compare coverage and pricing",
+      "href": "/window-tint-pricing"
+    },
+    "note": "Linked the page’s specific coverage, preparation or ownership questions to the most relevant existing pages; kept the quote destination unchanged."
+  },
+  {
+    "path": "/fountain-valley-window-tinting",
+    "links": [
+      {
+        "section": 0,
+        "anchor": "front-two consultation",
+        "href": "/front-two-window-tinting"
+      },
+      {
+        "section": 1,
+        "anchor": "Look through the sample from inside",
+        "href": "/how-to-choose-window-tint-percentage"
+      },
+      {
+        "section": 2,
+        "anchor": "sides-and-rear coverage",
+        "href": "/sides-rear-window-tinting"
+      }
+    ],
+    "quoteLabel": "Get my tint quote",
+    "secondary": {
+      "label": "Compare coverage and pricing",
+      "href": "/window-tint-pricing"
+    },
+    "note": "Linked the page’s specific coverage, preparation or ownership questions to the most relevant existing pages; kept the quote destination unchanged."
+  },
+  {
+    "path": "/westminster-window-tinting",
+    "links": [
+      {
+        "section": 0,
+        "anchor": "comparing two totals",
+        "href": "/what-affects-window-tint-price"
+      },
+      {
+        "section": 1,
+        "anchor": "vehicle arrived with tint",
+        "href": "/buying-used-car-with-old-tint"
+      },
+      {
+        "section": 2,
+        "anchor": "comparing ceramic with another film",
+        "href": "/ceramic-vs-carbon-window-tint"
+      }
+    ],
+    "quoteLabel": "Get my tint quote",
+    "secondary": {
+      "label": "Compare coverage and pricing",
+      "href": "/window-tint-pricing"
+    },
+    "note": "Linked the page’s specific coverage, preparation or ownership questions to the most relevant existing pages; kept the quote destination unchanged."
+  },
+  {
+    "path": "/garden-grove-window-tinting",
+    "links": [
+      {
+        "section": 0,
+        "anchor": "replacement film",
+        "href": "/window-tint-replacement"
+      },
+      {
+        "section": 2,
+        "anchor": "selecting the same nominal shade",
+        "href": "/how-to-choose-window-tint-percentage"
+      },
+      {
+        "section": 3,
+        "anchor": "how much time each requires",
+        "href": "/how-long-does-window-tinting-take"
+      }
+    ],
+    "quoteLabel": "Get my tint quote",
+    "secondary": {
+      "label": "Compare coverage and pricing",
+      "href": "/window-tint-pricing"
+    },
+    "note": "Linked the page’s specific coverage, preparation or ownership questions to the most relevant existing pages; kept the quote destination unchanged."
+  },
+  {
+    "path": "/mercedes-c-class-window-tinting",
+    "links": [
+      {
+        "section": 0,
+        "anchor": "complete side view and a rear view",
+        "href": "/photos-for-window-tint-quote"
+      },
+      {
+        "section": 2,
+        "anchor": "side windows and rear screen",
+        "href": "/sides-rear-window-tinting"
+      },
+      {
+        "section": 3,
+        "anchor": "initial window operation and cleaning",
+        "href": "/window-tint-aftercare"
+      }
+    ],
+    "quoteLabel": "Get my Mercedes C-Class quote",
+    "secondary": {
+      "label": "Compare coverage and pricing",
+      "href": "/window-tint-pricing"
+    },
+    "note": "Linked the page’s specific coverage, preparation or ownership questions to the most relevant existing pages; kept the quote destination unchanged."
+  },
+  {
+    "path": "/porsche-911-window-tinting",
+    "links": [
+      {
+        "section": 1,
+        "anchor": "replacing tint",
+        "href": "/window-tint-replacement"
+      },
+      {
+        "section": 2,
+        "anchor": "real Porsche 911 gallery image",
+        "href": "/window-tinting-gallery"
+      },
+      {
+        "section": 3,
+        "anchor": "care guidance",
+        "href": "/window-tint-aftercare"
+      }
+    ],
+    "quoteLabel": "Get my Porsche 911 quote",
+    "secondary": {
+      "label": "Compare coverage and pricing",
+      "href": "/window-tint-pricing"
+    },
+    "note": "Linked the page’s specific coverage, preparation or ownership questions to the most relevant existing pages; kept the quote destination unchanged."
+  },
+  {
+    "path": "/range-rover-sport-window-tinting",
+    "links": [
+      {
+        "section": 0,
+        "anchor": "front match",
+        "href": "/matching-front-window-tint"
+      },
+      {
+        "section": 1,
+        "anchor": "sides-and-rear package",
+        "href": "/sides-rear-window-tinting"
+      },
+      {
+        "section": 2,
+        "anchor": "compatibility assessment",
+        "href": "/sunroof-tint-compatibility"
+      }
+    ],
+    "quoteLabel": "Get my Range Rover Sport quote",
+    "secondary": {
+      "label": "Compare coverage and pricing",
+      "href": "/window-tint-pricing"
+    },
+    "note": "Linked the page’s specific coverage, preparation or ownership questions to the most relevant existing pages; kept the quote destination unchanged."
+  },
+  {
+    "path": "/tesla-model-x-window-tinting",
+    "links": [
+      {
+        "section": 1,
+        "anchor": "front visibility",
+        "href": "/windshield-film-visibility"
+      },
+      {
+        "section": 2,
+        "anchor": "old-film removal",
+        "href": "/tint-removal"
+      },
+      {
+        "section": 3,
+        "anchor": "initial window use, cleaning",
+        "href": "/window-tint-aftercare"
+      }
+    ],
+    "quoteLabel": "Get my Tesla Model X quote",
+    "secondary": {
+      "label": "Compare coverage and pricing",
+      "href": "/window-tint-pricing"
+    },
+    "note": "Linked the page’s specific coverage, preparation or ownership questions to the most relevant existing pages; kept the quote destination unchanged."
+  },
+  {
+    "path": "/projects/irvine-luxury-sedan-ceramic-tint",
+    "links": [
+      {
+        "section": 1,
+        "anchor": "sides-and-rear coverage",
+        "href": "/sides-rear-window-tinting"
+      },
+      {
+        "section": 2,
+        "anchor": "front-glass requirements",
+        "href": "/california-window-tint-law"
+      },
+      {
+        "section": 3,
+        "anchor": "side profile, rear-glass image and any problem areas",
+        "href": "/photos-for-window-tint-quote"
+      }
+    ],
+    "quoteLabel": "Get my tint quote",
+    "secondary": {
+      "label": "Explore Irvine tinting",
+      "href": "/irvine-window-tinting"
+    },
+    "note": "Linked the page’s specific coverage, preparation or ownership questions to the most relevant existing pages; kept the quote destination unchanged."
+  },
+  {
+    "path": "/projects/newport-beach-luxury-suv-front-window-match",
+    "links": [
+      {
+        "section": 0,
+        "anchor": "factory glazing or known film",
+        "href": "/factory-privacy-glass-vs-window-film"
+      },
+      {
+        "section": 1,
+        "anchor": "Compare a sample against the existing rear glass",
+        "href": "/matching-front-window-tint"
+      },
+      {
+        "section": 2,
+        "anchor": "front-two work",
+        "href": "/front-two-window-tinting"
+      }
+    ],
+    "quoteLabel": "Get my tint quote",
+    "secondary": {
+      "label": "Explore Newport Beach tinting",
+      "href": "/newport-beach-window-tinting"
+    },
+    "note": "Linked the page’s specific coverage, preparation or ownership questions to the most relevant existing pages; kept the quote destination unchanged."
+  },
+  {
+    "path": "/projects/costa-mesa-sports-car-sides-and-rear-tint",
+    "links": [
+      {
+        "section": 0,
+        "anchor": "sports-car project",
+        "href": "/luxury-car-window-tinting"
+      },
+      {
+        "section": 1,
+        "anchor": "windshield",
+        "href": "/windshield-window-tinting"
+      },
+      {
+        "section": 2,
+        "anchor": "chrome delete",
+        "href": "/chrome-delete"
+      }
+    ],
+    "quoteLabel": "Get my tint quote",
+    "secondary": {
+      "label": "Compare sides-and-rear coverage",
+      "href": "/sides-rear-window-tinting"
+    },
+    "note": "Linked the page’s specific coverage, preparation or ownership questions to the most relevant existing pages; kept the quote destination unchanged."
+  },
+  {
+    "path": "/projects/huntington-beach-tesla-model-y-tint",
+    "links": [
+      {
+        "section": 1,
+        "anchor": "Model Y sides-and-rear option",
+        "href": "/tesla-model-y-window-tinting"
+      },
+      {
+        "section": 2,
+        "anchor": "glass and product review",
+        "href": "/sunroof-tint-compatibility"
+      },
+      {
+        "section": 3,
+        "anchor": "care instructions",
+        "href": "/window-tint-aftercare"
+      }
+    ],
+    "quoteLabel": "Get my tint quote",
+    "secondary": {
+      "label": "See Model Y options and pricing",
+      "href": "/tesla-model-y-window-tinting"
+    },
+    "note": "Linked the page’s specific coverage, preparation or ownership questions to the most relevant existing pages; kept the quote destination unchanged."
+  },
+  {
+    "path": "/projects/tustin-bmw-m4-ceramic-tint",
+    "links": [
+      {
+        "section": 0,
+        "anchor": "your actual M4",
+        "href": "/bmw-m4-window-tinting"
+      },
+      {
+        "section": 1,
+        "anchor": "reference gallery image",
+        "href": "/window-tinting-gallery"
+      },
+      {
+        "section": 2,
+        "anchor": "chrome-delete request",
+        "href": "/chrome-delete"
+      }
+    ],
+    "quoteLabel": "Get my tint quote",
+    "secondary": {
+      "label": "Explore BMW M4 tinting",
+      "href": "/bmw-m4-window-tinting"
+    },
+    "note": "Linked the page’s specific coverage, preparation or ownership questions to the most relevant existing pages; kept the quote destination unchanged."
+  },
+  {
+    "path": "/projects/mission-viejo-family-suv-tint",
+    "links": [
+      {
+        "section": 1,
+        "anchor": "factory privacy glass or applied film",
+        "href": "/factory-privacy-glass-vs-window-film"
+      },
+      {
+        "section": 2,
+        "anchor": "Compatibility and product selection",
+        "href": "/sunroof-tint-compatibility"
+      },
+      {
+        "section": 3,
+        "anchor": "care instructions",
+        "href": "/window-tint-aftercare"
+      }
+    ],
+    "quoteLabel": "Get my tint quote",
+    "secondary": {
+      "label": "Compare sides-and-rear coverage",
+      "href": "/sides-rear-window-tinting"
+    },
+    "note": "Linked the page’s specific coverage, preparation or ownership questions to the most relevant existing pages; kept the quote destination unchanged."
+  },
+  {
+    "path": "/projects/lake-forest-toyota-tacoma-tint",
+    "links": [
+      {
+        "section": 0,
+        "anchor": "Tacoma year, cab style",
+        "href": "/toyota-tacoma-window-tinting"
+      },
+      {
+        "section": 1,
+        "anchor": "front-two request",
+        "href": "/front-two-window-tinting"
+      },
+      {
+        "section": 3,
+        "anchor": "old-film removal",
+        "href": "/tint-removal"
+      }
+    ],
+    "quoteLabel": "Get my tint quote",
+    "secondary": {
+      "label": "Explore Tacoma tinting",
+      "href": "/toyota-tacoma-window-tinting"
+    },
+    "note": "Linked the page’s specific coverage, preparation or ownership questions to the most relevant existing pages; kept the quote destination unchanged."
+  },
+  {
+    "path": "/projects/aliso-viejo-old-tint-removal-and-replacement",
+    "links": [
+      {
+        "section": 1,
+        "anchor": "appearance matching",
+        "href": "/matching-front-window-tint"
+      },
+      {
+        "section": 2,
+        "anchor": "old-film removal",
+        "href": "/tint-removal"
+      },
+      {
+        "section": 3,
+        "anchor": "old warranty",
+        "href": "/window-tint-warranty-questions"
+      }
+    ],
+    "quoteLabel": "Get my tint quote",
+    "secondary": {
+      "label": "Plan your replacement tint",
+      "href": "/window-tint-replacement"
+    },
+    "note": "Linked the page’s specific coverage, preparation or ownership questions to the most relevant existing pages; kept the quote destination unchanged."
+  },
+  {
+    "path": "/photos-for-window-tint-quote",
+    "links": [
+      {
+        "section": 0,
+        "anchor": "front-window match",
+        "href": "/matching-front-window-tint"
+      },
+      {
+        "section": 2,
+        "anchor": "final removal price",
+        "href": "/tint-removal"
+      },
+      {
+        "section": 3,
+        "anchor": "At an office or apartment",
+        "href": "/apartment-office-mobile-tint"
+      }
+    ],
+    "quoteLabel": "Discuss my tint options",
+    "secondary": {
+      "label": "Plan a tint consultation",
+      "href": "/window-tint-consultation"
+    },
+    "note": "Linked the page’s specific coverage, preparation or ownership questions to the most relevant existing pages; kept the quote destination unchanged."
+  },
+  {
+    "path": "/front-two-vs-full-car-tint",
+    "links": [
+      {
+        "section": 0,
+        "anchor": "front-two request",
+        "href": "/front-two-window-tinting"
+      },
+      {
+        "section": 1,
+        "anchor": "full-car description",
+        "href": "/full-car-window-tinting"
+      },
+      {
+        "section": 2,
+        "anchor": "Published ceramic front-two rates",
+        "href": "/window-tint-pricing"
+      }
+    ],
+    "quoteLabel": "Discuss my tint options",
+    "secondary": {
+      "label": "Compare coverage and pricing",
+      "href": "/window-tint-pricing"
+    },
+    "note": "Linked the page’s specific coverage, preparation or ownership questions to the most relevant existing pages; kept the quote destination unchanged."
+  },
+  {
+    "path": "/apartment-office-mobile-tint",
+    "links": [
+      {
+        "section": 1,
+        "anchor": "wide picture of the work area",
+        "href": "/photos-for-window-tint-quote"
+      },
+      {
+        "section": 3,
+        "anchor": "confirmed installation plan",
+        "href": "/is-mobile-window-tinting-worth-it"
+      }
+    ],
+    "quoteLabel": "Discuss my tint options",
+    "secondary": {
+      "label": "Explore mobile installation",
+      "href": "/mobile-window-tinting"
+    },
+    "note": "Linked the page’s specific coverage, preparation or ownership questions to the most relevant existing pages; kept the quote destination unchanged."
+  },
+  {
+    "path": "/buying-used-car-with-old-tint",
+    "links": [
+      {
+        "section": 0,
+        "anchor": "factory glass, dealer-installed film or later aftermarket work",
+        "href": "/factory-privacy-glass-vs-window-film"
+      },
+      {
+        "section": 1,
+        "anchor": "single replacement window",
+        "href": "/window-tint-replacement"
+      },
+      {
+        "section": 2,
+        "anchor": "removal",
+        "href": "/tint-removal"
+      }
+    ],
+    "quoteLabel": "Discuss my tint options",
+    "secondary": {
+      "label": "Explore tint replacement",
+      "href": "/window-tint-replacement"
+    },
+    "note": "Linked the page’s specific coverage, preparation or ownership questions to the most relevant existing pages; kept the quote destination unchanged."
+  },
+  {
+    "path": "/factory-privacy-glass-vs-window-film",
+    "links": [
+      {
+        "section": 0,
+        "anchor": "aftermarket film installation",
+        "href": "/ceramic-window-tinting"
+      },
+      {
+        "section": 2,
+        "anchor": "front side windows to look closer to the rear",
+        "href": "/matching-front-window-tint"
+      },
+      {
+        "section": 3,
+        "anchor": "Removal",
+        "href": "/tint-removal"
+      }
+    ],
+    "quoteLabel": "Discuss my tint options",
+    "secondary": {
+      "label": "Explore front-two tinting",
+      "href": "/front-two-window-tinting"
+    },
+    "note": "Linked the page’s specific coverage, preparation or ownership questions to the most relevant existing pages; kept the quote destination unchanged."
+  },
+  {
+    "path": "/matching-front-window-tint",
+    "links": [
+      {
+        "section": 0,
+        "anchor": "factory glass or a known aftermarket installation",
+        "href": "/factory-privacy-glass-vs-window-film"
+      },
+      {
+        "section": 2,
+        "anchor": "requirements applicable to the front windows",
+        "href": "/california-window-tint-law"
+      },
+      {
+        "section": 3,
+        "anchor": "front-two installation",
+        "href": "/front-two-window-tinting"
+      }
+    ],
+    "quoteLabel": "Discuss my tint options",
+    "secondary": {
+      "label": "Explore front-two tinting",
+      "href": "/front-two-window-tinting"
+    },
+    "note": "Linked the page’s specific coverage, preparation or ownership questions to the most relevant existing pages; kept the quote destination unchanged."
+  },
+  {
+    "path": "/sunroof-tint-compatibility",
+    "links": [
+      {
+        "section": 0,
+        "anchor": "standard single-panel sunroof",
+        "href": "/sunroof-window-tinting"
+      },
+      {
+        "section": 2,
+        "anchor": "care instructions",
+        "href": "/window-tint-aftercare"
+      }
+    ],
+    "quoteLabel": "Discuss my tint options",
+    "secondary": {
+      "label": "Explore sunroof tinting",
+      "href": "/sunroof-window-tinting"
+    },
+    "note": "Linked the page’s specific coverage, preparation or ownership questions to the most relevant existing pages; kept the quote destination unchanged."
+  },
+  {
+    "path": "/windshield-film-visibility",
+    "links": [
+      {
+        "section": 1,
+        "anchor": "strip at the top of the windshield and film across a larger area",
+        "href": "/windshield-window-tinting"
+      },
+      {
+        "section": 2,
+        "anchor": "Photographs",
+        "href": "/photos-for-window-tint-quote"
+      },
+      {
+        "section": 3,
+        "anchor": "California windshield rules",
+        "href": "/california-window-tint-law"
+      }
+    ],
+    "quoteLabel": "Discuss my tint options",
+    "secondary": {
+      "label": "Review windshield service and pricing",
+      "href": "/windshield-window-tinting"
+    },
+    "note": "Linked the page’s specific coverage, preparation or ownership questions to the most relevant existing pages; kept the quote destination unchanged."
+  },
+  {
+    "path": "/what-affects-window-tint-price",
+    "links": [
+      {
+        "section": 0,
+        "anchor": "Tesla pricing",
+        "href": "/tesla-window-tinting"
+      },
+      {
+        "section": 1,
+        "anchor": "extensive removal and preparation",
+        "href": "/tint-removal"
+      },
+      {
+        "section": 2,
+        "anchor": "side-and-rear work",
+        "href": "/sides-rear-window-tinting"
+      }
+    ],
+    "quoteLabel": "Discuss my tint options",
+    "secondary": {
+      "label": "See pricing by coverage",
+      "href": "/window-tint-pricing"
+    },
+    "note": "Linked the page’s specific coverage, preparation or ownership questions to the most relevant existing pages; kept the quote destination unchanged."
+  },
+  {
+    "path": "/window-tint-warranty-questions",
+    "links": [
+      {
+        "section": 1,
+        "anchor": "glass is replaced later",
+        "href": "/window-tint-replacement"
+      },
+      {
+        "section": 2,
+        "anchor": "cleaning practices",
+        "href": "/window-tint-aftercare"
+      }
+    ],
+    "quoteLabel": "Discuss my tint options",
+    "secondary": {
+      "label": "Read the aftercare guide",
+      "href": "/window-tint-aftercare"
+    },
+    "note": "Linked the page’s specific coverage, preparation or ownership questions to the most relevant existing pages; kept the quote destination unchanged."
+  }
+]

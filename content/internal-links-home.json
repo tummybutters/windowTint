@@ -1,0 +1,674 @@
+[
+  {
+    "path": "/architectural-window-film",
+    "links": [
+      {
+        "section": 0,
+        "anchor": "solar control",
+        "href": "/home-solar-window-film"
+      },
+      {
+        "section": 1,
+        "anchor": "compare the look",
+        "href": "/home-film-sample-comparison"
+      },
+      {
+        "section": 3,
+        "anchor": "Commercial spaces",
+        "href": "/commercial-window-film"
+      }
+    ],
+    "quoteLabel": "Discuss film for my home",
+    "secondary": {
+      "label": "See home film costs",
+      "href": "/home-window-film-cost"
+    },
+    "note": "Connect the broad home hub to a core service, sample selection and the different commercial path; keep service directory intact."
+  },
+  {
+    "path": "/home-solar-window-film",
+    "links": [
+      {
+        "section": 1,
+        "anchor": "View film samples on the real glass",
+        "href": "/home-film-sample-comparison"
+      },
+      {
+        "section": 2,
+        "anchor": "Existing glass construction and condition",
+        "href": "/double-pane-window-film-compatibility"
+      }
+    ],
+    "quoteLabel": "Discuss solar film for my home",
+    "secondary": {
+      "label": "Understand home film costs",
+      "href": "/home-window-film-cost"
+    },
+    "note": "Link the two selection decisions; use cost as the optional next step."
+  },
+  {
+    "path": "/home-privacy-window-film",
+    "links": [
+      {
+        "section": 1,
+        "anchor": "lighting on both sides of the glass",
+        "href": "/home-window-film-night-privacy"
+      },
+      {
+        "section": 2,
+        "anchor": "decorative treatment",
+        "href": "/home-decorative-window-film"
+      }
+    ],
+    "quoteLabel": "Discuss privacy for my home",
+    "secondary": {
+      "label": "Compare home film samples",
+      "href": "/home-film-sample-comparison"
+    },
+    "note": "Explain night privacy and decorative alternatives before sample comparison."
+  },
+  {
+    "path": "/home-glare-reduction-film",
+    "links": [
+      {
+        "section": 1,
+        "anchor": "Assess the sample",
+        "href": "/home-film-sample-comparison"
+      },
+      {
+        "section": 2,
+        "anchor": "glass construction, coatings and condition",
+        "href": "/double-pane-window-film-compatibility"
+      }
+    ],
+    "quoteLabel": "Discuss my home’s glare",
+    "secondary": {
+      "label": "Compare film and blinds",
+      "href": "/window-film-vs-blinds"
+    },
+    "note": "Link sample assessment and suitability; keep the optional next action on the covering comparison."
+  },
+  {
+    "path": "/home-decorative-window-film",
+    "links": [
+      {
+        "section": 0,
+        "anchor": "privacy",
+        "href": "/home-privacy-window-film"
+      },
+      {
+        "section": 3,
+        "anchor": "access around the glass",
+        "href": "/home-window-film-installation-preparation"
+      }
+    ],
+    "quoteLabel": "Discuss my decorative glass",
+    "secondary": {
+      "label": "Compare the finished appearance",
+      "href": "/home-window-film-appearance"
+    },
+    "note": "Connect privacy intent and access preparation; appearance guide is the secondary decision aid."
+  },
+  {
+    "path": "/home-uv-window-film",
+    "links": [
+      {
+        "section": 1,
+        "anchor": "Fading can involve several factors",
+        "href": "/window-film-furniture-fading"
+      },
+      {
+        "section": 2,
+        "anchor": "a glare improvement",
+        "href": "/home-glare-reduction-film"
+      }
+    ],
+    "quoteLabel": "Discuss my home’s sun exposure",
+    "secondary": {
+      "label": "Explore home solar-control film",
+      "href": "/home-solar-window-film"
+    },
+    "note": "Link the fading caveat to its explanation and distinguish glare from exposure goals."
+  },
+  {
+    "path": "/irvine-residential-window-film",
+    "links": [
+      {
+        "section": 1,
+        "anchor": "home-office glare",
+        "href": "/home-glare-reduction-film"
+      },
+      {
+        "section": 2,
+        "anchor": "Compare samples",
+        "href": "/home-film-sample-comparison"
+      }
+    ],
+    "quoteLabel": "Discuss my Irvine windows",
+    "secondary": {
+      "label": "Plan an afternoon-glare review",
+      "href": "/projects/irvine-home-afternoon-glare"
+    },
+    "note": "Support the city page’s room-by-room glare focus with sample advice and its matching planning guide."
+  },
+  {
+    "path": "/newport-beach-residential-window-film",
+    "links": [
+      {
+        "section": 0,
+        "anchor": "Privacy",
+        "href": "/home-privacy-window-film"
+      },
+      {
+        "section": 2,
+        "anchor": "privacy is required after dark",
+        "href": "/home-window-film-night-privacy"
+      }
+    ],
+    "quoteLabel": "Discuss my Newport Beach home",
+    "secondary": {
+      "label": "Plan a privacy sample review",
+      "href": "/projects/newport-beach-home-privacy-samples"
+    },
+    "note": "Connect the privacy service and night-privacy limitation, with a local planning next step."
+  },
+  {
+    "path": "/costa-mesa-residential-window-film",
+    "links": [
+      {
+        "section": 2,
+        "anchor": "solar-control",
+        "href": "/home-solar-window-film"
+      },
+      {
+        "section": 4,
+        "anchor": "compare film on the actual glass",
+        "href": "/home-film-sample-comparison"
+      }
+    ],
+    "quoteLabel": "Discuss my Costa Mesa windows",
+    "secondary": {
+      "label": "Plan living-room solar film",
+      "href": "/projects/costa-mesa-living-room-solar-film"
+    },
+    "note": "Keep inline and next-step links aligned with the living-space solar topic."
+  },
+  {
+    "path": "/huntington-beach-residential-window-film",
+    "links": [
+      {
+        "section": 1,
+        "anchor": "light is distracting",
+        "href": "/home-glare-reduction-film"
+      },
+      {
+        "section": 3,
+        "anchor": "appearance from the outside",
+        "href": "/home-window-film-appearance"
+      }
+    ],
+    "quoteLabel": "Discuss my Huntington Beach home",
+    "secondary": {
+      "label": "Plan a view-and-glare comparison",
+      "href": "/projects/huntington-beach-home-view-and-glare-comparison"
+    },
+    "note": "Link glare service and appearance considerations, then the relevant local planner."
+  },
+  {
+    "path": "/tustin-residential-window-film",
+    "links": [
+      {
+        "section": 2,
+        "anchor": "view the sample",
+        "href": "/home-film-sample-comparison"
+      },
+      {
+        "section": 3,
+        "anchor": "suitable for the glass",
+        "href": "/double-pane-window-film-compatibility"
+      }
+    ],
+    "quoteLabel": "Discuss my Tustin windows",
+    "secondary": {
+      "label": "Understand home film costs",
+      "href": "/home-window-film-cost"
+    },
+    "note": "Guide sample selection and compatibility before the cost decision."
+  },
+  {
+    "path": "/mission-viejo-residential-window-film",
+    "links": [
+      {
+        "section": 2,
+        "anchor": "Several factors can contribute to fading",
+        "href": "/window-film-furniture-fading"
+      },
+      {
+        "section": 3,
+        "anchor": "glare concern",
+        "href": "/home-glare-reduction-film"
+      }
+    ],
+    "quoteLabel": "Discuss my Mission Viejo home",
+    "secondary": {
+      "label": "Explore UV and fade-reduction film",
+      "href": "/home-uv-window-film"
+    },
+    "note": "Provide the fading explanation and a separate glare service link; next action selects the core exposure service."
+  },
+  {
+    "path": "/lake-forest-residential-window-film",
+    "links": [
+      {
+        "section": 2,
+        "anchor": "more than one window system",
+        "href": "/double-pane-window-film-compatibility"
+      },
+      {
+        "section": 3,
+        "anchor": "assess appearance",
+        "href": "/home-window-film-appearance"
+      }
+    ],
+    "quoteLabel": "Discuss my Lake Forest windows",
+    "secondary": {
+      "label": "Prepare for a home-film visit",
+      "href": "/home-window-film-installation-preparation"
+    },
+    "note": "Make this page’s glazing and access emphasis actionable through compatibility, appearance and preparation guides."
+  },
+  {
+    "path": "/aliso-viejo-residential-window-film",
+    "links": [
+      {
+        "section": 1,
+        "anchor": "initial installation from optional coverage",
+        "href": "/home-window-film-cost"
+      },
+      {
+        "section": 2,
+        "anchor": "appearance across several windows",
+        "href": "/home-window-film-appearance"
+      }
+    ],
+    "quoteLabel": "Discuss my Aliso Viejo home",
+    "secondary": {
+      "label": "Compare home film samples",
+      "href": "/home-film-sample-comparison"
+    },
+    "note": "Connect phased scope to cost and visual consistency, then offer sample comparison."
+  },
+  {
+    "path": "/laguna-beach-residential-window-film",
+    "links": [
+      {
+        "section": 0,
+        "anchor": "Full coverage and partial designs",
+        "href": "/home-decorative-window-film"
+      },
+      {
+        "section": 3,
+        "anchor": "Privacy needs can vary with lighting",
+        "href": "/home-window-film-night-privacy"
+      }
+    ],
+    "quoteLabel": "Discuss my Laguna Beach glass",
+    "secondary": {
+      "label": "Plan decorative glass coverage",
+      "href": "/projects/laguna-beach-home-decorative-glass"
+    },
+    "note": "Support the design direction with decorative service, night-privacy advice and its local planner."
+  },
+  {
+    "path": "/dana-point-residential-window-film",
+    "links": [
+      {
+        "section": 2,
+        "anchor": "curtains or blinds",
+        "href": "/window-film-vs-blinds"
+      },
+      {
+        "section": 3,
+        "anchor": "nighttime privacy",
+        "href": "/home-window-film-night-privacy"
+      }
+    ],
+    "quoteLabel": "Discuss my Dana Point windows",
+    "secondary": {
+      "label": "Compare home film samples",
+      "href": "/home-film-sample-comparison"
+    },
+    "note": "Connect the daily-use comparison to covering choices and nighttime limitations."
+  },
+  {
+    "path": "/san-clemente-residential-window-film",
+    "links": [
+      {
+        "section": 1,
+        "anchor": "viewing it on the actual glass",
+        "href": "/home-film-sample-comparison"
+      },
+      {
+        "section": 3,
+        "anchor": "items need moving",
+        "href": "/home-window-film-installation-preparation"
+      }
+    ],
+    "quoteLabel": "Discuss my San Clemente home",
+    "secondary": {
+      "label": "Understand home film costs",
+      "href": "/home-window-film-cost"
+    },
+    "note": "Connect the selected sample and practical visit preparations while keeping estimate review available."
+  },
+  {
+    "path": "/laguna-hills-residential-window-film",
+    "links": [
+      {
+        "section": 2,
+        "anchor": "screen glare",
+        "href": "/home-glare-reduction-film"
+      },
+      {
+        "section": 3,
+        "anchor": "access or preparation work",
+        "href": "/home-window-film-cost"
+      }
+    ],
+    "quoteLabel": "Discuss my Laguna Hills windows",
+    "secondary": {
+      "label": "Compare home film samples",
+      "href": "/home-film-sample-comparison"
+    },
+    "note": "Use the room-purpose and estimate passages for service/cost links; samples are the secondary step."
+  },
+  {
+    "path": "/projects/irvine-home-afternoon-glare",
+    "links": [
+      {
+        "section": 0,
+        "anchor": "glare first becomes distracting",
+        "href": "/home-glare-reduction-film"
+      },
+      {
+        "section": 2,
+        "anchor": "Compare samples",
+        "href": "/home-film-sample-comparison"
+      }
+    ],
+    "quoteLabel": "Discuss my afternoon glare",
+    "secondary": {
+      "label": "Explore home film in Irvine",
+      "href": "/irvine-residential-window-film"
+    },
+    "note": "Move from planner to glare service and sample method, with a local service next step."
+  },
+  {
+    "path": "/projects/newport-beach-home-privacy-samples",
+    "links": [
+      {
+        "section": 1,
+        "anchor": "Reflective effects can change",
+        "href": "/home-window-film-night-privacy"
+      },
+      {
+        "section": 2,
+        "anchor": "decorative option",
+        "href": "/home-decorative-window-film"
+      }
+    ],
+    "quoteLabel": "Discuss my home privacy plan",
+    "secondary": {
+      "label": "Explore home privacy film",
+      "href": "/home-privacy-window-film"
+    },
+    "note": "Explain the lighting caveat and decorative option; the service next step avoids presenting a planner as a completed job."
+  },
+  {
+    "path": "/projects/costa-mesa-living-room-solar-film",
+    "links": [
+      {
+        "section": 1,
+        "anchor": "known coatings or previous film",
+        "href": "/double-pane-window-film-compatibility"
+      },
+      {
+        "section": 2,
+        "anchor": "solar-control goal",
+        "href": "/home-solar-window-film"
+      }
+    ],
+    "quoteLabel": "Discuss my living-room windows",
+    "secondary": {
+      "label": "Understand home film costs",
+      "href": "/home-window-film-cost"
+    },
+    "note": "Link suitability and solar service within the planning sequence, then cost."
+  },
+  {
+    "path": "/projects/huntington-beach-home-view-and-glare-comparison",
+    "links": [
+      {
+        "section": 0,
+        "anchor": "glare interrupts",
+        "href": "/home-glare-reduction-film"
+      },
+      {
+        "section": 2,
+        "anchor": "exterior view",
+        "href": "/home-window-film-appearance"
+      }
+    ],
+    "quoteLabel": "Discuss my view and glare goals",
+    "secondary": {
+      "label": "Compare home film samples",
+      "href": "/home-film-sample-comparison"
+    },
+    "note": "Connect glare and appearance to their fuller pages, with consistent sample comparison as the next step."
+  },
+  {
+    "path": "/projects/laguna-beach-home-decorative-glass",
+    "links": [
+      {
+        "section": 1,
+        "anchor": "band or pattern",
+        "href": "/home-decorative-window-film"
+      },
+      {
+        "section": 2,
+        "anchor": "privacy is the goal",
+        "href": "/home-privacy-window-film"
+      }
+    ],
+    "quoteLabel": "Discuss my decorative-glass plan",
+    "secondary": {
+      "label": "Prepare for a home-film visit",
+      "href": "/home-window-film-installation-preparation"
+    },
+    "note": "Tie pattern coverage and privacy to services, then installation preparation."
+  },
+  {
+    "path": "/projects/mission-viejo-home-fade-reduction-film",
+    "links": [
+      {
+        "section": 2,
+        "anchor": "eliminating every cause of fading",
+        "href": "/window-film-furniture-fading"
+      },
+      {
+        "section": 3,
+        "anchor": "Mission Viejo location",
+        "href": "/mission-viejo-residential-window-film"
+      }
+    ],
+    "quoteLabel": "Discuss my fade-reduction goals",
+    "secondary": {
+      "label": "Explore UV and fade-reduction film",
+      "href": "/home-uv-window-film"
+    },
+    "note": "Link the fading caveat and local service context; secondary action reaches the relevant film service."
+  },
+  {
+    "path": "/home-window-film-cost",
+    "links": [
+      {
+        "section": 0,
+        "anchor": "known glazing specifications",
+        "href": "/double-pane-window-film-compatibility"
+      },
+      {
+        "section": 1,
+        "anchor": "compare the look",
+        "href": "/home-film-sample-comparison"
+      },
+      {
+        "section": 2,
+        "anchor": "condition of the work area",
+        "href": "/home-window-film-installation-preparation"
+      }
+    ],
+    "quoteLabel": "Request a home-film estimate",
+    "secondary": {
+      "label": "Explore home film options",
+      "href": "/architectural-window-film"
+    },
+    "note": "Connect three genuine cost inputs to detailed guidance, retaining consultation rather than instant-pricing expectations."
+  },
+  {
+    "path": "/home-film-sample-comparison",
+    "links": [
+      {
+        "section": 1,
+        "anchor": "after dark",
+        "href": "/home-window-film-night-privacy"
+      },
+      {
+        "section": 2,
+        "anchor": "product compatibility",
+        "href": "/double-pane-window-film-compatibility"
+      }
+    ],
+    "quoteLabel": "Discuss home film samples",
+    "secondary": {
+      "label": "Explore home film options",
+      "href": "/architectural-window-film"
+    },
+    "note": "Link nighttime and compatibility decisions; keep the service hub as the product-selection next step."
+  },
+  {
+    "path": "/home-window-film-night-privacy",
+    "links": [
+      {
+        "section": 1,
+        "anchor": "Frosted or decorative treatments",
+        "href": "/home-decorative-window-film"
+      },
+      {
+        "section": 2,
+        "anchor": "blinds or curtains",
+        "href": "/window-film-vs-blinds"
+      }
+    ],
+    "quoteLabel": "Discuss my home privacy needs",
+    "secondary": {
+      "label": "Explore home privacy film",
+      "href": "/home-privacy-window-film"
+    },
+    "note": "Point to practical alternatives and the main privacy service without promising reflective nighttime privacy."
+  },
+  {
+    "path": "/window-film-vs-blinds",
+    "links": [
+      {
+        "section": 0,
+        "anchor": "screen glare",
+        "href": "/home-glare-reduction-film"
+      },
+      {
+        "section": 1,
+        "anchor": "nighttime privacy",
+        "href": "/home-window-film-night-privacy"
+      }
+    ],
+    "quoteLabel": "Discuss film for my room",
+    "secondary": {
+      "label": "Compare home film samples",
+      "href": "/home-film-sample-comparison"
+    },
+    "note": "Connect two distinct daily-use needs before offering a real-glass comparison."
+  },
+  {
+    "path": "/double-pane-window-film-compatibility",
+    "links": [
+      {
+        "section": 2,
+        "anchor": "Samples help with appearance",
+        "href": "/home-film-sample-comparison"
+      }
+    ],
+    "quoteLabel": "Request a home glass review",
+    "secondary": {
+      "label": "Explore home film options",
+      "href": "/architectural-window-film"
+    },
+    "note": "Route readers from technical review to visual comparison and scope costs without implying universal compatibility."
+  },
+  {
+    "path": "/home-window-film-installation-preparation",
+    "links": [
+      {
+        "section": 0,
+        "anchor": "agreed estimate",
+        "href": "/home-window-film-cost"
+      }
+    ],
+    "quoteLabel": "Discuss my home-film project",
+    "secondary": {
+      "label": "Explore home film options",
+      "href": "/architectural-window-film"
+    },
+    "note": "The preparation article only needs the estimate link in its prose; avoid forcing an unrelated link into aftercare. Keep a clear route back to home services."
+  },
+  {
+    "path": "/window-film-furniture-fading",
+    "links": [
+      {
+        "section": 1,
+        "anchor": "specific product’s documented characteristics",
+        "href": "/home-uv-window-film"
+      },
+      {
+        "section": 2,
+        "anchor": "alter glare",
+        "href": "/home-glare-reduction-film"
+      }
+    ],
+    "quoteLabel": "Discuss my home’s sun exposure",
+    "secondary": {
+      "label": "Explore home solar-control film",
+      "href": "/home-solar-window-film"
+    },
+    "note": "Connect product review to the exposure service and distinguish glare needs, then offer solar-control options."
+  },
+  {
+    "path": "/home-window-film-appearance",
+    "links": [
+      {
+        "section": 1,
+        "anchor": "stronger privacy treatment",
+        "href": "/home-privacy-window-film"
+      },
+      {
+        "section": 2,
+        "anchor": "suitable film options for the existing glass",
+        "href": "/double-pane-window-film-compatibility"
+      }
+    ],
+    "quoteLabel": "Discuss home film samples",
+    "secondary": {
+      "label": "Compare home film samples",
+      "href": "/home-film-sample-comparison"
+    },
+    "note": "Connect privacy and compatibility implications, with sample methodology as the next read."
+  }
+]
