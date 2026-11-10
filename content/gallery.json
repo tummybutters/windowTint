@@ -1,0 +1,258 @@
+[
+  {
+    "title": "Mercedes-AMG GT",
+    "division": "auto",
+    "images": [
+      {
+        "src": "/gallery/tintwiz-20261025/mercedes-amg-gt-01.webp",
+        "alt": "Mercedes-AMG GT window tint — front three-quarter view"
+      },
+      {
+        "src": "/gallery/tintwiz-20261025/mercedes-amg-gt-02.webp",
+        "alt": "Mercedes-AMG GT window tint — side profile"
+      },
+      {
+        "src": "/gallery/tintwiz-20261025/mercedes-amg-gt-03.webp",
+        "alt": "Mercedes-AMG GT window tint — front view"
+      }
+    ]
+  },
+  {
+    "title": "Chevrolet Corvette",
+    "division": "auto",
+    "images": [
+      {
+        "src": "/gallery/tintwiz-20261025/chevrolet-corvette-01.webp",
+        "alt": "Chevrolet Corvette window tint — side glass and windshield"
+      },
+      {
+        "src": "/gallery/tintwiz-20261025/chevrolet-corvette-02.webp",
+        "alt": "Chevrolet Corvette window tint — front view"
+      }
+    ]
+  },
+  {
+    "title": "Ford F-150 Raptor",
+    "division": "auto",
+    "images": [
+      {
+        "src": "/gallery/tintwiz-20261025/ford-f150-raptor-01.webp",
+        "alt": "Ford F-150 Raptor window tint — front three-quarter view"
+      },
+      {
+        "src": "/gallery/tintwiz-20261025/ford-f150-raptor-02.webp",
+        "alt": "Ford F-150 Raptor window tint — side profile"
+      },
+      {
+        "src": "/gallery/tintwiz-20261025/ford-f150-raptor-03.webp",
+        "alt": "Ford F-150 Raptor window tint — rear three-quarter view"
+      }
+    ]
+  },
+  {
+    "title": "Tesla Model Y",
+    "division": "auto",
+    "images": [
+      {
+        "src": "/gallery/tintwiz-20261025/tesla-model-y-juniper-01.webp",
+        "alt": "Tesla Model Y window tint — front three-quarter view"
+      },
+      {
+        "src": "/gallery/tintwiz-20261025/tesla-model-y-juniper-02.webp",
+        "alt": "Tesla Model Y window tint — rear three-quarter view"
+      },
+      {
+        "src": "/assets/paid-landing/tesla-model-y-front.webp",
+        "alt": "Tesla Model Y, front view"
+      },
+      {
+        "src": "/assets/paid-landing/tesla-model-y-rear.webp",
+        "alt": "Tesla Model Y, rear view"
+      },
+      {
+        "src": "/assets/paid-landing/tesla-glass-roof.webp",
+        "alt": "Tesla panoramic glass"
+      }
+    ]
+  },
+  {
+    "title": "Volkswagen Karmann Ghia",
+    "division": "auto",
+    "images": [
+      {
+        "src": "/gallery/tintwiz-20261025/volkswagen-karmann-ghia-01.webp",
+        "alt": "Volkswagen Karmann Ghia window tint — rear three-quarter view"
+      },
+      {
+        "src": "/gallery/tintwiz-20261025/volkswagen-karmann-ghia-02.webp",
+        "alt": "Volkswagen Karmann Ghia window tint — rear glass detail"
+      }
+    ]
+  },
+  {
+    "title": "Toyota Tacoma",
+    "division": "auto",
+    "images": [
+      {
+        "src": "gallery/toyota-tacoma-01.jpg",
+        "alt": "Toyota Tacoma with ceramic window tint, front-side detail"
+      },
+      {
+        "src": "gallery/toyota-tacoma-02.jpg",
+        "alt": "Toyota Tacoma with ceramic window tint, front three-quarter view"
+      },
+      {
+        "src": "gallery/toyota-tacoma-03.jpg",
+        "alt": "Toyota Tacoma with ceramic window tint, full side profile"
+      }
+    ]
+  },
+  {
+    "title": "BMW M4",
+    "division": "auto",
+    "images": [
+      {
+        "src": "gallery/bmw-m4-01.jpg",
+        "alt": "BMW M4 with ceramic window tint, rear three-quarter view"
+      },
+      {
+        "src": "gallery/bmw-m4-02.jpg",
+        "alt": "BMW M4 interior view showing tinted glass and windshield"
+      }
+    ]
+  },
+  {
+    "title": "Mercedes-Benz GLS",
+    "division": "auto",
+    "images": [
+      {
+        "src": "gallery/mercedes-benz-gls-01.jpg",
+        "alt": "Mercedes-Benz GLS with ceramic window tint, front-side view"
+      },
+      {
+        "src": "gallery/mercedes-benz-gls-02.jpg",
+        "alt": "Mercedes-Benz GLS with ceramic window tint, side view"
+      }
+    ]
+  },
+  {
+    "title": "Cadillac Lyriq",
+    "division": "auto",
+    "images": [
+      {
+        "src": "gallery/cadillac-lyriq-01.jpg",
+        "alt": "Cadillac Lyriq with ceramic window tint, front three-quarter view"
+      },
+      {
+        "src": "gallery/cadillac-lyriq-02.jpg",
+        "alt": "Cadillac Lyriq with ceramic window tint, rear view"
+      }
+    ]
+  },
+  {
+    "title": "Lexus GX",
+    "division": "auto",
+    "images": [
+      {
+        "src": "gallery/lexus-gx-01.jpg",
+        "alt": "Lexus GX with ceramic window tint, front three-quarter view"
+      },
+      {
+        "src": "gallery/lexus-gx-02.jpg",
+        "alt": "Lexus GX with ceramic window tint, rear three-quarter view"
+      }
+    ]
+  },
+  {
+    "title": "Toyota 4Runner",
+    "division": "auto",
+    "images": [
+      {
+        "src": "gallery/toyota-4runner-01.jpg",
+        "alt": "Toyota 4Runner with ceramic window tint, side detail"
+      },
+      {
+        "src": "gallery/toyota-4runner-02.jpg",
+        "alt": "Toyota 4Runner with ceramic window tint, front three-quarter view"
+      }
+    ]
+  },
+  {
+    "title": "BMW X3",
+    "division": "auto",
+    "images": [
+      {
+        "src": "gallery/bmw-x3-01.jpg",
+        "alt": "BMW X3 with ceramic window tint, front three-quarter view"
+      },
+      {
+        "src": "gallery/bmw-x3-02.jpg",
+        "alt": "BMW X3 with ceramic window tint, full side profile"
+      }
+    ]
+  },
+  {
+    "title": "Porsche Cayenne Coupe",
+    "division": "auto",
+    "images": [
+      {
+        "src": "gallery/porsche-cayenne-coupe-01.jpg",
+        "alt": "Porsche Cayenne Coupe with ceramic window tint, front three-quarter view"
+      },
+      {
+        "src": "gallery/porsche-cayenne-coupe-02.jpg",
+        "alt": "Porsche Cayenne Coupe with ceramic window tint, full side profile"
+      },
+      {
+        "src": "gallery/porsche-cayenne-coupe-03.jpg",
+        "alt": "Porsche Cayenne Coupe with ceramic window tint, rear three-quarter view"
+      }
+    ]
+  },
+  {
+    "title": "Porsche 911",
+    "division": "auto",
+    "images": [
+      {
+        "src": "/assets/paid-landing/mobile-porsche-side.webp",
+        "alt": "Porsche 911 window tint, side view"
+      },
+      {
+        "src": "/assets/paid-landing/mobile-porsche-front.webp",
+        "alt": "Porsche 911 window tint, front view"
+      },
+      {
+        "src": "/assets/paid-landing/mobile-porsche-rear.webp",
+        "alt": "Porsche 911 window tint, rear view"
+      }
+    ]
+  },
+  {
+    "title": "Residential window film",
+    "division": "home",
+    "images": [
+      {
+        "src": "/assets/site/home.webp",
+        "alt": "Residential windows overlooking a garden"
+      },
+      {
+        "src": "/assets/site/work-home.webp",
+        "alt": "Residential window film from the Obsidian portfolio"
+      }
+    ]
+  },
+  {
+    "title": "Commercial window film",
+    "division": "commercial",
+    "images": [
+      {
+        "src": "/assets/site/commercial.webp",
+        "alt": "Commercial windows overlooking greenery"
+      },
+      {
+        "src": "/assets/site/work-commercial.webp",
+        "alt": "Commercial window film from the Obsidian portfolio"
+      }
+    ]
+  }
+]

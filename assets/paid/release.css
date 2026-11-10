@@ -1,0 +1,31 @@
+/* Paid presentation release. Quote behavior remains owned by the existing quote scripts. */
+.paid-actions{display:flex;gap:12px;align-items:center;flex-wrap:wrap;margin-top:22px}.paid-actions>a{min-height:46px;padding:12px 18px;border-radius:8px;border:1px solid var(--control-edge);font-size:13px}.paid-actions>a:first-child{background:var(--accent);color:var(--ink);border-color:var(--accent)}
+.paid-offer-banner{background:var(--accent);color:var(--ink);padding:14px 18px;border-radius:9px;font-size:clamp(19px,2.2vw,30px);font-weight:600;line-height:1.2;margin-bottom:20px}.paid-offer-banner strong{font-weight:800}.package-offer .package-copy{min-width:0}.package-offer .package-upgrades{gap:12px}.package-offer .offer-terms{font-size:11px;line-height:1.5}.intro-copy .paid-actions{display:flex}.quiz-top:before{content:none}.choices-preferences .preference-art{display:block}
+@media(max-width:760px){.paid-actions{margin-top:14px;gap:8px}.paid-actions>a{padding:11px 13px;font-size:12px}.intro-proof{display:block}.intro-proof .first-work{height:145px;margin-top:16px}.paid-offer-banner{font-size:20px;padding:12px;margin-bottom:15px}.package-offer{scroll-margin-top:90px}.package-art{display:none}.package-offer{grid-template-columns:1fr}.package-copy{width:100%}}
+@media(prefers-reduced-motion:reduce){.choice:hover,.primary:hover,.package-link:hover{transform:none}}
+
+/* Real portfolio photography for vehicle choices. */
+.choice img.choice-photo {
+  object-fit: cover;
+  object-position: center 65%;
+  border-radius: 5px;
+  margin-bottom: 12px;
+}
+.choices-tesla .choice img.choice-photo { object-fit: cover; }
+.vehicle-photo-note {
+  margin: -8px 0 18px;
+  color: var(--muted, #a7a7a7);
+  font-size: 11px;
+  line-height: 1.5;
+}
+.vehicle-photo-note a {
+  color: inherit;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+@media (max-width: 700px) {
+  .choice img.choice-photo { margin-bottom: 9px; }
+  .vehicle-photo-note { margin-bottom: 14px; font-size: 10px; }
+}
+
+.package-copy>.paid-offer-banner{grid-column:1/-1;width:100%;box-sizing:border-box}.package-copy>.package-summary{min-width:0}@media(max-width:760px){.package-offer .package-copy{display:flex;flex-direction:column;gap:16px}.package-copy .package-upgrades{width:100%;display:grid;grid-template-columns:1fr auto 1fr}.package-copy .price-main{flex-wrap:wrap}.package-copy .price-main strong{font-size:36px}.package-copy .paid-offer-banner{margin:0}.package-copy .bonus-label span{overflow-wrap:normal}.package-copy .package-link{width:100%}}

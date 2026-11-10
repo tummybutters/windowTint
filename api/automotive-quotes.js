@@ -7,7 +7,13 @@ const createHandler=(options={})=>async(req,res)=>{
  const host=String(req.headers?.['x-forwarded-host']||req.headers?.host||'').split(',')[0].trim();let same=false;try{const origin=new URL(req.headers?.origin);same=origin.host===host&&['https:','http:'].includes(origin.protocol)}catch{}
  if(!same)return res.status(403).json({error:'Request not allowed.'});
  if(!(options.enabled??process.env.AUTOMOTIVE_QUOTES_ENABLED==='true'))return res.status(503).json({error:'Online quotes are temporarily unavailable. Please call (714) 600-7134.'});
- let record;try{let body=req.body;if(!body){const chunks=[];let size=0;for await(const chunk of req){size+=chunk.length;if(size>8192)throw Error('too_large');chunks.push(chunk)}body=Buffer.concat(chunks).toString()}if(Buffer.byteLength(typeof body==='string'?body:JSON.stringify(body))>8192)throw Error('too_large');record=normalizeQuote(typeof body==='string'?JSON.parse(body):body)}catch{return res.status(400).json({error:'Please check your vehicle, address, name and phone number.'})}
+ let record;try{let body=req.body;if(!body){const chunks=[];let size=0;for await(const chunk of req){size+=chunk.length;if(size>8192)throw Error('too_large');chunks.push(chunk)}body=Buffer.concat(chunks).toString()}if(Buffer.byteLength(typeof body==='string'?body:JSON.stringify(body))>8192)throw Error('too_large');record=normalizeQuote(typeof body==='string'?JSON.parse(body):body)}catch{return res.status(400).json({error:'Please check your vehicle, city, name and phone number.'})}
+ if(record.lead_kind==='commercial'){
+  const a=record.attribution,ua=String(req.headers?.['user-agent']||'');
+  if(!['mobile','desktop','tablet'].includes(a.device_category))a.device_category=require('../assets/commercial/attribution').device(ua,0);
+  a.ad_click_device=({m:'mobile',c:'desktop',t:'tablet'})[a.device]||'unknown';
+  if(/^(INTERNAL TEST|DEPLOYMENT TEST|QA TEST)/i.test(record.name))a.is_internal='true';
+ }
  let store;try{store=options.store||(sharedStore??=defaultStore());if(!await store.checkRateLimit(String(req.headers?.['x-forwarded-for']||req.socket?.remoteAddress||'unknown').split(',')[0]))return res.status(429).json({error:'Please wait a minute and try again.'});await store.persist(record)}catch(e){return res.status(e.status===409?409:503).json({error:e.status===409?'This request was already received with different details. Please refresh to start another.':'We couldn’t save your request. Please try again or call (714) 600-7134.'})}
  const [alert,crm]=await Promise.allSettled([store.dispatch(record.id),store.dispatchCrm(record.id)]);
  if(alert.status==='rejected')console.error('[automotive-quote-notification-pending]',record.id);

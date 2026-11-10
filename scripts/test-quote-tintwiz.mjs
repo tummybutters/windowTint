@@ -13,7 +13,8 @@ await sendContact(lead,async(url,options)=>{
  payload=JSON.parse(options.body);
  return {ok:true,status:200};
 });
-assert.deepEqual(payload,{quote_id:lead.id,name:lead.name,phone:lead.phone,vehicle:lead.vehicle,vehicle_type:lead.vehicle_type,coverage:lead.coverage,priority:lead.priority,timing:lead.timing,service_address:lead.service_address,page_path:lead.page_path,source:'Website tint quote'});
+assert.deepEqual({...payload,lead_attribution:undefined,coverage:lead.coverage},{lead_attribution:undefined,quote_id:lead.id,name:lead.name,phone:lead.phone,vehicle:lead.vehicle,vehicle_type:lead.vehicle_type,coverage:lead.coverage,priority:lead.priority,timing:lead.timing,service_address:lead.service_address,page_path:lead.page_path,source:'Website tint quote'});
+assert(payload.coverage.includes('Quote ID: '+lead.id));
 assert(!JSON.stringify(payload).includes('private-click-id'),'Marketing identifiers must stay out of the CRM contact');
 await assert.rejects(sendContact(lead,async()=>({ok:false,status:429})),error=>error.retryable===true);
 await assert.rejects(sendContact(lead,async()=>{throw Error('timeout')}),error=>error.uncertain===true);

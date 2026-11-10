@@ -20,8 +20,6 @@
     };
 
     const TRACKED_PARAMS = [
-        'cid',
-        'phone',
         'utm_source',
         'utm_medium',
         'utm_campaign',
@@ -41,7 +39,9 @@
         'loc_interest_ms',
         'placement',
         'targetid',
-        'extensionid'
+        'extensionid',
+        'experiment_id',
+        'experiment_variant'
     ];
     const MAX_STORED_EVENTS = 120;
     const MAX_PENDING_EVENTS = 120;
@@ -141,10 +141,7 @@
         }
         localStorage.setItem(STORAGE_KEYS.lastSeenAt, now);
 
-        const values = {
-            cid: firstParam(params, ['cid', 'conversation_id', 'lead_id']),
-            phone: firstParam(params, ['phone', 'lead_phone'])
-        };
+        const values = {};
 
         TRACKED_PARAMS.forEach((param) => {
             if (!values[param]) values[param] = params.get(param) || '';
@@ -168,7 +165,12 @@
             lead[param] = localStorage.getItem(STORAGE_BY_PARAM[param]) || '';
         });
 
-        return lead;
+        const rendered = window.ObsidianExperiment;
+        if (rendered?.experiment_id === 'auto_old_driveway_20261014' && ['old_setup', 'driveway_offer'].includes(rendered.experiment_variant)) {
+            Object.assign(lead, rendered);
+            for (const key of ['experiment_id', 'experiment_variant']) localStorage.setItem(STORAGE_BY_PARAM[key], rendered[key]);
+        }
+        return window.ObsidianJourney ? window.ObsidianJourney.get() : lead;
     };
 
     const hasAttribution = (lead) => TRACKED_PARAMS.some((param) => Boolean(lead[param]));
@@ -398,19 +400,23 @@
     };
 
     const recordLeadEvent = (eventName, payload = {}, options = {}) => {
+        window.ObsidianJourney?.touch?.();
         const lead = getLead();
         if (options.requireAttribution && !hasAttribution(lead)) return;
 
+        const safePayload={...payload};
+        for(const key of ['name','phone','email','address','city','conversation_id','page_location','link_text'])delete safePayload[key];
+        if(safePayload.link_url){try{const u=new URL(safePayload.link_url,window.location.origin);safePayload.link_url=['tel:','sms:'].includes(u.protocol)?u.protocol:u.origin+u.pathname}catch{delete safePayload.link_url}}
         const event = {
             event_id: generateId('obsidian_event'),
             event_name: eventName,
             event_time: new Date().toISOString(),
             session_id: lead.session_id,
-            page_url: window.location.href,
+            page_url: window.location.origin + window.location.pathname,
             page_path: window.location.pathname,
             referrer: document.referrer || lead.first_referrer,
-            lead,
-            payload
+            lead: {...lead,first_landing_page: lead.session_landing_page ? window.location.origin+lead.session_landing_page : lead.first_landing_page},
+            payload: {...safePayload, flow_version: lead.flow_version || 'intent-resume-20261108', attribution_version: lead.attribution_version || 'legacy'}
         };
 
         const events = getEventLog();
@@ -437,12 +443,18 @@
 
         // Keep customer identifiers and free text in first-party storage, not Google events.
         const safeExtra = {};
-        for (const key of ['service', 'landing_variant', 'lead_action', 'quiz_step']) {
+        for (const key of ['service', 'landing_variant', 'lead_action', 'quiz_step', 'headline_variant', 'detour_kind']) {
             if (typeof extra[key] === 'string' && /^[a-z0-9_-]{1,80}$/i.test(extra[key])) {
                 safeExtra[key] = extra[key];
             }
         }
+        for(const k of ['from_page','to_page']){if(typeof extra[k]==='string'&&/^\/[A-Za-z0-9/_-]*$/.test(extra[k]))safeExtra[k]=extra[k].slice(0,240)}
         if (Number.isFinite(extra.event_count)) safeExtra.event_count = extra.event_count;
+        const experiment = window.ObsidianExperiment || getLead();
+        if (experiment.experiment_id === 'auto_old_driveway_20261014' && ['old_setup', 'driveway_offer'].includes(experiment.experiment_variant)) {
+            safeExtra.experiment_id = experiment.experiment_id;
+            safeExtra.experiment_variant = experiment.experiment_variant;
+        }
         safeExtra.page_location = `${window.location.origin}${window.location.pathname}`;
         try { safeExtra.page_referrer = new URL(document.referrer).origin + '/'; } catch (_) { safeExtra.page_referrer = ''; }
         if (extra.link_url) {
@@ -574,6 +586,17 @@
         decorateForms();
         titleBookingFrames();
         bindClickTracking();
+        sendAnalyticsEvent('journey_page_view');
+        const classify = path => /gallery/.test(path)?'gallery':/pricing/.test(path)?'pricing':/ceramic/.test(path)?'ceramic':/commercial|office|storefront/.test(path)?'commercial':/package|vip-booking|tint-shop|mobile-window|car-window/.test(path)?'quote':'other';
+        document.addEventListener('click', event => {
+            const link=event.target.closest?.('a[href]');if(!link)return;
+            let u;try{u=new URL(link.href,window.location.href)}catch{return}
+            if(u.origin!==window.location.origin)return;
+            const from=window.location.pathname,to=u.pathname,kind=classify(to);
+            if(from===to&&!u.hash)return;
+            const name=from===to&&/quote|quiz/.test(u.hash)?'quote_return_click':kind==='quote'?'quote_entry_click':['gallery','pricing','ceramic'].includes(kind)?'educational_detour_click':'internal_navigation';
+            sendAnalyticsEvent(name,{from_page:from,to_page:to,detour_kind:kind});
+        });
 
         const path = window.location.pathname;
         const pageLeadContext = getLeadContext();

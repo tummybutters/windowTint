@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
+<head><script src="/assets/quote/experiment.js?v=20261016-speed"></script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Laguna Beach Window Tinting | Mobile Ceramic Tint</title>
@@ -97,7 +97,7 @@
                 <a href="/#contact">Contact</a>
             </div>
             <div class="nav__actions">
-                <a href="/booking" class="brutalist-btn brutalist-btn--accent">Book Online</a>
+                <a href="/booking" class="brutalist-btn brutalist-btn--accent">Call or text to book</a>
                 <a href="tel:7146007134" class="brutalist-btn brutalist-btn--outline">(714) 600-7134</a>
             </div>
         </div>
@@ -273,7 +273,7 @@
                 <h2>Ready to Tint in <span>Laguna Beach</span>?</h2>
                 <p>Book online or call with your vehicle year, make, model, preferred shade, and appointment location.</p>
                 <div class="city-cta__actions">
-                    <a href="/booking" class="brutalist-btn brutalist-btn--primary brutalist-btn--large">Book Online</a>
+                    <a href="/booking" class="brutalist-btn brutalist-btn--primary brutalist-btn--large">Call or text to book</a>
                     <a href="tel:7146007134" class="brutalist-btn brutalist-btn--large">Call (714) 600-7134</a>
                 </div>
             </div>
@@ -320,7 +320,7 @@
             </div>
         </div>
     </footer>
-    <script src="/lead-tracking.js" defer></script>
+    <script src="/assets/attribution/journey.js?v=20261108" defer></script><script src="/lead-tracking.js" defer></script>
 </body>
 
 </html>

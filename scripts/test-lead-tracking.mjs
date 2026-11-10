@@ -318,8 +318,8 @@ for (const call of privacyCalls) {
     assert.ok(!(key in call[2]), `${key} must not be sent to Google`);
   }
 }
-assert.equal(tracker.getEventLog().at(-1).lead.phone, '5551234567', 'first-party attribution remains intact');
-assert.ok(tracker.getEventLog().at(-1).payload.link_url.includes('body='));
+assert.equal(tracker.getEventLog().at(-1).lead.phone, undefined, 'contact details are excluded from analytics');
+assert.equal(tracker.getEventLog().at(-1).payload.link_url,'sms:');
 tracker.trackEvent('square_booking_click', {link_url: 'https://book.squareup.com/appointments/test?phone=5551234567#private'});
 assert.equal(gtagCalls.at(-1)[2].link_url, 'https://book.squareup.com/appointments/test');
 

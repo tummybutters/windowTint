@@ -1,0 +1,1052 @@
+[
+  {
+    "path": "/",
+    "file": "/generated/index.html",
+    "title": "Homepage",
+    "division": "shared",
+    "type": "hub"
+  },
+  {
+    "path": "/window-tinting-gallery",
+    "file": "/generated/window-tinting-gallery.html",
+    "title": "Our work",
+    "division": "shared",
+    "type": "utility"
+  },
+  {
+    "path": "/booking",
+    "file": "/generated/booking.html",
+    "title": "Request a quote",
+    "division": "shared",
+    "type": "utility"
+  },
+  {
+    "path": "/services",
+    "file": "/generated/services.html",
+    "title": "All services",
+    "division": "shared",
+    "type": "utility"
+  },
+  {
+    "path": "/ceramic-coating",
+    "file": "/generated/ceramic-coating.html",
+    "title": "Ceramic Coating",
+    "division": "auto",
+    "type": "service"
+  },
+  {
+    "path": "/ceramic-coating-irvine",
+    "file": "/generated/ceramic-coating-irvine.html",
+    "title": "Ceramic Coating Irvine",
+    "division": "auto",
+    "type": "city"
+  },
+  {
+    "path": "/ceramic-coating-lake-forest",
+    "file": "/generated/ceramic-coating-lake-forest.html",
+    "title": "Ceramic Coating Lake Forest",
+    "division": "auto",
+    "type": "city"
+  },
+  {
+    "path": "/ceramic-coating-aliso-viejo",
+    "file": "/generated/ceramic-coating-aliso-viejo.html",
+    "title": "Ceramic Coating Aliso Viejo",
+    "division": "auto",
+    "type": "city"
+  },
+  {
+    "path": "/ceramic-coating-newport-beach",
+    "file": "/generated/ceramic-coating-newport-beach.html",
+    "title": "Ceramic Coating Newport Beach",
+    "division": "auto",
+    "type": "city"
+  },
+  {
+    "path": "/ceramic-coating-costa-mesa",
+    "file": "/generated/ceramic-coating-costa-mesa.html",
+    "title": "Ceramic Coating Costa Mesa",
+    "division": "auto",
+    "type": "city"
+  },
+  {
+    "path": "/ceramic-coating-tustin",
+    "file": "/generated/ceramic-coating-tustin.html",
+    "title": "Ceramic Coating Tustin",
+    "division": "auto",
+    "type": "city"
+  },
+  {
+    "path": "/ceramic-coating-mission-viejo",
+    "file": "/generated/ceramic-coating-mission-viejo.html",
+    "title": "Ceramic Coating Mission Viejo",
+    "division": "auto",
+    "type": "city"
+  },
+  {
+    "path": "/ceramic-coating-laguna-hills",
+    "file": "/generated/ceramic-coating-laguna-hills.html",
+    "title": "Ceramic Coating Laguna Hills",
+    "division": "auto",
+    "type": "city"
+  },
+  {
+    "path": "/window-tint-pricing",
+    "file": "/generated/window-tint-pricing.html",
+    "title": "Window Tint Pricing",
+    "division": "auto",
+    "type": "service"
+  },
+  {
+    "path": "/ceramic-window-tinting",
+    "file": "/generated/ceramic-window-tinting.html",
+    "title": "Ceramic Window Tinting",
+    "division": "auto",
+    "type": "service"
+  },
+  {
+    "path": "/mobile-window-tinting",
+    "file": "/generated/mobile-window-tinting.html",
+    "title": "Mobile window tinting Orange County",
+    "division": "auto",
+    "type": "hub"
+  },
+  {
+    "path": "/full-car-window-tinting",
+    "file": "/generated/full-car-window-tinting.html",
+    "title": "Full Car Window Tinting",
+    "division": "auto",
+    "type": "service"
+  },
+  {
+    "path": "/sides-rear-window-tinting",
+    "file": "/generated/sides-rear-window-tinting.html",
+    "title": "Sides Rear Window Tinting",
+    "division": "auto",
+    "type": "service"
+  },
+  {
+    "path": "/front-two-window-tinting",
+    "file": "/generated/front-two-window-tinting.html",
+    "title": "Front Two Window Tinting",
+    "division": "auto",
+    "type": "service"
+  },
+  {
+    "path": "/windshield-window-tinting",
+    "file": "/generated/windshield-window-tinting.html",
+    "title": "Windshield Window Tinting",
+    "division": "auto",
+    "type": "service"
+  },
+  {
+    "path": "/tesla-window-tinting",
+    "file": "/generated/tesla-window-tinting.html",
+    "title": "Tesla Window Tinting",
+    "division": "auto",
+    "type": "service"
+  },
+  {
+    "path": "/tint-removal",
+    "file": "/generated/tint-removal.html",
+    "title": "Tint Removal",
+    "division": "auto",
+    "type": "service"
+  },
+  {
+    "path": "/irvine-window-tinting",
+    "file": "/generated/irvine-window-tinting.html",
+    "title": "Irvine Window Tinting",
+    "division": "auto",
+    "type": "city"
+  },
+  {
+    "path": "/newport-beach-window-tinting",
+    "file": "/generated/newport-beach-window-tinting.html",
+    "title": "Newport Beach Window Tinting",
+    "division": "auto",
+    "type": "city"
+  },
+  {
+    "path": "/tustin-window-tinting",
+    "file": "/generated/tustin-window-tinting.html",
+    "title": "Tustin Window Tinting",
+    "division": "auto",
+    "type": "city"
+  },
+  {
+    "path": "/costa-mesa-window-tinting",
+    "file": "/generated/costa-mesa-window-tinting.html",
+    "title": "Costa Mesa Window Tinting",
+    "division": "auto",
+    "type": "city"
+  },
+  {
+    "path": "/laguna-beach-window-tinting",
+    "file": "/generated/laguna-beach-window-tinting.html",
+    "title": "Laguna Beach Window Tinting",
+    "division": "auto",
+    "type": "city"
+  },
+  {
+    "path": "/aliso-viejo-window-tinting",
+    "file": "/generated/aliso-viejo-window-tinting.html",
+    "title": "Aliso Viejo Window Tinting",
+    "division": "auto",
+    "type": "city"
+  },
+  {
+    "path": "/santa-ana-window-tinting",
+    "file": "/generated/santa-ana-window-tinting.html",
+    "title": "Santa Ana Window Tinting",
+    "division": "auto",
+    "type": "city"
+  },
+  {
+    "path": "/anaheim-window-tinting",
+    "file": "/generated/anaheim-window-tinting.html",
+    "title": "Anaheim Window Tinting",
+    "division": "auto",
+    "type": "city"
+  },
+  {
+    "path": "/huntington-beach-window-tinting",
+    "file": "/generated/huntington-beach-window-tinting.html",
+    "title": "Huntington Beach Window Tinting",
+    "division": "auto",
+    "type": "city"
+  },
+  {
+    "path": "/orange-window-tinting",
+    "file": "/generated/orange-window-tinting.html",
+    "title": "Orange Window Tinting",
+    "division": "auto",
+    "type": "city"
+  },
+  {
+    "path": "/mission-viejo-window-tinting",
+    "file": "/generated/mission-viejo-window-tinting.html",
+    "title": "Mission Viejo Window Tinting",
+    "division": "auto",
+    "type": "city"
+  },
+  {
+    "path": "/lake-forest-window-tinting",
+    "file": "/generated/lake-forest-window-tinting.html",
+    "title": "Lake Forest Window Tinting",
+    "division": "auto",
+    "type": "city"
+  },
+  {
+    "path": "/dana-point-window-tinting",
+    "file": "/generated/dana-point-window-tinting.html",
+    "title": "Dana Point Window Tinting",
+    "division": "auto",
+    "type": "city"
+  },
+  {
+    "path": "/san-clemente-window-tinting",
+    "file": "/generated/san-clemente-window-tinting.html",
+    "title": "San Clemente Window Tinting",
+    "division": "auto",
+    "type": "city"
+  },
+  {
+    "path": "/window-tint-shades",
+    "file": "/generated/window-tint-shades.html",
+    "title": "Window Tint Shades",
+    "division": "auto",
+    "type": "guide"
+  },
+  {
+    "path": "/california-window-tint-law",
+    "file": "/generated/california-window-tint-law.html",
+    "title": "California Window Tint Law",
+    "division": "auto",
+    "type": "guide"
+  },
+  {
+    "path": "/tesla-model-y-window-tinting",
+    "file": "/generated/tesla-model-y-window-tinting.html",
+    "title": "Tesla Model Y Window Tinting",
+    "division": "auto",
+    "type": "vehicle"
+  },
+  {
+    "path": "/tesla-model-3-window-tinting",
+    "file": "/generated/tesla-model-3-window-tinting.html",
+    "title": "Tesla Model 3 Window Tinting",
+    "division": "auto",
+    "type": "vehicle"
+  },
+  {
+    "path": "/architectural-window-film",
+    "file": "/generated/architectural-window-film.html",
+    "title": "Home window film in Orange County",
+    "division": "home",
+    "type": "hub"
+  },
+  {
+    "path": "/commercial-window-film",
+    "file": "/generated/commercial-window-film.html",
+    "title": "Commercial window film in Orange County",
+    "division": "commercial",
+    "type": "hub"
+  },
+  {
+    "path": "/chrome-delete",
+    "file": "/generated/chrome-delete.html",
+    "title": "Chrome Delete",
+    "division": "auto",
+    "type": "service"
+  },
+  {
+    "path": "/ceramic-vs-carbon-window-tint",
+    "file": "/generated/ceramic-vs-carbon-window-tint.html",
+    "title": "Ceramic Vs Carbon Window Tint",
+    "division": "auto",
+    "type": "guide"
+  },
+  {
+    "path": "/how-long-does-window-tinting-take",
+    "file": "/generated/how-long-does-window-tinting-take.html",
+    "title": "How Long Does Window Tinting Take",
+    "division": "auto",
+    "type": "guide"
+  },
+  {
+    "path": "/is-mobile-window-tinting-worth-it",
+    "file": "/generated/is-mobile-window-tinting-worth-it.html",
+    "title": "Is Mobile Window Tinting Worth It",
+    "division": "auto",
+    "type": "guide"
+  },
+  {
+    "path": "/how-to-choose-window-tint-percentage",
+    "file": "/generated/how-to-choose-window-tint-percentage.html",
+    "title": "How To Choose Window Tint Percentage",
+    "division": "auto",
+    "type": "guide"
+  },
+  {
+    "path": "/does-window-tint-reduce-heat",
+    "file": "/generated/does-window-tint-reduce-heat.html",
+    "title": "Does Window Tint Reduce Heat",
+    "division": "auto",
+    "type": "guide"
+  },
+  {
+    "path": "/window-tint-aftercare",
+    "file": "/generated/window-tint-aftercare.html",
+    "title": "Window Tint Aftercare",
+    "division": "auto",
+    "type": "guide"
+  },
+  {
+    "path": "/toyota-tacoma-window-tinting",
+    "file": "/generated/toyota-tacoma-window-tinting.html",
+    "title": "Toyota Tacoma Window Tinting",
+    "division": "auto",
+    "type": "vehicle"
+  },
+  {
+    "path": "/bmw-m4-window-tinting",
+    "file": "/generated/bmw-m4-window-tinting.html",
+    "title": "Bmw M4 Window Tinting",
+    "division": "auto",
+    "type": "vehicle"
+  },
+  {
+    "path": "/toyota-4runner-window-tinting",
+    "file": "/generated/toyota-4runner-window-tinting.html",
+    "title": "Toyota 4Runner Window Tinting",
+    "division": "auto",
+    "type": "vehicle"
+  },
+  {
+    "path": "/bmw-x3-window-tinting",
+    "file": "/generated/bmw-x3-window-tinting.html",
+    "title": "Bmw X3 Window Tinting",
+    "division": "auto",
+    "type": "vehicle"
+  },
+  {
+    "path": "/about",
+    "file": "/generated/about.html",
+    "title": "About Obsidian",
+    "division": "shared",
+    "type": "utility"
+  },
+  {
+    "path": "/service-areas",
+    "file": "/generated/service-areas.html",
+    "title": "Service areas",
+    "division": "shared",
+    "type": "utility"
+  },
+  {
+    "path": "/guides",
+    "file": "/generated/guides.html",
+    "title": "Window film guides",
+    "division": "shared",
+    "type": "utility"
+  },
+  {
+    "path": "/sunroof-window-tinting",
+    "file": "/generated/sunroof-window-tinting.html",
+    "title": "Sunroof window tinting",
+    "division": "auto",
+    "type": "service"
+  },
+  {
+    "path": "/luxury-car-window-tinting",
+    "file": "/generated/luxury-car-window-tinting.html",
+    "title": "Luxury car window tinting",
+    "division": "auto",
+    "type": "service"
+  },
+  {
+    "path": "/window-tint-replacement",
+    "file": "/generated/window-tint-replacement.html",
+    "title": "Window tint replacement",
+    "division": "auto",
+    "type": "service"
+  },
+  {
+    "path": "/window-tint-consultation",
+    "file": "/generated/window-tint-consultation.html",
+    "title": "Window tint consultation",
+    "division": "auto",
+    "type": "service"
+  },
+  {
+    "path": "/laguna-hills-window-tinting",
+    "file": "/generated/laguna-hills-window-tinting.html",
+    "title": "Mobile window tinting in Laguna Hills",
+    "division": "auto",
+    "type": "city"
+  },
+  {
+    "path": "/fountain-valley-window-tinting",
+    "file": "/generated/fountain-valley-window-tinting.html",
+    "title": "Mobile window tinting in Fountain Valley",
+    "division": "auto",
+    "type": "city"
+  },
+  {
+    "path": "/westminster-window-tinting",
+    "file": "/generated/westminster-window-tinting.html",
+    "title": "Mobile window tinting in Westminster",
+    "division": "auto",
+    "type": "city"
+  },
+  {
+    "path": "/garden-grove-window-tinting",
+    "file": "/generated/garden-grove-window-tinting.html",
+    "title": "Mobile window tinting in Garden Grove",
+    "division": "auto",
+    "type": "city"
+  },
+  {
+    "path": "/mercedes-c-class-window-tinting",
+    "file": "/generated/mercedes-c-class-window-tinting.html",
+    "title": "Mercedes C-Class window tinting",
+    "division": "auto",
+    "type": "vehicle"
+  },
+  {
+    "path": "/porsche-911-window-tinting",
+    "file": "/generated/porsche-911-window-tinting.html",
+    "title": "Porsche 911 window tinting",
+    "division": "auto",
+    "type": "vehicle"
+  },
+  {
+    "path": "/range-rover-sport-window-tinting",
+    "file": "/generated/range-rover-sport-window-tinting.html",
+    "title": "Range Rover Sport window tinting",
+    "division": "auto",
+    "type": "vehicle"
+  },
+  {
+    "path": "/tesla-model-x-window-tinting",
+    "file": "/generated/tesla-model-x-window-tinting.html",
+    "title": "Tesla Model X window tinting",
+    "division": "auto",
+    "type": "vehicle"
+  },
+  {
+    "path": "/home-solar-window-film",
+    "file": "/generated/home-solar-window-film.html",
+    "title": "Home solar-control window film",
+    "division": "home",
+    "type": "service"
+  },
+  {
+    "path": "/home-privacy-window-film",
+    "file": "/generated/home-privacy-window-film.html",
+    "title": "Home privacy window film",
+    "division": "home",
+    "type": "service"
+  },
+  {
+    "path": "/home-glare-reduction-film",
+    "file": "/generated/home-glare-reduction-film.html",
+    "title": "Home glare-reduction window film",
+    "division": "home",
+    "type": "service"
+  },
+  {
+    "path": "/home-decorative-window-film",
+    "file": "/generated/home-decorative-window-film.html",
+    "title": "Home decorative window film",
+    "division": "home",
+    "type": "service"
+  },
+  {
+    "path": "/home-uv-window-film",
+    "file": "/generated/home-uv-window-film.html",
+    "title": "Home UV and fade-reduction film",
+    "division": "home",
+    "type": "service"
+  },
+  {
+    "path": "/office-window-film",
+    "file": "/generated/office-window-film.html",
+    "title": "Office window film",
+    "division": "commercial",
+    "type": "service"
+  },
+  {
+    "path": "/storefront-window-film",
+    "file": "/generated/storefront-window-film.html",
+    "title": "Storefront window film",
+    "division": "commercial",
+    "type": "service"
+  },
+  {
+    "path": "/commercial-privacy-film",
+    "file": "/generated/commercial-privacy-film.html",
+    "title": "Commercial privacy and frosted film",
+    "division": "commercial",
+    "type": "service"
+  },
+  {
+    "path": "/commercial-solar-window-film",
+    "file": "/generated/commercial-solar-window-film.html",
+    "title": "Commercial solar-control window film",
+    "division": "commercial",
+    "type": "service"
+  },
+  {
+    "path": "/commercial-safety-security-film",
+    "file": "/generated/commercial-safety-security-film.html",
+    "title": "Commercial safety and security film",
+    "division": "commercial",
+    "type": "service"
+  },
+  {
+    "path": "/irvine-residential-window-film",
+    "file": "/generated/irvine-residential-window-film.html",
+    "title": "Home window film in Irvine",
+    "division": "home",
+    "type": "city"
+  },
+  {
+    "path": "/newport-beach-residential-window-film",
+    "file": "/generated/newport-beach-residential-window-film.html",
+    "title": "Home window film in Newport Beach",
+    "division": "home",
+    "type": "city"
+  },
+  {
+    "path": "/costa-mesa-residential-window-film",
+    "file": "/generated/costa-mesa-residential-window-film.html",
+    "title": "Home window film in Costa Mesa",
+    "division": "home",
+    "type": "city"
+  },
+  {
+    "path": "/huntington-beach-residential-window-film",
+    "file": "/generated/huntington-beach-residential-window-film.html",
+    "title": "Home window film in Huntington Beach",
+    "division": "home",
+    "type": "city"
+  },
+  {
+    "path": "/tustin-residential-window-film",
+    "file": "/generated/tustin-residential-window-film.html",
+    "title": "Home window film in Tustin",
+    "division": "home",
+    "type": "city"
+  },
+  {
+    "path": "/mission-viejo-residential-window-film",
+    "file": "/generated/mission-viejo-residential-window-film.html",
+    "title": "Home window film in Mission Viejo",
+    "division": "home",
+    "type": "city"
+  },
+  {
+    "path": "/lake-forest-residential-window-film",
+    "file": "/generated/lake-forest-residential-window-film.html",
+    "title": "Home window film in Lake Forest",
+    "division": "home",
+    "type": "city"
+  },
+  {
+    "path": "/aliso-viejo-residential-window-film",
+    "file": "/generated/aliso-viejo-residential-window-film.html",
+    "title": "Home window film in Aliso Viejo",
+    "division": "home",
+    "type": "city"
+  },
+  {
+    "path": "/laguna-beach-residential-window-film",
+    "file": "/generated/laguna-beach-residential-window-film.html",
+    "title": "Home window film in Laguna Beach",
+    "division": "home",
+    "type": "city"
+  },
+  {
+    "path": "/dana-point-residential-window-film",
+    "file": "/generated/dana-point-residential-window-film.html",
+    "title": "Home window film in Dana Point",
+    "division": "home",
+    "type": "city"
+  },
+  {
+    "path": "/san-clemente-residential-window-film",
+    "file": "/generated/san-clemente-residential-window-film.html",
+    "title": "Home window film in San Clemente",
+    "division": "home",
+    "type": "city"
+  },
+  {
+    "path": "/laguna-hills-residential-window-film",
+    "file": "/generated/laguna-hills-residential-window-film.html",
+    "title": "Home window film in Laguna Hills",
+    "division": "home",
+    "type": "city"
+  },
+  {
+    "path": "/irvine-commercial-window-film",
+    "file": "/generated/irvine-commercial-window-film.html",
+    "title": "Commercial window film in Irvine",
+    "division": "commercial",
+    "type": "city"
+  },
+  {
+    "path": "/newport-beach-commercial-window-film",
+    "file": "/generated/newport-beach-commercial-window-film.html",
+    "title": "Commercial window film in Newport Beach",
+    "division": "commercial",
+    "type": "city"
+  },
+  {
+    "path": "/costa-mesa-commercial-window-film",
+    "file": "/generated/costa-mesa-commercial-window-film.html",
+    "title": "Commercial window film in Costa Mesa",
+    "division": "commercial",
+    "type": "city"
+  },
+  {
+    "path": "/huntington-beach-commercial-window-film",
+    "file": "/generated/huntington-beach-commercial-window-film.html",
+    "title": "Commercial window film in Huntington Beach",
+    "division": "commercial",
+    "type": "city"
+  },
+  {
+    "path": "/tustin-commercial-window-film",
+    "file": "/generated/tustin-commercial-window-film.html",
+    "title": "Commercial window film in Tustin",
+    "division": "commercial",
+    "type": "city"
+  },
+  {
+    "path": "/santa-ana-commercial-window-film",
+    "file": "/generated/santa-ana-commercial-window-film.html",
+    "title": "Commercial window film in Santa Ana",
+    "division": "commercial",
+    "type": "city"
+  },
+  {
+    "path": "/anaheim-commercial-window-film",
+    "file": "/generated/anaheim-commercial-window-film.html",
+    "title": "Commercial window film in Anaheim",
+    "division": "commercial",
+    "type": "city"
+  },
+  {
+    "path": "/orange-commercial-window-film",
+    "file": "/generated/orange-commercial-window-film.html",
+    "title": "Commercial window film in Orange",
+    "division": "commercial",
+    "type": "city"
+  },
+  {
+    "path": "/lake-forest-commercial-window-film",
+    "file": "/generated/lake-forest-commercial-window-film.html",
+    "title": "Commercial window film in Lake Forest",
+    "division": "commercial",
+    "type": "city"
+  },
+  {
+    "path": "/mission-viejo-commercial-window-film",
+    "file": "/generated/mission-viejo-commercial-window-film.html",
+    "title": "Commercial window film in Mission Viejo",
+    "division": "commercial",
+    "type": "city"
+  },
+  {
+    "path": "/aliso-viejo-commercial-window-film",
+    "file": "/generated/aliso-viejo-commercial-window-film.html",
+    "title": "Commercial window film in Aliso Viejo",
+    "division": "commercial",
+    "type": "city"
+  },
+  {
+    "path": "/laguna-hills-commercial-window-film",
+    "file": "/generated/laguna-hills-commercial-window-film.html",
+    "title": "Commercial window film in Laguna Hills",
+    "division": "commercial",
+    "type": "city"
+  },
+  {
+    "path": "/fountain-valley-commercial-window-film",
+    "file": "/generated/fountain-valley-commercial-window-film.html",
+    "title": "Commercial window film in Fountain Valley",
+    "division": "commercial",
+    "type": "city"
+  },
+  {
+    "path": "/westminster-commercial-window-film",
+    "file": "/generated/westminster-commercial-window-film.html",
+    "title": "Commercial window film in Westminster",
+    "division": "commercial",
+    "type": "city"
+  },
+  {
+    "path": "/garden-grove-commercial-window-film",
+    "file": "/generated/garden-grove-commercial-window-film.html",
+    "title": "Commercial window film in Garden Grove",
+    "division": "commercial",
+    "type": "city"
+  },
+  {
+    "path": "/laguna-beach-commercial-window-film",
+    "file": "/generated/laguna-beach-commercial-window-film.html",
+    "title": "Commercial window film in Laguna Beach",
+    "division": "commercial",
+    "type": "city"
+  },
+  {
+    "path": "/projects/irvine-luxury-sedan-ceramic-tint",
+    "file": "/generated/projects/irvine-luxury-sedan-ceramic-tint.html",
+    "title": "Planning luxury sedan ceramic tint in Irvine",
+    "division": "auto",
+    "type": "project"
+  },
+  {
+    "path": "/projects/newport-beach-luxury-suv-front-window-match",
+    "file": "/generated/projects/newport-beach-luxury-suv-front-window-match.html",
+    "title": "Planning luxury SUV front-window match in Newport Beach",
+    "division": "auto",
+    "type": "project"
+  },
+  {
+    "path": "/projects/costa-mesa-sports-car-sides-and-rear-tint",
+    "file": "/generated/projects/costa-mesa-sports-car-sides-and-rear-tint.html",
+    "title": "Planning sports car sides and rear tint in Costa Mesa",
+    "division": "auto",
+    "type": "project"
+  },
+  {
+    "path": "/projects/huntington-beach-tesla-model-y-tint",
+    "file": "/generated/projects/huntington-beach-tesla-model-y-tint.html",
+    "title": "Planning tesla Model Y tint in Huntington Beach",
+    "division": "auto",
+    "type": "project"
+  },
+  {
+    "path": "/projects/tustin-bmw-m4-ceramic-tint",
+    "file": "/generated/projects/tustin-bmw-m4-ceramic-tint.html",
+    "title": "Planning bMW M4 ceramic tint in Tustin",
+    "division": "auto",
+    "type": "project"
+  },
+  {
+    "path": "/projects/mission-viejo-family-suv-tint",
+    "file": "/generated/projects/mission-viejo-family-suv-tint.html",
+    "title": "Planning family SUV tint in Mission Viejo",
+    "division": "auto",
+    "type": "project"
+  },
+  {
+    "path": "/projects/lake-forest-toyota-tacoma-tint",
+    "file": "/generated/projects/lake-forest-toyota-tacoma-tint.html",
+    "title": "Planning toyota Tacoma tint in Lake Forest",
+    "division": "auto",
+    "type": "project"
+  },
+  {
+    "path": "/projects/aliso-viejo-old-tint-removal-and-replacement",
+    "file": "/generated/projects/aliso-viejo-old-tint-removal-and-replacement.html",
+    "title": "Planning old tint removal and replacement in Aliso Viejo",
+    "division": "auto",
+    "type": "project"
+  },
+  {
+    "path": "/projects/irvine-home-afternoon-glare",
+    "file": "/generated/projects/irvine-home-afternoon-glare.html",
+    "title": "Planning home afternoon glare in Irvine",
+    "division": "home",
+    "type": "project"
+  },
+  {
+    "path": "/projects/newport-beach-home-privacy-samples",
+    "file": "/generated/projects/newport-beach-home-privacy-samples.html",
+    "title": "Planning a home privacy sample comparison in Newport Beach",
+    "division": "home",
+    "type": "project"
+  },
+  {
+    "path": "/projects/costa-mesa-living-room-solar-film",
+    "file": "/generated/projects/costa-mesa-living-room-solar-film.html",
+    "title": "Planning living-room solar film in Costa Mesa",
+    "division": "home",
+    "type": "project"
+  },
+  {
+    "path": "/projects/huntington-beach-home-view-and-glare-comparison",
+    "file": "/generated/projects/huntington-beach-home-view-and-glare-comparison.html",
+    "title": "Planning home views and glare control in Huntington Beach",
+    "division": "home",
+    "type": "project"
+  },
+  {
+    "path": "/projects/laguna-beach-home-decorative-glass",
+    "file": "/generated/projects/laguna-beach-home-decorative-glass.html",
+    "title": "Planning home decorative glass in Laguna Beach",
+    "division": "home",
+    "type": "project"
+  },
+  {
+    "path": "/projects/mission-viejo-home-fade-reduction-film",
+    "file": "/generated/projects/mission-viejo-home-fade-reduction-film.html",
+    "title": "Planning home fade-reduction film in Mission Viejo",
+    "division": "home",
+    "type": "project"
+  },
+  {
+    "path": "/projects/irvine-office-glare-control-film",
+    "file": "/generated/projects/irvine-office-glare-control-film.html",
+    "title": "Planning office glare-control film in Irvine",
+    "division": "commercial",
+    "type": "project"
+  },
+  {
+    "path": "/projects/newport-beach-conference-room-privacy-film",
+    "file": "/generated/projects/newport-beach-conference-room-privacy-film.html",
+    "title": "Planning conference-room privacy film in Newport Beach",
+    "division": "commercial",
+    "type": "project"
+  },
+  {
+    "path": "/projects/costa-mesa-storefront-solar-film",
+    "file": "/generated/projects/costa-mesa-storefront-solar-film.html",
+    "title": "Planning storefront solar film in Costa Mesa",
+    "division": "commercial",
+    "type": "project"
+  },
+  {
+    "path": "/projects/santa-ana-office-installation-scheduling",
+    "file": "/generated/projects/santa-ana-office-installation-scheduling.html",
+    "title": "Planning office film installation in Santa Ana",
+    "division": "commercial",
+    "type": "project"
+  },
+  {
+    "path": "/projects/anaheim-commercial-decorative-film",
+    "file": "/generated/projects/anaheim-commercial-decorative-film.html",
+    "title": "Planning commercial decorative film in Anaheim",
+    "division": "commercial",
+    "type": "project"
+  },
+  {
+    "path": "/projects/lake-forest-commercial-solar-control-project",
+    "file": "/generated/projects/lake-forest-commercial-solar-control-project.html",
+    "title": "Planning commercial solar-control project in Lake Forest",
+    "division": "commercial",
+    "type": "project"
+  },
+  {
+    "path": "/photos-for-window-tint-quote",
+    "file": "/generated/photos-for-window-tint-quote.html",
+    "title": "Which photos should I send for a tint quote?",
+    "division": "auto",
+    "type": "guide"
+  },
+  {
+    "path": "/front-two-vs-full-car-tint",
+    "file": "/generated/front-two-vs-full-car-tint.html",
+    "title": "Front two windows or a full-car tint?",
+    "division": "auto",
+    "type": "guide"
+  },
+  {
+    "path": "/apartment-office-mobile-tint",
+    "file": "/generated/apartment-office-mobile-tint.html",
+    "title": "Can you tint my car at my apartment or office?",
+    "division": "auto",
+    "type": "guide"
+  },
+  {
+    "path": "/buying-used-car-with-old-tint",
+    "file": "/generated/buying-used-car-with-old-tint.html",
+    "title": "Buying a used car with old tint",
+    "division": "auto",
+    "type": "guide"
+  },
+  {
+    "path": "/factory-privacy-glass-vs-window-film",
+    "file": "/generated/factory-privacy-glass-vs-window-film.html",
+    "title": "Factory privacy glass vs applied film",
+    "division": "auto",
+    "type": "guide"
+  },
+  {
+    "path": "/matching-front-window-tint",
+    "file": "/generated/matching-front-window-tint.html",
+    "title": "How do you match front and rear windows?",
+    "division": "auto",
+    "type": "guide"
+  },
+  {
+    "path": "/sunroof-tint-compatibility",
+    "file": "/generated/sunroof-tint-compatibility.html",
+    "title": "Can my sunroof be tinted?",
+    "division": "auto",
+    "type": "guide"
+  },
+  {
+    "path": "/windshield-film-visibility",
+    "file": "/generated/windshield-film-visibility.html",
+    "title": "What should I ask about windshield film and visibility?",
+    "division": "auto",
+    "type": "guide"
+  },
+  {
+    "path": "/what-affects-window-tint-price",
+    "file": "/generated/what-affects-window-tint-price.html",
+    "title": "What changes a window tint quote?",
+    "division": "auto",
+    "type": "guide"
+  },
+  {
+    "path": "/window-tint-warranty-questions",
+    "file": "/generated/window-tint-warranty-questions.html",
+    "title": "Questions to ask about a window tint warranty",
+    "division": "auto",
+    "type": "guide"
+  },
+  {
+    "path": "/home-window-film-cost",
+    "file": "/generated/home-window-film-cost.html",
+    "title": "What affects home window film cost?",
+    "division": "home",
+    "type": "guide"
+  },
+  {
+    "path": "/home-film-sample-comparison",
+    "file": "/generated/home-film-sample-comparison.html",
+    "title": "How to compare home window film samples",
+    "division": "home",
+    "type": "guide"
+  },
+  {
+    "path": "/home-window-film-night-privacy",
+    "file": "/generated/home-window-film-night-privacy.html",
+    "title": "Does privacy film work at night?",
+    "division": "home",
+    "type": "guide"
+  },
+  {
+    "path": "/window-film-vs-blinds",
+    "file": "/generated/window-film-vs-blinds.html",
+    "title": "Window film or blinds for glare?",
+    "division": "home",
+    "type": "guide"
+  },
+  {
+    "path": "/double-pane-window-film-compatibility",
+    "file": "/generated/double-pane-window-film-compatibility.html",
+    "title": "Can window film be used on double-pane glass?",
+    "division": "home",
+    "type": "guide"
+  },
+  {
+    "path": "/home-window-film-installation-preparation",
+    "file": "/generated/home-window-film-installation-preparation.html",
+    "title": "How to prepare your home for window film",
+    "division": "home",
+    "type": "guide"
+  },
+  {
+    "path": "/window-film-furniture-fading",
+    "file": "/generated/window-film-furniture-fading.html",
+    "title": "Can window film help reduce furniture fading?",
+    "division": "home",
+    "type": "guide"
+  },
+  {
+    "path": "/home-window-film-appearance",
+    "file": "/generated/home-window-film-appearance.html",
+    "title": "How will home window film change my view?",
+    "division": "home",
+    "type": "guide"
+  },
+  {
+    "path": "/commercial-window-film-cost",
+    "file": "/generated/commercial-window-film-cost.html",
+    "title": "What affects commercial window film cost?",
+    "division": "commercial",
+    "type": "guide"
+  },
+  {
+    "path": "/office-glare-window-film",
+    "file": "/generated/office-glare-window-film.html",
+    "title": "How to assess office glare before choosing film",
+    "division": "commercial",
+    "type": "guide"
+  },
+  {
+    "path": "/conference-room-frosted-film-design",
+    "file": "/generated/conference-room-frosted-film-design.html",
+    "title": "Choosing frosted film for conference rooms",
+    "division": "commercial",
+    "type": "guide"
+  },
+  {
+    "path": "/commercial-film-installation-scheduling",
+    "file": "/generated/commercial-film-installation-scheduling.html",
+    "title": "Planning window film around business hours",
+    "division": "commercial",
+    "type": "guide"
+  },
+  {
+    "path": "/commercial-film-site-survey",
+    "file": "/generated/commercial-film-site-survey.html",
+    "title": "What happens during a commercial film site survey?",
+    "division": "commercial",
+    "type": "guide"
+  },
+  {
+    "path": "/commercial-film-landlord-permission",
+    "file": "/generated/commercial-film-landlord-permission.html",
+    "title": "What to ask your landlord before a window film project",
+    "division": "commercial",
+    "type": "guide"
+  }
+]

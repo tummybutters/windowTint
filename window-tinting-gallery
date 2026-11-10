@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
+<head><script src="/assets/quote/experiment.js?v=20261016-speed"></script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     <title>Car Window Tinting Gallery | Orange County Mobile</title>
@@ -15,53 +15,113 @@
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://www.obsidianautoworksoc.com/window-tinting-gallery">
     <script id="obsidian-gallery-schema" type="application/ld+json">
-    {
-            "@context": "https://schema.org",
-            "@type": [
-                    "CollectionPage",
-                    "ImageGallery"
-            ],
-            "@id": "https://www.obsidianautoworksoc.com/window-tinting-gallery#gallery",
-            "name": "Orange County Window Tinting Gallery",
-            "url": "https://www.obsidianautoworksoc.com/window-tinting-gallery",
-            "about": "Mobile ceramic window tinting examples from Obsidian Autoworks.",
-            "primaryImageOfPage": "https://www.obsidianautoworksoc.com/gallery/toyota-tacoma-01.jpg",
-            "associatedMedia": [
-                    {
-                            "@type": "ImageObject",
-                            "contentUrl": "https://www.obsidianautoworksoc.com/gallery/toyota-tacoma-01.jpg"
-                    },
-                    {
-                            "@type": "ImageObject",
-                            "contentUrl": "https://www.obsidianautoworksoc.com/gallery/bmw-m4-01.jpg"
-                    },
-                    {
-                            "@type": "ImageObject",
-                            "contentUrl": "https://www.obsidianautoworksoc.com/gallery/mercedes-benz-gls-01.jpg"
-                    },
-                    {
-                            "@type": "ImageObject",
-                            "contentUrl": "https://www.obsidianautoworksoc.com/gallery/cadillac-lyriq-01.jpg"
-                    },
-                    {
-                            "@type": "ImageObject",
-                            "contentUrl": "https://www.obsidianautoworksoc.com/gallery/lexus-gx-01.jpg"
-                    },
-                    {
-                            "@type": "ImageObject",
-                            "contentUrl": "https://www.obsidianautoworksoc.com/gallery/toyota-4runner-01.jpg"
-                    },
-                    {
-                            "@type": "ImageObject",
-                            "contentUrl": "https://www.obsidianautoworksoc.com/gallery/bmw-x3-01.jpg"
-                    },
-                    {
-                            "@type": "ImageObject",
-                            "contentUrl": "https://www.obsidianautoworksoc.com/gallery/porsche-cayenne-coupe-01.jpg"
-                    }
-            ]
-    }
-    </script>
+{
+    "@context": "https://schema.org",
+    "@type": [
+        "CollectionPage",
+        "ImageGallery"
+    ],
+    "@id": "https://www.obsidianautoworksoc.com/window-tinting-gallery#gallery",
+    "name": "Orange County Window Tinting Gallery",
+    "url": "https://www.obsidianautoworksoc.com/window-tinting-gallery",
+    "about": "Mobile ceramic window tinting examples from Obsidian Autoworks.",
+    "primaryImageOfPage": "https://www.obsidianautoworksoc.com/gallery/tintwiz-20261025/mercedes-amg-gt-01.webp",
+    "associatedMedia": [
+        {
+            "@type": "ImageObject",
+            "contentUrl": "https://www.obsidianautoworksoc.com/gallery/tintwiz-20261025/mercedes-amg-gt-01.webp",
+            "caption": "Mercedes-AMG GT window tint"
+        },
+        {
+            "@type": "ImageObject",
+            "contentUrl": "https://www.obsidianautoworksoc.com/gallery/tintwiz-20261025/mercedes-amg-gt-02.webp",
+            "caption": "Mercedes-AMG GT window tint"
+        },
+        {
+            "@type": "ImageObject",
+            "contentUrl": "https://www.obsidianautoworksoc.com/gallery/tintwiz-20261025/mercedes-amg-gt-03.webp",
+            "caption": "Mercedes-AMG GT window tint"
+        },
+        {
+            "@type": "ImageObject",
+            "contentUrl": "https://www.obsidianautoworksoc.com/gallery/tintwiz-20261025/chevrolet-corvette-01.webp",
+            "caption": "Chevrolet Corvette window tint"
+        },
+        {
+            "@type": "ImageObject",
+            "contentUrl": "https://www.obsidianautoworksoc.com/gallery/tintwiz-20261025/chevrolet-corvette-02.webp",
+            "caption": "Chevrolet Corvette window tint"
+        },
+        {
+            "@type": "ImageObject",
+            "contentUrl": "https://www.obsidianautoworksoc.com/gallery/tintwiz-20261025/ford-f150-raptor-01.webp",
+            "caption": "Ford F-150 Raptor window tint"
+        },
+        {
+            "@type": "ImageObject",
+            "contentUrl": "https://www.obsidianautoworksoc.com/gallery/tintwiz-20261025/ford-f150-raptor-02.webp",
+            "caption": "Ford F-150 Raptor window tint"
+        },
+        {
+            "@type": "ImageObject",
+            "contentUrl": "https://www.obsidianautoworksoc.com/gallery/tintwiz-20261025/ford-f150-raptor-03.webp",
+            "caption": "Ford F-150 Raptor window tint"
+        },
+        {
+            "@type": "ImageObject",
+            "contentUrl": "https://www.obsidianautoworksoc.com/gallery/tintwiz-20261025/tesla-model-y-juniper-01.webp",
+            "caption": "Tesla Model Y window tint"
+        },
+        {
+            "@type": "ImageObject",
+            "contentUrl": "https://www.obsidianautoworksoc.com/gallery/tintwiz-20261025/tesla-model-y-juniper-02.webp",
+            "caption": "Tesla Model Y window tint"
+        },
+        {
+            "@type": "ImageObject",
+            "contentUrl": "https://www.obsidianautoworksoc.com/gallery/tintwiz-20261025/volkswagen-karmann-ghia-01.webp",
+            "caption": "Volkswagen Karmann Ghia window tint"
+        },
+        {
+            "@type": "ImageObject",
+            "contentUrl": "https://www.obsidianautoworksoc.com/gallery/tintwiz-20261025/volkswagen-karmann-ghia-02.webp",
+            "caption": "Volkswagen Karmann Ghia window tint"
+        },
+        {
+            "@type": "ImageObject",
+            "contentUrl": "https://www.obsidianautoworksoc.com/gallery/toyota-tacoma-01.jpg"
+        },
+        {
+            "@type": "ImageObject",
+            "contentUrl": "https://www.obsidianautoworksoc.com/gallery/bmw-m4-01.jpg"
+        },
+        {
+            "@type": "ImageObject",
+            "contentUrl": "https://www.obsidianautoworksoc.com/gallery/mercedes-benz-gls-01.jpg"
+        },
+        {
+            "@type": "ImageObject",
+            "contentUrl": "https://www.obsidianautoworksoc.com/gallery/cadillac-lyriq-01.jpg"
+        },
+        {
+            "@type": "ImageObject",
+            "contentUrl": "https://www.obsidianautoworksoc.com/gallery/lexus-gx-01.jpg"
+        },
+        {
+            "@type": "ImageObject",
+            "contentUrl": "https://www.obsidianautoworksoc.com/gallery/toyota-4runner-01.jpg"
+        },
+        {
+            "@type": "ImageObject",
+            "contentUrl": "https://www.obsidianautoworksoc.com/gallery/bmw-x3-01.jpg"
+        },
+        {
+            "@type": "ImageObject",
+            "contentUrl": "https://www.obsidianautoworksoc.com/gallery/porsche-cayenne-coupe-01.jpg"
+        }
+    ]
+}
+</script>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -118,11 +178,18 @@
                 <div class="gallery-browser"><div class="gallery-filters" role="group" aria-label="Filter vehicle photos"><button type="button" data-gallery-filter="all" aria-pressed="true">All work</button><button type="button" data-gallery-filter="tesla" aria-pressed="false">Teslas</button><button type="button" data-gallery-filter="car" aria-pressed="false">Cars</button><button type="button" data-gallery-filter="suv" aria-pressed="false">SUVs</button><button type="button" data-gallery-filter="truck" aria-pressed="false">Trucks</button></div><p id="gallery-count" role="status" aria-live="polite"></p></div>
                 <!-- Car Gallery Grid - Cars will be added here -->
                 <div class="car-gallery" id="ceramic-gallery">
+<!-- TintWiz gallery additions, October 25, 2026 -->
+<div class="car-card car-card--portfolio" data-vehicle-category="car"><div class="car-card__images car-card__images--gallery"><div class="car-card__image"><a class="car-card__image-link" href="/gallery/tintwiz-20261025/mercedes-amg-gt-01.webp"><img src="/gallery/optimized/tintwiz-20261025/mercedes-amg-gt-01-900.webp" srcset="/gallery/optimized/tintwiz-20261025/mercedes-amg-gt-01-600.webp 600w, /gallery/optimized/tintwiz-20261025/mercedes-amg-gt-01-900.webp 900w" sizes="(max-width: 768px) 92vw, 44vw" width="900" height="675" fetchpriority="high" decoding="async" alt="Mercedes-AMG GT window tint — front three-quarter view"></a></div><div class="car-card__image"><a class="car-card__image-link" href="/gallery/tintwiz-20261025/mercedes-amg-gt-02.webp"><img src="/gallery/optimized/tintwiz-20261025/mercedes-amg-gt-02-900.webp" srcset="/gallery/optimized/tintwiz-20261025/mercedes-amg-gt-02-600.webp 600w, /gallery/optimized/tintwiz-20261025/mercedes-amg-gt-02-900.webp 900w" sizes="(max-width: 768px) 92vw, 44vw" width="900" height="675" loading="lazy" decoding="async" alt="Mercedes-AMG GT window tint — side profile"></a></div><div class="car-card__image"><a class="car-card__image-link" href="/gallery/tintwiz-20261025/mercedes-amg-gt-03.webp"><img src="/gallery/optimized/tintwiz-20261025/mercedes-amg-gt-03-900.webp" srcset="/gallery/optimized/tintwiz-20261025/mercedes-amg-gt-03-600.webp 600w, /gallery/optimized/tintwiz-20261025/mercedes-amg-gt-03-900.webp 900w" sizes="(max-width: 768px) 92vw, 44vw" width="900" height="675" loading="lazy" decoding="async" alt="Mercedes-AMG GT window tint — front view"></a></div></div><div class="car-card__info"><h3 class="car-card__title">Mercedes-AMG GT</h3></div></div>
+<div class="car-card car-card--portfolio" data-vehicle-category="car"><div class="car-card__images car-card__images--gallery"><div class="car-card__image"><a class="car-card__image-link" href="/gallery/tintwiz-20261025/chevrolet-corvette-01.webp"><img src="/gallery/optimized/tintwiz-20261025/chevrolet-corvette-01-900.webp" srcset="/gallery/optimized/tintwiz-20261025/chevrolet-corvette-01-600.webp 600w, /gallery/optimized/tintwiz-20261025/chevrolet-corvette-01-900.webp 900w" sizes="(max-width: 768px) 92vw, 44vw" width="900" height="675" loading="eager" decoding="async" alt="Chevrolet Corvette window tint — side glass and windshield"></a></div><div class="car-card__image"><a class="car-card__image-link" href="/gallery/tintwiz-20261025/chevrolet-corvette-02.webp"><img src="/gallery/optimized/tintwiz-20261025/chevrolet-corvette-02-900.webp" srcset="/gallery/optimized/tintwiz-20261025/chevrolet-corvette-02-600.webp 600w, /gallery/optimized/tintwiz-20261025/chevrolet-corvette-02-900.webp 900w" sizes="(max-width: 768px) 92vw, 44vw" width="900" height="675" loading="lazy" decoding="async" alt="Chevrolet Corvette window tint — front view"></a></div></div><div class="car-card__info"><h3 class="car-card__title">Chevrolet Corvette</h3></div></div>
+<div class="car-card car-card--portfolio" data-vehicle-category="truck"><div class="car-card__images car-card__images--gallery"><div class="car-card__image"><a class="car-card__image-link" href="/gallery/tintwiz-20261025/ford-f150-raptor-01.webp"><img src="/gallery/optimized/tintwiz-20261025/ford-f150-raptor-01-900.webp" srcset="/gallery/optimized/tintwiz-20261025/ford-f150-raptor-01-600.webp 600w, /gallery/optimized/tintwiz-20261025/ford-f150-raptor-01-900.webp 900w" sizes="(max-width: 768px) 92vw, 44vw" width="900" height="675" loading="lazy" decoding="async" alt="Ford F-150 Raptor window tint — front three-quarter view"></a></div><div class="car-card__image"><a class="car-card__image-link" href="/gallery/tintwiz-20261025/ford-f150-raptor-02.webp"><img src="/gallery/optimized/tintwiz-20261025/ford-f150-raptor-02-900.webp" srcset="/gallery/optimized/tintwiz-20261025/ford-f150-raptor-02-600.webp 600w, /gallery/optimized/tintwiz-20261025/ford-f150-raptor-02-900.webp 900w" sizes="(max-width: 768px) 92vw, 44vw" width="900" height="675" loading="lazy" decoding="async" alt="Ford F-150 Raptor window tint — side profile"></a></div><div class="car-card__image"><a class="car-card__image-link" href="/gallery/tintwiz-20261025/ford-f150-raptor-03.webp"><img src="/gallery/optimized/tintwiz-20261025/ford-f150-raptor-03-900.webp" srcset="/gallery/optimized/tintwiz-20261025/ford-f150-raptor-03-600.webp 600w, /gallery/optimized/tintwiz-20261025/ford-f150-raptor-03-900.webp 900w" sizes="(max-width: 768px) 92vw, 44vw" width="900" height="675" loading="lazy" decoding="async" alt="Ford F-150 Raptor window tint — rear three-quarter view"></a></div></div><div class="car-card__info"><h3 class="car-card__title">Ford F-150 Raptor</h3></div></div>
+<div class="car-card car-card--portfolio" data-vehicle-category="tesla suv"><div class="car-card__images car-card__images--gallery"><div class="car-card__image"><a class="car-card__image-link" href="/gallery/tintwiz-20261025/tesla-model-y-juniper-01.webp"><img src="/gallery/optimized/tintwiz-20261025/tesla-model-y-juniper-01-900.webp" srcset="/gallery/optimized/tintwiz-20261025/tesla-model-y-juniper-01-600.webp 600w, /gallery/optimized/tintwiz-20261025/tesla-model-y-juniper-01-900.webp 900w" sizes="(max-width: 768px) 92vw, 44vw" width="900" height="675" loading="lazy" decoding="async" alt="Tesla Model Y window tint — front three-quarter view"></a></div><div class="car-card__image"><a class="car-card__image-link" href="/gallery/tintwiz-20261025/tesla-model-y-juniper-02.webp"><img src="/gallery/optimized/tintwiz-20261025/tesla-model-y-juniper-02-900.webp" srcset="/gallery/optimized/tintwiz-20261025/tesla-model-y-juniper-02-600.webp 600w, /gallery/optimized/tintwiz-20261025/tesla-model-y-juniper-02-900.webp 900w" sizes="(max-width: 768px) 92vw, 44vw" width="900" height="675" loading="lazy" decoding="async" alt="Tesla Model Y window tint — rear three-quarter view"></a></div></div><div class="car-card__info"><h3 class="car-card__title">Tesla Model Y</h3></div></div>
+<div class="car-card car-card--portfolio" data-vehicle-category="car"><div class="car-card__images car-card__images--gallery"><div class="car-card__image"><a class="car-card__image-link" href="/gallery/tintwiz-20261025/volkswagen-karmann-ghia-01.webp"><img src="/gallery/optimized/tintwiz-20261025/volkswagen-karmann-ghia-01-900.webp" srcset="/gallery/optimized/tintwiz-20261025/volkswagen-karmann-ghia-01-600.webp 600w, /gallery/optimized/tintwiz-20261025/volkswagen-karmann-ghia-01-900.webp 900w" sizes="(max-width: 768px) 92vw, 44vw" width="900" height="675" loading="lazy" decoding="async" alt="Volkswagen Karmann Ghia window tint — rear three-quarter view"></a></div><div class="car-card__image"><a class="car-card__image-link" href="/gallery/tintwiz-20261025/volkswagen-karmann-ghia-02.webp"><img src="/gallery/optimized/tintwiz-20261025/volkswagen-karmann-ghia-02-900.webp" srcset="/gallery/optimized/tintwiz-20261025/volkswagen-karmann-ghia-02-600.webp 600w, /gallery/optimized/tintwiz-20261025/volkswagen-karmann-ghia-02-900.webp 900w" sizes="(max-width: 768px) 92vw, 44vw" width="900" height="675" loading="lazy" decoding="async" alt="Volkswagen Karmann Ghia window tint — rear glass detail"></a></div></div><div class="car-card__info"><h3 class="car-card__title">Volkswagen Karmann Ghia</h3></div></div>
+
                     <div class="car-card car-card--tall" data-vehicle-category="truck">
                         <div class="car-card__images car-card__images--triple">
                             <div class="car-card__image">
                                 <a class="car-card__image-link" href="gallery/toyota-tacoma-01.jpg">
-                                    <img src="gallery/optimized/gallery-cards/toyota-tacoma-01.webp" srcset="gallery/optimized/gallery-cards/toyota-tacoma-01.webp 900w, gallery/toyota-tacoma-01.jpg 1179w" sizes="(max-width: 768px) 92vw, 44vw" fetchpriority="high" decoding="async"
+                                    <img src="gallery/optimized/gallery-cards/toyota-tacoma-01.webp" srcset="gallery/optimized/gallery-cards/toyota-tacoma-01.webp 900w, gallery/toyota-tacoma-01.jpg 1179w" sizes="(max-width: 768px) 92vw, 44vw" loading="lazy" decoding="async"
                                         alt="Toyota Tacoma with ceramic window tint, front-side detail">
                                 </a>
                             </div>
@@ -406,7 +473,7 @@
     <nav class="gallery-contact-bar" aria-label="Contact Obsidian"><a class="gallery-contact-text" href="sms:+17146007134" data-lead-action="gallery_sticky_text"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 4h14a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H9l-6 3V6a2 2 0 0 1 2-2Z"/><path d="M7 9h10M7 13h6"/></svg>Text us</a><a class="gallery-contact-call" href="tel:+17146007134" data-lead-action="gallery_sticky_call"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m7 3 3 5-3 3q2 4 6 6l3-3 5 3q-1 5-5 4C9 19 5 15 3 8Q2 4 7 3Z"/></svg>Call us</a></nav>
     <dialog class="work-lightbox" id="work-lightbox" aria-label="Window tint photo viewer"><button class="work-lightbox-close" type="button" aria-label="Close image">×</button><button class="work-lightbox-prev" type="button" aria-label="Previous image">←</button><figure><img alt=""><figcaption></figcaption></figure><button class="work-lightbox-next" type="button" aria-label="Next image">→</button></dialog>
     <script src="/assets/gallery.js?v=20260921" defer></script>
-    <script src="/lead-tracking.js" defer></script>
+    <script src="/assets/attribution/journey.js?v=20261108" defer></script><script src="/lead-tracking.js" defer></script>
 </body>
 
 </html>

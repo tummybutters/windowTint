@@ -26,5 +26,5 @@ const {createStore}=require('../lib/automotive-quote-store');
 let persisted;
 await createStore({query:async(sql,params)=>{persisted={sql,params};return[{id:input.id}]}}).persist(enhanced);
 assert(persisted.sql.includes('priority,timing'));
-assert.deepEqual(persisted.params.slice(-2),['Cooler cabin','Sometime this week']);
+assert.deepEqual(persisted.params.slice(12,14),['Cooler cabin','Sometime this week']);assert.equal(persisted.params[14],null);
 console.log('New preference validation, backward compatibility, hashing and storage passed.');

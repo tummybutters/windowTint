@@ -1,0 +1,20 @@
+import assert from 'node:assert/strict';
+import {createRequire} from 'node:module';
+const require=createRequire(import.meta.url),{normalize,createStore}=require('../lib/crm-attribution');
+const base={kind:'contact',record_id:'123',contact_id:'123',quote_id:'f0235e20-8fac-465b-8bf3-1fcb7c0a4f60',occurred_at:'2026-11-08T18:00:00Z'};
+assert.equal(normalize({...base,name:'secret'}).name,undefined);
+assert.throws(()=>normalize({...base,kind:'booking'}));
+assert.throws(()=>normalize({...base,kind:'payment',amount_minor:-100}));
+assert.throws(()=>normalize({...base,kind:'payment',amount_minor:100}));
+const pay=normalize({...base,kind:'payment',project_id:'321',amount_minor:10000,currency:'USD',status:'paid'});assert.equal(pay.amount_minor,10000);
+let calls=[];const store=createStore(async(q,p)=>{calls.push([q,p]);if(q.includes('SELECT id FROM automotive_quotes'))return[{id:base.quote_id}];if(q.includes('INSERT INTO crm_attribution_records'))return[{record_id:'123'}];return[]});
+await store.ingest(base);assert(calls.some(([q])=>q.includes('ON CONFLICT')));
+await assert.rejects(createStore(async()=>[]).ingest(base),/quote_not_found/);
+console.log('CRM IDs, strict evidence types, payment validation, privacy and idempotency passed');
+assert.throws(()=>normalize({...base,record_id:'different'}),/invalid_contact_mapping/);
+assert(calls.find(([q])=>q.includes('INSERT INTO crm_attribution_records'))[0].includes('occurred_at<=EXCLUDED.occurred_at'),'stale event cannot replace newer lifecycle status');
+let reportingSQL='';await createStore(async(q)=>{reportingSQL=q;return[]}).report([base.quote_id]);assert(reportingSQL.includes('r.quote_id=c.quote_id'),'contact-only association cannot claim unrelated bookings');
+const {createHandler}=require('../api/crm-attribution');
+function res(){return {code:0,body:null,setHeader(){},status(x){this.code=x;return this},json(x){this.body=x;return this}}}
+let rr=res();await createHandler({secrets:['private-test']})({method:'POST',headers:{},body:base},rr);assert.equal(rr.code,401);
+rr=res();await createHandler({secrets:['private-test'],store:{ingest:async r=>({record_id:r.record_id})}})({method:'POST',headers:{authorization:'Bearer private-test'},body:base},rr);assert.equal(rr.code,200);

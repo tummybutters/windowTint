@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en" data-lead-service="tesla_tint" data-lead-variant="tesla_action_v1">
 
-<head>
+<head><script src="/assets/quote/experiment.js?v=20261016-speed"></script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tesla Tint Quote | Obsidian Autoworks</title>
@@ -264,7 +264,7 @@
             href="sms:+17146007134?body=Hi%20Obsidian%20Autoworks%2C%20I%27d%20like%20a%20Tesla%20tint%20quote.%20My%20model%2C%20year%2C%20package%2C%20city%2C%20and%20shade%20goal%20are%3A%20">Text
             details</a>
     </div>
-    <script src="/lead-tracking.js" defer></script>
+    <script src="/assets/attribution/journey.js?v=20261108" defer></script><script src="/lead-tracking.js" defer></script>
 </body>
 
 </html>

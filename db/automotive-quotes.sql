@@ -31,3 +31,7 @@ ALTER TABLE automotive_quotes ADD COLUMN IF NOT EXISTS crm_locked_at timestamptz
 ALTER TABLE automotive_quotes ADD COLUMN IF NOT EXISTS crm_error text;
 ALTER TABLE automotive_quotes ADD COLUMN IF NOT EXISTS crm_accepted_at timestamptz;
 CREATE INDEX IF NOT EXISTS automotive_quotes_crm ON automotive_quotes(crm_state,crm_next_at);
+ALTER TABLE automotive_quotes ADD COLUMN IF NOT EXISTS email text;
+ALTER TABLE automotive_quotes ADD COLUMN IF NOT EXISTS lead_kind text NOT NULL DEFAULT 'auto';
+ALTER TABLE automotive_quotes ADD COLUMN IF NOT EXISTS company text;
+ALTER TABLE automotive_quotes ADD COLUMN IF NOT EXISTS details jsonb;

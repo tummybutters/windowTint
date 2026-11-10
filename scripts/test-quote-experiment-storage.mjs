@@ -1,0 +1,11 @@
+import assert from 'node:assert/strict';
+import {createRequire} from 'node:module';
+const require=createRequire(import.meta.url);
+const {createStore}=require('../lib/automotive-quote-store');
+let selected='';
+const store=createStore({query:async(sql)=>{selected=sql;return[{id:'test'}]}});
+await store.status('test');
+assert(selected.includes("attribution->>'experiment_id' AS experiment_id"),'Private readback must expose saved experiment ID');
+assert(selected.includes("attribution->>'experiment_variant' AS experiment_variant"),'Private readback must expose saved arm');
+assert(!selected.includes('SELECT *'),'Readback must not expose contact details');
+console.log('Private delivery readback exposes stored experiment labels without adding customer details.');

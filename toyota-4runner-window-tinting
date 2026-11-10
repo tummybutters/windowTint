@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en" data-lead-service="mobile_tint" data-page-type="vehicle-guide" data-vehicle="toyota-4runner">
-<head>
+<head><script src="/assets/quote/experiment.js?v=20261016-speed"></script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <title>Toyota 4Runner Window Tinting | Obsidian Autoworks</title>
@@ -26,7 +26,7 @@
       <a class="paid-brand" href="/" aria-label="Obsidian Autoworks home"><img class="paid-brand__mark" src="/car-hero.webp" width="500" height="200" alt=""><span class="vehicle-wordmark">OBSIDIAN<span>AUTOWORKS</span></span></a>
       <div class="vehicle-nav__links"><a href="/services">Services</a><a href="/window-tint-pricing">Pricing</a><a href="/window-tinting-gallery">Gallery</a><a href="/#contact">Contact</a></div>
       <a class="paid-button paid-button--primary vehicle-nav__book" href="sms:+17146007134?body=Hi%20Obsidian%2C%20I&#39;d%20like%20a%20window%20tint%20quote%20for%20my%20Toyota%204Runner.%20Year%3A%20__.%20City%3A%20__.%20Windows%20to%20tint%3A%20__." data-lead-action="vehicle_nav_text">Text us</a>
-      <details class="vehicle-menu"><summary aria-label="Navigation menu">Menu</summary><div><a href="/services">Services</a><a href="/window-tint-pricing">Pricing</a><a href="/window-tinting-gallery">Gallery</a><a href="/#contact">Contact</a><a href="/booking">Book online</a></div></details>
+      <details class="vehicle-menu"><summary aria-label="Navigation menu">Menu</summary><div><a href="/services">Services</a><a href="/window-tint-pricing">Pricing</a><a href="/window-tinting-gallery">Gallery</a><a href="/#contact">Contact</a><a href="/booking">Call or text to book</a></div></details>
     </div>
   </nav>
   <main id="main">
@@ -58,6 +58,6 @@
   <nav class="vehicle-mobile-contact" aria-label="Call or text Obsidian"><a class="paid-button vehicle-cta--call" href="tel:7146007134" data-lead-action="vehicle_sticky_call">Call Obsidian</a><a class="paid-button vehicle-cta--text" href="sms:+17146007134?body=Hi%20Obsidian%2C%20I&#39;d%20like%20a%20window%20tint%20quote%20for%20my%20Toyota%204Runner.%20Year%3A%20__.%20City%3A%20__.%20Windows%20to%20tint%3A%20__." data-lead-action="vehicle_sticky_text">Text for a quote</a></nav>
   <dialog class="vehicle-lightbox" aria-label="Vehicle photo viewer"><form method="dialog"><button class="vehicle-lightbox__close" aria-label="Close photo" title="Close photo">&#215;</button></form><img alt=""><p></p></dialog>
   <script src="/vehicle-pages.js?v=20260916-release1" defer></script>
-  <script src="/lead-tracking.js" defer></script>
+  <script src="/assets/attribution/journey.js?v=20261108" defer></script><script src="/lead-tracking.js" defer></script>
 </body>
 </html>

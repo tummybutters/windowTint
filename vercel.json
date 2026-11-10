@@ -305,9 +305,1954 @@
       "source": "/tustin",
       "destination": "/tustin-window-tinting",
       "permanent": true
+    },
+    {
+      "source": "/commercial-heat-glare-window-film",
+      "destination": "/commercial-window-film-socal#solar-glare",
+      "permanent": true
+    },
+    {
+      "source": "/office-privacy-window-film",
+      "destination": "/commercial-window-film-socal#privacy-decorative",
+      "permanent": true
+    },
+    {
+      "source": "/storefront-security-window-film",
+      "destination": "/commercial-window-film-socal#safety-security",
+      "permanent": true
     }
   ],
   "rewrites": [
+    {
+      "source": "/tint-shop-in-your-driveway",
+      "has": [
+        {
+          "type": "query",
+          "key": "experience",
+          "value": "driveway"
+        }
+      ],
+      "destination": "/experiments/driveway/tint-shop-in-your-driveway"
+    },
+    {
+      "source": "/car-window-tinting-near-me",
+      "has": [
+        {
+          "type": "query",
+          "key": "experience",
+          "value": "driveway"
+        }
+      ],
+      "destination": "/experiments/driveway/car-window-tinting-near-me"
+    },
+    {
+      "source": "/ceramic-window-tint-pricing",
+      "has": [
+        {
+          "type": "query",
+          "key": "experience",
+          "value": "driveway"
+        }
+      ],
+      "destination": "/experiments/driveway/ceramic-window-tint-pricing"
+    },
+    {
+      "source": "/ceramic-window-tinting",
+      "has": [
+        {
+          "type": "query",
+          "key": "experience",
+          "value": "driveway"
+        }
+      ],
+      "destination": "/experiments/driveway/ceramic-window-tinting"
+    },
+    {
+      "source": "/mobile-ceramic-window-tint-near-me",
+      "has": [
+        {
+          "type": "query",
+          "key": "experience",
+          "value": "driveway"
+        }
+      ],
+      "destination": "/experiments/driveway/mobile-ceramic-window-tint-near-me"
+    },
+    {
+      "source": "/mobile-window-tinting",
+      "has": [
+        {
+          "type": "query",
+          "key": "experience",
+          "value": "driveway"
+        }
+      ],
+      "destination": "/experiments/driveway/mobile-window-tinting"
+    },
+    {
+      "source": "/mobile-window-tinting-near-me",
+      "has": [
+        {
+          "type": "query",
+          "key": "experience",
+          "value": "driveway"
+        }
+      ],
+      "destination": "/experiments/driveway/mobile-window-tinting-near-me"
+    },
+    {
+      "source": "/nano-ceramic-window-tint",
+      "has": [
+        {
+          "type": "query",
+          "key": "experience",
+          "value": "driveway"
+        }
+      ],
+      "destination": "/experiments/driveway/nano-ceramic-window-tint"
+    },
+    {
+      "source": "/quote-widget",
+      "has": [
+        {
+          "type": "query",
+          "key": "experience",
+          "value": "driveway"
+        }
+      ],
+      "destination": "/experiments/driveway/quote-widget"
+    },
+    {
+      "source": "/tesla-cybertruck-window-tint",
+      "has": [
+        {
+          "type": "query",
+          "key": "experience",
+          "value": "driveway"
+        }
+      ],
+      "destination": "/experiments/driveway/tesla-cybertruck-window-tint"
+    },
+    {
+      "source": "/tesla-model-3-window-tinting",
+      "has": [
+        {
+          "type": "query",
+          "key": "experience",
+          "value": "driveway"
+        }
+      ],
+      "destination": "/experiments/driveway/tesla-model-3-window-tinting"
+    },
+    {
+      "source": "/tesla-model-y-window-tinting",
+      "has": [
+        {
+          "type": "query",
+          "key": "experience",
+          "value": "driveway"
+        }
+      ],
+      "destination": "/experiments/driveway/tesla-model-y-window-tinting"
+    },
+    {
+      "source": "/tesla-window-tinting",
+      "has": [
+        {
+          "type": "query",
+          "key": "experience",
+          "value": "driveway"
+        }
+      ],
+      "destination": "/experiments/driveway/tesla-window-tinting"
+    },
+    {
+      "source": "/tint-removal",
+      "has": [
+        {
+          "type": "query",
+          "key": "experience",
+          "value": "driveway"
+        }
+      ],
+      "destination": "/experiments/driveway/tint-removal"
+    },
+    {
+      "source": "/tint-shop-near-me",
+      "has": [
+        {
+          "type": "query",
+          "key": "experience",
+          "value": "driveway"
+        }
+      ],
+      "destination": "/experiments/driveway/tint-shop-near-me"
+    },
+    {
+      "source": "/vip-booking",
+      "has": [
+        {
+          "type": "query",
+          "key": "experience",
+          "value": "driveway"
+        }
+      ],
+      "destination": "/experiments/driveway/vip-booking"
+    },
+    {
+      "source": "/window-tint-pricing",
+      "has": [
+        {
+          "type": "query",
+          "key": "experience",
+          "value": "driveway"
+        }
+      ],
+      "destination": "/experiments/driveway/window-tint-pricing"
+    },
+    {
+      "source": "/tint-shop-in-your-driveway",
+      "has": [
+        {
+          "type": "query",
+          "key": "experiment_variant",
+          "value": "driveway_offer"
+        }
+      ],
+      "destination": "/experiments/driveway/tint-shop-in-your-driveway"
+    },
+    {
+      "source": "/car-window-tinting-near-me",
+      "has": [
+        {
+          "type": "query",
+          "key": "experiment_variant",
+          "value": "driveway_offer"
+        }
+      ],
+      "destination": "/experiments/driveway/car-window-tinting-near-me"
+    },
+    {
+      "source": "/ceramic-window-tint-pricing",
+      "has": [
+        {
+          "type": "query",
+          "key": "experiment_variant",
+          "value": "driveway_offer"
+        }
+      ],
+      "destination": "/experiments/driveway/ceramic-window-tint-pricing"
+    },
+    {
+      "source": "/ceramic-window-tinting",
+      "has": [
+        {
+          "type": "query",
+          "key": "experiment_variant",
+          "value": "driveway_offer"
+        }
+      ],
+      "destination": "/experiments/driveway/ceramic-window-tinting"
+    },
+    {
+      "source": "/mobile-ceramic-window-tint-near-me",
+      "has": [
+        {
+          "type": "query",
+          "key": "experiment_variant",
+          "value": "driveway_offer"
+        }
+      ],
+      "destination": "/experiments/driveway/mobile-ceramic-window-tint-near-me"
+    },
+    {
+      "source": "/mobile-window-tinting",
+      "has": [
+        {
+          "type": "query",
+          "key": "experiment_variant",
+          "value": "driveway_offer"
+        }
+      ],
+      "destination": "/experiments/driveway/mobile-window-tinting"
+    },
+    {
+      "source": "/mobile-window-tinting-near-me",
+      "has": [
+        {
+          "type": "query",
+          "key": "experiment_variant",
+          "value": "driveway_offer"
+        }
+      ],
+      "destination": "/experiments/driveway/mobile-window-tinting-near-me"
+    },
+    {
+      "source": "/nano-ceramic-window-tint",
+      "has": [
+        {
+          "type": "query",
+          "key": "experiment_variant",
+          "value": "driveway_offer"
+        }
+      ],
+      "destination": "/experiments/driveway/nano-ceramic-window-tint"
+    },
+    {
+      "source": "/quote-widget",
+      "has": [
+        {
+          "type": "query",
+          "key": "experiment_variant",
+          "value": "driveway_offer"
+        }
+      ],
+      "destination": "/experiments/driveway/quote-widget"
+    },
+    {
+      "source": "/tesla-cybertruck-window-tint",
+      "has": [
+        {
+          "type": "query",
+          "key": "experiment_variant",
+          "value": "driveway_offer"
+        }
+      ],
+      "destination": "/experiments/driveway/tesla-cybertruck-window-tint"
+    },
+    {
+      "source": "/tesla-model-3-window-tinting",
+      "has": [
+        {
+          "type": "query",
+          "key": "experiment_variant",
+          "value": "driveway_offer"
+        }
+      ],
+      "destination": "/experiments/driveway/tesla-model-3-window-tinting"
+    },
+    {
+      "source": "/tesla-model-y-window-tinting",
+      "has": [
+        {
+          "type": "query",
+          "key": "experiment_variant",
+          "value": "driveway_offer"
+        }
+      ],
+      "destination": "/experiments/driveway/tesla-model-y-window-tinting"
+    },
+    {
+      "source": "/tesla-window-tinting",
+      "has": [
+        {
+          "type": "query",
+          "key": "experiment_variant",
+          "value": "driveway_offer"
+        }
+      ],
+      "destination": "/experiments/driveway/tesla-window-tinting"
+    },
+    {
+      "source": "/tint-removal",
+      "has": [
+        {
+          "type": "query",
+          "key": "experiment_variant",
+          "value": "driveway_offer"
+        }
+      ],
+      "destination": "/experiments/driveway/tint-removal"
+    },
+    {
+      "source": "/tint-shop-near-me",
+      "has": [
+        {
+          "type": "query",
+          "key": "experiment_variant",
+          "value": "driveway_offer"
+        }
+      ],
+      "destination": "/experiments/driveway/tint-shop-near-me"
+    },
+    {
+      "source": "/vip-booking",
+      "has": [
+        {
+          "type": "query",
+          "key": "experiment_variant",
+          "value": "driveway_offer"
+        }
+      ],
+      "destination": "/experiments/driveway/vip-booking"
+    },
+    {
+      "source": "/window-tint-pricing",
+      "has": [
+        {
+          "type": "query",
+          "key": "experiment_variant",
+          "value": "driveway_offer"
+        }
+      ],
+      "destination": "/experiments/driveway/window-tint-pricing"
+    },
+    {
+      "source": "/tint-shop-in-your-driveway",
+      "destination": "/experiments/original/tint-shop-in-your-driveway",
+      "has": [
+        {
+          "type": "query",
+          "key": "experience",
+          "value": "original"
+        }
+      ]
+    },
+    {
+      "source": "/tint-shop-in-your-driveway",
+      "destination": "/experiments/original/tint-shop-in-your-driveway",
+      "has": [
+        {
+          "type": "query",
+          "key": "experiment_variant",
+          "value": "old_setup"
+        }
+      ]
+    },
+    {
+      "source": "/tint-shop-in-your-driveway",
+      "destination": "/experiments/original/tint-shop-in-your-driveway",
+      "has": [
+        {
+          "type": "query",
+          "key": "gclid"
+        }
+      ]
+    },
+    {
+      "source": "/tint-shop-in-your-driveway",
+      "destination": "/experiments/original/tint-shop-in-your-driveway",
+      "has": [
+        {
+          "type": "query",
+          "key": "gbraid"
+        }
+      ]
+    },
+    {
+      "source": "/tint-shop-in-your-driveway",
+      "destination": "/experiments/original/tint-shop-in-your-driveway",
+      "has": [
+        {
+          "type": "query",
+          "key": "wbraid"
+        }
+      ]
+    },
+    {
+      "source": "/car-window-tinting-near-me",
+      "destination": "/experiments/original/car-window-tinting-near-me",
+      "has": [
+        {
+          "type": "query",
+          "key": "experience",
+          "value": "original"
+        }
+      ]
+    },
+    {
+      "source": "/car-window-tinting-near-me",
+      "destination": "/experiments/original/car-window-tinting-near-me",
+      "has": [
+        {
+          "type": "query",
+          "key": "experiment_variant",
+          "value": "old_setup"
+        }
+      ]
+    },
+    {
+      "source": "/car-window-tinting-near-me",
+      "destination": "/experiments/original/car-window-tinting-near-me",
+      "has": [
+        {
+          "type": "query",
+          "key": "gclid"
+        }
+      ]
+    },
+    {
+      "source": "/car-window-tinting-near-me",
+      "destination": "/experiments/original/car-window-tinting-near-me",
+      "has": [
+        {
+          "type": "query",
+          "key": "gbraid"
+        }
+      ]
+    },
+    {
+      "source": "/car-window-tinting-near-me",
+      "destination": "/experiments/original/car-window-tinting-near-me",
+      "has": [
+        {
+          "type": "query",
+          "key": "wbraid"
+        }
+      ]
+    },
+    {
+      "source": "/ceramic-window-tint-pricing",
+      "destination": "/experiments/original/ceramic-window-tint-pricing",
+      "has": [
+        {
+          "type": "query",
+          "key": "experience",
+          "value": "original"
+        }
+      ]
+    },
+    {
+      "source": "/ceramic-window-tint-pricing",
+      "destination": "/experiments/original/ceramic-window-tint-pricing",
+      "has": [
+        {
+          "type": "query",
+          "key": "experiment_variant",
+          "value": "old_setup"
+        }
+      ]
+    },
+    {
+      "source": "/ceramic-window-tint-pricing",
+      "destination": "/experiments/original/ceramic-window-tint-pricing",
+      "has": [
+        {
+          "type": "query",
+          "key": "gclid"
+        }
+      ]
+    },
+    {
+      "source": "/ceramic-window-tint-pricing",
+      "destination": "/experiments/original/ceramic-window-tint-pricing",
+      "has": [
+        {
+          "type": "query",
+          "key": "gbraid"
+        }
+      ]
+    },
+    {
+      "source": "/ceramic-window-tint-pricing",
+      "destination": "/experiments/original/ceramic-window-tint-pricing",
+      "has": [
+        {
+          "type": "query",
+          "key": "wbraid"
+        }
+      ]
+    },
+    {
+      "source": "/ceramic-window-tinting",
+      "destination": "/experiments/original/ceramic-window-tinting",
+      "has": [
+        {
+          "type": "query",
+          "key": "experience",
+          "value": "original"
+        }
+      ]
+    },
+    {
+      "source": "/ceramic-window-tinting",
+      "destination": "/experiments/original/ceramic-window-tinting",
+      "has": [
+        {
+          "type": "query",
+          "key": "experiment_variant",
+          "value": "old_setup"
+        }
+      ]
+    },
+    {
+      "source": "/ceramic-window-tinting",
+      "destination": "/experiments/original/ceramic-window-tinting",
+      "has": [
+        {
+          "type": "query",
+          "key": "gclid"
+        }
+      ]
+    },
+    {
+      "source": "/ceramic-window-tinting",
+      "destination": "/experiments/original/ceramic-window-tinting",
+      "has": [
+        {
+          "type": "query",
+          "key": "gbraid"
+        }
+      ]
+    },
+    {
+      "source": "/ceramic-window-tinting",
+      "destination": "/experiments/original/ceramic-window-tinting",
+      "has": [
+        {
+          "type": "query",
+          "key": "wbraid"
+        }
+      ]
+    },
+    {
+      "source": "/mobile-ceramic-window-tint-near-me",
+      "destination": "/experiments/original/mobile-ceramic-window-tint-near-me",
+      "has": [
+        {
+          "type": "query",
+          "key": "experience",
+          "value": "original"
+        }
+      ]
+    },
+    {
+      "source": "/mobile-ceramic-window-tint-near-me",
+      "destination": "/experiments/original/mobile-ceramic-window-tint-near-me",
+      "has": [
+        {
+          "type": "query",
+          "key": "experiment_variant",
+          "value": "old_setup"
+        }
+      ]
+    },
+    {
+      "source": "/mobile-ceramic-window-tint-near-me",
+      "destination": "/experiments/original/mobile-ceramic-window-tint-near-me",
+      "has": [
+        {
+          "type": "query",
+          "key": "gclid"
+        }
+      ]
+    },
+    {
+      "source": "/mobile-ceramic-window-tint-near-me",
+      "destination": "/experiments/original/mobile-ceramic-window-tint-near-me",
+      "has": [
+        {
+          "type": "query",
+          "key": "gbraid"
+        }
+      ]
+    },
+    {
+      "source": "/mobile-ceramic-window-tint-near-me",
+      "destination": "/experiments/original/mobile-ceramic-window-tint-near-me",
+      "has": [
+        {
+          "type": "query",
+          "key": "wbraid"
+        }
+      ]
+    },
+    {
+      "source": "/mobile-window-tinting",
+      "destination": "/experiments/original/mobile-window-tinting",
+      "has": [
+        {
+          "type": "query",
+          "key": "experience",
+          "value": "original"
+        }
+      ]
+    },
+    {
+      "source": "/mobile-window-tinting",
+      "destination": "/experiments/original/mobile-window-tinting",
+      "has": [
+        {
+          "type": "query",
+          "key": "experiment_variant",
+          "value": "old_setup"
+        }
+      ]
+    },
+    {
+      "source": "/mobile-window-tinting",
+      "destination": "/experiments/original/mobile-window-tinting",
+      "has": [
+        {
+          "type": "query",
+          "key": "gclid"
+        }
+      ]
+    },
+    {
+      "source": "/mobile-window-tinting",
+      "destination": "/experiments/original/mobile-window-tinting",
+      "has": [
+        {
+          "type": "query",
+          "key": "gbraid"
+        }
+      ]
+    },
+    {
+      "source": "/mobile-window-tinting",
+      "destination": "/experiments/original/mobile-window-tinting",
+      "has": [
+        {
+          "type": "query",
+          "key": "wbraid"
+        }
+      ]
+    },
+    {
+      "source": "/mobile-window-tinting-near-me",
+      "destination": "/experiments/original/mobile-window-tinting-near-me",
+      "has": [
+        {
+          "type": "query",
+          "key": "experience",
+          "value": "original"
+        }
+      ]
+    },
+    {
+      "source": "/mobile-window-tinting-near-me",
+      "destination": "/experiments/original/mobile-window-tinting-near-me",
+      "has": [
+        {
+          "type": "query",
+          "key": "experiment_variant",
+          "value": "old_setup"
+        }
+      ]
+    },
+    {
+      "source": "/mobile-window-tinting-near-me",
+      "destination": "/experiments/original/mobile-window-tinting-near-me",
+      "has": [
+        {
+          "type": "query",
+          "key": "gclid"
+        }
+      ]
+    },
+    {
+      "source": "/mobile-window-tinting-near-me",
+      "destination": "/experiments/original/mobile-window-tinting-near-me",
+      "has": [
+        {
+          "type": "query",
+          "key": "gbraid"
+        }
+      ]
+    },
+    {
+      "source": "/mobile-window-tinting-near-me",
+      "destination": "/experiments/original/mobile-window-tinting-near-me",
+      "has": [
+        {
+          "type": "query",
+          "key": "wbraid"
+        }
+      ]
+    },
+    {
+      "source": "/nano-ceramic-window-tint",
+      "destination": "/experiments/original/nano-ceramic-window-tint",
+      "has": [
+        {
+          "type": "query",
+          "key": "experience",
+          "value": "original"
+        }
+      ]
+    },
+    {
+      "source": "/nano-ceramic-window-tint",
+      "destination": "/experiments/original/nano-ceramic-window-tint",
+      "has": [
+        {
+          "type": "query",
+          "key": "experiment_variant",
+          "value": "old_setup"
+        }
+      ]
+    },
+    {
+      "source": "/nano-ceramic-window-tint",
+      "destination": "/experiments/original/nano-ceramic-window-tint",
+      "has": [
+        {
+          "type": "query",
+          "key": "gclid"
+        }
+      ]
+    },
+    {
+      "source": "/nano-ceramic-window-tint",
+      "destination": "/experiments/original/nano-ceramic-window-tint",
+      "has": [
+        {
+          "type": "query",
+          "key": "gbraid"
+        }
+      ]
+    },
+    {
+      "source": "/nano-ceramic-window-tint",
+      "destination": "/experiments/original/nano-ceramic-window-tint",
+      "has": [
+        {
+          "type": "query",
+          "key": "wbraid"
+        }
+      ]
+    },
+    {
+      "source": "/quote-widget",
+      "destination": "/experiments/original/quote-widget",
+      "has": [
+        {
+          "type": "query",
+          "key": "experience",
+          "value": "original"
+        }
+      ]
+    },
+    {
+      "source": "/quote-widget",
+      "destination": "/experiments/original/quote-widget",
+      "has": [
+        {
+          "type": "query",
+          "key": "experiment_variant",
+          "value": "old_setup"
+        }
+      ]
+    },
+    {
+      "source": "/quote-widget",
+      "destination": "/experiments/original/quote-widget",
+      "has": [
+        {
+          "type": "query",
+          "key": "gclid"
+        }
+      ]
+    },
+    {
+      "source": "/quote-widget",
+      "destination": "/experiments/original/quote-widget",
+      "has": [
+        {
+          "type": "query",
+          "key": "gbraid"
+        }
+      ]
+    },
+    {
+      "source": "/quote-widget",
+      "destination": "/experiments/original/quote-widget",
+      "has": [
+        {
+          "type": "query",
+          "key": "wbraid"
+        }
+      ]
+    },
+    {
+      "source": "/tesla-cybertruck-window-tint",
+      "destination": "/experiments/original/tesla-cybertruck-window-tint",
+      "has": [
+        {
+          "type": "query",
+          "key": "experience",
+          "value": "original"
+        }
+      ]
+    },
+    {
+      "source": "/tesla-cybertruck-window-tint",
+      "destination": "/experiments/original/tesla-cybertruck-window-tint",
+      "has": [
+        {
+          "type": "query",
+          "key": "experiment_variant",
+          "value": "old_setup"
+        }
+      ]
+    },
+    {
+      "source": "/tesla-cybertruck-window-tint",
+      "destination": "/experiments/original/tesla-cybertruck-window-tint",
+      "has": [
+        {
+          "type": "query",
+          "key": "gclid"
+        }
+      ]
+    },
+    {
+      "source": "/tesla-cybertruck-window-tint",
+      "destination": "/experiments/original/tesla-cybertruck-window-tint",
+      "has": [
+        {
+          "type": "query",
+          "key": "gbraid"
+        }
+      ]
+    },
+    {
+      "source": "/tesla-cybertruck-window-tint",
+      "destination": "/experiments/original/tesla-cybertruck-window-tint",
+      "has": [
+        {
+          "type": "query",
+          "key": "wbraid"
+        }
+      ]
+    },
+    {
+      "source": "/tesla-model-3-window-tinting",
+      "destination": "/experiments/original/tesla-model-3-window-tinting",
+      "has": [
+        {
+          "type": "query",
+          "key": "experience",
+          "value": "original"
+        }
+      ]
+    },
+    {
+      "source": "/tesla-model-3-window-tinting",
+      "destination": "/experiments/original/tesla-model-3-window-tinting",
+      "has": [
+        {
+          "type": "query",
+          "key": "experiment_variant",
+          "value": "old_setup"
+        }
+      ]
+    },
+    {
+      "source": "/tesla-model-3-window-tinting",
+      "destination": "/experiments/original/tesla-model-3-window-tinting",
+      "has": [
+        {
+          "type": "query",
+          "key": "gclid"
+        }
+      ]
+    },
+    {
+      "source": "/tesla-model-3-window-tinting",
+      "destination": "/experiments/original/tesla-model-3-window-tinting",
+      "has": [
+        {
+          "type": "query",
+          "key": "gbraid"
+        }
+      ]
+    },
+    {
+      "source": "/tesla-model-3-window-tinting",
+      "destination": "/experiments/original/tesla-model-3-window-tinting",
+      "has": [
+        {
+          "type": "query",
+          "key": "wbraid"
+        }
+      ]
+    },
+    {
+      "source": "/tesla-model-y-window-tinting",
+      "destination": "/experiments/original/tesla-model-y-window-tinting",
+      "has": [
+        {
+          "type": "query",
+          "key": "experience",
+          "value": "original"
+        }
+      ]
+    },
+    {
+      "source": "/tesla-model-y-window-tinting",
+      "destination": "/experiments/original/tesla-model-y-window-tinting",
+      "has": [
+        {
+          "type": "query",
+          "key": "experiment_variant",
+          "value": "old_setup"
+        }
+      ]
+    },
+    {
+      "source": "/tesla-model-y-window-tinting",
+      "destination": "/experiments/original/tesla-model-y-window-tinting",
+      "has": [
+        {
+          "type": "query",
+          "key": "gclid"
+        }
+      ]
+    },
+    {
+      "source": "/tesla-model-y-window-tinting",
+      "destination": "/experiments/original/tesla-model-y-window-tinting",
+      "has": [
+        {
+          "type": "query",
+          "key": "gbraid"
+        }
+      ]
+    },
+    {
+      "source": "/tesla-model-y-window-tinting",
+      "destination": "/experiments/original/tesla-model-y-window-tinting",
+      "has": [
+        {
+          "type": "query",
+          "key": "wbraid"
+        }
+      ]
+    },
+    {
+      "source": "/tesla-window-tinting",
+      "destination": "/experiments/original/tesla-window-tinting",
+      "has": [
+        {
+          "type": "query",
+          "key": "experience",
+          "value": "original"
+        }
+      ]
+    },
+    {
+      "source": "/tesla-window-tinting",
+      "destination": "/experiments/original/tesla-window-tinting",
+      "has": [
+        {
+          "type": "query",
+          "key": "experiment_variant",
+          "value": "old_setup"
+        }
+      ]
+    },
+    {
+      "source": "/tesla-window-tinting",
+      "destination": "/experiments/original/tesla-window-tinting",
+      "has": [
+        {
+          "type": "query",
+          "key": "gclid"
+        }
+      ]
+    },
+    {
+      "source": "/tesla-window-tinting",
+      "destination": "/experiments/original/tesla-window-tinting",
+      "has": [
+        {
+          "type": "query",
+          "key": "gbraid"
+        }
+      ]
+    },
+    {
+      "source": "/tesla-window-tinting",
+      "destination": "/experiments/original/tesla-window-tinting",
+      "has": [
+        {
+          "type": "query",
+          "key": "wbraid"
+        }
+      ]
+    },
+    {
+      "source": "/tint-removal",
+      "destination": "/experiments/original/tint-removal",
+      "has": [
+        {
+          "type": "query",
+          "key": "experience",
+          "value": "original"
+        }
+      ]
+    },
+    {
+      "source": "/tint-removal",
+      "destination": "/experiments/original/tint-removal",
+      "has": [
+        {
+          "type": "query",
+          "key": "experiment_variant",
+          "value": "old_setup"
+        }
+      ]
+    },
+    {
+      "source": "/tint-removal",
+      "destination": "/experiments/original/tint-removal",
+      "has": [
+        {
+          "type": "query",
+          "key": "gclid"
+        }
+      ]
+    },
+    {
+      "source": "/tint-removal",
+      "destination": "/experiments/original/tint-removal",
+      "has": [
+        {
+          "type": "query",
+          "key": "gbraid"
+        }
+      ]
+    },
+    {
+      "source": "/tint-removal",
+      "destination": "/experiments/original/tint-removal",
+      "has": [
+        {
+          "type": "query",
+          "key": "wbraid"
+        }
+      ]
+    },
+    {
+      "source": "/tint-shop-near-me",
+      "destination": "/experiments/original/tint-shop-near-me",
+      "has": [
+        {
+          "type": "query",
+          "key": "experience",
+          "value": "original"
+        }
+      ]
+    },
+    {
+      "source": "/tint-shop-near-me",
+      "destination": "/experiments/original/tint-shop-near-me",
+      "has": [
+        {
+          "type": "query",
+          "key": "experiment_variant",
+          "value": "old_setup"
+        }
+      ]
+    },
+    {
+      "source": "/tint-shop-near-me",
+      "destination": "/experiments/original/tint-shop-near-me",
+      "has": [
+        {
+          "type": "query",
+          "key": "gclid"
+        }
+      ]
+    },
+    {
+      "source": "/tint-shop-near-me",
+      "destination": "/experiments/original/tint-shop-near-me",
+      "has": [
+        {
+          "type": "query",
+          "key": "gbraid"
+        }
+      ]
+    },
+    {
+      "source": "/tint-shop-near-me",
+      "destination": "/experiments/original/tint-shop-near-me",
+      "has": [
+        {
+          "type": "query",
+          "key": "wbraid"
+        }
+      ]
+    },
+    {
+      "source": "/vip-booking",
+      "destination": "/experiments/original/vip-booking",
+      "has": [
+        {
+          "type": "query",
+          "key": "experience",
+          "value": "original"
+        }
+      ]
+    },
+    {
+      "source": "/vip-booking",
+      "destination": "/experiments/original/vip-booking",
+      "has": [
+        {
+          "type": "query",
+          "key": "experiment_variant",
+          "value": "old_setup"
+        }
+      ]
+    },
+    {
+      "source": "/vip-booking",
+      "destination": "/experiments/original/vip-booking",
+      "has": [
+        {
+          "type": "query",
+          "key": "gclid"
+        }
+      ]
+    },
+    {
+      "source": "/vip-booking",
+      "destination": "/experiments/original/vip-booking",
+      "has": [
+        {
+          "type": "query",
+          "key": "gbraid"
+        }
+      ]
+    },
+    {
+      "source": "/vip-booking",
+      "destination": "/experiments/original/vip-booking",
+      "has": [
+        {
+          "type": "query",
+          "key": "wbraid"
+        }
+      ]
+    },
+    {
+      "source": "/window-tint-pricing",
+      "destination": "/experiments/original/window-tint-pricing",
+      "has": [
+        {
+          "type": "query",
+          "key": "experience",
+          "value": "original"
+        }
+      ]
+    },
+    {
+      "source": "/window-tint-pricing",
+      "destination": "/experiments/original/window-tint-pricing",
+      "has": [
+        {
+          "type": "query",
+          "key": "experiment_variant",
+          "value": "old_setup"
+        }
+      ]
+    },
+    {
+      "source": "/window-tint-pricing",
+      "destination": "/experiments/original/window-tint-pricing",
+      "has": [
+        {
+          "type": "query",
+          "key": "gclid"
+        }
+      ]
+    },
+    {
+      "source": "/window-tint-pricing",
+      "destination": "/experiments/original/window-tint-pricing",
+      "has": [
+        {
+          "type": "query",
+          "key": "gbraid"
+        }
+      ]
+    },
+    {
+      "source": "/window-tint-pricing",
+      "destination": "/experiments/original/window-tint-pricing",
+      "has": [
+        {
+          "type": "query",
+          "key": "wbraid"
+        }
+      ]
+    },
+    {
+      "source": "/",
+      "destination": "/generated/index.html"
+    },
+    {
+      "source": "/window-tinting-gallery",
+      "destination": "/generated/window-tinting-gallery.html"
+    },
+    {
+      "source": "/booking",
+      "destination": "/generated/booking.html"
+    },
+    {
+      "source": "/services",
+      "destination": "/generated/services.html"
+    },
+    {
+      "source": "/ceramic-coating",
+      "destination": "/generated/ceramic-coating.html"
+    },
+    {
+      "source": "/ceramic-coating-irvine",
+      "destination": "/generated/ceramic-coating-irvine.html"
+    },
+    {
+      "source": "/ceramic-coating-lake-forest",
+      "destination": "/generated/ceramic-coating-lake-forest.html"
+    },
+    {
+      "source": "/ceramic-coating-aliso-viejo",
+      "destination": "/generated/ceramic-coating-aliso-viejo.html"
+    },
+    {
+      "source": "/ceramic-coating-newport-beach",
+      "destination": "/generated/ceramic-coating-newport-beach.html"
+    },
+    {
+      "source": "/ceramic-coating-costa-mesa",
+      "destination": "/generated/ceramic-coating-costa-mesa.html"
+    },
+    {
+      "source": "/ceramic-coating-tustin",
+      "destination": "/generated/ceramic-coating-tustin.html"
+    },
+    {
+      "source": "/ceramic-coating-mission-viejo",
+      "destination": "/generated/ceramic-coating-mission-viejo.html"
+    },
+    {
+      "source": "/ceramic-coating-laguna-hills",
+      "destination": "/generated/ceramic-coating-laguna-hills.html"
+    },
+    {
+      "source": "/window-tint-pricing",
+      "destination": "/generated/window-tint-pricing.html"
+    },
+    {
+      "source": "/ceramic-window-tinting",
+      "destination": "/generated/ceramic-window-tinting.html"
+    },
+    {
+      "source": "/mobile-window-tinting",
+      "destination": "/generated/mobile-window-tinting.html"
+    },
+    {
+      "source": "/full-car-window-tinting",
+      "destination": "/generated/full-car-window-tinting.html"
+    },
+    {
+      "source": "/sides-rear-window-tinting",
+      "destination": "/generated/sides-rear-window-tinting.html"
+    },
+    {
+      "source": "/front-two-window-tinting",
+      "destination": "/generated/front-two-window-tinting.html"
+    },
+    {
+      "source": "/windshield-window-tinting",
+      "destination": "/generated/windshield-window-tinting.html"
+    },
+    {
+      "source": "/tesla-window-tinting",
+      "destination": "/generated/tesla-window-tinting.html"
+    },
+    {
+      "source": "/tint-removal",
+      "destination": "/generated/tint-removal.html"
+    },
+    {
+      "source": "/irvine-window-tinting",
+      "destination": "/generated/irvine-window-tinting.html"
+    },
+    {
+      "source": "/newport-beach-window-tinting",
+      "destination": "/generated/newport-beach-window-tinting.html"
+    },
+    {
+      "source": "/tustin-window-tinting",
+      "destination": "/generated/tustin-window-tinting.html"
+    },
+    {
+      "source": "/costa-mesa-window-tinting",
+      "destination": "/generated/costa-mesa-window-tinting.html"
+    },
+    {
+      "source": "/laguna-beach-window-tinting",
+      "destination": "/generated/laguna-beach-window-tinting.html"
+    },
+    {
+      "source": "/aliso-viejo-window-tinting",
+      "destination": "/generated/aliso-viejo-window-tinting.html"
+    },
+    {
+      "source": "/santa-ana-window-tinting",
+      "destination": "/generated/santa-ana-window-tinting.html"
+    },
+    {
+      "source": "/anaheim-window-tinting",
+      "destination": "/generated/anaheim-window-tinting.html"
+    },
+    {
+      "source": "/huntington-beach-window-tinting",
+      "destination": "/generated/huntington-beach-window-tinting.html"
+    },
+    {
+      "source": "/orange-window-tinting",
+      "destination": "/generated/orange-window-tinting.html"
+    },
+    {
+      "source": "/mission-viejo-window-tinting",
+      "destination": "/generated/mission-viejo-window-tinting.html"
+    },
+    {
+      "source": "/lake-forest-window-tinting",
+      "destination": "/generated/lake-forest-window-tinting.html"
+    },
+    {
+      "source": "/dana-point-window-tinting",
+      "destination": "/generated/dana-point-window-tinting.html"
+    },
+    {
+      "source": "/san-clemente-window-tinting",
+      "destination": "/generated/san-clemente-window-tinting.html"
+    },
+    {
+      "source": "/window-tint-shades",
+      "destination": "/generated/window-tint-shades.html"
+    },
+    {
+      "source": "/california-window-tint-law",
+      "destination": "/generated/california-window-tint-law.html"
+    },
+    {
+      "source": "/tesla-model-y-window-tinting",
+      "destination": "/generated/tesla-model-y-window-tinting.html"
+    },
+    {
+      "source": "/tesla-model-3-window-tinting",
+      "destination": "/generated/tesla-model-3-window-tinting.html"
+    },
+    {
+      "source": "/architectural-window-film",
+      "destination": "/generated/architectural-window-film.html"
+    },
+    {
+      "source": "/commercial-window-film",
+      "destination": "/generated/commercial-window-film.html"
+    },
+    {
+      "source": "/chrome-delete",
+      "destination": "/generated/chrome-delete.html"
+    },
+    {
+      "source": "/ceramic-vs-carbon-window-tint",
+      "destination": "/generated/ceramic-vs-carbon-window-tint.html"
+    },
+    {
+      "source": "/how-long-does-window-tinting-take",
+      "destination": "/generated/how-long-does-window-tinting-take.html"
+    },
+    {
+      "source": "/is-mobile-window-tinting-worth-it",
+      "destination": "/generated/is-mobile-window-tinting-worth-it.html"
+    },
+    {
+      "source": "/how-to-choose-window-tint-percentage",
+      "destination": "/generated/how-to-choose-window-tint-percentage.html"
+    },
+    {
+      "source": "/does-window-tint-reduce-heat",
+      "destination": "/generated/does-window-tint-reduce-heat.html"
+    },
+    {
+      "source": "/window-tint-aftercare",
+      "destination": "/generated/window-tint-aftercare.html"
+    },
+    {
+      "source": "/toyota-tacoma-window-tinting",
+      "destination": "/generated/toyota-tacoma-window-tinting.html"
+    },
+    {
+      "source": "/bmw-m4-window-tinting",
+      "destination": "/generated/bmw-m4-window-tinting.html"
+    },
+    {
+      "source": "/toyota-4runner-window-tinting",
+      "destination": "/generated/toyota-4runner-window-tinting.html"
+    },
+    {
+      "source": "/bmw-x3-window-tinting",
+      "destination": "/generated/bmw-x3-window-tinting.html"
+    },
+    {
+      "source": "/about",
+      "destination": "/generated/about.html"
+    },
+    {
+      "source": "/service-areas",
+      "destination": "/generated/service-areas.html"
+    },
+    {
+      "source": "/guides",
+      "destination": "/generated/guides.html"
+    },
+    {
+      "source": "/sunroof-window-tinting",
+      "destination": "/generated/sunroof-window-tinting.html"
+    },
+    {
+      "source": "/luxury-car-window-tinting",
+      "destination": "/generated/luxury-car-window-tinting.html"
+    },
+    {
+      "source": "/window-tint-replacement",
+      "destination": "/generated/window-tint-replacement.html"
+    },
+    {
+      "source": "/window-tint-consultation",
+      "destination": "/generated/window-tint-consultation.html"
+    },
+    {
+      "source": "/laguna-hills-window-tinting",
+      "destination": "/generated/laguna-hills-window-tinting.html"
+    },
+    {
+      "source": "/fountain-valley-window-tinting",
+      "destination": "/generated/fountain-valley-window-tinting.html"
+    },
+    {
+      "source": "/westminster-window-tinting",
+      "destination": "/generated/westminster-window-tinting.html"
+    },
+    {
+      "source": "/garden-grove-window-tinting",
+      "destination": "/generated/garden-grove-window-tinting.html"
+    },
+    {
+      "source": "/mercedes-c-class-window-tinting",
+      "destination": "/generated/mercedes-c-class-window-tinting.html"
+    },
+    {
+      "source": "/porsche-911-window-tinting",
+      "destination": "/generated/porsche-911-window-tinting.html"
+    },
+    {
+      "source": "/range-rover-sport-window-tinting",
+      "destination": "/generated/range-rover-sport-window-tinting.html"
+    },
+    {
+      "source": "/tesla-model-x-window-tinting",
+      "destination": "/generated/tesla-model-x-window-tinting.html"
+    },
+    {
+      "source": "/home-solar-window-film",
+      "destination": "/generated/home-solar-window-film.html"
+    },
+    {
+      "source": "/home-privacy-window-film",
+      "destination": "/generated/home-privacy-window-film.html"
+    },
+    {
+      "source": "/home-glare-reduction-film",
+      "destination": "/generated/home-glare-reduction-film.html"
+    },
+    {
+      "source": "/home-decorative-window-film",
+      "destination": "/generated/home-decorative-window-film.html"
+    },
+    {
+      "source": "/home-uv-window-film",
+      "destination": "/generated/home-uv-window-film.html"
+    },
+    {
+      "source": "/office-window-film",
+      "destination": "/generated/office-window-film.html"
+    },
+    {
+      "source": "/storefront-window-film",
+      "destination": "/generated/storefront-window-film.html"
+    },
+    {
+      "source": "/commercial-privacy-film",
+      "destination": "/generated/commercial-privacy-film.html"
+    },
+    {
+      "source": "/commercial-solar-window-film",
+      "destination": "/generated/commercial-solar-window-film.html"
+    },
+    {
+      "source": "/commercial-safety-security-film",
+      "destination": "/generated/commercial-safety-security-film.html"
+    },
+    {
+      "source": "/irvine-residential-window-film",
+      "destination": "/generated/irvine-residential-window-film.html"
+    },
+    {
+      "source": "/newport-beach-residential-window-film",
+      "destination": "/generated/newport-beach-residential-window-film.html"
+    },
+    {
+      "source": "/costa-mesa-residential-window-film",
+      "destination": "/generated/costa-mesa-residential-window-film.html"
+    },
+    {
+      "source": "/huntington-beach-residential-window-film",
+      "destination": "/generated/huntington-beach-residential-window-film.html"
+    },
+    {
+      "source": "/tustin-residential-window-film",
+      "destination": "/generated/tustin-residential-window-film.html"
+    },
+    {
+      "source": "/mission-viejo-residential-window-film",
+      "destination": "/generated/mission-viejo-residential-window-film.html"
+    },
+    {
+      "source": "/lake-forest-residential-window-film",
+      "destination": "/generated/lake-forest-residential-window-film.html"
+    },
+    {
+      "source": "/aliso-viejo-residential-window-film",
+      "destination": "/generated/aliso-viejo-residential-window-film.html"
+    },
+    {
+      "source": "/laguna-beach-residential-window-film",
+      "destination": "/generated/laguna-beach-residential-window-film.html"
+    },
+    {
+      "source": "/dana-point-residential-window-film",
+      "destination": "/generated/dana-point-residential-window-film.html"
+    },
+    {
+      "source": "/san-clemente-residential-window-film",
+      "destination": "/generated/san-clemente-residential-window-film.html"
+    },
+    {
+      "source": "/laguna-hills-residential-window-film",
+      "destination": "/generated/laguna-hills-residential-window-film.html"
+    },
+    {
+      "source": "/irvine-commercial-window-film",
+      "destination": "/generated/irvine-commercial-window-film.html"
+    },
+    {
+      "source": "/newport-beach-commercial-window-film",
+      "destination": "/generated/newport-beach-commercial-window-film.html"
+    },
+    {
+      "source": "/costa-mesa-commercial-window-film",
+      "destination": "/generated/costa-mesa-commercial-window-film.html"
+    },
+    {
+      "source": "/huntington-beach-commercial-window-film",
+      "destination": "/generated/huntington-beach-commercial-window-film.html"
+    },
+    {
+      "source": "/tustin-commercial-window-film",
+      "destination": "/generated/tustin-commercial-window-film.html"
+    },
+    {
+      "source": "/santa-ana-commercial-window-film",
+      "destination": "/generated/santa-ana-commercial-window-film.html"
+    },
+    {
+      "source": "/anaheim-commercial-window-film",
+      "destination": "/generated/anaheim-commercial-window-film.html"
+    },
+    {
+      "source": "/orange-commercial-window-film",
+      "destination": "/generated/orange-commercial-window-film.html"
+    },
+    {
+      "source": "/lake-forest-commercial-window-film",
+      "destination": "/generated/lake-forest-commercial-window-film.html"
+    },
+    {
+      "source": "/mission-viejo-commercial-window-film",
+      "destination": "/generated/mission-viejo-commercial-window-film.html"
+    },
+    {
+      "source": "/aliso-viejo-commercial-window-film",
+      "destination": "/generated/aliso-viejo-commercial-window-film.html"
+    },
+    {
+      "source": "/laguna-hills-commercial-window-film",
+      "destination": "/generated/laguna-hills-commercial-window-film.html"
+    },
+    {
+      "source": "/fountain-valley-commercial-window-film",
+      "destination": "/generated/fountain-valley-commercial-window-film.html"
+    },
+    {
+      "source": "/westminster-commercial-window-film",
+      "destination": "/generated/westminster-commercial-window-film.html"
+    },
+    {
+      "source": "/garden-grove-commercial-window-film",
+      "destination": "/generated/garden-grove-commercial-window-film.html"
+    },
+    {
+      "source": "/laguna-beach-commercial-window-film",
+      "destination": "/generated/laguna-beach-commercial-window-film.html"
+    },
+    {
+      "source": "/projects/irvine-luxury-sedan-ceramic-tint",
+      "destination": "/generated/projects/irvine-luxury-sedan-ceramic-tint.html"
+    },
+    {
+      "source": "/projects/newport-beach-luxury-suv-front-window-match",
+      "destination": "/generated/projects/newport-beach-luxury-suv-front-window-match.html"
+    },
+    {
+      "source": "/projects/costa-mesa-sports-car-sides-and-rear-tint",
+      "destination": "/generated/projects/costa-mesa-sports-car-sides-and-rear-tint.html"
+    },
+    {
+      "source": "/projects/huntington-beach-tesla-model-y-tint",
+      "destination": "/generated/projects/huntington-beach-tesla-model-y-tint.html"
+    },
+    {
+      "source": "/projects/tustin-bmw-m4-ceramic-tint",
+      "destination": "/generated/projects/tustin-bmw-m4-ceramic-tint.html"
+    },
+    {
+      "source": "/projects/mission-viejo-family-suv-tint",
+      "destination": "/generated/projects/mission-viejo-family-suv-tint.html"
+    },
+    {
+      "source": "/projects/lake-forest-toyota-tacoma-tint",
+      "destination": "/generated/projects/lake-forest-toyota-tacoma-tint.html"
+    },
+    {
+      "source": "/projects/aliso-viejo-old-tint-removal-and-replacement",
+      "destination": "/generated/projects/aliso-viejo-old-tint-removal-and-replacement.html"
+    },
+    {
+      "source": "/projects/irvine-home-afternoon-glare",
+      "destination": "/generated/projects/irvine-home-afternoon-glare.html"
+    },
+    {
+      "source": "/projects/newport-beach-home-privacy-samples",
+      "destination": "/generated/projects/newport-beach-home-privacy-samples.html"
+    },
+    {
+      "source": "/projects/costa-mesa-living-room-solar-film",
+      "destination": "/generated/projects/costa-mesa-living-room-solar-film.html"
+    },
+    {
+      "source": "/projects/huntington-beach-home-view-and-glare-comparison",
+      "destination": "/generated/projects/huntington-beach-home-view-and-glare-comparison.html"
+    },
+    {
+      "source": "/projects/laguna-beach-home-decorative-glass",
+      "destination": "/generated/projects/laguna-beach-home-decorative-glass.html"
+    },
+    {
+      "source": "/projects/mission-viejo-home-fade-reduction-film",
+      "destination": "/generated/projects/mission-viejo-home-fade-reduction-film.html"
+    },
+    {
+      "source": "/projects/irvine-office-glare-control-film",
+      "destination": "/generated/projects/irvine-office-glare-control-film.html"
+    },
+    {
+      "source": "/projects/newport-beach-conference-room-privacy-film",
+      "destination": "/generated/projects/newport-beach-conference-room-privacy-film.html"
+    },
+    {
+      "source": "/projects/costa-mesa-storefront-solar-film",
+      "destination": "/generated/projects/costa-mesa-storefront-solar-film.html"
+    },
+    {
+      "source": "/projects/santa-ana-office-installation-scheduling",
+      "destination": "/generated/projects/santa-ana-office-installation-scheduling.html"
+    },
+    {
+      "source": "/projects/anaheim-commercial-decorative-film",
+      "destination": "/generated/projects/anaheim-commercial-decorative-film.html"
+    },
+    {
+      "source": "/projects/lake-forest-commercial-solar-control-project",
+      "destination": "/generated/projects/lake-forest-commercial-solar-control-project.html"
+    },
+    {
+      "source": "/photos-for-window-tint-quote",
+      "destination": "/generated/photos-for-window-tint-quote.html"
+    },
+    {
+      "source": "/front-two-vs-full-car-tint",
+      "destination": "/generated/front-two-vs-full-car-tint.html"
+    },
+    {
+      "source": "/apartment-office-mobile-tint",
+      "destination": "/generated/apartment-office-mobile-tint.html"
+    },
+    {
+      "source": "/buying-used-car-with-old-tint",
+      "destination": "/generated/buying-used-car-with-old-tint.html"
+    },
+    {
+      "source": "/factory-privacy-glass-vs-window-film",
+      "destination": "/generated/factory-privacy-glass-vs-window-film.html"
+    },
+    {
+      "source": "/matching-front-window-tint",
+      "destination": "/generated/matching-front-window-tint.html"
+    },
+    {
+      "source": "/sunroof-tint-compatibility",
+      "destination": "/generated/sunroof-tint-compatibility.html"
+    },
+    {
+      "source": "/windshield-film-visibility",
+      "destination": "/generated/windshield-film-visibility.html"
+    },
+    {
+      "source": "/what-affects-window-tint-price",
+      "destination": "/generated/what-affects-window-tint-price.html"
+    },
+    {
+      "source": "/window-tint-warranty-questions",
+      "destination": "/generated/window-tint-warranty-questions.html"
+    },
+    {
+      "source": "/home-window-film-cost",
+      "destination": "/generated/home-window-film-cost.html"
+    },
+    {
+      "source": "/home-film-sample-comparison",
+      "destination": "/generated/home-film-sample-comparison.html"
+    },
+    {
+      "source": "/home-window-film-night-privacy",
+      "destination": "/generated/home-window-film-night-privacy.html"
+    },
+    {
+      "source": "/window-film-vs-blinds",
+      "destination": "/generated/window-film-vs-blinds.html"
+    },
+    {
+      "source": "/double-pane-window-film-compatibility",
+      "destination": "/generated/double-pane-window-film-compatibility.html"
+    },
+    {
+      "source": "/home-window-film-installation-preparation",
+      "destination": "/generated/home-window-film-installation-preparation.html"
+    },
+    {
+      "source": "/window-film-furniture-fading",
+      "destination": "/generated/window-film-furniture-fading.html"
+    },
+    {
+      "source": "/home-window-film-appearance",
+      "destination": "/generated/home-window-film-appearance.html"
+    },
+    {
+      "source": "/commercial-window-film-cost",
+      "destination": "/generated/commercial-window-film-cost.html"
+    },
+    {
+      "source": "/office-glare-window-film",
+      "destination": "/generated/office-glare-window-film.html"
+    },
+    {
+      "source": "/conference-room-frosted-film-design",
+      "destination": "/generated/conference-room-frosted-film-design.html"
+    },
+    {
+      "source": "/commercial-film-installation-scheduling",
+      "destination": "/generated/commercial-film-installation-scheduling.html"
+    },
+    {
+      "source": "/commercial-film-site-survey",
+      "destination": "/generated/commercial-film-site-survey.html"
+    },
+    {
+      "source": "/commercial-film-landlord-permission",
+      "destination": "/generated/commercial-film-landlord-permission.html"
+    },
+    {
+      "source": "/quote/home",
+      "destination": "/quote/home.html"
+    },
+    {
+      "source": "/tint-shop-in-your-driveway",
+      "destination": "/experiments/original/tint-shop-in-your-driveway"
+    },
+    {
+      "source": "/car-window-tinting-near-me",
+      "destination": "/experiments/original/car-window-tinting-near-me"
+    },
+    {
+      "source": "/ceramic-window-tint-pricing",
+      "destination": "/experiments/original/ceramic-window-tint-pricing"
+    },
+    {
+      "source": "/ceramic-window-tinting",
+      "destination": "/experiments/original/ceramic-window-tinting"
+    },
+    {
+      "source": "/mobile-ceramic-window-tint-near-me",
+      "destination": "/experiments/original/mobile-ceramic-window-tint-near-me"
+    },
+    {
+      "source": "/mobile-window-tinting",
+      "destination": "/experiments/original/mobile-window-tinting"
+    },
+    {
+      "source": "/mobile-window-tinting-near-me",
+      "destination": "/experiments/original/mobile-window-tinting-near-me"
+    },
+    {
+      "source": "/nano-ceramic-window-tint",
+      "destination": "/experiments/original/nano-ceramic-window-tint"
+    },
+    {
+      "source": "/quote-widget",
+      "destination": "/experiments/original/quote-widget"
+    },
+    {
+      "source": "/tesla-cybertruck-window-tint",
+      "destination": "/experiments/original/tesla-cybertruck-window-tint"
+    },
+    {
+      "source": "/tesla-model-3-window-tinting",
+      "destination": "/experiments/original/tesla-model-3-window-tinting"
+    },
+    {
+      "source": "/tesla-model-y-window-tinting",
+      "destination": "/experiments/original/tesla-model-y-window-tinting"
+    },
+    {
+      "source": "/tesla-window-tinting",
+      "destination": "/experiments/original/tesla-window-tinting"
+    },
+    {
+      "source": "/tint-removal",
+      "destination": "/experiments/original/tint-removal"
+    },
+    {
+      "source": "/tint-shop-near-me",
+      "destination": "/experiments/original/tint-shop-near-me"
+    },
+    {
+      "source": "/vip-booking",
+      "destination": "/experiments/original/vip-booking"
+    },
+    {
+      "source": "/window-tint-pricing",
+      "destination": "/experiments/original/window-tint-pricing"
+    },
     {
       "source": "/",
       "destination": "/index"
@@ -315,10 +2260,6 @@
     {
       "source": "/booking",
       "destination": "/booking"
-    },
-    {
-      "source": "/vip-booking",
-      "destination": "/vip-booking"
     },
     {
       "source": "/irvine-window-tinting",
@@ -353,14 +2294,6 @@
       "destination": "/california-window-tint-law"
     },
     {
-      "source": "/tesla-model-y-window-tinting",
-      "destination": "/tesla-model-y-window-tinting"
-    },
-    {
-      "source": "/tesla-model-3-window-tinting",
-      "destination": "/tesla-model-3-window-tinting"
-    },
-    {
       "source": "/architectural-window-film",
       "destination": "/architectural-window-film"
     },
@@ -381,18 +2314,6 @@
       "destination": "/services"
     },
     {
-      "source": "/window-tint-pricing",
-      "destination": "/window-tint-pricing"
-    },
-    {
-      "source": "/ceramic-window-tinting",
-      "destination": "/ceramic-window-tinting"
-    },
-    {
-      "source": "/mobile-window-tinting",
-      "destination": "/mobile-window-tinting"
-    },
-    {
       "source": "/full-car-window-tinting",
       "destination": "/full-car-window-tinting"
     },
@@ -407,14 +2328,6 @@
     {
       "source": "/windshield-window-tinting",
       "destination": "/windshield-window-tinting"
-    },
-    {
-      "source": "/tesla-window-tinting",
-      "destination": "/tesla-window-tinting"
-    },
-    {
-      "source": "/tint-removal",
-      "destination": "/tint-removal"
     },
     {
       "source": "/santa-ana-window-tinting",
@@ -524,6 +2437,37 @@
           "value": "noindex, follow"
         }
       ]
+    },
+    {
+      "source": "/experiments/:path*",
+      "headers": [
+        {
+          "key": "X-Robots-Tag",
+          "value": "noindex"
+        }
+      ]
+    },
+    {
+      "source": "/tint-shop-in-your-driveway",
+      "headers": [
+        {
+          "key": "Content-Type",
+          "value": "text/html; charset=utf-8"
+        },
+        {
+          "key": "X-Robots-Tag",
+          "value": "noindex, follow"
+        }
+      ]
+    },
+    {
+      "source": "/quote/:path*",
+      "headers": [
+        {
+          "key": "X-Robots-Tag",
+          "value": "noindex, follow"
+        }
+      ]
     }
   ],
   "functions": {
@@ -533,5 +2477,8 @@
     "api/quote-notification-retry.js": {
       "maxDuration": 60
     }
-  }
+  },
+  "framework": null,
+  "buildCommand": "npm run build",
+  "outputDirectory": "public"
 }

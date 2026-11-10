@@ -1,0 +1,55 @@
+/* Composition shared by generated pages. Main tokens and components live in style.css. */
+.skip-link { position: fixed; left: 18px; top: -100px; z-index: 100; background: #ff7048; color: #111310; padding: 12px; }
+.skip-link:focus { top: 12px; }
+.hero-heading { display: grid; grid-template-columns: 1.65fr 1fr; align-items: end; gap: 48px; margin-bottom: 44px; }
+.hero-heading h1 { font-size: clamp(44px, 6.3vw, 90px); line-height: 1.02; letter-spacing: -.055em; }
+.hero-heading em { color: var(--accent, #ff7048); font-style: normal; }
+.hero-heading p { margin-bottom: 24px; max-width: 440px; }
+.service-card h2 { font-size: clamp(25px, 2.7vw, 40px); line-height: 1.05; max-width: 300px; }
+.review-date { display: block; margin-top: 9px; font-size: 12px; opacity: .65; }
+.review-card figcaption a { display: block; margin-top: 8px; font-size: 12px; }
+.footer-grid h2 { font-size: 15px; letter-spacing: 0; }
+.footer-grid a { display: block; margin-bottom: 12px; }
+.footer-grid .brand { display: flex; }
+.footer-note { margin-top: 48px; font-size: 12px; opacity: .65; }
+.offer-terms { margin-top: 24px; max-width: 580px; font-size: 12px; }
+.offer-terms summary { cursor: pointer; padding-block: 10px; }
+.offer-terms p { font-size: 12px; line-height: 1.65; }
+.article section { scroll-margin-top: 130px; margin-bottom: 42px; }
+.article-nav a { display: block; margin-block: 14px; }
+.article-nav .button { display: inline-flex; }
+.gallery-item img { aspect-ratio: 1; object-fit: cover; width: 100%; }
+.gallery-item figcaption { padding-top: 14px; }
+.breadcrumbs { font-size: 12px; opacity: .7; margin-bottom: 30px; }
+@media (max-width: 760px) {
+ .hero-heading { grid-template-columns: 1fr; gap: 18px; }
+ .hero-heading h1 { font-size: clamp(42px, 10vw, 65px); }
+ .hero-heading { margin-bottom: 30px; }
+ .article-nav { display: none; }
+}
+.article-layout { grid-template-columns: 260px minmax(0,1fr); }
+@media (max-width: 900px) { .article-layout { grid-template-columns: 1fr; } }
+
+/* Align shared primitives with the generated page composition. */
+.brand-name strong { display: block; font-weight: 600; }
+.site-nav > a[aria-current="location"] { color: var(--accent); background: #ffffff08; }
+.section > .offer { padding-block: 0; }
+.offer-free strong { font-size: clamp(42px, 5vw, 76px); line-height: 1.02; }
+.offer-free span { font-size: clamp(21px, 2.1vw, 30px); line-height: 1.25; }
+.quote-panel .eyebrow { color: #423126; }
+.review-card > span[aria-label] { color: var(--accent); letter-spacing: .15em; }
+.review-card figcaption { font-size: 13px; color: var(--muted); }
+.footer-grid h2 { margin-bottom: 24px; }
+.hero-copy .breadcrumbs { padding-top: 0; }
+.hero-copy .breadcrumbs + .eyebrow { margin-top: 0; }
+.hero--home > p:not(.eyebrow) { margin-top: 22px; color: var(--muted); font-size: 18px; }
+.service-card-content > span:last-child:not(.eyebrow) { margin-top: 16px; color: var(--paper); }
+@media (max-width: 650px) {
+  .offer-free strong { font-size: clamp(42px, 11vw, 65px); }
+  .offer-free span { font-size: 24px; }
+}
+.offer .offer-price { font-size: 38px; line-height: 1.2; color: var(--paper); }
+.service-card:first-child > img { object-position: 50% 76%; }
+.gallery-thumbnails { display: flex; gap: 8px; margin-top: 14px; flex-wrap: wrap; }
+.gallery-thumbnails a { width: 70px; }
+.gallery-thumbnails img { aspect-ratio: 1; width: 100%; }

@@ -1,0 +1,158 @@
+/* Obsidian site design system. One source for tokens and shared components on every page. */
+:root{color-scheme:dark;--bg:#111310;--ink:#111310;--panel:#1b1e19;--surface:#1b1e19;--raised:#22261f;--paper:#eeeae2;--text:#eeeae2;--soft:#c3c6bb;--muted:#a2a69c;--accent:#ff7048;--accent-hover:#ff8968;--line:#343731;--edge:#363b30;--control-edge:#484e40;--radius-control:8px;--radius-card:16px;--radius-panel:24px;--gutter:clamp(18px,3.6vw,52px);--section:clamp(64px,7.5vw,112px)}
+html{scroll-padding-top:112px}
+body{background:var(--bg);color:var(--text);-webkit-font-smoothing:antialiased}
+::selection{background:var(--accent);color:var(--ink)}
+
+/* Type scale */
+.ds-h1,.intro h1,.near-me-intro h1,.journey-intro h1{font-size:clamp(44px,5.4vw,82px);font-weight:500;line-height:1;letter-spacing:-.045em}
+.ds-h1 em,.intro h1 em,.near-me-intro h1 em{font-style:normal;color:var(--accent)}
+.ds-h2,.proof-heading,.details h2,.funnel-content h2{font-size:clamp(38px,4.4vw,66px);font-weight:500;line-height:1.05;letter-spacing:-.04em}
+.ds-h3,.discover-info h3,.funnel-card h3{font-size:25px;font-weight:500;line-height:1.12;letter-spacing:-.03em}
+.eyebrow{color:var(--muted);font-size:10px;font-weight:500;letter-spacing:1.8px;text-transform:uppercase}
+
+/* Logo */
+.wordmark{display:flex;align-items:center;gap:10px;font-weight:500;letter-spacing:0}
+.brand-symbol{position:relative;display:block;width:36px;height:38px;transform:scale(.9) skewY(-15deg);transform-origin:left center;margin-right:-3px}
+.brand-symbol i{position:absolute;display:block;width:18px;height:34px;border:1px solid var(--accent)}
+.brand-symbol i+i{left:15px;top:6px;background:var(--accent)}
+.brand-text strong{display:block;font-size:22px;font-weight:700;letter-spacing:1.5px;line-height:1}
+.brand-text small{display:block;margin-top:7px;font-size:8px;font-weight:500;letter-spacing:3.6px}
+
+/* Floating navigation */
+body>header.header{position:fixed;top:clamp(12px,1.8vw,24px);left:0;right:0;z-index:50;width:calc(100% - clamp(24px,4vw,48px));max-width:1400px;min-height:78px;margin:auto;padding:clamp(8px,.9vw,12px) clamp(14px,1.9vw,25px);border:1px solid #ffffff1a;border-radius:var(--radius-card);background:#1b1e19ed;-webkit-backdrop-filter:blur(24px);backdrop-filter:blur(24px);box-shadow:0 12px 40px -8px #0006}
+
+/* Buttons */
+.ds-button,.primary,.package-link,.header .call{display:inline-flex;align-items:center;justify-content:space-between;min-height:54px;padding:17px 23px;border:1px solid var(--accent);border-radius:var(--radius-control);background:var(--accent);color:var(--ink);font-size:14px;font-weight:600;text-transform:none;transition:background .2s,border-color .2s,transform .2s}
+.ds-button:hover,.primary:hover,.package-link:hover,.header .call:hover{border-color:var(--accent-hover);background:var(--accent-hover);transform:translateY(-2px)}
+.header .call{min-height:48px;padding:13px 22px;font-size:13px}
+.header .call span,.primary span,.package-link span{color:inherit}
+.ds-button--dark,.last-cta .primary{border-color:var(--ink);background:var(--ink);color:var(--paper)}
+.ds-button--dark:hover,.last-cta .primary:hover{border-color:#000;background:#000}
+
+/* Cards, media and form controls */
+.ds-card,.quiz,.package-offer,.funnel-card{border:1px solid var(--edge);border-radius:var(--radius-card);background:var(--panel);box-shadow:none}
+.ds-media,.first-work figure,.proof .photos figure,.discover-photos img{border:1px solid var(--edge);border-radius:12px}
+.choice{border:1px solid var(--control-edge);border-radius:12px;background:var(--raised)}
+.city,input{border:1px solid var(--control-edge);border-radius:var(--radius-control);background:var(--raised)}
+input{background:var(--bg)}
+input:focus{border-color:var(--accent);box-shadow:0 0 0 3px #ff704820}
+.choice:hover,.city:hover{border-color:var(--accent);background:#2a2f26}
+.choice.selected,.city.selected{border-color:var(--accent);background:#322219}
+
+/* Click-through quiz */
+.quiz-top{justify-content:space-between;gap:16px}
+.quiz-top:before{content:"Tap an answer to continue";color:var(--text);font-size:13px;font-weight:500;letter-spacing:0}
+.quiz:has(form) .quiz-top:before{content:"Last step"}
+.quiz:has(.success) .quiz-top:before{content:none}
+.progress{height:4px;border-radius:4px}
+#progress-fill{border-radius:4px}
+.choice{cursor:pointer}
+.choice:hover{transform:translateY(-3px)}
+.choice.selected{box-shadow:0 0 0 1px var(--accent)}
+.choice-label{gap:10px;color:var(--text);font-size:15px;font-weight:500}
+.choice-label i{width:22px;height:22px;border-color:#7b8073}
+.choice:hover .choice-label i{border-color:var(--accent)}
+/* Photo answers: real customer vehicles fill the card. */
+.choices:not(.choices-tesla) .choice:has(>img){padding:0;overflow:hidden}
+.choices:not(.choices-tesla) .choice>img{display:block;width:100%;height:clamp(130px,14vw,190px);object-fit:cover}
+.choices:not(.choices-tesla) .choice:has(>img) .choice-label{padding:14px 16px}
+/* Text answers: no picture needed, just a fast tap target. */
+.choices-preferences .preference-art{display:none}
+.choices-preferences .choice{display:flex;align-items:center;min-height:92px;padding:18px}
+.choices-preferences .choice-label{width:100%;font-size:16px}
+.screen:has(.choices-preferences){min-height:0}
+
+/* Accent closing panel and footer */
+.ds-panel,.last-cta{border-radius:var(--radius-panel);background:var(--accent);color:var(--ink)}
+footer{width:calc(100% - var(--gutter)*2);max-width:1400px;border-top-color:var(--line)}
+
+/* Mobile contact bar */
+.quote-contact-bar{background:#1b1e19f5;border-top-color:var(--edge)}
+.quote-contact-bar a{border-color:var(--control-edge);border-radius:var(--radius-control);background:var(--raised);color:var(--text)}
+.quote-contact-bar .quote-contact-call{border-color:var(--accent);background:var(--accent);color:var(--ink)}
+
+@media(max-width:760px){
+  :root{--gutter:16px;--radius-card:13px;--radius-panel:18px}
+  html{scroll-padding-top:96px}
+  .ds-h1,.intro h1,.near-me-intro h1,.intro-proof h1{font-size:clamp(34px,9.8vw,42px);line-height:1.02}
+  .ds-h2,.proof-heading,.details h2,.funnel-content h2{font-size:34px}
+  body>header.header{top:10px;width:calc(100% - 20px);min-height:64px;padding:8px 10px 8px 14px}
+  .brand-symbol{transform:scale(.76) skewY(-15deg);margin-right:-8px}
+  .brand-text strong{font-size:17px}
+  .brand-text small{margin-top:5px;font-size:6.5px;letter-spacing:2.8px}
+  .header .call{min-height:44px;padding:10px 13px;font-size:12px}
+  .choices:not(.choices-tesla) .choice>img{height:104px}
+  .choices:not(.choices-tesla) .choice:has(>img) .choice-label{padding:10px 12px;font-size:13px}
+  .choices-preferences .choice{min-height:76px;padding:14px}
+  .choices-preferences .choice-label{font-size:14px}
+}
+
+/* Price components */
+.price-board,.photo-guide{display:grid;gap:clamp(14px,1.7vw,24px)}
+.price-board>h2,.photo-guide>h2{margin:0 0 clamp(6px,1vw,14px)}
+.offer-feature{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);padding:0;overflow:hidden}
+.offer-feature__media{min-height:100%;background:#080a08}
+.offer-feature__media img{display:block;width:100%;height:100%;object-fit:cover}
+.offer-feature__body{padding:clamp(24px,3.6vw,52px)}
+.offer-feature__body h3{margin:12px 0 8px;font-size:clamp(32px,3.6vw,52px);font-weight:500;line-height:1.02;letter-spacing:-.04em}
+.offer-feature__sub{margin:0 0 24px;color:var(--soft);font-size:16px}
+.price-rows{margin:0}
+.price-rows div{display:flex;align-items:baseline;justify-content:space-between;gap:10px;padding:9px 0;border-top:1px solid var(--line)}
+.price-rows dt{color:var(--muted);font-size:13px}
+.price-rows dd{margin:0;color:var(--text);font-size:21px;font-weight:500;letter-spacing:-.02em}
+.price-rows--chips{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin-bottom:24px}
+.price-rows--chips div{display:block;padding:15px;border:1px solid var(--control-edge);border-radius:var(--radius-control);background:var(--raised)}
+.price-rows--chips dd{margin-top:4px;font-size:clamp(26px,2.6vw,36px)}
+.price-fine{margin:16px 0 0;color:var(--soft);font-size:13px}
+.price-fine strong{font-weight:500}
+.price-details{margin-top:8px;color:var(--muted);font-size:13px}
+.price-details summary{display:inline-flex;gap:8px;padding:8px 0;cursor:pointer}
+.price-details summary:after{content:"+";color:var(--accent)}
+.price-details[open] summary:after{content:"−"}
+.price-details p{max-width:720px;margin:6px 0 0;color:var(--muted);font-size:13px;line-height:1.65}
+.price-grid{grid-template-columns:repeat(4,minmax(0,1fr));gap:clamp(10px,1.4vw,20px)}
+.price-tile{display:flex;flex-direction:column;padding:22px}
+.price-tile__glass{display:block;width:96px;height:60px;margin-bottom:14px}
+.price-tile h3{margin:0 0 14px;font-size:22px;font-weight:500;letter-spacing:-.025em}
+.price-tile .price-rows{flex:1}
+.price-tile>a{display:flex;justify-content:space-between;margin-top:14px;padding-top:14px;border-top:1px solid var(--line);color:var(--accent);font-size:14px;font-weight:500;text-decoration:none}
+.price-links{display:flex;flex-wrap:wrap;gap:8px 28px;margin:0;font-size:14px}
+.price-links .funnel-link{margin:0}
+
+/* Photo cards */
+.photo-cards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(10px,1.4vw,20px)}
+.photo-card{position:relative;display:flex;flex-direction:column;justify-content:flex-end;min-height:clamp(280px,27vw,400px);padding:clamp(18px,2vw,28px);overflow:hidden;border:1px solid var(--edge);border-radius:var(--radius-card);color:var(--paper);text-decoration:none;isolation:isolate}
+.photo-card img{position:absolute;inset:0;z-index:-2;width:100%;height:100%;object-fit:cover;transition:transform .7s}
+.photo-card:after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(transparent 35%,#090b09e6)}
+.photo-card:hover img{transform:scale(1.04)}
+.photo-card__title{font-size:clamp(25px,2.5vw,36px);font-weight:500;line-height:1.05;letter-spacing:-.035em}
+.photo-card__link{margin-top:10px;color:var(--accent);font-size:14px;font-weight:500}
+
+@media(max-width:760px){
+  .offer-feature{grid-template-columns:1fr}
+  .offer-feature__media{height:190px;min-height:0}
+  .price-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .price-tile{padding:16px}
+  .price-rows dt{font-size:12px}
+  .price-rows dd{font-size:18px}
+  .price-rows--chips div{padding:11px}
+  .price-rows--chips dd{font-size:23px}
+  .photo-cards{display:flex;margin-inline:calc(var(--gutter)*-1);padding-inline:var(--gutter);overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none}
+  .photo-card{flex:0 0 76%;min-height:280px;scroll-snap-align:center}
+}
+@media(prefers-reduced-motion:reduce){.photo-card img{transition:none}.photo-card:hover img{transform:none}}
+.funnel-card .ds-button,.funnel-card .ds-button:hover{color:var(--ink);text-decoration:none;margin-top:0}
+.funnel-grid.price-grid{display:grid}
+
+/* Free upgrade banner: the loudest message in any Driveway offer. */
+.free-banner{display:flex;flex-wrap:wrap;align-items:baseline;gap:4px 16px;grid-column:1/-1;padding:clamp(18px,2.2vw,30px) clamp(20px,3vw,44px);background:var(--accent);color:var(--ink);font-weight:500;line-height:1;letter-spacing:-.04em}
+.free-banner strong{font-size:clamp(48px,7vw,104px);font-weight:700}
+.free-banner span{font-size:clamp(30px,4.4vw,66px)}
+.free-banner small{flex-basis:100%;margin-top:8px;font-size:14px;font-weight:500;letter-spacing:0}
+.funnel-card.offer-feature{padding:0}
+@media(max-width:760px){
+  .free-banner strong{font-size:56px}
+  .free-banner span{font-size:31px}
+  .free-banner small{font-size:13px}
+}

@@ -1,0 +1,30 @@
+import fs from 'node:fs';
+import vm from 'node:vm';
+import assert from 'node:assert/strict';
+for (const file of ['classic-quote.js','package-quote.js','quote.js']) {
+ const source=fs.readFileSync(new URL('../assets/quote/'+file,import.meta.url),'utf8');
+ const nodes=new Map(), requests=[];
+ const node=s=>{if(!nodes.has(s))nodes.set(s,{value:'',hidden:true,setAttribute(){},removeAttribute(){},focus(){},textContent:'',disabled:false});return nodes.get(s)};
+ const answers={name:'INTERNAL TEST',phone:'2025550191',city:'Irvine',vehicle:'2024 Test Sedan',email:'not-an-email',coverage:'Sides + rear',upgrade:'FREE sun strip'};
+ const box={state:{answers:{...answers},id:'test-id',busy:false},context:{tesla:false},$:node,screen:{querySelector:()=>node('h2')},document:{querySelector:()=>({value:''})},captureFields(){box.state.answers.email=node('#email').value.trim()},quoteEvent(){},quoteAttribution(){return {experiment_variant:file==='classic-quote.js'?'old_setup':'driveway_offer'}},quotePagePath(){return '/internal-test'},quoteSaved(){},render(){},fetch:async(u,o)=>{requests.push(JSON.parse(o.body));return {ok:true,status:200,json:async()=>({ok:true,id:'test-id'})}}};
+ vm.createContext(box);
+ vm.runInContext(source.match(/^const fields=.*$/m)[0]+'\n'+source.slice(source.indexOf('function validate('),source.indexOf('function captureFields('))+'\n'+source.match(/^async function submitStep\(\).*$/m)[0],box);
+ node('#email').value='not-an-email';
+ await vm.runInContext('submitStep()',box);
+ assert.equal(requests.length,0,'invalid optional email must not silently be submitted');
+ assert.equal(node('#skip-email').hidden,false,file+': invalid email must offer a visible recovery action');
+ const recovery=source.match(/^async function skipEmail\(\).*$/m);
+ assert(recovery,file+': explicit recovery handler exists');
+ vm.runInContext(recovery[0],box);
+ await vm.runInContext('skipEmail()',box);
+ assert.equal(requests.length,1);
+ assert.equal(requests[0].email,'');
+ for(const key of ['name','phone','city','vehicle','coverage','upgrade'])assert.equal(requests[0][key],answers[key],file+': preserve '+key);
+ assert.equal(box.state.success,true);
+ assert.equal(node('#skip-email').hidden,true);
+ box.state.success=false;box.state.busy=true;node('#email').value='person@example.com';
+ await vm.runInContext('skipEmail()',box);assert.equal(requests.length,1,'busy handler must not duplicate a request');assert.equal(node('#email').value,'person@example.com');
+ assert.match(source,/id="skip-email"[^>]*hidden/);
+ assert.match(source,/autocapitalize="none" spellcheck="false"/);
+ console.log(file+': invalid email recovery preserves answers, optional email and single submission');
+}

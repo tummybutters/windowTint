@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en" data-lead-service="windshield_tint" data-lead-variant="windshield_action_v1">
 
-<head>
+<head><script src="/assets/quote/experiment.js?v=20261016-speed"></script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Windshield Ceramic Tint Quote | Obsidian Autoworks</title>
@@ -224,7 +224,7 @@
         <a data-lead-action="windshield_quote_text"
             href="sms:+17146007134?body=Hi%20Obsidian%20Autoworks%2C%20I%27d%20like%20a%20windshield%20ceramic%20tint%20quote.%20My%20vehicle%2C%20city%2C%20requested%20glass%2C%20and%20shade%20goal%20are%3A%20">Text</a>
     </div>
-    <script src="/lead-tracking.js" defer></script>
+    <script src="/assets/attribution/journey.js?v=20261108" defer></script><script src="/lead-tracking.js" defer></script>
 </body>
 
 </html>

@@ -1,0 +1,23 @@
+import assert from 'node:assert/strict';
+import {createRequire} from 'node:module';
+const require=createRequire(import.meta.url),{capture}=require('../assets/attribution/journey');
+const at=1000000000000;
+const call=(url,previous=null,now=at,referrer='')=>capture({url:'https://www.obsidianautoworksoc.com'+url,previous,now,referrer,ua:'iPhone Mobile',id:()=>`visit_${now}`});
+const a=call('/mobile-window-tinting?gclid=A&campaignid=23899221542&creative=11&device=m');
+const b=call('/ceramic-window-tinting',a,at+1000);
+assert.equal(b.data.session_id,a.data.session_id);assert.equal(b.data.creative,'11');assert.equal(b.data.landing_page,'/mobile-window-tinting');
+const c=call('/package/?gclid=B&campaignid=24355484375',b,at+2000);
+assert.notEqual(c.data.session_id,a.data.session_id);assert.equal(c.data.creative,undefined);assert.equal(c.data.device,undefined);assert.equal(c.data.gclid,'B');
+const d=call('/window-tint-pricing',c,at+31*60000);
+assert.notEqual(d.data.session_id,c.data.session_id);assert.equal(d.data.gclid,'B');assert.equal(d.data.session_landing_page,'/window-tint-pricing');
+const e=call('/window-tint-pricing',d,at+31*86400000);
+assert.equal(e.data.gclid,undefined);assert.equal(e.data.source_label,'Direct / unknown');
+const organic=call('/ceramic-window-tinting',a,at+2000,'https://www.google.com/search?q=tint');
+assert.equal(organic.data.gclid,undefined);assert.equal(organic.data.utm_medium,'organic');
+assert(!JSON.stringify(call('/?phone=secret&email=private&name=customer')).includes('secret'));
+assert.equal(b.data.device_category,'mobile');
+console.log('Journey boundaries, click replacement, organic/direct, TTL and privacy passed');
+
+const paid=call('/?gclid=PAID&campaignid=123',null,at,'https://www.google.com/');
+const reload=call('/?gclid=PAID&campaignid=123',paid,at+1000,'https://www.google.com/');
+assert.equal(reload.data.gclid,'PAID');assert.equal(reload.data.session_id,paid.data.session_id);
