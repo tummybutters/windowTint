@@ -1,0 +1,11 @@
+/* Compact-form experiment: final card only. Same required fields and tap sizes. */
+#screen[data-form-variant="compact"] .field-grid{gap:12px}
+#screen[data-form-variant="compact"] .field label{margin-bottom:6px}
+#screen[data-form-variant="compact"] .summary{margin-block:12px}
+#screen[data-form-variant="compact"] .input-footer{margin-top:12px;gap:12px}
+#screen[data-form-variant="compact"] .consent{margin-top:12px}
+.quote-optional-email{grid-column:1/-1}
+.quote-optional-email summary{min-height:44px;display:flex;align-items:center;justify-content:flex-start;gap:8px;cursor:pointer;font-size:15px;text-decoration:underline;text-underline-offset:4px}
+.quote-optional-email summary::before{content:'+';font-size:20px;text-decoration:none}
+.quote-optional-email[open] summary::before{content:'−'}
+.quote-optional-email .field{margin-top:6px}

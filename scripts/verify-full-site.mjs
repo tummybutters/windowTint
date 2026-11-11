@@ -49,7 +49,7 @@ for (const [relative, expected] of Object.entries(backendBaseline)) {
   const actual = fs.existsSync(current) ? crypto.createHash('sha256').update(fs.readFileSync(current)).digest('hex') : null;
   if (actual !== expected) fail('Inherited backend changed: ' + relative);
 }
-checks.push('Inherited API and lib files compared with the verified November 8 release');
+checks.push('API and lib files compared with the approved backend manifest (November 11 attribution revision)');
 if (artifactRoot !== root) {
   for (const privatePath of ['api','lib','content','site-builder','scripts','docs','node_modules','.vercel','.git']) {
     if (fs.existsSync(path.join(artifactRoot, privatePath))) fail(`Source/private folder exposed in public artifact: ${privatePath}`);
