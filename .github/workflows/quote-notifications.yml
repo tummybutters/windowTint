@@ -17,6 +17,9 @@ jobs:
           def request(path,body=None):
            req=urllib.request.Request(BASE+path,headers=headers,data=json.dumps(body).encode() if body is not None else None)
            with urllib.request.urlopen(req,timeout=55) as r:return json.load(r)
+          # Record only existing contacts individually verified in TintWiz; no contact or message creation.
+          verified_records=[{"kind": "contact", "record_id": "4490826", "contact_id": "4490826", "quote_id": "b79f3a38-8fa5-42d9-a804-34e2f0bea725", "occurred_at": "2026-11-11T18:26:00.088196+00:00", "status": "verified"}, {"kind": "contact", "record_id": "4490839", "contact_id": "4490839", "quote_id": "3e76145c-caf6-45e9-a50b-a73a889d118c", "occurred_at": "2026-11-11T18:26:00.088196+00:00", "status": "verified"}, {"kind": "contact", "record_id": "4491074", "contact_id": "4491074", "quote_id": "a87d86f7-03d3-4938-9ff5-703bfadcd5ad", "occurred_at": "2026-11-11T18:26:00.088196+00:00", "status": "verified"}, {"kind": "contact", "record_id": "4485513", "contact_id": "4485513", "quote_id": "4b40e295-5d31-4b50-84de-a7e526413ded", "occurred_at": "2026-11-11T18:26:00.088196+00:00", "status": "verified"}, {"kind": "contact", "record_id": "4485483", "contact_id": "4485483", "quote_id": "511c7e7f-6b02-43c3-a5a3-e480bf20ded6", "occurred_at": "2026-11-11T18:26:00.088196+00:00", "status": "verified"}]
+          print(json.dumps({"verified_contact_links_saved":len(request("crm-attribution",{"records":verified_records})["accepted"])}))
           delivery=[];offset=0
           while True:
            d=request('quote-notification-retry?report=delivery&start=2026-11-03&end=2026-11-11&offset='+str(offset));delivery+=d['leads']
