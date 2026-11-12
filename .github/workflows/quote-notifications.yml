@@ -19,11 +19,11 @@ jobs:
            with urllib.request.urlopen(req,timeout=55) as r:return json.load(r)
           delivery=[];offset=0
           while True:
-           d=request('quote-notification-retry?report=delivery&start=2026-11-03&end=2026-11-11&offset='+str(offset));delivery+=d['leads']
+           d=request('quote-notification-retry?report=delivery&start=2026-11-03&end=2026-11-12&offset='+str(offset));delivery+=d['leads']
            if d['next_offset'] is None:break
            offset=d['next_offset']
           print(json.dumps({'delivery_count':len(delivery),'delivered':sum(x['sms_status'] in ['delivered','read'] for x in delivery),'recipient_matches_elle':d['recipient_matches_elle'],'delivery_issues':[{'quote_id':x['quote_id'],'status':x['sms_status']} for x in delivery if x['sms_status'] not in ['delivered','read']]}))
-          f=request('quote-notification-retry?report=funnel&start=2026-11-03&end=2026-11-11')
+          f=request('quote-notification-retry?report=funnel&start=2026-11-03&end=2026-11-12')
           linked={x['quote_id'] for x in f['crm_evidence'] if x['kind']=='contact'}
           print(json.dumps({'server_saved_quotes':len(f['leads']),'verified_contacts_in_cohort':len(linked),'unmatched_quotes':[{k:q.get(k) for k in ['quote_id','received_at','lead_kind','page_path','crm_state']} for q in f['leads'] if q['quote_id'] not in linked],'event_count':len(f['events']),'event_names':sorted(set(x['event_name'] for x in f['events'])),'truncated':f['leads_truncated'] or f['events_truncated']}))
           
