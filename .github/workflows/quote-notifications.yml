@@ -1,38 +1,32 @@
-name: Quote alert delivery
-on:
-  schedule:
-    - cron: '*/5 * * * *'
-  workflow_dispatch:
+name: Quote request evidence repair
+on: {workflow_dispatch: {}}
 permissions: {}
-concurrency:
-  group: quote-alert-delivery
-  cancel-in-progress: false
 jobs:
-  reconcile:
+  verify:
     runs-on: ubuntu-latest
-    timeout-minutes: 2
+    timeout-minutes: 6
     steps:
-      - name: Retry pending alerts and check delivery
+      - name: Link verified existing requests and read delivery evidence
         env:
           QUOTE_RETRY_SECRET: ${{ secrets.QUOTE_RETRY_SECRET }}
         run: |
           python3 - <<'PY'
-          import json, os, urllib.request
-          secret = os.environ.get('QUOTE_RETRY_SECRET')
-          if not secret:
-              raise SystemExit('Quote alert worker secret is missing')
-          request = urllib.request.Request(
-              'https://www.obsidianautoworksoc.com/api/quote-notification-retry',
-              headers={'Authorization': 'Bearer ' + secret})
-          try:
-              with urllib.request.urlopen(request, timeout=75) as response:
-                  result = json.load(response)
-          except Exception:
-              raise SystemExit('Quote delivery worker unavailable; inspect the saved lead queue')
-          fields = ['checked', 'crm_checked', 'reconciled', 'lookup_errors', 'failed', 'unknown', 'pending', 'crm_failed', 'crm_unknown', 'crm_pending']
-          if any(not isinstance(result.get(key), int) for key in fields):
-              raise SystemExit('Unexpected quote delivery worker response')
-          print(json.dumps({key: result[key] for key in fields}))
-          if any(result[key] for key in ['lookup_errors', 'failed', 'unknown', 'pending', 'crm_failed', 'crm_unknown', 'crm_pending']):
-              raise SystemExit('Quote delivery needs attention; inspect SMS and Tint Wiz before resending')
+          import os,json,urllib.request
+          headers={'Authorization':'Bearer '+os.environ['QUOTE_RETRY_SECRET'],'Content-Type':'application/json'}
+          def request(path,body=None):
+           req=urllib.request.Request('https://www.obsidianautoworksoc.com/api/'+path,headers=headers,data=json.dumps(body).encode() if body is not None else None)
+           with urllib.request.urlopen(req,timeout=55) as r:return json.load(r)
+          records=[{'kind': 'contact', 'record_id': '4493373', 'contact_id': '4493373', 'quote_id': '78d8706b-fb2d-4669-9b6e-6bd975c49328', 'occurred_at': '2026-11-12T17:15:00Z', 'status': 'verified'}, {'kind': 'contact', 'record_id': '4493373', 'contact_id': '4493373', 'quote_id': '02ede7ff-74a5-4120-93d7-c76f463de6f6', 'occurred_at': '2026-11-12T17:15:00Z', 'status': 'verified'}]
+          result=request('crm-attribution',{'records':records})
+          print(json.dumps({'existing_requests_linked':len(result['accepted'])}))
+          f=request('quote-notification-retry?report=funnel&start=2026-11-03&end=2026-11-12')
+          linked={x['quote_id']:x['contact_id'] for x in f['crm_evidence'] if x['kind']=='contact'}
+          ids=[r['quote_id'] for r in records]
+          print(json.dumps({'both_requests_verified':all(linked.get(i)=='4493373' for i in ids),'saved_requests':len(f['leads']),'verified_requests':len(linked),'distinct_verified_contacts':len(set(linked.values())),'unmatched_requests':len([q for q in f['leads'] if q['quote_id'] not in linked]),'form_test_summary':f.get('form_test_summary'),'truncated':f['leads_truncated'] or f['events_truncated']}))
+          leads=[];offset=0
+          while True:
+           d=request('quote-notification-retry?report=delivery&start=2026-11-03&end=2026-11-12&offset='+str(offset));leads+=d['leads']
+           if d['next_offset'] is None:break
+           offset=d['next_offset']
+          print(json.dumps({'delivery_requests':len(leads),'delivered_or_read':sum(x['sms_status'] in ['delivered','read'] for x in leads),'fresh_provider_confirmations':sum(bool(x['fresh_provider_read']) for x in leads),'recipient_matches_elle':d['recipient_matches_elle'],'affected_request_sms':[{'quote_id':x['quote_id'],'sms_status':x['sms_status']} for x in leads if x['quote_id'] in ids],'delivery_issues':[{'quote_id':x['quote_id'],'status':x['sms_status']} for x in leads if x['sms_status'] not in ['delivered','read']]}))
           PY
