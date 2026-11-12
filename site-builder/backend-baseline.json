@@ -11,7 +11,7 @@
   "lib/square-reconcile.js": "4a38add50793705687e6d7aee548d8a59655759ac784adfed0984553ea4bc0a3",
   "lib/automotive-quote.js": "0915796a39d92a4965b23543532be4463461359a4bcd3c90d297024f65461a62",
   "lib/square-webhook-subscription.js": "6de0ab14e8826cf42610ea5ef45ab85843317e337df6e3fdd79aca9ffd4e47e7",
-  "lib/automotive-quote-store.js": "48a02900d44128f11f1d417bfb4cae0930789703a7068ee033b4c4e47488cb93",
+  "lib/automotive-quote-store.js": "eb13c9bda10bb7fd935463719423867b4ec5064a5bd4ac03b169bb7152933dd8",
   "lib/quote-attribution.js": "b91b9e4ae65e06c3dadc5c04c140d7c459e5b36a1d40c52fe130cc097db1f43e",
   "lib/quote-tintwiz.js": "fcb395064f789b9fec09edbb37712f28b48e3a82e5078fcb46b44f2a7e38965c",
   "lib/commercial-lead.js": "367ce0253ed69b5c018b6cdb725e4b45dafaa416cdee96ac508d50943b1e0aa3",
