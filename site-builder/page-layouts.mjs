@@ -92,9 +92,11 @@ function directoryGroup(title,selected,{photos=false,excludeImage=null}={}) {
   if(!selected.length)return '';
   return `<section class="section container directory-group"><div class="section-heading"><h2>${e(title)}</h2><span class="eyebrow">${selected.length} ways to explore</span></div><div class="${photos?'catalog-cards':'directory-links'}">${selected.map(p=>photos?`<a class="catalog-card" href="${p.path}">${p.image&&p.image!==excludeImage&&selected.findIndex(item=>item.image===p.image)===selected.indexOf(p)?`${imageTag(p.image,p.imageAlt||p.title,{sizes:'(max-width: 760px) calc(100vw - 40px), 30vw'})}`:''}<span class="eyebrow">${e(label(p))}</span><h3>${e(p.title)}</h3><p>${e(p.description)}</p><span aria-hidden="true">↗</span></a>`:`<a href="${p.path}"><span>${e(p.title)}</span><span aria-hidden="true">↗</span></a>`).join('')}</div></section>`;
 }
-function portfolioProof(page) {
-  if(!page.proofImages?.length)return '';
-  return `<section class="section container"><div class="section-heading"><h2>From our work.</h2><a href="/window-tinting-gallery">View gallery ↗</a></div><div class="portfolio-proof">${page.proofImages.map(photo=>`<a href="${e(photo.src)}" data-lightbox data-caption="${e(photo.alt)}">${imageTag(photo.src,photo.alt,{sizes:'(max-width: 760px) calc(100vw - 40px), 45vw'})}</a>`).join('')}</div></section>`;
+function portfolioProof(page,pages=[]) {
+  const shown=new Set([page.image,...pages.filter(p=>p.division===page.division&&p.type==='service').map(p=>p.image)]);
+  const photos=(page.proofImages||[]).filter(photo=>!shown.has(photo.src));
+  if(!photos.length)return '';
+  return `<section class="section container"><div class="section-heading"><h2>From our work.</h2><a href="/window-tinting-gallery">View gallery ↗</a></div><div class="portfolio-proof">${photos.map(photo=>`<a href="${e(photo.src)}" data-lightbox data-caption="${e(photo.alt)}">${imageTag(photo.src,photo.alt,{sizes:'(max-width: 760px) calc(100vw - 40px), 45vw'})}</a>`).join('')}</div></section>`;
 }
 
 export function renderInner(page,pages,reviewData) {
@@ -106,7 +108,7 @@ export function renderInner(page,pages,reviewData) {
     if(page.division==='auto')body+=`<section class="container compact-offer"><div><p class="eyebrow">The Driveway Package</p><h2>Ceramic sides + rear.<br><em>A free upgrade, too.</em></h2><p>Explore eligible sun strip or standard single-panel sunroof options. Tesla and specialty vehicles quoted separately.</p></div>${button('See package details','/driveway-package')}</section>`;
     body+=`<section class="container hub-story">${highlights(page)}${contentSections(page,'feature')}${steps(page)}${comparison(page)}${checklist(page)}</section>`;
     if(page.division==='auto')body+=directoryGroup('Find your vehicle',pages.filter(p=>p.type==='vehicle'));
-    body+=portfolioProof(page);
+    body+=portfolioProof(page,pages);
     body+=directoryGroup('Where we come to you',pages.filter(p=>p.division===page.division&&p.type==='city'));
     return body+tail();
   }
@@ -115,14 +117,14 @@ export function renderInner(page,pages,reviewData) {
   }
   if(page.type==='guide') {
     const count=(page.sections.map(s=>s.body).join(' ').match(/\S+/g)||[]).length;
-    return intro(page,'editorial',{photo:false,action:false})+`<div class="container reading-meta"><span>${Math.max(2,Math.ceil(count/180))} minute read</span><span>${e(label(page))} advice</span></div><section class="container editorial-layout">${contents(page)}<div>${highlights(page)}${contentSections(page)}${comparison(page)}${steps(page)}${checklist(page)}</div></section>`+sources(page)+related(page,index)+faq(page)+close(page);
+    return intro(page,'editorial',{photo:['home','commercial'].includes(page.division),action:false})+`<div class="container reading-meta"><span>${Math.max(2,Math.ceil(count/180))} minute read</span><span>${e(label(page))} advice</span></div><section class="container editorial-layout">${contents(page)}<div>${highlights(page)}${contentSections(page)}${comparison(page)}${steps(page)}${checklist(page)}</div></section>`+sources(page)+related(page,index)+faq(page)+close(page);
   }
   if(page.type==='city') {
     const hasPlanner=Boolean(page.checklist?.length||page.steps?.length);
-    return intro(page,'local',{photo:false})+`<section class="container local-layout${hasPlanner?'':' local-layout--wide'}"><div>${highlights(page)}${contentSections(page,'brief')}</div>${hasPlanner?`<div class="local-planner"><p class="eyebrow">Plan the visit</p>${checklist(page)}${steps(page)}</div>`:''}</section>${page.comparison?`<section class="container section">${comparison(page)}</section>`:''}`+cityContext(page)+tail();
+    return intro(page,'local',{photo:['home','commercial'].includes(page.division)})+`<section class="container local-layout${hasPlanner?'':' local-layout--wide'}"><div>${highlights(page)}${contentSections(page,'brief')}</div>${hasPlanner?`<div class="local-planner"><p class="eyebrow">Plan the visit</p>${checklist(page)}${steps(page)}</div>`:''}</section>${page.comparison?`<section class="container section">${comparison(page)}</section>`:''}`+cityContext(page)+tail();
   }
   if(page.type==='project') {
-    return intro(page,'worksheet',{photo:false,action:false})+`<section class="container worksheet-layout"><aside class="planner-note"><p class="eyebrow">A planning guide</p><p>Use this page to prepare your own project. It describes decisions to make, rather than a completed installation.</p>${highlights(page)}${checklist(page)}</aside><div>${steps(page)}${contentSections(page,'numbered')}${comparison(page)}</div></section>`+tail();
+    return intro(page,'worksheet',{photo:['home','commercial'].includes(page.division),action:false})+`<section class="container worksheet-layout"><aside class="planner-note"><p class="eyebrow">A planning guide</p><p>Use this page to prepare your own project. It describes decisions to make, rather than a completed installation.</p>${highlights(page)}${checklist(page)}</aside><div>${steps(page)}${contentSections(page,'numbered')}${comparison(page)}</div></section>`+tail();
   }
   if(page.type==='service') {
     const diagram=coverageDiagram(page);

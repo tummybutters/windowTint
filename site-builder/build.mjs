@@ -1,3 +1,4 @@
+import {withBuildingPhoto} from './building-photos.mjs';
 import {attachCityContext} from './city-context.mjs';
 import {imageTag} from './media.mjs';
 import {renderInner,renderDirectory,sharedNextStep} from './page-layouts.mjs';
@@ -10,7 +11,7 @@ import {origin, escape as e, divisions, button, shell, offer, reviews, servicePa
 
 const root=path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const read=file=>fs.readFileSync(path.join(root,file),'utf8');
-const pages=JSON.parse(read(process.env.OBSIDIAN_LAYOUT_DATA || 'content/pages.json'));
+const pages=JSON.parse(read(process.env.OBSIDIAN_LAYOUT_DATA || 'content/pages.json')).map(withBuildingPhoto);
 attachInternalLinks(pages,['shared','auto','home','commercial'].flatMap(division=>JSON.parse(read(`content/internal-links-${division}.json`))));
 attachCityContext(pages,JSON.parse(read('content/city-context.json')));
 const reviewData=JSON.parse(read('content/reviews.json'));
