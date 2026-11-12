@@ -1,5 +1,5 @@
 import {imageTag} from './media.mjs';
-import {escape as e, divisions, button, reviews, card, quoteHref, quoteLabel} from './components.mjs';
+import {escape as e, brandName, divisions, button, reviews, card, quoteHref, quoteLabel} from './components.mjs';
 import {linkedParagraphs} from './internal-links.mjs';
 
 const label = page => divisions[page.division]?.label || 'Obsidian';
@@ -14,7 +14,7 @@ function image(page, className='page-photo') {
   return `<figure class="${className}">${imageTag(page.image,page.imageAlt||page.title,{loading:'eager'})}${page.imageCaption?`<figcaption>${e(page.imageCaption)}</figcaption>`:''}</figure>`;
 }
 function eyebrow(page) {
-  return page.type==='guide'?`${label(page)} / Field notes`:page.type==='project'?`${label(page)} / Project planner`:page.type==='city'?`${label(page)} / At your location`:page.type==='vehicle'?'Your vehicle. Your glass.':`${label(page)} / Obsidian Film Solutions`;
+  return page.type==='guide'?`${label(page)} / Field notes`:page.type==='project'?`${label(page)} / Project planner`:page.type==='city'?`${label(page)} / At your location`:page.type==='vehicle'?'Your vehicle. Your glass.':`${label(page)} / ${brandName(page.division)}`;
 }
 function intro(page,kind,{photo=true,action=true}={}) {
   return `<section class="container page-intro page-intro--${kind}${photo&&page.image?' has-photo':''}" data-layout="${kind}">${crumbs(page)}<div class="page-intro-grid"><div><p class="eyebrow">${e(eyebrow(page))}</p><h1>${e(page.title)}</h1><p class="page-deck">${e(page.intro)}</p>${action?`<div class="actions">${button(quoteLabel(page),quoteHref(page),page.type==='city')}${specialty(page)?button('Call (714) 600-7134','tel:+17146007134',true):''}</div>`:''}</div>${photo?image(page):''}</div></section>`;
