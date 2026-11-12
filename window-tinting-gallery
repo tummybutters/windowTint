@@ -473,7 +473,7 @@
     <nav class="gallery-contact-bar" aria-label="Contact Obsidian"><a class="gallery-contact-text" href="sms:+17146007134" data-lead-action="gallery_sticky_text"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 4h14a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H9l-6 3V6a2 2 0 0 1 2-2Z"/><path d="M7 9h10M7 13h6"/></svg>Text us</a><a class="gallery-contact-call" href="tel:+17146007134" data-lead-action="gallery_sticky_call"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m7 3 3 5-3 3q2 4 6 6l3-3 5 3q-1 5-5 4C9 19 5 15 3 8Q2 4 7 3Z"/></svg>Call us</a></nav>
     <dialog class="work-lightbox" id="work-lightbox" aria-label="Window tint photo viewer"><button class="work-lightbox-close" type="button" aria-label="Close image">×</button><button class="work-lightbox-prev" type="button" aria-label="Previous image">←</button><figure><img alt=""><figcaption></figcaption></figure><button class="work-lightbox-next" type="button" aria-label="Next image">→</button></dialog>
     <script src="/assets/gallery.js?v=20260921" defer></script>
-    <script src="/assets/attribution/journey.js?v=20261108" defer></script><script src="/lead-tracking.js" defer></script>
+    <script src="/assets/attribution/journey.js?v=20261112-form-evidence" defer></script><script src="/lead-tracking.js" defer></script>
 </body>
 
 </html>

@@ -12,7 +12,7 @@ const createHandler=(options={})=>async(req,res)=>{
    const {start,end}=req.query;
    const valid=d=>typeof d==='string'&&/^\d{4}-\d{2}-\d{2}$/.test(d)&&!Number.isNaN(Date.parse(d))&&new Date(d).toISOString().slice(0,10)===d;
    if(!valid(start)||!valid(end)||Date.parse(end)<Date.parse(start)||Date.parse(end)-Date.parse(start)>90*86400000)return res.status(400).json({error:'Use a valid date range of at most 90 days'});
-   if(req.query.report==='funnel'){const report=await store.funnelReport(start,end);const crm=await (options.crmStore||require('../lib/crm-attribution').defaultStore()).report(report.leads.map(l=>l.quote_id));return res.status(200).json({start,end,timezone:'America/Los_Angeles',...report,crm_evidence:crm});}
+   if(req.query.report==='funnel'){const report=await store.funnelReport(start,end);const crm=await (options.crmStore||require('../lib/crm-attribution').defaultStore()).report(report.leads.map(l=>l.quote_id));return res.status(200).json({start,end,timezone:'America/Los_Angeles',...report,crm_evidence:crm,form_test_summary:require('../lib/form-test-report').summarizeFormTest({leads:report.leads,events:report.events,crm})});}
    if(req.query.report==='delivery'){const offset=Number(req.query.offset||0);if(!Number.isInteger(offset)||offset<0||offset>10000)return res.status(400).json({error:'Invalid offset'});return res.status(200).json({start,end,timezone:'America/Los_Angeles',...(await store.deliveryReport(start,end,offset))});}
    const leads=await store.commercialReport(start,end);return res.status(200).json({start,end,timezone:'America/Los_Angeles',leads,truncated:leads.length===1000});
   }

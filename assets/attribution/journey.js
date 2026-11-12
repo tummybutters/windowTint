@@ -53,7 +53,7 @@ if(typeof module==='object'&&module.exports){module.exports={capture,KEY,normali
 let state;try{state=JSON.parse(localStorage.getItem(KEY))}catch{}
 function update(){state=capture({url:location.href,previous:state,now:Date.now(),referrer:document.referrer,ua:navigator.userAgent,touch:navigator.maxTouchPoints,presentationVersion:document.body?.dataset?.presentationVersion||document.documentElement?.dataset?.presentationVersion||'',id:()=>crypto.randomUUID()});try{localStorage.setItem(KEY,JSON.stringify(state))}catch{}}
 update();
-let formAssignment=null;
+let formAssignment=null,formExposure=null;
 root.ObsidianFormExperiment={
  assign(){
   const arm=root.ObsidianExperiment?.experiment_variant;
@@ -66,7 +66,13 @@ root.ObsidianFormExperiment={
   if(formAssignment&&!qa)try{localStorage.setItem(key,JSON.stringify(formAssignment))}catch{}
   return formAssignment||{};
  },
- get(){return formAssignment||{}}
+ expose(quoteId){
+  if(!formExposure||formExposure.form_exposure_id!==quoteId){
+   formExposure={form_rendered_variant:formAssignment?.form_variant||'current',form_exposure_id:quoteId,form_exposed_at:new Date().toISOString(),form_tracking_version:'rendered-form-v1',form_assignment_status:formAssignment?'enrolled':'not_enrolled'};
+  }
+  return {...(formAssignment||{}),...formExposure};
+ },
+ get(){return {...(formAssignment||{}),...(formExposure||{})}}
 };
-root.ObsidianJourney={get:()=>{const e=root.ObsidianExperiment;if(e?.experiment_id==='auto_old_driveway_20261014'&&['old_setup','driveway_offer'].includes(e.experiment_variant)){state.data.experiment_id=e.experiment_id;state.data.experiment_variant=e.experiment_variant;}return {...state.data,...(formAssignment||{}),rendered_experiment_variant:e?.experiment_variant||'unassigned'}},touch:()=>{state.last_at=Date.now();state.data.last_seen_at=new Date().toISOString();try{localStorage.setItem(KEY,JSON.stringify(state))}catch{}}};
+root.ObsidianJourney={get:()=>{const e=root.ObsidianExperiment;if(e?.experiment_id==='auto_old_driveway_20261014'&&['old_setup','driveway_offer'].includes(e.experiment_variant)){state.data.experiment_id=e.experiment_id;state.data.experiment_variant=e.experiment_variant;}return {...state.data,...(formAssignment||{}),...(formExposure||{}),rendered_experiment_variant:e?.experiment_variant||'unassigned'}},touch:()=>{state.last_at=Date.now();state.data.last_seen_at=new Date().toISOString();try{localStorage.setItem(KEY,JSON.stringify(state))}catch{}}};
 })(typeof window==='object'?window:this);
