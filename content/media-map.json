@@ -481,6 +481,72 @@
         "glare and view assessment"
       ],
       "provenance": "Existing Obsidian portfolio, source mapping in content/gallery.json; no city, shade, product or reviewer attribution inferred."
+    },
+    {
+      "id": "tintwiz-20261111-office-lounge-windows",
+      "src": "/gallery/tintwiz-20261111/office-lounge-windows.webp",
+      "imageAlt": "Office lounge with full-height windows and seating",
+      "division": "commercial",
+      "subject": "Office lounge windows",
+      "suitableTopics": [
+        "Office lounge windows"
+      ],
+      "provenance": "Obsidian TintWiz upload reviewed November 11, 2026. Completed-category source. No city, film product, shade or measured performance inferred."
+    },
+    {
+      "id": "tintwiz-20261111-daylight-office-glass",
+      "src": "/gallery/tintwiz-20261111/daylight-office-glass.webp",
+      "imageAlt": "Office windows overlooking trees",
+      "division": "commercial",
+      "subject": "Daylight office glass",
+      "suitableTopics": [
+        "Daylight office glass"
+      ],
+      "provenance": "Obsidian TintWiz upload reviewed November 11, 2026. Completed-category source. No city, film product, shade or measured performance inferred."
+    },
+    {
+      "id": "tintwiz-20261111-covered-patio-window",
+      "src": "/gallery/tintwiz-20261111/covered-patio-window.webp",
+      "imageAlt": "Reflective residential window beneath a covered patio",
+      "division": "home",
+      "subject": "Covered patio window",
+      "suitableTopics": [
+        "Covered patio window"
+      ],
+      "provenance": "Obsidian TintWiz upload reviewed November 11, 2026. Completed-category source. No city, film product, shade or measured performance inferred."
+    },
+    {
+      "id": "tintwiz-20261111-poolside-home-glass",
+      "src": "/gallery/tintwiz-20261111/poolside-home-glass.webp",
+      "imageAlt": "Home windows and sliding glass door beside a pool",
+      "division": "home",
+      "subject": "Poolside home glass",
+      "suitableTopics": [
+        "Poolside home glass"
+      ],
+      "provenance": "Obsidian TintWiz upload reviewed November 11, 2026. Completed-category source. No city, film product, shade or measured performance inferred."
+    },
+    {
+      "id": "tintwiz-20261111-living-room-glass",
+      "src": "/gallery/tintwiz-20261111/living-room-glass.webp",
+      "imageAlt": "Living-room sliding glass door opening onto a patio",
+      "division": "home",
+      "subject": "Living room glass",
+      "suitableTopics": [
+        "Living room glass"
+      ],
+      "provenance": "Obsidian TintWiz upload reviewed November 11, 2026. Completed-category source. No city, film product, shade or measured performance inferred."
+    },
+    {
+      "id": "tintwiz-20261111-poolside-sliding-door",
+      "src": "/gallery/tintwiz-20261111/poolside-sliding-door.webp",
+      "imageAlt": "Living-room sliding glass door overlooking a pool",
+      "division": "home",
+      "subject": "Poolside sliding door",
+      "suitableTopics": [
+        "Poolside sliding door"
+      ],
+      "provenance": "Obsidian TintWiz upload reviewed November 11, 2026. Completed-category source. No city, film product, shade or measured performance inferred."
     }
   ],
   "byPath": {
@@ -603,13 +669,12 @@
       "reason": "Verified Model Y image for the broad Tesla service. Caption must identify this model."
     },
     "/home-glare-reduction-film": {
-      "image": "/assets/site/work-home.webp",
-      "imageAlt": "Residential window film from the Obsidian portfolio",
+      "image": "/gallery/tintwiz-20261111/living-room-glass.webp",
+      "imageAlt": "Living-room sliding glass door opening onto a patio",
       "galleryIds": [
-        "residential-window-film-1",
-        "residential-window-film-2"
+        "tintwiz-20261111-living-room-glass"
       ],
-      "reason": "Actual residential portfolio image illustrates light and window orientation."
+      "reason": "Reviewed completed-category building-film portfolio photograph; no project-specific product or performance claim."
     },
     "/home-solar-window-film": {
       "image": "/assets/site/home.webp",
@@ -621,22 +686,20 @@
       "reason": "Actual residential window image; exact product and heat-rejection measurements unverified."
     },
     "/office-window-film": {
-      "image": "/assets/site/commercial.webp",
-      "imageAlt": "Commercial windows overlooking greenery",
+      "image": "/gallery/tintwiz-20261111/daylight-office-glass.webp",
+      "imageAlt": "Office windows overlooking trees",
       "galleryIds": [
-        "commercial-window-film-1",
-        "commercial-window-film-2"
+        "tintwiz-20261111-daylight-office-glass"
       ],
-      "reason": "Actual office-window portfolio photograph."
+      "reason": "Reviewed completed-category building-film portfolio photograph; no project-specific product or performance claim."
     },
     "/commercial-solar-window-film": {
-      "image": "/assets/site/work-commercial.webp",
-      "imageAlt": "Commercial window film from the Obsidian portfolio",
+      "image": "/gallery/tintwiz-20261111/daylight-office-glass.webp",
+      "imageAlt": "Office windows overlooking trees",
       "galleryIds": [
-        "commercial-window-film-1",
-        "commercial-window-film-2"
+        "tintwiz-20261111-daylight-office-glass"
       ],
-      "reason": "Commercial windows shown as a portfolio example; no product-specific claims."
+      "reason": "Reviewed completed-category building-film portfolio photograph; no project-specific product or performance claim."
     },
     "/architectural-window-film": {
       "image": "/assets/site/home.webp",
@@ -648,13 +711,20 @@
       "reason": "Residential hub uses a home-window portfolio example."
     },
     "/commercial-window-film": {
-      "image": "/assets/site/work-commercial.webp",
-      "imageAlt": "Glazed commercial storefront entrance from the Obsidian portfolio",
+      "image": "/gallery/tintwiz-20261111/office-lounge-windows.webp",
+      "imageAlt": "Office lounge with full-height windows and seating",
       "galleryIds": [
-        "commercial-window-film-1",
-        "commercial-window-film-2"
+        "tintwiz-20261111-office-lounge-windows"
       ],
-      "reason": "Commercial hub uses a commercial-window portfolio example."
+      "reason": "Reviewed completed-category building-film portfolio photograph; no project-specific product or performance claim."
+    },
+    "/home-privacy-window-film": {
+      "image": "/gallery/tintwiz-20261111/covered-patio-window.webp",
+      "imageAlt": "Reflective residential window beneath a covered patio",
+      "galleryIds": [
+        "tintwiz-20261111-covered-patio-window"
+      ],
+      "reason": "Reviewed completed-category building-film portfolio photograph; no project-specific product or performance claim."
     }
   },
   "unmatchedModels": [

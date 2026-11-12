@@ -90,7 +90,7 @@
         filters.forEach(filter => filter.setAttribute('aria-pressed', String(filter === button)));
         if (count) {
           const visible = items.filter(item => !item.hidden).length;
-          count.textContent = `${visible} ${visible === 1 ? 'project' : 'projects'}`;
+          count.textContent = `${visible} ${visible === 1 ? 'collection' : 'collections'}`;
         }
       });
     });

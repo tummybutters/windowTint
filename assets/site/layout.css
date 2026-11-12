@@ -89,3 +89,8 @@
 .project-option:hover,.project-option:focus-visible{border-color:var(--accent)}
 .project-option>span:last-child{color:var(--accent)}
 @media(max-width:760px){.project-picker{padding-top:28px}.project-options{grid-template-columns:1fr;gap:12px}.project-option{grid-template-columns:82px 1fr 20px;padding:12px;gap:16px;font-size:20px}.project-option img{grid-column:auto;height:74px}.project-picker>p{margin-bottom:22px}}
+
+/* Real building-film portfolio, using the shared accessible photo viewer. */
+.portfolio-proof { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:18px; }
+.portfolio-proof img { display:block; width:100%; aspect-ratio:4/3; object-fit:cover; border-radius:5px; }
+@media(max-width:760px) { .portfolio-proof { grid-template-columns:1fr; gap:18px; } }

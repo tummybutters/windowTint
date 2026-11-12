@@ -2389,7 +2389,17 @@
     ],
     "quotePrompt": "Tell us the room you want to improve and the time of day you notice the problem.",
     "image": "/assets/site/home.webp",
-    "imageAlt": "Residential windows overlooking a garden"
+    "imageAlt": "Residential windows overlooking a garden",
+    "proofImages": [
+      {
+        "src": "/gallery/tintwiz-20261111/living-room-glass.webp",
+        "alt": "Living-room sliding glass door opening onto a patio"
+      },
+      {
+        "src": "/gallery/tintwiz-20261111/covered-patio-window.webp",
+        "alt": "Reflective residential window beneath a covered patio"
+      }
+    ]
   },
   {
     "path": "/commercial-window-film",
@@ -2461,8 +2471,18 @@
       ]
     },
     "quotePrompt": "Send the property city, glass areas and the problem each area needs to solve.",
-    "image": "/assets/site/work-commercial.webp",
-    "imageAlt": "Glazed commercial storefront entrance from the Obsidian portfolio"
+    "image": "/gallery/tintwiz-20261111/office-lounge-windows.webp",
+    "imageAlt": "Office lounge with full-height windows and seating",
+    "proofImages": [
+      {
+        "src": "/gallery/tintwiz-20261111/daylight-office-glass.webp",
+        "alt": "Office windows overlooking trees"
+      },
+      {
+        "src": "/assets/site/work-commercial.webp",
+        "alt": "Commercial glass entrance from the Obsidian portfolio"
+      }
+    ]
   },
   {
     "path": "/chrome-delete",
@@ -4016,7 +4036,9 @@
         ]
       ]
     },
-    "quotePrompt": "Show us the sightline you want to change, and tell us whether privacy matters during the day, at night or both."
+    "quotePrompt": "Show us the sightline you want to change, and tell us whether privacy matters during the day, at night or both.",
+    "image": "/gallery/tintwiz-20261111/covered-patio-window.webp",
+    "imageAlt": "Reflective residential window beneath a covered patio"
   },
   {
     "path": "/home-glare-reduction-film",
@@ -4069,8 +4091,8 @@
       "Windows you would prefer to keep visually consistent"
     ],
     "quotePrompt": "Tell us what you are looking at when glare becomes distracting.",
-    "image": "/assets/site/work-home.webp",
-    "imageAlt": "Residential window film from the Obsidian portfolio"
+    "image": "/gallery/tintwiz-20261111/living-room-glass.webp",
+    "imageAlt": "Living-room sliding glass door opening onto a patio"
   },
   {
     "path": "/home-decorative-window-film",
@@ -4249,8 +4271,8 @@
       ]
     },
     "quotePrompt": "Which office areas need attention, and what does each area need the glass to do?",
-    "image": "/assets/site/commercial.webp",
-    "imageAlt": "Commercial windows overlooking greenery"
+    "image": "/gallery/tintwiz-20261111/daylight-office-glass.webp",
+    "imageAlt": "Office windows overlooking trees"
   },
   {
     "path": "/storefront-window-film",
@@ -4415,8 +4437,8 @@
       "High-glass and occupied-space access"
     ],
     "quotePrompt": "Identify the windows and the people or displays affected by direct sun.",
-    "image": "/assets/site/work-commercial.webp",
-    "imageAlt": "Commercial window film from the Obsidian portfolio"
+    "image": "/gallery/tintwiz-20261111/daylight-office-glass.webp",
+    "imageAlt": "Office windows overlooking trees"
   },
   {
     "path": "/commercial-safety-security-film",

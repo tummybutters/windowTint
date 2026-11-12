@@ -238,5 +238,41 @@
     "display": "/assets/site/optimized/toyota-tacoma-03-c8e123d6-display.webp",
     "width": 1179,
     "height": 1069
+  },
+  "/gallery/tintwiz-20261111/office-lounge-windows.webp": {
+    "thumbnail": "/gallery/tintwiz-20261111/office-lounge-windows-thumbnail.webp",
+    "display": "/gallery/tintwiz-20261111/office-lounge-windows-display.webp",
+    "width": 1152,
+    "height": 2048
+  },
+  "/gallery/tintwiz-20261111/daylight-office-glass.webp": {
+    "thumbnail": "/gallery/tintwiz-20261111/daylight-office-glass-thumbnail.webp",
+    "display": "/gallery/tintwiz-20261111/daylight-office-glass-display.webp",
+    "width": 1152,
+    "height": 2048
+  },
+  "/gallery/tintwiz-20261111/covered-patio-window.webp": {
+    "thumbnail": "/gallery/tintwiz-20261111/covered-patio-window-thumbnail.webp",
+    "display": "/gallery/tintwiz-20261111/covered-patio-window-display.webp",
+    "width": 1152,
+    "height": 2048
+  },
+  "/gallery/tintwiz-20261111/poolside-home-glass.webp": {
+    "thumbnail": "/gallery/tintwiz-20261111/poolside-home-glass-thumbnail.webp",
+    "display": "/gallery/tintwiz-20261111/poolside-home-glass-display.webp",
+    "width": 1152,
+    "height": 2048
+  },
+  "/gallery/tintwiz-20261111/living-room-glass.webp": {
+    "thumbnail": "/gallery/tintwiz-20261111/living-room-glass-thumbnail.webp",
+    "display": "/gallery/tintwiz-20261111/living-room-glass-display.webp",
+    "width": 1152,
+    "height": 2048
+  },
+  "/gallery/tintwiz-20261111/poolside-sliding-door.webp": {
+    "thumbnail": "/gallery/tintwiz-20261111/poolside-sliding-door-thumbnail.webp",
+    "display": "/gallery/tintwiz-20261111/poolside-sliding-door-display.webp",
+    "width": 1152,
+    "height": 2048
   }
 }

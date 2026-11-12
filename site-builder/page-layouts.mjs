@@ -92,6 +92,11 @@ function directoryGroup(title,selected,{photos=false,excludeImage=null}={}) {
   if(!selected.length)return '';
   return `<section class="section container directory-group"><div class="section-heading"><h2>${e(title)}</h2><span class="eyebrow">${selected.length} ways to explore</span></div><div class="${photos?'catalog-cards':'directory-links'}">${selected.map(p=>photos?`<a class="catalog-card" href="${p.path}">${p.image&&p.image!==excludeImage&&selected.findIndex(item=>item.image===p.image)===selected.indexOf(p)?`${imageTag(p.image,p.imageAlt||p.title,{sizes:'(max-width: 760px) calc(100vw - 40px), 30vw'})}`:''}<span class="eyebrow">${e(label(p))}</span><h3>${e(p.title)}</h3><p>${e(p.description)}</p><span aria-hidden="true">↗</span></a>`:`<a href="${p.path}"><span>${e(p.title)}</span><span aria-hidden="true">↗</span></a>`).join('')}</div></section>`;
 }
+function portfolioProof(page) {
+  if(!page.proofImages?.length)return '';
+  return `<section class="section container"><div class="section-heading"><h2>From our work.</h2><a href="/window-tinting-gallery">View gallery ↗</a></div><div class="portfolio-proof">${page.proofImages.map(photo=>`<a href="${e(photo.src)}" data-lightbox data-caption="${e(photo.alt)}">${imageTag(photo.src,photo.alt,{sizes:'(max-width: 760px) calc(100vw - 40px), 45vw'})}</a>`).join('')}</div></section>`;
+}
+
 export function renderInner(page,pages,reviewData) {
   const index=new Map(pages.map(p=>[p.path,p])); let body='';
   const tail=()=>faq(page)+sources(page)+related(page,index)+close(page);
@@ -101,6 +106,7 @@ export function renderInner(page,pages,reviewData) {
     if(page.division==='auto')body+=`<section class="container compact-offer"><div><p class="eyebrow">The Driveway Package</p><h2>Ceramic sides + rear.<br><em>A free upgrade, too.</em></h2><p>Explore eligible sun strip or standard single-panel sunroof options. Tesla and specialty vehicles quoted separately.</p></div>${button('See package details','/driveway-package')}</section>`;
     body+=`<section class="container hub-story">${highlights(page)}${contentSections(page,'feature')}${steps(page)}${comparison(page)}${checklist(page)}</section>`;
     if(page.division==='auto')body+=directoryGroup('Find your vehicle',pages.filter(p=>p.type==='vehicle'));
+    body+=portfolioProof(page);
     body+=directoryGroup('Where we come to you',pages.filter(p=>p.division===page.division&&p.type==='city'));
     return body+tail();
   }
