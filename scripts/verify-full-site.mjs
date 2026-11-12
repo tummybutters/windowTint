@@ -70,6 +70,7 @@ for (const rule of oldConfig.rewrites || []) {
 }
 for (const rule of oldConfig.rewrites || []) {
   if (rule.has || !rule.destination.startsWith('/experiments/original/')) continue;
+  if (localFile(rule.source)) fail(`Physical file shadows experiment routing: ${rule.source}`);
   const actual = resolveRoute(`${rule.source}?experience=original`);
   if (actual !== localFile(rule.destination)) fail(`Explicit original experiment route changed: ${rule.source}`);
 }

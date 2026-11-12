@@ -12,6 +12,8 @@ const browserDirectories=new Set([
 const browserExtensions=new Set(['.html','.htm','.js','.css','.jpg','.jpeg','.png','.webp','.avif','.gif','.svg','.ico','.woff','.woff2','.ttf','.otf','.mp4','.webm']);
 const rootFiles=new Set(['robots.txt','sitemap.xml']);
 const generatedRoutes=new Set(JSON.parse(fs.readFileSync(path.join(root,'content/pages.json'),'utf8')).map(page=>page.path));
+const routing=JSON.parse(fs.readFileSync(path.join(root,'vercel.json'),'utf8'));
+const experimentRoutes=new Set(routing.rewrites.filter(rule=>!rule.has&&rule.destination.startsWith('/experiments/original/')).map(rule=>rule.source));
 let count=0;
 let bytes=0;
 
@@ -38,7 +40,7 @@ function copyDirectory(directory){
     if(!entry.isFile()||!browserFile(source,relative))continue;
     // Existing physical files take precedence over rewrites on Vercel.
     // Public canonical pages are served exclusively from generated/.
-    if(directory===root && (relative==='index' || relative==='index.html' || generatedRoutes.has('/'+relative.replace(/\.html$/, ''))))continue;
+    if(directory===root && (relative==='index' || relative==='index.html' || generatedRoutes.has('/'+relative.replace(/\.html$/, '')) || experimentRoutes.has('/'+relative.replace(/\.html$/, ''))))continue;
     const target=path.join(output,relative);
     fs.mkdirSync(path.dirname(target),{recursive:true});
     fs.copyFileSync(source,target);

@@ -137,7 +137,18 @@ const reviews = [
   ]
 ];
 const root=document.querySelector('.proof'),images=document.querySelector('#work-photo-tiles'),review=document.querySelector('#review-content'),pause=document.querySelector('#review-pause');const reduced=matchMedia('(prefers-reduced-motion: reduce)');let index=0,paused=reduced.matches,hover=false,focused=false,inView=false,busy=false;
-function render(){images.innerHTML=rowPhotos(index).map(([src,alt,position])=>{return `<figure><img src="data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=" data-deferred-src="${src}" data-deferred-srcset="${responsivePhotos[src]||''}" sizes="${photoSizes}" alt="${alt}" style="object-position:${position}" decoding="async" width="600" height="400" loading="lazy"></figure>`}).join('');window.ObsidianMedia?.observe(images);const [name,quote,source]=reviews[index%reviews.length];review.replaceChildren();const meta=document.createElement('div');meta.className='review-meta';const stars=document.createElement('span');stars.className='review-stars';stars.textContent='★★★★★';stars.setAttribute('aria-label','5 out of 5 stars');const author=document.createElement('span');author.textContent=name;const link=document.createElement('a');link.href=source;link.target='_blank';link.rel='noopener';link.textContent='Google review ↗';meta.append(stars,author,link);const quoteEl=document.createElement('blockquote');quoteEl.textContent='“'+quote+'”';review.append(meta,quoteEl);preloadNext()}
+function render(){images.innerHTML=rowPhotos(index).map(([src,alt,position])=>{return `<figure><img src="data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=" data-deferred-src="${src}" data-deferred-srcset="${responsivePhotos[src]||''}" sizes="${photoSizes}" alt="${alt}" style="object-position:${position}" decoding="async" width="600" height="400" loading="lazy"></figure>`}).join('');if(typeof window.ObsidianMedia?.observe==='function'){
+ window.ObsidianMedia.observe(images);
+}else{
+ // Standalone quote pages must not depend on the optional deferred-media helper.
+ // Native lazy loading still keeps off-screen carousel photos lightweight.
+ images.querySelectorAll('img[data-deferred-src]').forEach(image=>{
+  if(image.dataset.deferredSrcset)image.srcset=image.dataset.deferredSrcset;
+  image.src=image.dataset.deferredSrc;
+  image.removeAttribute('data-deferred-src');
+  image.removeAttribute('data-deferred-srcset');
+ });
+}const [name,quote,source]=reviews[index%reviews.length];review.replaceChildren();const meta=document.createElement('div');meta.className='review-meta';const stars=document.createElement('span');stars.className='review-stars';stars.textContent='★★★★★';stars.setAttribute('aria-label','5 out of 5 stars');const author=document.createElement('span');author.textContent=name;const link=document.createElement('a');link.href=source;link.target='_blank';link.rel='noopener';link.textContent='Google review ↗';meta.append(stars,author,link);const quoteEl=document.createElement('blockquote');quoteEl.textContent='“'+quote+'”';review.append(meta,quoteEl);preloadNext()}
 phoneLayout.addEventListener('change',()=>{rowSize=phoneLayout.matches?1:3;rowCount=Math.ceil(photos.length/rowSize);index=0;render()});
 function sync(){pause.textContent=paused?'▶':'Ⅱ';pause.setAttribute('aria-label',paused?'Play carousel':'Pause carousel')}
 async function advance(direction=1){if(busy)return;busy=true;root.classList.add('changing');if(!reduced.matches)await new Promise(r=>setTimeout(r,180));index=(index+direction+rowCount)%rowCount;render();root.classList.remove('changing');busy=false}
