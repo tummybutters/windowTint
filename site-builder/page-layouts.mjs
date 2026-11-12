@@ -17,7 +17,9 @@ function eyebrow(page) {
   return page.type==='guide'?`${label(page)} / Field notes`:page.type==='project'?`${label(page)} / Project planner`:page.type==='city'?`${label(page)} / At your location`:page.type==='vehicle'?'Your vehicle. Your glass.':`${label(page)} / ${brandName(page.division)}`;
 }
 function intro(page,kind,{photo=true,action=true}={}) {
-  return `<section class="container page-intro page-intro--${kind}${photo&&page.image?' has-photo':''}" data-layout="${kind}">${crumbs(page)}<div class="page-intro-grid"><div><p class="eyebrow">${e(eyebrow(page))}</p><h1>${e(page.title)}</h1><p class="page-deck">${e(page.intro)}</p>${action?`<div class="actions">${button(quoteLabel(page),quoteHref(page),page.type==='city')}${specialty(page)?button('Call (714) 600-7134','tel:+17146007134',true):''}</div>`:''}</div>${photo?image(page):''}</div></section>`;
+  if(page.photoInsetOnly)photo=false;
+  const displayTitle=['guide','service'].includes(page.type)&&page.title.includes(':')&&!page.title.includes('?')?page.title.split(':')[0].trim():page.title;
+  return `<section class="container page-intro page-intro--${kind}${photo&&page.image?' has-photo':''}" data-layout="${kind}">${crumbs(page)}<div class="page-intro-grid"><div><p class="eyebrow">${e(eyebrow(page))}</p><h1>${e(displayTitle)}</h1><p class="page-deck">${e(page.intro)}</p>${action?`<div class="actions">${button(quoteLabel(page),quoteHref(page),page.type==='city')}${specialty(page)?button('Call (714) 600-7134','tel:+17146007134',true):''}</div>`:''}</div>${photo?image(page):''}</div></section>`;
 }
 function highlights(page) {
   if(!page.highlights?.length)return '';
@@ -27,7 +29,8 @@ function comparison(page) {
   if(!page.comparison?.rows?.length)return '';
   const {columns,rows}=page.comparison;
   const pricing=rows.some(row=>row.some(cell=>String(cell).includes('$')));
-  return `<section class="comparison-module${pricing?' comparison-module--pricing':''}" data-columns="${columns.length}" aria-label="${e(page.comparison.title||'Compare the options')}"><p class="eyebrow">${e(page.comparison.title||'The decision, side by side')}</p><div class="comparison-scroll" tabindex="0" role="region" aria-label="Scrollable comparison table"><table><thead><tr>${columns.map(c=>`<th scope="col">${e(c)}</th>`).join('')}</tr></thead><tbody>${rows.map(row=>`<tr>${row.map((cell,i)=>i===0?`<th scope="row">${e(cell)}</th>`:`<td>${e(cell)}</td>`).join('')}</tr>`).join('')}</tbody></table></div></section>`;
+  if(columns.length===2)return `<section class="decision-module ${pricing?'decision-module--pricing':'decision-module--choices'}" aria-label="${e(page.comparison.title||columns.join(' and '))}"><div class="decision-heading"><h2>${e(page.comparison.title||(pricing?'Plan your price.':'Compare your options.'))}</h2></div><div class="decision-list">${rows.map(row=>`<article><h3>${e(row[0])}</h3><${pricing?'strong':'p'}>${e(row[1])}</${pricing?'strong':'p'}></article>`).join('')}</div></section>`;
+  return `<section class="comparison-module${pricing?' comparison-module--pricing':''}" data-columns="${columns.length}" aria-label="${e(page.comparison.title||'Compare the options')}"><h2>${e(page.comparison.title||(pricing?'Plan your price.':'Side by side.'))}</h2><div class="comparison-scroll" tabindex="0" role="region" aria-label="Scrollable comparison table"><table><thead><tr>${columns.map(c=>`<th scope="col">${e(c)}</th>`).join('')}</tr></thead><tbody>${rows.map(row=>`<tr>${row.map((cell,i)=>i===0?`<th scope="row">${e(cell)}</th>`:`<td>${e(cell)}</td>`).join('')}</tr>`).join('')}</tbody></table></div></section>`;
 }
 function checklist(page) {
   if(!page.checklist?.length)return '';
@@ -35,21 +38,38 @@ function checklist(page) {
 }
 function steps(page) {
   if(!page.steps?.length)return '';
-  return `<section class="steps-module" aria-label="Project steps">${page.steps.map((s,i)=>`<div><span class="step-number">${String(i+1).padStart(2,'0')}</span><h3>${e(s.title)}</h3><p>${e(s.body)}</p></div>`).join('')}</section>`;
+  return `<section class="process-module"><h2>A simple start.</h2><ol>${page.steps.map((step,i)=>`<li><span>${String(i+1).padStart(2,'0')}</span><div><h3>${e(step.title)}</h3><p>${e(step.body)}</p></div></li>`).join('')}</ol></section>`;
+}
+function sectionCopy(page,section,index) {
+  return linkedParagraphs(section.body,page.linkPlan?.links.filter(link=>link.section===index)||[]);
+}
+function details(page,start=1) {
+ const sections=(page.sections||[]).slice(start);
+ if(!sections.length)return '';
+ return `<div class="detail-disclosures">${sections.map((section,i)=>`<details id="detail-${i+start}"><summary>${e(section.heading)}</summary><div>${sectionCopy(page,section,i+start)}</div></details>`).join('')}</div>`;
+}
+function leadSection(page,{photo=true}={}) {
+ const section=page.sections?.[0];if(!section)return '';
+ const support=photo&&(page.photoInsetOnly||page.supportImage?.src!==page.image)?page.supportImage:null;
+ return `<section class="feature-story${support?' has-story-photo':''}" id="detail-0">${support?`<figure>${imageTag(support.src,support.alt,{sizes:'(max-width:760px) calc(100vw - 40px), 50vw'})}${support.caption?`<figcaption>${e(support.caption)}</figcaption>`:''}</figure>`:''}<div><h2>${e(section.heading)}</h2>${sectionCopy(page,section,0)}</div></section>`;
+}
+function localServices(page,pages){
+ const choices=pages.filter(item=>item.division===page.division&&item.type==='service'&&item.path!==page.path).filter(item=>page.path.includes('ceramic-coating')?item.path==='/ceramic-coating':!item.path.includes('ceramic-coating')&&item.path!=='/chrome-delete').slice(0,4);
+ return choices.length?`<section class="local-service-menu"><h2>Find your fit.</h2><nav aria-label="Service options">${choices.map(item=>`<a href="${e(item.path)}"><span>${e(item.title)}</span><span aria-hidden="true">↗</span></a>`).join('')}</nav></section>`:'';
 }
 function contentSections(page,kind='article') {
   return `<div class="content-sections content-sections--${kind}">${page.sections.map((s,i)=>`<section id="detail-${i}"><span class="section-number" aria-hidden="true">${String(i+1).padStart(2,'0')}</span><div><h2>${e(s.heading)}</h2>${linkedParagraphs(s.body,page.linkPlan?.links.filter(link=>link.section===i)||[])}</div></section>`).join('')}</div>`;
 }
 function faq(page) {
-  return page.faqs?.length?`<section class="container section page-faq"><div><p class="eyebrow">A little clarity</p><h2>${page.type==='vehicle'?'Before you tint.':page.type==='city'?'Before we come to you.':'Questions worth asking.'}</h2></div><div class="faq">${page.faqs.map(f=>`<details><summary>${e(f.question)}</summary><p>${e(f.answer)}</p></details>`).join('')}</div></section>`:'';
+  return page.faqs?.length?`<section class="container section page-faq"><div><h2>A few details.</h2></div><div class="faq">${page.faqs.map(f=>`<details><summary>${e(f.question)}</summary><p>${e(f.answer)}</p></details>`).join('')}</div></section>`:'';
 }
 function related(page,index) {
   const selected=[...new Set(page.relatedPaths||[])].filter(p=>p!==page.path).map(p=>index.get(p)).filter(Boolean).slice(0,5);
   if(!selected.length)return '';
-  return `<section class="section container related-reading"><p class="eyebrow">A useful next step</p><div class="related-list">${selected.map(p=>`<a href="${e(p.path)}"><span>${e(label(p))}</span><h3>${e(p.title)}</h3><span aria-hidden="true">↗</span></a>`).join('')}</div></section>`;
+  return `<section class="section container related-reading"><h2>Keep exploring.</h2><div class="related-list">${selected.map(p=>`<a href="${e(p.path)}"><span>${e(label(p))}</span><h3>${e(p.title)}</h3><span aria-hidden="true">↗</span></a>`).join('')}</div></section>`;
 }
 function close(page) {
-  return `<section class="container section"><div class="page-close"><div><p class="eyebrow">${e(topic(page))}</p><h2>${e(page.quotePrompt||'Tell us what you want to change, and we’ll help define the right scope.')}</h2></div>${nextActions(page)}</div></section>`;
+  return `<section class="container section"><div class="page-close"><div><h2>${e(page.quotePrompt||'Tell us what you want to change, and we’ll help define the right scope.')}</h2></div>${nextActions(page)}</div></section>`;
 }
 
 function nextActions(page) {
@@ -71,12 +91,9 @@ export function sharedNextStep(page) {
 function contents(page) {
   return `<aside class="reading-nav"><p class="eyebrow">In this guide</p><ol>${page.sections.map((s,i)=>`<li><a href="#detail-${i}">${e(s.heading)}</a></li>`).join('')}</ol></aside>`;
 }
-function coverageDiagram(page) {
-  const matches={'/front-two-window-tinting':['front','Front two windows'],'/sides-rear-window-tinting':['sides','Side windows + rear glass'],'/full-car-window-tinting':['full','Confirm full-vehicle coverage'],'/windshield-window-tinting':['windshield','Windshield, quoted separately']};
-  const config=matches[page.path]; if(!config)return '';
-  const [key,text]=config;const active=(part)=>key==='full'&&part!=='windshield'||key==='sides'&&part!=='windshield'||key==='front'&&part==='front'||key==='windshield'&&part==='windshield';
-  const fill=part=>active(part)?'#ff754e':'#353c32';
-  return `<figure class="coverage-diagram"><svg viewBox="0 0 560 270" role="img" aria-label="Illustrated glass coverage: ${e(text)}"><path d="M98 90Q130 38 240 38h70q80 0 130 59l45 29v68H65v-66Z" fill="#1c201a" stroke="#737b6c" stroke-width="2"/><circle cx="145" cy="194" r="38" fill="#111310" stroke="#737b6c" stroke-width="2"/><circle cx="405" cy="194" r="38" fill="#111310" stroke="#737b6c" stroke-width="2"/><path d="m125 91 25-27 76-10v57H110Z" fill="${fill('rear')}"/><path d="M238 54h60q21 1 40 9l21 48H238Z" fill="${fill('front')}"/><path d="m350 66 61 45h-39Z" fill="${fill('windshield')}"/><path d="M90 116h372" stroke="#737b6c" stroke-width="1"/><path d="M232 121v51M366 120v51" stroke="#737b6c"/><path d="M259 126h24" stroke="#eeeae2" stroke-width="3"/></svg><figcaption><span class="coverage-key"></span>${e(text)}<small>Coverage illustration · the exact glass is confirmed for your vehicle.</small></figcaption></figure>`;
+function coverageStrip(page) {
+  const coverage={'/front-two-window-tinting':'Driver + front passenger windows','/sides-rear-window-tinting':'Side windows + rear glass','/full-car-window-tinting':'Side glass. Rear glass. Windshield.','/windshield-window-tinting':'Windshield film, quoted separately'}[page.path];
+  return coverage?`<div class="coverage-line"><span>Coverage</span><strong>${e(coverage)}</strong><small>Confirmed for your vehicle.</small></div>`:'';
 }
 function sources(page) {
   if(!page.sources?.length)return '';
@@ -100,37 +117,22 @@ function portfolioProof(page,pages=[]) {
 }
 
 export function renderInner(page,pages,reviewData) {
-  const index=new Map(pages.map(p=>[p.path,p])); let body='';
+  const index=new Map(pages.map(p=>[p.path,p]));
   const tail=()=>faq(page)+sources(page)+related(page,index)+close(page);
-  if(page.path==='/about')return intro(page,'story')+`<section class="container section">${contentSections(page,'feature')}</section>`+reviews(reviewData)+related(page,index)+close(page);
+  if(page.path==='/about')return intro(page,'story')+`<section class="container editorial-body">${leadSection(page)}${details(page)}</section>`+reviews(reviewData)+related(page,index)+close(page);
   if(page.type==='hub') {
-    body=intro(page,'division')+directoryGroup('Choose your '+(page.division==='auto'?'coverage':'film'),pages.filter(p=>p.division===page.division&&p.type==='service'),{photos:true,excludeImage:page.image});
-    if(page.division==='auto')body+=`<section class="container compact-offer"><div><p class="eyebrow">The Driveway Package</p><h2>Ceramic sides + rear.<br><em>A free upgrade, too.</em></h2><p>Explore eligible sun strip or standard single-panel sunroof options. Tesla and specialty vehicles quoted separately.</p></div>${button('See package details','/driveway-package')}</section>`;
-    body+=`<section class="container hub-story">${highlights(page)}${contentSections(page,'feature')}${steps(page)}${comparison(page)}${checklist(page)}</section>`;
+    let body=intro(page,'division')+directoryGroup('Choose your '+(page.division==='auto'?'coverage':'film'),pages.filter(p=>p.division===page.division&&p.type==='service'),{photos:true,excludeImage:page.image});
+    if(page.division==='auto')body+=`<section class="container compact-offer"><div><h2>Ceramic sides + rear.<br><em>A free upgrade, too.</em></h2><p>Explore the Driveway Package and eligible upgrade options.</p></div>${button('See package details','/driveway-package')}</section>`;
+    body+=`<section class="container editorial-body">${highlights(page)}${leadSection(page)}${comparison(page)}${details(page)}${steps(page)}${checklist(page)}</section>`;
     if(page.division==='auto')body+=directoryGroup('Find your vehicle',pages.filter(p=>p.type==='vehicle'));
-    body+=portfolioProof(page,pages);
-    body+=directoryGroup('Where we come to you',pages.filter(p=>p.division===page.division&&p.type==='city'));
-    return body+tail();
+    return body+directoryGroup('Where we come to you',pages.filter(p=>p.division===page.division&&p.type==='city'))+tail();
   }
-  if(page.type==='vehicle') {
-    return intro(page,'vehicle')+`<section class="container vehicle-details">${highlights(page)}${comparison(page)}<div class="detail-columns">${contentSections(page,'numbered')}<div>${checklist(page)}${page.image&&page.imageKind!=='illustration'?`<p class="photo-context">Photography shows this vehicle model from the Obsidian gallery. Your glass and requested coverage are confirmed individually.</p>`:''}</div></div>${steps(page)}</section>`+tail();
-  }
-  if(page.type==='guide') {
-    const count=(page.sections.map(s=>s.body).join(' ').match(/\S+/g)||[]).length;
-    return intro(page,'editorial',{photo:['home','commercial'].includes(page.division),action:false})+`<div class="container reading-meta"><span>${Math.max(2,Math.ceil(count/180))} minute read</span><span>${e(label(page))} advice</span></div><section class="container editorial-layout">${contents(page)}<div>${highlights(page)}${contentSections(page)}${comparison(page)}${steps(page)}${checklist(page)}</div></section>`+sources(page)+related(page,index)+faq(page)+close(page);
-  }
-  if(page.type==='city') {
-    const hasPlanner=Boolean(page.checklist?.length||page.steps?.length);
-    return intro(page,'local',{photo:['home','commercial'].includes(page.division)})+`<section class="container local-layout${hasPlanner?'':' local-layout--wide'}"><div>${highlights(page)}${contentSections(page,'brief')}</div>${hasPlanner?`<div class="local-planner"><p class="eyebrow">Plan the visit</p>${checklist(page)}${steps(page)}</div>`:''}</section>${page.comparison?`<section class="container section">${comparison(page)}</section>`:''}`+cityContext(page)+tail();
-  }
-  if(page.type==='project') {
-    return intro(page,'worksheet',{photo:['home','commercial'].includes(page.division),action:false})+`<section class="container worksheet-layout"><aside class="planner-note"><p class="eyebrow">A planning guide</p><p>Use this page to prepare your own project. It describes decisions to make, rather than a completed installation.</p>${highlights(page)}${checklist(page)}</aside><div>${steps(page)}${contentSections(page,'numbered')}${comparison(page)}</div></section>`+tail();
-  }
-  if(page.type==='service') {
-    const diagram=coverageDiagram(page);
-    return intro(page,page.path==='/window-tint-pricing'?'pricing':page.comparison?'comparison':'service',{action:page.path!=='/window-tint-pricing'})+`<section class="container service-detail">${highlights(page)}${diagram}${comparison(page)}<div class="detail-columns">${contentSections(page,'feature')}<div>${checklist(page)}</div></div>${steps(page)}</section>`+tail();
-  }
-  return intro(page,'utility',{photo:false})+`<section class="container section">${contentSections(page)}</section>`+tail();
+  if(page.type==='vehicle')return intro(page,'vehicle')+`<section class="container vehicle-layout">${highlights(page)}${comparison(page)}${leadSection(page)}${details(page)}${steps(page)}${checklist(page)}</section>`+tail();
+  if(page.type==='guide')return intro(page,'editorial',{action:false})+`<section class="container guide-layout">${leadSection(page,{photo:false})}${comparison(page)}${highlights(page)}${steps(page)}${details(page)}${checklist(page)}</section>`+tail();
+  if(page.type==='city')return intro(page,'local')+`<section class="container local-page-body">${localServices(page,pages)}${comparison(page)}${highlights(page)}${leadSection(page,{photo:false})}${details(page)}${steps(page)}${checklist(page)}</section>`+cityContext(page)+tail();
+  if(page.type==='project')return intro(page,'worksheet',{action:false})+`<section class="container project-layout"><p class="planner-disclosure">A planning guide for your project, not a completed-job case study.</p>${steps(page)}${comparison(page)}${highlights(page)}<div class="project-notes">${details(page,0)}${checklist(page)}</div></section>`+tail();
+  if(page.type==='service')return intro(page,page.path==='/window-tint-pricing'?'pricing':'service',{action:page.path!=='/window-tint-pricing'})+`<section class="container service-layout">${coverageStrip(page)}${highlights(page)}${comparison(page)}${leadSection(page)}${details(page)}${steps(page)}${checklist(page)}</section>`+tail();
+  return intro(page,'utility',{photo:false})+`<section class="container editorial-body">${leadSection(page,{photo:false})}${details(page)}</section>`+tail();
 }
 export function renderDirectory(page,pages) {
   let out=intro(page,'directory',{photo:false,action:false});

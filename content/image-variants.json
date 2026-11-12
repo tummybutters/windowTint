@@ -274,5 +274,17 @@
     "display": "/gallery/tintwiz-20261111/poolside-sliding-door-display.webp",
     "width": 1152,
     "height": 2048
+  },
+  "/gallery/gbp-20261112/sunroom-exterior.webp": {
+    "thumbnail": "/gallery/gbp-20261112/sunroom-exterior-thumbnail.webp",
+    "display": "/gallery/gbp-20261112/sunroom-exterior.webp",
+    "width": 574,
+    "height": 1020
+  },
+  "/gallery/gbp-20261112/residential-window-detail.webp": {
+    "thumbnail": "/gallery/gbp-20261112/residential-window-detail-thumbnail.webp",
+    "display": "/gallery/gbp-20261112/residential-window-detail.webp",
+    "width": 574,
+    "height": 1020
   }
 }

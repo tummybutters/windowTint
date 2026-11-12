@@ -1,4 +1,5 @@
-import {withBuildingPhoto} from './building-photos.mjs';
+import {renderApprovedPage} from './approved-pages.mjs';
+import {withPortfolioPhoto} from './photo-selection.mjs';
 import {attachCityContext} from './city-context.mjs';
 import {imageTag} from './media.mjs';
 import {renderInner,renderDirectory,sharedNextStep} from './page-layouts.mjs';
@@ -11,7 +12,7 @@ import {origin, escape as e, divisions, button, shell, offer, reviews, servicePa
 
 const root=path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const read=file=>fs.readFileSync(path.join(root,file),'utf8');
-const pages=JSON.parse(read(process.env.OBSIDIAN_LAYOUT_DATA || 'content/pages.json')).map(withBuildingPhoto);
+const pages=JSON.parse(read(process.env.OBSIDIAN_LAYOUT_DATA || 'content/pages.json')).map(withPortfolioPhoto);
 attachInternalLinks(pages,['shared','auto','home','commercial'].flatMap(division=>JSON.parse(read(`content/internal-links-${division}.json`))));
 attachCityContext(pages,JSON.parse(read('content/city-context.json')));
 const reviewData=JSON.parse(read('content/reviews.json'));
@@ -42,13 +43,15 @@ function booking(page) {
 for(const page of pages) {
   page.sections??=[];page.relatedPaths??=[];
   let body;
-  if(page.path==='/')body=home(page);
+  const approved=renderApprovedPage(page);
+  if(approved)body=approved;
+  else if(page.path==='/')body=home(page);
   else if(page.path==='/booking')body=booking(page);
   else if(['/services','/guides','/service-areas'].includes(page.path))body=renderDirectory(page,pages);
   else if(page.path==='/window-tinting-gallery')body=`<section class="hero hero--home container"><p class="eyebrow">The Obsidian portfolio</p><h1>${e(page.title)}</h1><p>${e(page.intro)}</p></section>`+gallery()+sharedNextStep(page);
   else body=renderInner(page,pages,reviewData);
 
-  write(destination(page.path).slice(1),shell(page,body));
+  write(destination(page.path).slice(1),shell(page,body,approved?'<link rel="stylesheet" href="/assets/site/service-design.css"><script defer src="/assets/site/service-design.js"></script>':''));
 }
 write('sitemap.xml','<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'+pages.map(p=>`  <url><loc>${origin}${e(p.path)}</loc></url>`).join('\n')+'\n</urlset>\n');
 write('content/build-manifest.json',JSON.stringify(pages.map(p=>({path:p.path,file:destination(p.path),title:p.title,division:p.division,type:p.type})),null,2));

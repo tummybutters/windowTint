@@ -1,0 +1,1 @@
+(()=>{document.querySelectorAll('[data-space]').forEach(button=>button.addEventListener('click',()=>{document.querySelectorAll('[data-space]').forEach(b=>b.setAttribute('aria-pressed',String(b===button)));document.querySelectorAll('[data-space-panel]').forEach(panel=>panel.hidden=panel.dataset.spacePanel!==button.dataset.space)}));})();

@@ -47,15 +47,15 @@
     "images": [
       {
         "src": "/gallery/tintwiz-20261025/mercedes-amg-gt-01.webp",
-        "alt": "Mercedes-AMG GT window tint — front three-quarter view"
+        "alt": "Mercedes-AMG GT window tint \u2014 front three-quarter view"
       },
       {
         "src": "/gallery/tintwiz-20261025/mercedes-amg-gt-02.webp",
-        "alt": "Mercedes-AMG GT window tint — side profile"
+        "alt": "Mercedes-AMG GT window tint \u2014 side profile"
       },
       {
         "src": "/gallery/tintwiz-20261025/mercedes-amg-gt-03.webp",
-        "alt": "Mercedes-AMG GT window tint — front view"
+        "alt": "Mercedes-AMG GT window tint \u2014 front view"
       }
     ]
   },
@@ -65,11 +65,11 @@
     "images": [
       {
         "src": "/gallery/tintwiz-20261025/chevrolet-corvette-01.webp",
-        "alt": "Chevrolet Corvette window tint — side glass and windshield"
+        "alt": "Chevrolet Corvette window tint \u2014 side glass and windshield"
       },
       {
         "src": "/gallery/tintwiz-20261025/chevrolet-corvette-02.webp",
-        "alt": "Chevrolet Corvette window tint — front view"
+        "alt": "Chevrolet Corvette window tint \u2014 front view"
       }
     ]
   },
@@ -79,15 +79,15 @@
     "images": [
       {
         "src": "/gallery/tintwiz-20261025/ford-f150-raptor-01.webp",
-        "alt": "Ford F-150 Raptor window tint — front three-quarter view"
+        "alt": "Ford F-150 Raptor window tint \u2014 front three-quarter view"
       },
       {
         "src": "/gallery/tintwiz-20261025/ford-f150-raptor-02.webp",
-        "alt": "Ford F-150 Raptor window tint — side profile"
+        "alt": "Ford F-150 Raptor window tint \u2014 side profile"
       },
       {
         "src": "/gallery/tintwiz-20261025/ford-f150-raptor-03.webp",
-        "alt": "Ford F-150 Raptor window tint — rear three-quarter view"
+        "alt": "Ford F-150 Raptor window tint \u2014 rear three-quarter view"
       }
     ]
   },
@@ -97,11 +97,11 @@
     "images": [
       {
         "src": "/gallery/tintwiz-20261025/tesla-model-y-juniper-01.webp",
-        "alt": "Tesla Model Y window tint — front three-quarter view"
+        "alt": "Tesla Model Y window tint \u2014 front three-quarter view"
       },
       {
         "src": "/gallery/tintwiz-20261025/tesla-model-y-juniper-02.webp",
-        "alt": "Tesla Model Y window tint — rear three-quarter view"
+        "alt": "Tesla Model Y window tint \u2014 rear three-quarter view"
       },
       {
         "src": "/assets/paid-landing/tesla-model-y-front.webp",
@@ -123,11 +123,11 @@
     "images": [
       {
         "src": "/gallery/tintwiz-20261025/volkswagen-karmann-ghia-01.webp",
-        "alt": "Volkswagen Karmann Ghia window tint — rear three-quarter view"
+        "alt": "Volkswagen Karmann Ghia window tint \u2014 rear three-quarter view"
       },
       {
         "src": "/gallery/tintwiz-20261025/volkswagen-karmann-ghia-02.webp",
-        "alt": "Volkswagen Karmann Ghia window tint — rear glass detail"
+        "alt": "Volkswagen Karmann Ghia window tint \u2014 rear glass detail"
       }
     ]
   },
@@ -280,6 +280,14 @@
       {
         "src": "/assets/site/work-home.webp",
         "alt": "Residential window film from the Obsidian portfolio"
+      },
+      {
+        "src": "/gallery/gbp-20261112/sunroom-exterior.webp",
+        "alt": "Sunroom windows from outside, from the Obsidian portfolio"
+      },
+      {
+        "src": "/gallery/gbp-20261112/residential-window-detail.webp",
+        "alt": "Residential window detail from the Obsidian portfolio"
       }
     ]
   },
