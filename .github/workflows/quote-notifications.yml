@@ -32,6 +32,7 @@ jobs:
            a=q.get('attribution') or {};key=(date(q['received_at']),a.get('campaignid') or a.get('campaign_id') or a.get('utm_campaign') or 'unknown',a.get('experiment_variant','unknown'))
            c=cohorts.setdefault(key,{'requests':0,'contacts':set()});c['requests']+=1
            if q['quote_id'] in linked:c['contacts'].add(linked[q['quote_id']])
+          print(json.dumps({'today_form_errors':[{'time':e['event_time'],'campaign':(e.get('attribution') or {}).get('campaignid'),'form':(e.get('attribution') or {}).get('form_variant'),'field':(e.get('payload') or {}).get('field_name'),'reason':(e.get('payload') or {}).get('error_reason')} for e in f['events'] if date(e['event_time'])=='2026-11-12' and e['event_name'] in ['quote_validation_error','quote_submit_error']],'today_saved_attribution':[{'quote_id':q['quote_id'],'received_at':q['received_at'],'attribution':{k:(q.get('attribution') or {}).get(k) for k in ['first_seen_at','touch_at','form_exposed_at','form_variant','form_test_arm','device_category','ad_click_device','landing_page','session_landing_page','attribution_version']}} for q in f['leads'] if date(q['received_at'])=='2026-11-12']}))
           print(json.dumps({'cohorts':[{'date':k[0],'campaign':k[1],'arm':k[2],'requests':v['requests'],'verified_customers':len(v['contacts'])} for k,v in cohorts.items()]}))
           ev=collections.Counter()
           for e in f['events']:
