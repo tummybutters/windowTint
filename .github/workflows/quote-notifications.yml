@@ -19,11 +19,11 @@ jobs:
            with urllib.request.urlopen(urllib.request.Request(BASE+path,headers=headers),timeout=55) as r:return json.load(r)
           delivery=[];offset=0
           while True:
-           d=request('quote-notification-retry?report=delivery&start=2026-11-03&end=2026-11-13&offset='+str(offset));delivery+=d['leads']
+           d=request('quote-notification-retry?report=delivery&start=2026-11-03&end=2026-11-14&offset='+str(offset));delivery+=d['leads']
            if d['next_offset'] is None:break
            offset=d['next_offset']
           print(json.dumps({'delivery_count':len(delivery),'delivered':sum(x['sms_status'] in ['delivered','read'] for x in delivery),'fresh_provider':sum(bool(x['fresh_provider_read']) for x in delivery),'recipient_matches_elle':d['recipient_matches_elle'],'delivery_issues':[{'quote_id':x['quote_id'],'status':x['sms_status']} for x in delivery if x['sms_status'] not in ['delivered','read']]}))
-          f=request('quote-notification-retry?report=funnel&start=2026-11-03&end=2026-11-13')
+          f=request('quote-notification-retry?report=funnel&start=2026-11-03&end=2026-11-14')
           linked={x['quote_id']:x['contact_id'] for x in f['crm_evidence'] if x['kind']=='contact'}
           print(json.dumps({'server_saved_quotes':len(f['leads']),'verified_requests':len(linked),'verified_customers':len(set(linked.values())),'unmatched_quotes':[{k:q.get(k) for k in ['quote_id','received_at','lead_kind','page_path','crm_state']} for q in f['leads'] if q['quote_id'] not in linked],'truncated':f['leads_truncated'] or f['events_truncated'],'form_test_summary':f.get('form_test_summary')}))
           def date(v):return datetime.datetime.fromisoformat(v.replace('Z','+00:00')).astimezone(ZoneInfo('America/Los_Angeles')).date().isoformat()
@@ -32,24 +32,26 @@ jobs:
            a=q.get('attribution') or {};key=(date(q['received_at']),a.get('campaignid') or a.get('campaign_id') or a.get('utm_campaign') or 'unknown',a.get('experiment_variant','unknown'))
            c=cohorts.setdefault(key,{'requests':0,'contacts':set()});c['requests']+=1
            if q['quote_id'] in linked:c['contacts'].add(linked[q['quote_id']])
-          print(json.dumps({'today_form_errors':[{'time':e['event_time'],'campaign':(e.get('attribution') or {}).get('campaignid'),'form':(e.get('attribution') or {}).get('form_variant'),'field':(e.get('payload') or {}).get('field_name'),'reason':(e.get('payload') or {}).get('error_reason')} for e in f['events'] if date(e['event_time'])=='2026-11-13' and e['event_name'] in ['quote_validation_error','quote_submit_error']],'today_saved_attribution':[{'quote_id':q['quote_id'],'received_at':q['received_at'],'attribution':{k:(q.get('attribution') or {}).get(k) for k in ['first_seen_at','touch_at','form_exposed_at','form_variant','form_test_arm','device_category','ad_click_device','landing_page','session_landing_page','attribution_version']}} for q in f['leads'] if date(q['received_at'])=='2026-11-13']}))
+          print(json.dumps({'today_form_errors':[{'time':e['event_time'],'campaign':(e.get('attribution') or {}).get('campaignid'),'form':(e.get('attribution') or {}).get('form_variant'),'field':(e.get('payload') or {}).get('field_name'),'reason':(e.get('payload') or {}).get('error_reason')} for e in f['events'] if date(e['event_time'])=='2026-11-14' and e['event_name'] in ['quote_validation_error','quote_submit_error']],'today_saved_attribution':[{'quote_id':q['quote_id'],'received_at':q['received_at'],'attribution':{k:(q.get('attribution') or {}).get(k) for k in ['first_seen_at','touch_at','form_exposed_at','form_variant','form_test_arm','device_category','ad_click_device','landing_page','session_landing_page','attribution_version']}} for q in f['leads'] if date(q['received_at'])=='2026-11-14']}))
           print(json.dumps({'cohorts':[{'date':k[0],'campaign':k[1],'arm':k[2],'requests':v['requests'],'verified_customers':len(v['contacts'])} for k,v in cohorts.items()]}))
           ev=collections.Counter()
           for e in f['events']:
-           if date(e['event_time'])!='2026-11-13':continue
+           if date(e['event_time'])!='2026-11-14':continue
            a=e.get('attribution') or {};ev[(a.get('campaignid') or a.get('campaign_id') or a.get('utm_campaign') or 'unknown',e['event_name'])]+=1
           print(json.dumps({'today_server_events':[{'campaign':k[0],'event':k[1],'count':v} for k,v in ev.items()],'crm_outcomes':[{'kind':r['kind'],'status':r['status'],'occurred_at':r['occurred_at'],'amount_minor':r.get('amount_minor')} for r in f['crm_evidence'] if r['kind']!='contact']}))
           
           journeys={}
           for e in f['events']:
-           if date(e['event_time'])!='2026-11-13':continue
-           a=e.get('attribution') or {};cid=a.get('campaignid') or a.get('campaign_id') or a.get('utm_campaign') or 'unknown'
-           if cid not in ['23899221542','24355484375','24117892229']:continue
-           sid=e.get('session_id')
+           if date(e['event_time'])<'2026-11-12':continue
+           a=e.get('attribution') or {};sid=e.get('session_id')
            if not sid:continue
-           j=journeys.setdefault((cid,sid),{'events':collections.Counter(),'variants':set(),'pages':set()})
-           j['events'][e['event_name']]+=1
-           if a.get('form_variant'):j['variants'].add(a['form_variant'])
-           if e.get('page_path'):j['pages'].add(e['page_path'].split('?')[0])
-          print(json.dumps({'today_journey_summary':[{'campaign':k[0],'events':dict(v['events']),'variants':sorted(v['variants']),'pages':sorted(v['pages'])} for k,v in journeys.items()]}))
+           j=journeys.setdefault(sid,[]);j.append(e)
+          result=[]
+          for i,events in enumerate(journeys.values()):
+           events.sort(key=lambda x:x['event_time'])
+           names=collections.Counter(e['event_name'] for e in events)
+           if not any(names[k] for k in ['quiz_form_view','quote_form_test_exposure','phone_click','sms_click','quote_submit_attempt','commercial_submit_attempt']):continue
+           t0=datetime.datetime.fromisoformat(events[0]['event_time'].replace('Z','+00:00'))
+           result.append({'session_ordinal':i,'started_pacific':t0.astimezone(ZoneInfo('America/Los_Angeles')).isoformat(),'events':dict(names),'timeline':[{'seconds':round((datetime.datetime.fromisoformat(e['event_time'].replace('Z','+00:00'))-t0).total_seconds(),1),'event':e['event_name'],'page':(e.get('page_path') or '').split('?')[0],'campaign':(e.get('attribution') or {}).get('campaignid'),'variant':(e.get('attribution') or {}).get('form_variant'),'payload':{k:(e.get('payload') or {}).get(k) for k in ['step_name','field_name','error_reason','form_rendered_variant','form_assignment_status','form_tracking_version','scroll_depth','active_seconds'] if k in (e.get('payload') or {})}} for e in events]})
+          print(json.dumps({'detailed_journeys':result}))
           PY
