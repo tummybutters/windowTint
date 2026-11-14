@@ -13,7 +13,7 @@
   "lib/square-webhook-subscription.js": "6de0ab14e8826cf42610ea5ef45ab85843317e337df6e3fdd79aca9ffd4e47e7",
   "lib/automotive-quote-store.js": "eb13c9bda10bb7fd935463719423867b4ec5064a5bd4ac03b169bb7152933dd8",
   "lib/quote-attribution.js": "b91b9e4ae65e06c3dadc5c04c140d7c459e5b36a1d40c52fe130cc097db1f43e",
-  "lib/quote-tintwiz.js": "fcb395064f789b9fec09edbb37712f28b48e3a82e5078fcb46b44f2a7e38965c",
+  "lib/quote-tintwiz.js": "02df6a65bb1ad17f0af391a9e750785042c79fef2caf6931a88d02e23e85c6a7",
   "lib/commercial-lead.js": "367ce0253ed69b5c018b6cdb725e4b45dafaa416cdee96ac508d50943b1e0aa3",
   "lib/lead-event-normalize.js": "c9e1a47b167fbcbd7f29c50b8d520ddab3f56d28ea63f806de3eafd25840f3c5",
   "lib/square-webhooks-handler.js": "a4a87a89a42335e0ce82f862eb769c5ac6e47718964517cc50bf26b19949ad7b",
