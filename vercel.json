@@ -2182,6 +2182,10 @@
       "destination": "/generated/commercial-film-landlord-permission"
     },
     {
+      "source": "/guides/bmw-m3-window-tint",
+      "destination": "/generated/guides/bmw-m3-window-tint"
+    },
+    {
       "source": "/quote/home",
       "destination": "/quote/home"
     },

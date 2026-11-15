@@ -3,7 +3,7 @@ import path from 'node:path';
 import {fileURLToPath} from 'node:url';
 const root=path.resolve(path.dirname(fileURLToPath(import.meta.url)),'..');
 const config=JSON.parse(fs.readFileSync(path.join(root,'site-builder/routing-baseline.json'),'utf8'));
-const pages=JSON.parse(fs.readFileSync(path.join(root,'content/pages.json'),'utf8'));
+const pages=JSON.parse(fs.readFileSync(path.join(root,'content/build-manifest.json'),'utf8'));
 const overrides=[];
 for(const rule of config.rewrites){
   if(rule.has || !rule.destination.startsWith('/experiments/original/'))continue;

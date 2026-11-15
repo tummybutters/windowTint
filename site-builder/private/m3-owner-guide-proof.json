@@ -1,0 +1,26 @@
+{
+  "format": "owner-guide",
+  "provenanceVerified": true,
+  "modelVerified": true,
+  "privacyReviewed": true,
+  "websiteReuseAuthorized": true,
+  "claimsReviewed": true,
+  "reviewedAt": "2026-11-15",
+  "authorizationBasis": "Tommy explicitly requested turning this BMW M3 owner-post candidate into an article and publishing it on November15, following his owner-guide clarification. Standing November13 publication authorization also retained. No individual customer testimonial or completed-job facts asserted.",
+  "sources": [
+    "Verified Obsidian GBP owner post: place 0x530f1b43d6a2b415, purple BMW M3, shown 3 days ago on Nov15",
+    "https://www.reddit.com/r/BMW/comments/1tc3wxx/tints_or_no_im_in_a_fishbowl_but_i_feel_like/",
+    "https://www.reddit.com/r/BMW/comments/1j8uy75/loving_the_fishbowl_look_but_when_that_sun_hits/",
+    "https://graphics.averydennison.com/en/home/graphics-products/window-films/automotive-window-films/encore-shield-ir.html"
+  ],
+  "images": [
+    {
+      "path": "gallery/owner-guides/bmw-m3-purple.webp",
+      "sha256": "acefe84d50ae80cbf4d5d3818b8700daf7011e1dc303050cf1d52458fcbcb0eb"
+    },
+    {
+      "path": "gallery/owner-guides/bmw-m3-purple-640.webp",
+      "sha256": "0181c5a25a852d3d6d4aa51229c67aac53f175d0e7a8c7dede97e8358696ac72"
+    }
+  ]
+}

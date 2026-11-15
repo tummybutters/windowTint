@@ -1048,5 +1048,15 @@
     "title": "What to ask your landlord before a window film project",
     "division": "commercial",
     "type": "guide"
+  },
+  {
+    "path": "/guides/bmw-m3-window-tint",
+    "title": "BMW M3 window tint: keep the look. Choose the comfort.",
+    "seoTitle": "BMW M3 Window Tint: Heat, Privacy & Night Visibility",
+    "description": "A practical BMW M3 tint guide: compare heat rejection, privacy and night visibility without losing the look you love. Real Obsidian portfolio photography.",
+    "division": "auto",
+    "type": "owner-guide",
+    "image": "/gallery/owner-guides/bmw-m3-purple.webp",
+    "file": "/generated/guides/bmw-m3-window-tint.html"
   }
 ]

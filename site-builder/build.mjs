@@ -1,3 +1,4 @@
+import {generateOwnerGuide,ownerGuideCard} from './owner-guides.mjs';
 import {renderApprovedPage} from './approved-pages.mjs';
 import {withPortfolioPhoto} from './photo-selection.mjs';
 import {attachCityContext} from './city-context.mjs';
@@ -51,8 +52,13 @@ for(const page of pages) {
   else if(page.path==='/window-tinting-gallery')body=`<section class="hero hero--home container"><p class="eyebrow">The Obsidian portfolio</p><h1>${e(page.title)}</h1><p>${e(page.intro)}</p></section>`+gallery()+sharedNextStep(page);
   else body=renderInner(page,pages,reviewData);
 
+  if(['/guides','/window-tinting-gallery'].includes(page.path))body+=ownerGuideCard();
   write(destination(page.path).slice(1),shell(page,body,approved?'<link rel="stylesheet" href="/assets/site/service-design.css"><script defer src="/assets/site/service-design.js"></script>':''));
 }
 write('sitemap.xml','<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'+pages.map(p=>`  <url><loc>${origin}${e(p.path)}</loc></url>`).join('\n')+'\n</urlset>\n');
 write('content/build-manifest.json',JSON.stringify(pages.map(p=>({path:p.path,file:destination(p.path),title:p.title,division:p.division,type:p.type})),null,2));
 console.log(`Rendered ${pages.length} pages with shared templates, metadata, navigation and sitemap.`);
+
+const guide=generateOwnerGuide(root);
+const sm=read('sitemap.xml').replace('</urlset>',`  <url><loc>${origin}${guide.path}</loc></url>\n</urlset>`);write('sitemap.xml',sm);
+const bm=JSON.parse(read('content/build-manifest.json'));bm.push(guide);write('content/build-manifest.json',JSON.stringify(bm,null,2));
