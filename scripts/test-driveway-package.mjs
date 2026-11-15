@@ -39,7 +39,7 @@ for(const upgrade of ['FREE sunroof tint','FREE sun strip']){
  assert.equal(crm.package,'Driveway Package');
  assert.equal(crm.upgrade,upgrade);
  assert.equal(crm.source,'Website Driveway Package quote');
- assert.equal(crm.coverage.split('\n\n')[0],'Driveway Package · Sides + rear ceramic tint · '+upgrade,'Existing Zap coverage mapping must display the offer without needing new fields');
+ assert.ok(crm.coverage.includes('<li>Coverage: Driveway Package · Sides + rear ceramic tint · '+upgrade+'</li>'),'Existing Zap coverage mapping must display the exact offer in the November14 formatted note without needing new fields');
  assert(!JSON.stringify(crm).includes('private-click-id'));
 }
 assert.notEqual(normalizeQuote({...base,package:'Driveway Package',upgrade:'FREE sunroof tint'}).payload_hash,normalizeQuote({...base,package:'Driveway Package',upgrade:'FREE sun strip'}).payload_hash);
