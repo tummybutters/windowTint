@@ -1,16 +1,18 @@
 {
   "version": 1,
-  "videos": [{
-    "id": "bmw-ix-driveway",
-    "title": "BMW iX driveway walkaround",
-    "caption": "BMW iX. Filmed in the driveway.",
-    "status": "ready",
-    "provenanceVerified": true,
-    "src": "/assets/media/videos/bmw-ix-driveway-v1.mp4",
-    "poster": "/assets/media/videos/bmw-ix-driveway-v1.jpg",
-    "durationSeconds": 12,
-    "width": 540,
-    "height": 960,
-    "uploadedOn": "2026-11-15"
-  }]
+  "videos": [
+    {
+      "id": "bmw-ix-driveway",
+      "title": "BMW iX driveway walkaround",
+      "caption": "BMW iX. Filmed in the driveway.",
+      "status": "ready",
+      "provenanceVerified": true,
+      "src": "/assets/media/videos/bmw-ix-driveway-v1.mp4",
+      "poster": "/assets/media/videos/bmw-ix-driveway-v1.jpg",
+      "durationSeconds": 12,
+      "width": 540,
+      "height": 720,
+      "uploadedOn": "2026-11-15"
+    }
+  ]
 }
