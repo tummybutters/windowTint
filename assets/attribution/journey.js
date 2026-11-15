@@ -49,7 +49,39 @@ function capture({url,previous=null,now=Date.now(),referrer='',ua='',touch=0,pre
  data.attribution_model='last non-direct touch, 30 days';data.attribution_version='journey-v2-20261108';data.flow_version=presentationVersion==='paid-design-20261110'?'paid-design-20261110':'intent-resume-20261108';
  return {version:2,touch_at:newTouch?now:old.touch_at,last_at:now,signature:tagged?signature:newTouch?'':old.signature,data};
 }
-if(typeof module==='object'&&module.exports){module.exports={capture,KEY,normalizeAdIds,assignForm};return}
+// Observe engagement without collecting typed answers. Render remains a separate event.
+function createFormDiagnostics(env){
+ const requests=new Map();let cleanup=()=>{};
+ return {mount({form,quoteId,fields=[],validate,emit,kind='auto'}){
+  cleanup();if(!form)return;
+  const seen=requests.get(quoteId)||new Set();requests.set(quoteId,seen);
+  const doc=form.ownerDocument,handlers=[],timers=new Map(),visible=new Map();
+  const send=(name,extra={},key=name)=>{if(seen.has(key))return;seen.add(key);try{emit(name,{form_kind:kind,measurement_version:'form-engagement-v1',...extra})}catch{}};
+  const listen=(el,name,fn)=>{el.addEventListener(name,fn);handlers.push(()=>el.removeEventListener(name,fn))};
+  const inputs=fields.filter(([key])=>['vehicle','city','name','phone','email','company'].includes(key)).map(([key])=>[key,form.querySelector('#'+key)]).filter(([,el])=>el);
+  for(const [key,el] of inputs){
+   let interacted=false;
+   const start=()=>{interacted=true;send('quote_form_started')};
+   const complete=()=>{if(interacted&&el.value.trim()&&!validate(key,el.value))send('quote_field_completed',{field_name:key},'complete:'+key)};
+   listen(el,'focus',start);listen(el,'input',start);listen(el,'blur',complete);listen(el,'change',()=>{start();complete()});
+  }
+  const first=inputs[0]?.[1],button=form.querySelector('button[type=submit]');
+  const targets=new Map([[first,'quote_form_visible'],[button,'quote_submit_visible']].filter(([el])=>el));
+  const schedule=(el,name)=>{if(timers.has(el))env.clearTimeout(timers.get(el));timers.delete(el);if(visible.get(el)&&doc.visibilityState==='visible'&&!seen.has(name))timers.set(el,env.setTimeout(()=>{timers.delete(el);if(doc.visibilityState==='visible'&&visible.get(el))send(name)},500))};
+  const observer=env.IntersectionObserver?new env.IntersectionObserver(entries=>{
+   for(const entry of entries){
+    const el=entry.target,name=targets.get(el);if(!name)continue;
+    visible.set(el,entry.isIntersecting&&entry.intersectionRatio>=0.5);schedule(el,name);
+   }
+  },{threshold:[0,0.5]}):null;
+  targets.forEach((_,el)=>observer?.observe(el));
+  listen(doc,'visibilitychange',()=>targets.forEach((name,el)=>schedule(el,name)));
+  cleanup=()=>{observer?.disconnect();timers.forEach(id=>env.clearTimeout(id));handlers.forEach(fn=>fn())};
+ }};
+}
+
+if(typeof module==='object'&&module.exports){module.exports={capture,KEY,normalizeAdIds,assignForm,createFormDiagnostics};return}
+root.ObsidianFormDiagnostics=createFormDiagnostics(root);
 let state;try{state=JSON.parse(localStorage.getItem(KEY))}catch{}
 function update(){state=capture({url:location.href,previous:state,now:Date.now(),referrer:document.referrer,ua:navigator.userAgent,touch:navigator.maxTouchPoints,presentationVersion:document.body?.dataset?.presentationVersion||document.documentElement?.dataset?.presentationVersion||'',id:()=>crypto.randomUUID()});try{localStorage.setItem(KEY,JSON.stringify(state))}catch{}}
 update();

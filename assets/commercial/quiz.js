@@ -50,7 +50,7 @@
  const quiz=document.getElementById('quote');if(!quiz)return;
  const $=s=>quiz.querySelector(s),screen=$('#screen');
  const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
- const gtagEvent=(name,params={})=>{try{root.obsidianLeadTracking?.recordEvent?.(name,{...params,quote_id:state.id,flow_version:'intent-resume-20261108'});root.gtag?.('event',name,{lead_source:attribution().source_label||'Direct / unknown',lead_device:attribution().ad_click_device!=='unknown'?attribution().ad_click_device:attribution().device_category,lead_campaign_id:attribution().campaignid||'',internal_test:attribution().is_internal||'false',...params,page_path:location.pathname})}catch(error){console.error(`${name} tracking failed`,error)}};
+ const gtagEvent=(name,params={})=>{try{root.obsidianLeadTracking?.recordEvent?.(name,{measurement_version:'form-engagement-v1',...params,quote_id:state.id,flow_version:'intent-resume-20261108'});root.gtag?.('event',name,{lead_source:attribution().source_label||'Direct / unknown',lead_device:attribution().ad_click_device!=='unknown'?attribution().ad_click_device:attribution().device_category,lead_campaign_id:attribution().campaignid||'',internal_test:attribution().is_internal||'false',...params,quote_id:state.id,page_path:location.pathname})}catch(error){console.error(`${name} tracking failed`,error)}};
  const state={step:0,answers:{},id:crypto.randomUUID(),busy:false,success:false,formViewed:false};
  if(quiz.dataset.problem)state.answers.problem=quiz.dataset.problem;
  const total=STEPS.length+1;
@@ -62,6 +62,7 @@
   $('#back').hidden=state.step===0||state.success;
  }
  function render(){
+  root.ObsidianFormDiagnostics?.mount({form:null});
   progress();
   screen.classList.remove('enter');void screen.offsetWidth;screen.classList.add('enter');
   if(state.success){
@@ -76,6 +77,7 @@
   }
   if(!state.formViewed){state.formViewed=true;gtagEvent('commercial_form_view')}
   screen.innerHTML=`<div class="question-head"><h2 id="question" tabindex="-1">How can we reach you?</h2></div><form id="step-form" class="input-wrap combined-form" novalidate><div class="quote-honeypot" aria-hidden="true"><label for="website">Leave empty</label><input id="website" name="website" tabindex="-1" autocomplete="off"></div><div class="field-grid">${FIELDS.map(([key,label,ph,ac,req])=>`<div class="field${key==='city'?' address-field':''}"><label for="${key}">${label}</label><input id="${key}" name="${key}" type="${key==='phone'?'tel':key==='email'?'email':'text'}" ${key==='phone'?'inputmode="tel"':key==='email'?'inputmode="email"':''} autocomplete="${ac}" placeholder="${ph}" maxlength="${key==='email'?254:120}" value="${esc(state.answers[key]||'')}" aria-describedby="error-${key}" ${req?'required':''}><div class="field-error" id="error-${key}" aria-live="polite"></div></div>`).join('')}</div><div class="summary">${esc([state.answers.property,state.answers.glass,state.answers.problem].join(' · '))}</div><div id="error" class="error" aria-live="polite"></div><div class="input-footer"><span class="hint">We’ll call to discuss your project.</span><button class="primary" type="submit">Send project request <span>→</span></button></div><p class="consent">By submitting, you agree that Obsidian may call or email you about this request. We use your details only to respond to it.</p></form>`;
+  root.ObsidianFormDiagnostics?.mount({form:$('#step-form'),quoteId:state.id,fields:FIELDS,validate,emit:gtagEvent,kind:'commercial'});
   $('#step-form').onsubmit=e=>{e.preventDefault();submit()};
  }
  function choose(step,label){
@@ -88,20 +90,23 @@
  function attribution(){return root.ObsidianCommercialAttribution?.get?.()||{}}
  async function submit(){
   if(state.busy)return;
+  gtagEvent('commercial_submit_attempt');
   const form=$('#step-form');let first=null;
-  FIELDS.map(([key])=>form.querySelector('#'+key)).forEach(i=>{state.answers[i.name]=i.value.trim();const err=validate(i.name,i.value);form.querySelector('#error-'+i.name).textContent=err;if(err){i.setAttribute('aria-invalid','true');first??=i}else i.removeAttribute('aria-invalid')});
+  FIELDS.map(([key])=>form.querySelector('#'+key)).forEach(i=>{state.answers[i.name]=i.value.trim();const err=validate(i.name,i.value);form.querySelector('#error-'+i.name).textContent=err;if(err){gtagEvent('commercial_validation_error',{field_name:i.name,error_reason:i.value.trim()?'invalid_format':'required'});i.setAttribute('aria-invalid','true');first??=i}else i.removeAttribute('aria-invalid')});
   if(first){first.focus();return}
   state.answers.website=form.querySelector('#website').value;
   state.busy=true;const button=form.querySelector('button[type=submit]');button.disabled=true;button.textContent='Sending your request…';
+  let errorReason='network_error',httpStatus=0;
   try{
    const response=await fetch('/api/automotive-quotes',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(payload(state.answers,state.id,attribution(),location.pathname))});
+   httpStatus=response.status;errorReason=response.ok?'invalid_response':'http_error';
    const data=await response.json().catch(()=>({}));
    if(!response.ok||data.ok!==true||data.id!==state.id)throw Error(data.error||'We could not save your request.');
    gtagEvent('commercial_submit_success',{property:state.answers.property,problem:state.answers.problem,quote_id:state.id});
    try{if(!root.ObsidianCommercialAttribution?.isInternal?.())root.gtag?.('event','conversion',{send_to:'AW-17846304809/hB4aCLK0tt4cEKmA5L1C',transaction_id:state.id})}catch(error){console.error('commercial conversion failed',error)}
    state.success=true;render();
   }catch(error){
-   console.error('Commercial request failed',error);gtagEvent('commercial_submit_error');
+   console.error('Commercial request failed',error);gtagEvent('commercial_submit_error',{error_reason:errorReason,http_status:httpStatus});
    $('#error').textContent='That didn’t go through. Try again, or call or text (714) 600-7134.';
    button.disabled=false;button.innerHTML='Try again <span>→</span>';
   }finally{state.busy=false}

@@ -61,3 +61,7 @@ assert.throws(
 );
 
 console.log('lead-event normalization test passed');
+const safeForm=buildLeadEventRecord({...event,event_name:'quote_field_completed',payload:{measurement_version:'form-engagement-v1',form_kind:'driveway',field_name:'phone',field_value:'PRIVATE',phone:'7145551212'}},{now});
+assert.equal(safeForm.payload.field_name,'phone');assert.equal(safeForm.payload.form_kind,'driveway');assert.equal(safeForm.payload.field_value,undefined);assert.equal(safeForm.payload.phone,undefined);
+const unsafeForm=buildLeadEventRecord({...event,payload:{form_kind:'PRIVATE',measurement_version:'PRIVATE',field_name:'7145551212'}},{now});
+assert.deepEqual(unsafeForm.payload,{});
