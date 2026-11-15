@@ -6,3 +6,6 @@ assert.equal(r.groups[0].exposed_requests,2);assert.equal(r.groups[0].submitted_
 console.log('Form report deduplicates exposure and customer IDs without inventing legacy assignment');
 const measured=summarizeFormTest({events:['quote_form_test_exposure','quote_form_visible','quote_form_visible','quote_submit_visible','quote_form_started','quote_field_completed'].map(event_name=>({event_name,payload:{...a,quote_id:'q9',measurement_version:'form-engagement-v1',field_name:'phone'}}))});
 assert.equal(measured.groups[0].viewport_visible_requests,1);assert.equal(measured.groups[0].submit_visible_requests,1);assert.equal(measured.groups[0].started_requests,1);assert.equal(measured.groups[0].completed_fields.phone,1);assert.equal(r.groups[0].viewport_visible_requests,null,'unmeasured history is unknown, not zero');
+
+const unseen=summarizeFormTest({events:[{event_name:'quote_form_test_exposure',payload:{...a,quote_id:'q10',measurement_version:'form-engagement-v1'}}]});assert.equal(unseen.groups[0].engagement_measured_requests,1);assert.equal(unseen.groups[0].viewport_visible_requests,0);
+const oldExposure=summarizeFormTest({events:[{event_name:'quote_step_view',payload:{...a,quote_id:'q11',form_exposure_id:'q10',measurement_version:'form-engagement-v1'}}]});assert.equal(oldExposure.groups[0].engagement_measured_requests,0);
