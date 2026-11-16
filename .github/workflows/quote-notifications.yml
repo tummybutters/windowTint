@@ -16,13 +16,13 @@ jobs:
           def request(path,body=None):
            req=urllib.request.Request('https://www.obsidianautoworksoc.com/api/'+path,headers=headers,data=json.dumps(body).encode() if body is not None else None)
            with urllib.request.urlopen(req,timeout=55) as r:return json.load(r)
-          records=[{'kind': 'contact', 'record_id': '4499214', 'contact_id': '4499214', 'quote_id': 'fcf8d9a5-99c4-4810-aa9a-9b4bb4eb7bb4', 'occurred_at': '2026-11-15T17:00:00Z', 'status': 'verified'}, {'kind': 'contact', 'record_id': '4499642', 'contact_id': '4499642', 'quote_id': '565eef99-acfd-4d1a-8146-62053bde5fc3', 'occurred_at': '2026-11-15T17:00:00Z', 'status': 'verified'}, {'kind': 'contact', 'record_id': '4500142', 'contact_id': '4500142', 'quote_id': '5d446b96-0deb-477e-8e43-6cba8e1e91ad', 'occurred_at': '2026-11-15T17:00:00Z', 'status': 'verified'}]
+          records=[{'kind': 'contact', 'record_id': '4501269', 'contact_id': '4501269', 'quote_id': 'e077d084-5418-4e7a-9d93-69e48dff5794', 'occurred_at': '2026-11-15T23:55:58.063Z', 'status': 'verified'}]
           result=request('crm-attribution',{'records':records})
           print(json.dumps({'existing_requests_linked':len(result['accepted'])}))
           f=request('quote-notification-retry?report=funnel&start=2026-11-03&end=2026-11-15')
           linked={x['quote_id']:x['contact_id'] for x in f['crm_evidence'] if x['kind']=='contact'}
           ids=[r['quote_id'] for r in records]
-          print(json.dumps({'all_three_requests_verified':all(linked.get(r['quote_id'])==r['contact_id'] for r in records),'saved_requests':len(f['leads']),'verified_requests':len(linked),'distinct_verified_contacts':len(set(linked.values())),'unmatched_requests':len([q for q in f['leads'] if q['quote_id'] not in linked]),'form_test_summary':f.get('form_test_summary'),'truncated':f['leads_truncated'] or f['events_truncated']}))
+          print(json.dumps({'request_verified':all(linked.get(r['quote_id'])==r['contact_id'] for r in records),'saved_requests':len(f['leads']),'verified_requests':len(linked),'distinct_verified_contacts':len(set(linked.values())),'unmatched_requests':len([q for q in f['leads'] if q['quote_id'] not in linked]),'form_test_summary':f.get('form_test_summary'),'truncated':f['leads_truncated'] or f['events_truncated']}))
           leads=[];offset=0
           while True:
            d=request('quote-notification-retry?report=delivery&start=2026-11-03&end=2026-11-15&offset='+str(offset));leads+=d['leads']
