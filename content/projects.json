@@ -1,0 +1,406 @@
+[
+  {
+    "car": "Ferrari 488",
+    "scope": "Full-car window tint + windshield",
+    "city": "Beverly Hills",
+    "path": "/projects/ferrari-488-window-tint-beverly-hills",
+    "title": "Ferrari 488 Window Tint in Beverly Hills",
+    "description": "Full-car window tint + windshield for this Ferrari 488 project in Beverly Hills. See real Obsidian Autoworks project photos and request a quote.",
+    "division": "auto",
+    "type": "project",
+    "images": [
+      {
+        "src": "/gallery/jobs-20261117/ferrari-488-window-tint-beverly-hills-1-1440.webp",
+        "small": "/gallery/jobs-20261117/ferrari-488-window-tint-beverly-hills-1-640.webp",
+        "width": 1080,
+        "height": 1350,
+        "alt": "Ferrari 488 \u2014 project view"
+      },
+      {
+        "src": "/gallery/jobs-20261117/ferrari-488-window-tint-beverly-hills-2-1440.webp",
+        "small": "/gallery/jobs-20261117/ferrari-488-window-tint-beverly-hills-2-640.webp",
+        "width": 1080,
+        "height": 1350,
+        "alt": "Ferrari 488 \u2014 additional project view"
+      }
+    ]
+  },
+  {
+    "car": "Audi R8",
+    "scope": "Window tint",
+    "city": "Beverly Hills",
+    "path": "/projects/audi-r8-window-tint-beverly-hills",
+    "title": "Audi R8 Window Tint in Beverly Hills",
+    "description": "Window tint for this Audi R8 project in Beverly Hills. See real Obsidian Autoworks project photos and request a quote.",
+    "division": "auto",
+    "type": "project",
+    "images": [
+      {
+        "src": "/gallery/jobs-20261117/audi-r8-window-tint-beverly-hills-1-1440.webp",
+        "small": "/gallery/jobs-20261117/audi-r8-window-tint-beverly-hills-1-640.webp",
+        "width": 1080,
+        "height": 1350,
+        "alt": "Audi R8 \u2014 project view"
+      }
+    ]
+  },
+  {
+    "car": "Mercedes-Maybach GLS",
+    "scope": "Window tint",
+    "city": "Beverly Hills",
+    "path": "/projects/mercedes-maybach-gls-window-tint-beverly-hills",
+    "title": "Mercedes-Maybach GLS Window Tint in Beverly Hills",
+    "description": "Window tint for this Mercedes-Maybach GLS project in Beverly Hills. See real Obsidian Autoworks project photos and request a quote.",
+    "division": "auto",
+    "type": "project",
+    "images": [
+      {
+        "src": "/gallery/jobs-20261117/mercedes-maybach-gls-window-tint-beverly-hills-1-1440.webp",
+        "small": "/gallery/jobs-20261117/mercedes-maybach-gls-window-tint-beverly-hills-1-640.webp",
+        "width": 1080,
+        "height": 1350,
+        "alt": "Mercedes-Maybach GLS \u2014 project view"
+      }
+    ]
+  },
+  {
+    "car": "Mercedes-AMG CLE",
+    "scope": "Full-car window tint + sunroof",
+    "city": "Mission Viejo",
+    "path": "/projects/mercedes-amg-cle-window-tint-mission-viejo",
+    "title": "Mercedes-AMG CLE Window Tint in Mission Viejo",
+    "description": "Full-car window tint + sunroof for this Mercedes-AMG CLE project in Mission Viejo. See real Obsidian Autoworks project photos and request a quote.",
+    "division": "auto",
+    "type": "project",
+    "images": [
+      {
+        "src": "/gallery/jobs-20261117/mercedes-amg-cle-window-tint-mission-viejo-1-1440.webp",
+        "small": "/gallery/jobs-20261117/mercedes-amg-cle-window-tint-mission-viejo-1-640.webp",
+        "width": 1080,
+        "height": 1350,
+        "alt": "Mercedes-AMG CLE \u2014 project view"
+      },
+      {
+        "src": "/gallery/jobs-20261117/mercedes-amg-cle-window-tint-mission-viejo-2-1440.webp",
+        "small": "/gallery/jobs-20261117/mercedes-amg-cle-window-tint-mission-viejo-2-640.webp",
+        "width": 1080,
+        "height": 1350,
+        "alt": "Mercedes-AMG CLE \u2014 additional project view"
+      },
+      {
+        "src": "/gallery/jobs-20261117/mercedes-amg-cle-window-tint-mission-viejo-3-1440.webp",
+        "small": "/gallery/jobs-20261117/mercedes-amg-cle-window-tint-mission-viejo-3-640.webp",
+        "width": 1080,
+        "height": 1350,
+        "alt": "Mercedes-AMG CLE \u2014 additional project view"
+      }
+    ]
+  },
+  {
+    "car": "BMW M3",
+    "scope": "Window tint",
+    "city": "Ladera Ranch",
+    "path": "/projects/bmw-m3-window-tint-ladera-ranch",
+    "title": "BMW M3 Window Tint in Ladera Ranch",
+    "description": "Window tint for this BMW M3 project in Ladera Ranch. See real Obsidian Autoworks project photos and request a quote.",
+    "division": "auto",
+    "type": "project",
+    "images": [
+      {
+        "src": "/gallery/jobs-20261117/bmw-m3-window-tint-ladera-ranch-1-1440.webp",
+        "small": "/gallery/jobs-20261117/bmw-m3-window-tint-ladera-ranch-1-640.webp",
+        "width": 1080,
+        "height": 1350,
+        "alt": "BMW M3 \u2014 project view"
+      },
+      {
+        "src": "/gallery/jobs-20261117/bmw-m3-window-tint-ladera-ranch-2-1440.webp",
+        "small": "/gallery/jobs-20261117/bmw-m3-window-tint-ladera-ranch-2-640.webp",
+        "width": 1080,
+        "height": 1350,
+        "alt": "BMW M3 \u2014 additional project view"
+      }
+    ]
+  },
+  {
+    "car": "BMW M8 Gran Coupe",
+    "scope": "Full-car window tint + custom two-layer windshield",
+    "city": "Orange County",
+    "path": "/projects/bmw-m8-gran-coupe-window-tint-orange-county",
+    "title": "BMW M8 Gran Coupe Window Tint in Orange County",
+    "description": "Full-car window tint + custom two-layer windshield for this BMW M8 Gran Coupe project in Orange County. See real Obsidian Autoworks project photos and request a quote.",
+    "division": "auto",
+    "type": "project",
+    "images": [
+      {
+        "src": "/gallery/jobs-20261117/bmw-m8-gran-coupe-window-tint-orange-county-1-1440.webp",
+        "small": "/gallery/jobs-20261117/bmw-m8-gran-coupe-window-tint-orange-county-1-640.webp",
+        "width": 1080,
+        "height": 1350,
+        "alt": "BMW M8 Gran Coupe \u2014 project view"
+      },
+      {
+        "src": "/gallery/jobs-20261117/bmw-m8-gran-coupe-window-tint-orange-county-2-1440.webp",
+        "small": "/gallery/jobs-20261117/bmw-m8-gran-coupe-window-tint-orange-county-2-640.webp",
+        "width": 1080,
+        "height": 1350,
+        "alt": "BMW M8 Gran Coupe \u2014 additional project view"
+      }
+    ]
+  },
+  {
+    "car": "Audi RS6 Avant",
+    "scope": "Sides + rear window tint",
+    "city": "Yorba Linda",
+    "path": "/projects/audi-rs6-avant-window-tint-yorba-linda",
+    "title": "Audi RS6 Avant Window Tint in Yorba Linda",
+    "description": "Sides + rear window tint for this Audi RS6 Avant project in Yorba Linda. See real Obsidian Autoworks project photos and request a quote.",
+    "division": "auto",
+    "type": "project",
+    "images": [
+      {
+        "src": "/gallery/jobs-20261117/audi-rs6-avant-window-tint-yorba-linda-1-1440.webp",
+        "small": "/gallery/jobs-20261117/audi-rs6-avant-window-tint-yorba-linda-1-640.webp",
+        "width": 1080,
+        "height": 1350,
+        "alt": "Audi RS6 Avant \u2014 project view"
+      },
+      {
+        "src": "/gallery/jobs-20261117/audi-rs6-avant-window-tint-yorba-linda-2-1440.webp",
+        "small": "/gallery/jobs-20261117/audi-rs6-avant-window-tint-yorba-linda-2-640.webp",
+        "width": 1080,
+        "height": 1350,
+        "alt": "Audi RS6 Avant \u2014 additional project view"
+      },
+      {
+        "src": "/gallery/jobs-20261117/audi-rs6-avant-window-tint-yorba-linda-3-1440.webp",
+        "small": "/gallery/jobs-20261117/audi-rs6-avant-window-tint-yorba-linda-3-640.webp",
+        "width": 1080,
+        "height": 1350,
+        "alt": "Audi RS6 Avant \u2014 additional project view"
+      }
+    ]
+  },
+  {
+    "car": "Range Rover Velar",
+    "scope": "Front windows + windshield",
+    "city": "Dana Point",
+    "path": "/projects/range-rover-velar-window-tint-dana-point",
+    "title": "Range Rover Velar Window Tint in Dana Point",
+    "description": "Front windows + windshield for this Range Rover Velar project in Dana Point. See real Obsidian Autoworks project photos and request a quote.",
+    "division": "auto",
+    "type": "project",
+    "images": [
+      {
+        "src": "/gallery/jobs-20261117/range-rover-velar-window-tint-dana-point-1-1440.webp",
+        "small": "/gallery/jobs-20261117/range-rover-velar-window-tint-dana-point-1-640.webp",
+        "width": 1080,
+        "height": 1350,
+        "alt": "Range Rover Velar \u2014 project view"
+      },
+      {
+        "src": "/gallery/jobs-20261117/range-rover-velar-window-tint-dana-point-2-1440.webp",
+        "small": "/gallery/jobs-20261117/range-rover-velar-window-tint-dana-point-2-640.webp",
+        "width": 1080,
+        "height": 1350,
+        "alt": "Range Rover Velar \u2014 additional project view"
+      }
+    ]
+  },
+  {
+    "car": "Range Rover",
+    "scope": "Front windows + windshield",
+    "city": "Orange",
+    "path": "/projects/range-rover-window-tint-orange",
+    "title": "Range Rover Window Tint in Orange",
+    "description": "Front windows + windshield for this Range Rover project in Orange. See real Obsidian Autoworks project photos and request a quote.",
+    "division": "auto",
+    "type": "project",
+    "images": [
+      {
+        "src": "/gallery/jobs-20261117/range-rover-window-tint-orange-1-1440.webp",
+        "small": "/gallery/jobs-20261117/range-rover-window-tint-orange-1-640.webp",
+        "width": 1080,
+        "height": 1350,
+        "alt": "Range Rover \u2014 project view"
+      },
+      {
+        "src": "/gallery/jobs-20261117/range-rover-window-tint-orange-2-1440.webp",
+        "small": "/gallery/jobs-20261117/range-rover-window-tint-orange-2-640.webp",
+        "width": 1080,
+        "height": 1350,
+        "alt": "Range Rover \u2014 additional project view"
+      }
+    ]
+  },
+  {
+    "car": "Range Rover",
+    "scope": "Front windows matched to factory rears",
+    "city": "Newport Beach",
+    "path": "/projects/range-rover-window-tint-newport-beach",
+    "title": "Range Rover Window Tint in Newport Beach",
+    "description": "Front windows matched to factory rears for this Range Rover project in Newport Beach. See real Obsidian Autoworks project photos and request a quote.",
+    "division": "auto",
+    "type": "project",
+    "images": [
+      {
+        "src": "/gallery/jobs-20261117/range-rover-window-tint-newport-beach-1-1440.webp",
+        "small": "/gallery/jobs-20261117/range-rover-window-tint-newport-beach-1-640.webp",
+        "width": 1080,
+        "height": 1350,
+        "alt": "Range Rover \u2014 project view"
+      },
+      {
+        "src": "/gallery/jobs-20261117/range-rover-window-tint-newport-beach-2-1440.webp",
+        "small": "/gallery/jobs-20261117/range-rover-window-tint-newport-beach-2-640.webp",
+        "width": 1080,
+        "height": 1350,
+        "alt": "Range Rover \u2014 additional project view"
+      },
+      {
+        "src": "/gallery/jobs-20261117/range-rover-window-tint-newport-beach-3-1440.webp",
+        "small": "/gallery/jobs-20261117/range-rover-window-tint-newport-beach-3-640.webp",
+        "width": 1080,
+        "height": 1350,
+        "alt": "Range Rover \u2014 additional project view"
+      }
+    ]
+  },
+  {
+    "car": "Mercedes E-Class",
+    "scope": "Full-car window tint + windshield",
+    "city": "Newport Beach",
+    "path": "/projects/mercedes-e-class-window-tint-newport-beach",
+    "title": "Mercedes E-Class Window Tint in Newport Beach",
+    "description": "Full-car window tint + windshield for this Mercedes E-Class project in Newport Beach. See real Obsidian Autoworks project photos and request a quote.",
+    "division": "auto",
+    "type": "project",
+    "images": [
+      {
+        "src": "/gallery/jobs-20261117/mercedes-e-class-window-tint-newport-beach-1-1440.webp",
+        "small": "/gallery/jobs-20261117/mercedes-e-class-window-tint-newport-beach-1-640.webp",
+        "width": 1080,
+        "height": 1350,
+        "alt": "Mercedes E-Class \u2014 project view"
+      },
+      {
+        "src": "/gallery/jobs-20261117/mercedes-e-class-window-tint-newport-beach-2-1440.webp",
+        "small": "/gallery/jobs-20261117/mercedes-e-class-window-tint-newport-beach-2-640.webp",
+        "width": 1080,
+        "height": 1350,
+        "alt": "Mercedes E-Class \u2014 additional project view"
+      }
+    ]
+  },
+  {
+    "car": "Mercedes E-Class",
+    "scope": "Sides, rear + both panoramic sunroofs",
+    "city": "San Juan Capistrano",
+    "path": "/projects/mercedes-e-class-window-tint-san-juan-capistrano",
+    "title": "Mercedes E-Class Window Tint in San Juan Capistrano",
+    "description": "Sides, rear + both panoramic sunroofs for this Mercedes E-Class project in San Juan Capistrano. See real Obsidian Autoworks project photos and request a quote.",
+    "division": "auto",
+    "type": "project",
+    "images": [
+      {
+        "src": "/gallery/jobs-20261117/mercedes-e-class-window-tint-san-juan-capistrano-1-1440.webp",
+        "small": "/gallery/jobs-20261117/mercedes-e-class-window-tint-san-juan-capistrano-1-640.webp",
+        "width": 1080,
+        "height": 1350,
+        "alt": "Mercedes E-Class \u2014 project view"
+      },
+      {
+        "src": "/gallery/jobs-20261117/mercedes-e-class-window-tint-san-juan-capistrano-2-1440.webp",
+        "small": "/gallery/jobs-20261117/mercedes-e-class-window-tint-san-juan-capistrano-2-640.webp",
+        "width": 1080,
+        "height": 1350,
+        "alt": "Mercedes E-Class \u2014 additional project view"
+      },
+      {
+        "src": "/gallery/jobs-20261117/mercedes-e-class-window-tint-san-juan-capistrano-3-1440.webp",
+        "small": "/gallery/jobs-20261117/mercedes-e-class-window-tint-san-juan-capistrano-3-640.webp",
+        "width": 1080,
+        "height": 1350,
+        "alt": "Mercedes E-Class \u2014 additional project view"
+      }
+    ]
+  },
+  {
+    "car": "BMW X5 M",
+    "scope": "Front windows + windshield",
+    "city": "Anaheim Hills",
+    "path": "/projects/bmw-x5-m-window-tint-anaheim-hills",
+    "title": "BMW X5 M Window Tint in Anaheim Hills",
+    "description": "Front windows + windshield for this BMW X5 M project in Anaheim Hills. See real Obsidian Autoworks project photos and request a quote.",
+    "division": "auto",
+    "type": "project",
+    "images": [
+      {
+        "src": "/gallery/jobs-20261117/bmw-x5-m-window-tint-anaheim-hills-1-1440.webp",
+        "small": "/gallery/jobs-20261117/bmw-x5-m-window-tint-anaheim-hills-1-640.webp",
+        "width": 1080,
+        "height": 1350,
+        "alt": "BMW X5 M \u2014 project view"
+      },
+      {
+        "src": "/gallery/jobs-20261117/bmw-x5-m-window-tint-anaheim-hills-2-1440.webp",
+        "small": "/gallery/jobs-20261117/bmw-x5-m-window-tint-anaheim-hills-2-640.webp",
+        "width": 1080,
+        "height": 1350,
+        "alt": "BMW X5 M \u2014 additional project view"
+      }
+    ]
+  },
+  {
+    "car": "BMW 7 Series",
+    "scope": "Full-car window tint + windshield",
+    "city": "Orange",
+    "path": "/projects/bmw-7-series-window-tint-orange",
+    "title": "BMW 7 Series Window Tint in Orange",
+    "description": "Full-car window tint + windshield for this BMW 7 Series project in Orange. See real Obsidian Autoworks project photos and request a quote.",
+    "division": "auto",
+    "type": "project",
+    "images": [
+      {
+        "src": "/gallery/jobs-20261117/bmw-7-series-window-tint-orange-1-1440.webp",
+        "small": "/gallery/jobs-20261117/bmw-7-series-window-tint-orange-1-640.webp",
+        "width": 1080,
+        "height": 810,
+        "alt": "BMW 7 Series \u2014 project view"
+      },
+      {
+        "src": "/gallery/jobs-20261117/bmw-7-series-window-tint-orange-2-1440.webp",
+        "small": "/gallery/jobs-20261117/bmw-7-series-window-tint-orange-2-640.webp",
+        "width": 1080,
+        "height": 1350,
+        "alt": "BMW 7 Series \u2014 additional project view"
+      }
+    ]
+  },
+  {
+    "car": "BMW 2 Series",
+    "scope": "Sides + rear window tint",
+    "city": "Yorba Linda",
+    "path": "/projects/bmw-2-series-window-tint-yorba-linda",
+    "title": "BMW 2 Series Window Tint in Yorba Linda",
+    "description": "Sides + rear window tint for this BMW 2 Series project in Yorba Linda. See real Obsidian Autoworks project photos and request a quote.",
+    "division": "auto",
+    "type": "project",
+    "images": [
+      {
+        "src": "/gallery/jobs-20261117/bmw-2-series-window-tint-yorba-linda-1-1440.webp",
+        "small": "/gallery/jobs-20261117/bmw-2-series-window-tint-yorba-linda-1-640.webp",
+        "width": 1080,
+        "height": 1350,
+        "alt": "BMW 2 Series \u2014 project view"
+      },
+      {
+        "src": "/gallery/jobs-20261117/bmw-2-series-window-tint-yorba-linda-2-1440.webp",
+        "small": "/gallery/jobs-20261117/bmw-2-series-window-tint-yorba-linda-2-640.webp",
+        "width": 1080,
+        "height": 1350,
+        "alt": "BMW 2 Series \u2014 additional project view"
+      }
+    ]
+  }
+]

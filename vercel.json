@@ -2186,6 +2186,66 @@
       "destination": "/generated/guides/bmw-m3-window-tint"
     },
     {
+      "source": "/projects/ferrari-488-window-tint-beverly-hills",
+      "destination": "/generated/projects/ferrari-488-window-tint-beverly-hills"
+    },
+    {
+      "source": "/projects/audi-r8-window-tint-beverly-hills",
+      "destination": "/generated/projects/audi-r8-window-tint-beverly-hills"
+    },
+    {
+      "source": "/projects/mercedes-maybach-gls-window-tint-beverly-hills",
+      "destination": "/generated/projects/mercedes-maybach-gls-window-tint-beverly-hills"
+    },
+    {
+      "source": "/projects/mercedes-amg-cle-window-tint-mission-viejo",
+      "destination": "/generated/projects/mercedes-amg-cle-window-tint-mission-viejo"
+    },
+    {
+      "source": "/projects/bmw-m3-window-tint-ladera-ranch",
+      "destination": "/generated/projects/bmw-m3-window-tint-ladera-ranch"
+    },
+    {
+      "source": "/projects/bmw-m8-gran-coupe-window-tint-orange-county",
+      "destination": "/generated/projects/bmw-m8-gran-coupe-window-tint-orange-county"
+    },
+    {
+      "source": "/projects/audi-rs6-avant-window-tint-yorba-linda",
+      "destination": "/generated/projects/audi-rs6-avant-window-tint-yorba-linda"
+    },
+    {
+      "source": "/projects/range-rover-velar-window-tint-dana-point",
+      "destination": "/generated/projects/range-rover-velar-window-tint-dana-point"
+    },
+    {
+      "source": "/projects/range-rover-window-tint-orange",
+      "destination": "/generated/projects/range-rover-window-tint-orange"
+    },
+    {
+      "source": "/projects/range-rover-window-tint-newport-beach",
+      "destination": "/generated/projects/range-rover-window-tint-newport-beach"
+    },
+    {
+      "source": "/projects/mercedes-e-class-window-tint-newport-beach",
+      "destination": "/generated/projects/mercedes-e-class-window-tint-newport-beach"
+    },
+    {
+      "source": "/projects/mercedes-e-class-window-tint-san-juan-capistrano",
+      "destination": "/generated/projects/mercedes-e-class-window-tint-san-juan-capistrano"
+    },
+    {
+      "source": "/projects/bmw-x5-m-window-tint-anaheim-hills",
+      "destination": "/generated/projects/bmw-x5-m-window-tint-anaheim-hills"
+    },
+    {
+      "source": "/projects/bmw-7-series-window-tint-orange",
+      "destination": "/generated/projects/bmw-7-series-window-tint-orange"
+    },
+    {
+      "source": "/projects/bmw-2-series-window-tint-yorba-linda",
+      "destination": "/generated/projects/bmw-2-series-window-tint-yorba-linda"
+    },
+    {
       "source": "/quote/home",
       "destination": "/quote/home"
     },

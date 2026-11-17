@@ -1,3 +1,4 @@
+import {projectData,projectCards,generateProjects} from './projects.mjs';
 import {generateOwnerGuide,ownerGuideCard} from './owner-guides.mjs';
 import {renderFilmSection} from './project-film.mjs';
 import {renderApprovedPage} from './approved-pages.mjs';
@@ -50,12 +51,15 @@ for(const page of pages) {
   else if(page.path==='/')body=home(page);
   else if(page.path==='/booking')body=booking(page);
   else if(['/services','/guides','/service-areas'].includes(page.path))body=renderDirectory(page,pages);
-  else if(page.path==='/window-tinting-gallery')body=`<section class="hero hero--home container"><p class="eyebrow">The Obsidian portfolio</p><h1>${e(page.title)}</h1><p>${e(page.intro)}</p></section>`+renderFilmSection(page.path)+gallery()+sharedNextStep(page);
+  else if(page.path==='/window-tinting-gallery')body=`<section class="hero hero--home container"><p class="eyebrow">The Obsidian portfolio</p><h1>${e(page.title)}</h1><p>${e(page.intro)}</p></section>`+renderFilmSection(page.path)+projectCards(projectData(root))+gallery()+sharedNextStep(page);
   else body=renderInner(page,pages,reviewData);
 
   if(['/guides','/window-tinting-gallery'].includes(page.path))body+=ownerGuideCard();
+  const cityProjects=page.division==='auto'&&page.path.endsWith('-window-tinting')?projectData(root).filter(j=>page.path==='/'+j.city.toLowerCase().replaceAll(' ','-')+'-window-tinting'):[];
+  if(cityProjects.length)body+=projectCards(cityProjects,'Projects in '+cityProjects[0].city);
+  const projectAssets=cityProjects.length||page.path==='/window-tinting-gallery'?'<link rel="stylesheet" href="/assets/site/projects.css">':'';
   const filmAssets=body.includes('class="section container project-film"')?'<link rel="stylesheet" href="/assets/media/project-video.css?v=20261115"><script defer src="/assets/media/project-film.js?v=20261115"></script>':'';
-  write(destination(page.path).slice(1),shell(page,body,(approved?'<link rel="stylesheet" href="/assets/site/service-design.css"><script defer src="/assets/site/service-design.js"></script>':'')+filmAssets));
+  write(destination(page.path).slice(1),shell(page,body,(approved?'<link rel="stylesheet" href="/assets/site/service-design.css"><script defer src="/assets/site/service-design.js"></script>':'')+filmAssets+projectAssets));
 }
 write('sitemap.xml','<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'+pages.map(p=>`  <url><loc>${origin}${e(p.path)}</loc></url>`).join('\n')+'\n</urlset>\n');
 write('content/build-manifest.json',JSON.stringify(pages.map(p=>({path:p.path,file:destination(p.path),title:p.title,division:p.division,type:p.type})),null,2));
@@ -64,3 +68,5 @@ console.log(`Rendered ${pages.length} pages with shared templates, metadata, nav
 const guide=generateOwnerGuide(root);
 const sm=read('sitemap.xml').replace('</urlset>',`  <url><loc>${origin}${guide.path}</loc></url>\n</urlset>`);write('sitemap.xml',sm);
 const bm=JSON.parse(read('content/build-manifest.json'));bm.push(guide);write('content/build-manifest.json',JSON.stringify(bm,null,2));
+
+generateProjects(root);
