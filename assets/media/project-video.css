@@ -6,3 +6,9 @@
 @media(max-width:700px){.project-film{grid-template-columns:minmax(0,1fr);gap:28px}.project-film h2{font-size:clamp(42px,11vw,64px);margin:14px 0 20px}.project-film-copy>p:not(.eyebrow){margin-bottom:24px}.project-film .project-video{max-width:350px;justify-self:center}.project-video video{max-height:none}}
 
 .project-video-play{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:12px;background:linear-gradient(transparent 45%,#0003);border:0;color:white;text-shadow:0 1px 5px #0009}.project-video-play[hidden]{display:none}.project-video-play svg{width:64px;height:64px;padding:18px;background:var(--accent);border-radius:50%;fill:var(--ink);box-shadow:0 4px 24px #0004}.project-video-play span{font-size:13px;letter-spacing:.02em}.project-video-play:hover svg{background:var(--paper)}
+
+/* Keep the portrait film and its introduction together. */
+.project-film{max-width:900px;grid-template-columns:minmax(0,440px) 300px;justify-content:center;gap:64px;padding-top:40px;padding-bottom:40px}
+.project-film h2{font-size:clamp(42px,5vw,72px);margin:12px 0 20px}
+.project-film-copy>p:not(.eyebrow){margin-bottom:24px}
+@media(max-width:700px){.project-film{grid-template-columns:minmax(0,1fr);gap:24px;padding-top:28px;padding-bottom:28px}.project-film h2{font-size:clamp(42px,11vw,64px)}.project-film .project-video{max-width:300px}}
