@@ -56,3 +56,16 @@
  .package-copy .price-main strong{font-size:34px;white-space:nowrap}
  .package-copy .package-summary p{margin:0}
 }
+
+.package-offer:has(.install-portrait) {display:grid;grid-template-columns:minmax(240px,.82fr) minmax(0,1.18fr);gap:clamp(20px,3vw,48px);align-items:center}
+.install-portrait {margin:0;position:relative;overflow:hidden;border-radius:12px;background:#20221f}
+.install-portrait img {display:block;width:100%;height:100%;aspect-ratio:4/3;object-fit:cover;object-position:50% 56%}
+.install-portrait figcaption {position:absolute;inset:auto 0 0;color:white;background:linear-gradient(transparent,rgba(0,0,0,.8));padding:28px 14px 12px;font-size:13px}
+@media(max-width:850px){
+ .package-offer:has(.install-portrait) {grid-template-columns:minmax(0,1fr)}
+ .install-portrait {order:2}
+ .install-portrait img {aspect-ratio:2}
+}
+.package-offer .install-portrait {width:100%;height:auto;aspect-ratio:4/3}
+.package-offer .install-portrait img {width:100%;height:100%;max-height:none}
+@media(max-width:850px){.package-offer .install-portrait {aspect-ratio:2}}

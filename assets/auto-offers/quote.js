@@ -28,7 +28,12 @@
    get('offer-description').textContent=p.description;
    const [coupe,sedan,suv]=p.prices;
    get('offer-price').textContent=(coupe===sedan?'Sedan or coupe $'+sedan:'Standard coupe $'+coupe+' · sedan $'+sedan)+' · SUV or truck $'+suv;
-   get('offer-photo').src=p.image;get('hero-link').href='#build';get('hero-link').textContent='Build my package';
+   const card=get(key);
+   const source=card.querySelector('figure img'), hero=get('offer-photo');
+   for(const attr of ['srcset','src','alt','width','height']) hero.setAttribute(attr,source.getAttribute(attr));
+   get('offer-photo-caption').textContent=card.querySelector('figcaption').textContent;
+   get('build-photo').replaceChildren(card.querySelector('template').content.cloneNode(true));
+   get('hero-link').href='#build';get('hero-link').textContent='Build my package';
    get('build').hidden=false;refresh();
    if(scroll)get('build').scrollIntoView({behavior:'instant'});
  }
