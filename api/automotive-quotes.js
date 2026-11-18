@@ -7,8 +7,8 @@ const createHandler=(options={})=>async(req,res)=>{
  const host=String(req.headers?.['x-forwarded-host']||req.headers?.host||'').split(',')[0].trim();let same=false;try{const origin=new URL(req.headers?.origin);same=origin.host===host&&['https:','http:'].includes(origin.protocol)}catch{}
  if(!same)return res.status(403).json({error:'Request not allowed.'});
  if(!(options.enabled??process.env.AUTOMOTIVE_QUOTES_ENABLED==='true'))return res.status(503).json({error:'Online quotes are temporarily unavailable. Please call (714) 600-7134.'});
- let record;try{let body=req.body;if(!body){const chunks=[];let size=0;for await(const chunk of req){size+=chunk.length;if(size>8192)throw Error('too_large');chunks.push(chunk)}body=Buffer.concat(chunks).toString()}if(Buffer.byteLength(typeof body==='string'?body:JSON.stringify(body))>8192)throw Error('too_large');record=normalizeQuote(typeof body==='string'?JSON.parse(body):body)}catch{return res.status(400).json({error:'Please check your vehicle, city, name and phone number.'})}
- if(record.lead_kind==='commercial'){
+ let record;try{let body=req.body;if(!body){const chunks=[];let size=0;for await(const chunk of req){size+=chunk.length;if(size>8192)throw Error('too_large');chunks.push(chunk)}body=Buffer.concat(chunks).toString()}if(Buffer.byteLength(typeof body==='string'?body:JSON.stringify(body))>8192)throw Error('too_large');record=normalizeQuote(typeof body==='string'?JSON.parse(body):body)}catch{return res.status(400).json({error:'Please check your project and contact details.'})}
+ if(['commercial','residential'].includes(record.lead_kind)){
   const a=record.attribution,ua=String(req.headers?.['user-agent']||'');
   if(!['mobile','desktop','tablet'].includes(a.device_category))a.device_category=require('../assets/commercial/attribution').device(ua,0);
   a.ad_click_device=({m:'mobile',c:'desktop',t:'tablet'})[a.device]||'unknown';

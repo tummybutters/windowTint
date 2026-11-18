@@ -5,7 +5,7 @@ import {fileURLToPath} from 'node:url';
 const root=path.resolve(path.dirname(fileURLToPath(import.meta.url)),'..');
 const output=path.join(root,'public');
 const browserDirectories=new Set([
-  'ads-assets','assets','gallery','experiments','quote','package','driveway-package','generated',
+  'home-window-film-consultation','ads-assets','assets','gallery','experiments','quote','package','driveway-package','generated',
   'commercial-window-tinting-orange-county','office-window-tinting-orange-county',
   'tesla-model-3-window-tint','tesla-model-y-window-tint'
 ]);

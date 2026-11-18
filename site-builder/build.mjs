@@ -70,3 +70,10 @@ const sm=read('sitemap.xml').replace('</urlset>',`  <url><loc>${origin}${guide.p
 const bm=JSON.parse(read('content/build-manifest.json'));bm.push(guide);write('content/build-manifest.json',JSON.stringify(bm,null,2));
 
 generateProjects(root);
+
+const {offerPage,renderOffers}=await import('./auto-offers.mjs');
+write('generated/ceramic-tint-packages.html',renderOffers());
+const offerManifest=JSON.parse(read('content/build-manifest.json'));
+offerManifest.push({...offerPage,file:destination(offerPage.path)});
+write('content/build-manifest.json',JSON.stringify(offerManifest,null,2));
+write('sitemap.xml',read('sitemap.xml').replace('</urlset>',`  <url><loc>${origin}${offerPage.path}</loc></url>\n</urlset>`));

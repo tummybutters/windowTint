@@ -2246,6 +2246,10 @@
       "destination": "/generated/projects/bmw-2-series-window-tint-yorba-linda"
     },
     {
+      "source": "/ceramic-tint-packages",
+      "destination": "/generated/ceramic-tint-packages"
+    },
+    {
       "source": "/quote/home",
       "destination": "/quote/home"
     },
