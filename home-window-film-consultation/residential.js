@@ -15,41 +15,52 @@ const choices = {
     title: 'What matters most in this room?',
     prompt: 'Think about where you sit when the sun is strongest.',
     options: [
-      ['Keep daylight', 'Cool down a bright room', 'home.webp', 'Lighter solar-control films', 'Compare a lighter solar film with the untreated glass. Look at the outdoor view and ask how much incoming solar heat each option reduces.'],
-      ['Reduce screen glare', 'Make a screen easier to see', 'living-room-glass.webp', 'Glare-control films', 'Compare two light levels from your desk or sofa when glare is strongest. The stronger glare-control option will usually let less daylight through.']
+      ['Keep daylight', 'Cool down a bright room', 'garden-picture-window.webp', 'Lighter solar-control films', 'Compare a lighter solar film with the untreated glass. Look at the outdoor view and ask how much incoming solar heat each option reduces.'],
+      ['Reduce screen glare', 'Make a screen easier to see', 'garden-room.webp', 'Glare-control films', 'Compare two light levels from your desk or sofa when glare is strongest. The stronger glare-control option will usually let less daylight through.']
     ]
   },
   'Privacy': {
     title: 'When do you need privacy?',
     prompt: 'The right sample depends on the light on each side of the glass.',
     options: [
-      ['Keep the view', 'Daytime privacy with an outdoor view', 'covered-patio-window.webp', 'Daytime privacy films', 'Compare reflective samples from inside and outside. They offer the most privacy while the outdoors is brighter than the room.'],
-      ['Privacy after dark', 'Screen a view into a lit room', 'poolside-sliding-door-display.webp', 'Frosted and obscuring finishes', 'Compare frosted samples for coverage after dark. Frosting obscures the view both ways. If you want a clear daytime view, discuss film paired with nighttime shades.']
+      ['Keep the view', 'Daytime privacy with an outdoor view', 'covered-porch.webp', 'Daytime privacy films', 'Compare reflective samples from inside and outside. They offer the most privacy while the outdoors is brighter than the room.'],
+      ['Privacy after dark', 'Screen a view into a lit room', 'pool-room.webp', 'Frosted and obscuring finishes', 'Compare frosted samples for coverage after dark. Frosting obscures the view both ways. If you want a clear daytime view, discuss film paired with nighttime shades.']
     ]
   },
   'Something else': {
     title: 'What would help you decide?',
     prompt: 'We can compare appearances or start by looking at the window itself.',
     options: [
-      ['Compare samples', 'See different finishes in the room', 'sunroom-exterior.webp', 'A range of film samples', 'Look through lighter and darker samples from your usual seat. Compare clarity, reflectivity and how much daylight reaches the room.'],
-      ['Check my glass', 'Ask about a pane or coating', 'residential-window-detail.webp', 'Options for your glass type', 'We’ll check the panes and coatings, then review manufacturer compatibility before proposing suitable film samples.']
+      ['Compare samples', 'See different finishes in the room', 'pool-courtyard.webp', 'A range of film samples', 'Look through lighter and darker samples from your usual seat. Compare clarity, reflectivity and how much daylight reaches the room.'],
+      ['Check my glass', 'Ask about a pane or coating', 'upstairs-window.webp', 'Options for your glass type', 'We’ll check the panes and coatings, then review manufacturer compatibility before proposing suitable film samples.']
     ]
   }
 };
 const intents = {
-  install: ['Window film', 'for your home.', null, 'Get professional residential window film installation in Orange County. Compare samples on your windows and get an estimate for the rooms you want to treat.'],
   heat: ['Keep the view.', 'Ease the heat.', 'Heat & glare'],
   glare: ['Less glare.', 'More room to work.', 'Heat & glare', 'Compare film samples from your desk or sofa. Find a balance between a comfortable screen and the daylight you want to keep.'],
   privacy: ['Open the blinds.', 'Keep your privacy.', 'Privacy', 'Compare daytime reflective film with frosted options for street-facing windows. See the finish and the view from both sides of your own glass.']
 };
-const intent = intents[new URLSearchParams(location.search).get('intent')];
+// The existing cost keyword arrives at this fragment. Present the pricing entry
+// in the same document so click IDs, landing attribution and history stay intact.
+const priceEntry = document.getElementById('pricing-entry');
+if (priceEntry && location.hash === '#pricing') {
+  document.querySelector('.hero').replaceWith(priceEntry.content.cloneNode(true));
+  document.querySelector('.faq #pricing').removeAttribute('id');
+  document.querySelector('header').id = 'pricing';
+  document.title = 'Home Window Film Pricing | Obsidian Film Solutions';
+  window.scrollTo({top: 0, behavior: 'instant'});
+}
+const topic = document.querySelector('.hero').dataset.topic;
+const intentName = new URLSearchParams(location.search).get('intent');
+const intent = topic === 'installation' && Object.hasOwn(intents, intentName) ? intents[intentName] : undefined;
+const entryGoal = ({privacy: 'Privacy', solar: 'Heat & glare'})[topic] || intent?.[2];
 const selectGoal = value => {
   const radio = Array.from(form.elements.need).find(option => option.value === value);
   if (radio) radio.checked = true;
 };
 if (intent) {
   document.querySelector('#headline').replaceChildren(intent[0], document.createElement('br'), Object.assign(document.createElement('em'), { textContent: intent[1] }));
-  selectGoal(intent[2]);
   if (intent[3]) document.querySelector('#hero-description').textContent = intent[3];
 }
 function showStep(index, focus = true) {
@@ -148,6 +159,17 @@ form.addEventListener('click', async event => {
     transitionPending = false;
   }
 });
+// A consultation started from a specific service already has its first answer.
+if (entryGoal) {
+  document.querySelectorAll('a[href="#consultation"]:not([data-select])').forEach(link => {
+    link.addEventListener('click', () => {
+      if (!needs.hidden) {
+        if (!goal()) selectGoal(entryGoal);
+        showPriorities();
+      }
+    });
+  });
+}
 document.querySelector('#go-back').addEventListener('click', () => showStep(0));
 document.querySelector('#edit').addEventListener('click', () => showStep(0));
 document.querySelectorAll('[data-select]').forEach(link => link.addEventListener('click', event => {
@@ -160,7 +182,7 @@ document.querySelectorAll('[data-select]').forEach(link => link.addEventListener
 window.ObsidianResidentialReset = () => {
   renderedGoal = undefined;
   document.querySelector('#priority-options').replaceChildren();
-  if (intent) selectGoal(intent[2]);
+  if (entryGoal) selectGoal(entryGoal);
   showStep(0);
 };
 form.addEventListener('submit', event => {
@@ -174,7 +196,7 @@ form.addEventListener('submit', event => {
 });
 phone.addEventListener('input', () => phone.setCustomValidity(''));
 function openPricingAnswer() {
-  if (location.hash === '#pricing') document.getElementById('pricing').open = true;
+  if (location.hash === '#pricing') document.querySelector('details#pricing')?.setAttribute('open', '');
 }
 openPricingAnswer();
 window.addEventListener('hashchange', openPricingAnswer);
