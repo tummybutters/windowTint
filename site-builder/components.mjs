@@ -2,7 +2,7 @@ export const origin = 'https://www.obsidianautoworksoc.com';
 export const escape = value => String(value ?? '').replace(/[&<>"']/g, char => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[char]));
 export const divisions = {
   auto: {label:'Auto', path:'/mobile-window-tinting', image:'/assets/site/auto.webp', quote:'/car-window-tinting-near-me#quote', subtitle:'Your drive. Upgraded.'},
-  home: {label:'Homes', path:'/architectural-window-film', image:'/assets/site/home.webp', quote:'https://app.tintwiz.com/web/cs/dsvpiyfwkbahjx40fiox90tkhqgnhqpu', subtitle:'Love the light. Feel at home.'},
+  home: {label:'Homes', path:'/architectural-window-film', image:'/assets/site/home.webp', quote:'/home-window-film-consultation/', subtitle:'Love the light. Feel at home.'},
   commercial: {label:'Commercial', path:'/commercial-window-film', image:'/assets/site/commercial.webp', quote:'/commercial-window-tinting-orange-county#quote', subtitle:'A better place to work.'}
 };
 export function quoteHref(page={}) {

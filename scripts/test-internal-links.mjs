@@ -34,7 +34,7 @@ for(const page of pages) {
 assert.equal(quoteHref({path:'/front-two-window-tinting',division:'auto'}),'/car-window-tinting-near-me?quote_coverage=front_two#quote');
 assert.equal(quoteHref({path:'/tesla-model-y-window-tinting',division:'auto'}),'/tesla-model-y-window-tinting?experience=original#quote');
 assert.equal(quoteHref({path:'/chrome-delete',division:'auto'}),'sms:+17146007134');
-assert.equal(quoteHref({path:'/home-solar-window-film',division:'home'}),'https://app.tintwiz.com/web/cs/dsvpiyfwkbahjx40fiox90tkhqgnhqpu');
+assert.equal(quoteHref({path:'/home-solar-window-film',division:'home'}),'/home-window-film-consultation/');
 assert.equal(quoteHref({path:'/commercial-privacy-film',division:'commercial'}),'/commercial-window-tinting-orange-county#quote');
 // A later copy edit must fail loudly rather than silently remove an editorial link.
 const stale=structuredClone(plans);stale.find(p=>p.links.length).links[0].anchor='Phrase no longer present in the article';

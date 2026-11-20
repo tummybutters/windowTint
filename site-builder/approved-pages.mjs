@@ -2,7 +2,7 @@ import {button} from './components.mjs';
 import {imageTag} from './media.mjs';
 const img=(src,alt,cls='',eager=false)=>`<div class="photo ${cls}">${imageTag(src,alt,{loading:eager?'eager':'lazy',sizes:'(max-width:760px) 100vw, 65vw'})}</div>`;
 const auto='/car-window-tinting-near-me?quote_coverage=full_car#quote';
-const home='https://app.tintwiz.com/web/cs/dsvpiyfwkbahjx40fiox90tkhqgnhqpu';
+const home='/home-window-film-consultation/';
 const comm='/commercial-window-tinting-orange-county#quote';
 const faq=(items)=>`<section class="design-faq wrap"><h2>A few details.</h2><div>${items.map(([q,a])=>`<details><summary>${q}<span>+</span></summary><p>${a}</p></details>`).join('')}</div></section>`;
 const end=(title,label,url)=>`<section class="design-end wrap"><h2>${title}</h2>${button(label,url)}</section>`;
