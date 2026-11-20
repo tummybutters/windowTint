@@ -52,3 +52,9 @@
 #front-match .package-bonus {color:#ff956d}
 #front-match .package-copy .button {background:#ff7951;border-color:#ff7951;color:#141614}
 .package-copy .button:hover,.package-copy .button:focus-visible {outline:2px solid currentColor;outline-offset:3px}
+
+@media (max-width:420px) and (max-height:650px) {
+  .offer-hero {padding-top:16px}
+  .offer-hero .hero-copy > p {margin-block:10px}
+  .offer-hero #offer-price {padding-top:10px}
+}
