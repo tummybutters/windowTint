@@ -16,15 +16,17 @@ jobs:
           from datetime import datetime
           from zoneinfo import ZoneInfo
           def get(kind,offset=0):
-           url='https://www.obsidianautoworksoc.com/api/quote-notification-retry?report='+kind+'&start=2026-11-20&end=2026-11-21&offset='+str(offset)
+           url='https://www.obsidianautoworksoc.com/api/quote-notification-retry?report='+kind+'&start=2026-11-15&end=2026-11-22&offset='+str(offset)
            with urllib.request.urlopen(urllib.request.Request(url,headers={'Authorization':'Bearer '+os.environ['QUOTE_RETRY_SECRET']}),timeout=50) as r:return json.load(r)
           f=get('funnel');rows=[];o=0
           while True:
            d=get('delivery',o);rows+=d['leads'];o=d.get('next_offset')
            if o is None:break
+          mapped={c.get('quote_id') for c in f.get('crm_evidence',[]) if c.get('kind')=='contact' and c.get('status')=='verified'}
           safe=[]
           for l in f['leads']:
            key=l['quote_id'];a=l.get('attribution') or {};delivery=next((x for x in rows if x['quote_id']==key),{})
-           safe.append({'hash':hashlib.sha256(key.encode()).hexdigest()[:12],'time':l.get('received_at'),'creative':a.get('creative') or a.get('utm_content'),'campaign':a.get('campaignid') or a.get('utm_campaign'),'touch':a.get('touch_at'),'first':a.get('first_seen_at'),'session_events':sorted(set(str(x.get('event_time')) for x in f.get('events',[]) if x.get('session_id') and x.get('session_id')==a.get('session_id') and x.get('event_name') in ('paid_landing_page_view','lead_session_checkpoint','journey_page_view')))[:6],'sms':delivery.get('sms_status'),'fresh_provider':delivery.get('fresh_provider_read'),'crm_handoff':delivery.get('crm_handoff')})
+           safe.append({'mapped':key in mapped,'hash':hashlib.sha256(key.encode()).hexdigest()[:12],'time':l.get('received_at'),'creative':str(a.get('creative')) if str(a.get('creative')).isdigit() else None,'campaign':str(a.get('campaignid')) if str(a.get('campaignid')).isdigit() else None,'touch':a.get('touch_at'),'first':a.get('first_seen_at'),'session_events':sorted(set(str(x.get('event_time')) for x in f.get('events',[]) if x.get('session_id') and x.get('session_id')==a.get('session_id') and x.get('event_name') in ('paid_landing_page_view','lead_session_checkpoint','journey_page_view')))[:6],'sms':delivery.get('sms_status'),'fresh_provider':delivery.get('fresh_provider_read'),'crm_handoff':delivery.get('crm_handoff')})
+          safe=[r for r in safe if str(r.get('time',''))[:10]>='2026-11-21' or not r['mapped']]
           print('AUDIT_RESULT '+json.dumps({'leads':safe,'delivery_rows':len(rows),'recipient_match':d['recipient_matches_elle'],'leads_truncated':f.get('leads_truncated'),'events_truncated':f.get('events_truncated')}))
           PY
