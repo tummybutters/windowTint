@@ -62,9 +62,9 @@ const templates=[
   {
     q:[c=>`How much does window tinting cost in ${c}?`,c=>`What does ceramic tint cost in ${c}?`,c=>`How much is window tint for my car in ${c}?`],
     a:[
-      c=>`Ceramic sides and rear are $500 for a coupe, $600 for a sedan and $700 for an SUV or truck. Two front windows start at $200 ($220 for an SUV or truck) and a full car starts at $720. Tesla sides and rear are $600 for a Model S, $700 for a Model Y and $950 for a Model 3.`,
-      c=>`In ${c}, ceramic sides and rear are $500 on a coupe, $600 on a sedan and $700 on an SUV or truck. A two-window front match is $200 to $220 and a full car is $720 to $950. Tesla Model S, Y and 3 sides and rear are $600, $700 and $950.`,
-      c=>`Two front windows cost $200 to $220, ceramic sides and rear cost $500 to $700 by vehicle size, and a full car costs $720 to $950. Tesla sides and rear are $600 (Model S), $700 (Model Y) and $950 (Model 3). Specialty glass is quoted separately.`
+      c=>`Ceramic sides and rear are $500 for a coupe, $600 for a sedan and $700 for an SUV or truck. Two front windows start at $200 ($220 for an SUV or truck) and a full car is $820 for a sedan or coupe ($950 for an SUV or truck). Tesla sides and rear are $600 for a Model S, $700 for a Model Y and $950 for a Model 3.`,
+      c=>`In ${c}, ceramic sides and rear are $500 on a coupe, $600 on a sedan and $700 on an SUV or truck. A two-window front match is $200 to $220 and a full car is $820 (sedan or coupe) to $950 (SUV or truck). Tesla Model S, Y and 3 sides and rear are $600, $700 and $950.`,
+      c=>`Two front windows cost $200 to $220, ceramic sides and rear cost $500 to $700 by vehicle size, and a full car costs $820 for a sedan or coupe and $950 for an SUV or truck. Tesla sides and rear are $600 (Model S), $700 (Model Y) and $950 (Model 3). Specialty glass is quoted separately.`
     ],
     link:{href:'/window-tint-pricing',label:'See every price'}
   },
