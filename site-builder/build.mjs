@@ -8,7 +8,7 @@ import {imageTag} from './media.mjs';
 import {renderInner,renderDirectory,sharedNextStep} from './page-layouts.mjs';
 import {instagramSection} from './social.mjs';
 import {attachInternalLinks} from './internal-links.mjs';
-import {applyOrganicSearch,proofLine,questionsSection} from './organic-search.mjs';
+import {applyOrganicSearch,proofStats,questionsSection} from './organic-search.mjs';
 import fs from 'node:fs';
 import path from 'node:path';
 import {fileURLToPath} from 'node:url';
@@ -34,7 +34,7 @@ function linkedPages(title,selected) {
   return `<section class="section container"><div class="section-heading"><h2>${e(title)}</h2></div><div class="card-grid">${selected.map(card).join('')}</div></section>`;
 }
 function home(page) {
-  return `<section class="hero hero--home container"><div class="hero-heading"><div><p class="eyebrow">Obsidian Autoworks · We come to you</p><h1>Mobile Window Tinting<br><em>Orange County.</em></h1></div><div><p>${e(page.intro)}</p>${proofLine(page)}<p>Window film for homes and businesses, too.</p>${button('Explore the free upgrade','/driveway-package')}</div></div>${servicePanels()}</section>${offer()}${renderFilmSection('/')}${reviews(reviewData)}<section class="section container split"><div><p class="eyebrow">Made for life in the sun</p><h2>Keep the light.<br>Make it yours.</h2><p>From the morning commute to the afternoon sun in your living room, choose film around the way you use your space.</p>${button('Explore home film','/architectural-window-film',true)}</div>${imageTag("/gallery/tintwiz-20261111/living-room-glass.webp","Living-room sliding glass door opening onto a patio")}</section>${linkedPages('A little guidance goes a long way',Object.keys(divisions).map(division=>pages.find(p=>p.type==='guide'&&p.division===division)).filter(Boolean))}${instagramSection()}${questionsSection(page)}${quotePanel('auto')}`;
+  return `<section class="hero hero--home container"><div class="hero-heading"><div><p class="eyebrow">Obsidian Autoworks · We come to you</p><h1>Mobile Window Tinting<br><em>Orange County.</em></h1></div><div><p>${e(page.intro)}</p><p>Window film for homes and businesses, too.</p>${button('Explore the free upgrade','/driveway-package')}</div></div>${proofStats(page)}${servicePanels()}</section>${offer()}${renderFilmSection('/')}${reviews(reviewData)}<section class="section container split"><div><p class="eyebrow">Made for life in the sun</p><h2>Keep the light.<br>Make it yours.</h2><p>From the morning commute to the afternoon sun in your living room, choose film around the way you use your space.</p>${button('Explore home film','/architectural-window-film',true)}</div>${imageTag("/gallery/tintwiz-20261111/living-room-glass.webp","Living-room sliding glass door opening onto a patio")}</section>${linkedPages('A little guidance goes a long way',Object.keys(divisions).map(division=>pages.find(p=>p.type==='guide'&&p.division===division)).filter(Boolean))}${instagramSection()}${questionsSection(page)}${quotePanel('auto')}`;
 }
 function gallery() {
   const entries=JSON.parse(read('content/gallery.json'));

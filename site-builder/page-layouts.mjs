@@ -1,7 +1,7 @@
 import {imageTag} from './media.mjs';
 import {escape as e, brandName, divisions, button, reviews, card, quoteHref, quoteLabel} from './components.mjs';
 import {linkedParagraphs} from './internal-links.mjs';
-import {proofLine,questionsSection} from './organic-search.mjs';
+import {proofLine,proofStats,questionsSection} from './organic-search.mjs';
 
 const label = page => divisions[page.division]?.label || 'Obsidian';
 const topic = page => page.title.replace(/\s+(in|across) Orange County$/i,'');
@@ -20,7 +20,7 @@ function eyebrow(page) {
 function intro(page,kind,{photo=true,action=true}={}) {
   if(page.photoInsetOnly)photo=false;
   const displayTitle=['guide','service'].includes(page.type)&&page.title.includes(':')&&!page.title.includes('?')?page.title.split(':')[0].trim():page.title;
-  return `<section class="container page-intro page-intro--${kind}${photo&&page.image?' has-photo':''}" data-layout="${kind}">${crumbs(page)}<div class="page-intro-grid"><div><p class="eyebrow">${e(eyebrow(page))}</p><h1>${e(displayTitle)}</h1><p class="page-deck">${e(page.intro)}</p>${proofLine(page)}${action?`<div class="actions">${button(quoteLabel(page),quoteHref(page),page.type==='city')}${specialty(page)?button('Call (714) 600-7134','tel:+17146007134',true):''}${page.type==='city'&&page.questions?button('Text (714) 600-7134','sms:+17146007134',true):''}</div>`:''}</div>${photo?image(page):''}</div></section>`;
+  return `<section class="container page-intro page-intro--${kind}${photo&&page.image?' has-photo':''}" data-layout="${kind}">${crumbs(page)}<div class="page-intro-grid"><div><p class="eyebrow">${e(eyebrow(page))}</p><h1>${e(displayTitle)}</h1><p class="page-deck">${e(page.intro)}</p>${proofLine(page)}${action?`<div class="actions">${button(quoteLabel(page),quoteHref(page),page.type==='city')}${specialty(page)?button('Call (714) 600-7134','tel:+17146007134',true):''}${page.type==='city'&&page.questions?button('Text (714) 600-7134','sms:+17146007134',true):''}</div>`:''}${proofStats(page)}</div>${photo?image(page):''}</div></section>`;
 }
 function highlights(page) {
   if(!page.highlights?.length)return '';

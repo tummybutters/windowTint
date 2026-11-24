@@ -24,14 +24,25 @@ export function applyOrganicSearch(pages) {
   return pages;
 }
 
+// Four proof figures, each from the site's own sources (reviews.json and the approved offer terms).
 export function proofItems() {
-  return [data.proof.mobile,data.proof.film,data.proof.warranty,`${reviewData.rating.toFixed(1)} / 5 on Google · ${reviewData.count} reviews`];
+  return [
+    {value:reviewData.rating.toFixed(1),label:`stars from ${reviewData.count} Google reviews`},
+    {value:'From $500',label:'ceramic sides and rear, installed at your home or office'},
+    {value:'Lifetime',label:'tint warranty'},
+    {value:'Avery Dennison',label:'nano ceramic film'}
+  ];
 }
+export function proofStats(page={proof:true}) {
+  if(!page.proof)return '';
+  return `<ul class="proof-stats" aria-label="Why customers choose Obsidian">${proofItems().map(item=>`<li><strong>${e(item.value)}</strong><span>${e(item.label)}</span></li>`).join('')}</ul>`;
+}
+// Notes that sit with the introduction: the pricing page's package list and the city pages' tint-law line.
 export function proofLine(page) {
   if(!page.proof)return '';
   const extra=page.introExtra?`<p class="page-packages">${e(page.introExtra)}</p>`:'';
   const law=page.type==='city'&&page.questions?`<p class="page-law">California treats front side windows and the windshield differently from rear glass, so we review your front-window plan against the current rule. <a href="/california-window-tint-law">California tint law <span aria-hidden="true">↗</span></a></p>`:'';
-  return `${extra}<ul class="page-proof" aria-label="Why customers choose Obsidian">${proofItems().map(item=>`<li>${e(item)}</li>`).join('')}</ul>${law}`;
+  return extra+law;
 }
 
 // The automotive cities that have their own window tinting page, in content order.

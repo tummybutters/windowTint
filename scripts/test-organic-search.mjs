@@ -26,6 +26,7 @@ for (const [path, copy] of Object.entries(data.pages)) {
     if (/Avery Dennison/.test(description)) assert(text.includes('Avery Dennison'), `${path} shows the film`);
   }
   if (copy.intro) assert(text.includes(copy.intro), `${path} answer-first introduction`);
+  if (copy.proof) assert.equal((html.match(/class="proof-stats"/g) || []).length, 1, `${path} shows the four proof figures once`);
   const nodes = [...html.matchAll(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/g)].flatMap(m => { const g = JSON.parse(m[1]); return g['@graph'] || [g]; });
   const business = nodes.find(node => node['@type'] === 'AutomotiveBusiness');
   assert(business && business.telephone === '+17146007134' && !business.address, `${path} business markup`);

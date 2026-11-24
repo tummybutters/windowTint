@@ -1,5 +1,5 @@
 import {button,escape} from './components.mjs';
-import {proofLine} from './organic-search.mjs';
+import {proofLine,proofStats} from './organic-search.mjs';
 import {imageTag} from './media.mjs';
 const img=(src,alt,cls='',eager=false)=>`<div class="photo ${cls}">${imageTag(src,alt,{loading:eager?'eager':'lazy',sizes:'(max-width:760px) 100vw, 65vw'})}</div>`;
 const auto='/car-window-tinting-near-me?quote_coverage=full_car#quote';
@@ -27,5 +27,5 @@ const bodies={
 export function renderApprovedPage(page){
  const body=bodies[page.path];
  if(!body||!page.proof)return body||null;
- return body.replace('<p class="lead-line">Less heat. Less glare. A finish that feels like yours.</p>',`<p class="lead-line">${escape(page.intro)}</p>${proofLine(page)}`);
+ return body.replace('<p class="lead-line">Less heat. Less glare. A finish that feels like yours.</p>',`<p class="lead-line">${escape(page.intro)}</p>${proofLine(page)}`).replace('<a class="quiet-link" href="#full-car-pricing">See full-car pricing ↓</a>',`<a class="quiet-link" href="#full-car-pricing">See full-car pricing ↓</a>${proofStats(page)}`);
 }
