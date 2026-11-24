@@ -1,5 +1,5 @@
 {
-  "note": "Photos allowed in page photo panels (cards, strips, splices). Reviewed by eye on 2026-11-24: premium or enthusiast vehicles only, with the finished car (or, for building pages, the treated glass) as the clear subject. subject is the centre of the car (or treated glass) as a fraction of width and height; panels turn it into an object-position for their own shape so the subject stays in frame; splice marks bright daylight exteriors that sit well side by side behind a panel. Excluded on purpose: close-ups of glare or windshields, interiors, roof-glass shots, sky- or building-dominant frames, dirt-lot shots, the classic Karmann Ghia, older Tacoma, Mercedes GLS and Toyota 4Runner frames.",
+  "note": "Photos allowed in page photo panels (cards, strips, splices). Reviewed by eye on 2026-11-24: premium or enthusiast vehicles only, with the finished car (or, for building pages, the treated glass) as the clear subject. subject is the centre of the car (or treated glass) as a fraction of width and height; panels turn it into an object-position for their own shape so the subject stays in frame; splice marks bright daylight exteriors that sit well side by side behind a panel. Excluded on purpose: close-ups of glare or windshields, interiors, roof-glass shots, sky- or building-dominant frames, dirt-lot shots, the classic Karmann Ghia, older Tacoma, Mercedes GLS and Toyota 4Runner frames. hero marks frames where the car fills the picture, used to lead city pages.",
   "photos": {
     "/gallery/jobs-20261117/ferrari-488-window-tint-beverly-hills-1-1440.webp": {
       "splice": true,
@@ -209,7 +209,8 @@
       "subject": {
         "x": 0.5,
         "y": 0.57
-      }
+      },
+      "hero": true
     },
     "/gallery/tintwiz-20261025/ford-f150-raptor-02.webp": {
       "splice": true,
@@ -237,14 +238,16 @@
       "subject": {
         "x": 0.5,
         "y": 0.7
-      }
+      },
+      "hero": true
     },
     "/gallery/cadillac-lyriq-01.jpg": {
       "splice": true,
       "subject": {
         "x": 0.5,
         "y": 0.6
-      }
+      },
+      "hero": true
     },
     "/gallery/cadillac-lyriq-02.jpg": {
       "splice": false,
@@ -258,21 +261,24 @@
       "subject": {
         "x": 0.5,
         "y": 0.55
-      }
+      },
+      "hero": true
     },
     "/gallery/lexus-gx-02.jpg": {
       "splice": false,
       "subject": {
         "x": 0.5,
         "y": 0.55
-      }
+      },
+      "hero": true
     },
     "/gallery/bmw-x3-01.jpg": {
       "splice": false,
       "subject": {
         "x": 0.5,
         "y": 0.5
-      }
+      },
+      "hero": true
     },
     "/gallery/bmw-x3-02.jpg": {
       "splice": false,
@@ -286,14 +292,16 @@
       "subject": {
         "x": 0.5,
         "y": 0.42
-      }
+      },
+      "hero": true
     },
     "/gallery/porsche-cayenne-coupe-03.jpg": {
       "splice": true,
       "subject": {
         "x": 0.5,
         "y": 0.45
-      }
+      },
+      "hero": true
     },
     "/assets/paid-landing/mobile-porsche-front.webp": {
       "splice": true,

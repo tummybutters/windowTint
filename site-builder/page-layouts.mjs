@@ -1,5 +1,5 @@
 import {imageTag} from './media.mjs';
-import {escape as e, brandName, divisions, button, reviews, card, quoteHref, quoteLabel} from './components.mjs';
+import {escape as e, brandName, divisions, button, reviews, card, quoteHref, quoteLabel, offer} from './components.mjs';
 import {linkedParagraphs} from './internal-links.mjs';
 import {proofLine,proofStats,questionsSection} from './organic-search.mjs';
 import {photoPicker,photoCards,photoSplice} from './photo-panels.mjs';
@@ -126,12 +126,52 @@ function portfolioProof(page,pages=[]) {
   return `<section class="section container"><div class="section-heading"><h2>From our work.</h2><a href="/window-tinting-gallery">View gallery ↗</a></div><div class="portfolio-proof">${photos.map(photo=>`<a href="${e(photo.src)}" data-lightbox data-caption="${e(photo.alt)}">${imageTag(photo.src,photo.alt,{sizes:'(max-width: 760px) calc(100vw - 40px), 45vw'})}</a>`).join('')}</div></section>`;
 }
 
+// Home-style closing: the quote panel on three real photographs.
+function homeClose(page,pick) {
+  const splice=photoSplice(pick);
+  const secondary=page.linkPlan?.secondary;
+  return `<section class="section container"><div class="quote-panel quote-panel--photos">${splice}<div class="quote-panel__copy"><p class="eyebrow">Let's make it yours</p><h2>Ready for your<br>upgrade?</h2><p>${e(page.quotePrompt||'Choose your vehicle and tell us what you would like tinted.')}</p><div class="actions">${button(quoteLabel(page),quoteHref(page))}${secondary?`<a class="next-step-link" href="${e(secondary.href)}">${e(secondary.label)} <span aria-hidden="true">↗</span></a>`:''}</div></div></div></section>`;
+}
+const trimWords=(text,limit)=>{
+  const sentences=String(text||'').match(/[^.!?]+[.!?]+/g)||[text];
+  let out='';
+  for(const sentence of sentences){if(out&&(out+sentence).trim().split(/\s+/).length>limit)break;out+=sentence}
+  return out.trim();
+};
+// Auto city pages follow the home page's pace: one idea per section, big two-line headings.
+function cityPage(page,pages,reviewData,index,pick) {
+  const c=page.cityContext||{};
+  const place=c.city||page.questions;
+  const coverage=[
+    {title:'Two front windows',price:'From $200',href:'/front-two-window-tinting',note:'Match the factory rear glass.'},
+    {title:'Sides and rear',price:'From $500',href:'/sides-rear-window-tinting',note:'$600 for a standard sedan.'},
+    {title:'Full car',price:'$820',href:'/full-car-window-tinting',note:'Sedan or coupe. SUV or truck $950.'}
+  ];
+  const photos=pick(3);
+  const compare=`<section class="section container city-compare"><div class="section-heading"><h2>Compare your<br>options.</h2></div><div class="photo-cards__grid">${coverage.map((item,i)=>`<a class="photo-card photo-card--link" href="${item.href}">${photos[i]?photos[i].tag('(max-width:760px) 100vw, 33vw','lazy',1):''}<div class="photo-card__body"><p class="eyebrow">${e(item.title)}</p><h3>${e(item.price)}</h3><p>${e(item.note)}</p>${photos[i]?`<small class="photo-card__caption">${e(photos[i].caption)}</small>`:''}</div></a>`).join('')}</div></section>`;
+  const fact=(c.facts||[])[0];
+  const visit=`<section class="section container city-visit"><div class="section-heading"><p class="eyebrow">At your ${e(place)} address</p><h2>A visit that fits<br>your location.</h2></div><div class="city-visit__copy"><p>${e(trimWords(c.planning||'Tell us where the car will be. We confirm the space, access and any travel fee with your quote.',60))}</p>${fact?`<p class="city-visit__fact">${e(fact.text)} <a href="${e(fact.sourceUrl)}" target="_blank" rel="noopener">City information ↗</a></p>`:''}</div></section>`;
+  const questions=questionsSection(page).replace(/<h2 id="questions-heading">Window tinting questions in ([^<]+)<\/h2>/,'<h2 id="questions-heading">Window tinting<br>questions in $1</h2>');
+  // Every link the old layout carried, in one compact row above the footer.
+  const groups=[];
+  const add=(title,links)=>{const list=links.filter(l=>l&&l.href&&l.href!==page.path);if(list.length)groups.push({title,links:list})};
+  const services=pages.filter(item=>item.division==='auto'&&item.type==='service'&&!item.path.includes('ceramic-coating')&&item.path!=='/chrome-delete').slice(0,4);
+  add('Find your fit',services.map(p=>({href:p.path,label:p.title})));
+  const contextLinks=[...new Map((page.linkPlan?.links||[]).map(l=>[l.href,{href:l.href,label:index.get(l.href)?.title||l.anchor}])).values()];
+  const relatedLinks=[...new Set(page.relatedPaths||[])].map(p=>index.get(p)).filter(Boolean).map(p=>({href:p.path,label:p.title}));
+  add('Keep exploring',[...new Map([...relatedLinks,...contextLinks].map(l=>[l.href,l])).values()].slice(0,6));
+  add('Also in '+place,(c.otherServices||[]).map(p=>({href:p.path,label:p.title})));
+  add('Nearby',(c.nearby||[]).map(p=>({href:p.path,label:p.title})));
+  const row=`<nav class="container related-row" aria-label="More window tinting pages">${groups.map(g=>`<div><p class="eyebrow">${e(g.title)}</p><ul>${g.links.map(l=>`<li><a href="${e(l.href)}">${e(l.label)}</a></li>`).join('')}</ul></div>`).join('')}</nav>`;
+  return intro(page,'local')+offer()+compare+visit+reviews(reviewData)+'<!--city-projects-->'+questions+sources(page)+homeClose(page,pick)+row;
+}
+
 export function renderInner(page,pages,reviewData) {
   const index=new Map(pages.map(p=>[p.path,p]));
   // Photos already on the page (hub catalog cards) are not repeated in the photo panels.
   const pick=photoPicker(page,page.type==='hub'?pages.filter(p=>p.division===page.division&&p.type==='service').map(p=>p.image):[]);
   const auto=page.division==='auto';
-  const tail=()=>(page.questions?questionsSection(page):faq(page))+sources(page)+related(page,index)+close(page,pick);
+  const tail=()=>(page.questions?questionsSection(page):faq(page))+sources(page)+related(page,index)+(auto&&['service','vehicle'].includes(page.type)&&page.proof?homeClose(page,pick):close(page,pick));
   const autoDetails=()=>auto?sectionCards(page,1,'More to know.'):details(page);
   if(page.path==='/about')return intro(page,'story')+`<section class="container editorial-body">${leadSection(page)}${details(page)}</section>`+reviews(reviewData)+related(page,index)+close(page);
   if(page.type==='hub') {
@@ -143,6 +183,7 @@ export function renderInner(page,pages,reviewData) {
   }
   if(page.type==='vehicle')return intro(page,'vehicle')+`<section class="container vehicle-layout">${highlights(page)}${comparison(page)}${leadSection(page)}${autoDetails()}${steps(page)}${checklist(page)}</section>`+tail();
   if(page.type==='guide')return intro(page,'editorial',{action:false})+`<section class="container guide-layout">${leadSection(page,{photo:false})}${comparison(page)}${highlights(page)}${steps(page)}${details(page)}${checklist(page)}</section>`+tail();
+  if(page.type==='city'&&auto&&page.questions)return cityPage(page,pages,reviewData,index,photoPicker(page,['/gallery/jobs-20261117/audi-rs6-avant-window-tint-yorba-linda-1-1440.webp']));
   if(page.type==='city'){
     const place=page.cityContext?.city||page.questions||'your area';
     const choices=auto&&page.comparison?.columns?.length===2&&!page.comparison.rows.some(row=>row.some(cell=>String(cell).includes('$')))

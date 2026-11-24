@@ -58,7 +58,8 @@ for(const page of pages) {
 
   if(['/guides','/window-tinting-gallery'].includes(page.path))body+=ownerGuideCard();
   const cityProjects=page.division==='auto'&&page.path.endsWith('-window-tinting')?projectData(root).filter(j=>page.path==='/'+j.city.toLowerCase().replaceAll(' ','-')+'-window-tinting'):[];
-  if(cityProjects.length)body+=projectCards(cityProjects,'Projects in '+cityProjects[0].city);
+  if(cityProjects.length){const cards=projectCards(cityProjects,'Projects in '+cityProjects[0].city);body=body.includes('<!--city-projects-->')?body.replace('<!--city-projects-->',cards):body+cards}
+  body=body.replace('<!--city-projects-->','');
   const projectAssets=cityProjects.length||page.path==='/window-tinting-gallery'?'<link rel="stylesheet" href="/assets/site/projects.css">':'';
   const filmAssets=body.includes('class="section container project-film"')?'<link rel="stylesheet" href="/assets/media/project-video.css?v=20261115"><script defer src="/assets/media/project-film.js?v=20261115"></script>':'';
   write(destination(page.path).slice(1),shell(page,body,(approved?'<link rel="stylesheet" href="/assets/site/service-design.css"><script defer src="/assets/site/service-design.js"></script>':'')+filmAssets+projectAssets));

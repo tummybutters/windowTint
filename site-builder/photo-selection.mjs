@@ -9,6 +9,7 @@ const autoPool=catalog.filter(image=>image.division==='auto'&& !/interior|roof/i
 // Generic auto pages lead with a reviewed premium photo (content/photo-curation.json).
 const curated=JSON.parse(fs.readFileSync(new URL('../content/photo-curation.json',import.meta.url),'utf8')).photos;
 const premiumPool=autoPool.filter(image=>curated[image.src]);
+const heroPool=autoPool.filter(image=>curated[image.src]?.hero);
 const exactGroups=[['bmw-m4','BMW M4'],['bmw-x3','BMW X3'],['toyota-tacoma','Toyota Tacoma'],['toyota-4runner','Toyota 4Runner'],['porsche-911','Porsche 911'],['tesla-model-y','Tesla Model Y']];
 function autoChoices(page){
  const path=page.path;
@@ -24,7 +25,7 @@ function autoChoices(page){
  if(/mercedes|luxury|full-car|chrome-delete/.test(path))return catalog.filter(image=>image.group==='Mercedes-AMG GT');
  if(/mobile|workplace|apartment/.test(path))return catalog.filter(image=>image.group==='Porsche 911');
  if(/tesla/.test(path))return catalog.filter(image=>image.group==='Tesla Model Y');
- const primary=cycle(premiumPool.length?premiumPool:autoPool,path);
+ const primary=cycle(page.type==='city'&&heroPool.length?heroPool:premiumPool.length?premiumPool:autoPool,path);
  return [primary,...catalog.filter(image=>image.group===primary.group&&image.src!==primary.src)];
 }
 export function withPortfolioPhoto(record){
@@ -32,7 +33,7 @@ export function withPortfolioPhoto(record){
  if(!['auto','home','commercial'].includes(page.division))return page;
  const choices=page.division==='auto'?autoChoices(page):catalog.filter(image=>image.division===page.division);
  // Auto city pages keep a set photo only if it is on the reviewed premium list.
- const existing=page.image&&page.imageKind!=='illustration'&&!page.image.endsWith('.svg')&&!(page.division==='auto'&&['city','service','hub'].includes(page.type)&&!curated[normalized(page.image)]);
+ const existing=page.image&&page.imageKind!=='illustration'&&!page.image.endsWith('.svg')&&!(page.division==='auto'&&['city','service','hub'].includes(page.type)&&!curated[normalized(page.image)]?.[page.type==='city'?'hero':'subject']);
  const selected=existing?{src:normalized(page.image),alt:page.imageAlt||photo(normalized(page.image))?.alt}:choices[0];
  if(!selected)return page;
  let caption=page.imageCaption;
