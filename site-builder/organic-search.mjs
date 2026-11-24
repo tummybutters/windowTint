@@ -29,8 +29,8 @@ export function proofItems() {
   return [
     {value:reviewData.rating.toFixed(1),label:`stars from ${reviewData.count} Google reviews`},
     {value:'From $500',label:'ceramic sides and rear, installed at your home or office'},
-    {value:'Lifetime',label:'tint warranty'},
-    {value:'Avery Dennison',label:'nano ceramic film'}
+    {value:data.proof.warranty,label:data.proof.warrantyLabel},
+    {value:data.proof.film,label:data.proof.filmLabel}
   ];
 }
 export function proofStats(page={proof:true}) {
@@ -95,11 +95,11 @@ const templates=[
     link:{href:'/california-window-tint-law',label:'California tint law guide'}
   },
   {
-    q:[()=>`Which film do you use and what's the warranty?`,()=>`What tint brand do you install?`,()=>`Is the tint covered by a warranty?`],
+    q:[()=>`Which film do you use and what's the warranty?`,()=>`What tint brands do you install?`,()=>`Is the tint covered by a warranty?`],
     a:[
-      ()=>`We install Avery Dennison nano ceramic film, and the tint carries a lifetime warranty. You get the written warranty terms for your film with your installation.`,
-      ()=>`Avery Dennison nano ceramic film, chosen for heat and glare reduction with a clean look. Your tint comes with a lifetime warranty, and we give you the written terms for the exact film installed.`,
-      ()=>`Yes. The tint carries a lifetime warranty and is Avery Dennison nano ceramic film. Keep your invoice and window list; the written terms for your film come with your installation.`
+      ()=>`We install only premium ceramic films from Avery Dennison, 3M and PPF Innovation, computer pre-cut for a precise fit and backed by a lifetime manufacturer warranty. You get the written warranty terms for your film with your installation.`,
+      ()=>`Avery Dennison, 3M and PPF Innovation ceramic films, chosen for heat and glare reduction with a clean look and computer pre-cut for a precise fit. Every film carries a lifetime manufacturer warranty, and we give you the written terms for the exact film installed.`,
+      ()=>`Yes. Our Avery Dennison, 3M and PPF Innovation ceramic films are backed by a lifetime manufacturer warranty. Keep your invoice and window list; the written terms for your film come with your installation.`
     ],
     link:{href:'/window-tint-warranty-questions',label:'Warranty questions to ask'}
   },

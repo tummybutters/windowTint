@@ -4,44 +4,48 @@
     "name": "Obsidian Autoworks",
     "telephone": "+17146007134",
     "priceRange": "$200-$1,150",
-    "sameAs": ["https://www.instagram.com/obsidianautoworksoc/"],
+    "sameAs": [
+      "https://www.instagram.com/obsidianautoworksoc/"
+    ],
     "areaServedPagePattern": "/<city>-window-tinting"
   },
   "proof": {
-    "film": "Avery Dennison nano ceramic film",
-    "warranty": "Lifetime tint warranty",
-    "mobile": "Installed at your home or office"
+    "film": "3M · Avery Dennison",
+    "filmLabel": "premium ceramic film, computer pre-cut",
+    "warranty": "Lifetime",
+    "warrantyLabel": "manufacturer warranty",
+    "source": "Obsidian TintWiz Driveway Package proposal: premium ceramic films from Avery Dennison, PPF Innovation and 3M, lifetime manufacturer warranty, computer pre-cut"
   },
   "pages": {
     "/": {
       "metaTitle": "Mobile Window Tinting Orange County | From $500",
-      "description": "Ceramic window tint installed in your driveway, anywhere in Orange County. Sides and rear from $500. Avery Dennison film, lifetime warranty, 5 stars from 82 reviews.",
+      "description": "Ceramic tint in your driveway anywhere in Orange County. Sides and rear from $500. 3M and Avery Dennison film, lifetime manufacturer warranty, 82 5-star reviews.",
       "intro": "Mobile window tinting in Orange County starts at $500 for ceramic sides and rear ($600 for a standard sedan), installed in your driveway at home or at work. Get a quote for your vehicle, or call or text (714) 600-7134.",
       "proof": true,
       "questions": "orange-county"
     },
     "/mobile-window-tinting": {
       "metaTitle": "Mobile Window Tinting | Orange County, From $500",
-      "description": "We come to your home or office anywhere in Orange County. Ceramic sides and rear from $500, Avery Dennison film, lifetime warranty, 82 five-star reviews.",
+      "description": "We come to your home or office anywhere in OC. Sides and rear from $500. 3M and Avery Dennison film, lifetime manufacturer warranty, 82 five-star reviews.",
       "intro": "Mobile window tinting costs $500 to $700 for ceramic sides and rear depending on the vehicle, and we install it at your home or office anywhere in Orange County. Choose your coverage below and request a quote, or call or text (714) 600-7134.",
       "proof": true
     },
     "/ceramic-window-tinting": {
       "metaTitle": "Ceramic Window Tint Orange County | Mobile, From $500",
-      "description": "Avery Dennison nano ceramic tint installed in your driveway. Cooler cabin, cleaner look, lifetime warranty. Sides and rear from $500; sedan $600.",
+      "description": "3M and Avery Dennison ceramic tint installed in your driveway. Cooler cabin, lifetime manufacturer warranty. Sides and rear from $500; sedan $600.",
       "intro": "Ceramic window tint costs $500 for the sides and rear of a coupe, $600 for a sedan and $700 for an SUV or truck, installed in your driveway at home or at work in Orange County. Pick your coverage and request a quote, or call or text (714) 600-7134.",
       "proof": true
     },
     "/window-tint-pricing": {
       "metaTitle": "Window Tint Prices Orange County | Every Package",
-      "description": "Every price in one place: two fronts from $200, sides and rear from $500, full cabin from $820. Free sun strip with select packages. Mobile, lifetime warranty.",
+      "description": "Every price: two fronts from $200, sides and rear from $500, full cabin from $820. Free sun strip with select packages. Lifetime manufacturer warranty.",
       "intro": "Window tint in Orange County costs from $200 for two front windows, $500 for ceramic sides and rear and $720 for a full car, all installed at your home or office. Find your vehicle in the table, then request a quote or call or text (714) 600-7134.",
       "introExtra": "Packages: Factory Special two fronts from $200 (add a sun strip for $30) · Front Cabin from $420 with a free sun strip · Driveway Package sides and rear from $500 with a free sun strip or eligible small sunroof · Complete Cabin Comfort from $820 with a free sun strip.",
       "proof": true
     },
     "/tesla-window-tinting": {
       "metaTitle": "Tesla Window Tint Orange County | Model Y $700",
-      "description": "Mobile Tesla ceramic tint at your home or office. Model S $600, Model Y $700, Model 3 $950, free sun strip. Glass roofs excluded. Lifetime warranty.",
+      "description": "Mobile Tesla ceramic tint at home or work. Model S $600, Model Y $700, Model 3 $950, free sun strip. Glass roofs excluded. Lifetime manufacturer warranty.",
       "intro": "Tesla ceramic tint for the sides and rear costs $600 for a Model S, $700 for a Model Y and $950 for a Model 3, installed at your home or office in Orange County. Tesla glass roofs are excluded and the Driveway Package adds a free sun strip; request a quote for your model, or call or text (714) 600-7134.",
       "proof": true
     },
@@ -50,184 +54,184 @@
     },
     "/full-car-window-tinting": {
       "metaTitle": "Full Car Window Tint Orange County | Mobile Ceramic",
-      "description": "Full-car ceramic tint at your home or office: coupe $720, sedan $820, SUV or truck $950. Avery Dennison film, lifetime warranty, 82 five-star reviews.",
+      "description": "Full-car ceramic tint at home or work: coupe $720, sedan $820, SUV $950. 3M and Avery Dennison film, lifetime manufacturer warranty, 82 five-star reviews.",
       "intro": "Full-car ceramic tint costs $720 for a coupe, $820 for a sedan and $950 for an SUV or truck, installed at your home or office in Orange County. Get your full-car quote, or call or text (714) 600-7134.",
       "proof": true
     },
     "/sides-rear-window-tinting": {
       "metaTitle": "Sides and Rear Window Tint Orange County | From $500",
-      "description": "Ceramic sides and rear installed at your home or work: coupe $500, sedan $600, SUV or truck $700. Avery Dennison film, lifetime warranty, 82 five-star reviews.",
+      "description": "Sides and rear at home or work: coupe $500, sedan $600, SUV or truck $700. 3M and Avery Dennison film, lifetime manufacturer warranty, 82 five-star reviews.",
       "intro": "Sides-and-rear ceramic tint costs $500 for a coupe, $600 for a sedan and $700 for an SUV or truck, installed at your home or work in Orange County. Request a quote with your vehicle, or call or text (714) 600-7134.",
       "proof": true
     },
     "/front-two-window-tinting": {
       "metaTitle": "Front Window Tint Orange County | Two Fronts From $200",
-      "description": "Two front windows from $200 ($220 SUV or truck), tinted at your home or work to match the factory rear glass. Avery Dennison ceramic, lifetime warranty, 82 five-star reviews.",
+      "description": "Two front windows from $200 ($220 SUV), tinted at your home or work. 3M and Avery Dennison film, lifetime manufacturer warranty, 82 five-star reviews.",
       "intro": "Tinting the two front windows costs $200 for a coupe or sedan and $220 for an SUV or truck, done at your home or work in Orange County to match your factory rear glass. Request a front-window quote, or call or text (714) 600-7134.",
       "proof": true
     },
     "/windshield-window-tinting": {
       "metaTitle": "Windshield Tint Orange County | Ceramic From $220",
-      "description": "Ceramic windshield film from $220 for a coupe or sedan and $250 for an SUV or truck, installed at home or work. Avery Dennison film, lifetime warranty, 82 five-star reviews.",
+      "description": "Ceramic windshield film from $220 ($250 SUV or truck), at home or work. 3M and Avery Dennison film, lifetime manufacturer warranty, 82 five-star reviews.",
       "intro": "Ceramic windshield film costs $220 for a coupe or sedan and $250 for an SUV or truck, installed at your home or work in Orange County. Ask for a windshield quote with your vehicle, or call or text (714) 600-7134.",
       "proof": true
     },
     "/tint-removal": {
       "metaTitle": "Window Tint Removal Orange County | Mobile, At Your Home",
-      "description": "Old or peeling tint removed at your home or office, quoted after we see the film. New Avery Dennison ceramic from $500, lifetime warranty, 82 five-star reviews.",
+      "description": "Old tint removed at home or work, quoted once we see it. New tint from $500. 3M and Avery Dennison film, lifetime manufacturer warranty, 82 five-star reviews.",
       "intro": "Tint removal is quoted once we see the old film, and new ceramic sides and rear start at $500, with both done at your home or office in Orange County. Send a photo of the old tint with your quote request, or call or text (714) 600-7134.",
       "proof": true
     },
     "/sunroof-window-tinting": {
       "metaTitle": "Sunroof Tint Orange County | Free With Driveway Package",
-      "description": "Eligible small sunroof tint is free with ceramic sides and rear from $500, installed at home or work. Avery Dennison film, lifetime warranty, 82 five-star reviews.",
+      "description": "Small sunroof tint free with sides and rear from $500, at home or work. 3M and Avery Dennison film, lifetime manufacturer warranty, 82 five-star reviews.",
       "intro": "An eligible small sunroof is tinted free with the Driveway Package, ceramic sides and rear from $500, installed at your home or work in Orange County; panoramic and Tesla glass roofs are quoted separately. Send a photo of your roof glass with your quote request, or call or text (714) 600-7134.",
       "proof": true
     },
     "/luxury-car-window-tinting": {
       "metaTitle": "Luxury Car Window Tint Orange County | Mobile Ceramic",
-      "description": "Avery Dennison ceramic tint for luxury cars, installed at your home or office. Sides and rear from $500; specialty models quoted. Lifetime warranty, 82 five-star reviews.",
+      "description": "Luxury-car tint at home or work. Sides and rear from $500; specialty quoted. 3M and Avery Dennison film, lifetime manufacturer warranty, 82 five-star reviews.",
       "intro": "Luxury-car ceramic tint starts at $500 for the sides and rear, with exotic and specialty models quoted for their glass, installed at your home or office in Orange County. Tell us your car and the windows you want tinted, or call or text (714) 600-7134.",
       "proof": true
     },
     "/window-tint-replacement": {
       "metaTitle": "Window Tint Replacement Orange County | At Your Home",
-      "description": "Replace peeling or mismatched tint at home or work: removal quoted with your car, new Avery Dennison ceramic sides and rear from $500. Lifetime warranty, 82 five-star reviews.",
+      "description": "Replace peeling tint at home or work: new sides and rear from $500. 3M and Avery Dennison film, lifetime manufacturer warranty, 82 five-star reviews.",
       "intro": "Replacing old tint costs $500 and up for new ceramic sides and rear, plus removal quoted once we see the film, all done at your home or work in Orange County. Send your vehicle and a photo of the old tint for a quote, or call or text (714) 600-7134.",
       "proof": true
     },
     "/window-tint-consultation": {
       "metaTitle": "Window Tint Consultation Orange County | Compare Shades",
-      "description": "Compare tint shades and coverage for your car at home or work before you book. Ceramic sides and rear from $500, Avery Dennison film, lifetime warranty, 82 five-star reviews.",
+      "description": "Compare shades at home or work before you book. Sides and rear from $500. 3M and Avery Dennison film, lifetime manufacturer warranty, 82 five-star reviews.",
       "intro": "A tint consultation helps you choose shade and coverage before you book, with ceramic sides and rear from $500 installed at your home or work in Orange County. Tell us your vehicle and what you want to change, or call or text (714) 600-7134.",
       "proof": true
     },
     "/tesla-model-y-window-tinting": {
       "metaTitle": "Tesla Model Y Window Tint Orange County | $700",
-      "description": "Model Y ceramic sides and rear $700 at your home or office, full package $950. Avery Dennison film, lifetime warranty, 82 five-star reviews. Glass roof quoted separately.",
+      "description": "Model Y sides and rear $700, full $950, at your home or office. 3M and Avery Dennison film, lifetime manufacturer warranty, 82 five-star reviews.",
       "intro": "Tesla Model Y ceramic tint costs $700 for the sides and rear and $950 for the full package, installed at your home or office in Orange County. The glass roof is a separate add-on; request your Model Y quote, or call or text (714) 600-7134.",
       "proof": true
     },
     "/tesla-model-3-window-tinting": {
       "metaTitle": "Tesla Model 3 Window Tint Orange County | $950",
-      "description": "Model 3 ceramic sides and rear $950 at your home or office, full package $1,150. Avery Dennison film, lifetime warranty, 82 five-star reviews. Glass roof quoted separately.",
+      "description": "Model 3 sides and rear $950, full $1,150, at your home or office. 3M and Avery Dennison film, lifetime manufacturer warranty, 82 five-star reviews.",
       "intro": "Tesla Model 3 ceramic tint costs $950 for the sides and rear, including the rear screen, and $1,150 for the full package, installed at your home or office in Orange County. Request your Model 3 quote, or call or text (714) 600-7134.",
       "proof": true
     },
     "/tesla-model-x-window-tinting": {
       "metaTitle": "Tesla Model X Window Tint Orange County | Mobile Ceramic",
-      "description": "Model X ceramic tint quoted for its glass layout and installed at your home or office. Avery Dennison film, lifetime warranty, 82 five-star reviews. Glass roof quoted separately.",
+      "description": "Model X tint quoted for its glass, installed at your home or office. 3M and Avery Dennison film, lifetime manufacturer warranty, 82 five-star reviews.",
       "intro": "Tesla Model X tint is quoted for its own glass layout rather than a standard SUV price, and we install it at your home or office in Orange County. Tell us your year and the windows you want tinted for a quote, or call or text (714) 600-7134.",
       "proof": true
     },
     "/toyota-tacoma-window-tinting": {
       "metaTitle": "Toyota Tacoma Window Tint Orange County | From $220",
-      "description": "Tacoma ceramic tint at your home or work: two fronts $220, sides and rear $700 for trucks. Avery Dennison film, lifetime warranty, 82 five-star reviews.",
+      "description": "Tacoma tint at home or work: two fronts $220, sides and rear $700. 3M and Avery Dennison film, lifetime manufacturer warranty, 82 five-star reviews.",
       "intro": "Toyota Tacoma ceramic tint costs $220 for the two front windows and $700 for the sides and rear at standard truck pricing, installed at your home or work in Orange County. Tell us your cab style for a quote, or call or text (714) 600-7134.",
       "proof": true
     },
     "/toyota-4runner-window-tinting": {
       "metaTitle": "Toyota 4Runner Window Tint Orange County | From $700",
-      "description": "4Runner ceramic sides and rear $700, full car $950, tinted at your home or office. Avery Dennison film, lifetime warranty, 82 five-star reviews.",
+      "description": "4Runner sides and rear $700, full car $950, at your home or office. 3M and Avery Dennison film, lifetime manufacturer warranty, 82 five-star reviews.",
       "intro": "Toyota 4Runner ceramic tint costs $700 for the sides and rear and $950 for a full car at standard SUV pricing, installed at your home or office in Orange County. Request a 4Runner quote, or call or text (714) 600-7134.",
       "proof": true
     },
     "/bmw-m4-window-tinting": {
       "metaTitle": "BMW M4 Window Tint Orange County | Coupe From $500",
-      "description": "M4 coupe ceramic sides and rear from $500, two fronts from $200, done at your home or work. Avery Dennison film, lifetime warranty, 82 five-star reviews.",
+      "description": "M4 coupe sides and rear from $500, two fronts $200, at home or work. 3M and Avery Dennison film, lifetime manufacturer warranty, 82 five-star reviews.",
       "intro": "BMW M4 coupe ceramic tint starts at $500 for the sides and rear and $200 for the two front windows, installed at your home or work in Orange County; convertibles are confirmed with your quote. Tell us your year and body style, or call or text (714) 600-7134.",
       "proof": true
     },
     "/bmw-x3-window-tinting": {
       "metaTitle": "BMW X3 Window Tint Orange County | Mobile Ceramic",
-      "description": "X3 ceramic sides and rear $700, two fronts $220, installed at your home or office. Avery Dennison film, lifetime warranty, 82 five-star reviews.",
+      "description": "X3 sides and rear $700, two fronts $220, at your home or office. 3M and Avery Dennison film, lifetime manufacturer warranty, 82 five-star reviews.",
       "intro": "BMW X3 ceramic tint costs $220 for the two front windows and $700 for the sides and rear at standard SUV pricing, installed at your home or office in Orange County. Request your X3 quote, or call or text (714) 600-7134.",
       "proof": true
     },
     "/mercedes-c-class-window-tinting": {
       "metaTitle": "Mercedes C-Class Window Tint Orange County | From $500",
-      "description": "C-Class ceramic sides and rear: sedan $600, coupe $500, installed at your home or work. Avery Dennison film, lifetime warranty, 82 five-star reviews.",
+      "description": "C-Class sides and rear: sedan $600, coupe $500, at home or work. 3M and Avery Dennison film, lifetime manufacturer warranty, 82 five-star reviews.",
       "intro": "Mercedes C-Class ceramic tint costs $600 for the sides and rear of a sedan and $500 for a coupe, installed at your home or work in Orange County. Tell us your body style for a quote, or call or text (714) 600-7134.",
       "proof": true
     },
     "/porsche-911-window-tinting": {
       "metaTitle": "Porsche 911 Window Tint Orange County | Mobile Ceramic",
-      "description": "Porsche 911 ceramic tint quoted for your body style and installed at your home or office. Avery Dennison film, lifetime warranty, 82 five-star reviews.",
+      "description": "Porsche 911 tint quoted for your body style, at your home or office. 3M and Avery Dennison film, lifetime manufacturer warranty, 82 five-star reviews.",
       "intro": "Porsche 911 ceramic tint is quoted for your body style and the glass you want covered, and we install it at your home or office in Orange County. Send your year and body style for a quote, or call or text (714) 600-7134.",
       "proof": true
     },
     "/range-rover-sport-window-tinting": {
       "metaTitle": "Range Rover Sport Window Tint Orange County | Mobile",
-      "description": "Range Rover Sport ceramic tint at your home or work, from $700 for sides and rear at SUV pricing. Avery Dennison film, lifetime warranty, 82 five-star reviews.",
+      "description": "Range Rover Sport sides and rear from $700, at your home or work. 3M and Avery Dennison film, lifetime manufacturer warranty, 82 five-star reviews.",
       "intro": "Range Rover Sport ceramic tint starts at $700 for the sides and rear at standard SUV pricing, with roof glass quoted separately, installed at your home or work in Orange County. Request a quote with a side photo of the car, or call or text (714) 600-7134.",
       "proof": true
     },
     "/irvine-window-tinting": {
       "metaTitle": "Window Tinting Irvine | Mobile, We Come to You",
-      "description": "Mobile ceramic window tinting in Irvine at your home or office. Sides and rear from $500. Avery Dennison film with a lifetime warranty. 82 five-star reviews.",
+      "description": "Mobile ceramic window tinting in Irvine at home or office, from $500. 3M and Avery Dennison film, lifetime manufacturer warranty, 82 five-star reviews.",
       "intro": "Window tinting in Irvine starts at $500 for ceramic sides and rear ($600 for a standard sedan), and we install it at your Irvine home or office. Tell us your vehicle for a quote, or call or text (714) 600-7134.",
       "proof": true,
       "questions": "Irvine"
     },
     "/huntington-beach-window-tinting": {
       "metaTitle": "Window Tinting Huntington Beach | Mobile Ceramic",
-      "description": "Ceramic window tint installed at your Huntington Beach home or work. Sides and rear from $500, lifetime warranty, Avery Dennison film. 82 five-star reviews.",
+      "description": "Ceramic tint at your Huntington Beach home or work, from $500. 3M and Avery Dennison film, lifetime manufacturer warranty, 82 five-star reviews.",
       "intro": "Ceramic window tinting in Huntington Beach costs $500 to $700 for sides and rear depending on the vehicle, with Tesla Model Y at $700, installed at your home or work. Request a quote for your car, or call or text (714) 600-7134.",
       "proof": true,
       "questions": "Huntington Beach"
     },
     "/costa-mesa-window-tinting": {
       "metaTitle": "Window Tinting Costa Mesa | Tint Shop in Your Driveway",
-      "description": "Mobile ceramic window tinting in Costa Mesa. Skip the shop: sides and rear from $500 at your home or office. Lifetime warranty. 82 five-star reviews.",
+      "description": "Costa Mesa tint shop in your driveway: sides and rear from $500. 3M and Avery Dennison film, lifetime manufacturer warranty, 82 five-star reviews.",
       "intro": "Window tinting in Costa Mesa starts at $500 for ceramic sides and rear on a coupe, done in your driveway or at your office instead of a tint shop. Get a quote for your vehicle, or call or text (714) 600-7134.",
       "proof": true,
       "questions": "Costa Mesa"
     },
     "/newport-beach-window-tinting": {
       "metaTitle": "Window Tinting Newport Beach | Mobile Ceramic Tint",
-      "description": "Premium ceramic window tint installed at your Newport Beach home or office. Sides and rear from $500. Avery Dennison film, lifetime warranty.",
+      "description": "Premium ceramic tint at your Newport Beach home or office. Sides and rear from $500. 3M and Avery Dennison film, lifetime manufacturer warranty.",
       "intro": "Ceramic window tinting in Newport Beach starts at $200 for a front-window match and $500 for sides and rear, installed at your Newport Beach home or office. Request a quote for your car, or call or text (714) 600-7134.",
       "proof": true,
       "questions": "Newport Beach"
     },
     "/anaheim-window-tinting": {
       "metaTitle": "Window Tinting Anaheim | We Come to You, From $500",
-      "description": "Mobile ceramic window tinting in Anaheim, done at your home or work. Sides and rear from $500 with a lifetime warranty. 82 five-star reviews.",
+      "description": "Mobile ceramic window tinting in Anaheim, done at your home or work. Sides and rear from $500, lifetime manufacturer warranty. 82 five-star reviews.",
       "intro": "Window tinting in Anaheim costs from $500 for ceramic sides and rear, and we come to your Anaheim home or workplace to install it. Send your vehicle for a quote, or call or text (714) 600-7134.",
       "proof": true,
       "questions": "Anaheim"
     },
     "/tustin-window-tinting": {
       "metaTitle": "Window Tinting Tustin | Mobile Ceramic, From $500",
-      "description": "Ceramic window tint at your Tustin home or office: sides and rear from $500, two fronts from $200. Avery Dennison film, lifetime warranty, 82 five-star reviews.",
+      "description": "Tustin tint at home or office: two fronts $200, sides and rear $500. 3M and Avery Dennison film, lifetime manufacturer warranty, 82 five-star reviews.",
       "intro": "Window tinting in Tustin starts at $200 for two front windows and $500 for ceramic sides and rear, installed at your Tustin home or office. Tell us your vehicle and coverage for a quote, or call or text (714) 600-7134.",
       "proof": true,
       "questions": "Tustin"
     },
     "/laguna-beach-window-tinting": {
       "metaTitle": "Window Tinting Laguna Beach | We Come to Your Home",
-      "description": "Mobile window tinting in Laguna Beach: ceramic sides and rear from $500 at your home or work. Avery Dennison film, lifetime warranty, 82 five-star reviews.",
+      "description": "Laguna Beach mobile tint at your home or work: sides and rear from $500. 3M and Avery Dennison film, lifetime manufacturer warranty, 82 five-star reviews.",
       "intro": "Ceramic window tinting in Laguna Beach starts at $500 for sides and rear ($600 for a sedan), installed at your Laguna Beach home or workplace once we confirm a workable spot. Request a quote, or call or text (714) 600-7134.",
       "proof": true,
       "questions": "Laguna Beach"
     },
     "/aliso-viejo-window-tinting": {
       "metaTitle": "Window Tinting Aliso Viejo | Ceramic Tint at Home or Work",
-      "description": "Aliso Viejo window tinting at your home or office, from $500 for ceramic sides and rear. Old film removal quoted. Avery Dennison film, lifetime warranty, 82 five-star reviews.",
+      "description": "Aliso Viejo tint at home or office from $500; old film removal quoted. 3M and Avery Dennison film, lifetime manufacturer warranty, 82 five-star reviews.",
       "intro": "Window tinting in Aliso Viejo starts at $500 for new ceramic sides and rear, with old-film removal quoted separately, all done at your Aliso Viejo home or office. Send your vehicle for a quote, or call or text (714) 600-7134.",
       "proof": true,
       "questions": "Aliso Viejo"
     },
     "/santa-ana-window-tinting": {
       "metaTitle": "Window Tinting Santa Ana | Mobile Tint, From $500",
-      "description": "Santa Ana mobile window tint from $200 for two fronts or $500 for sides and rear, at your home or work. Avery Dennison ceramic, lifetime warranty, 82 five-star reviews.",
+      "description": "Santa Ana mobile tint: two fronts $200, sides and rear from $500. 3M and Avery Dennison film, lifetime manufacturer warranty, 82 five-star reviews.",
       "intro": "Window tinting in Santa Ana costs $200 for two front windows or $500 to $700 for ceramic sides and rear, installed at your Santa Ana home or workplace. Start small or go full cabin: request a quote, or call or text (714) 600-7134.",
       "proof": true,
       "questions": "Santa Ana"
     },
     "/orange-window-tinting": {
       "metaTitle": "Window Tinting Orange, CA | Installed in Your Driveway",
-      "description": "Window tinting in the city of Orange at your home or work: ceramic sides and rear from $500. Avery Dennison film, lifetime warranty, 82 five-star reviews.",
+      "description": "Tint in the city of Orange at home or work: sides and rear from $500. 3M and Avery Dennison film, lifetime manufacturer warranty, 82 five-star reviews.",
       "intro": "Window tinting in the city of Orange starts at $500 for ceramic sides and rear, installed in your driveway or at your workplace in Orange. Tell us your vehicle and address city for a quote, or call or text (714) 600-7134.",
       "proof": true,
       "questions": "Orange",
@@ -235,56 +239,56 @@
     },
     "/mission-viejo-window-tinting": {
       "metaTitle": "Window Tinting Mission Viejo | Mobile Ceramic Tint",
-      "description": "Family-car window tinting in Mission Viejo at your home: SUV sides and rear $700, sedan $600. Avery Dennison ceramic, lifetime warranty, 82 five-star reviews.",
+      "description": "Mission Viejo family-car tint at home: sedan $600, SUV $700. 3M and Avery Dennison film, lifetime manufacturer warranty, 82 five-star reviews.",
       "intro": "Window tinting in Mission Viejo costs $600 for ceramic sides and rear on a sedan and $700 on an SUV, installed at your Mission Viejo home or workplace. Request a quote for the family car, or call or text (714) 600-7134.",
       "proof": true,
       "questions": "Mission Viejo"
     },
     "/lake-forest-window-tinting": {
       "metaTitle": "Window Tinting Lake Forest | At Home or Work, From $500",
-      "description": "Lake Forest window tint for trucks, SUVs and daily drivers at home or work. Sides and rear from $500, trucks $700. Avery Dennison film, lifetime warranty, 82 five-star reviews.",
+      "description": "Lake Forest tint at home or work: cars from $500, trucks $700. 3M and Avery Dennison film, lifetime manufacturer warranty, 82 five-star reviews.",
       "intro": "Window tinting in Lake Forest starts at $500 for ceramic sides and rear, with trucks and SUVs at $700, installed at your Lake Forest home or job site once access is confirmed. Tell us your vehicle for a quote, or call or text (714) 600-7134.",
       "proof": true,
       "questions": "Lake Forest"
     },
     "/dana-point-window-tinting": {
       "metaTitle": "Window Tinting Dana Point | Mobile Ceramic, We Come to You",
-      "description": "Dana Point mobile window tinting at your home or rental: ceramic sides and rear from $500. Avery Dennison film, lifetime warranty, 82 five-star reviews.",
+      "description": "Dana Point mobile tint at your home or rental, from $500. 3M and Avery Dennison film, lifetime manufacturer warranty, 82 five-star reviews.",
       "intro": "Window tinting in Dana Point starts at $500 for ceramic sides and rear, and we come to your Dana Point home or the address where the car is staying. Travel terms are confirmed with your quote; request one, or call or text (714) 600-7134.",
       "proof": true,
       "questions": "Dana Point"
     },
     "/san-clemente-window-tinting": {
-      "metaTitle": "Window Tinting San Clemente | Lifetime Tint Warranty",
-      "description": "San Clemente ceramic window tint at your home or work from $500 for sides and rear. Travel fee confirmed upfront. Avery Dennison film, lifetime warranty, 82 five-star reviews.",
+      "metaTitle": "Window Tinting San Clemente | Lifetime Film Warranty",
+      "description": "San Clemente tint at home or work from $500; travel fee confirmed upfront. 3M and Avery Dennison film, lifetime manufacturer warranty, 82 five-star reviews.",
       "intro": "Window tinting in San Clemente starts at $500 for ceramic sides and rear, installed at your San Clemente home or workplace, with any travel fee confirmed in your quote. Request a quote, or call or text (714) 600-7134.",
       "proof": true,
       "questions": "San Clemente"
     },
     "/laguna-hills-window-tinting": {
       "metaTitle": "Window Tinting Laguna Hills | Skip the Shop, From $500",
-      "description": "Replace old tint or add new ceramic in Laguna Hills at your home or office. Sides and rear from $500, Avery Dennison film, lifetime warranty, 82 five-star reviews.",
+      "description": "Laguna Hills: replace old tint or add new at home or office, from $500. 3M and Avery Dennison film, lifetime manufacturer warranty, 82 five-star reviews.",
       "intro": "Window tinting in Laguna Hills starts at $500 for new ceramic sides and rear, with old-film removal quoted once we see it, done at your Laguna Hills home or office. Send your vehicle for a quote, or call or text (714) 600-7134.",
       "proof": true,
       "questions": "Laguna Hills"
     },
     "/fountain-valley-window-tinting": {
       "metaTitle": "Window Tinting Fountain Valley | Mobile Ceramic Tint",
-      "description": "Fountain Valley window tinting at your home or work: two fronts from $200, sides and rear from $500. Avery Dennison ceramic, lifetime warranty, 82 five-star reviews.",
+      "description": "Fountain Valley tint at home or work: two fronts $200, sides and rear $500. 3M and Avery Dennison film, lifetime manufacturer warranty, 82 five-star reviews.",
       "intro": "Window tinting in Fountain Valley costs from $200 for a front-window match or $500 for ceramic sides and rear, installed at your Fountain Valley home or workplace. Request a quote, or call or text (714) 600-7134.",
       "proof": true,
       "questions": "Fountain Valley"
     },
     "/westminster-window-tinting": {
-      "metaTitle": "Window Tinting Westminster | Avery Dennison Ceramic",
-      "description": "Westminster mobile window tint with published prices: sides and rear $500 to $700, at your home or office. Avery Dennison ceramic, lifetime warranty, 82 five-star reviews.",
+      "metaTitle": "Window Tinting Westminster | 3M and Avery Dennison Film",
+      "description": "Westminster mobile tint, published prices: sides and rear $500 to $700. 3M and Avery Dennison film, lifetime manufacturer warranty, 82 five-star reviews.",
       "intro": "Window tinting in Westminster costs $500 to $700 for ceramic sides and rear depending on the vehicle, installed at your Westminster home or office. Compare it with any other quote, then request yours or call or text (714) 600-7134.",
       "proof": true,
       "questions": "Westminster"
     },
     "/garden-grove-window-tinting": {
       "metaTitle": "Window Tinting Garden Grove | Tint at Your Home or Office",
-      "description": "Garden Grove window tinting at your home or office, one car or several: ceramic sides and rear from $500. Avery Dennison film, lifetime warranty, 82 five-star reviews.",
+      "description": "Garden Grove tint at home or office, one car or several, from $500. 3M and Avery Dennison film, lifetime manufacturer warranty, 82 five-star reviews.",
       "intro": "Window tinting in Garden Grove starts at $500 for ceramic sides and rear on each vehicle, installed at your Garden Grove home or office. Send each car for its own quote, or call or text (714) 600-7134.",
       "proof": true,
       "questions": "Garden Grove"

@@ -22,7 +22,8 @@ for (const [path, copy] of Object.entries(data.pages)) {
     assert.equal(description, copy.description, `${path} description`);
     assert(!descriptions.has(description), `${path} unique description`); descriptions.add(description);
     for (const number of description.match(/\$\d{1,3}(?:,\d{3})*|\b82\b/g) || []) assert(text.includes(number), `${path} shows ${number}`);
-    if (/lifetime warranty/i.test(description)) assert(/lifetime tint warranty/i.test(text), `${path} shows the warranty`);
+    if (/lifetime (manufacturer )?warranty/i.test(description)) assert(/lifetime manufacturer warranty/i.test(text), `${path} shows the warranty`);
+    if (/3M/.test(description)) assert(text.includes('3M'), `${path} shows 3M`);
     if (/Avery Dennison/.test(description)) assert(text.includes('Avery Dennison'), `${path} shows the film`);
   }
   if (copy.intro) assert(text.includes(copy.intro), `${path} answer-first introduction`);
