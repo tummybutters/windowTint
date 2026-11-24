@@ -119,3 +119,14 @@
 }
 @media(max-width:380px){.decision-list,.decision-module--pricing .decision-list{grid-template-columns:minmax(0,1fr)}}
 .feature-story figure:has(figcaption){background:none;border-radius:0}.feature-story figure:has(figcaption) img{border-radius:8px}.feature-story figcaption{font-size:11px;line-height:1.5;color:var(--muted);margin-top:10px}
+
+/* Organic search: proof points under the introduction and always-visible questions */
+.page-packages{max-width:780px;color:#c2c7ba;font-size:15px;line-height:1.6;margin:14px 0 0}
+.page-proof{display:flex;flex-wrap:wrap;gap:8px;list-style:none;margin:18px 0 22px;padding:0;max-width:780px}
+.page-proof li{border:1px solid var(--line);border-radius:999px;padding:6px 12px;font-size:13px;line-height:1.3;color:var(--paper)}
+.hero-heading .page-proof{margin:0 0 18px}.lead-copy .page-proof{margin:0 0 22px}
+.page-questions>div>p{color:var(--muted);margin-top:16px;max-width:360px}.page-questions>div>p a{color:var(--paper)}
+.faq--open .faq-item{border-top:1px solid var(--line);padding:24px 0 26px}.faq--open .faq-item:last-child{border-bottom:1px solid var(--line)}
+.faq--open h3{font-size:clamp(18px,2vw,24px);letter-spacing:-.02em;line-height:1.35;font-weight:500;margin:0 0 12px}
+.faq--open .faq-item p{max-width:800px;color:var(--muted);line-height:1.7;margin:0}.faq--open .faq-item p a{color:var(--paper);white-space:nowrap}
+.page-law{max-width:780px;color:var(--muted);font-size:14px;line-height:1.6;margin:0 0 22px}.page-law a{color:var(--paper);white-space:nowrap}

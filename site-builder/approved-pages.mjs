@@ -1,4 +1,5 @@
-import {button} from './components.mjs';
+import {button,escape} from './components.mjs';
+import {proofLine} from './organic-search.mjs';
 import {imageTag} from './media.mjs';
 const img=(src,alt,cls='',eager=false)=>`<div class="photo ${cls}">${imageTag(src,alt,{loading:eager?'eager':'lazy',sizes:'(max-width:760px) 100vw, 65vw'})}</div>`;
 const auto='/car-window-tinting-near-me?quote_coverage=full_car#quote';
@@ -22,4 +23,9 @@ const bodies={
 <section class="business-quote wrap"><div><p class="kicker">LET’S LOOK AT YOUR GLASS</p><h2>Your space.<br>Your next step.</h2></div><div><p>Send your city, a few photos and the areas you want to improve. We’ll review the glass, film options and access with you.</p>${button('Start my project quote',comm)}<a class="quiet-link" href="/commercial-window-film-cost">How commercial pricing works ↗</a></div></section>${faq([['Can you work around our opening hours?','Tell us your operating hours and access restrictions so we can discuss a suitable installation schedule.'],['Can one project include different types of film?','Yes. We can review solar control, privacy and decorative areas as one project, with the treatment for each area clearly listed.'],['Do you handle smaller storefronts?','Yes. Send photos of your storefront glass and your city to start the conversation.']])}${end('Make the space<br>work better.','Get my project quote',comm)}</div>`
 };
 
-export function renderApprovedPage(page){return bodies[page.path]||null}
+// Organic copy replaces the approved lead line with the answer-first introduction.
+export function renderApprovedPage(page){
+ const body=bodies[page.path];
+ if(!body||!page.proof)return body||null;
+ return body.replace('<p class="lead-line">Less heat. Less glare. A finish that feels like yours.</p>',`<p class="lead-line">${escape(page.intro)}</p>${proofLine(page)}`);
+}

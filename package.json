@@ -14,7 +14,8 @@
     "test:driveway": "node scripts/test-driveway-rollout.mjs && node scripts/test-driveway-package.mjs && node scripts/test-driveway-browser-contract.mjs && node --check assets/quote/package-quote.js && node --check assets/quote/driveway-tracking.js",
     "test:city": "node scripts/test-auto-city-intake.mjs && node scripts/test-auto-form-errors.mjs",
     "build": "node site-builder/build.mjs && node site-builder/quote-pages.mjs && node site-builder/routes.mjs && node site-builder/package.mjs",
-    "test:site": "node scripts/verify-full-site.mjs"
+    "test:site": "node scripts/verify-full-site.mjs",
+    "test:organic": "node scripts/test-organic-search.mjs"
   },
   "dependencies": {
     "@neondatabase/serverless": "^1.0.2",

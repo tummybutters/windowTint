@@ -8,6 +8,7 @@ import {imageTag} from './media.mjs';
 import {renderInner,renderDirectory,sharedNextStep} from './page-layouts.mjs';
 import {instagramSection} from './social.mjs';
 import {attachInternalLinks} from './internal-links.mjs';
+import {applyOrganicSearch,proofLine,questionsSection} from './organic-search.mjs';
 import fs from 'node:fs';
 import path from 'node:path';
 import {fileURLToPath} from 'node:url';
@@ -18,6 +19,7 @@ const read=file=>fs.readFileSync(path.join(root,file),'utf8');
 const pages=JSON.parse(read(process.env.OBSIDIAN_LAYOUT_DATA || 'content/pages.json')).map(withPortfolioPhoto);
 attachInternalLinks(pages,['shared','auto','home','commercial'].flatMap(division=>JSON.parse(read(`content/internal-links-${division}.json`))));
 attachCityContext(pages,JSON.parse(read('content/city-context.json')));
+applyOrganicSearch(pages);
 const reviewData=JSON.parse(read('content/reviews.json'));
 const byPath=new Map(pages.map(page=>[page.path,page]));
 const destination=p=>'/generated/'+(p==='/'?'index':p.slice(1))+'.html';
@@ -32,7 +34,7 @@ function linkedPages(title,selected) {
   return `<section class="section container"><div class="section-heading"><h2>${e(title)}</h2></div><div class="card-grid">${selected.map(card).join('')}</div></section>`;
 }
 function home(page) {
-  return `<section class="hero hero--home container"><div class="hero-heading"><div><p class="eyebrow">Obsidian Autoworks · We come to you</p><h1>Mobile Window Tinting<br><em>Orange County.</em></h1></div><div><p>Ceramic tint in your driveway.<br>Window film for homes and businesses.</p>${button('Explore the free upgrade','/driveway-package')}</div></div>${servicePanels()}</section>${offer()}${renderFilmSection('/')}${reviews(reviewData)}<section class="section container split"><div><p class="eyebrow">Made for life in the sun</p><h2>Keep the light.<br>Make it yours.</h2><p>From the morning commute to the afternoon sun in your living room, choose film around the way you use your space.</p>${button('Explore home film','/architectural-window-film',true)}</div>${imageTag("/gallery/tintwiz-20261111/living-room-glass.webp","Living-room sliding glass door opening onto a patio")}</section>${linkedPages('A little guidance goes a long way',Object.keys(divisions).map(division=>pages.find(p=>p.type==='guide'&&p.division===division)).filter(Boolean))}${instagramSection()}${quotePanel('auto')}`;
+  return `<section class="hero hero--home container"><div class="hero-heading"><div><p class="eyebrow">Obsidian Autoworks · We come to you</p><h1>Mobile Window Tinting<br><em>Orange County.</em></h1></div><div><p>${e(page.intro)}</p>${proofLine(page)}<p>Window film for homes and businesses, too.</p>${button('Explore the free upgrade','/driveway-package')}</div></div>${servicePanels()}</section>${offer()}${renderFilmSection('/')}${reviews(reviewData)}<section class="section container split"><div><p class="eyebrow">Made for life in the sun</p><h2>Keep the light.<br>Make it yours.</h2><p>From the morning commute to the afternoon sun in your living room, choose film around the way you use your space.</p>${button('Explore home film','/architectural-window-film',true)}</div>${imageTag("/gallery/tintwiz-20261111/living-room-glass.webp","Living-room sliding glass door opening onto a patio")}</section>${linkedPages('A little guidance goes a long way',Object.keys(divisions).map(division=>pages.find(p=>p.type==='guide'&&p.division===division)).filter(Boolean))}${instagramSection()}${questionsSection(page)}${quotePanel('auto')}`;
 }
 function gallery() {
   const entries=JSON.parse(read('content/gallery.json'));

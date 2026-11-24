@@ -1,3 +1,4 @@
+import {organicTitle,businessSchema} from './organic-search.mjs';
 export const origin = 'https://www.obsidianautoworksoc.com';
 export const escape = value => String(value ?? '').replace(/[&<>"']/g, char => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[char]));
 export const divisions = {
@@ -54,7 +55,7 @@ export function card(page) {
 }
 export function shell(page, body, extraHead='') {
   const image=page.image||divisions[page.division]?.image||'/assets/site/auto.webp';
-  const title=(page.path==='/'?'Mobile Window Tinting Orange County':(page.seoTitle||page.title))+' | '+brandName(page.division);
+  const title=organicTitle(page)||(page.path==='/'?'Mobile Window Tinting Orange County':(page.seoTitle||page.title))+' | '+brandName(page.division);
   const parent=divisions[page.division];
   const breadcrumbItems=[{name:'Home',url:origin+'/'}];
   if(parent&&parent.path!==page.path)breadcrumbItems.push({name:parent.label,url:origin+parent.path});
@@ -63,6 +64,7 @@ export function shell(page, body, extraHead='') {
     {'@type':'Organization','@id':origin+'/#organization',name:'Obsidian Autoworks',alternateName:'Obsidian Film Solutions',url:origin,telephone:'+17146007134',sameAs:['https://www.instagram.com/obsidianautoworksoc/']},
     {'@type':'WebPage','@id':origin+page.path,name:page.title,description:page.description,url:origin+page.path,isPartOf:{'@id':origin+'/#website'},about:{'@id':origin+'/#organization'}},
     {'@type':'WebSite','@id':origin+'/#website',name:'Obsidian Autoworks',url:origin},
+    businessSchema(origin),
     {'@type':'BreadcrumbList',itemListElement:breadcrumbItems.map((item,i)=>({'@type':'ListItem',position:i+1,name:item.name,item:item.url}))}
   ]};
   return `<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>${escape(title)}</title><meta name="description" content="${escape(page.description)}"><link rel="canonical" href="${origin+page.path}"><meta property="og:title" content="${escape(title)}"><meta property="og:description" content="${escape(page.description)}"><meta property="og:url" content="${origin+page.path}"><meta property="og:image" content="${origin+image}"><meta property="og:type" content="website"><link rel="icon" href="/favicon.png"><link rel="stylesheet" href="/assets/site/style.css"><link rel="stylesheet" href="/assets/site/layout.css"><link rel="stylesheet" href="/assets/site/page-layouts.css"><link rel="stylesheet" href="/assets/site/navigation.css"><script type="application/ld+json">${JSON.stringify(schema).replace(/</g,'\\u003c')}</script>${extraHead}<script defer src="/assets/site/interactions.js"></script><script defer src="/assets/attribution/journey.js?v=20261112-form-evidence"></script><script defer src="/lead-tracking.js"></script><script src="/assets/quote/experiment.js?v=20261016-speed"></script><script async src="https://www.googletagmanager.com/gtag/js?id=G-TR9ET60HX3"></script><script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-TR9ET60HX3');</script></head><body data-division="${escape(page.division)}">${header(page)}<main id="main">${body}</main>${footer(page)}</body></html>`;
