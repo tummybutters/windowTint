@@ -2,6 +2,7 @@ import {imageTag} from './media.mjs';
 import {escape as e, brandName, divisions, button, reviews, card, quoteHref, quoteLabel} from './components.mjs';
 import {linkedParagraphs} from './internal-links.mjs';
 import {proofLine,proofStats,questionsSection} from './organic-search.mjs';
+import {photoPicker,photoStrip,photoCards,photoSplice} from './photo-panels.mjs';
 
 const label = page => divisions[page.division]?.label || 'Obsidian';
 const topic = page => page.title.replace(/\s+(in|across) Orange County$/i,'');
@@ -19,7 +20,7 @@ function eyebrow(page) {
 }
 function intro(page,kind,{photo=true,action=true}={}) {
   if(page.photoInsetOnly)photo=false;
-  const displayTitle=['guide','service'].includes(page.type)&&page.title.includes(':')&&!page.title.includes('?')?page.title.split(':')[0].trim():page.title;
+  const displayTitle=page.h1||(['guide','service'].includes(page.type)&&page.title.includes(':')&&!page.title.includes('?')?page.title.split(':')[0].trim():page.title);
   return `<section class="container page-intro page-intro--${kind}${photo&&page.image?' has-photo':''}" data-layout="${kind}">${crumbs(page)}<div class="page-intro-grid"><div><p class="eyebrow">${e(eyebrow(page))}</p><h1>${e(displayTitle)}</h1><p class="page-deck">${e(page.intro)}</p>${proofLine(page)}${action?`<div class="actions">${button(quoteLabel(page),quoteHref(page),page.type==='city')}${specialty(page)?button('Call (714) 600-7134','tel:+17146007134',true):''}${page.type==='city'&&page.questions?button('Text (714) 600-7134','sms:+17146007134',true):''}</div>`:''}${proofStats(page)}</div>${photo?image(page):''}</div></section>`;
 }
 function highlights(page) {
@@ -47,7 +48,12 @@ function sectionCopy(page,section,index) {
 function details(page,start=1) {
  const sections=(page.sections||[]).slice(start);
  if(!sections.length)return '';
- return `<div class="detail-disclosures">${sections.map((section,i)=>`<details id="detail-${i+start}"><summary>${e(section.heading)}</summary><div>${sectionCopy(page,section,i+start)}</div></details>`).join('')}</div>`;
+ return `<div class="detail-open">${sections.map((section,i)=>`<section id="detail-${i+start}"><h3>${e(section.heading)}</h3><div>${sectionCopy(page,section,i+start)}</div></section>`).join('')}</div>`;
+}
+// Every section open, each on a card over a real photograph.
+function sectionCards(page,pick,start=0,heading='') {
+ const sections=(page.sections||[]).slice(start);
+ return photoCards(pick,sections.map((section,i)=>({title:section.heading,html:sectionCopy(page,section,i+start)})),{heading});
 }
 function leadSection(page,{photo=true}={}) {
  const section=page.sections?.[0];if(!section)return '';
@@ -62,15 +68,16 @@ function contentSections(page,kind='article') {
   return `<div class="content-sections content-sections--${kind}">${page.sections.map((s,i)=>`<section id="detail-${i}"><span class="section-number" aria-hidden="true">${String(i+1).padStart(2,'0')}</span><div><h2>${e(s.heading)}</h2>${linkedParagraphs(s.body,page.linkPlan?.links.filter(link=>link.section===i)||[])}</div></section>`).join('')}</div>`;
 }
 function faq(page) {
-  return page.faqs?.length?`<section class="container section page-faq"><div><h2>A few details.</h2></div><div class="faq">${page.faqs.map(f=>`<details><summary>${e(f.question)}</summary><p>${e(f.answer)}</p></details>`).join('')}</div></section>`:'';
+  return page.faqs?.length?`<section class="container section page-faq"><div><h2>A few details.</h2></div><div class="faq faq--open">${page.faqs.map(f=>`<div class="faq-item"><h3>${e(f.question)}</h3><p>${e(f.answer)}</p></div>`).join('')}</div></section>`:'';
 }
 function related(page,index) {
   const selected=[...new Set(page.relatedPaths||[])].filter(p=>p!==page.path).map(p=>index.get(p)).filter(Boolean).slice(0,5);
   if(!selected.length)return '';
   return `<section class="section container related-reading"><h2>Keep exploring.</h2><div class="related-list">${selected.map(p=>`<a href="${e(p.path)}"><span>${e(label(p))}</span><h3>${e(p.title)}</h3><span aria-hidden="true">↗</span></a>`).join('')}</div></section>`;
 }
-function close(page) {
-  return `<section class="container section"><div class="page-close"><div><h2>${e(page.quotePrompt||'Tell us what you want to change, and we’ll help define the right scope.')}</h2></div>${nextActions(page)}</div></section>`;
+function close(page,pick) {
+  const splice=pick?photoSplice(pick):'';
+  return `<section class="container section"><div class="page-close${splice?' page-close--photos':''}">${splice}<div><h2>${e(page.quotePrompt||'Tell us what you want to change, and we’ll help define the right scope.')}</h2></div>${nextActions(page)}</div></section>`;
 }
 
 function nextActions(page) {
@@ -100,11 +107,12 @@ function sources(page) {
   if(!page.sources?.length)return '';
   return `<aside class="container source-links"><p class="eyebrow">Further reading</p><ul>${page.sources.map(source=>`<li><a href="${e(source.url)}" target="_blank" rel="noopener">${e(source.title)} ↗</a></li>`).join('')}</ul></aside>`;
 }
-function cityContext(page) {
+function cityContext(page,pick) {
   const c=page.cityContext;if(!c)return '';
   const facts=c.facts||[];
   const links=(list)=>list.map(p=>`<a href="${e(p.path)}">${e(p.title)} <span aria-hidden="true">↗</span></a>`).join('');
-  return `<section class="container city-context"><div><p class="eyebrow">At your ${e(c.city)} address</p><h2>A visit that fits<br>your location.</h2>${c.planning?`<p>${e(c.planning)}</p><details class="local-source"><summary>Local setting</summary>${facts.map(fact=>`<p>${e(fact.text)} <a href="${e(fact.sourceUrl)}" target="_blank" rel="noopener">City information ↗</a></p>`).join('')}</details>`:'<p>Explore the services available at your address, or find a nearby service area.</p>'}</div><nav aria-label="Related local services">${c.otherServices.length?`<p class="eyebrow">Also in ${e(c.city)}</p>${links(c.otherServices)}`:''}${c.nearby.length?`<p class="eyebrow">Looking nearby?</p>${links(c.nearby)}`:''}</nav></section>`;
+  const splice=pick?photoSplice(pick):'';
+  return `<section class="container city-context"><div class="city-context__panel${splice?' has-photos':''}">${splice}<div class="city-context__copy"><p class="eyebrow">At your ${e(c.city)} address</p><h2>A visit that fits<br>your location.</h2>${c.planning?`<p>${e(c.planning)}</p><div class="local-source"><p class="eyebrow">Local setting</p>${facts.map(fact=>`<p>${e(fact.text)} <a href="${e(fact.sourceUrl)}" target="_blank" rel="noopener">City information ↗</a></p>`).join('')}</div>`:'<p>Explore the services available at your address, or find a nearby service area.</p>'}</div></div><nav aria-label="Related local services">${c.otherServices.length?`<p class="eyebrow">Also in ${e(c.city)}</p>${links(c.otherServices)}`:''}${c.nearby.length?`<p class="eyebrow">Looking nearby?</p>${links(c.nearby)}`:''}</nav></section>`;
 }
 function directoryGroup(title,selected,{photos=false,excludeImage=null}={}) {
   if(!selected.length)return '';
@@ -119,7 +127,11 @@ function portfolioProof(page,pages=[]) {
 
 export function renderInner(page,pages,reviewData) {
   const index=new Map(pages.map(p=>[p.path,p]));
-  const tail=()=>(page.questions?questionsSection(page):faq(page))+sources(page)+related(page,index)+close(page);
+  // Photos already on the page (hub catalog cards) are not repeated in the photo panels.
+  const pick=photoPicker(page,page.type==='hub'?pages.filter(p=>p.division===page.division&&p.type==='service').map(p=>p.image):[]);
+  const auto=page.division==='auto';
+  const tail=()=>(page.questions?questionsSection(page):faq(page))+sources(page)+related(page,index)+close(page,pick);
+  const autoDetails=()=>auto?sectionCards(page,pick,1,'More to know.'):details(page);
   if(page.path==='/about')return intro(page,'story')+`<section class="container editorial-body">${leadSection(page)}${details(page)}</section>`+reviews(reviewData)+related(page,index)+close(page);
   if(page.type==='hub') {
     let body=intro(page,'division')+directoryGroup('Choose your '+(page.division==='auto'?'coverage':'film'),pages.filter(p=>p.division===page.division&&p.type==='service'),{photos:true,excludeImage:page.image});
@@ -128,11 +140,18 @@ export function renderInner(page,pages,reviewData) {
     if(page.division==='auto')body+=directoryGroup('Find your vehicle',pages.filter(p=>p.type==='vehicle'));
     return body+directoryGroup('Where we come to you',pages.filter(p=>p.division===page.division&&p.type==='city'))+tail();
   }
-  if(page.type==='vehicle')return intro(page,'vehicle')+`<section class="container vehicle-layout">${highlights(page)}${comparison(page)}${leadSection(page)}${details(page)}${steps(page)}${checklist(page)}</section>`+tail();
+  if(page.type==='vehicle')return intro(page,'vehicle')+`<section class="container vehicle-layout">${highlights(page)}${comparison(page)}${leadSection(page)}${autoDetails()}${steps(page)}${checklist(page)}</section>`+tail();
   if(page.type==='guide')return intro(page,'editorial',{action:false})+`<section class="container guide-layout">${leadSection(page,{photo:false})}${comparison(page)}${highlights(page)}${steps(page)}${details(page)}${checklist(page)}</section>`+tail();
-  if(page.type==='city')return intro(page,'local')+`<section class="container local-page-body">${localServices(page,pages)}${comparison(page)}${highlights(page)}${leadSection(page,{photo:false})}${details(page)}${steps(page)}${checklist(page)}</section>`+cityContext(page)+tail();
+  if(page.type==='city'){
+    const place=page.cityContext?.city||page.questions||'your area';
+    const choices=auto&&page.comparison?.columns?.length===2&&!page.comparison.rows.some(row=>row.some(cell=>String(cell).includes('$')))
+      ?photoCards(pick,page.comparison.rows.map(row=>({eyebrow:page.comparison.columns[0]+': '+row[0],title:row[1],html:''})),{heading:page.comparison.title||'Compare your options.',className:'photo-cards--compact'})
+      :comparison(page);
+    const story=auto?sectionCards(page,pick,0,`Your ${place} tint plan.`):leadSection(page,{photo:false})+details(page);
+    return intro(page,'local')+(auto?photoStrip(pick,'Recent Obsidian installations'):'')+`<section class="container local-page-body">${localServices(page,pages)}${choices}${highlights(page)}${story}${steps(page)}${checklist(page)}</section>`+cityContext(page,auto?pick:null)+tail();
+  }
   if(page.type==='project')return intro(page,'worksheet',{action:false})+`<section class="container project-layout"><p class="planner-disclosure">A planning guide for your project, not a completed-job case study.</p>${steps(page)}${comparison(page)}${highlights(page)}<div class="project-notes">${details(page,0)}${checklist(page)}</div></section>`+tail();
-  if(page.type==='service')return intro(page,page.path==='/window-tint-pricing'?'pricing':'service',{action:page.path!=='/window-tint-pricing'})+`<section class="container service-layout">${coverageStrip(page)}${highlights(page)}${comparison(page)}${leadSection(page)}${details(page)}${steps(page)}${checklist(page)}</section>`+tail();
+  if(page.type==='service')return intro(page,page.path==='/window-tint-pricing'?'pricing':'service',{action:page.path!=='/window-tint-pricing'})+`<section class="container service-layout">${coverageStrip(page)}${highlights(page)}${comparison(page)}${leadSection(page)}${page.path==='/window-tint-pricing'?details(page):autoDetails()}${steps(page)}${checklist(page)}</section>`+tail();
   return intro(page,'utility',{photo:false})+`<section class="container editorial-body">${leadSection(page,{photo:false})}${details(page)}</section>`+tail();
 }
 export function renderDirectory(page,pages) {

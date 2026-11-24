@@ -27,6 +27,7 @@ for (const [path, copy] of Object.entries(data.pages)) {
     if (/Avery Dennison/.test(description)) assert(text.includes('Avery Dennison'), `${path} shows the film`);
   }
   if (copy.intro) assert(text.includes(copy.intro), `${path} answer-first introduction`);
+  assert(!/<details|<summary/.test(html), `${path} has no collapsed content`);
   if (copy.proof) assert.equal((html.match(/class="proof-stats"/g) || []).length, 1, `${path} shows the four proof figures once`);
   const nodes = [...html.matchAll(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/g)].flatMap(m => { const g = JSON.parse(m[1]); return g['@graph'] || [g]; });
   const business = nodes.find(node => node['@type'] === 'AutomotiveBusiness');
@@ -44,4 +45,5 @@ for (const [path, copy] of Object.entries(data.pages)) {
     assert(!questionBlocks.has(normalized), `${path} questions differ from other cities`); questionBlocks.add(normalized);
   }
 }
+for (const file of fs.readdirSync('public/generated').filter(f => f.endsWith('.html'))) assert(!/<details|<summary/.test(fs.readFileSync('public/generated/' + file, 'utf8')), `${file} has no collapsed content`);
 console.log(`${Object.keys(data.pages).length} organic pages: titles, descriptions, visible numbers, introductions, questions and business markup passed.`);

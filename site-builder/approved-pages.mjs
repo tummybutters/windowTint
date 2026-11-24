@@ -5,7 +5,7 @@ const img=(src,alt,cls='',eager=false)=>`<div class="photo ${cls}">${imageTag(sr
 const auto='/car-window-tinting-near-me?quote_coverage=full_car#quote';
 const home='/home-window-film-consultation/';
 const comm='/commercial-window-tinting-orange-county#quote';
-const faq=(items)=>`<section class="design-faq wrap"><h2>A few details.</h2><div>${items.map(([q,a])=>`<details><summary>${q}<span>+</span></summary><p>${a}</p></details>`).join('')}</div></section>`;
+const faq=(items)=>`<section class="design-faq wrap"><h2>A few details.</h2><div class="faq--open">${items.map(([q,a])=>`<div class="faq-item"><h3>${q}</h3><p>${a}</p></div>`).join('')}</div></section>`;
 const end=(title,label,url)=>`<section class="design-end wrap"><h2>${title}</h2>${button(label,url)}</section>`;
 const bodies={
 '/full-car-window-tinting':`<div class="design design-auto"><section class="auto-lead wrap"><div class="lead-copy"><p class="kicker">FULL-CAR CERAMIC TINT · ORANGE COUNTY</p><h1>The whole car.<br><em>A better drive.</em></h1><p class="lead-line">Less heat. Less glare. A finish that feels like yours.</p>${button('Get my full-car quote',auto)}<a class="quiet-link" href="#full-car-pricing">See full-car pricing ↓</a></div>${img('/gallery/tintwiz-20261025/mercedes-amg-gt-02.webp','Mercedes-AMG GT from the Obsidian automotive portfolio','auto-main',true)}<div class="photo-foot"><span>Real cars. Our work.</span><a href="/window-tinting-gallery">Explore the gallery ↗</a></div></section>
