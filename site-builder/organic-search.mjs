@@ -134,5 +134,5 @@ export function questionsSection(page) {
   const items=questionsFor(page);
   if(!items.length)return '';
   const place=page.questions==='orange-county'?'Orange County':(page.questionCity||page.questions);
-  return `<section class="container section page-faq page-questions" aria-labelledby="questions-heading"><div><h2 id="questions-heading">Window tinting questions in ${e(place)}.</h2><p>Call or text <a href="tel:+17146007134">${P}</a> for anything not answered here.</p></div><div class="faq faq--open">${items.map(item=>`<div class="faq-item"><h3>${e(item.question)}</h3><p>${e(item.answer)}${item.link?` <a href="${e(item.link.href)}">${e(item.link.label)} <span aria-hidden="true">↗</span></a>`:''}</p></div>`).join('')}</div></section>`;
+  return `<section class="container section page-faq page-questions" aria-labelledby="questions-heading"><div><h2 id="questions-heading">Window tinting questions in ${e(place)}.</h2><p>Call or text <a href="tel:+17146007134">${P}</a> for anything not answered here.</p></div><div class="faq faq--open faq--columns">${items.map(item=>`<div class="faq-item"><h3>${e(item.question)}</h3><p>${e(item.answer)}${item.link?` <a href="${e(item.link.href)}">${e(item.link.label)} <span aria-hidden="true">↗</span></a>`:''}</p></div>`).join('')}</div></section>`;
 }

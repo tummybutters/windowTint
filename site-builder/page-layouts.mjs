@@ -2,7 +2,7 @@ import {imageTag} from './media.mjs';
 import {escape as e, brandName, divisions, button, reviews, card, quoteHref, quoteLabel} from './components.mjs';
 import {linkedParagraphs} from './internal-links.mjs';
 import {proofLine,proofStats,questionsSection} from './organic-search.mjs';
-import {photoPicker,photoStrip,photoCards,photoSplice} from './photo-panels.mjs';
+import {photoPicker,photoCards,photoSplice} from './photo-panels.mjs';
 
 const label = page => divisions[page.division]?.label || 'Obsidian';
 const topic = page => page.title.replace(/\s+(in|across) Orange County$/i,'');
@@ -50,10 +50,11 @@ function details(page,start=1) {
  if(!sections.length)return '';
  return `<div class="detail-open">${sections.map((section,i)=>`<section id="detail-${i+start}"><h3>${e(section.heading)}</h3><div>${sectionCopy(page,section,i+start)}</div></section>`).join('')}</div>`;
 }
-// Every section open, each on a card over a real photograph.
-function sectionCards(page,pick,start=0,heading='') {
+// Every section open as a quiet text card.
+function sectionCards(page,start=0,heading='') {
  const sections=(page.sections||[]).slice(start);
- return photoCards(pick,sections.map((section,i)=>({title:section.heading,html:sectionCopy(page,section,i+start)})),{heading});
+ if(!sections.length)return '';
+ return `<section class="text-cards${sections.length%2===0?' text-cards--pairs':''}">${heading?`<h2>${e(heading)}</h2>`:''}<div class="text-cards__grid">${sections.map((section,i)=>`<article id="detail-${i+start}"><h3>${e(section.heading)}</h3>${sectionCopy(page,section,i+start)}</article>`).join('')}</div></section>`;
 }
 function leadSection(page,{photo=true}={}) {
  const section=page.sections?.[0];if(!section)return '';
@@ -131,7 +132,7 @@ export function renderInner(page,pages,reviewData) {
   const pick=photoPicker(page,page.type==='hub'?pages.filter(p=>p.division===page.division&&p.type==='service').map(p=>p.image):[]);
   const auto=page.division==='auto';
   const tail=()=>(page.questions?questionsSection(page):faq(page))+sources(page)+related(page,index)+close(page,pick);
-  const autoDetails=()=>auto?sectionCards(page,pick,1,'More to know.'):details(page);
+  const autoDetails=()=>auto?sectionCards(page,1,'More to know.'):details(page);
   if(page.path==='/about')return intro(page,'story')+`<section class="container editorial-body">${leadSection(page)}${details(page)}</section>`+reviews(reviewData)+related(page,index)+close(page);
   if(page.type==='hub') {
     let body=intro(page,'division')+directoryGroup('Choose your '+(page.division==='auto'?'coverage':'film'),pages.filter(p=>p.division===page.division&&p.type==='service'),{photos:true,excludeImage:page.image});
@@ -147,8 +148,8 @@ export function renderInner(page,pages,reviewData) {
     const choices=auto&&page.comparison?.columns?.length===2&&!page.comparison.rows.some(row=>row.some(cell=>String(cell).includes('$')))
       ?photoCards(pick,page.comparison.rows.map(row=>({eyebrow:page.comparison.columns[0]+': '+row[0],title:row[1],html:''})),{heading:page.comparison.title||'Compare your options.',className:'photo-cards--compact'})
       :comparison(page);
-    const story=auto?sectionCards(page,pick,0,`Your ${place} tint plan.`):leadSection(page,{photo:false})+details(page);
-    return intro(page,'local')+(auto?photoStrip(pick,'Recent Obsidian installations'):'')+`<section class="container local-page-body">${localServices(page,pages)}${choices}${highlights(page)}${story}${steps(page)}${checklist(page)}</section>`+cityContext(page,auto?pick:null)+tail();
+    const story=auto?sectionCards(page,0,`Your ${place} tint plan.`):leadSection(page,{photo:false})+details(page);
+    return intro(page,'local')+`<section class="container local-page-body">${localServices(page,pages)}${choices}${highlights(page)}${story}${steps(page)}${checklist(page)}</section>`+cityContext(page)+tail();
   }
   if(page.type==='project')return intro(page,'worksheet',{action:false})+`<section class="container project-layout"><p class="planner-disclosure">A planning guide for your project, not a completed-job case study.</p>${steps(page)}${comparison(page)}${highlights(page)}<div class="project-notes">${details(page,0)}${checklist(page)}</div></section>`+tail();
   if(page.type==='service')return intro(page,page.path==='/window-tint-pricing'?'pricing':'service',{action:page.path!=='/window-tint-pricing'})+`<section class="container service-layout">${coverageStrip(page)}${highlights(page)}${comparison(page)}${leadSection(page)}${page.path==='/window-tint-pricing'?details(page):autoDetails()}${steps(page)}${checklist(page)}</section>`+tail();

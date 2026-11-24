@@ -178,3 +178,25 @@
 @media(max-width:1000px){.photo-cards__grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:760px){.photo-strip{grid-template-columns:1fr 1fr;margin-bottom:32px}.photo-strip figure:first-child{grid-column:1/-1;aspect-ratio:16/10}.photo-cards__grid,.photo-cards--pairs .photo-cards__grid{grid-template-columns:1fr}.photo-card{min-height:360px}.photo-splice::after{background:linear-gradient(180deg,#0b0d0ab3,#0b0d0ad9)}.photo-splice{grid-template-columns:1fr}.photo-splice img:not(:nth-child(2)){display:none}}
 @media(prefers-reduced-motion:reduce){.photo-card img,.photo-strip img{transition:none}}
+
+/* Calmer city, service and vehicle pages */
+.text-cards{margin-block:40px}.text-cards>h2{font-size:clamp(28px,3vw,40px);letter-spacing:-.035em;line-height:1.12;font-weight:500;margin-bottom:20px}
+.text-cards__grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}.text-cards--pairs .text-cards__grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+.text-cards article{border:1px solid var(--line);border-radius:8px;background:var(--surface);padding:22px 24px}
+.text-cards h3{font-size:clamp(18px,1.7vw,22px);letter-spacing:-.02em;line-height:1.3;font-weight:500;margin:0 0 10px}
+.text-cards p{font-size:15px;line-height:1.65;color:var(--muted)}.text-cards p+p{margin-top:10px}
+.text-cards .context-link{color:var(--paper);text-decoration:underline;text-decoration-color:var(--accent);text-underline-offset:4px}
+.photo-cards{margin-block:40px}.photo-cards>h2{margin-bottom:20px}.photo-cards--compact .photo-card{min-height:280px}
+.page-questions.page-faq{grid-template-columns:1fr;gap:20px}.page-questions>div>p{max-width:none}
+.faq--columns{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));column-gap:40px;max-width:none}
+.faq--columns .faq-item{padding:18px 0 20px}.faq--columns .faq-item:last-child{border-bottom:0}.faq--columns{border-bottom:1px solid var(--line)}
+.faq--columns h3{font-size:clamp(17px,1.5vw,20px);margin-bottom:8px}.faq--columns .faq-item p{font-size:15px;line-height:1.65}
+.local-page-body .local-service-menu{margin-bottom:8px}.city-context{padding-block:36px}
+.page-intro--local{padding-bottom:36px}
+@media(max-width:760px){.text-cards__grid,.text-cards--pairs .text-cards__grid,.faq--columns{grid-template-columns:1fr}.text-cards{margin-block:28px}}
+body[data-division="auto"] main>.section{padding-block:clamp(40px,4vw,64px)}
+.page-questions>div>h2{max-width:none}
+body[data-division="auto"] .related-list a{padding:16px 0}body[data-division="auto"] .related-list h3{font-size:clamp(18px,1.6vw,22px)}
+body[data-division="auto"] .related-reading>h2{margin-bottom:16px}
+.page-close--photos{min-height:300px}
+.city-context__copy>p:not(.eyebrow){margin-top:20px;max-width:750px;color:var(--muted);font-size:16px;line-height:1.75}
