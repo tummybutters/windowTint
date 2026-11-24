@@ -111,7 +111,7 @@ function cityContext(page,pick) {
   const c=page.cityContext;if(!c)return '';
   const facts=c.facts||[];
   const links=(list)=>list.map(p=>`<a href="${e(p.path)}">${e(p.title)} <span aria-hidden="true">↗</span></a>`).join('');
-  const splice=pick?photoSplice(pick):'';
+  const splice=pick?photoSplice(pick,0.55):'';
   return `<section class="container city-context"><div class="city-context__panel${splice?' has-photos':''}">${splice}<div class="city-context__copy"><p class="eyebrow">At your ${e(c.city)} address</p><h2>A visit that fits<br>your location.</h2>${c.planning?`<p>${e(c.planning)}</p><div class="local-source"><p class="eyebrow">Local setting</p>${facts.map(fact=>`<p>${e(fact.text)} <a href="${e(fact.sourceUrl)}" target="_blank" rel="noopener">City information ↗</a></p>`).join('')}</div>`:'<p>Explore the services available at your address, or find a nearby service area.</p>'}</div></div><nav aria-label="Related local services">${c.otherServices.length?`<p class="eyebrow">Also in ${e(c.city)}</p>${links(c.otherServices)}`:''}${c.nearby.length?`<p class="eyebrow">Looking nearby?</p>${links(c.nearby)}`:''}</nav></section>`;
 }
 function directoryGroup(title,selected,{photos=false,excludeImage=null}={}) {
@@ -136,7 +136,7 @@ export function renderInner(page,pages,reviewData) {
   if(page.type==='hub') {
     let body=intro(page,'division')+directoryGroup('Choose your '+(page.division==='auto'?'coverage':'film'),pages.filter(p=>p.division===page.division&&p.type==='service'),{photos:true,excludeImage:page.image});
     if(page.division==='auto')body+=`<section class="container compact-offer"><div><h2>Ceramic sides + rear.<br><em>A free upgrade, too.</em></h2><p>Explore the Driveway Package and eligible upgrade options.</p></div>${button('See package details','/driveway-package')}</section>`;
-    body+=`<section class="container editorial-body">${highlights(page)}${leadSection(page)}${comparison(page)}${details(page)}${steps(page)}${checklist(page)}</section>`;
+    body+=`<section class="container editorial-body">${highlights(page)}${leadSection(page,{photo:!pages.some(p=>p.division===page.division&&p.type==='service'&&p.image===page.supportImage?.src)})}${comparison(page)}${details(page)}${steps(page)}${checklist(page)}</section>`;
     if(page.division==='auto')body+=directoryGroup('Find your vehicle',pages.filter(p=>p.type==='vehicle'));
     return body+directoryGroup('Where we come to you',pages.filter(p=>p.division===page.division&&p.type==='city'))+tail();
   }

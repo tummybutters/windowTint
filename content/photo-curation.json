@@ -1,0 +1,355 @@
+{
+  "note": "Photos allowed in page photo panels (cards, strips, splices). Reviewed by eye on 2026-11-24: premium or enthusiast vehicles only, with the finished car (or, for building pages, the treated glass) as the clear subject. subject is the centre of the car (or treated glass) as a fraction of width and height; panels turn it into an object-position for their own shape so the subject stays in frame; splice marks bright daylight exteriors that sit well side by side behind a panel. Excluded on purpose: close-ups of glare or windshields, interiors, roof-glass shots, sky- or building-dominant frames, dirt-lot shots, the classic Karmann Ghia, older Tacoma, Mercedes GLS and Toyota 4Runner frames.",
+  "photos": {
+    "/gallery/jobs-20261117/ferrari-488-window-tint-beverly-hills-1-1440.webp": {
+      "splice": true,
+      "subject": {
+        "x": 0.45,
+        "y": 0.5
+      }
+    },
+    "/gallery/jobs-20261117/ferrari-488-window-tint-beverly-hills-2-1440.webp": {
+      "splice": true,
+      "subject": {
+        "x": 0.5,
+        "y": 0.48
+      }
+    },
+    "/gallery/jobs-20261117/audi-r8-window-tint-beverly-hills-1-1440.webp": {
+      "splice": true,
+      "subject": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "/gallery/jobs-20261117/mercedes-maybach-gls-window-tint-beverly-hills-1-1440.webp": {
+      "splice": false,
+      "subject": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "/gallery/jobs-20261117/mercedes-amg-cle-window-tint-mission-viejo-1-1440.webp": {
+      "splice": false,
+      "subject": {
+        "x": 0.5,
+        "y": 0.65
+      }
+    },
+    "/gallery/jobs-20261117/mercedes-amg-cle-window-tint-mission-viejo-2-1440.webp": {
+      "splice": false,
+      "subject": {
+        "x": 0.5,
+        "y": 0.63
+      }
+    },
+    "/gallery/jobs-20261117/bmw-m3-window-tint-ladera-ranch-2-1440.webp": {
+      "splice": false,
+      "subject": {
+        "x": 0.5,
+        "y": 0.42
+      }
+    },
+    "/gallery/jobs-20261117/bmw-m8-gran-coupe-window-tint-orange-county-1-1440.webp": {
+      "splice": true,
+      "subject": {
+        "x": 0.5,
+        "y": 0.55
+      }
+    },
+    "/gallery/jobs-20261117/bmw-m8-gran-coupe-window-tint-orange-county-2-1440.webp": {
+      "splice": true,
+      "subject": {
+        "x": 0.5,
+        "y": 0.73
+      }
+    },
+    "/gallery/jobs-20261117/audi-rs6-avant-window-tint-yorba-linda-1-1440.webp": {
+      "splice": false,
+      "subject": {
+        "x": 0.5,
+        "y": 0.52
+      }
+    },
+    "/gallery/jobs-20261117/audi-rs6-avant-window-tint-yorba-linda-2-1440.webp": {
+      "splice": false,
+      "subject": {
+        "x": 0.5,
+        "y": 0.62
+      }
+    },
+    "/gallery/jobs-20261117/audi-rs6-avant-window-tint-yorba-linda-3-1440.webp": {
+      "splice": false,
+      "subject": {
+        "x": 0.5,
+        "y": 0.66
+      }
+    },
+    "/gallery/jobs-20261117/range-rover-velar-window-tint-dana-point-1-1440.webp": {
+      "splice": true,
+      "subject": {
+        "x": 0.45,
+        "y": 0.55
+      }
+    },
+    "/gallery/jobs-20261117/range-rover-velar-window-tint-dana-point-2-1440.webp": {
+      "splice": true,
+      "subject": {
+        "x": 0.5,
+        "y": 0.7
+      }
+    },
+    "/gallery/jobs-20261117/range-rover-window-tint-orange-1-1440.webp": {
+      "splice": true,
+      "subject": {
+        "x": 0.5,
+        "y": 0.63
+      }
+    },
+    "/gallery/jobs-20261117/range-rover-window-tint-orange-2-1440.webp": {
+      "splice": true,
+      "subject": {
+        "x": 0.5,
+        "y": 0.6
+      }
+    },
+    "/gallery/jobs-20261117/range-rover-window-tint-newport-beach-1-1440.webp": {
+      "splice": true,
+      "subject": {
+        "x": 0.5,
+        "y": 0.7
+      }
+    },
+    "/gallery/jobs-20261117/range-rover-window-tint-newport-beach-2-1440.webp": {
+      "splice": false,
+      "subject": {
+        "x": 0.5,
+        "y": 0.58
+      }
+    },
+    "/gallery/jobs-20261117/mercedes-e-class-window-tint-newport-beach-1-1440.webp": {
+      "splice": true,
+      "subject": {
+        "x": 0.5,
+        "y": 0.62
+      }
+    },
+    "/gallery/jobs-20261117/mercedes-e-class-window-tint-newport-beach-2-1440.webp": {
+      "splice": true,
+      "subject": {
+        "x": 0.5,
+        "y": 0.64
+      }
+    },
+    "/gallery/jobs-20261117/mercedes-e-class-window-tint-san-juan-capistrano-1-1440.webp": {
+      "splice": false,
+      "subject": {
+        "x": 0.5,
+        "y": 0.57
+      }
+    },
+    "/gallery/jobs-20261117/bmw-x5-m-window-tint-anaheim-hills-1-1440.webp": {
+      "splice": true,
+      "subject": {
+        "x": 0.5,
+        "y": 0.62
+      }
+    },
+    "/gallery/jobs-20261117/bmw-x5-m-window-tint-anaheim-hills-2-1440.webp": {
+      "splice": false,
+      "subject": {
+        "x": 0.5,
+        "y": 0.57
+      }
+    },
+    "/gallery/jobs-20261117/bmw-7-series-window-tint-orange-1-1440.webp": {
+      "splice": false,
+      "subject": {
+        "x": 0.5,
+        "y": 0.6
+      }
+    },
+    "/gallery/jobs-20261117/bmw-2-series-window-tint-yorba-linda-1-1440.webp": {
+      "splice": true,
+      "subject": {
+        "x": 0.5,
+        "y": 0.48
+      }
+    },
+    "/gallery/jobs-20261117/bmw-2-series-window-tint-yorba-linda-2-1440.webp": {
+      "splice": true,
+      "subject": {
+        "x": 0.5,
+        "y": 0.45
+      }
+    },
+    "/gallery/tintwiz-20261111/office-lounge-windows.webp": {
+      "splice": true,
+      "subject": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "/gallery/tintwiz-20261111/daylight-office-glass.webp": {
+      "splice": true,
+      "subject": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "/gallery/tintwiz-20261111/poolside-home-glass.webp": {
+      "splice": true,
+      "subject": {
+        "x": 0.5,
+        "y": 0.55
+      }
+    },
+    "/gallery/tintwiz-20261025/chevrolet-corvette-02.webp": {
+      "splice": false,
+      "subject": {
+        "x": 0.5,
+        "y": 0.57
+      }
+    },
+    "/gallery/tintwiz-20261025/ford-f150-raptor-02.webp": {
+      "splice": true,
+      "subject": {
+        "x": 0.5,
+        "y": 0.53
+      }
+    },
+    "/gallery/tintwiz-20261025/tesla-model-y-juniper-02.webp": {
+      "splice": true,
+      "subject": {
+        "x": 0.5,
+        "y": 0.6
+      }
+    },
+    "/assets/paid-landing/tesla-model-y-front.webp": {
+      "splice": true,
+      "subject": {
+        "x": 0.5,
+        "y": 0.63
+      }
+    },
+    "/gallery/bmw-m4-01.jpg": {
+      "splice": false,
+      "subject": {
+        "x": 0.5,
+        "y": 0.7
+      }
+    },
+    "/gallery/cadillac-lyriq-01.jpg": {
+      "splice": true,
+      "subject": {
+        "x": 0.5,
+        "y": 0.6
+      }
+    },
+    "/gallery/cadillac-lyriq-02.jpg": {
+      "splice": false,
+      "subject": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "/gallery/lexus-gx-01.jpg": {
+      "splice": false,
+      "subject": {
+        "x": 0.5,
+        "y": 0.55
+      }
+    },
+    "/gallery/lexus-gx-02.jpg": {
+      "splice": false,
+      "subject": {
+        "x": 0.5,
+        "y": 0.55
+      }
+    },
+    "/gallery/bmw-x3-01.jpg": {
+      "splice": false,
+      "subject": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "/gallery/bmw-x3-02.jpg": {
+      "splice": false,
+      "subject": {
+        "x": 0.5,
+        "y": 0.35
+      }
+    },
+    "/gallery/porsche-cayenne-coupe-02.jpg": {
+      "splice": true,
+      "subject": {
+        "x": 0.5,
+        "y": 0.42
+      }
+    },
+    "/gallery/porsche-cayenne-coupe-03.jpg": {
+      "splice": true,
+      "subject": {
+        "x": 0.5,
+        "y": 0.45
+      }
+    },
+    "/assets/paid-landing/mobile-porsche-front.webp": {
+      "splice": true,
+      "subject": {
+        "x": 0.5,
+        "y": 0.67
+      }
+    },
+    "/assets/paid-landing/mobile-porsche-rear.webp": {
+      "splice": true,
+      "subject": {
+        "x": 0.5,
+        "y": 0.73
+      }
+    },
+    "/assets/site/home.webp": {
+      "splice": true,
+      "subject": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "/assets/site/work-home.webp": {
+      "splice": true,
+      "subject": {
+        "x": 0.5,
+        "y": 0.6
+      }
+    },
+    "/gallery/gbp-20261112/sunroom-exterior.webp": {
+      "splice": true,
+      "subject": {
+        "x": 0.5,
+        "y": 0.6
+      }
+    },
+    "/gallery/gbp-20261112/residential-window-detail.webp": {
+      "splice": true,
+      "subject": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "/assets/site/commercial.webp": {
+      "splice": true,
+      "subject": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "/assets/site/work-commercial.webp": {
+      "splice": true,
+      "subject": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    }
+  }
+}
