@@ -2462,6 +2462,15 @@
   ],
   "headers": [
     {
+      "source": "/assets/media/videos/bmw-ix-driveway-v1.mp4",
+      "headers": [
+        {
+          "key": "Content-Disposition",
+          "value": "inline; filename=\"BMW iX driveway walkaround.mp4\""
+        }
+      ]
+    },
+    {
       "source": "/(car-window-tinting-near-me|tint-shop-near-me)",
       "headers": [
         {

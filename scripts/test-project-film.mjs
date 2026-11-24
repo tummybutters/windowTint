@@ -25,3 +25,17 @@ test('engagement tracking has no conversion claim or customer/query-string data'
  assert.match(js,/project_video_play/);assert.match(js,/project_video_complete/);
  assert.doesNotMatch(js,/conversion|generate_lead|location\.search|location\.href|fetch\(|XMLHttpRequest/);
 });
+test('opening the homepage or gallery clip fallback keeps a friendly HTML tab title',()=>{
+ for(const route of ['/','/window-tinting-gallery']){
+  const html=renderFilmSection(route);
+  assert.match(html,/href="\/watch-bmw-ix-driveway">Watch the project clip/);
+  assert.doesNotMatch(html,/href="[^"]*\.mp4"/);
+  assert.match(html,/<source src="\/assets\/media\/videos\/bmw-ix-driveway-v1\.mp4" type="video\/mp4">/);
+ }
+ const watch=fs.readFileSync(new URL('../watch-bmw-ix-driveway.html',import.meta.url),'utf8');
+ assert.match(watch,/<title>BMW iX Driveway Walkaround \| Obsidian Autoworks<\/title>/);
+ assert.match(watch,/<h1>BMW iX driveway walkaround<\/h1>/);
+ assert.match(watch,/download="BMW iX driveway walkaround\.mp4"/);
+ assert.match(watch,/<video controls playsinline/);
+ assert.doesNotMatch(watch,/autoplay/);
+});
