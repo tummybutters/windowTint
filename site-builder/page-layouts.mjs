@@ -107,7 +107,7 @@ function cityContext(page) {
 }
 function directoryGroup(title,selected,{photos=false,excludeImage=null}={}) {
   if(!selected.length)return '';
-  return `<section class="section container directory-group"><div class="section-heading"><h2>${e(title)}</h2><span class="eyebrow">${selected.length} ways to explore</span></div><div class="${photos?'catalog-cards':'directory-links'}">${selected.map(p=>photos?`<a class="catalog-card" href="${p.path}">${p.image&&p.image!==excludeImage&&selected.findIndex(item=>item.image===p.image)===selected.indexOf(p)?`${imageTag(p.image,p.imageAlt||p.title,{sizes:'(max-width: 760px) calc(100vw - 40px), 30vw'})}`:''}<span class="eyebrow">${e(label(p))}</span><h3>${e(p.title)}</h3><p>${e(p.description)}</p><span aria-hidden="true">↗</span></a>`:`<a href="${p.path}"><span>${e(p.title)}</span><span aria-hidden="true">↗</span></a>`).join('')}</div></section>`;
+  return `<section class="section container directory-group"><div class="section-heading"><h2>${e(title)}</h2></div><div class="${photos?'catalog-cards':'directory-links'}">${selected.map(p=>photos?`<a class="catalog-card" href="${p.path}">${p.image&&p.image!==excludeImage&&selected.findIndex(item=>item.image===p.image)===selected.indexOf(p)?`${imageTag(p.image,p.imageAlt||p.title,{sizes:'(max-width: 760px) calc(100vw - 40px), 30vw'})}`:''}<span class="eyebrow">${e(label(p))}</span><h3>${e(p.title)}</h3><p>${e(p.description)}</p><span aria-hidden="true">↗</span></a>`:`<a href="${p.path}"><span>${e(p.title)}</span><span aria-hidden="true">↗</span></a>`).join('')}</div></section>`;
 }
 function portfolioProof(page,pages=[]) {
   const shown=new Set([page.image,...pages.filter(p=>p.division===page.division&&p.type==='service').map(p=>p.image)]);

@@ -170,7 +170,7 @@ for (const required of [
   'Ceramic Refresh Package',
   'GYEON CanCoat EVO',
   '1.5–2 years',
-  '$795–$995',
+  'Request a quote',
   'Premium Protection Package',
   'GYEON Pure EVO',
   '2–3 years',
@@ -262,7 +262,7 @@ assert.match(
   /<h1>Ceramic Coating Cost <span>&amp; Paint Correction<\/span><\/h1>/,
   'Coating cost page H1 must literally match coating-cost and paint-correction intent.'
 );
-assert.match(coatingCost, /\$795–\$995/, 'Coating cost page must expose the Refresh range.');
+assert.doesNotMatch(coatingCost, /\$795/, 'Coating cost page must not show the retired Refresh price.');
 assert.match(coatingCost, /\$1,295–\$1,695/, 'Coating cost page must expose the Premium range.');
 assert.match(coatingCost, /\$2,495–\$2,995/, 'Coating cost page must expose the Signature range.');
 assert.match(coatingCost, /\$3,500\+/, 'Coating cost page must expose the Concours starting price.');
