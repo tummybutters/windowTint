@@ -16,7 +16,7 @@ jobs:
           from datetime import datetime
           from zoneinfo import ZoneInfo
           def get(kind,offset=0):
-           url='https://www.obsidianautoworksoc.com/api/quote-notification-retry?report='+kind+'&start=2026-11-15&end=2026-11-24&offset='+str(offset)
+           url='https://www.obsidianautoworksoc.com/api/quote-notification-retry?report='+kind+'&start=2026-11-15&end=2026-11-25&offset='+str(offset)
            with urllib.request.urlopen(urllib.request.Request(url,headers={'Authorization':'Bearer '+os.environ['QUOTE_RETRY_SECRET']}),timeout=50) as r:return json.load(r)
           f=get('funnel');rows=[];o=0
           while True:
