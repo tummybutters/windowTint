@@ -1,7 +1,8 @@
 import {shell,escape} from './components.mjs';
 import {readFileSync} from 'node:fs';
 import catalog from '../assets/auto-offers/packages.js';
-export const offerPage={path:'/ceramic-tint-packages',division:'auto',type:'service',title:'Mobile ceramic window tint packages in Orange County',description:'Compare front window matching, front cabin, sides and rear, and complete ceramic tint. See mobile installation pricing and choose your sun strip or eligible roof upgrade.'};
+// Paid Driveway destination: kept byte-identical to the approved paid version.
+export const offerPage={paidDestination:true,path:'/ceramic-tint-packages',division:'auto',type:'service',title:'Mobile ceramic window tint packages in Orange County',description:'Compare front window matching, front cabin, sides and rear, and complete ceramic tint. See mobile installation pricing and choose your sun strip or eligible roof upgrade.'};
 const entries=Object.entries(catalog.packages);
 const jobs = JSON.parse(readFileSync(new URL('../content/projects.json', import.meta.url)));
 const shots = {

@@ -1,6 +1,8 @@
 import {imageTag} from './media.mjs';
-import {escape as e, brandName, divisions, button, reviews, card, quoteHref, quoteLabel} from './components.mjs';
+import {escape as e, brandName, divisions, button, reviews, card, quoteHref, quoteLabel, offer} from './components.mjs';
 import {linkedParagraphs} from './internal-links.mjs';
+import {proofLine,proofStats,questionsSection} from './organic-search.mjs';
+import {photoPicker,photoCards,photoSplice} from './photo-panels.mjs';
 
 const label = page => divisions[page.division]?.label || 'Obsidian';
 const topic = page => page.title.replace(/\s+(in|across) Orange County$/i,'');
@@ -18,8 +20,8 @@ function eyebrow(page) {
 }
 function intro(page,kind,{photo=true,action=true}={}) {
   if(page.photoInsetOnly)photo=false;
-  const displayTitle=['guide','service'].includes(page.type)&&page.title.includes(':')&&!page.title.includes('?')?page.title.split(':')[0].trim():page.title;
-  return `<section class="container page-intro page-intro--${kind}${photo&&page.image?' has-photo':''}" data-layout="${kind}">${crumbs(page)}<div class="page-intro-grid"><div><p class="eyebrow">${e(eyebrow(page))}</p><h1>${e(displayTitle)}</h1><p class="page-deck">${e(page.intro)}</p>${action?`<div class="actions">${button(quoteLabel(page),quoteHref(page),page.type==='city')}${specialty(page)?button('Call (714) 600-7134','tel:+17146007134',true):''}</div>`:''}</div>${photo?image(page):''}</div></section>`;
+  const displayTitle=page.h1||(['guide','service'].includes(page.type)&&page.title.includes(':')&&!page.title.includes('?')?page.title.split(':')[0].trim():page.title);
+  return `<section class="container page-intro page-intro--${kind}${photo&&page.image?' has-photo':''}" data-layout="${kind}">${crumbs(page)}<div class="page-intro-grid"><div><p class="eyebrow">${e(eyebrow(page))}</p><h1>${e(displayTitle)}</h1><p class="page-deck">${e(page.intro)}</p>${proofLine(page)}${action?`<div class="actions">${button(quoteLabel(page),quoteHref(page),page.type==='city')}${specialty(page)?button('Call (714) 600-7134','tel:+17146007134',true):''}${page.type==='city'&&page.questions?button('Text (714) 600-7134','sms:+17146007134',true):''}</div>`:''}${proofStats(page)}</div>${photo?image(page):''}</div></section>`;
 }
 function highlights(page) {
   if(!page.highlights?.length)return '';
@@ -46,7 +48,13 @@ function sectionCopy(page,section,index) {
 function details(page,start=1) {
  const sections=(page.sections||[]).slice(start);
  if(!sections.length)return '';
- return `<div class="detail-disclosures">${sections.map((section,i)=>`<details id="detail-${i+start}"><summary>${e(section.heading)}</summary><div>${sectionCopy(page,section,i+start)}</div></details>`).join('')}</div>`;
+ return `<div class="detail-open">${sections.map((section,i)=>`<section id="detail-${i+start}"><h3>${e(section.heading)}</h3><div>${sectionCopy(page,section,i+start)}</div></section>`).join('')}</div>`;
+}
+// Every section open as a quiet text card.
+function sectionCards(page,start=0,heading='') {
+ const sections=(page.sections||[]).slice(start);
+ if(!sections.length)return '';
+ return `<section class="text-cards${sections.length%2===0?' text-cards--pairs':''}">${heading?`<h2>${e(heading)}</h2>`:''}<div class="text-cards__grid">${sections.map((section,i)=>`<article id="detail-${i+start}"><h3>${e(section.heading)}</h3>${sectionCopy(page,section,i+start)}</article>`).join('')}</div></section>`;
 }
 function leadSection(page,{photo=true}={}) {
  const section=page.sections?.[0];if(!section)return '';
@@ -61,15 +69,16 @@ function contentSections(page,kind='article') {
   return `<div class="content-sections content-sections--${kind}">${page.sections.map((s,i)=>`<section id="detail-${i}"><span class="section-number" aria-hidden="true">${String(i+1).padStart(2,'0')}</span><div><h2>${e(s.heading)}</h2>${linkedParagraphs(s.body,page.linkPlan?.links.filter(link=>link.section===i)||[])}</div></section>`).join('')}</div>`;
 }
 function faq(page) {
-  return page.faqs?.length?`<section class="container section page-faq"><div><h2>A few details.</h2></div><div class="faq">${page.faqs.map(f=>`<details><summary>${e(f.question)}</summary><p>${e(f.answer)}</p></details>`).join('')}</div></section>`:'';
+  return page.faqs?.length?`<section class="container section page-faq"><div><h2>A few details.</h2></div><div class="faq faq--open">${page.faqs.map(f=>`<div class="faq-item"><h3>${e(f.question)}</h3><p>${e(f.answer)}</p></div>`).join('')}</div></section>`:'';
 }
 function related(page,index) {
   const selected=[...new Set(page.relatedPaths||[])].filter(p=>p!==page.path).map(p=>index.get(p)).filter(Boolean).slice(0,5);
   if(!selected.length)return '';
   return `<section class="section container related-reading"><h2>Keep exploring.</h2><div class="related-list">${selected.map(p=>`<a href="${e(p.path)}"><span>${e(label(p))}</span><h3>${e(p.title)}</h3><span aria-hidden="true">↗</span></a>`).join('')}</div></section>`;
 }
-function close(page) {
-  return `<section class="container section"><div class="page-close"><div><h2>${e(page.quotePrompt||'Tell us what you want to change, and we’ll help define the right scope.')}</h2></div>${nextActions(page)}</div></section>`;
+function close(page,pick) {
+  const splice=pick?photoSplice(pick):'';
+  return `<section class="container section"><div class="page-close${splice?' page-close--photos':''}">${splice}<div><h2>${e(page.quotePrompt||'Tell us what you want to change, and we’ll help define the right scope.')}</h2></div>${nextActions(page)}</div></section>`;
 }
 
 function nextActions(page) {
@@ -99,11 +108,12 @@ function sources(page) {
   if(!page.sources?.length)return '';
   return `<aside class="container source-links"><p class="eyebrow">Further reading</p><ul>${page.sources.map(source=>`<li><a href="${e(source.url)}" target="_blank" rel="noopener">${e(source.title)} ↗</a></li>`).join('')}</ul></aside>`;
 }
-function cityContext(page) {
+function cityContext(page,pick) {
   const c=page.cityContext;if(!c)return '';
   const facts=c.facts||[];
   const links=(list)=>list.map(p=>`<a href="${e(p.path)}">${e(p.title)} <span aria-hidden="true">↗</span></a>`).join('');
-  return `<section class="container city-context"><div><p class="eyebrow">At your ${e(c.city)} address</p><h2>A visit that fits<br>your location.</h2>${c.planning?`<p>${e(c.planning)}</p><details class="local-source"><summary>Local setting</summary>${facts.map(fact=>`<p>${e(fact.text)} <a href="${e(fact.sourceUrl)}" target="_blank" rel="noopener">City information ↗</a></p>`).join('')}</details>`:'<p>Explore the services available at your address, or find a nearby service area.</p>'}</div><nav aria-label="Related local services">${c.otherServices.length?`<p class="eyebrow">Also in ${e(c.city)}</p>${links(c.otherServices)}`:''}${c.nearby.length?`<p class="eyebrow">Looking nearby?</p>${links(c.nearby)}`:''}</nav></section>`;
+  const splice=pick?photoSplice(pick,0.55):'';
+  return `<section class="container city-context"><div class="city-context__panel${splice?' has-photos':''}">${splice}<div class="city-context__copy"><p class="eyebrow">At your ${e(c.city)} address</p><h2>A visit that fits<br>your location.</h2>${c.planning?`<p>${e(c.planning)}</p><div class="local-source"><p class="eyebrow">Local setting</p>${facts.map(fact=>`<p>${e(fact.text)} <a href="${e(fact.sourceUrl)}" target="_blank" rel="noopener">City information ↗</a></p>`).join('')}</div>`:'<p>Explore the services available at your address, or find a nearby service area.</p>'}</div></div><nav aria-label="Related local services">${c.otherServices.length?`<p class="eyebrow">Also in ${e(c.city)}</p>${links(c.otherServices)}`:''}${c.nearby.length?`<p class="eyebrow">Looking nearby?</p>${links(c.nearby)}`:''}</nav></section>`;
 }
 function directoryGroup(title,selected,{photos=false,excludeImage=null}={}) {
   if(!selected.length)return '';
@@ -116,22 +126,74 @@ function portfolioProof(page,pages=[]) {
   return `<section class="section container"><div class="section-heading"><h2>From our work.</h2><a href="/window-tinting-gallery">View gallery ↗</a></div><div class="portfolio-proof">${photos.map(photo=>`<a href="${e(photo.src)}" data-lightbox data-caption="${e(photo.alt)}">${imageTag(photo.src,photo.alt,{sizes:'(max-width: 760px) calc(100vw - 40px), 45vw'})}</a>`).join('')}</div></section>`;
 }
 
+// Home-style closing: the quote panel on three real photographs.
+function homeClose(page,pick) {
+  const splice=photoSplice(pick);
+  const secondary=page.linkPlan?.secondary;
+  return `<section class="section container"><div class="quote-panel quote-panel--photos">${splice}<div class="quote-panel__copy"><p class="eyebrow">Let's make it yours</p><h2>Ready for your<br>upgrade?</h2><p>${e(page.quotePrompt||'Choose your vehicle and tell us what you would like tinted.')}</p><div class="actions">${button(quoteLabel(page),quoteHref(page))}${secondary?`<a class="next-step-link" href="${e(secondary.href)}">${e(secondary.label)} <span aria-hidden="true">↗</span></a>`:''}</div></div></div></section>`;
+}
+const trimWords=(text,limit)=>{
+  const sentences=String(text||'').match(/[^.!?]+[.!?]+/g)||[text];
+  let out='';
+  for(const sentence of sentences){if(out&&(out+sentence).trim().split(/\s+/).length>limit)break;out+=sentence}
+  return out.trim();
+};
+// Auto city pages follow the home page's pace: one idea per section, big two-line headings.
+function cityPage(page,pages,reviewData,index,pick) {
+  const c=page.cityContext||{};
+  const place=c.city||page.questions;
+  const coverage=[
+    {title:'Two front windows',price:'From $200',href:'/front-two-window-tinting',note:'Match the factory rear glass.'},
+    {title:'Sides and rear',price:'From $500',href:'/sides-rear-window-tinting',note:'$600 for a standard sedan.'},
+    {title:'Full car',price:'$820',href:'/full-car-window-tinting',note:'Sedan or coupe. SUV or truck $950.'}
+  ];
+  const photos=pick(3);
+  const compare=`<section class="section container city-compare"><div class="section-heading"><h2>Compare your<br>options.</h2></div><div class="photo-cards__grid">${coverage.map((item,i)=>`<a class="photo-card photo-card--link" href="${item.href}">${photos[i]?photos[i].tag('(max-width:760px) 100vw, 33vw','lazy',1):''}<div class="photo-card__body"><p class="eyebrow">${e(item.title)}</p><h3>${e(item.price)}</h3><p>${e(item.note)}</p>${photos[i]?`<small class="photo-card__caption">${e(photos[i].caption)}</small>`:''}</div></a>`).join('')}</div></section>`;
+  const fact=(c.facts||[])[0];
+  const visit=`<section class="section container city-visit"><div class="section-heading"><p class="eyebrow">At your ${e(place)} address</p><h2>A visit that fits<br>your location.</h2></div><div class="city-visit__copy"><p>${e(trimWords(c.planning||'Tell us where the car will be. We confirm the space, access and any travel fee with your quote.',60))}</p>${fact?`<p class="city-visit__fact">${e(fact.text)} <a href="${e(fact.sourceUrl)}" target="_blank" rel="noopener">City information ↗</a></p>`:''}</div></section>`;
+  const questions=questionsSection(page).replace(/<h2 id="questions-heading">Window tinting questions in ([^<]+)<\/h2>/,'<h2 id="questions-heading">Window tinting<br>questions in $1</h2>');
+  // Every link the old layout carried, in one compact row above the footer.
+  const groups=[];
+  const add=(title,links)=>{const list=links.filter(l=>l&&l.href&&l.href!==page.path);if(list.length)groups.push({title,links:list})};
+  const services=pages.filter(item=>item.division==='auto'&&item.type==='service'&&!item.path.includes('ceramic-coating')&&item.path!=='/chrome-delete').slice(0,4);
+  add('Find your fit',services.map(p=>({href:p.path,label:p.title})));
+  const contextLinks=[...new Map((page.linkPlan?.links||[]).map(l=>[l.href,{href:l.href,label:index.get(l.href)?.title||l.anchor}])).values()];
+  const relatedLinks=[...new Set(page.relatedPaths||[])].map(p=>index.get(p)).filter(Boolean).map(p=>({href:p.path,label:p.title}));
+  add('Keep exploring',[...new Map([...relatedLinks,...contextLinks].map(l=>[l.href,l])).values()].slice(0,6));
+  add('Also in '+place,(c.otherServices||[]).map(p=>({href:p.path,label:p.title})));
+  add('Nearby',(c.nearby||[]).map(p=>({href:p.path,label:p.title})));
+  const row=`<nav class="container related-row" aria-label="More window tinting pages">${groups.map(g=>`<div><p class="eyebrow">${e(g.title)}</p><ul>${g.links.map(l=>`<li><a href="${e(l.href)}">${e(l.label)}</a></li>`).join('')}</ul></div>`).join('')}</nav>`;
+  return intro(page,'local')+offer()+compare+visit+reviews(reviewData)+'<!--city-projects-->'+questions+sources(page)+homeClose(page,pick)+row;
+}
+
 export function renderInner(page,pages,reviewData) {
   const index=new Map(pages.map(p=>[p.path,p]));
-  const tail=()=>faq(page)+sources(page)+related(page,index)+close(page);
+  // Photos already on the page (hub catalog cards) are not repeated in the photo panels.
+  const pick=photoPicker(page,page.type==='hub'?pages.filter(p=>p.division===page.division&&p.type==='service').map(p=>p.image):[]);
+  const auto=page.division==='auto';
+  const tail=()=>(page.questions?questionsSection(page):faq(page))+sources(page)+related(page,index)+(auto&&['service','vehicle'].includes(page.type)&&page.proof?homeClose(page,pick):close(page,pick));
+  const autoDetails=()=>auto?sectionCards(page,1,'More to know.'):details(page);
   if(page.path==='/about')return intro(page,'story')+`<section class="container editorial-body">${leadSection(page)}${details(page)}</section>`+reviews(reviewData)+related(page,index)+close(page);
   if(page.type==='hub') {
     let body=intro(page,'division')+directoryGroup('Choose your '+(page.division==='auto'?'coverage':'film'),pages.filter(p=>p.division===page.division&&p.type==='service'),{photos:true,excludeImage:page.image});
     if(page.division==='auto')body+=`<section class="container compact-offer"><div><h2>Ceramic sides + rear.<br><em>A free upgrade, too.</em></h2><p>Explore the Driveway Package and eligible upgrade options.</p></div>${button('See package details','/driveway-package')}</section>`;
-    body+=`<section class="container editorial-body">${highlights(page)}${leadSection(page)}${comparison(page)}${details(page)}${steps(page)}${checklist(page)}</section>`;
+    body+=`<section class="container editorial-body">${highlights(page)}${leadSection(page,{photo:!pages.some(p=>p.division===page.division&&p.type==='service'&&p.image===page.supportImage?.src)})}${comparison(page)}${details(page)}${steps(page)}${checklist(page)}</section>`;
     if(page.division==='auto')body+=directoryGroup('Find your vehicle',pages.filter(p=>p.type==='vehicle'));
     return body+directoryGroup('Where we come to you',pages.filter(p=>p.division===page.division&&p.type==='city'))+tail();
   }
-  if(page.type==='vehicle')return intro(page,'vehicle')+`<section class="container vehicle-layout">${highlights(page)}${comparison(page)}${leadSection(page)}${details(page)}${steps(page)}${checklist(page)}</section>`+tail();
+  if(page.type==='vehicle')return intro(page,'vehicle')+`<section class="container vehicle-layout">${highlights(page)}${comparison(page)}${leadSection(page)}${autoDetails()}${steps(page)}${checklist(page)}</section>`+tail();
   if(page.type==='guide')return intro(page,'editorial',{action:false})+`<section class="container guide-layout">${leadSection(page,{photo:false})}${comparison(page)}${highlights(page)}${steps(page)}${details(page)}${checklist(page)}</section>`+tail();
-  if(page.type==='city')return intro(page,'local')+`<section class="container local-page-body">${localServices(page,pages)}${comparison(page)}${highlights(page)}${leadSection(page,{photo:false})}${details(page)}${steps(page)}${checklist(page)}</section>`+cityContext(page)+tail();
+  if(page.type==='city'&&auto&&page.questions)return cityPage(page,pages,reviewData,index,photoPicker(page,['/gallery/jobs-20261117/audi-rs6-avant-window-tint-yorba-linda-1-1440.webp']));
+  if(page.type==='city'){
+    const place=page.cityContext?.city||page.questions||'your area';
+    const choices=auto&&page.comparison?.columns?.length===2&&!page.comparison.rows.some(row=>row.some(cell=>String(cell).includes('$')))
+      ?photoCards(pick,page.comparison.rows.map(row=>({eyebrow:page.comparison.columns[0]+': '+row[0],title:row[1],html:''})),{heading:page.comparison.title||'Compare your options.',className:'photo-cards--compact'})
+      :comparison(page);
+    const story=auto?sectionCards(page,0,`Your ${place} tint plan.`):leadSection(page,{photo:false})+details(page);
+    return intro(page,'local')+`<section class="container local-page-body">${localServices(page,pages)}${choices}${highlights(page)}${story}${steps(page)}${checklist(page)}</section>`+cityContext(page)+tail();
+  }
   if(page.type==='project')return intro(page,'worksheet',{action:false})+`<section class="container project-layout"><p class="planner-disclosure">A planning guide for your project, not a completed-job case study.</p>${steps(page)}${comparison(page)}${highlights(page)}<div class="project-notes">${details(page,0)}${checklist(page)}</div></section>`+tail();
-  if(page.type==='service')return intro(page,page.path==='/window-tint-pricing'?'pricing':'service',{action:page.path!=='/window-tint-pricing'})+`<section class="container service-layout">${coverageStrip(page)}${highlights(page)}${comparison(page)}${leadSection(page)}${details(page)}${steps(page)}${checklist(page)}</section>`+tail();
+  if(page.type==='service')return intro(page,page.path==='/window-tint-pricing'?'pricing':'service',{action:page.path!=='/window-tint-pricing'})+`<section class="container service-layout">${coverageStrip(page)}${highlights(page)}${comparison(page)}${leadSection(page)}${page.path==='/window-tint-pricing'?details(page):autoDetails()}${steps(page)}${checklist(page)}</section>`+tail();
   return intro(page,'utility',{photo:false})+`<section class="container editorial-body">${leadSection(page,{photo:false})}${details(page)}</section>`+tail();
 }
 export function renderDirectory(page,pages) {
