@@ -1,8 +1,8 @@
 import {shell,escape} from './components.mjs';
-import {organicSearch} from './organic-search.mjs';
 import {readFileSync} from 'node:fs';
 import catalog from '../assets/auto-offers/packages.js';
-export const offerPage={path:'/ceramic-tint-packages',division:'auto',type:'service',title:'Mobile ceramic window tint packages in Orange County',description:'Compare front window matching, front cabin, sides and rear, and complete ceramic tint. See mobile installation pricing and choose your sun strip or eligible roof upgrade.'};
+// Paid Driveway destination: kept byte-identical to the approved paid version.
+export const offerPage={paidDestination:true,path:'/ceramic-tint-packages',division:'auto',type:'service',title:'Mobile ceramic window tint packages in Orange County',description:'Compare front window matching, front cabin, sides and rear, and complete ceramic tint. See mobile installation pricing and choose your sun strip or eligible roof upgrade.'};
 const entries=Object.entries(catalog.packages);
 const jobs = JSON.parse(readFileSync(new URL('../content/projects.json', import.meta.url)));
 const shots = {
@@ -35,7 +35,7 @@ export function renderOffers(){
    <template class="detail-photo">${projectImage(job.images[detail],'loading="lazy"')}</template></article>`;
  }).join('');
  const cover = jobs.find(j=>j.car==='Mercedes-AMG CLE');
- const body=`<section class="container offer-hero"><div class="hero-copy"><p class="eyebrow">Mobile ceramic tint · Orange County</p><h1 id="offer-title">Ceramic tint packages.</h1><p class="offer-benefit" id="offer-benefit">Installed in your driveway.</p><p id="offer-description">${escape(organicSearch.pages['/ceramic-tint-packages'].intro)}</p><p id="offer-price">Front windows from $200 · sides and rear from $500</p><a id="hero-link" class="button button-primary" href="#choose">Compare packages</a></div><figure class="cover-shot">${projectImage(cover.images[0],'id="offer-photo" fetchpriority="high"')}<figcaption id="offer-photo-caption">Mercedes-AMG CLE · Mission Viejo</figcaption></figure></section>
+ const body=`<section class="container offer-hero"><div class="hero-copy"><p class="eyebrow">Mobile ceramic tint · Orange County</p><h1 id="offer-title">Ceramic tint packages.</h1><p class="offer-benefit" id="offer-benefit">Installed in your driveway.</p><p id="offer-description">From two front windows to the entire cabin. Choose your coverage and see what’s included.</p><p id="offer-price">Front windows from $200 · sides and rear from $500</p><a id="hero-link" class="button button-primary" href="#choose">Compare packages</a></div><figure class="cover-shot">${projectImage(cover.images[0],'id="offer-photo" fetchpriority="high"')}<figcaption id="offer-photo-caption">Mercedes-AMG CLE · Mission Viejo</figcaption></figure></section>
  <section class="container offer-build" id="build" hidden><div><p class="eyebrow">Avery Dennison IR ceramic</p><h2>Build your package.</h2><figure id="build-photo" aria-hidden="true"></figure><p id="estimate" aria-live="polite"></p></div><form id="offer-form">
  <label>Package<select name="offer">${entries.map(([id,p])=>`<option value="${id}">${p.name}</option>`).join('')}</select></label>
  <div class="offer-fields"><label>Vehicle<input name="vehicle" id="vehicle" required minlength="3" maxlength="200" placeholder="Year, make and model"></label><label>Body style<select name="body" required><option value="">Choose a body style</option>${catalog.bodies.map(b=>`<option>${escape(b)}</option>`).join('')}</select></label></div>

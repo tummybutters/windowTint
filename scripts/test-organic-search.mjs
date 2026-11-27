@@ -3,6 +3,8 @@ import fs from 'node:fs';
 
 // Run after `npm run build`. Checks the organic search copy in content/organic-search.json against the generated pages.
 const data = JSON.parse(fs.readFileSync('content/organic-search.json', 'utf8'));
+const reviewCount = String(JSON.parse(fs.readFileSync('content/reviews.json', 'utf8')).count);
+for (const copy of Object.values(data.pages)) for (const key of Object.keys(copy)) if (typeof copy[key] === 'string') copy[key] = copy[key].replaceAll('{reviews}', reviewCount);
 const manifest = new Set(JSON.parse(fs.readFileSync('content/build-manifest.json', 'utf8')).map(page => page.path));
 const decode = s => s.replace(/&amp;/g, '&').replace(/&quot;/g, '"').replace(/&#39;/g, "'").replace(/&lt;/g, '<').replace(/&gt;/g, '>');
 const visible = html => decode(html.match(/<main id="main">([\s\S]*)<\/main>/)[1].replace(/<(script|style|template)[^>]*>[\s\S]*?<\/\1>/g, '').replace(/<[^>]+>/g, ' ')).replace(/\s+/g, ' ');
@@ -21,7 +23,7 @@ for (const [path, copy] of Object.entries(data.pages)) {
   if (copy.description) {
     assert.equal(description, copy.description, `${path} description`);
     assert(!descriptions.has(description), `${path} unique description`); descriptions.add(description);
-    for (const number of description.match(/\$\d{1,3}(?:,\d{3})*|\b82\b/g) || []) assert(text.includes(number), `${path} shows ${number}`);
+    for (const number of description.match(/\$\d{1,3}(?:,\d{3})*|\b\d{2,3}(?= five-star)/g) || []) assert(text.includes(number), `${path} shows ${number}`);
     if (/lifetime (manufacturer )?warranty/i.test(description)) assert(/lifetime manufacturer warranty/i.test(text), `${path} shows the warranty`);
     if (/3M/.test(description)) assert(text.includes('3M'), `${path} shows 3M`);
     if (/Avery Dennison/.test(description)) assert(text.includes('Avery Dennison'), `${path} shows the film`);

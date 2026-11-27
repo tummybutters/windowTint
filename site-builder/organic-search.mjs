@@ -19,7 +19,8 @@ export function applyOrganicSearch(pages) {
   for(const [path,copy] of Object.entries(data.pages)) {
     const page=byPath.get(path);
     if(!page)continue; // Packages page is rendered outside pages.json.
-    for(const key of ['metaTitle','description','intro','introExtra','proof','questions','questionCity'])if(copy[key]!==undefined)page[key]=copy[key];
+    // {reviews} always reads the verified count in content/reviews.json.
+    for(const key of ['metaTitle','description','intro','introExtra','proof','questions','questionCity'])if(copy[key]!==undefined)page[key]=typeof copy[key]==='string'?copy[key].replaceAll('{reviews}',String(reviewData.count)):copy[key];
     // City H1 starts with the exact search phrase; the deck keeps "mobile".
     if(page.type==='city'&&typeof copy.questions==='string'&&copy.questions!=='orange-county')page.h1=page.title.replace(/^Mobile window tinting/,'Window tinting');
   }
